@@ -1,18 +1,31 @@
-Interpreting errors
-===================
+Fixing errors
+=============
 
-Every programmer makes errors, it's normal. Experienced programmers are most experienced in interpreting the error messages produced by Python. These errors are referred to as "tracebacks" [1]_.
+Every programmer makes errors, it's normal. The most important step towards fixing errors is interpreting the error messages produced by Python. Error messages produced by Python are referred to as "tracebacks" [1]_.
 
-The following code is broken:
+Here's some broken code:
 
 .. jupyter-execute::
     :linenos:
     :raises:
 
-    a = "some text"
+    a = 42
     k += a
 
 First, in the traceback, the last line indicates the type of the exception (``NameError`` in this simple case) and the statement triggering it (``k +=``). The offending line is indicated by ``---->``.
+
+.. panels::
+    :column: col-lg-12 p-2
+
+    .. dropdown:: :fa:`eye,mr-1` Click to see the fixed code
+            
+        Variables must be defined before they're used
+
+        .. jupyter-execute::
+        
+            a = 42
+            k = 0
+            k += a
 
 And a slightly more complicated case
 
