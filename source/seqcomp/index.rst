@@ -2,6 +2,8 @@
 Sequence Comparison
 ###################
 
+.. sectionauthor:: Gavin Huttley
+
 .. toctree::
     :maxdepth: 2
 

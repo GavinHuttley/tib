@@ -2,6 +2,7 @@
 Introduction to Python
 ######################
 
+.. sectionauthor:: Gavin Huttley
 
 .. toctree::
     :maxdepth: 2
