@@ -13,3 +13,9 @@ Bioinformatics and its Applications
     intro
     python/index
     seqcomp/index
+
+.. todo:: add an advanced python topic
+
+.. todo:: add a version control topic
+
+.. todo:: add a continuous integration topic
