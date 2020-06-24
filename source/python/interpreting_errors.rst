@@ -38,7 +38,22 @@ And a slightly more complicated case
 
 This is a ``SyntaxError`` -- imbalanced ``()``. Note the `^` in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.
 
-See if you can figure out the one below.
+.. panels::
+    :column: col-lg-12 p-2
+
+    .. dropdown:: :fa:`eye,mr-1` Click to see the fixed code
+            
+        Balance the parentheses.
+
+        .. jupyter-execute::
+        
+            def echo(name):
+                print(name)
+
+Exercise
+--------
+
+Figure out the error in the following.
 
 .. jupyter-execute::
     :linenos:
