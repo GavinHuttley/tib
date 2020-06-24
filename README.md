@@ -1,2 +1,0 @@
-# tib
-Topics in bioinformatics
