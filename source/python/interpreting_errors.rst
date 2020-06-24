@@ -50,10 +50,12 @@ This is a ``SyntaxError`` -- imbalanced ``()``. Note the `^` in the traceback, w
             def echo(name):
                 print(name)
 
-Exercise
---------
+Exercises
+---------
 
-Figure out the error in the following.
+Fix the errors in the following.
+
+**1.**
 
 .. jupyter-execute::
     :linenos:
@@ -64,6 +66,16 @@ Figure out the error in the following.
         greet = "Fist bump!"
     else:
         greet = "Hi"
+
+**2.**
+
+.. jupyter-execute::
+    :linenos:
+    :raises:
+
+    def squared(num):
+        return num * 2
+
 
 .. [1] See this article_ for a more complete description.
 
