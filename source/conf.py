@@ -18,6 +18,7 @@ extensions = [
     "jupyter_sphinx",
     "sphinx_panels",
     "sphinxcontrib.bibtex",
+    "sphinx_rtd_theme",
 ]
 
 todo_include_todos = True
@@ -30,7 +31,7 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["*/sample_homologs.ipynb", "*molevol*"]
 
-html_theme = "alabaster"
+html_theme = "sphinx_rtd_theme"
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -42,6 +43,17 @@ html_theme = "alabaster"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
+html_theme_options = {
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': False,
+    'navigation_depth': -1,
+    'includehidden': True,
+    'titles_only': False
+}
 
 def setup(app):
     import pathlib, sys
