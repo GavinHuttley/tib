@@ -56,10 +56,7 @@ html_theme_options = {
     'titles_only': False
 }
 
-def setup(app):
-    import pathlib, sys
+html_css_files = [
+    'css/custom.css',
+]
 
-    css = pathlib.Path(html_static_path[0]) / "css"
-    for fn in css.glob("*.css"):
-        app.add_css_file(f"{fn}")
-        sys.stderr.write("{fn}\n")

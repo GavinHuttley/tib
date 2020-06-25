@@ -1,0 +1,33 @@
+.wy-nav-content {
+	max-width: 100%;
+}
+
+div.section > p,
+div.section > dl:not(.footnote),
+div.section > ol,
+div.section > ul,
+div.section > table,
+div.section > blockquote, 
+div.section > div:not(.section):not(.sidebar)
+	{
+		/* Constrain width for direct descendants of a div */
+		width: 55%;
+	}
+
+div.wy-nav-content div.container.sphinx-bs {
+	margin-left:  0;
+}
+
+div.sidebar, dl.footnote {
+	width:  40% !important;
+}
+
+dl.footnote {
+	float: right;
+	clear: both;
+	text-align: left;
+	border-right: solid 1px #808080;
+	border-left: none;
+	border-top: none;
+	border-bottom: none;
+}
