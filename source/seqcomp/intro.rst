@@ -13,10 +13,14 @@ The role of sequence in encoding life
 
     The organisation of eukaryotic DNA [1]_.
 
+.. [1] From `Wasserman, & Sandelin <http://doi.org/10.1038/nrg1315>`_
+
 .. figure:: ../images/in_dna.png
     :scale: 50 %
     
     Epigenetic factor positioning encoded by DNA [2]_. 
+
+.. [2] From `Science, 322, 434–438 <http://doi.org/10.1126/science.1160930>`_
 
 Some short stretches of DNA sequence (referred to as motifs) are central to regulation of gene expression. This property can arise from direct binding of protein to DNA.
 
@@ -31,8 +35,6 @@ Some short stretches of DNA sequence (referred to as motifs) are central to regu
             :scale: 48 %
             :align: right
 
-The figure shows the  on the left, while the right panel is a representation of the DNA sequences to which TBP binds.
-
-.. [1] From `Wasserman, & Sandelin <http://doi.org/10.1038/nrg1315>`_
-.. [2] From `Science, 322, 434–438 <http://doi.org/10.1126/science.1160930>`_
 .. [3] Structure `from NCBI <http://bit.ly/2i0s4pk>`_
+
+The figure shows the  on the left, while the right panel is a representation of the DNA sequences to which TBP binds.

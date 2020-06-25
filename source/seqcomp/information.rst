@@ -45,6 +45,8 @@ and here's the entropy calculation. ::
 
 In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo [1]_. That representation is computed using position-wise entropy.
 
+.. [1] *Schneider & Stephens (1990). Sequence logos: a new way to display consensus sequences. Nucleic Acids Research, 18(20), 6097–100.*
+
 Information at a position
 -------------------------
 
@@ -76,6 +78,8 @@ An illustration of the difference -- identifying neighbouring base effects on mu
 
 If we sample sequences that share this mutation in common, aligning them centred on the mutated position, we can assess which statistic better captures the neighbouring base association. What we *should* see is that the 3' position should have high information which arises from the base `G`.
 
+.. todo:: use latest images from mutation motif
+
 .. list-table::
 
     * - .. image:: ../images/CtoT_MI.png
@@ -85,5 +89,4 @@ If we sample sequences that share this mutation in common, aligning them centred
 
 These results originated from the honours research project of Ms Yicheng Zhu, published in [2]_.
 
-.. [1] *Schneider & Stephens (1990). Sequence logos: a new way to display consensus sequences. Nucleic Acids Research, 18(20), 6097–100.*
 .. [2] *Zhu, Neeman, Yap, Huttley (2017). Statistical Methods for Identifying Sequence Motifs Affecting Point Mutations. Genetics, 205, 843–856*

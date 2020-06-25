@@ -60,6 +60,8 @@ These can be specified on construction. ``array``'s can be constructed from norm
 
 Or, other arrays [1]_. 
 
+.. [1] I've used the ``numpy.arange()`` function, which returns an ``array`` object.
+
 .. jupyter-execute::
     :linenos:
 
@@ -346,4 +348,4 @@ Scenario, you want to count (from multiple arrays that consist of a continuously
 
     (data > 0.5).sum(axis=0)
 
-.. [1] I've used the ``numpy.arange()`` function, which returns an ``array`` object.
+

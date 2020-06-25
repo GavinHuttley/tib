@@ -49,6 +49,8 @@ Calculating the Expected Under the Alternate
 
 In this case, I'm just doing this "manually". First, note the base order is T, C, A, G [1]_. Here's a pseudo-code algorithm describing this calculation:
 
+.. [1] This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software
+
 .. code-block:: rest
 
     PSSM is a 2D matrix with rows corresponding to bases, columns to positions
@@ -110,7 +112,17 @@ How should you interpret this? Look at the OR equation!
 Computing the PSSM
 ^^^^^^^^^^^^^^^^^^
 
-The PSSM is a log-odds matrix, i.e. it's the log of the odds ratio matrix. Because we assume a background distribution of 0.25, we can compute this very simply as ``log2(ppm)-log2(0.25)`` [2]_ [3]_.
+The PSSM is a log-odds matrix, i.e. it's the log of the odds ratio matrix. Because we assume a background distribution of 0.25, we can compute this very simply as ``log2(ppm)-log2(0.25)``.
+
+.. sidebar:: Maths with logarithms, recall that
+
+    :math:`\log(a/b)=\log(a) - \log(b)`
+    
+    and
+    
+    :math:`\log(a \times b) = \log(a) + \log(b)`
+    
+    Note that we use log base 2 (:math:`\log_2`), by convention.
 
 .. jupyter-execute::
     :hide-code:
@@ -137,8 +149,3 @@ From these, the log-odds of ``seq1`` being derived from the experimental sample 
 
 For more on the interpretation of odds ratios, see :ref:`odds-ratios`.
 
-----
-
-.. [1] This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software
-.. [2] Recall that log(a) - log(b) = log(a/b), and log(a) + log(b) = log(a * b)
-.. [3] We use log base 2, by convention

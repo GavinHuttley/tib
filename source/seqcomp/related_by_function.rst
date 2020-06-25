@@ -7,6 +7,8 @@ Sequences that a possess a shared functional property (e.g. protein binding) wil
 
 Here's a fuller description of the experimental procedures [4]_, albeit a bit of out date.
 
+.. [4] `Geertz and Maerkl <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3080775/>`_
+
 SELEX -- Systematic evolution of ligands by exponential enrichment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -22,6 +24,8 @@ ChIP -- chromatin immunoprecipitation
     :scale: 50 %
     
     An empirical survey of naturally occurring DNA [5]_.
+
+.. [5] `Wikipedia entry <https://en.wikipedia.org/wiki/ChIP-sequencing>`_
 
 With the sequence data from those experimental procedures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -87,8 +91,4 @@ This is converted to a table of counts by simply counting occurrences of bases i
     table = make_table(header, data=data, title="PWM", legend="position specific weights matrix")
     table
 
-References
-----------
 
-.. [4] `Geertz and Maerkl <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3080775/>`_
-.. [5] `Wikipedia entry <https://en.wikipedia.org/wiki/ChIP-sequencing>`_

@@ -12,6 +12,8 @@ This leads directly to the notion of *data types*. Python comes with a number of
 **string**
     specified either using ``''`` or ``""`` around the content of interest. This is just a series of characters. It can be empty (has length 0) or much greater than that [1]_.
 
+.. [1] Immutable means once the variable has been defined, it's value cannot be modified.
+
 .. jupyter-execute::
 
     a = "a string"
@@ -59,6 +61,8 @@ Now we get to "container" data types. These are extremely powerful and wind up b
 
 **list**
     As the name implies, it is a series with (≥ 0) elements. These elements do not have to be the same type (as I illustrate) [2]_.
+
+.. [2] Mutable data types can be modified after creation.
 
 .. jupyter-execute::
 
@@ -212,5 +216,3 @@ These are new to Python, since version 3.6. I'll bundle the int and float into a
     - Make a really large int, formatting for a thousands separator
     - Change the precision of the float
 
-.. [1] Immutable means once the variable has been defined, it's value cannot be modified.
-.. [2] Mutable data types can be modified after creation.

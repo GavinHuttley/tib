@@ -3,6 +3,8 @@ Fixing errors
 
 Every programmer makes errors, it's normal. The most important step towards fixing errors is interpreting the error messages produced by Python. Error messages produced by Python are referred to as "tracebacks" [1]_.
 
+.. [1] See this article_ for a more complete description.
+
 Here's some broken code:
 
 .. jupyter-execute::
@@ -76,7 +78,5 @@ Fix the errors in the following.
     def squared(num):
         return num * 2
 
-
-.. [1] See this article_ for a more complete description.
 
 .. _article: https://realpython.com/python-traceback/

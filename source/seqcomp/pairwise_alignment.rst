@@ -6,6 +6,8 @@ There are optimally efficient algorithms available for pairwise alignment. We fi
 Needleman and Wunsch (NW) [1]_
 ------------------------------
 
+.. [1] Needleman & Wunsch (1970). A general method applicable to the search for similarities in the amino acid sequence of two proteins. Journal of Molecular Biology, 48: 443–453
+
 Compared to the dotplot approach, it allows for more sophisticated "match", i.e. the sequence state may be different but still considered a match. It efficiently (in terms of computation) identifies the optimal "path" through the matrix.
 
 The scoring system
@@ -78,4 +80,3 @@ We apply NW to the two sequences: ``GAGTAC`` and ``GGTAC`` gradually building up
     "**A** :math:`(y=4)`",              "-4",       "-2",        "0",       "-1",        "1",    "**3**",        "2"
     "**C** :math:`(y=5)`",              "-5",       "-3",       "-1",       "-1",        "0",        "2",    "**4**"
 
-.. [1] Needleman & Wunsch (1970). A general method applicable to the search for similarities in the amino acid sequence of two proteins. Journal of Molecular Biology, 48: 443–453

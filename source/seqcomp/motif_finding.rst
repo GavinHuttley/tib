@@ -13,6 +13,8 @@ In the above, I've used the regular expression module (``re``) that's distribute
 
 Alternatively, we could use a "probabilistic model" [1]_. That's what we're going to do now.
 
+.. [1] A probabilistic model is one where a specific outcome is quantified via explicit probability calculation.
+
 Simple probability model for generating sequences
 -------------------------------------------------
 
@@ -37,6 +39,8 @@ PSSMs: Position Specific Scoring Matrices
 Among the simplest probabilistic approaches are PSSMs. A PSSM is a matrix of log-odds ratios per position of a sequence motif. They are also referred to as profiles. They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but also used to characterise protein domains.
 
 Great, where can I get one? Well ... recall JASPAR (the open access database of TFBS profiles) [2]_.
+
+.. [2] *Sandelin et al (2004). JASPAR: an open-access database for eukaryotic transcription factor binding profiles. Nucleic Acids Research, 32(90001), 91D–94*
 
 Below is the TATA box position weight matrix from JASPAR. ::
 
@@ -88,6 +92,8 @@ Pseudo-counts -- handling missing data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Handling small sample sizes is a substantial problem [3]_. The easiest way to tackle it, which we will use here, is to employ a pseudo-count. A pseudo-count is a "synthetic observation" that is added to all the elements in the counts matrix. It eliminates 0 counts and thus precludes cases such as (2) above, where a sequence is otherwise considered impossible. I'll illustrate that using the above example.
+
+.. [3] When sample sizes are large, the effect of adding a pseudo-count is small.
 
 .. jupyter-execute::
 
@@ -144,7 +150,3 @@ PSSM limitations
 
 - if the training data is limited, we need to handle zero counts which may introduce bias
 - we assume bases in a sequence are independent of each other
-
-.. [1] a probabilistic model is one where a specific outcome is quantified via explicit probability calculation
-.. [2] *Sandelin et al (2004). JASPAR: an open-access database for eukaryotic transcription factor binding profiles. Nucleic Acids Research, 32(90001), 91D–94*
-.. [3] When sample sizes are large, the effect of adding a pseudo-count is small.
