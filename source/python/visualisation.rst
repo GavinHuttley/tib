@@ -1,12 +1,7 @@
-.. jupyter-execute::
-    :hide-code:
-
-    import os  # setting the default renderer
-    os.environ['PLOTLY_RENDERER'] = "iframe"
-
-
 Data Visualisation using Plotly
 ===============================
+
+.. todo:: add links to plotly express and a section describing
 
 With ``Plotly``, the basic data structure for defining a plot is a dict. This dict has two components, a "trace" and a "layout".
 
