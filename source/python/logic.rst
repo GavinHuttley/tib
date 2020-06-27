@@ -10,9 +10,21 @@ Indentation can be done using ``\t`` or spaces. In general, it's best to uses sp
 Indentation levels in a file
 ----------------------------
 
-When you are writing scripts, your file **must** have some lines that have no indentation!
+When you are writing scripts, your file **must** have some lines that have no indentation.
 
-.. image:: ../images/indentation_error.png
+Like this.
+
+.. code-block:: python
+    :linenos:
+
+    print("Hello World!")
+
+Not like this!
+
+.. code-block:: python
+    :linenos:
+
+        print("# Correct")
 
 Conditionals
 ------------
