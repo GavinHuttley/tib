@@ -4,6 +4,8 @@ Introduction to Python
 
 .. sectionauthor:: Gavin Huttley
 
+.. todo:: have a section on setting up their own computer
+
 .. toctree::
     :maxdepth: 2
 
