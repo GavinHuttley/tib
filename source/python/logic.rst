@@ -10,8 +10,9 @@ Indentation can be done using ``\t`` or spaces. In general, it's best to uses sp
 Indentation levels in a file
 ----------------------------
 
-When you are writing scripts, your file **must** have some lines that have no indentation.
+.. todo:: define what you mean by indentation
 
+When you are writing scripts, your file **must** have some lines that have no indentation.
 
 .. code-block:: python
     :linenos:
@@ -27,6 +28,8 @@ When you are writing scripts, your file **must** have some lines that have no in
 
 Conditionals
 ------------
+
+.. todo:: define what you mean by conditional
 
 Python conditionals require using the ``:`` (colon) character to complete a statement.
 
@@ -167,3 +170,5 @@ A comment line is a line that is ignored by the interpreter. Comment lines are u
     # this is a comment
 
     a = 2 ** 16
+
+.. todo:: add some exercises regarding conditionals and iteration
