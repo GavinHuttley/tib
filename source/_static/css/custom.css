@@ -14,7 +14,7 @@ div.section > div:not(.section):not(.sidebar)
 		width: 55%;
 	}
 
-div.wy-nav-content div.container.sphinx-bs {
+div.wy-nav-content, div.container.sphinx-bs {
 	margin-left:  0;
 }
 
