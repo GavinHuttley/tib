@@ -33,7 +33,8 @@ Conditionals
 
 Python conditionals require using the ``:`` (colon) character to complete a statement.
 
-.. code:: python
+.. code-block:: python
+    :linenos:
 
     name = "Timbo"
     if name == "Gavin":
@@ -47,7 +48,8 @@ More complicated conditionals
 If you have more than two conditions, you can use ``elif``. The first case is always assessed using ``if``, then ``elif``, and last is ``else``.
 
 .. code:: python
-    
+    :linenos:
+
     name = "Timbo"
     if name == "Gavin":
         greet = "Hello guru"
@@ -108,10 +110,10 @@ Or
 Repetition / Looping / Iteration
 --------------------------------
 
+These are mechanisms for doing exactly the same thing over and over. The primary approaches to doing this are the ``while`` and ``for`` statements. (In general, the ``for`` statement is preferred.)
+
 ``while`` loops
 ^^^^^^^^^^^^^^^
-
-These are mechanisms for doing exactly the same thing over and over. The primary approaches to doing this are the ``while`` and ``for`` statements. (In general, the ``for`` statement is preferred.)
 
 .. jupyter-execute::
     :linenos:
@@ -145,7 +147,7 @@ These are mechanisms for doing exactly the same thing over and over. The primary
     for letter in word:
         print(letter)
 
-.. note:: Strings have the special property of being *iterable*. Many other Python data types that have this property, including lists, tuples, dicts and files.
+.. note:: Strings have the special property of being *iterable*. Many other Python data types also have this property, including lists, tuples, dicts and files.
 
 ``enumerate``, a special ``for`` loop
 """""""""""""""""""""""""""""""""""""
