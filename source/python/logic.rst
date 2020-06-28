@@ -12,17 +12,16 @@ Indentation levels in a file
 
 When you are writing scripts, your file **must** have some lines that have no indentation.
 
-Like this.
 
 .. code-block:: python
     :linenos:
+    :caption: Like this
 
     print("Hello World!")
 
-Not like this!
-
 .. code-block:: python
     :linenos:
+    :caption: Not like this!
 
         print("# Correct")
 
