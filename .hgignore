@@ -29,3 +29,6 @@ draw_results
 *.code-workspace
 coverage.xml
 __pycache__
+
+# to remove later
+*molevol*

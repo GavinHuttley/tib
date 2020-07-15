@@ -1,0 +1,40 @@
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  example-3:
+    name: Doc Build
+    runs-on: 'macos-latest'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+           path: tib
+
+      - name: Make conda environment
+        uses: goanpeca/setup-miniconda@v1
+        with:
+           activate-environment: cogent3
+           environment-file: tib/tib-enf.yml
+           python-version: 3.8
+
+      - shell: bash -l {0}
+        run: |
+          conda activate cogent3
+          conda info
+          conda list
+
+      - name: Build docs
+        shell: bash -l {0}
+        working-directory: tib/source
+        run: |
+          conda activate tib
+          make github
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: tib/docs
+          publish_branch: master
