@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.1. Introduction to programming using Python &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.2. Everyones first program in Python" href="start.html" />
+    <link rel="prev" title="3. Introduction to Python" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Introduction to Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Introduction to programming using Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html">3.2. Everyones first program in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">3.3. Basic arithmetic operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#the-math-module">3.4. The <code class="docutils literal notranslate"><span class="pre">math</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">3.5. Variables and assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">3.6. Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">3.7. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">3.8. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">3.9. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">3.10. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">3.11. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">3.12. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">3.13. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">3.14. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">3.15. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">3.16. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">3.17. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">3.18. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">3.19. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">3.20. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">3.21. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">3.22. Data Visualisation using Plotly</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">3. </span>Introduction to Python</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1. </span>Introduction to programming using Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/intro.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="introduction-to-programming-using-python">
+<h1><span class="section-number">3.1. </span>Introduction to programming using Python<a class="headerlink" href="#introduction-to-programming-using-python" title="Permalink to this headline">¶</a></h1>
+<p>If you have ever used Instagram, or Dropbox or YouTube, then you have used an application written largely in Python. It’s <a class="reference external" href="http://pypl.github.io/PYPL.html">an extremely popular</a> general purpose programming language. For a variety of reasons, it has become even more popular in the sciences – it was integral to at least <a class="reference external" href="https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/">one Nobel Prize</a>.</p>
+<p>It’s worth emphasising a few things up front. We all use software every day. How we interact with that software is exclusively via a graphical user interface (GUI). In contrast, most bioinformatics software does not have a GUI.</p>
+<p>Data analysis software which does have a GUI, represents a barrier to reproducibility. That’s because the steps used to perform an analysis are typically not recorded, so the analysis cannot be “replayed”.</p>
+<p>In this course, we will be developing and using non-GUI software. We will be doing our work in Jupyter notebooks. These provide access to programming environments within a web browser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Text that has <code class="docutils literal notranslate"><span class="pre">this</span></code> font style represents a statement in Python.</p>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Here’s an awesome <a class="reference external" href="http://greenteapress.com/wp/think-python-2e/">open access text book on Python</a>, you can get it for free as a pdf, browse the web version or buy a hard copy. Be sure and read the preface about the history of this book!</p></li>
+<li><p>I encourage you to download this <a class="reference external" href="https://wingware.com/downloads/wingide-personal">free Python IDE</a> for your platform. It is useful for understanding program flow and debugging!</p></li>
+</ul>
+</div>
+<div class="section" id="using-these-notes">
+<h2>Using these notes<a class="headerlink" href="#using-these-notes" title="Permalink to this headline">¶</a></h2>
+<p>The best way for you to learn a programming language is by “doing”. Every place where you see code segments in the notes, you should try it yourself. This act of replicating the code is educational because of the inevitable errors you will make which lead you start exercising your skills in debugging!</p>
+</div>
+<div class="section" id="what-is-a-program">
+<h2>What is a program?<a class="headerlink" href="#what-is-a-program" title="Permalink to this headline">¶</a></h2>
+<p>A program is a series of instructions specifying how to do a computation that is written in a “programming language”. Programming languages have rules about program structure, called <em>Syntax</em>. This can be very much like what you already understand from mathematics, e.g.</p>
+<p>✅ (8+2)</p>
+<p>❌ 8+2)</p>
+</div>
+<div class="section" id="how-a-computer-works">
+<h2>How a computer works<a class="headerlink" href="#how-a-computer-works" title="Permalink to this headline">¶</a></h2>
+<p>In the truly simplest sense! The main components defining execution of a program are <em>inputs</em>, <em>process</em> and <em>outputs</em>. The “program” is the “process” part. A program is defined by <em>source code</em>, instructions written in a text file in a specific language dialect.</p>
+digraph foo {
+rankdir=&quot;LR&quot;
+a [shape=&quot;note&quot; label=&quot;Source code&quot;]
+b [shape=&quot;square&quot; label=&quot;Interpreter&quot;]
+c [shape=&quot;box3d&quot; label=&quot;Output&quot;]
+a -&gt; b -&gt; c;
+}
+<p>There are of course other elements that define a computer. For instance, storage. A <em>hard drive</em> is persistent storage. This is where your documents and programs live. These survive turning of your computer. Programs, documents, etc.., are loaded (or read) from the hard drive into memory. <em>Memory</em> or <em>RAM</em> (random access memory) is volatile storage, meaning if you turn off your computer, what was in RAM is lost.</p>
+</div>
+<div class="section" id="basic-program-elements">
+<h2>Basic program elements<a class="headerlink" href="#basic-program-elements" title="Permalink to this headline">¶</a></h2>
+<p>All programming languages specify “keywords”. These are the logical units from which a program is constructed.</p>
+<dl class="simple">
+<dt><strong>input</strong></dt><dd><p>“Data” provided to a program, e.g. a file, or keyboard input from a user.</p>
+</dd>
+<dt><strong>output</strong></dt><dd><p>The result of applying a program to data.</p>
+</dd>
+<dt><strong>maths</strong></dt><dd><p>operations that you know and love! These involve standard operators, e.g. <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> (multiplication), <code class="docutils literal notranslate"><span class="pre">/</span></code> (division), <code class="docutils literal notranslate"><span class="pre">**</span></code> (power).</p>
+</dd>
+<dt><strong>conditional execution</strong></dt><dd><p>This is a type of “flow control” statement. The conventional keywords are <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> and (in Python) <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p>
+</dd>
+<dt><strong>repetition or looping</strong></dt><dd><p>A type of control statement specifying conditions under which a task is to be repeated. Conventional keywords are <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="errors-debugging">
+<h2>💣 → Errors → Debugging<a class="headerlink" href="#errors-debugging" title="Permalink to this headline">¶</a></h2>
+<p>Dealing with errors is a standard, inevitable, part of programming. The process of fixing errors is termed debugging. You can reduce the number of errors you make in writing a program by breaking the algorithm into small pieces, writing one piece, checking it works and then move onto the next piece.</p>
+<div class="sidebar">
+<p class="sidebar-title">Minimise time fixing errors</p>
+<p>Even if you could write an entire complex algorithm in one go, doing so is a bad idea.</p>
+<p>A multitude of procedures are employed improve the reliability of software, some of which are quite elaborate. But one thing all such approaches have in common is to write a small amount of code and then run it, fixing any errors each time. If the program stops running, you know the responsible code is only what you just entered.</p>
+</div>
+<p>There are different classes of errors:</p>
+<ul class="simple">
+<li><p>Syntax → code is not valid Python</p></li>
+<li><p>Runtime → something bad happened during run</p></li>
+<li><p>Logic → code produces incorrect answers</p></li>
+</ul>
+<p>These errors can cause a program to stop executing. If that happens, Python produces a <em>traceback</em> – a display of the type of error, where (what line) it occurred at and the full series of references in the program that triggered the error. These tracebacks are extremely informative.</p>
+<p>Python has a very extensive set of error types which fall into the Runtime error group. This variety is useful as the type of error provides important clues as to why the program failed.</p>
+<p>The most insidious error type are the Logic errors. In this case, the program can complete and produce output. We deduce there’s a logical error because the output is wrong! This is where writing tests of your software becomes crucial.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="start.html" class="btn btn-neutral float-right" title="3.2. Everyones first program in Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="3. Introduction to Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pairwise alignment using dynamic programming &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">3. Introduction to Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Pairwise alignment using dynamic programming</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/pairwise_alignment.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="pairwise-alignment-using-dynamic-programming">
+<h1>Pairwise alignment using dynamic programming<a class="headerlink" href="#pairwise-alignment-using-dynamic-programming" title="Permalink to this headline">¶</a></h1>
+<p>There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of <em>global alignment</em>.</p>
+<div class="section" id="needleman-and-wunsch-nw-1">
+<h2>Needleman and Wunsch (NW) <a class="footnote-reference brackets" href="#id2" id="id1">1</a><a class="headerlink" href="#needleman-and-wunsch-nw-1" title="Permalink to this headline">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Needleman &amp; Wunsch (1970). A general method applicable to the search for similarities in the amino acid sequence of two proteins. Journal of Molecular Biology, 48: 443–453</p>
+</dd>
+</dl>
+<p>Compared to the dotplot approach, it allows for more sophisticated “match”, i.e. the sequence state may be different but still considered a match. It efficiently (in terms of computation) identifies the optimal “path” through the matrix.</p>
+<div class="section" id="the-scoring-system">
+<h3>The scoring system<a class="headerlink" href="#the-scoring-system" title="Permalink to this headline">¶</a></h3>
+<p>We will start by using the exact same <em>scoring matrix</em> as NW <a class="footnote-reference brackets" href="#id2" id="id3">1</a>:</p>
+<ul class="simple">
+<li><p>states matched, score = 1</p></li>
+<li><p>states mismatched, score = -1</p></li>
+<li><p>gap insertion / deletion (<span class="math notranslate nohighlight">\(\delta\)</span>), score = -1</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a linear gap score</p>
+</div>
+</div>
+<div class="section" id="scored-match-mismatch">
+<h3>Scored match / mismatch<a class="headerlink" href="#scored-match-mismatch" title="Permalink to this headline">¶</a></h3>
+<p>We construct a matrix <span class="math notranslate nohighlight">\(F\)</span>, such that <span class="math notranslate nohighlight">\(F[i, j]\)</span> is the score for the <em>best</em> alignment up to <span class="math notranslate nohighlight">\(i,j\)</span>. <span class="math notranslate nohighlight">\(F\)</span> is built recursively using the following cases:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F[i,j] = \max
+\begin{cases}
+F[i-1, j-1] + score(S_1[i], S_2[j])\\
+F[i-1, j] + \delta\\
+F[i, j-1] + \delta\\
+\end{cases}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(score(S_1[i], S_2[j])\)</span> is the <em>score</em> for the match of position <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> from sequences <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> respectively.</p>
+<p>If we set <span class="math notranslate nohighlight">\(i=1,j=1\)</span>, then the possible alignment paths leading to cell <span class="math notranslate nohighlight">\(X[i,j]\)</span> are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((i,j-1)\)</span>, from <span class="math notranslate nohighlight">\(\leftarrow\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((i-1,j)\)</span>, from <span class="math notranslate nohighlight">\(\uparrow\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((i-1,j-1)\)</span>, from <span class="math notranslate nohighlight">\(\nwarrow\)</span></p></li>
+</ul>
+<p>We arrive at <span class="math notranslate nohighlight">\(F[1, 1]\)</span>, <span class="math notranslate nohighlight">\(X\)</span>, by adding <span class="math notranslate nohighlight">\(\delta\)</span> to the <span class="math notranslate nohighlight">\(F\)</span> from each of the possible flanking cells and take the maximum of these. (<span class="math notranslate nohighlight">\(\delta\)</span> is the mismatch and gap insertion penalties equal <span class="math notranslate nohighlight">\(-1\)</span>.)</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">The 3 possible paths leading to cell <span class="math notranslate nohighlight">\(F[i, j]\)</span></span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>seq1 / seq2</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\delta\)</span></p></th>
+<th class="head"><p><strong>G</strong> (j=0)</p></th>
+<th class="head"><p><strong>A</strong> (j=1)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\delta\)</span></p></td>
+<td><p>0</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>G</strong> (i=0)</p></td>
+<td></td>
+<td><p><span class="math notranslate nohighlight">\([i-1,j-1]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([i-1,j]\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>G</strong> (i=1)</p></td>
+<td></td>
+<td><p><span class="math notranslate nohighlight">\([i,j-1]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\leftarrow \nwarrow \uparrow\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="demonstrating-nw-on-an-example">
+<h2>Demonstrating NW on an example<a class="headerlink" href="#demonstrating-nw-on-an-example" title="Permalink to this headline">¶</a></h2>
+<p>We apply NW to the two sequences: <code class="docutils literal notranslate"><span class="pre">GAGTAC</span></code> and <code class="docutils literal notranslate"><span class="pre">GGTAC</span></code> gradually building up the algorithmic components in Python. We first define the scoring function:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">val</span>
+
+<span class="n">score_func</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">score_func</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">score_func</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">The completed score matrix</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathbf \delta(x=0)\)</span></p></th>
+<th class="head"><p>G <span class="math notranslate nohighlight">\((x=1)\)</span></p></th>
+<th class="head"><p>A <span class="math notranslate nohighlight">\((x=2)\)</span></p></th>
+<th class="head"><p>G <span class="math notranslate nohighlight">\((x=3)\)</span></p></th>
+<th class="head"><p>T <span class="math notranslate nohighlight">\((x=4)\)</span></p></th>
+<th class="head"><p>A <span class="math notranslate nohighlight">\((x=5)\)</span></p></th>
+<th class="head"><p>C <span class="math notranslate nohighlight">\((x=6)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\delta(y=0)\)</span></p></td>
+<td><p><strong>0</strong></p></td>
+<td><p>-1</p></td>
+<td><p>-2</p></td>
+<td><p>-3</p></td>
+<td><p>-4</p></td>
+<td><p>-5</p></td>
+<td><p>-6</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>G</strong> <span class="math notranslate nohighlight">\((y=1)\)</span></p></td>
+<td><p>-1</p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>0</strong></p></td>
+<td><p>-1</p></td>
+<td><p>-2</p></td>
+<td><p>-3</p></td>
+<td><p>-4</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>G</strong> <span class="math notranslate nohighlight">\((y=2)\)</span></p></td>
+<td><p>-2</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p><strong>1</strong></p></td>
+<td><p>0</p></td>
+<td><p>-1</p></td>
+<td><p>-2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>T</strong> <span class="math notranslate nohighlight">\((y=3)\)</span></p></td>
+<td><p>-3</p></td>
+<td><p>-1</p></td>
+<td><p>-1</p></td>
+<td><p>0</p></td>
+<td><p><strong>2</strong></p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>A</strong> <span class="math notranslate nohighlight">\((y=4)\)</span></p></td>
+<td><p>-4</p></td>
+<td><p>-2</p></td>
+<td><p>0</p></td>
+<td><p>-1</p></td>
+<td><p>1</p></td>
+<td><p><strong>3</strong></p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C</strong> <span class="math notranslate nohighlight">\((y=5)\)</span></p></td>
+<td><p>-5</p></td>
+<td><p>-3</p></td>
+<td><p>-1</p></td>
+<td><p>-1</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p><strong>4</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

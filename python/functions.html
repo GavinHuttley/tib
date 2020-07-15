@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.10. Functions and methods &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.11. Getting help" href="dir_help.html" />
+    <link rel="prev" title="3.9. Fixing errors" href="interpreting_errors.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">3.1. Introduction to programming using Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html">3.2. Everyones first program in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">3.3. Basic arithmetic operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#the-math-module">3.4. The <code class="docutils literal notranslate"><span class="pre">math</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">3.5. Variables and assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">3.6. Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">3.7. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">3.8. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">3.9. Fixing errors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.10. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">3.11. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">3.12. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">3.13. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">3.14. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">3.15. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">3.16. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">3.17. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">3.18. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">3.19. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">3.20. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">3.21. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">3.22. Data Visualisation using Plotly</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">3. </span>Introduction to Python</a> &raquo;</li>
+        
+      <li><span class="section-number">3.10. </span>Functions and methods</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/functions.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="functions-and-methods">
+<h1><span class="section-number">3.10. </span>Functions and methods<a class="headerlink" href="#functions-and-methods" title="Permalink to this headline">¶</a></h1>
+<p>This is a central concept in programming. It provides a means of encapsulating several lines of code (that do something useful) and providing a reference such that this block can be called in multiple places in a larger program.</p>
+<div class="section" id="builtin-functions">
+<h2>Builtin functions<a class="headerlink" href="#builtin-functions" title="Permalink to this headline">¶</a></h2>
+<p>We have already been using some built-in functions. These are <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">type()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>, etc.</p>
+<p>Here are the key patterns to using functions that you need to remember.</p>
+<ol class="arabic simple">
+<li><p>They have a name by which you refer to them, e.g. <code class="docutils literal notranslate"><span class="pre">print</span></code> or <code class="docutils literal notranslate"><span class="pre">type</span></code></p></li>
+<li><p>You “invoke” or “call” a function using <code class="docutils literal notranslate"><span class="pre">()</span></code> after the name. Hence <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p></li>
+<li><p>Typically, functions take “arguments”. An argument, is a variable that will be operated on by the function. For example:</p></li>
+</ol>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Hello World
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above, the argument is <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
+<p>The built in functions <code class="docutils literal notranslate"><span class="pre">range()</span></code> and <code class="docutils literal notranslate"><span class="pre">sum()</span></code> are widely used. The former for generating the range of indices required to loop over elements in a series. The latter is as the name implies. For more detailed information about their capabilities, use the builtin <code class="docutils literal notranslate"><span class="pre">help()</span></code> function!</p>
+</div>
+<div class="section" id="python-is-an-object-oriented-language">
+<h2>Python is an object oriented language<a class="headerlink" href="#python-is-an-object-oriented-language" title="Permalink to this headline">¶</a></h2>
+<p>A precursor to understanding methods is to understand what is meant by an “object”.</p>
+<p>As the title states, Python belongs to a class of programming languages called “object oriented”. The success of “object oriented” programming languages (there are many) arise (at least in part) from the fact they encourage modularisation of code. This modularisation reduces the number of lines of code and makes the resulting programs easier to write, to check for bugs, and thus to maintain.</p>
+<p>So what is an “object”? It’s an abstract concept, but in essence an object represents something. It can be a number, a string, a file, etc.. Thus “objects” are instances of a type of data.</p>
+<p>So what’s an instance? An instance is an occurrence of a type of data, which will have a location in memory that is different to other occurrences of the same type of data. I’ll use the built-in function <code class="docutils literal notranslate"><span class="pre">id()</span></code> (which returns a unique identifier, related to the address in memory):</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140223354255360
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140223354694848
+</pre></div>
+</div>
+</div>
+</div>
+<p>Although <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are equivalently defined – both lists of exactly the same integers – they are not the same instance.</p>
+<div class="topic">
+<p class="topic-title">You Try</p>
+<p>What comparison operators can you use to confirm my statements regarding same value and different instance?</p>
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<p>Which leads us to methods. A method is a function bound to a specific object that applies to the data encapsulated in that instance.</p>
+<p>This means that when you call a method on one object, it only operates on that object. I’ll demonstrate that by using a method on lists to reverse the elements.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[3, 2, 1, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can see that <code class="docutils literal notranslate"><span class="pre">a</span></code> was affected, while <code class="docutils literal notranslate"><span class="pre">b</span></code> was not.</p>
+<p>It’s of course also possible to have used a function for this, and such a function already exists in python, <code class="docutils literal notranslate"><span class="pre">reversed</span></code>. We could have done <code class="docutils literal notranslate"><span class="pre">reversed(a)</span></code> instead (although it’s not quite so simple since <code class="docutils literal notranslate"><span class="pre">reversed</span></code> returns a “generator”, which we will get to later).</p>
+<p>So with a method, it operates on the specific instance of data to which it’s bound. For a function, you need to explicitly provide the data to the function as an argument.</p>
+<p>Here are the key patterns for using a method:</p>
+<ol class="arabic simple">
+<li><p>You access them (which is also known as referencing them) using the <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code> notation, e.g. <code class="docutils literal notranslate"><span class="pre">some_variable.a_bound_method</span></code> where the instance is <code class="docutils literal notranslate"><span class="pre">some_variable</span></code> and the method is <code class="docutils literal notranslate"><span class="pre">a_bound_method</span></code>.</p></li>
+<li><p>You use them like all functions (see the above), except you do not provide the data, e.g. <code class="docutils literal notranslate"><span class="pre">some_variable.a_bound_method()</span></code>.</p></li>
+</ol>
+<p>Simple!</p>
+</div>
+<div class="section" id="a-useful-trick-for-concatenating-strings">
+<h2>A useful trick for concatenating strings<a class="headerlink" href="#a-useful-trick-for-concatenating-strings" title="Permalink to this headline">¶</a></h2>
+<p>Getting help on a string method that can be used to concatenate.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Help on built-in function join:
+
+join(iterable, /) method of builtins.str instance
+    Concatenate any number of strings.
+    
+    The string whose method is called is inserted in between each given string.
+    The result is returned as a new string.
+    
+    Example: &#39;.&#39;.join([&#39;ab&#39;, &#39;pq&#39;, &#39;rs&#39;]) -&gt; &#39;ab.pq.rs&#39;
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All elements of the series must be of type <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AAA&quot;</span><span class="p">,</span> <span class="s2">&quot;CCC&quot;</span><span class="p">]</span>
+<span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AAACCC&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AAA-CCC&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AAA\tCCC&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dir_help.html" class="btn btn-neutral float-right" title="3.11. Getting help" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="interpreting_errors.html" class="btn btn-neutral float-left" title="3.9. Fixing errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

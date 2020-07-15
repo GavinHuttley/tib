@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.21. Pulling it together – writing your own programs &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.22. Data Visualisation using Plotly" href="visualisation.html" />
+    <link rel="prev" title="3.20. Miscellaneous Python features" href="misc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">3.1. Introduction to programming using Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html">3.2. Everyones first program in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">3.3. Basic arithmetic operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#the-math-module">3.4. The <code class="docutils literal notranslate"><span class="pre">math</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">3.5. Variables and assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">3.6. Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">3.7. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">3.8. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">3.9. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">3.10. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">3.11. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">3.12. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">3.13. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">3.14. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">3.15. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">3.16. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">3.17. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">3.18. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">3.19. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">3.20. Miscellaneous Python features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.21. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">3.22. Data Visualisation using Plotly</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">3. </span>Introduction to Python</a> &raquo;</li>
+        
+      <li><span class="section-number">3.21. </span>Pulling it together – writing your own programs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/how_to_write_a_program.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="pulling-it-together-writing-your-own-programs">
+<h1><span class="section-number">3.21. </span>Pulling it together – writing your own programs<a class="headerlink" href="#pulling-it-together-writing-your-own-programs" title="Permalink to this headline">¶</a></h1>
+<p>While it can seem daunting, the key to writing a program is to just start typing.</p>
+<p>First, do you need to open a file for reading? Then that’s the first piece of code you write.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">datafile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;some-data.txt&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
+<span class="n">datafile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Second, what type of data are you going to be handling? If you can, it’s a good idea to make a really small sample data file. You can do this by grabbing a larger one and editing it down to be small (say just a few records). Having a small file means you know exactly what’s in there, and your program should run really quick.</p>
+<p>When you’ve got the sample data organised, think about what you’re supposed to be producing. Do you need to produce a certain type of data structure? For example, a dictionary with “labels” as keys and the biological sequence as the “value”. In this example, you know then there are two different types of information you need to extract from your file and that the program must satisfy 3 criteria:</p>
+<ol class="arabic simple">
+<li><p>extracts sequence labels correctly</p></li>
+<li><p>extracts sequences correctly</p></li>
+<li><p>associates labels and sequences correctly, i.e. “label1” is the key for “sequence1”.</p></li>
+</ol>
+<p>Broken down like this, it becomes the case that you solve one of these pieces at a time. Solving means write the code and a test that (given known input) checks your code produces the correct output.</p>
+<p>This approach then becomes the foundation for an algorithm with modular design. A modular approach to implementing software makes it easier to validate correctness of the code.</p>
+<p>One approach to modularising code is to write a number of functions which are then used to build more extensive programs. Some good pointers for whether some code should be written as function are:</p>
+<ul class="simple">
+<li><p>the code is likely to be useful in multiple locations, so making it a function will eliminate redundancy</p></li>
+<li><p>the code is relatively short (say under 100 lines) and its correctness is critical to overall correctness of a program</p></li>
+</ul>
+<p>Either of these is sufficient reason to write a function.</p>
+<p>Building a program from functions requires only that the function is defined before it is used and that it is in the name space where it is to be used. So for the example I’ve given above, you have two functions you could write.</p>
+<p>That said, don’t be too rigid in how you approach a problem. It may be that keeping things as separate functions doesn’t “work well”. But it never hurts to start writing in that way.</p>
+<p>I illustrate the semantics of this process here using a simple numerical example of computing some summary statistics. The <code class="docutils literal notranslate"><span class="pre">get_summary_stats</span></code> functions is an example of a <em>wrapper function</em>. It’s primary purpose is to call two other functions without any additional computations.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns the mean of x&quot;&quot;&quot;</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">total</span> <span class="o">/</span> <span class="n">num</span>
+
+<span class="k">assert</span> <span class="n">mean</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span> <span class="o">==</span> <span class="mf">6.0</span><span class="p">,</span> <span class="s2">&quot;error in mean calculation&quot;</span>
+
+<span class="k">def</span> <span class="nf">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns the sample standard deviation of x given mu (the mean of x).&quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">variance</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">element</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">variance</span> <span class="o">+=</span> <span class="n">val</span>
+    <span class="n">variance</span> <span class="o">/=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># sample std dev</span>
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="nb">round</span><span class="p">(</span><span class="n">std</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">6</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mf">4.6904</span><span class="p">,</span> <span class="s2">&quot;error in calculating std dev&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>We can now use the <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span></code> functions with confidence.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_summary_stats</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns the mean and sample standard deviation&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Cannot compute mean, std on zero-length array&quot;</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">std_dev</span> <span class="o">=</span> <span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mu</span><span class="p">,</span> <span class="n">std_dev</span>
+
+<span class="n">mu</span><span class="p">,</span> <span class="n">std_dev</span> <span class="o">=</span> <span class="n">get_summary_stats</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">std_dev</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(9.5, 5.916079783099616)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="visualisation.html" class="btn btn-neutral float-right" title="3.22. Data Visualisation using Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="misc.html" class="btn btn-neutral float-left" title="3.20. Miscellaneous Python features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

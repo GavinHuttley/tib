@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Finding motifs &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">3. Introduction to Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Finding motifs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/motif_finding.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="finding-motifs">
+<h1>Finding motifs<a class="headerlink" href="#finding-motifs" title="Permalink to this headline">¶</a></h1>
+<p>So how do we find occurrences of a motif that is “noisy”? If we use the consensus approach, it’s trivial –  exact string match. For the IUPAC ambiguity case, it’s also quite trivial – we could use a regular expression, e.g.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;T[CT][ACT][GCT][AC]&quot;</span><span class="p">,</span> <span class="s2">&quot;AGCGTTTCTCAGATGCA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;TTCTC&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above, I’ve used the regular expression module (<code class="docutils literal notranslate"><span class="pre">re</span></code>) that’s distributed with python.</p>
+<p>Alternatively, we could use a “probabilistic model” <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. That’s what we’re going to do now.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>A probabilistic model is one where a specific outcome is quantified via explicit probability calculation.</p>
+</dd>
+</dl>
+<div class="section" id="simple-probability-model-for-generating-sequences">
+<h2>Simple probability model for generating sequences<a class="headerlink" href="#simple-probability-model-for-generating-sequences" title="Permalink to this headline">¶</a></h2>
+<p>Assume the probabilities of nucleotides are <span class="math notranslate nohighlight">\(p_A=0.1\)</span>, <span class="math notranslate nohighlight">\(p_C=0.2\)</span>, <span class="math notranslate nohighlight">\(p_G=0.3\)</span>  and <span class="math notranslate nohighlight">\(p_T=0.4\)</span>. We can calculate the probability of observing the following sequence as</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;AGGTC&quot;</span>
+<span class="n">probs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">p_seq</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+    <span class="n">p_seq</span> <span class="o">*=</span> <span class="n">probs</span><span class="p">[</span><span class="n">base</span><span class="p">]</span>
+<span class="n">p_seq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.00072
+</pre></div>
+</div>
+</div>
+</div>
+<p>For this probability to be an accurate reflection of the true expected frequency of <code class="docutils literal notranslate"><span class="pre">seq</span></code> requires that nucleotides occur independently of each other. Hence, we can just use the product of the individual nucleotide probabilities. (The alternate is a Markov process with order ≥ 1.)</p>
+<p>When we consider modelling a sequence motif, however, we use position specific probabilities, i.e. there would be a distinct <code class="docutils literal notranslate"><span class="pre">probs</span></code> for each position of a motif. This is the foundation of PSSMs.</p>
+</div>
+<div class="section" id="pssms-position-specific-scoring-matrices">
+<h2>PSSMs: Position Specific Scoring Matrices<a class="headerlink" href="#pssms-position-specific-scoring-matrices" title="Permalink to this headline">¶</a></h2>
+<p>Among the simplest probabilistic approaches are PSSMs. A PSSM is a matrix of log-odds ratios per position of a sequence motif. They are also referred to as profiles. They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but also used to characterise protein domains.</p>
+<p>Great, where can I get one? Well … recall JASPAR (the open access database of TFBS profiles) <a class="footnote-reference brackets" href="#id4" id="id3">2</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p><em>Sandelin et al (2004). JASPAR: an open-access database for eukaryotic transcription factor binding profiles. Nucleic Acids Research, 32(90001), 91D–94</em></p>
+</dd>
+</dl>
+<p>Below is the TATA box position weight matrix from JASPAR.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>  <span class="p">[</span> <span class="mi">61</span>  <span class="mi">16</span> <span class="mi">352</span>   <span class="mi">3</span> <span class="mi">354</span> <span class="mi">268</span> <span class="mi">360</span> <span class="mi">222</span> <span class="mi">155</span>  <span class="mi">56</span>  <span class="mi">83</span>  <span class="mi">82</span>  <span class="mi">82</span>  <span class="mi">68</span>  <span class="mi">77</span> <span class="p">]</span>
+<span class="n">C</span>  <span class="p">[</span><span class="mi">145</span>  <span class="mi">46</span>   <span class="mi">0</span>  <span class="mi">10</span>   <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">3</span>   <span class="mi">2</span>  <span class="mi">44</span> <span class="mi">135</span> <span class="mi">147</span> <span class="mi">127</span> <span class="mi">118</span> <span class="mi">107</span> <span class="mi">101</span> <span class="p">]</span>
+<span class="n">G</span>  <span class="p">[</span><span class="mi">152</span>  <span class="mi">18</span>   <span class="mi">2</span>   <span class="mi">2</span>   <span class="mi">5</span>   <span class="mi">0</span>  <span class="mi">20</span>  <span class="mi">44</span> <span class="mi">157</span> <span class="mi">150</span> <span class="mi">128</span> <span class="mi">128</span> <span class="mi">128</span> <span class="mi">139</span> <span class="mi">140</span> <span class="p">]</span>
+<span class="n">T</span>  <span class="p">[</span> <span class="mi">31</span> <span class="mi">309</span>  <span class="mi">35</span> <span class="mi">374</span>  <span class="mi">30</span> <span class="mi">121</span>   <span class="mi">6</span> <span class="mi">121</span>  <span class="mi">33</span>  <span class="mi">48</span>  <span class="mi">31</span>  <span class="mi">52</span>  <span class="mi">61</span>  <span class="mi">75</span>  <span class="mi">71</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>In this case, the PSSM has length 15. This motif is on display at <a class="reference external" href="http://jaspar.genereg.net/cgi-bin/jaspar_db.pl?ID=MA0108.2&amp;rm=present&amp;collection=CORE">JASPAR</a> (but note their web server can be quite slow).</p>
+</div>
+<div class="section" id="formal-definition-of-the-probability-model">
+<h2>Formal definition of the probability model<a class="headerlink" href="#formal-definition-of-the-probability-model" title="Permalink to this headline">¶</a></h2>
+<p>We now layout the equations for computing the probability of a sequence. To start, we make some simplifying assumptions. Namely, we assume a counts matrix reflects the true underlying probabilities of bases per position of a motif; that each base in a motif occurs independently of the other bases. We can compute the probability under the PPM (position probability matrix) model <cite>M</cite> of a sequence <cite>x</cite> with length <cite>L</cite> as:</p>
+<div class="math notranslate nohighlight">
+\[P(x|M)=\Pi_{i=0}^L p_i(x_i)\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_i\)</span> is the base at position <cite>i</cite>. This probability can also be referred to as the <em>odds</em> of observing the sequence given the model <cite>M</cite>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the <span class="math notranslate nohighlight">\(\Pi\)</span> symbol means “take the product of the series”. So what <span class="math notranslate nohighlight">\(\sum\)</span> is to addition, <span class="math notranslate nohighlight">\(\Pi\)</span> is for multiplication.</p>
+</div>
+<div class="section" id="a-worked-example">
+<h3>A worked example<a class="headerlink" href="#a-worked-example" title="Permalink to this headline">¶</a></h3>
+<p>Consider the following hypothetical matrix</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>  <span class="p">[</span> <span class="mi">61</span>  <span class="mi">16</span> <span class="mi">389</span>   <span class="mi">3</span> <span class="p">]</span>
+<span class="n">C</span>  <span class="p">[</span><span class="mi">145</span>  <span class="mi">46</span>   <span class="mi">0</span>  <span class="mi">10</span> <span class="p">]</span>
+<span class="n">G</span>  <span class="p">[</span><span class="mi">152</span>  <span class="mi">18</span>   <span class="mi">0</span>   <span class="mi">2</span> <span class="p">]</span>
+<span class="n">T</span>  <span class="p">[</span> <span class="mi">31</span> <span class="mi">309</span>   <span class="mi">0</span> <span class="mi">374</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>which produces the following position specific probability matrix</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">[</span> <span class="mf">0.16</span>  <span class="mf">0.04</span>  <span class="mf">1.00</span>  <span class="mf">0.01</span> <span class="p">]</span>
+<span class="n">C</span> <span class="p">[</span> <span class="mf">0.37</span>  <span class="mf">0.12</span>  <span class="mf">0.00</span>  <span class="mf">0.03</span> <span class="p">]</span>
+<span class="n">G</span> <span class="p">[</span> <span class="mf">0.39</span>  <span class="mf">0.05</span>  <span class="mf">0.00</span>  <span class="mf">0.01</span> <span class="p">]</span>
+<span class="n">T</span> <span class="p">[</span> <span class="mf">0.08</span>  <span class="mf">0.79</span>  <span class="mf">0.00</span>  <span class="mf">0.96</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>The conditional probability of the sequence:</p>
+<p><em>1.</em> <code class="docutils literal notranslate"><span class="pre">GTAT</span></code>, is <span class="math notranslate nohighlight">\(0.39 \times 0.79 \times 1.0 \times 0.96 \approx 0.3\)</span></p>
+<p><em>2.</em> <code class="docutils literal notranslate"><span class="pre">GTCT</span></code>, is <span class="math notranslate nohighlight">\(0.39 \times 0.79 \times 0.0 \times 0.96 = 0.0\)</span></p>
+<p>The latter case is potentially real – binding only happens with A at the 3rd position – but most likely due to a finite sized training data set. In other words, if the training set had been much larger we may have observed the other bases at that position.</p>
+</div>
+<div class="section" id="pseudo-counts-handling-missing-data">
+<h3>Pseudo-counts – handling missing data<a class="headerlink" href="#pseudo-counts-handling-missing-data" title="Permalink to this headline">¶</a></h3>
+<p>Handling small sample sizes is a substantial problem <a class="footnote-reference brackets" href="#id6" id="id5">3</a>. The easiest way to tackle it, which we will use here, is to employ a pseudo-count. A pseudo-count is a “synthetic observation” that is added to all the elements in the counts matrix. It eliminates 0 counts and thus precludes cases such as (2) above, where a sequence is otherwise considered impossible. I’ll illustrate that using the above example.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>When sample sizes are large, the effect of adding a pseudo-count is small.</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span>
+
+<span class="n">counts</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mi">61</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">389</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">145</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">152</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">309</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">374</span><span class="p">]]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Then we add our pseudo-count.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">counts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 62,  17, 390,   4],
+       [146,  47,   1,  11],
+       [153,  19,   1,   3],
+       [ 32, 310,   1, 375]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We determine our new columns sums</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">col_sums</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">col_sums</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([393, 393, 393, 393])
+</pre></div>
+</div>
+</div>
+</div>
+<p>and produce a revised position specific probability matrix</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ppm</span> <span class="o">=</span> <span class="n">counts</span> <span class="o">/</span> <span class="n">col_sums</span>
+<span class="n">ppm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.15776081, 0.043257  , 0.99236641, 0.01017812],
+       [0.37150127, 0.11959288, 0.00254453, 0.02798982],
+       [0.38931298, 0.04834606, 0.00254453, 0.00763359],
+       [0.08142494, 0.78880407, 0.00254453, 0.95419847]])
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>In order to assess whether a sequence might be consistent with a PSSM, we need a way of scoring them. This is done by converting a the Position specific Probability Matrix (PPM) to a log-odds ratio. In short, we compare the odds of observing a base compared to its odds from a background distribution.</p>
+<p>For convenience, define the background distribution of sequence states to be equally frequent. Then the odds ratio is:</p>
+<div class="math notranslate nohighlight">
+\[OR(x|M)=\Pi_{i=0}^L \frac{p_i(x_i)}{0.25}\]</div>
+<p>Which is expressed as a log-odds score <cite>S</cite>:</p>
+<div class="math notranslate nohighlight">
+\[S=\sum_{i=0}^L \log p_i(x_i) - \log 0.25\]</div>
+<p>We then interpret the values of <cite>S</cite> as</p>
+<ul class="simple">
+<li><p>if S=0, the sequence is equally likely in the PSSM and background</p></li>
+<li><p>if S&lt;0, the sequence is less likely under the PSSM than background</p></li>
+<li><p>if S&gt;0, the sequence is more likely under the PSSM than background</p></li>
+</ul>
+</div>
+<div class="section" id="pssm-limitations">
+<h3>PSSM limitations<a class="headerlink" href="#pssm-limitations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>if the training data is limited, we need to handle zero counts which may introduce bias</p></li>
+<li><p>we assume bases in a sequence are independent of each other</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

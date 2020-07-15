@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sequence Comparison &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">3. Introduction to Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Sequence Comparison</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="sequence-comparison">
+<h1>Sequence Comparison<a class="headerlink" href="#sequence-comparison" title="Permalink to this headline">¶</a></h1>
+<p><em>Section author: Gavin Huttley</em></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction to Comparison of Biological Sequences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#the-role-of-sequence-in-encoding-life">The role of sequence in encoding life</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="related_by_descent.html">Descended from a common ancestor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotplot.html">Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pairwise_alignment.html">Pairwise alignment using dynamic programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#needleman-and-wunsch-nw-1">Needleman and Wunsch (NW) </a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#demonstrating-nw-on-an-example">Demonstrating NW on an example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="motifs.html">Motifs – short biological sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motif_finding.html">Finding motifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html#simple-probability-model-for-generating-sequences">Simple probability model for generating sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html#pssms-position-specific-scoring-matrices">PSSMs: Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html#formal-definition-of-the-probability-model">Formal definition of the probability model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="related_by_function.html">Experimental procedures for detecting functionally related sequences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html#selex-systematic-evolution-of-ligands-by-exponential-enrichment">SELEX – Systematic evolution of ligands by exponential enrichment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html#chip-chromatin-immunoprecipitation">ChIP – chromatin immunoprecipitation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html#with-the-sequence-data-from-those-experimental-procedures">With the sequence data from those experimental procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html#transformation-of-the-data-for-analysis">Transformation of the data for analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="information.html">Measuring information using Shannon’s entropy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="information.html#measuring-entropy-for-a-simple-alignment">Measuring entropy for a simple alignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#information-at-a-position">Information at a position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#problems-with-sequence-logo">Problems with sequence logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#using-relative-entropy-as-an-alternate">Using relative entropy as an alternate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation">An illustration of the difference – identifying neighbouring base effects on mutation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pssm.html">Position Specific Scoring Matrices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html#a-worked-example">A worked example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="odds_ratios.html">Odds-ratio’s</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html#log-odds-the-logarithm-variant">Log-odds – the logarithm variant</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

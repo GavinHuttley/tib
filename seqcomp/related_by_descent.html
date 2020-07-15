@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Descended from a common ancestor &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">3. Introduction to Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Descended from a common ancestor</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/related_by_descent.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="descended-from-a-common-ancestor">
+<h1>Descended from a common ancestor<a class="headerlink" href="#descended-from-a-common-ancestor" title="Permalink to this headline">¶</a></h1>
+<p>Darwin posed heritable variation that affected the individual’s ability to survive and reproduce as the basis for evolution. He did not have a mechanism for how inheritance occurred <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Well he did have a model, but it was disproved by his cousin, Francis Galton, a major figure in the history of statistics.</p>
+</dd>
+</dl>
+<p>Gregor Mendel was the discoverer of the core principles of genetics (although he did not use that term), publishing his work in 1865. Unfortunately, Mendel’s work was largely ignored for 35 years until after it was replicated by 3 botanists (de Vries, Correns, and von Tschermak-Seysenegg). It took another 53 years before Watson and Crick presented evidence for the physical structure of the hereditary molecule – DNA.</p>
+<p>In the 1920-40’s, seminal work done by Sewall Wright, J. B. S. Haldane, Ronald Fisher, Theodosius Dobzhansky and others established what is referred to as the “Neo-Darwinian Synthesis”. This work re-express Darwin’s work in terms of genetical mechanisms of inheritance. The work is dominantly mathematical, constitutes the foundations of population genetics and provides the basis from which we view the distribution of genetic variation.</p>
+<p>Another major development that further solidifies the foundations from which we interpret genetic variation was the work of Motoo Kimura on the Neutral Theory of Molecular Evolution. (As in all the above, there were numerous other contributors to development of these ideas and theory.)</p>
+<p>The upshot of all this work is the following understanding (albeit a gross simplification).</p>
+<ul class="simple">
+<li><p>All individuals on the planet ultimately descended from a common ancestor.</p></li>
+<li><p>Both parents transmit hereditary information to progeny <a class="footnote-reference brackets" href="#id4" id="id3">2</a></p></li>
+<li><p>Hereditary information is encoded in DNA</p></li>
+<li><p>Each position in a DNA sequence derived from a residue in an ancestor</p></li>
+<li><p>Processes affecting genetic variation within species affect genetic divergence between species</p></li>
+</ul>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>For diploid, sexually reproducing organisms.</p>
+</dd>
+</dl>
+<p>How we connect biological sequence data to biological process arises from the implications of the crucial discoveries by these individuals. (NOTE: this will be expanded on an can extremely important way the the Molecular Evolution module.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="o">|</span>
+  <span class="o">+--------</span><span class="n">ACAGT</span><span class="o">--------+</span>     <span class="n">Ancestor</span>
+  <span class="o">|</span>                     <span class="o">|</span>
+  <span class="o">|</span>                   <span class="n">AxxxT</span>   <span class="mi">3</span> <span class="n">bp</span> <span class="n">deletion</span>
+  <span class="o">|</span>                     <span class="o">|</span>
+<span class="n">ACAGT</span>                  <span class="n">AT</span>     <span class="n">Sampled</span> <span class="n">sequences</span>
+
+<span class="n">seq1</span>                  <span class="n">seq2</span>
+</pre></div>
+</div>
+<p>But we typically do not observe the process and must infer an <em>alignment</em> that can be applied to deduce what happened.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq1</span>  <span class="n">ACAGT</span>
+<span class="n">seq2</span>  <span class="n">A</span><span class="o">---</span><span class="n">T</span>
+</pre></div>
+</div>
+<p>OR</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq1</span>  <span class="n">ACAGT</span>
+<span class="n">seq2</span>  <span class="o">--</span><span class="n">A</span><span class="o">-</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

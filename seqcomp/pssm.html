@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Position Specific Scoring Matrices &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">3. Introduction to Python</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Position Specific Scoring Matrices</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/pssm.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="position-specific-scoring-matrices">
+<h1>Position Specific Scoring Matrices<a class="headerlink" href="#position-specific-scoring-matrices" title="Permalink to this headline">¶</a></h1>
+<p>A Position Specific Scoring Matrix, or PSSM, is a matrix of log-odds ratios per position of a sequence motif (also called profiles). They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but are also used to characterise protein domains.</p>
+<p>See <a class="reference internal" href="related_by_function.html#experimental-data"><span class="std std-ref">Experimental procedures for detecting functionally related sequences</span></a> for how the counts data are derived. To illustrate the transformation of those counts data into a PSSM, we will start with a simple worked example. First we take the counts table presented in <a class="reference internal" href="related_by_function.html#pssm-origins"><span class="std std-ref">Transformation of the data for analysis</span></a>.</p>
+<p>We convert the PWM into a PPM, but I’m restricting the examples to just 4 positions.</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">PPM --</span><br><span class="cell_legend">Position specific probability matrix</span></caption>
+<thead class="head_cell">
+<th>Base \ Position</th>
+<th>0</th>
+<th>1</th>
+<th>3</th>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>0.2000</td>
+<td>1.0000</td>
+<td>0.6000</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0.0000</td>
+<td>0.0000</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>A</td>
+<td>0.8000</td>
+<td>0.0000</td>
+<td>0.4000</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0000</td>
+<td>0.0000</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+<p>
+4 rows x 4 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="a-worked-example">
+<h2>A worked example<a class="headerlink" href="#a-worked-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="calculating-the-expected-under-the-background">
+<h3>Calculating the Expected Under the Background<a class="headerlink" href="#calculating-the-expected-under-the-background" title="Permalink to this headline">¶</a></h3>
+<p>let’s use the sequence</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq1</span> <span class="o">=</span> <span class="s2">&quot;GTAT&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>We define a background distribution as one where all bases are equally frequent. In the above case, we then obtain the <span class="math notranslate nohighlight">\(p(seq1|background)\)</span> as</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span>
+<span class="n">p_seq1_background</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">**</span> <span class="n">seq_len</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p_seq1_background</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.003906
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculating-the-expected-under-the-alternate">
+<h3>Calculating the Expected Under the Alternate<a class="headerlink" href="#calculating-the-expected-under-the-alternate" title="Permalink to this headline">¶</a></h3>
+<p>In this case, I’m just doing this “manually”. First, note the base order is T, C, A, G <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. Here’s a pseudo-code algorithm describing this calculation:</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software</p>
+</dd>
+</dl>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>PSSM is a 2D matrix with rows corresponding to bases, columns to positions
+define the index order of bases as T at index 0, C index 1, A index 2, G index 3
+prob_of_seq = 1.0
+for seq_index in sequence
+    set base as the character at seq_index
+    set base_index as the index of base in bases
+    probability_of_base_at_position equals PPM[base_index, seq_index]
+    prob_of_seq  = prob_of_seq * probability_of_base_at_position
+    if prob_of_seq is 0, exit the loop
+</pre></div>
+</div>
+<p>At sequence position <code class="docutils literal notranslate"><span class="pre">0</span></code>, we have base <code class="docutils literal notranslate"><span class="pre">G</span></code>. This has the value of 0.0, so we stop.</p>
+<p>This raises the question of whether a <code class="docutils literal notranslate"><span class="pre">G</span></code> at index <code class="docutils literal notranslate"><span class="pre">[0]</span></code> is truly impossible? More likely, the 0 is due to the sample size of the experiment. One approach is to ad a small number to all elements. (This is akin to imagining the next observation would have been of the unobserved type.) Typically, a pseudocount ≤ 1 is chosen.</p>
+</div>
+<div class="section" id="adjusting-the-pwm-with-a-pseudocount">
+<h3>Adjusting the PWM with a pseudocount<a class="headerlink" href="#adjusting-the-pwm-with-a-pseudocount" title="Permalink to this headline">¶</a></h3>
+<p>We add a pseudocount of 0.5 to the PWM and then convert to a PPM as before, producing</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">PPM</span><br><span class="cell_legend">Position specific probability matrix after adding 0.5 to the PWM cells</span></caption>
+<thead class="head_cell">
+<th>Base \ Position</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>0.208</td>
+<td>0.875</td>
+<td>0.125</td>
+<td>0.542</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0.042</td>
+<td>0.042</td>
+<td>0.042</td>
+<td>0.042</td>
+</tr>
+<tr>
+<td>A</td>
+<td>0.708</td>
+<td>0.042</td>
+<td>0.792</td>
+<td>0.375</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.042</td>
+<td>0.042</td>
+<td>0.042</td>
+<td>0.042</td>
+</tr>
+</tbody>
+</table>
+<p>
+4 rows x 5 columns</p>
+</div></div></div>
+</div>
+<p>This now leads to the following elements being taken from the table <code class="docutils literal notranslate"><span class="pre">0.042,</span> <span class="pre">0.875,</span> <span class="pre">0.792,</span> <span class="pre">0.542</span></code>, leading to</p>
+<div class="math notranslate nohighlight">
+\[p(seq1|alternate)=0.042\times0.875\times0.792\times0.542\approx0.015775\]</div>
+</div>
+<div class="section" id="the-odds-ratio">
+<h3>The odds-ratio<a class="headerlink" href="#the-odds-ratio" title="Permalink to this headline">¶</a></h3>
+<p>We can form an odds-ratio as</p>
+<div class="math notranslate nohighlight">
+\[OR = \frac{p(seq1|alternate)}{p(seq1|null)}\approx4.0384\]</div>
+<p>How should you interpret this? Look at the OR equation!</p>
+<div class="topic">
+<p class="topic-title">You Try</p>
+<p>What does an OR equal 1 mean? What about an OR &gt; 1? Or, an OR&lt;1?</p>
+</div>
+</div>
+<div class="section" id="computing-the-pssm">
+<h3>Computing the PSSM<a class="headerlink" href="#computing-the-pssm" title="Permalink to this headline">¶</a></h3>
+<p>The PSSM is a log-odds matrix, i.e. it’s the log of the odds ratio matrix. Because we assume a background distribution of 0.25, we can compute this very simply as <code class="docutils literal notranslate"><span class="pre">log2(ppm)-log2(0.25)</span></code>.</p>
+<div class="sidebar">
+<p class="sidebar-title">Maths with logarithms, recall that</p>
+<p><span class="math notranslate nohighlight">\(\log(a/b)=\log(a) - \log(b)\)</span></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(\log(a \times b) = \log(a) + \log(b)\)</span></p>
+<p>Note that we use log base 2 (<span class="math notranslate nohighlight">\(\log_2\)</span>), by convention.</p>
+</div>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>Base \ Position</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>-0.263</td>
+<td>1.807</td>
+<td>-1.000</td>
+<td>1.115</td>
+</tr>
+<tr>
+<td>C</td>
+<td>-2.585</td>
+<td>-2.585</td>
+<td>-2.585</td>
+<td>-2.585</td>
+</tr>
+<tr>
+<td>A</td>
+<td>1.503</td>
+<td>-2.585</td>
+<td>1.663</td>
+<td>0.585</td>
+</tr>
+<tr>
+<td>G</td>
+<td>-2.585</td>
+<td>-2.585</td>
+<td>-2.585</td>
+<td>-2.585</td>
+</tr>
+</tbody>
+</table>
+<p>
+4 rows x 5 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="computing-the-pssm-score-for-the-sequence">
+<h3>Computing the PSSM score for the sequence<a class="headerlink" href="#computing-the-pssm-score-for-the-sequence" title="Permalink to this headline">¶</a></h3>
+<p>We now select elements from the PSSM, just as we did above from the PPM – we use the sequence position number to specify the column of the PSSM, and the base at that position to specify the row. With that, for the sequence “GTAT”, we select the following log-odds scores: <code class="docutils literal notranslate"><span class="pre">-2.585,</span> <span class="pre">1.807,</span> <span class="pre">1.663,</span> <span class="pre">1.115</span></code>.</p>
+<p>From these, the log-odds of <code class="docutils literal notranslate"><span class="pre">seq1</span></code> being derived from the experimental sample instead of the bacgkround is:</p>
+<div class="math notranslate nohighlight">
+\[score = -2.585 + 1.807 + 1.663 + 1.115 = 2\]</div>
+<p>For more on the interpretation of odds ratios, see <a class="reference internal" href="odds_ratios.html#odds-ratios"><span class="std std-ref">Odds-ratio’s</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
