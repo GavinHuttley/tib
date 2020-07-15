@@ -27,7 +27,7 @@ jobs:
 
       - name: Build docs
         shell: bash -l {0}
-        working-directory: tib/source
+        working-directory: tib
         run: |
           conda activate tib
           make github
