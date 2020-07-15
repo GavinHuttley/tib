@@ -13,6 +13,8 @@ Bioinformatics and its Applications
     acknowledgements
     intro
     python/index
+    
+.. disconnecting this for now
     seqcomp/index
 
 .. todo:: add an advanced python topic

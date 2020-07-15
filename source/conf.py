@@ -12,6 +12,7 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinx.ext.doctest",
     "sphinx.ext.intersphinx",
+    "sphinx.ext.githubpages",
     "sphinx.ext.todo",
     "sphinx.ext.mathjax",
     "nbsphinx",
@@ -21,7 +22,7 @@ extensions = [
     "sphinx_rtd_theme",
 ]
 
-todo_include_todos = True
+todo_include_todos = False
 show_authors = True
 
 # Add any paths that contain templates here, relative to this directory.

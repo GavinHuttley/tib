@@ -40,3 +40,4 @@ It is my goal that after this course your awareness on how to write code and val
 
 .. _`replication crisis`: https://en.wikipedia.org/wiki/Replication_crisis
 
+.. todo:: add section on how to contribute, "Edit on GitHub" etc..
