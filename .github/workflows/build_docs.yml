@@ -15,7 +15,7 @@ jobs:
       - shell: bash -l {0}
         run: |
           echo pwd
-          ls .
+          ls tib/
 
       - name: Make conda environment
         uses: goanpeca/setup-miniconda@v1
