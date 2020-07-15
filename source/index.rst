@@ -10,6 +10,7 @@ Bioinformatics and its Applications
     :numbered: 2
     :titlesonly:
     
+    acknowledgements
     intro
     python/index
     seqcomp/index
