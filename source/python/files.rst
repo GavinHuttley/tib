@@ -1,4 +1,4 @@
-Dealing with files
+Working with files
 ==================
 
 The location of a file (its file path) is specified as a string. We use the ``open()`` function to open files. Whether a file is opened for reading or writing is defined by the *mode* argument. For example ``mode="w"`` means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.

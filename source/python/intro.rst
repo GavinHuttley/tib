@@ -39,7 +39,7 @@ How a computer works
 In the truly simplest sense! The main components defining execution of a program are *inputs*, *process* and *outputs*. The "program" is the "process" part. A program is defined by *source code*, instructions written in a text file in a specific language dialect.
 
 .. digraph:: foo
-    
+
     rankdir="LR"
     a [shape="note" label="Source code"]
     b [shape="square" label="Interpreter"]
@@ -47,7 +47,7 @@ In the truly simplest sense! The main components defining execution of a program
     a -> b -> c;
 
 .. note, I can use images for nodes, e.g. imgnode[image="apple-touch-icon.png", label=""];
- 
+
 There are of course other elements that define a computer. For instance, storage. A *hard drive* is persistent storage. This is where your documents and programs live. These survive turning of your computer. Programs, documents, etc.., are loaded (or read) from the hard drive into memory. *Memory* or *RAM* (random access memory) is volatile storage, meaning if you turn off your computer, what was in RAM is lost.
 
 Basic program elements
@@ -70,15 +70,15 @@ All programming languages specify "keywords". These are the logical units from w
 **repetition or looping**
     A type of control statement specifying conditions under which a task is to be repeated. Conventional keywords are ``for``, ``while``.
 
-Errors → Debugging
-------------------
+💣 → Errors → Debugging
+-----------------------
 
 Dealing with errors is a standard, inevitable, part of programming. The process of fixing errors is termed debugging. You can reduce the number of errors you make in writing a program by breaking the algorithm into small pieces, writing one piece, checking it works and then move onto the next piece.
 
 .. sidebar:: Minimise time fixing errors
 
     Even if you could write an entire complex algorithm in one go, doing so is a bad idea.
-    
+
     A multitude of procedures are employed improve the reliability of software, some of which are quite elaborate. But one thing all such approaches have in common is to write a small amount of code and then run it, fixing any errors each time. If the program stops running, you know the responsible code is only what you just entered.
 
 There are different classes of errors:
