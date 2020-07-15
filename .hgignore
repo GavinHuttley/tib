@@ -11,7 +11,7 @@ syntax:glob
 *.wpr
 *.pdf
 _build/*
-build
+build/*
 *htmlcov*
 *.idea
 draw_results
