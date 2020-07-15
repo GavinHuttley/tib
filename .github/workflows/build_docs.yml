@@ -15,19 +15,19 @@ jobs:
       - name: Make conda environment
         uses: goanpeca/setup-miniconda@v1
         with:
-           activate-environment: cogent3
-           environment-file: tib/tib-enf.yml
+           activate-environment: tib
+           environment-file: tib/tib-env.yml
            python-version: 3.8
 
       - shell: bash -l {0}
         run: |
-          conda activate cogent3
+          conda activate tib
           conda info
           conda list
 
       - name: Build docs
         shell: bash -l {0}
-        working-directory: tib/source
+        working-directory: tib
         run: |
           conda activate tib
           make github
