@@ -10,7 +10,7 @@ Prologue
 
     “The more I learn about proprietary software, the more I worry that objective truth might perish from the earth”
     
-    --- Professor Paul Romer, 2018 Nobel Prize in Economics, and Python Programmer.
+    --- Professor Paul Romer, Awarded the 2018 Nobel Prize in Economics, and Python Programmer.
 
 A striking scientific trend in the last few years is awareness of the `replication crisis`_. In short, this is the result of systematic study examining the extent to which published scientific studies are reproducible. It is termed a "crisis" because it turns out there is a significant fraction of studies that could not be reproduced. So what does this have to do with bioinformatics? Read on.
 
