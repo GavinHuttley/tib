@@ -12,21 +12,16 @@ jobs:
         with:
            path: tib
 
-      - shell: bash -l {0}
-        run: |
-          pwd
-          find . -name "*tib-env.yml*"
-
       - name: Make conda environment
         uses: goanpeca/setup-miniconda@v1
         with:
-           activate-environment: cogent3
+           activate-environment: tib
            environment-file: tib/tib-env.yml
            python-version: 3.8
 
       - shell: bash -l {0}
         run: |
-          conda activate cogent3
+          conda activate tib
           conda info
           conda list
 
