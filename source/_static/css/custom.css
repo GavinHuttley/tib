@@ -12,14 +12,18 @@ div.section > div:not(.section):not(.sidebar)
 	{
 		/* Constrain width for direct descendants of a div */
 		width: 55%;
+		display: inline-block;
+		font-family: "Roboto", sans-serif;
 	}
 
 div.wy-nav-content, div.container.sphinx-bs {
 	margin-left:  0;
+	display: inline-block;
 }
 
 div.sidebar, dl.footnote {
 	width:  40% !important;
+	display: inline-block;
 }
 
 dl.footnote {
@@ -30,4 +34,29 @@ dl.footnote {
 	border-left: none;
 	border-top: none;
 	border-bottom: none;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+blockquote {
+	font-family: "Roboto Condensed", sans-serif;
+	margin-left: 1em;
+	margin-right: 2em;
+	border-left: solid 1px #808080;
+}
+
+blockquote p.attribution {
+	text-align: right;
+    width: 95%;
+}
+blockquote.epigraph {
+	font-size: 1.125rem;
+	font-weight: 300;
+	font-style: oblique;
+	padding-left: 1em
+}
+blockquote.epigraph p.attribution {
+	font-size: 0.75rem;
+	font-weight: 400;
+	font-style: normal;
 }

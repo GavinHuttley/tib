@@ -26,7 +26,7 @@ Let's go backwards. We teach Python and R because these are the languages that w
 
 .. todo:: the benefits, a different way of seeing, logical improvements in work, super power
 
-Data Science is the joint application of algorithm development and statistical modelling to extracting information from what is referred to as "big data". Bioinformatics, also referred to as computational biology, certainly fits within this rather loose definition of data science. In essence, Bioinformatics is the union of algorithms and statistics focussed on extracting information from big biological data sets to advance knowledge of biological systems.
+:index:`Data Science` is the joint application of algorithm development and statistical modelling to extracting information from what is referred to as "big data". Bioinformatics, also referred to as computational biology, certainly fits within this rather loose definition of data science. In essence, Bioinformatics is the union of algorithms and statistics focussed on extracting information from big biological data sets to advance knowledge of biological systems.
 
 .. seriously, need to acknowledge that languages are different
 

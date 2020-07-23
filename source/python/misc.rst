@@ -20,6 +20,8 @@ One property of Python builtin series is that if they are empty, then they evalu
 
 The values ``0```, ``0.0`` and ``None`` also evaluate to ``False``.
 
+.. index:: assert, testing, correctness
+
 Checking correctness using ``assert``
 -------------------------------------
 
@@ -39,6 +41,10 @@ This is what it looks like when it fails.
 
     name = 0
     assert type(name) == str, "name [%s] is not a string" % name
+
+.. index::
+    pair: list; comprehension
+    pair: dict; comprehension
 
 "Comprehensions"
 ----------------
@@ -73,6 +79,8 @@ So many uses for a dict! A simple demonstration, using the ``nums`` variable fro
     k_v = [["A", 0.1], ["C", 0.2], ["G", 0.3], ["T", 0.4]]
     d = {k: v for k, v in k_v}
     d
+
+.. index:: zip, unzip
 
 Zipping / Unzipping series
 --------------------------

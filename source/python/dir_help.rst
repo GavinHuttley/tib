@@ -8,10 +8,12 @@ Two builtin functions that are incredibly useful for figuring out what attribute
 - ``dir(some_variable)`` lists the attributes of ``some_variable``, including methods.
 - ``help(some_function)`` displays helpful information about what ``some_function`` does and how you use it
 
-Examples of using ``dir`` and ``help``
---------------------------------------
+Examples of using ``dir()`` and ``help()``
+------------------------------------------
 
-Let's create a list and see what it's attributes are.
+.. index:: dir()
+
+Let's create a list and see what it's attributes are using ``dir()``.
 
 .. jupyter-execute::
     :linenos:
@@ -28,10 +30,11 @@ So what are these things?
 
     print(type(data.append))
 
-and what can they do?
+.. index:: help()
+
+Use ``help()`` to figure out what can they do.
 
 .. jupyter-execute::
     :linenos:
 
     help(data.append)
-

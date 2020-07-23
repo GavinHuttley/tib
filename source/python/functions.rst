@@ -1,9 +1,14 @@
+.. index:: functions
+
 Functions and methods
 =====================
 
 .. todo:: make sure you emphasise that all variables operate on by a function should either be passed in as arguments OR created internally -- need to avoid people defining a module level variable that's a mutable data structure
 
 This is a central concept in programming. It provides a means of encapsulating several lines of code (that do something useful) and providing a reference such that this block can be called in multiple places in a larger program.
+
+.. index::
+   pair: builtin; functions
 
 Builtin functions
 -----------------
@@ -34,6 +39,8 @@ As the title states, Python belongs to a class of programming languages called "
 
 So what is an "object"? It's an abstract concept, but in essence an object represents something. It can be a number, a string, a file, etc.. Thus "objects" are instances of a type of data.
 
+.. index:: instance
+
 So what's an instance? An instance is an occurrence of a type of data, which will have a location in memory that is different to other occurrences of the same type of data. I'll use the built-in function ``id()`` (which returns a unique identifier, related to the address in memory):
 
 .. jupyter-execute::
@@ -53,6 +60,8 @@ Although ``a`` and ``b`` are equivalently defined -- both lists of exactly the s
 .. topic:: You Try
     
     What comparison operators can you use to confirm my statements regarding same value and different instance?
+
+.. index:: methods
 
 Methods
 -------
@@ -84,6 +93,9 @@ Here are the key patterns for using a method:
 2. You use them like all functions (see the above), except you do not provide the data, e.g. ``some_variable.a_bound_method()``.
 
 Simple!
+
+.. index::
+    pair: concatenating; string
 
 A useful trick for concatenating strings
 ----------------------------------------
