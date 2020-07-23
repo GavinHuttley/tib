@@ -5,6 +5,10 @@ Consider the equation :math:`h^2=a^2+b^2`. This mathematical expression is famil
 
 In the above equation *h*, *a*, *b* are *pro-numerals*, symbols that represent a numeral (number). In programming, we call these *variables*. We create variables "on the fly" in Python and, in doing so, we need to obey some simple rules.
 
+.. index::
+    pair: naming; variable
+    pair: variable; syntax
+
 Naming variables
 ----------------
 
@@ -35,6 +39,8 @@ Compare this expression to the original mathematical equation. Clearly, we have 
 .. topic:: You Try
     
     Rewrite this so the equation is the first line. What happens? Why?
+
+.. index:: assignment, assignment unpacking, unpacking
 
 Assignment unpacking
 --------------------

@@ -1,3 +1,5 @@
+.. index:: list, container objects
+
 Using lists
 ===========
 
@@ -18,6 +20,8 @@ Using lists
 
     data.append("TTTT")
     print(data)
+
+.. index:: len()
 
 .. jupyter-execute::
     :linenos:

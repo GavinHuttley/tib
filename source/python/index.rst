@@ -9,6 +9,7 @@ Introduction to Python
 .. toctree::
     :maxdepth: 2
 
+    resources
     intro
     start
     variables

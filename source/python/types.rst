@@ -9,6 +9,8 @@ Based on the context, you infer the numerical meaning of the characters ``3``, `
 
 This leads directly to the notion of *data types*. Python comes with a number of core data types that I define below.
 
+.. index:: string, str
+
 **string**
     specified either using ``''`` or ``""`` around the content of interest. This is just a series of characters. It can be empty (has length 0) or much greater than that [1]_.
 
@@ -22,12 +24,18 @@ This leads directly to the notion of *data types*. Python comes with a number of
 
 note that ``e`` is an empty string.
 
+.. index::
+    pair: int; types
+
 **int**
     an integer. Specified by using a number without a ``.``. This is a numeric data type.
 
 .. jupyter-execute::
 
     i = 4
+
+.. index::
+    pair: float; types
 
 **float**
     a floating point number. Specified by using a ``.``. This is a numeric data type.
@@ -40,6 +48,10 @@ note that ``e`` is an empty string.
 
 .. note:: A floating point number is NOT the same as a decimal! They are an approximation.
 
+.. index::
+    pair: bool; types
+    pair: True / False; types
+
 **bool**
     A boolean, which can be either ``True`` or ``False``. These are special values that are produced by the relational operators.
 
@@ -48,6 +60,10 @@ note that ``e`` is an empty string.
     a = 2
     a > 3
     b = True
+
+
+.. index::
+    pair: None; types
 
 **None**
     A special type of the same name which is often a default value.
@@ -59,6 +75,9 @@ note that ``e`` is an empty string.
 
 Now we get to "container" data types. These are extremely powerful and wind up being a foundation for all sophisticated algorithms. In each of these cases, different elements in a contained are delimited using a ``,`` separator.
 
+.. index::
+    pair: list; types
+
 **list**
     As the name implies, it is a series with (≥ 0) elements. These elements do not have to be the same type (as I illustrate) [2]_.
 
@@ -69,6 +88,9 @@ Now we get to "container" data types. These are extremely powerful and wind up b
     l = [0, "text"]
     l
 
+.. index::
+    pair: tuple; types
+
 **tuple**
     Almost the same as a list, but defined using different parentheses and [1]_.
 
@@ -76,6 +98,9 @@ Now we get to "container" data types. These are extremely powerful and wind up b
 
     t = (0, "text")
     t
+
+.. index::
+    pair: dict; types
 
 **dict**
     A dictionary. Like a conventional one, we look up entries in it using some "key" and get a "value" in return. Note the special parentheses used in the definition and also usage of ``:`` to separate the key and value. As with tuples and lists, they can contain different data types.
@@ -89,6 +114,9 @@ Now we get to "container" data types. These are extremely powerful and wind up b
     
     Try creating a dict using different data types as keys. Do they all work?
 
+.. index::
+    pair: type(); types
+
 How to tell the type of a variable
 ----------------------------------
 
@@ -98,6 +126,9 @@ Well that's easy!
 
     a = 4
     type(a)
+
+.. index::
+    pair: type casting; types
 
 Type casting
 ------------
@@ -163,6 +194,10 @@ Objects to strings
 
 This is an extremely common task, not least because of the need to convert data to strings for writing to file. I will show two basic approaches.
 
+.. index::
+    pair: string formatting; str
+    pair: C-style; str
+
 "C-style" format strings
 """"""""""""""""""""""""
 
@@ -196,6 +231,10 @@ You can of course have multiple elements in a single statement.
     s
 
 .. note:: For multiple data to be converted, they must be enclosed within ``()`` after the ``%``.
+
+.. index::
+    pair: format; str
+    pair: f-strings; str
 
 Using "format" strings
 """"""""""""""""""""""

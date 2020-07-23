@@ -1,3 +1,5 @@
+.. index:: numpy, maths, array
+
 ``numpy`` -- numerical routines for python
 ==========================================
 
@@ -47,6 +49,9 @@ Conversion to standard python data types
     raw = data.tolist()
     raw
 
+.. index::
+    pair: matrix; numpy
+
 Specifying matrices
 -------------------
 
@@ -80,6 +85,8 @@ Or, other arrays [1]_.
     # from the above numpy arrays
     m = numpy.array([a, b])
     m
+
+.. index:: scalar
 
 Scalar operations on arrays
 ---------------------------
@@ -137,6 +144,10 @@ Array iteration
     for e in data:
         print(e)
 
+.. index::
+    pair: indexing; numpy
+    pair: slicing; numpy
+
 indexing and slicing
 --------------------
 
@@ -177,6 +188,9 @@ Array assignment
     data[1, 2] = -99
     data
 
+.. index::
+    pair: evaluation; numpy
+
 Evaluation operations
 ---------------------
 
@@ -200,6 +214,9 @@ You can use the resulting ``bool`` array to slice, and for assignment.
     data[data > 100] = 999
     data
 
+.. index::
+    pair: axis; numpy
+
 The numpy array axis
 --------------------
 
@@ -209,6 +226,11 @@ This is akin to specifying whether a method / function operates on rows (``axis=
     :linenos:
 
     data.sum(axis=0)
+
+.. index::
+    pair: mean; numpy
+    pair: standard deviation; numpy
+
 
 Getting useful quantities
 -------------------------
@@ -237,6 +259,9 @@ Getting useful quantities
     # Row means, operating on columns
     data.mean(axis=1)
 
+.. index::
+    pair: matrix multiply; numpy
+
 Linear algebra -- matrix multiplication
 ---------------------------------------
 
@@ -248,6 +273,11 @@ Linear algebra -- matrix multiplication
 
     ip = numpy.inner(data1, data2)
     ip
+
+.. index::
+    pair: conditionals; numpy
+    pair: any; numpy
+    pair: all; numpy
 
 Conditionals on arrays
 ----------------------
@@ -290,6 +320,10 @@ The above expression is evaluated element wise and returns a numpy array of type
     else:
         print("No")
 
+.. index::
+    pair: logical operations; numpy
+    pair: array comparisons; numpy
+
 Comparisons of multiple arrays
 ------------------------------
 
@@ -313,6 +347,9 @@ Comparisons of multiple arrays
     :linenos:
 
     numpy.logical_and(x, y)
+
+.. index::
+    pair: count; numpy
 
 Using the result of array comparisons to count
 ----------------------------------------------
@@ -347,5 +384,4 @@ Scenario, you want to count (from multiple arrays that consist of a continuously
     data = numpy.array(data)
 
     (data > 0.5).sum(axis=0)
-
 

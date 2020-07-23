@@ -1,3 +1,5 @@
+.. index:: operators, <, <=, >, >=, ==, !=, is
+
 Operators
 =========
 

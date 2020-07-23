@@ -12,6 +12,10 @@ A function represents a named grouping of statements. They form a critical aspec
 
 So using functions will improve the reliability of your programs.
 
+.. index::
+    pair: syntax; function
+    pair: return; function
+
 The critical syntax elements
 ----------------------------
 
@@ -64,6 +68,10 @@ These are functions that return something from their execution. We have encounte
 
 .. note::  The function was defined before it was used. There were multiple arguments separated by a ``","``. We used the ``return`` keyword to deliver the result of this calculation to the calling code (line starting with ``result =...``).
 
+.. index::
+    pair: arguments; function
+    pair: required arguments; function
+
 Required arguments
 ------------------
 
@@ -92,6 +100,10 @@ Required arguments
 - When calling a function, the order in which you provide arguments defines what variable they're assigned to
     - UNLESS you specify them as argument=value
 - In the above, `a` and `b` are required. If you don't provide both of them, you will get an *exception*
+
+.. index::
+    pair: optional arguments; function
+    pair: keyword arguments; function
 
 Optional arguments
 ------------------

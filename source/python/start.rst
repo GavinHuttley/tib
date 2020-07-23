@@ -10,12 +10,20 @@ Now that we've got that out of the way, let's first treat Python as just a calcu
 Basic arithmetic operations
 ===========================
 
+.. index::
+    pair: plus; maths
+    pair: add; maths
+
 Addition
 --------
 
 .. jupyter-execute::
 
     1 + 9
+
+.. index::
+    pair: minus; maths
+    pair: subtract; maths
 
 Subtraction
 -----------
@@ -24,12 +32,19 @@ Subtraction
 
     1 - 9
 
+.. index::
+    pair: multiply; maths
+
 Multiplication
 --------------
 
 .. jupyter-execute::
 
     2 * 20
+
+.. index::
+    pair: divide; maths
+    pair: integer divide; maths
 
 Division (including integer division)
 -------------------------------------
@@ -46,12 +61,19 @@ Integer division uses ``//``
 
     20 // 3
 
+.. index::
+    pair: exponents; maths
+    pair: powers; maths
+
 Exponents / Powers
 ------------------
 
 .. jupyter-execute::
 
     2 ** 4
+
+.. index::
+    pair: roots; maths
 
 Roots
 -----

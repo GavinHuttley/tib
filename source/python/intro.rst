@@ -11,14 +11,6 @@ In this course, we will be developing and using non-GUI software. We will be doi
 
 .. note:: Text that has ``this`` font style represents a statement in Python.
 
-Resources
----------
-
-.. todo:: Find some youtube channels and other learning python resources
-
-- Here's an awesome `open access text book on Python`_, you can get it for free as a pdf, browse the web version or buy a hard copy. Be sure and read the preface about the history of this book!
-- I encourage you to download this `free Python IDE`_ for your platform. It is useful for understanding program flow and debugging!
-
 Using these notes
 -----------------
 
