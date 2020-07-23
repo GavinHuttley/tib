@@ -24,6 +24,8 @@ extensions = [
 
 todo_include_todos = False
 show_authors = True
+graphviz_output_format = 'svg'
+graphviz_dot_args = ["-Gsize=4,4"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
