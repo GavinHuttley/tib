@@ -1,7 +1,7 @@
 .. sidebar:: Variable scope
     :name: Variable scope
 
-    .. image::  ../images/namespace.png
+    .. image::  /images/namespace.png
         :scale: 50
     
     1. Global Namespace: is at the current module level name space
