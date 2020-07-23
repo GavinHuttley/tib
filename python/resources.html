@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.19. Namespaces &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>3.1. Resources &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.20. numpy – numerical routines for python" href="numpy.html" />
-    <link rel="prev" title="3.18. Extending capabilities using import" href="import.html" /> 
+    <link rel="next" title="3.2. Introduction to programming using Python" href="intro.html" />
+    <link rel="prev" title="3. Introduction to Python" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="resources.html">3.1. Resources</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">3.2. Introduction to programming using Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="start.html">3.3. Everyones first program in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">3.4. Basic arithmetic operations</a></li>
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="writing_functions.html">3.16. Writing functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iterators.html">3.17. Iterators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="import.html">3.18. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.19. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">3.19. Namespaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numpy.html">3.20. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html">3.21. Miscellaneous Python features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">3.22. Pulling it together – writing your own programs</a></li>
@@ -170,14 +170,14 @@
         
           <li><a href="index.html"><span class="section-number">3. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">3.19. </span>Namespaces</li>
+      <li><span class="section-number">3.1. </span>Resources</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/namespace.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/resources.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -215,90 +215,19 @@
     text-align: unset;
 }
 </style>
-<div class="sidebar" id="variable-scope">
-<p class="sidebar-title">Variable scope</p>
-<a class="reference internal image-reference" href="python/../images/namespace.png"><img alt="python/../images/namespace.png" src="python/../images/namespace.png" /></a>
-<ol class="arabic simple">
-<li><p>Global Namespace: is at the current module level name space</p></li>
-<li><p>Local Namespace: is in the <cite>pointless_display</cite> name space level</p></li>
-</ol>
+<div class="section" id="resources">
+<h1><span class="section-number">3.1. </span>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="reading">
+<h2>Reading<a class="headerlink" href="#reading" title="Permalink to this headline">¶</a></h2>
+<p>Here’s an awesome <a class="reference external" href="http://greenteapress.com/wp/think-python-2e/">free open access text book on Python</a>, you can get it for free as a pdf, browse the web version or buy a hard copy. Be sure and read the preface about the history of this book!</p>
 </div>
-<div class="section" id="namespaces">
-<span id="index-0"></span><h1><span class="section-number">3.19. </span>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h1>
-<p>A fundamental concept in programming, most easily explained with reference to the <a class="reference internal" href="#variable-scope">Variable scope</a>.</p>
-<p>In brief, variables defined within the local scope are only “available” within that scope. Variables defined within the global scope can be accessed within a local scope.</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="n">foo</span><span class="p">()</span>
-</pre></div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<p>I encourage you to download this <a class="reference external" href="https://wingware.com/downloads/wingide-personal">free Python IDE</a> for your personal computer. It is useful for understanding program flow and debugging.</p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="sidebar">
-<p class="sidebar-title">Namespace relationships</p>
-digraph namespace {
-graph [splines=ortho]
-a [shape=&quot;rectangle&quot; label=&quot;Namespaces&quot; width=5]
-l [shape=&quot;square&quot; label=&quot;Local\nnamespace&quot; width=1 height=1]
-ln [shape=&quot;rectangle&quot; label=&quot;Specific to\ncurrent function\nor class method&quot; width=1 height=1.2]
-g [shape=&quot;square&quot; label=&quot;Global\nnamespace&quot; width=1 height=1]
-gn [shape=&quot;rectangle&quot; label=&quot;Specific to\ncurrent module&quot; width=1 height=1.2]
-b [shape=&quot;square&quot; label=&quot;Built-in\nnamespace&quot; width=1 height=1]
-bn [shape=&quot;rectangle&quot; label=&quot;Global to\nall modules&quot; width=1 height=1.2]
-a -&gt; l;
-l -&gt; ln
-a -&gt; g;
-g -&gt; gn;
-a -&gt; b;
-b -&gt; bn;
-}
-<p><a class="reference external" href="https://pt.slideshare.net/p3infotech_solutions/python-programming-essentials-m19-namespaces-global-variables-and-docstrings/3">After Skillbrew</a>.</p>
-</div>
-<p>But they cannot be modified within the local scope (unless you use the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword <a class="footnote-reference brackets" href="#id3" id="id2">1</a>).</p>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
-<dd><p>Using <code class="docutils literal notranslate"><span class="pre">global</span></code> is typically a bad idea in terms of algorithmic robustness.</p>
-</dd>
-</dl>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo2</span><span class="p">():</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
-<span class="n">foo2</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">UnboundLocalError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">b6391c3e51ad</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">foo2</span><span class="p">()</span>
-
-<span class="nn">&lt;ipython-input-2-b6391c3e51ad&gt;</span> in <span class="ni">foo2</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">foo2</span><span class="p">():</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">foo2</span><span class="p">()</span>
-
-<span class="ne">UnboundLocalError</span>: local variable &#39;a&#39; referenced before assignment
-</pre></div>
-</div>
-</div>
+<div class="section" id="podcasts">
+<h2>Podcasts<a class="headerlink" href="#podcasts" title="Permalink to this headline">¶</a></h2>
+<p>These are not explicitly aimed at beginners, but podcasts that I find informative on multiple levels and quite polished. <a class="reference external" href="https://pythonbytes.fm">Python Bytes</a>, is a weekly 30’ podcast with an overview of interesting Python things. <a class="reference external" href="https://testandcode.com">Test &amp; Code</a> is a longer format that covers all things related to testing code – a critical topic for scientists. <a class="reference external" href="https://talkpython.fm/home">Talk Python</a> is a longer format interview of various individuals doing interesting things. Data science is increasingly covered by these podcasts.</p>
 </div>
 </div>
 
@@ -310,10 +239,10 @@ b -&gt; bn;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="numpy.html" class="btn btn-neutral float-right" title="3.20. numpy – numerical routines for python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="intro.html" class="btn btn-neutral float-right" title="3.2. Introduction to programming using Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="import.html" class="btn btn-neutral float-left" title="3.18. Extending capabilities using import" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="3. Introduction to Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

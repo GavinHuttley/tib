@@ -1,3 +1,5 @@
+.. index:: import, modules
+
 Extending capabilities using ``import``
 =======================================
 
@@ -24,6 +26,8 @@ Modules also serve to allow simplification of code. This enable putting logicall
 
 "third party" libraries
 -----------------------
+
+.. index:: 3rd party libraries, third party libraries
 
 An even greater appeal of Python is the availability of highly sophisticated modules written by others.
 

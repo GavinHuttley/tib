@@ -1,7 +1,11 @@
+.. index:: iterator, generator
+
 Iterators
 =========
 
-An iterator is a special type of object that can be iterated (looped) over. You will encounter cases where a function you would expect to return a series that could be sliced instead returns an object that has to be iterated over in order to obtain it's contents.
+An iterator is a special type of object that can be iterated (looped) over. You will encounter cases where a function you would expect to return a series that could be sliced instead returns a generator object that has to be iterated over in order to obtain it's contents.
+
+.. index:: reversed()
 
 For example, the built in function ``reversed()``.
 

@@ -13,6 +13,7 @@ Bioinformatics and its Applications
     acknowledgements
     intro
     python/index
+    genindex
     
 .. disconnecting this for now
     seqcomp/index
@@ -27,4 +28,6 @@ Bioinformatics and its Applications
 
 .. todo:: add a glossary
 
-.. todo:: convert all you try's to exercises
+.. todo:: convert all `topic` directives to exercises
+
+.. todo:: add a section describing the Notation used, include semantics of fonts (fixed width for code, variables), :math:`math~variables`, explain meaning of `<a variable>`

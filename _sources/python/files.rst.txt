@@ -1,6 +1,11 @@
 Working with files
 ==================
 
+.. index::
+   pair: file path; files
+   pair: open(); files
+   pair: open mode; files
+
 The location of a file (its file path) is specified as a string. We use the ``open()`` function to open files. Whether a file is opened for reading or writing is defined by the *mode* argument. For example ``mode="w"`` means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.
 
 .. sidebar:: File properties
@@ -19,6 +24,9 @@ The location of a file (its file path) is specified as a string. We use the ``op
     :linenos:
 
     print(seqfile)
+
+.. index::
+   pair: close; files
 
 Then closing it using the ``close()`` method.
 
@@ -45,9 +53,10 @@ There is another approach to ensuring the file is always closed. This involves u
 Reading contents of a file
 --------------------------
 
-File objects are iterable and the "unit" of iteration is a line, i.e. the file object returns all data up until the next line-feed character.
+File objects are iterable and the "unit" of iteration is a line, i.e. the file object returns all data up until the next line-feed character. Let's look.
 
-Let's look.
+.. index::
+   pair: iterate contents; files
 
 .. jupyter-execute::
     :linenos:
@@ -65,6 +74,9 @@ Writing data to a file
 In order to write data to a file, we must specify the ``mode="w"``.
 
 The data also needs to be converted to strings. One way to do this is to use a string format conversion. For instance, consider the example of having a list of float's. If we try to write this to a file, it will raise an exception.
+
+.. index::
+   pair: writing; files
 
 .. jupyter-execute::
     :linenos:

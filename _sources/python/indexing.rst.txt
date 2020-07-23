@@ -1,6 +1,8 @@
 Indexing and Slicing
 ====================
 
+.. index:: index
+
 Indexing
 --------
 
@@ -65,8 +67,15 @@ Using the list of lists I created earlier.
 
     seq_records[1][1]
 
+.. index:: slice
+
 Slicing
 -------
+
+.. index::
+    pair: start; slice
+    pair: stop; slice
+    pair: stride; slice
 
 Slicing is just an indexing operation that refers to a range of elements. A slice operation allows you to select a sequential ordering of elements. The syntax for a slice is ``[start:end:stride]``, but some of these terms are optional.
 
@@ -82,6 +91,9 @@ Slicing is just an indexing operation that refers to a range of elements. A slic
     codon1
 
 .. note:: I omitted the ``start`` and just used the `":"`. Python interpreted this as "slice from the start of the string up to (but not including) index 3".
+
+.. index::
+    pair: negative; slice
 
 Negative slicing works from the *end*.
 
