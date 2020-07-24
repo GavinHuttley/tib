@@ -18,7 +18,7 @@ At this stage, I'm sure you have many questions. Like, *What is "bioinformatics"
 
 Let's go backwards. We teach Python and R because these are the languages that we use in our own research. We use these languages because they have capabilities that allow us to leverage very sophisticated capabilities for our science. It also turns out that these two languages are the dominant languages employed in Data Science.
 
-.. sidebar:: What's the difference between Python and R?
+.. sidebar:: What's the difference between using Python versus using R?
 
     The major difference between Python and R comes in how they are typically used. Many of the concepts you will learn in the Python topic -- conditionals, iteration, functions -- are not directly coded by most users of R. They are implicitly being used, but are "hidden" from users.
     
