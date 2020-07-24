@@ -8,14 +8,14 @@ For this topic, we frame problems in terms of biological questions and, where re
 The role of sequence in encoding life
 -------------------------------------
 
-.. figure:: ../images/transcription.png
+.. figure:: /images/transcription.png
     :scale: 50 %
 
     The organisation of eukaryotic DNA [1]_.
 
 .. [1] From `Wasserman, & Sandelin <http://doi.org/10.1038/nrg1315>`_
 
-.. figure:: ../images/in_dna.png
+.. figure:: /images/in_dna.png
     :scale: 50 %
     
     Epigenetic factor positioning encoded by DNA [2]_. 
@@ -26,12 +26,12 @@ Some short stretches of DNA sequence (referred to as motifs) are central to regu
 
 .. list-table:: Crystal structure of TBP bound to a short segment of DNA [3]_
 
-    * - .. figure:: ../images/tata_bp.png
+    * - .. figure:: /images/tata_bp.png
             :scale: 48 %
             :align: left
             
             [3]_
-      - .. figure:: ../images/tata_logo.png
+      - .. figure:: /images/tata_logo.png
             :scale: 48 %
             :align: right
 
