@@ -1,8 +1,8 @@
 .. sidebar:: Variable scope
     :name: Variable scope
 
-    .. image::  /images/namespace.png
-        :scale: 50
+    .. image::  /_static/images/namespace.png
+        :scale: 40
     
     1. Global Namespace: is at the current module level name space
     2. Local Namespace: is in the `pointless_display` name space level
