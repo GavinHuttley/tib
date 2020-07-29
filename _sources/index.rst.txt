@@ -12,6 +12,7 @@ Bioinformatics and its Applications
     
     acknowledgements
     intro
+    contribute
     notation
     python/index
     genindex
