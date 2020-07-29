@@ -21,6 +21,11 @@ Podcasts
 
 These are not explicitly aimed at beginners, but podcasts that I find informative on multiple levels and quite polished. |python_bytes|_, is a weekly 30' podcast with an overview of interesting Python things. |test_n_code|_ is a longer format that covers all things related to testing code -- a critical topic for scientists. |talkpython|_ is a longer format interview of various individuals doing interesting things. Data science is increasingly covered by these podcasts.
 
+Do you know any more?
+=====================
+
+If you know of any more useful resources, please click the "Edit on GitHub" link above, add them to the appropriate section and make a pull request. For more information on this, read the :ref:`contribute` section to learn how to become a contributor.
+
 .. |python_bytes| replace:: Python Bytes
 .. _python_bytes: https://pythonbytes.fm
 .. |test_n_code| replace:: Test & Code

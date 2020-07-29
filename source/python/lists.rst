@@ -1,4 +1,4 @@
-.. index:: list, container objects
+.. index:: list, collection objects
 
 Using lists
 ===========

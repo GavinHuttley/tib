@@ -12,6 +12,8 @@ Throughout these notes, we rely on different formatting of text to provide seman
     
     ``a_variable``, Refers to a variable with name a_variable in a program.
     ``a_function()``, "Really just a different type of variable, but the parentheses indicate it's a function."
+    ``python``, "This is a command and has the same style as the above 2, but refers to the python program (not the language). You figure out what is being referred to from the context."
+    ``$ command``, Indicates a command executed at a terminal prompt.
     ``<some variable>``, "You know the characters :math:`<` and :math:`>` from mathematical notation where they mean less than and greater than respectively. In this usage, we call them 'angle brackets' and they surround a variable that the user (you) needs to fill in."
     :math:`a`, Denotes a variable in the mathematical sense.
 
