@@ -57,10 +57,6 @@ So what's an instance? An instance is an occurrence of a type of data, which wil
 
 Although ``a`` and ``b`` are equivalently defined -- both lists of exactly the same integers -- they are not the same instance.
 
-.. topic:: You Try
-    
-    What comparison operators can you use to confirm my statements regarding same value and different instance?
-
 .. index:: methods
 
 Methods
@@ -124,3 +120,15 @@ Getting help on a string method that can be used to concatenate.
     :linenos:
 
     "\t".join(data)
+
+
+.. todo:: define difference between function and method, former nearly always MUST be given an argument, e.g. reversed(), reverse()
+
+Exercises
+---------
+
+**1.** What comparison operators can you use to confirm my statements regarding same value and different instance?
+
+**2.** For the built-in ``len``, is it a function or a method? Demonstrate its usage.
+
+**3.** Join the ``data`` variable from above with the new line character.

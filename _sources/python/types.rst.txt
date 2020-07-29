@@ -110,9 +110,6 @@ Now we get to "container" data types. These are extremely powerful and wind up b
     d = {"a": "first character", "b": 2}
     d
 
-.. topic:: You Try
-    
-    Try creating a dict using different data types as keys. Do they all work?
 
 .. index::
     pair: type(); types
@@ -185,10 +182,6 @@ Casting between the container types is similar.
 
 Casting to a dict requires more work, as the original data type must have a shape that matches the required ``key, value`` pair pattern.
 
-.. topic:: You Try
-    
-    Try creating a list that can be converted to a dict using the ``dict()`` command.
-
 Objects to strings
 ^^^^^^^^^^^^^^^^^^
 
@@ -250,8 +243,13 @@ These are new to Python, since version 3.6. I'll bundle the int and float into a
 
 .. note:: The ``f`` preceding the quotes is what indicates this is a format string. You indicate where a variable should go using the ``{variable name}`` syntax. The formatting of numbers happens after the ``:``. The ``:,`` indicates separate thousands by ",", the ``.2f`` means float to 2 places.
 
-.. topic:: You Try
-    
-    - Make a really large int, formatting for a thousands separator
-    - Change the precision of the float
+Exercises
+=========
 
+**1.** Try creating a list that can be converted to a dict using the ``dict()`` command.
+
+**2.** Try creating a dict using different data types as keys. Do they all work?
+
+**3.** Make a really large int. Format it as a string with a thousands separator.
+
+**4.** Create a float and convert it to a string. Repeat this, but change the displayed precision (how many decimal places are shown).
