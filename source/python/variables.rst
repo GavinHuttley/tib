@@ -36,10 +36,6 @@ It's noteworthy that this is not a general algorithm -- we have an explicit solu
 
 Compare this expression to the original mathematical equation. Clearly, we have rewritten it so we have solved the equation already.
 
-.. topic:: You Try
-    
-    Rewrite this so the equation is the first line. What happens? Why?
-
 .. index:: assignment, assignment unpacking, unpacking
 
 Assignment unpacking
@@ -70,3 +66,37 @@ The succinct way
     coordinates = [(0, 1), (0, 2), (0, 3)]
     for x, y in coordinates:
         print(x, y)
+
+Exercises
+=========
+
+**1.** Rewrite the following so the equation is the first line. What happens? Why?
+
+.. code-block:: python
+
+    a = 3
+    b = 4
+    h = (a ** 2 + b ** 2) ** (1 / 2)
+    h
+
+**2.** Consider the following two variables
+
+.. jupyter-execute::
+    :linenos:
+
+    a = 4
+    b = 6
+
+Do these assignmnets on a single line (without using a ``;``).
+
+**3.** Consider execution of the following
+
+.. jupyter-execute::
+    :linenos:
+
+    a = "2.2"
+    a = 2.2
+
+What type is ``a``?
+
+**4.** Define a variable using invalid syntax, i.e. your code should generate a ``SyntaxError``.

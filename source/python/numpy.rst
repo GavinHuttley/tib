@@ -293,10 +293,6 @@ Conditional operations on ``numpy`` arrays are important. We illustrate the util
 
 The above expression is evaluated element wise and returns a numpy array of type ``bool``.
 
-.. topic:: You Try
-    
-    ``bool`` data types can be summed! Create an array with ``dtype=bool`` and try it.
-
 .. code:: python
     
     # conditionals using arrays
@@ -385,3 +381,7 @@ Scenario, you want to count (from multiple arrays that consist of a continuously
 
     (data > 0.5).sum(axis=0)
 
+Exercises
+=========
+
+**1.** ``bool`` data types can be summed. Create an array with ``dtype=bool`` and try it.
