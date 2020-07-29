@@ -40,9 +40,7 @@ We can ask, "What is the role of computing in science?" First, I hope you accept
 
 .. [3] Sorry, it's bring your own cape.
 
-Back to the replication crisis. When given the same input, computer programs are, by design, intended to produce the same output. Given computing is a central part of science, its usage needs to be done with replication in mind.
-
-It is my goal that after this course your awareness on how to write code and validate its correctness makes you part of the solution to the replication crisis.
+Back to the replication crisis. When given the same input, computer programs are, by design, intended to produce the same output. Given computing is a central part of science, it should be written and applied with replication in mind.
 
 .. _`replication crisis`: https://en.wikipedia.org/wiki/Replication_crisis
 
