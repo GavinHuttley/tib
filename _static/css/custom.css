@@ -60,3 +60,8 @@ blockquote.epigraph p.attribution {
 	font-weight: 400;
 	font-style: normal;
 }
+
+/* override table no-wrap */
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
+}
