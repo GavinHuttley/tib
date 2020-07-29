@@ -73,15 +73,19 @@ note that ``e`` is an empty string.
     a = None
     a is None
 
-Now we get to "container" data types. These are extremely powerful and wind up being a foundation for all sophisticated algorithms. In each of these cases, different elements in a contained are delimited using a ``,`` separator.
+Now we get to "collection" data types [2]_. Collections contain a number of elements and those elements can be of different types. Collection types are extremely powerful and wind up being a foundation for sophisticated algorithms.
+
+In defining instances of collection types, different elements are delimited using a ``,`` separator.
+
+.. [2] Sometime, strings, lists and tuples are referred to as "sequence" types. In this grouping, strings are distinguished from tuples and lists since every element of a string is of the same type by definition. This constraint does not apply to lists, tuples, etc...
 
 .. index::
-    pair: list; types
+    triple: list; types; collection objects
 
 **list**
-    As the name implies, it is a series with (≥ 0) elements. These elements do not have to be the same type (as I illustrate) [2]_.
+    As the name implies, it is a series with (≥ 0) elements. These elements do not have to be the same type (as I illustrate) [3]_.
 
-.. [2] Mutable data types can be modified after creation.
+.. [3] Mutable data types can be modified after creation.
 
 .. jupyter-execute::
 
@@ -89,7 +93,7 @@ Now we get to "container" data types. These are extremely powerful and wind up b
     l
 
 .. index::
-    pair: tuple; types
+    triple: tuple; types; collection objects
 
 **tuple**
     Almost the same as a list, but defined using different parentheses and [1]_.
@@ -100,7 +104,7 @@ Now we get to "container" data types. These are extremely powerful and wind up b
     t
 
 .. index::
-    pair: dict; types
+    triple: dict; types; collection objects
 
 **dict**
     A dictionary. Like a conventional one, we look up entries in it using some "key" and get a "value" in return. Note the special parentheses used in the definition and also usage of ``:`` to separate the key and value. As with tuples and lists, they can contain different data types.
@@ -109,7 +113,6 @@ Now we get to "container" data types. These are extremely powerful and wind up b
 
     d = {"a": "first character", "b": 2}
     d
-
 
 .. index::
     pair: type(); types
@@ -171,7 +174,7 @@ But if casting from a string may require multiple steps. For instance, you canno
 string to list, tuple
 ^^^^^^^^^^^^^^^^^^^^^
 
-Casting between the container types is similar.
+Casting between the collection types is similar.
 
 .. jupyter-execute::
 
@@ -246,10 +249,22 @@ These are new to Python, since version 3.6. I'll bundle the int and float into a
 Exercises
 =========
 
-**1.** Try creating a list that can be converted to a dict using the ``dict()`` command.
+**1.** What happens when you cast the following to a dict using the ``dict()`` command.
 
-**2.** Try creating a dict using different data types as keys. Do they all work?
+.. jupyter-execute::
+    :linenos:
 
-**3.** Make a really large int. Format it as a string with a thousands separator.
+    data = [0, "a", 1, "b"]
 
-**4.** Create a float and convert it to a string. Repeat this, but change the displayed precision (how many decimal places are shown).
+**2.** What happens when you cast the following to a dict using the ``dict()`` command.
+
+.. jupyter-execute::
+    :linenos:
+
+    data = [[0, "a"], [1, "b"]]
+
+**3.** Try creating a dict using different data types as keys. Do they all work?
+
+**4.** Make a really large int. Format it as a string with a thousands separator.
+
+**5.** Create a float and convert it to a string. Repeat this, but change the displayed precision (how many decimal places are shown).
