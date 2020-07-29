@@ -7,10 +7,11 @@ Throughout these notes, we rely on different formatting of text to provide seman
 .. index:: notation
 
 .. csv-table:: Notation used
-    :header: example,meaning
+    :header: Sample, Meaning
+    :widths: 3 10
     
     ``a_variable``, Refers to a variable with name a_variable in a program.
-    ``a_function()``, Really just a different type of variable, but the parentheses indicate it's a function.
-    ``<some variable>``, You know the characters < and > from mathematical notation where they mean less than and greater than respectively. In this usage, we call them "angle brackets" and they surround a variable that the user (you) needs to fill in.
+    ``a_function()``, "Really just a different type of variable, but the parentheses indicate it's a function."
+    ``<some variable>``, "You know the characters :math:`<` and :math:`>` from mathematical notation where they mean less than and greater than respectively. In this usage, we call them 'angle brackets' and they surround a variable that the user (you) needs to fill in."
     :math:`a`, Denotes a variable in the mathematical sense.
 
