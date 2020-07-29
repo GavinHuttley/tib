@@ -233,7 +233,7 @@
 </dd>
 </dl>
 <dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id5">2</a>)</span></dt>
+<dt class="label" id="id2"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id7">2</a>)</span></dt>
 <dd><p>Immutable means once the variable has been defined, it’s value cannot be modified.</p>
 </dd>
 </dl>
@@ -316,13 +316,19 @@
 </div>
 </div>
 </div>
-<p>Now we get to “container” data types. These are extremely powerful and wind up being a foundation for all sophisticated algorithms. In each of these cases, different elements in a contained are delimited using a <code class="docutils literal notranslate"><span class="pre">,</span></code> separator.</p>
+<p>Now we get to “collection” data types <a class="footnote-reference brackets" href="#id4" id="id3">2</a>. Collections contain a number of elements and those elements can be of different types. Collection types are extremely powerful and wind up being a foundation for sophisticated algorithms.</p>
+<p>In defining instances of collection types, different elements are delimited using a <code class="docutils literal notranslate"><span class="pre">,</span></code> separator.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Sometime, strings, lists and tuples are referred to as “sequence” types. In this grouping, strings are distinguished from tuples and lists since every element of a string is of the same type by definition. This constraint does not apply to lists, tuples, etc…</p>
+</dd>
+</dl>
 <dl class="simple" id="index-5">
-<dt><strong>list</strong></dt><dd><p>As the name implies, it is a series with (≥ 0) elements. These elements do not have to be the same type (as I illustrate) <a class="footnote-reference brackets" href="#id4" id="id3">2</a>.</p>
+<dt><strong>list</strong></dt><dd><p>As the name implies, it is a series with (≥ 0) elements. These elements do not have to be the same type (as I illustrate) <a class="footnote-reference brackets" href="#id6" id="id5">3</a>.</p>
 </dd>
 </dl>
 <dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
 <dd><p>Mutable data types can be modified after creation.</p>
 </dd>
 </dl>
@@ -340,7 +346,7 @@
 </div>
 </div>
 <dl class="simple" id="index-6">
-<dt><strong>tuple</strong></dt><dd><p>Almost the same as a list, but defined using different parentheses and <a class="footnote-reference brackets" href="#id2" id="id5">1</a>.</p>
+<dt><strong>tuple</strong></dt><dd><p>Almost the same as a list, but defined using different parentheses and <a class="footnote-reference brackets" href="#id2" id="id7">1</a>.</p>
 </dd>
 </dl>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -465,7 +471,7 @@
 </div>
 <div class="section" id="string-to-list-tuple">
 <h3><span class="section-number">5.9.2.4. </span>string to list, tuple<a class="headerlink" href="#string-to-list-tuple" title="Permalink to this headline">¶</a></h3>
-<p>Casting between the container types is similar.</p>
+<p>Casting between the collection types is similar.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -579,10 +585,29 @@
 </div>
 <div class="section" id="exercises">
 <h1><span class="section-number">5.10. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<p><strong>1.</strong> Try creating a list that can be converted to a dict using the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> command.</p>
-<p><strong>2.</strong> Try creating a dict using different data types as keys. Do they all work?</p>
-<p><strong>3.</strong> Make a really large int. Format it as a string with a thousands separator.</p>
-<p><strong>4.</strong> Create a float and convert it to a string. Repeat this, but change the displayed precision (how many decimal places are shown).</p>
+<p><strong>1.</strong> What happens when you cast the following to a dict using the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> command.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p><strong>2.</strong> What happens when you cast the following to a dict using the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> command.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p><strong>3.</strong> Try creating a dict using different data types as keys. Do they all work?</p>
+<p><strong>4.</strong> Make a really large int. Format it as a string with a thousands separator.</p>
+<p><strong>5.</strong> Create a float and convert it to a string. Repeat this, but change the displayed precision (how many decimal places are shown).</p>
 </div>
 
 
