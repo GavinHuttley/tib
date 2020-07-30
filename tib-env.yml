@@ -27,3 +27,4 @@ dependencies:
     - sphinxcontrib-bibtex
     - sphinx_rtd_theme
     - git+https://github.com/cogent3/cogent3.git@develop#egg=cogent3[dev]
+
