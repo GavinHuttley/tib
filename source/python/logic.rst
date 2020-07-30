@@ -219,7 +219,7 @@ The succinct way
     # This is more succinct
     coordinates = [(0, 1), (0, 2), (0, 3)]
     for x, y in coordinates:
-        print(x, y)]
+        print(x, y)
 
 Comments in code
 ----------------
