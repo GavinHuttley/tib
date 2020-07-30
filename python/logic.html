@@ -434,12 +434,60 @@ e
 </div>
 </div>
 </div>
+<p id="index-7">functions return multiple objects. If you know a certain number of objects will be returned then knowing how to do a multiple assignment can be useful.</p>
+<p>It can also be applied in other contexts. One particularly useful context is in looping. In the following example, I’m looping over pairs of integers and assigning the results to separate variables. Note the use of the <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement.</p>
+</div>
+</div>
+<div class="section" id="multiple-unpacking-in-loops">
+<h3><span class="section-number">5.13.5.3. </span>Multiple unpacking in loops<a class="headerlink" href="#multiple-unpacking-in-loops" title="Permalink to this headline">¶</a></h3>
+<p>One particularly useful context to use multiple unpacking is in looping. In the following example, I’m looping over pairs of integers and assigning the results to separate variables. Note the use of the <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement.</p>
+<div class="section" id="the-tedious-way">
+<h4>The tedious way<a class="headerlink" href="#the-tedious-way" title="Permalink to this headline">¶</a></h4>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># here is a tedious way</span>
+<span class="n">coordinates</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># grabbing each integer by it&#39;s index</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0 1
+0 2
+0 3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-succinct-way">
+<h4>The succinct way<a class="headerlink" href="#the-succinct-way" title="Permalink to this headline">¶</a></h4>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is more succinct</span>
+<span class="n">coordinates</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0 1
+0 2
+0 3
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="comments-in-code">
-<span id="index-7"></span><h2><span class="section-number">5.13.6. </span>Comments in code<a class="headerlink" href="#comments-in-code" title="Permalink to this headline">¶</a></h2>
-<p>In Python, a comment is all text occuring after the  <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol line. All characters occurring after it are ignored by the interpreter. Comment lines are used to explain in normal language what a block of code is doing, or to record other information such as the license.</p>
+<h2><span class="section-number">5.13.6. </span>Comments in code<a class="headerlink" href="#comments-in-code" title="Permalink to this headline">¶</a></h2>
+<p>In Python, a comment is all text occurring after the  <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol line. All characters occurring after it are ignored by the interpreter. Comment lines are used to explain in normal language what a block of code is doing, or to record other information such as the license.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is a comment</span>

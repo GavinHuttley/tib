@@ -190,10 +190,41 @@ A ``for`` loop with the convenience of also returning the index of the element i
     pair: #; comment
     pair: comment lines; comment
 
+functions return multiple objects. If you know a certain number of objects will be returned then knowing how to do a multiple assignment can be useful.
+
+It can also be applied in other contexts. One particularly useful context is in looping. In the following example, I'm looping over pairs of integers and assigning the results to separate variables. Note the use of the ``","`` in the ``for`` statement.
+
+Multiple unpacking in loops
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+One particularly useful context to use multiple unpacking is in looping. In the following example, I'm looping over pairs of integers and assigning the results to separate variables. Note the use of the ``","`` in the ``for`` statement.
+
+The tedious way
+"""""""""""""""
+
+.. jupyter-execute::
+
+    # here is a tedious way
+    coordinates = [(0, 1), (0, 2), (0, 3)]
+    for coord in coordinates:
+        x = coord[0]  # grabbing each integer by it's index
+        y = coord[1]
+        print(x, y)
+
+The succinct way
+""""""""""""""""
+
+.. jupyter-execute::
+
+    # This is more succinct
+    coordinates = [(0, 1), (0, 2), (0, 3)]
+    for x, y in coordinates:
+        print(x, y)
+
 Comments in code
 ----------------
 
-In Python, a comment is all text occuring after the  ``#`` symbol line. All characters occurring after it are ignored by the interpreter. Comment lines are used to explain in normal language what a block of code is doing, or to record other information such as the license.
+In Python, a comment is all text occurring after the  ``#`` symbol line. All characters occurring after it are ignored by the interpreter. Comment lines are used to explain in normal language what a block of code is doing, or to record other information such as the license.
 
 .. jupyter-execute::
     :linenos:

@@ -265,48 +265,14 @@
 </div>
 <div class="section" id="assignment-unpacking">
 <span id="index-1"></span><h2><span class="section-number">5.7.3. </span>Assignment unpacking<a class="headerlink" href="#assignment-unpacking" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes, functions return multiple objects. If you know a certain number of objects will be returned then knowing how to do a multiple assignment can be useful.</p>
-<p>It can also be applied in other contexts. One particularly useful context is in looping. In the following example, I’m looping over pairs of integers and assigning the results to separate variables. Note the use of the <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement.</p>
-<div class="section" id="the-tedious-way">
-<h3><span class="section-number">5.7.3.1. </span>The tedious way<a class="headerlink" href="#the-tedious-way" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, its useful to do multiple variable assignments in one go. Which value maps to which variable? (You can answer that definitively by trying it.)</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># here is a tedious way</span>
-<span class="n">coordinates</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-<span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># grabbing each integer by it&#39;s index</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0 1
-0 2
-0 3
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="the-succinct-way">
-<h3><span class="section-number">5.7.3.2. </span>The succinct way<a class="headerlink" href="#the-succinct-way" title="Permalink to this headline">¶</a></h3>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is more succinct</span>
-<span class="n">coordinates</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0 1
-0 2
-0 3
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
