@@ -6,7 +6,7 @@ Bioinformatics and its Applications
 :Address: Research School of Biology, Australian National University
 
 .. toctree::
-    :maxdepth: 4
+    :maxdepth: 2
     :numbered: 4
     :titlesonly:
     

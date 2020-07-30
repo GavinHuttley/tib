@@ -113,7 +113,7 @@ According to the format specification, these fields are tab (``'\t'``) delimited
 .. note:: Writing comma delimited files is done in the same way. Just replace ``'\'.join`` with ``','.join``.
 
 Exercises
----------
+=========
 
 **1.** Below I have two GFF records stored as a list of records, each record being a list. Write these data to a tab-delimited file.
 

@@ -36,11 +36,11 @@ Let's go backwards. We teach Python_ and R_ because these are the languages that
 
 We can ask, "What is the role of computing in science?" First, I hope you accept that science is about producing general models of how the natural world works. Good scientific models are powerful because they allow us to make predictions about what we will observe in circumstances that we may never have encountered before. Computer programs are one way in which we represent those models. They provide us with the means to evaluate, on a large scale, how well our model matches actual data. In other words, computing is at the very centre of scientific practice.
 
-*What will I get out of this course?* An understanding of how computer programs work. Improvements in your logical reasoning. An understanding of how to take advantage of computing to advance your own scientific interests. An appreciation of the pitfalls of software!
+*What will I get out of this course?* An understanding of how computer programs work. Improvements in your logical reasoning. An understanding of how to take advantage of computing to advance your own scientific interests. An appreciation of the pitfalls of software! All of this adds up to a superpower that will accelerate your work [3]_.
 
-Back to the replication crisis. When given the same input, computer programs are, by design, intended to produce the same output. Given computing is a central part of science, its usage needs to be done with replication in mind.
+.. [3] Sorry, it's bring your own cape.
 
-It is my goal that after this course your awareness on how to write code and validate its correctness makes you part of the solution to the replication crisis.
+Back to the replication crisis. When given the same input, computer programs are, by design, intended to produce the same output. Given computing is a central part of science, it should be written and applied with replication in mind.
 
 .. _`replication crisis`: https://en.wikipedia.org/wiki/Replication_crisis
 
