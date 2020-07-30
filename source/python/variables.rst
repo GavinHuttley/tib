@@ -41,31 +41,12 @@ Compare this expression to the original mathematical equation. Clearly, we have 
 Assignment unpacking
 --------------------
 
-Sometimes, functions return multiple objects. If you know a certain number of objects will be returned then knowing how to do a multiple assignment can be useful.
-
-It can also be applied in other contexts. One particularly useful context is in looping. In the following example, I'm looping over pairs of integers and assigning the results to separate variables. Note the use of the ``","`` in the ``for`` statement.
-
-The tedious way
-^^^^^^^^^^^^^^^
+Sometimes, its useful to do multiple variable assignments in one go. Which value maps to which variable? (You can answer that definitively by trying it.)
 
 .. jupyter-execute::
+    :linenos:
 
-    # here is a tedious way
-    coordinates = [(0, 1), (0, 2), (0, 3)]
-    for coord in coordinates:
-        x = coord[0]  # grabbing each integer by it's index
-        y = coord[1]
-        print(x, y)
-
-The succinct way
-^^^^^^^^^^^^^^^^
-
-.. jupyter-execute::
-
-    # This is more succinct
-    coordinates = [(0, 1), (0, 2), (0, 3)]
-    for x, y in coordinates:
-        print(x, y)
+    a, b = 3, 4
 
 Exercises
 =========
