@@ -23,7 +23,8 @@ div.wy-nav-content, div.container.sphinx-bs {
 
 div.sidebar, dl.footnote {
 	width:  40% !important;
-	display: inline-block;
+	display: inline-block !important;
+	clear: right !important;
 }
 
 dl.footnote {
