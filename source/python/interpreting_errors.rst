@@ -53,7 +53,7 @@ This is a ``SyntaxError`` -- imbalanced ``()``. Note the `^` in the traceback, w
                 print(name)
 
 Exercises
----------
+=========
 
 Fix the errors in the following.
 

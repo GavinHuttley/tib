@@ -88,13 +88,11 @@ The ``math`` module
 More sophisticated mathematical routines are included in the `math` module. We will discuss modules later.
 
 Exercises
----------
+=========
 
 **1.** Do the hello world example yourself.
 
-**2.** Compute the square root of ``16`` (i.e. :math:`\sqrt 16`). What ``type`` is ``16``? What ``type`` is the result?
-
-**3.** Order of operations rules. Compute the following expressions
+**2.** Order of operations rules. Compute the following expressions
 
 .. code-block:: python
 
@@ -106,3 +104,4 @@ and
 
     10 + 2 * 2
 
+Hopefully, the conventional rules of mathematics apply!
