@@ -30,7 +30,7 @@ The second approach is based on writing Python scripts. A script is just a plain
 .. raw:: html
     
     <figure style="padding: 4px;">
-    <img src="https://imgs.xkcd.com/comics/real_programmers.png" alt="Editor Wars">
+    <img src="https://imgs.xkcd.com/comics/real_programmers.png" style="height: auto; max-width=75%" alt="Editor Wars">
     <figcaption>From <a href="https://xkcd.com/378/">XKCD</a></figcaption>
     </figure>
 
