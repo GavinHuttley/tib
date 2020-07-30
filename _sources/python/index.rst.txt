@@ -7,7 +7,7 @@ Introduction to Python
 .. todo:: have a section on setting up their own computer
 
 .. toctree::
-    :maxdepth: 4
+    :maxdepth: 3
 
     resources
     intro

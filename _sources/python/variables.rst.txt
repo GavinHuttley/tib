@@ -70,14 +70,16 @@ The succinct way
 Exercises
 =========
 
-**1.** Rewrite the following so the equation is the first line. What happens? Why?
+**1.** Enter the following. What happens? Why?
 
 .. code-block:: python
 
+    h = (a ** 2 + b ** 2) ** (1 / 2)
     a = 3
     b = 4
-    h = (a ** 2 + b ** 2) ** (1 / 2)
-    h
+    print(h)
+
+Fix it!
 
 **2.** Consider the following two variables
 
@@ -87,7 +89,7 @@ Exercises
     a = 4
     b = 6
 
-Do these assignmnets on a single line (without using a ``;``).
+Do these assignments on a single line (without using a ``;``).
 
 **3.** Consider execution of the following
 

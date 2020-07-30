@@ -125,7 +125,7 @@ Getting help on a string method that can be used to concatenate.
 .. todo:: define difference between function and method, former nearly always MUST be given an argument, e.g. reversed(), reverse()
 
 Exercises
----------
+=========
 
 **1.** What comparison operators can you use to confirm my statements regarding same value and different instance?
 
