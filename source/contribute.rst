@@ -13,7 +13,7 @@ How to Contribute
           Your browser does not support the video tag.
         </video>
 
-.. sidebar:: How to edit these documents and "make a pull request""
+.. sidebar:: How to edit these documents and "make a pull request"
 
     .. raw:: html
     
