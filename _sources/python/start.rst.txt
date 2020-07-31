@@ -34,7 +34,7 @@ The second approach is based on writing Python scripts. A script is just a plain
     <figcaption>From <a href="https://xkcd.com/378/">XKCD</a></figcaption>
     </figure>
 
-But seriously, I strongly recommend using an IDE [2]_ as these incorporate tools to facilitate debugging, a very useful capability. Writing scripts has two steps for running the program (illustrated in the executing python from a text file video): (1) write the script, (2) running the script in a terminal.
+But seriously, I strongly recommend using an IDE [2]_ as these incorporate tools to facilitate debugging, a very useful capability (you can see a demo of this in :ref:`debugging`). Writing scripts has two steps for running the program (illustrated in the executing python from a text file video): (1) write the script, (2) running the script in a terminal.
 
 Everyones first program in Python
 =================================
