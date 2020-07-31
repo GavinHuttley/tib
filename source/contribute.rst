@@ -4,6 +4,24 @@
 How to Contribute
 *****************
 
+.. sidebar:: How to ask for help related to these notes
+
+    .. raw:: html
+    
+        <video width="50%" height="50%" controls>
+          <source src="https://cloudstor.aarnet.edu.au/plus/s/OmtMnVE1350vFSS/download" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+.. sidebar:: How to edit these documents and "make a pull request""
+
+    .. raw:: html
+    
+        <video width="50%" height="50%" controls>
+          <source src="https://cloudstor.aarnet.edu.au/plus/s/6iuolwQlVWmAUpU/download" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
 It's easy for you to contribute to improving these notes. If you have a suggestion for improvement, want to let me know you find something difficult to understand, or you've identified something which you think is incorrect, then please raise an issue_.
 
 For directly editing the content you only need to write simple text.  While you're reading this as a web-page, the actual document is written in restructuredText_ (a lite-weight markup language) and converted to html using the excellent Sphinx_ project.

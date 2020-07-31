@@ -20,7 +20,11 @@ This leads directly to the notion of *data types*. Python comes with a number of
 
     a = "a string"
     a
+
+.. jupyter-execute::
+
     e = ""
+    e
 
 note that ``e`` is an empty string.
 
