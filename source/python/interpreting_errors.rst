@@ -1,3 +1,14 @@
+.. sidebar:: Debugging a simple Python script using an IDE
+
+    .. raw:: html
+    
+        <video width="50%" height="50%" controls>
+          <source src="https://cloudstor.aarnet.edu.au/plus/s/ClULdjdqQm9EosK/download" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+.. _debugging:
+
 Fixing errors
 =============
 
