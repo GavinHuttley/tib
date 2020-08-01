@@ -103,6 +103,8 @@ Integer division uses ``//``
     pair: exponents; maths
     pair: powers; maths
 
+.. todo:: add modulo operator, index with % symbol, maths
+
 Exponents / Powers
 ------------------
 
