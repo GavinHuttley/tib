@@ -32,3 +32,5 @@ __pycache__
 
 # to remove later
 *molevol*
+*.doctrees*
+docs/*
