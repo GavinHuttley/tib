@@ -1,3 +1,6 @@
+.. role:: python(code)
+   :language: python
+
 ######################
 Introduction to Python
 ######################
@@ -38,3 +41,4 @@ Introduction to Python
     misc
     how_to_write_a_program
     visualisation
+

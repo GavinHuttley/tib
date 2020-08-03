@@ -12,7 +12,7 @@ The location of a file (its file path) is specified as a string. We use the ``op
 
     File objects behave like a standard Python series, you can *iterate* over their lines.
 
-``file`` objects have a ``close`` method, which you should use when finished.
+.. note:: File objects have a ``close()`` method, which you should use when finished.
 
 .. jupyter-execute::
     :raises:
@@ -53,7 +53,7 @@ There is another approach to ensuring the file is always closed. This involves u
 Reading contents of a file
 --------------------------
 
-File objects are iterable and the "unit" of iteration is a line, i.e. the file object returns all data up until the next line-feed character. Let's look.
+File objects are iterable and the "unit" of iteration is a line, i.e. the file object returns all data up until the next line-feed character.
 
 .. index::
    pair: iterate contents; files
@@ -66,7 +66,7 @@ File objects are iterable and the "unit" of iteration is a line, i.e. the file o
         for line in seqfile:
             print(repr(line))
 
-Note that I've used a built-in function ``repr()``. This shows the *representation* of the object. I've done that here because it shows the new-line characters at the end of each line.
+.. note:: I've used a built-in function ``repr()``. This shows the *representation* of the object. I've done that here because it shows the new-line characters at the end of each line.
 
 Writing data to a file
 ----------------------
@@ -144,4 +144,16 @@ Exercises
             "Name=exon-1;Parent=TRIVIDRAFT_53420",
         ],
     ]
+
+**2.** On linux and MacOS, the ``\n`` character is used to denote line endings. Windows uses ``\r\l``. Using ``help(open)``. Figure out how you would specify a file is written using line endings that differ to your operating system. Then do that for the data above.
+
+**3.** How you can check the line-endings of a file using Python. Is their another tool for your operating system?
+
+----
+
+This :download:`tab delimited text file <../data/donor_by_cancer_type.tsv>` is derived from the `Pan-Cancer Analysis of Whole Genomes project <https://dcc.icgc.org/pcawg>`_. Using this file, answer the following using plain python only (no 3rd party libraries).
+
+**4.**  The file contains two columns: ``Donor_ID``, ``Project_Code``. Parse this file to produce a list of ``Donor_ID`` whose ``Project_Code`` equals ``"Skin-Melanoma"``.
+
+**5.** Read the lines from this file and create a ``dict`` with keys corresponding to ``Project_Code`` and values being the list of all corresponding ``Donor_ID``, e.g. :python:`{'CNS-PiloAstro': ['DO36068', 'DO35934', ...`.
 
