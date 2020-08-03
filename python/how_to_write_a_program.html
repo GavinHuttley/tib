@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.30. Pulling it together – writing your own programs &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>5.31. Pulling it together – writing your own programs &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.31. Data Visualisation using Plotly" href="visualisation.html" />
-    <link rel="prev" title="5.29. Miscellaneous Python features" href="misc.html" /> 
+    <link rel="next" title="5.32. Data Visualisation using Plotly" href="visualisation.html" />
+    <link rel="prev" title="5.30. Miscellaneous Python features" href="misc.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -118,17 +118,18 @@
 <li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.18. Getting help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">5.19. Using lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="indexing.html">5.20. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">5.21. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.22. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.23. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.24. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.25. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.26. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.27. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.28. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.29. Miscellaneous Python features</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.30. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.31. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.21. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.22. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.23. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.24. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.25. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.26. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.27. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.28. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.30. Miscellaneous Python features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.31. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.32. Data Visualisation using Plotly</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -180,7 +181,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.30. </span>Pulling it together – writing your own programs</li>
+      <li><span class="section-number">5.31. </span>Pulling it together – writing your own programs</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -226,7 +227,7 @@
 }
 </style>
 <div class="section" id="pulling-it-together-writing-your-own-programs">
-<h1><span class="section-number">5.30. </span>Pulling it together – writing your own programs<a class="headerlink" href="#pulling-it-together-writing-your-own-programs" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.31. </span>Pulling it together – writing your own programs<a class="headerlink" href="#pulling-it-together-writing-your-own-programs" title="Permalink to this headline">¶</a></h1>
 <p>While it can seem daunting, the key to writing a program is to just start typing.</p>
 <p>First, do you need to open a file for reading? Then that’s the first piece of code you write.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">datafile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;some-data.txt&quot;</span><span class="p">)</span>
@@ -312,10 +313,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="visualisation.html" class="btn btn-neutral float-right" title="5.31. Data Visualisation using Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="visualisation.html" class="btn btn-neutral float-right" title="5.32. Data Visualisation using Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="misc.html" class="btn btn-neutral float-left" title="5.29. Miscellaneous Python features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="misc.html" class="btn btn-neutral float-left" title="5.30. Miscellaneous Python features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -3,6 +3,7 @@
 }
 
 div.section > p,
+div.section > hr,
 div.section > dl:not(.footnote),
 div.section > ol,
 div.section > ul,

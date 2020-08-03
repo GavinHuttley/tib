@@ -46,7 +46,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.21. Working with files" href="files.html" />
+    <link rel="next" title="5.22. Working with files" href="files.html" />
     <link rel="prev" title="5.19. Using lists" href="lists.html" /> 
 </head>
 
@@ -118,17 +118,18 @@
 <li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.18. Getting help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">5.19. Using lists</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5.20. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">5.21. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.22. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.23. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.24. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.25. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.26. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.27. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.28. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.29. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.30. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.31. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.21. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.22. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.23. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.24. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.25. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.26. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.27. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.28. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.30. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.31. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.32. Data Visualisation using Plotly</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -410,6 +411,61 @@
 </div>
 </div>
 </div>
+<div class="section" id="exercises">
+<h1><span class="section-number">5.21. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p><strong>1.</strong> Consider the <code class="docutils literal notranslate"><span class="pre">dict</span></code> defined below</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;value for 0&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;a-key&quot;</span><span class="p">,):</span> <span class="s2">&quot;funky key&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Get each value of <code class="docutils literal notranslate"><span class="pre">d</span></code> using <code class="docutils literal notranslate"><span class="pre">index</span></code> notation <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This is actually not indexing, because elements in a dict are not ordered. But the notation for “getting” an item from a <code class="docutils literal notranslate"><span class="pre">dict</span></code> is the same as for other data types (i.e. you use <code class="docutils literal notranslate"><span class="pre">[]</span></code>). The difference is the “index” does not need to be an integer.</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>Answer the following questions using this simple list of numbers.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p><strong>2.</strong> What does <code class="docutils literal notranslate"><span class="pre">nums[::-1]</span></code> do?</p>
+<hr class="docutils" />
+<p>Answer the following questions using this simple protein coding DNA sequence <code class="docutils literal notranslate"><span class="pre">ATGATGATG</span></code> <a class="footnote-reference brackets" href="#id4" id="id3">2</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>In the standard genetic code, this corresponds to 3 repeats of the methionine codon</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span>  <span class="s2">&quot;ATGATGATG&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p><strong>3.</strong> Use a slice to extract the first codon. Do the same for the last codon.</p>
+<p><strong>4.</strong> Use a slice operation to obtain the first nucleotide of each codon <a class="footnote-reference brackets" href="#id6" id="id5">3</a>, i.e. you should produce <code class="docutils literal notranslate"><span class="pre">[&quot;A&quot;,</span> <span class="pre">&quot;A&quot;,</span> <span class="pre">&quot;A&quot;]</span></code>. Do this for the second codon position (producing <code class="docutils literal notranslate"><span class="pre">[&quot;T&quot;,</span> <span class="pre">&quot;T&quot;,</span> <span class="pre">&quot;T&quot;]</span></code>) and then the third codon position.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>DNA encodes amino acid sequences using 3 consecutive bases. This unit is referred to as a <span class="target" id="index-4"></span>codon.</p>
+</dd>
+</dl>
+<p><strong>5.</strong>  Split the sequence <code class="docutils literal notranslate"><span class="pre">ATGAAATAA</span></code> into codons (non-overlapping letter triples). (The most succinct solution uses a list comprehension.)</p>
+</div>
 
 
            </div>
@@ -419,7 +475,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="files.html" class="btn btn-neutral float-right" title="5.21. Working with files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="files.html" class="btn btn-neutral float-right" title="5.22. Working with files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="lists.html" class="btn btn-neutral float-left" title="5.19. Using lists" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
