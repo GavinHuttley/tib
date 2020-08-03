@@ -121,6 +121,8 @@ In defining instances of collection types, different elements are delimited usin
 .. index::
     pair: type(); types
 
+.. todo:: keys must be immutable, define a hash
+
 How to tell the type of a variable
 ----------------------------------
 
