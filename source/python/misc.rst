@@ -1,6 +1,67 @@
 Miscellaneous Python features
 =============================
 
+.. index::
+    triple: bytes; str; string
+    triple: encode; decode; str
+    triple: encode; decode; string
+
+``bytes`` strings
+-----------------
+
+A type of string. The available methods are substantially the same as for ``str`` objects. There are important exceptions. You can create a ``bytes`` instance using a special string prefix.
+
+.. jupyter-execute::
+    :linenos:
+
+    btext = b"some text"
+    btext
+
+.. jupyter-execute::
+    :linenos:
+
+    type(btext)
+
+We can convert a ``bytes`` instance to a standard string using the ``decode()`` method [1]_.
+
+.. [1] utf_ stands for the unicode translation format, of which there are multiple.
+
+.. _utf: https://en.wikipedia.org/wiki/Unicode#UTF
+
+.. jupyter-execute::
+    :linenos:
+
+    text = btext.decode(encoding="utf8")
+    type(text)
+
+.. jupyter-execute::
+    :linenos:
+
+    text
+
+We can convert a standard string into a ``bytes`` instance using the ``encode()`` method.
+
+.. jupyter-execute::
+    :linenos:
+
+    back = text.encode(encoding="utf8")
+    back
+
+
+``open()`` files in binary mode
+-------------------------------
+
+Using ``mode="rb"`` opens a file in binary mode. The file contents are returned as ``bytes`` without any decoding.
+
+.. jupyter-execute::
+    :linenos:
+
+    with open("source/python/misc.rst", mode="rb") as infile:
+        line = infile.readline()
+    
+    line
+
+
 Empty series evaluate to ``False``
 ----------------------------------
 
