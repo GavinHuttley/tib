@@ -153,9 +153,9 @@ Answer the following questions using this simple protein coding DNA sequence ``A
 
     seq =  "ATGATGATG"
 
-**3.** Use a slice to extract the first codon. Do the same for the last codon.
+**3.** Use a slice to extract the first codon [3]_. Do the same for the last codon.
 
-**4.** Use a slice operation to obtain the first nucleotide of each codon [3]_, i.e. you should produce ``["A", "A", "A"]``. Do this for the second codon position (producing ``["T", "T", "T"]``) and then the third codon position.
+**4.** Use a slice operation to obtain the first nucleotide of each codon, i.e. you should produce ``["A", "A", "A"]``. Do this for the second codon position (producing ``["T", "T", "T"]``) and then the third codon position.
 
 .. [3] DNA encodes amino acid sequences using 3 consecutive bases. This unit is referred to as a :index:`codon`.
 
