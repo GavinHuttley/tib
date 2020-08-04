@@ -1,6 +1,104 @@
 Miscellaneous Python features
 =============================
 
+
+.. index::
+    pair: escaping characters; str
+    pair: raw; str
+    pair: r""; str
+
+Raw strings and escaping characters
+-----------------------------------
+
+Some characters have special meaning and including them in a string requires "escaping" them. This can be done using a ``\`` character. For instance, normally including the character ``\n`` in a string introduces a new line character.
+
+.. jupyter-execute::
+    :linenos:
+
+    text = "hello\nworld"
+    print(text)
+
+If we don't want that to happen, we can either "escape" the ``\`` character
+
+.. jupyter-execute::
+    :linenos:
+
+    text = "hello\\nworld"
+    print(text)
+
+or define it as a raw string by prefacing the string definition with the ``r`` character. The main advantage of this approach is it's easier to write.
+
+.. jupyter-execute::
+    :linenos:
+
+    text = r"hello\nworld"
+    print(text)
+
+
+.. index::
+    triple: bytes; str; string
+    triple: encode; decode; str
+    triple: encode; decode; string
+
+.. index::
+    pair: b""; str
+
+``bytes`` strings
+-----------------
+
+A type of string. The available methods are substantially the same as for ``str`` objects. There are important exceptions. You can create a ``bytes`` instance using a special string prefix.
+
+.. jupyter-execute::
+    :linenos:
+
+    btext = b"some text"
+    btext
+
+.. jupyter-execute::
+    :linenos:
+
+    type(btext)
+
+We can convert a ``bytes`` instance to a standard string using the ``decode()`` method [1]_.
+
+.. [1] utf_ stands for the unicode translation format, of which there are multiple.
+
+.. _utf: https://en.wikipedia.org/wiki/Unicode#UTF
+
+.. jupyter-execute::
+    :linenos:
+
+    text = btext.decode(encoding="utf8")
+    type(text)
+
+.. jupyter-execute::
+    :linenos:
+
+    text
+
+We can convert a standard string into a ``bytes`` instance using the ``encode()`` method.
+
+.. jupyter-execute::
+    :linenos:
+
+    back = text.encode(encoding="utf8")
+    back
+
+
+``open()`` files in binary mode
+-------------------------------
+
+Using ``mode="rb"`` opens a file in binary mode. The file contents are returned as ``bytes`` without any decoding.
+
+.. jupyter-execute::
+    :linenos:
+
+    with open("source/python/misc.rst", mode="rb") as infile:
+        line = infile.readline()
+
+    line
+
+
 Empty series evaluate to ``False``
 ----------------------------------
 
