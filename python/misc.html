@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.30. Miscellaneous Python features &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>5.31. Miscellaneous Python features &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.31. Pulling it together – writing your own programs" href="how_to_write_a_program.html" />
-    <link rel="prev" title="5.28. numpy – numerical routines for python" href="numpy.html" /> 
+    <link rel="next" title="5.32. Pulling it together – writing your own programs" href="how_to_write_a_program.html" />
+    <link rel="prev" title="5.29. numpy – numerical routines for python" href="numpy.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -122,14 +122,15 @@
 <li class="toctree-l2"><a class="reference internal" href="files.html">5.22. Working with files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.23. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.24. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.25. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.26. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.27. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.28. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.29. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.30. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.31. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.32. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.26. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.27. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.29. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.30. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.31. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.32. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.33. Data Visualisation using Plotly</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -181,7 +182,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.30. </span>Miscellaneous Python features</li>
+      <li><span class="section-number">5.31. </span>Miscellaneous Python features</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -227,9 +228,148 @@
 }
 </style>
 <div class="section" id="miscellaneous-python-features">
-<h1><span class="section-number">5.30. </span>Miscellaneous Python features<a class="headerlink" href="#miscellaneous-python-features" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.31. </span>Miscellaneous Python features<a class="headerlink" href="#miscellaneous-python-features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="raw-strings-and-escaping-characters">
+<span id="index-0"></span><h2><span class="section-number">5.31.1. </span>Raw strings and escaping characters<a class="headerlink" href="#raw-strings-and-escaping-characters" title="Permalink to this headline">¶</a></h2>
+<p>Some characters have special meaning and including them in a string requires “escaping” them. This can be done using a <code class="docutils literal notranslate"><span class="pre">\</span></code> character. For instance, normally including the character <code class="docutils literal notranslate"><span class="pre">\n</span></code> in a string introduces a new line character.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;hello</span><span class="se">\n</span><span class="s2">world&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>hello
+world
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we don’t want that to happen, we can either “escape” the <code class="docutils literal notranslate"><span class="pre">\</span></code> character</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;hello</span><span class="se">\\</span><span class="s2">nworld&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>hello\nworld
+</pre></div>
+</div>
+</div>
+</div>
+<p>or define it as a raw string by prefacing the string definition with the <code class="docutils literal notranslate"><span class="pre">r</span></code> character. The main advantage of this approach is it’s easier to write.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;hello\nworld&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>hello\nworld
+</pre></div>
+</div>
+</div>
+</div>
+<span class="target" id="index-1"></span></div>
+<div class="section" id="bytes-strings">
+<span id="index-2"></span><h2><span class="section-number">5.31.2. </span><code class="docutils literal notranslate"><span class="pre">bytes</span></code> strings<a class="headerlink" href="#bytes-strings" title="Permalink to this headline">¶</a></h2>
+<p>A type of string. The available methods are substantially the same as for <code class="docutils literal notranslate"><span class="pre">str</span></code> objects. There are important exceptions. You can create a <code class="docutils literal notranslate"><span class="pre">bytes</span></code> instance using a special string prefix.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btext</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;some text&quot;</span>
+<span class="n">btext</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>b&#39;some text&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">btext</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>bytes
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can convert a <code class="docutils literal notranslate"><span class="pre">bytes</span></code> instance to a standard string using the <code class="docutils literal notranslate"><span class="pre">decode()</span></code> method <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Unicode#UTF">utf</a> stands for the unicode translation format, of which there are multiple.</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">btext</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;some text&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can convert a standard string into a <code class="docutils literal notranslate"><span class="pre">bytes</span></code> instance using the <code class="docutils literal notranslate"><span class="pre">encode()</span></code> method.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">back</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="n">back</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>b&#39;some text&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="open-files-in-binary-mode">
+<h2><span class="section-number">5.31.3. </span><code class="docutils literal notranslate"><span class="pre">open()</span></code> files in binary mode<a class="headerlink" href="#open-files-in-binary-mode" title="Permalink to this headline">¶</a></h2>
+<p>Using <code class="docutils literal notranslate"><span class="pre">mode=&quot;rb&quot;</span></code> opens a file in binary mode. The file contents are returned as <code class="docutils literal notranslate"><span class="pre">bytes</span></code> without any decoding.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;source/python/misc.rst&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+<span class="n">line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>b&#39;Miscellaneous Python features\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="empty-series-evaluate-to-false">
-<h2><span class="section-number">5.30.1. </span>Empty series evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code><a class="headerlink" href="#empty-series-evaluate-to-false" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.31.4. </span>Empty series evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code><a class="headerlink" href="#empty-series-evaluate-to-false" title="Permalink to this headline">¶</a></h2>
 <p>One property of Python builtin series is that if they are empty, then they evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -256,7 +396,7 @@ NO Empty string
 <p>The values <code class="docutils literal notranslate"><span class="pre">0`</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">None</span></code> also evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </div>
 <div class="section" id="checking-correctness-using-assert">
-<span id="index-0"></span><h2><span class="section-number">5.30.2. </span>Checking correctness using <code class="docutils literal notranslate"><span class="pre">assert</span></code><a class="headerlink" href="#checking-correctness-using-assert" title="Permalink to this headline">¶</a></h2>
+<span id="index-3"></span><h2><span class="section-number">5.31.5. </span>Checking correctness using <code class="docutils literal notranslate"><span class="pre">assert</span></code><a class="headerlink" href="#checking-correctness-using-assert" title="Permalink to this headline">¶</a></h2>
 <p><strong>It’s essential to check the correctness of your code.</strong> Knowing where and when you do this is a skill that you will develop by programming. For now I just demonstrate the syntax for using the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -283,7 +423,7 @@ NO Empty string
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">41630</span><span class="n">d7fb167</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">41630</span><span class="n">d7fb167</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;name [</span><span class="si">%s</span><span class="s2">] is not a string&quot;</span> <span class="o">%</span> <span class="n">name</span>
 
@@ -294,10 +434,10 @@ NO Empty string
 </div>
 </div>
 <div class="section" id="comprehensions">
-<span id="index-1"></span><h2><span class="section-number">5.30.3. </span>“Comprehensions”<a class="headerlink" href="#comprehensions" title="Permalink to this headline">¶</a></h2>
+<span id="index-4"></span><h2><span class="section-number">5.31.6. </span>“Comprehensions”<a class="headerlink" href="#comprehensions" title="Permalink to this headline">¶</a></h2>
 <p>A comprehension is a very succinct, and simple, <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. They are quite fast and are useful.</p>
 <div class="section" id="list-comprehensions">
-<h3><span class="section-number">5.30.3.1. </span>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.31.6.1. </span>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">¶</a></h3>
 <p>Here’s an example for converting floats into strings.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -323,7 +463,7 @@ NO Empty string
 </div>
 </div>
 <div class="section" id="dictionary-comprehensions">
-<h3><span class="section-number">5.30.3.2. </span>Dictionary comprehensions<a class="headerlink" href="#dictionary-comprehensions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.31.6.2. </span>Dictionary comprehensions<a class="headerlink" href="#dictionary-comprehensions" title="Permalink to this headline">¶</a></h3>
 <p>So many uses for a dict! A simple demonstration, using the <code class="docutils literal notranslate"><span class="pre">nums</span></code> variable from above. Notice in this case I’m using multiple unpacking.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -342,7 +482,7 @@ NO Empty string
 </div>
 </div>
 <div class="section" id="zipping-unzipping-series">
-<span id="index-2"></span><h2><span class="section-number">5.30.4. </span>Zipping / Unzipping series<a class="headerlink" href="#zipping-unzipping-series" title="Permalink to this headline">¶</a></h2>
+<span id="index-5"></span><h2><span class="section-number">5.31.7. </span>Zipping / Unzipping series<a class="headerlink" href="#zipping-unzipping-series" title="Permalink to this headline">¶</a></h2>
 <p>Say you have two data series, of equal length, and you want them combined into a single object. This can be done using the built-in <cite>zip()</cite>. For example, here’s a <code class="docutils literal notranslate"><span class="pre">zip</span></code> operation performed on two strings:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -386,10 +526,10 @@ NO Empty string
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="how_to_write_a_program.html" class="btn btn-neutral float-right" title="5.31. Pulling it together – writing your own programs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="how_to_write_a_program.html" class="btn btn-neutral float-right" title="5.32. Pulling it together – writing your own programs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="numpy.html" class="btn btn-neutral float-left" title="5.28. numpy – numerical routines for python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="numpy.html" class="btn btn-neutral float-left" title="5.29. numpy – numerical routines for python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

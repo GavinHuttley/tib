@@ -122,14 +122,15 @@
 <li class="toctree-l2"><a class="reference internal" href="files.html">5.22. Working with files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.23. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.24. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.25. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.26. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.27. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.28. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.29. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.30. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.31. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.32. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.26. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.27. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.29. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.30. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.31. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.32. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.33. Data Visualisation using Plotly</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -253,6 +254,38 @@
 </div>
 <p>In the above, the argument is <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
 <p>The built in functions <code class="docutils literal notranslate"><span class="pre">range()</span></code> and <code class="docutils literal notranslate"><span class="pre">sum()</span></code> are widely used. The former for generating the range of indices required to loop over elements in a series. The latter is as the name implies. For more detailed information about their capabilities, use the builtin <code class="docutils literal notranslate"><span class="pre">help()</span></code> function!</p>
+<p>Another useful builtin function is <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>. As the name implies, this takes a series and returns a copy with the elements ordered <a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>The elements don’t have to be numbers.</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[0, 1, 3, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The original object is left unmodified.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[3, 0, 6, 1]
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="python-is-an-object-oriented-language">
 <h2><span class="section-number">5.16.2. </span>Python is an object oriented language<a class="headerlink" href="#python-is-an-object-oriented-language" title="Permalink to this headline">¶</a></h2>
@@ -262,26 +295,26 @@
 <p id="index-2">So what’s an instance? An instance is an occurrence of a type of data, which will have a location in memory that is different to other occurrences of the same type of data. I’ll use the built-in function <code class="docutils literal notranslate"><span class="pre">id()</span></code> (which returns a unique identifier, related to the address in memory):</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140731778307840
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140289724242624
 </pre></div>
 </div>
 </div>
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140731778746560
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140289724243904
 </pre></div>
 </div>
 </div>
@@ -291,16 +324,16 @@
 <div class="section" id="methods">
 <span id="index-3"></span><h2><span class="section-number">5.16.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>Which leads us to methods. A method is a function bound to a specific object that applies to the data encapsulated in that instance.</p>
-<p>This means that when you call a method on one object, it only operates on that object. I’ll demonstrate that by using a method on lists to reverse the elements.</p>
+<p>This means that when you call a method on one object, it only operates on that object. I’ll demonstrate that by using a method on lists to sort the elements.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="n">a</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[3, 2, 1, 0]
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[0, 1, 3, 6]
 </pre></div>
 </div>
 </div>
@@ -312,14 +345,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3]
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[3, 0, 6, 1]
 </pre></div>
 </div>
 </div>
 </div>
 <p>You can see that <code class="docutils literal notranslate"><span class="pre">a</span></code> was affected, while <code class="docutils literal notranslate"><span class="pre">b</span></code> was not.</p>
-<p>It’s of course also possible to have used a function for this, and such a function already exists in python, <code class="docutils literal notranslate"><span class="pre">reversed</span></code>. We could have done <code class="docutils literal notranslate"><span class="pre">reversed(a)</span></code> instead (although it’s not quite so simple since <code class="docutils literal notranslate"><span class="pre">reversed</span></code> returns a “generator”, which we will get to later).</p>
-<p>So with a method, it operates on the specific instance of data to which it’s bound. For a function, you need to explicitly provide the data to the function as an argument.</p>
+<p>So with a method, it operates on the specific instance of data to which it’s bound. For a function, you need to explicitly provide the data to the function as an argument as we did in our above usage of the builtin function <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>. To use a method, you don’t need to provide the data it will operate on, but for a function you do.</p>
 <p>Here are the key patterns for using a method:</p>
 <ol class="arabic simple">
 <li><p>You access them (which is also known as referencing them) using the <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code> notation, e.g. <code class="docutils literal notranslate"><span class="pre">some_variable.a_bound_method</span></code> where the instance is <code class="docutils literal notranslate"><span class="pre">some_variable</span></code> and the method is <code class="docutils literal notranslate"><span class="pre">a_bound_method</span></code>.</p></li>

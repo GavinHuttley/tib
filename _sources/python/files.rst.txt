@@ -1,3 +1,25 @@
+.. sidebar:: Paths to files and folders
+
+    .. raw:: html
+    
+        <video width="50%" height="50%" controls>
+          <source src="https://cloudstor.aarnet.edu.au/plus/s/eNFvT0aJuBjbxw4/download" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+
+.. sidebar:: Reading a text file using an IDE
+
+    .. raw:: html
+    
+        <video width="50%" height="50%" controls>
+          <source src="https://cloudstor.aarnet.edu.au/plus/s/xmNqykwFd73UnTg/download" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+.. role:: python(code)
+   :language: python
+
 Working with files
 ==================
 
@@ -6,11 +28,11 @@ Working with files
    pair: open(); files
    pair: open mode; files
 
-The location of a file (its file path) is specified as a string. We use the ``open()`` function to open files. Whether a file is opened for reading or writing is defined by the *mode* argument. For example ``mode="w"`` means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.
+The location of a file (its file path) is specified as a string (see the screencast on Unix Paths). We use the ``open()`` function to open files. Whether a file is opened for reading or writing is defined by the *mode* argument. For example ``mode="w"`` means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.
 
 .. sidebar:: File properties
 
-    File objects behave like a standard Python series, you can *iterate* over their lines.
+    File objects behave like a standard Python series, you can *iterate* over their lines. See the "Reading a text file..." screencast.
 
 .. note:: File objects have a ``close()`` method, which you should use when finished.
 
