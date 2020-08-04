@@ -30,6 +30,23 @@ In the above, the argument is ``text``.
 
 The built in functions ``range()`` and ``sum()`` are widely used. The former for generating the range of indices required to loop over elements in a series. The latter is as the name implies. For more detailed information about their capabilities, use the builtin ``help()`` function!
 
+Another useful builtin function is ``sorted()``. As the name implies, this takes a series and returns a copy with the elements ordered [1]_.
+
+.. [1] The elements don't have to be numbers.
+
+.. jupyter-execute::
+    :linenos:
+
+    nums = [3, 0, 6, 1]
+    sorted(nums)
+
+The original object is left unmodified.
+
+.. jupyter-execute::
+    :linenos:
+
+    nums
+
 Python is an object oriented language
 -------------------------------------
 
@@ -46,13 +63,13 @@ So what's an instance? An instance is an occurrence of a type of data, which wil
 .. jupyter-execute::
     :linenos:
 
-    a = [0, 1, 2, 3]
+    a = [3, 0, 6, 1]
     id(a)
 
 .. jupyter-execute::
     :linenos:
 
-    b = [0, 1, 2, 3]
+    b = [3, 0, 6, 1]
     id(b)
 
 Although ``a`` and ``b`` are equivalently defined -- both lists of exactly the same integers -- they are not the same instance.
@@ -64,12 +81,12 @@ Methods
 
 Which leads us to methods. A method is a function bound to a specific object that applies to the data encapsulated in that instance.
 
-This means that when you call a method on one object, it only operates on that object. I'll demonstrate that by using a method on lists to reverse the elements.
+This means that when you call a method on one object, it only operates on that object. I'll demonstrate that by using a method on lists to sort the elements.
 
 .. jupyter-execute::
     :linenos:
 
-    a.reverse()
+    a.sort()
     a
 
 .. jupyter-execute::
@@ -79,9 +96,7 @@ This means that when you call a method on one object, it only operates on that o
 
 You can see that ``a`` was affected, while ``b`` was not.
 
-It's of course also possible to have used a function for this, and such a function already exists in python, ``reversed``. We could have done ``reversed(a)`` instead (although it's not quite so simple since ``reversed`` returns a "generator", which we will get to later).
-
-So with a method, it operates on the specific instance of data to which it's bound. For a function, you need to explicitly provide the data to the function as an argument.
+So with a method, it operates on the specific instance of data to which it's bound. For a function, you need to explicitly provide the data to the function as an argument as we did in our above usage of the builtin function ``sorted()``. To use a method, you don't need to provide the data it will operate on, but for a function you do.
 
 Here are the key patterns for using a method:
 

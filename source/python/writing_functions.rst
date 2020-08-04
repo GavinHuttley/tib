@@ -15,6 +15,7 @@ So using functions will improve the reliability of your programs.
 .. index::
     pair: syntax; function
     pair: return; function
+    pair: return; statement
 
 The critical syntax elements
 ----------------------------
@@ -24,6 +25,7 @@ The critical syntax elements
 - ``()``, which flank any arguments that might be a part of the function signature 
 - ``:``, to indicate completion of the signature
 - arguments, required or optional (have a default value)
+- body of function must be indented
 - ``return``, optional, which is used to specify what the function returns
 
 The general form of a Python function.
@@ -143,3 +145,53 @@ Required arguments MUST occur before optional arguments. This constraint holds f
 .. note:: There is an exception for calling a function. A function call where all arguments are expressly named will work even if optional arguments are not last, e.g. ``get_diff(absolute=True, a=-4, b=6)``.
 
 .. _functions: http://greenteapress.com/thinkpython2/html/thinkpython2004.html#sec30
+
+.. index:: docstring, string literal
+
+Documenting a function with a doctstring
+----------------------------------------
+
+We can document how to use a function we write by writing a docstring. When you use ``help()`` on a built in function, it's the docstring of that function which is being displayed. The syntactic definition of a docstring is:
+
+- They are a string literal. By convention, they are defined using triple quotes surrounding the text. They can span multiple lines.
+- They are the first statement after the function signature.
+
+.. index::
+    pair: pass; statement
+
+The following illustrates the form of a docstring with a simple function with no contents other than the docstring [1]_.
+
+.. [1] The Python ``pass`` statement is a null ("do-nothing") operation. It's used as a placeholder when the language requires a syntactic element.
+
+.. jupyter-execute::
+    :linenos:
+
+    def myfunc():
+        """a do nothing demo
+        
+        multi-line docs
+        """
+        pass
+
+.. jupyter-execute::
+    :linenos:
+
+    help(myfunc)
+
+Exercises
+=========
+
+Using the following data
+
+.. jupyter-execute::
+    :linenos:
+
+    data = "[ 0.2 0.1 0.3 0.4 0.0 ]"
+
+**1.** Write a function that converts ``data`` into a list of floats.
+
+**2.** Write a function to add a pseudocount [2]_ to a series of frequencies (like the result of 1.). Make the pseudocount an optional argument, with a default value of 0.
+
+Then add some assert statements to your function to check the user input for the constant is valid (e.g. it's :math:`0<constant<`).
+
+.. [2] A pseudocount is a number, typically a frequency (e.g. 0.5), used to avoid zeros. They're used in statistical models where the empirical data have zero observations but the prior belief holds those states are possible and thus should have a frequency > 0.
