@@ -481,16 +481,18 @@ myfunc()
 <p>Using the following data</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;[ 0.2 0.1 0.3 0.4 0.0 ]&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s2">&quot; [ 0.2 0.1 0.3 0.4 0.0 ] &quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 </div>
 </div>
-<p><strong>1.</strong> Write a function that converts <code class="docutils literal notranslate"><span class="pre">data</span></code> into a list of floats.</p>
-<p><strong>2.</strong> Write a function to add a pseudocount <a class="footnote-reference brackets" href="#id4" id="id3">2</a> to a series of frequencies (like the result of 1.). Make the pseudocount an optional argument, with a default value of 0.</p>
-<p>Then add some assert statements to your function to check the user input for the constant is valid (e.g. it’s <span class="math notranslate nohighlight">\(0&lt;constant&lt;\)</span>).</p>
+<p><strong>1.</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> that takes a single string (as per <code class="docutils literal notranslate"><span class="pre">data</span></code>) and converts it into a list of floats. Apply this function to <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<p><strong>2.</strong> Write another function called <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> that takes a series of floats (like the result of 1.) and has an optional argument <code class="docutils literal notranslate"><span class="pre">pseudocount</span></code> (with a default value of 0). The function adds <code class="docutils literal notranslate"><span class="pre">pseudocount</span></code> <a class="footnote-reference brackets" href="#id4" id="id3">2</a> to every frequency.</p>
+<p>Then add some assert statements to your function to check the user input for both the frequencies and the constant are valid (e.g. all values are <code class="docutils literal notranslate"><span class="pre">0&lt;=freq&lt;1</span></code>).</p>
+<p>Use an assert to check the result satisfies the following, all numbers sum to 1.0 (within numerical precision) and all values satisfy <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">v</span> <span class="pre">&lt;</span> <span class="pre">1</span></code>.</p>
+<p><strong>3.</strong> Write another function, <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> that takes the sane input of <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> and also has an optional argument for <code class="docutils literal notranslate"><span class="pre">pseudocount</span></code>. This function should first call <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> to get the floats. Then call <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> with that result to get the final normalised series.  <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> then returns this value.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
 <dd><p>A pseudocount is a number, typically a frequency (e.g. 0.5), used to avoid zeros. They’re used in statistical models where the empirical data have zero observations but the prior belief holds those states are possible and thus should have a frequency &gt; 0.</p>
