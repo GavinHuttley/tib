@@ -1,10 +1,47 @@
 Miscellaneous Python features
 =============================
 
+
+.. index::
+    pair: escaping characters; str
+    pair: raw; str
+    pair: r""; str
+
+Raw strings and escaping characters
+-----------------------------------
+
+Some characters have special meaning and including them in a string requires "escaping" them. This can be done using a ``\`` character. For instance, normally including the character ``\n`` in a string introduces a new line character.
+
+.. jupyter-execute::
+    :linenos:
+
+    text = "hello\nworld"
+    print(text)
+
+If we don't want that to happen, we can either "escape" the ``\`` character
+
+.. jupyter-execute::
+    :linenos:
+
+    text = "hello\\nworld"
+    print(text)
+
+or define it as a raw string by prefacing the string definition with the ``r`` character. The main advantage of this approach is it's easier to write.
+
+.. jupyter-execute::
+    :linenos:
+
+    text = r"hello\nworld"
+    print(text)
+
+
 .. index::
     triple: bytes; str; string
     triple: encode; decode; str
     triple: encode; decode; string
+
+.. index::
+    pair: b""; str
 
 ``bytes`` strings
 -----------------
@@ -58,7 +95,7 @@ Using ``mode="rb"`` opens a file in binary mode. The file contents are returned 
 
     with open("source/python/misc.rst", mode="rb") as infile:
         line = infile.readline()
-    
+
     line
 
 
