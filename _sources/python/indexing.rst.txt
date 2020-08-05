@@ -87,10 +87,10 @@ Slicing is just an indexing operation that refers to a range of elements. A slic
     :linenos:
 
     data
-    codon1 = data[0:3]
+    codon1 = data[:3]
     codon1
 
-.. note:: I omitted the ``start`` and just used the `":"`. Python interpreted this as "slice from the start of the string up to (but not including) index 3".
+.. note:: I omitted the ``start`` and just used the ``:``. Python interpreted this as "slice from the start of the string up to (but not including) index 3".
 
 .. index::
     pair: negative; slice
