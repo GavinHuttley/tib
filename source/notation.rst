@@ -4,6 +4,8 @@ Notation used throughout
 
 Throughout these notes, we rely on different formatting of text to provide semantic meaning. For instance ``a_variable`` has what is referred to as a literal style. Here's a table showing the font and notation styles used throughout and what they mean.
 
+.. [1] All code has been executed using Jupyter. By default when you run a cell within Jupyter, it will display the last variable or unassigned output of a statement without the use of a print statement. This is not a standard function of all IDEs and may lead to differing displays.    
+
 .. index:: notation
 
 .. csv-table:: Notation used
