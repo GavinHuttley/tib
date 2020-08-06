@@ -173,7 +173,7 @@ Exercises
 
 ----
 
-This :download:`tab delimited text file <../data/donor_by_cancer_type.tsv>` is derived from the `Pan-Cancer Analysis of Whole Genomes project <https://dcc.icgc.org/pcawg>`_. Using this file, answer the following using plain python only (no 3rd party libraries).
+This :download:`tab delimited text file <../data/donor_by_cancer_type.tsv>` is derived from the `Pan-Cancer Analysis of Whole Genomes project <https://dcc.icgc.org/pcawg>`_. Using this file, answer the following using plain python only (no 3rd party libraries). Note that we have put a copy of this file in the `data/` directory in your home directory.
 
 **4.**  The file contains two columns: ``Donor_ID``, ``Project_Code``. Parse this file to produce a list of ``Donor_ID`` whose ``Project_Code`` equals ``"Skin-Melanoma"``.
 
