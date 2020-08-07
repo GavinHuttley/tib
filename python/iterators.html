@@ -46,7 +46,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.29. Extending capabilities using import" href="import.html" />
+    <link rel="next" title="5.30. Extending capabilities using import" href="import.html" />
     <link rel="prev" title="5.26. Namespaces" href="namespace.html" /> 
 </head>
 
@@ -126,12 +126,13 @@
 <li class="toctree-l2"><a class="reference internal" href="namespace.html">5.26. Namespaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.27. Exercises</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5.28. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.29. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.30. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.31. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.32. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.33. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.34. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.30. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.31. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.32. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.33. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.34. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.35. Data Visualisation using Plotly</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -240,7 +241,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x7fc52e3f7430&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x7f92443f84c0&gt;
 </pre></div>
 </div>
 </div>
@@ -277,6 +278,16 @@ e
 </div>
 </div>
 </div>
+<div class="section" id="the-yield-keyword">
+<span id="index-2"></span><h2><span class="section-number">5.28.1. </span>The <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword<a class="headerlink" href="#the-yield-keyword" title="Permalink to this headline">¶</a></h2>
+<p>You can write your own generator functions by using the keyword <code class="docutils literal notranslate"><span class="pre">yield</span></code> instead of <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+<p>There are several benefits of generator functions. Just one of which is they provide a means for iterating over some data series without having to load everything into memory. For instance, if you have a massive data file of human genetic variants and but you only want 100 records where the alleles are C/T and on chromosome 10.</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1><span class="section-number">5.29. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p><strong>1.</strong> Write a function that takes a file path, opens the file and returns all the lines in that file.</p>
+<p><strong>2.</strong> Convert the above function to a generator that yields one line at a time.</p>
 </div>
 
 
@@ -287,7 +298,7 @@ e
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="import.html" class="btn btn-neutral float-right" title="5.29. Extending capabilities using import" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="import.html" class="btn btn-neutral float-right" title="5.30. Extending capabilities using import" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="namespace.html" class="btn btn-neutral float-left" title="5.26. Namespaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
