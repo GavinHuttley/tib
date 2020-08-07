@@ -167,7 +167,7 @@ Exercises
         ],
     ]
 
-**2.** On linux and MacOS, the ``\n`` character is used to denote line endings. Windows uses ``\r\l``. Using ``help(open)``. Figure out how you would specify a file is written using line endings that differ to your operating system. Then do that for the data above.
+**2.** On linux and MacOS, the ``\n`` character is used to denote line endings. Windows uses ``\r\n``. Using ``help(open)``. Figure out how you would specify a file is written using line endings that differ to your operating system. Then do that for the data above.
 
 **3.** How you can check the line-endings of a file using Python. Is their another tool for your operating system?
 
