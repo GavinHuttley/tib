@@ -64,3 +64,40 @@ But they cannot be modified within the local scope (unless you use the ``global`
     
     foo2()
 
+.. sidebar:: Exploring namespaces using the debugger
+
+    .. raw:: html
+    
+        <video width="50%" height="50%" controls>
+          <source src="https://cloudstor.aarnet.edu.au/plus/s/DfRA9NA9hAI5qHq/download" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+Exercises
+=========
+
+Consider this broken code
+
+.. jupyter-execute::
+    :linenos:
+    :raises:
+
+    CONSTANT = 2
+    
+    def add_squared_constant(data_series):
+        """adds squared constant to elements of data_series"""
+        CONSTANT = CONSTANT**2
+        result = [v + CONSTANT for v in data_series]
+        return result
+    
+    data = [4, 12, 42]
+    sqd = add_squared_constant(data)
+
+
+**1.** Fix ``add_squared_constant()`` so it works to return ``[8, 16, 46]`` given ``data``.
+
+**2.** Fix, without using the ``global`` keyword, so it works to return ``[8, 16, 46]`` given ``data``.
+
+**3.** Fix, using the ``global`` keyword, so it works to return ``[8, 16, 46]`` given ``data``. What happens to the global variable ``CONSTANT`` [2]_?
+
+.. [2] A part of the coding style guidelines I use is to use ALL CAPS for variables that are meant to be treated as constants.
