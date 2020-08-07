@@ -132,7 +132,7 @@ For instance, the *GFF* format (Generic File Format) is a file format commonly e
 
 According to the format specification, these fields are tab (``'\t'``) delimited. To generate such output we need to store the field values in a series object (such as a list). This allows us to then use the string ``join()`` method to produce a single string with all field elements.
 
-.. note:: Writing comma delimited files is done in the same way. Just replace ``'\'.join`` with ``','.join``.
+.. note:: Writing comma delimited files is done in the same way. Just replace ``'\t'.join`` with ``','.join``.
 
 Exercises
 =========
