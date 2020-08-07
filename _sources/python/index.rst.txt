@@ -31,11 +31,12 @@ Introduction to Python
     indexing
     files
     writing_functions
+    namespace
     iterators
     import
-    namespace
     numpy
     misc
     how_to_write_a_program
     visualisation
 
+.. todo:: write a section on string maniupulation
