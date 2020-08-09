@@ -49,6 +49,9 @@ The following is a valid, but not particularly useful, function. As the function
 
 .. note::  By convention, functions are put at the top of script files. The convention is motivated by the desire to make the code easy to read.
 
+.. index::
+    pair: void; functions
+
 Void functions
 --------------
 
