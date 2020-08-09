@@ -108,6 +108,94 @@ Simple!
 .. index::
     pair: concatenating; string
 
+So how do I use methods and functions?
+--------------------------------------
+
+There are some general principles in how to use functions and methods. First, using ``help()`` will show you what arguments a function or method can take
+
+.. sidebar:: Interpreting help() for a function
+    :name: Interpreting help() for a function
+
+    .. image::  /_static/images/func_help.png
+        :scale: 50
+    
+    The function signature lists the required and optional arguments.
+    
+    1. Required arguments are listed first. In this case, the name of that argument tells you it must be an "iterable" object.
+    2. Optional arguments are listed as `<argumemt name>=<default value>`. In this case, there are two optional arguments. Omn called ``key``, another called ``reverse``.
+    3. Return value. The help text tells us this function will return a new list with members sorted in ascending order.
+
+Functions
+^^^^^^^^^
+
+Focussing on functions first. If a function is what we call a void function then it operates only on the arguments you give it and returns nothing [2]_. The obvious example of this is ``print()``. Fruitful functions actually return a value. You can establish what type that value will be by either reading help (see `Interpreting help() for a function`_) or running an experiment (calling the function with some data).
+
+.. [2] Actually, in Python every function and method returns something. Void functions and methods return `None` (try it on `print()`.
+
+Methods
+^^^^^^^
+
+It becomes a little bit trickier when we talk about methods. That said, the strategy suggested above of using ``help()`` or simple experiments applies here too.
+
+Recalling that methods are bound to the data they operate on, we can divide methods into those which:
+
+- describe the data
+- transform the data
+
+Consider the string ``"GGTCATGAAGGTC"``. Example string methods that describe the data are ``find()``, ``startswith()``. In these cases, the method will return a value.
+
+.. jupyter-execute::
+    :linenos:
+
+    seq = "GGTCATGAAGGTC"
+    seq.find("ATG")
+
+In an interactive interpreter (like Jupyter which we've used here), the returned value is displayed. In order to use the information, we have to assign it to a variable which we now do.
+
+.. jupyter-execute::
+    :linenos:
+
+    orf_start = seq.find("ATG")
+
+These descriptive methods are pretty simple to comprehend. The challenge comes when you start using methods that transform the data. Again, using ``help()`` on the object is the most reliable approach.
+
+.. sidebar:: Interpreting help() for a method
+    :name: Interpreting help() for a method
+
+    .. image::  /_static/images/method_help.png
+        :scale: 50
+    
+    The help indicates the return value will be a string transformed such that the all characters are lower case except the first character.
+
+In this example given in `Interpreting help() for a method`_, a new string will be returned. This means the original instance will be unchanged.
+
+.. jupyter-execute::
+    :linenos:
+
+    text = "HELLO WORLD"
+    capitalized = text.capitalize()
+    text
+
+.. jupyter-execute::
+    :linenos:
+
+    capitalized
+
+.. index:: immutable, mutable
+
+If we were working on a ``list`` type, however, transforming methods **do not** return a value and in fact are void methods. Instead the data in the instance is modified itself.
+
+.. jupyter-execute::
+    :linenos:
+
+    words = ["HELLO", "WORLD"]
+    words.reverse() # reverse the item order
+    words
+
+This leads us to a general principle
+
+.. note:: If a data type is immutable (e.g. strings, tuples), then any transformation methods will return a new instance of the same type. Thus you must assign the returned value of a method call on an immutable type in order to use it! If instead the type is mutable (e.g. lists, dicts) then the data of the existing instance is modified in-place.
+
 A useful trick for concatenating strings
 ----------------------------------------
 
