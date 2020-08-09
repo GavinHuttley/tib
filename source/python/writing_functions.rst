@@ -196,6 +196,6 @@ Then add some assert statements to your function to check the user input for bot
 
 Use an assert to check the result satisfies the following, all numbers sum to 1.0 (within numerical precision) and all values satisfy ``0 < v < 1``.
 
-**3.** Write another function, ``str_to_normalised()`` that takes the sane input of ``cast_to_floats()`` and also has an optional argument for ``pseudocount``. This function should first call ``cast_to_floats()`` to get the floats. Then call ``normalised_freqs()`` with that result to get the final normalised series.  ``str_to_normalised()`` then returns this value.
+**3.** Write another function, ``str_to_normalised()`` that takes the same input of ``cast_to_floats()`` and also has an optional argument for ``pseudocount``. This function should first call ``cast_to_floats()`` to get the floats. Then call ``normalised_freqs()`` with that result to get the final normalised series.  ``str_to_normalised()`` then returns this value.
 
 .. [2] A pseudocount is a number, typically a frequency (e.g. 0.5), used to avoid zeros. They're used in statistical models where the empirical data have zero observations but the prior belief holds those states are possible and thus should have a frequency > 0.
