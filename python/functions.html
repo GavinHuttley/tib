@@ -133,6 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="misc.html">5.33. Miscellaneous Python features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.34. Pulling it together – writing your own programs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.35. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.36. Dealing with strings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -303,7 +304,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140643680361536
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140333512792960
 </pre></div>
 </div>
 </div>
@@ -316,7 +317,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140643680434944
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140333512790464
 </pre></div>
 </div>
 </div>
@@ -324,7 +325,7 @@
 <p>Although <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are equivalently defined – both lists of exactly the same integers – they are not the same instance.</p>
 </div>
 <div class="section" id="methods">
-<span id="index-3"></span><h2><span class="section-number">5.16.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<span id="index-3"></span><span id="id4"></span><h2><span class="section-number">5.16.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>Which leads us to methods. A method is a function bound to a specific object that applies to the data encapsulated in that instance.</p>
 <p>This means that when you call a method on one object, it only operates on that object. I’ll demonstrate that by using a method on lists to sort the elements.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -376,15 +377,15 @@
 </div>
 <div class="section" id="functions">
 <h3><span class="section-number">5.16.4.1. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
-<p>Focussing on functions first. If a function is what we call a void function then it operates only on the arguments you give it and returns nothing <a class="footnote-reference brackets" href="#id5" id="id4">2</a>. The obvious example of this is <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Fruitful functions actually return a value. You can establish what type that value will be by either reading help (see <a class="reference internal" href="#interpreting-help-for-a-function">Interpreting help() for a function</a>) or running an experiment (calling the function with some data).</p>
+<p>Focussing on functions first. If a function is what we call a void function then it operates only on the arguments you give it and returns nothing <a class="footnote-reference brackets" href="#id6" id="id5">2</a>. The obvious example of this is <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Fruitful functions actually return a value. You can establish what type that value will be by either reading help (see <a class="reference internal" href="#interpreting-help-for-a-function">Interpreting help() for a function</a>) or running an experiment (calling the function with some data).</p>
 <dl class="footnote brackets">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">2</a></span></dt>
 <dd><p>Actually, in Python every function and method returns something. Void functions and methods return <cite>None</cite> (try it on <cite>print()</cite>.</p>
 </dd>
 </dl>
 </div>
-<div class="section" id="id6">
-<h3><span class="section-number">5.16.4.2. </span>Methods<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3><span class="section-number">5.16.4.2. </span>Methods<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>It becomes a little bit trickier when we talk about methods. That said, the strategy suggested above of using <code class="docutils literal notranslate"><span class="pre">help()</span></code> or simple experiments applies here too.</p>
 <p>Recalling that methods are bound to the data they operate on, we can divide methods into those which:</p>
 <ul class="simple">

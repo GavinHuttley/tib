@@ -1,0 +1,888 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.36. Dealing with strings &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Index" href="../genindex.html" />
+    <link rel="prev" title="5.35. Data Visualisation using Plotly" href="visualisation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">5. Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="resources.html">5.1. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">5.2. Introduction to programming using Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html">5.3. Computing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#everyones-first-program-in-python">5.4. Everyones first program in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">5.5. Basic arithmetic operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#exercises">5.6. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">5.7. Variables and assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.8. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">5.9. Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.10. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">5.11. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.12. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">5.13. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.14. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.15. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">5.16. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.18. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.19. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.20. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.21. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.22. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.23. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.24. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.26. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.28. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.30. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.31. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.32. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.33. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.34. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.35. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.36. Dealing with strings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
+        
+      <li><span class="section-number">5.36. </span>Dealing with strings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/strings.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="dealing-with-strings">
+<span id="strings"></span><h1><span class="section-number">5.36. </span>Dealing with strings<a class="headerlink" href="#dealing-with-strings" title="Permalink to this headline">¶</a></h1>
+<p>Text is the dominant way in which bioinformatics data is stored and shared. So any bioinformatician needs to become expert in manipulating text data.</p>
+<p>The most common tasks concern:</p>
+<ul class="simple">
+<li><p>Transforming lines in a file into data types that can be processed</p></li>
+<li><p>Transforming python objects into text so it can be written to a file</p></li>
+</ul>
+<p>All such text manipulation involves the string data type, so becoming deeply familiar with what strings are and how to interrogate and manipulate, them is crucial.</p>
+<div class="section" id="creating-a-string-type-from-a-non-string-type">
+<h2><span class="section-number">5.36.1. </span>Creating a string type from a non-string type<a class="headerlink" href="#creating-a-string-type-from-a-non-string-type" title="Permalink to this headline">¶</a></h2>
+<p>All objects in python can be turned into a string using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">num_as_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">num_as_str</span><span class="p">),</span> <span class="n">num_as_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt; 42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even complex objects, which I demonstrate using a list.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
+<span class="n">data_as_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">data_as_str</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;[&#39;text&#39;, 42, 3.14]&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="defining-strings">
+<h2><span class="section-number">5.36.2. </span>Defining strings<a class="headerlink" href="#defining-strings" title="Permalink to this headline">¶</a></h2>
+<p>Defining a string can be done using balanced quote marks. You can use either single quotes, or double quotes. For instance</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">single</span> <span class="o">=</span> <span class="s1">&#39;text&#39;</span>
+<span class="n">single</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;text&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>and</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="o">=</span> <span class="s2">&quot;text&quot;</span>
+<span class="n">double</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;text&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>are both valid and equal.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">single</span> <span class="o">==</span> <span class="n">double</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>The convention is to use double quotes.</p>
+<p>An empty string is defined by balanced quotes with nothing between them.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">empty</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="section" id="how-to-include-a-quote-character-in-a-string">
+<h3><span class="section-number">5.36.2.1. </span>How to include a quote character in a string<a class="headerlink" href="#how-to-include-a-quote-character-in-a-string" title="Permalink to this headline">¶</a></h3>
+<p>Since we define a string using quotes, including a quote character can be solved in two ways. By “escaping” (see <a class="reference internal" href="misc.html#escaping-chars"><span class="std std-ref">Raw strings and escaping characters</span></a>) the quotes.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;escaping </span><span class="se">\&quot;</span><span class="s2">quotes</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>escaping &quot;quotes&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, defining the string with the other type of quote. In this example, the string is defined using single quotes so we can safely include double quote characters in the string. This approach is preferred since it’s more readable.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;escaping &quot;quotes&quot;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>escaping &quot;quotes&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="literal-strings">
+<span id="index-0"></span><h2><span class="section-number">5.36.3. </span>Literal strings<a class="headerlink" href="#literal-strings" title="Permalink to this headline">¶</a></h2>
+<p>This is a special case in which the strings can include line breaks and other formatting. These are created by triple-quoting. For instance</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">multi_line</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;We can have multiple lines of content.</span>
+
+<span class="s2">And blank lines etc..</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multi_line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>We can have multiple lines of content.
+
+And blank lines etc..
+
+</pre></div>
+</div>
+</div>
+</div>
+<p>The actual formatting is revealed by using the representation of the object <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>In an interactive interpreter, you do not need to do anything special to see this, other than simply having a statement that consists of only the variable name itself. In a python script, however, you would need to print the result of calling <code class="docutils literal notranslate"><span class="pre">repr()</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">print(repr(multi_line))</span></code></p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">multi_line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;We can have multiple lines of content.\n\nAnd blank lines etc..\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Literal strings are most often used for writing documentation strings (or docstrings) on functions and methods.</p>
+</div>
+<div class="section" id="special-characters-in-strings-tabs-new-lines-spaces">
+<span id="index-1"></span><h2><span class="section-number">5.36.4. </span>Special characters in strings – tabs, new lines, spaces<a class="headerlink" href="#special-characters-in-strings-tabs-new-lines-spaces" title="Permalink to this headline">¶</a></h2>
+<p>White space exists in files in part to make it easier for humans to understand the contents. (Reading this text if there were no spaces between the words would be a massive cognitive strain.) It also exists in files to make it easier to separate different types of data. So it is crucial to know what white space is (beyond it’s central role in the Python language itself). I’m showing the most common below.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">using_space</span> <span class="o">=</span> <span class="s2">&quot;separate words&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">using_space</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>separate words
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">using_tab</span> <span class="o">=</span> <span class="s2">&quot;separate</span><span class="se">\t</span><span class="s2">words&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">using_tab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>separate	words
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">using_newline</span> <span class="o">=</span> <span class="s2">&quot;separate</span><span class="se">\n</span><span class="s2">lines&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">using_newline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>separate
+lines
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="finding-out-things-about-a-string">
+<h2><span class="section-number">5.36.5. </span>Finding out things about a string<a class="headerlink" href="#finding-out-things-about-a-string" title="Permalink to this headline">¶</a></h2>
+<p>We often want to know whether a string contains a particular character or substring <a class="footnote-reference brackets" href="#id4" id="id3">2</a>. There are specific string methods and more general Python approaches to discovering this.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>a substring is just a smaller string than what you currently have. For example, <cite>“b”</cite> is a substring of <code class="docutils literal notranslate"><span class="pre">&quot;ab&quot;</span></code>.</p>
+</dd>
+</dl>
+<div class="section" id="using-standard-python-operators">
+<h3><span class="section-number">5.36.5.1. </span>Using standard Python operators<a class="headerlink" href="#using-standard-python-operators" title="Permalink to this headline">¶</a></h3>
+<p>Let’s look at the general Python approach first. We can compare strings in a number of ways. We can ask whether they have the same value.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="s2">&quot;ab&quot;</span>
+<span class="n">j</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span>
+<span class="n">i</span> <span class="o">==</span> <span class="n">j</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can ask whether a substring is part of a string using the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">j</span> <span class="ow">in</span> <span class="n">i</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this second case, there is no information about where the substring is located only that there is a “match”.</p>
+</div>
+<div class="section" id="using-string-methods">
+<h3><span class="section-number">5.36.5.2. </span>Using string methods<a class="headerlink" href="#using-string-methods" title="Permalink to this headline">¶</a></h3>
+<p>If you’re not sure what a method is, read <a class="reference internal" href="functions.html#methods"><span class="std std-ref">Methods</span></a>. Briefly, if we want to establish whether some text data has a particular property we first need to be able to reference the data by the name of the variable storing it. This variable is called an “instance” of type <code class="docutils literal notranslate"><span class="pre">str</span></code>. In object-oriented languages like python, we then use <em>a method on that instance</em> to evaluate the property of interest.</p>
+<p>Returning to the task of finding substrings, we can establish whether a string contains a substring using the <code class="docutils literal notranslate"><span class="pre">find()</span></code> method. In this case, an integer is returned.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(int, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, the value tells you whether the substring exists (<code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>) and where, in the string, the first instance occurs. There are other search related methods too.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The general pattern in using a method is you first specify the object and then the method of interest like so <code class="docutils literal notranslate"><span class="pre">&lt;instance&gt;.&lt;method</span> <span class="pre">name&gt;()</span></code>.</p>
+</div>
+</div>
+<div class="section" id="useful-string-descriptor-methods">
+<h3><span class="section-number">5.36.5.3. </span>Useful string descriptor methods<a class="headerlink" href="#useful-string-descriptor-methods" title="Permalink to this headline">¶</a></h3>
+<p>Other common string processing tasks concern checking the beginning of a string, or the end of a string. The former is commonly encountered for processing file formats where lines start with specific characters. The latter commonly encountered when processing filenames.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;data/chrom1.fa&quot;</span>
+<span class="n">is_data</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+<span class="n">is_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="transforming-strings">
+<h2><span class="section-number">5.36.6. </span>Transforming strings<a class="headerlink" href="#transforming-strings" title="Permalink to this headline">¶</a></h2>
+<p>One common string transformation operation involves removing specific characters. Here it’s useful to utilise positional information. For instance, if you’re reading lines from a text file you know that the line will end with a trailing new line character (depending on your operating system). In this instance, the <code class="docutils literal notranslate"><span class="pre">strip()</span></code> method is what you want. The steps to doing this are:</p>
+<ol class="arabic simple">
+<li><p>Have the variable of interest</p></li>
+<li><p>Call the <code class="docutils literal notranslate"><span class="pre">strip()</span></code> method</p></li>
+<li><p>Assign the result of the call to a variable.</p></li>
+</ol>
+<p>In this example, I’m defining a <code class="docutils literal notranslate"><span class="pre">line</span></code> variable with leading and trailing white space and some internal white space of different types. To remove leading/trailing using strip.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;  ORF1ab</span><span class="se">\t</span><span class="s2"> himalayan  palm civet</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;  ORF1ab\t himalayan  palm civet\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">trimmed</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">trimmed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ORF1ab\t himalayan  palm civet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another approach to removing characters is to use the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method. Removing the new line character is easy, since it is unique. We replace characters by specifying what we want to replace and what we wish to replace it with. In this case, we wish to remove the <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code> and replace it with nothing so we specify an empty string as the second argument.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">trimmed_via_replace</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">trimmed_via_replace</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;  ORF1ab\t himalayan  palm civet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>That doesn’t address the leading spaces problem. We could do so by <code class="docutils literal notranslate"><span class="pre">line.replace(&quot;.</span> <span class="pre">&quot;,</span> <span class="pre">&quot;&quot;)</span></code>, but that has an unfortunate side-effect.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">trimmed_via_replace</span> <span class="o">=</span> <span class="n">trimmed_via_replace</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">trimmed_via_replace</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ORF1ab\t himalayanpalm civet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have concatenated two words together because there was a double space between them too. So <code class="docutils literal notranslate"><span class="pre">strip()</span></code> is better for handling the start/end of strings.</p>
+<p>Another key string transformation is to split a string into pieces. Working with <code class="docutils literal notranslate"><span class="pre">trimmed</span></code>, if we split at the tab character (<code class="docutils literal notranslate"><span class="pre">&quot;\t&quot;</span></code>) we get a list of strings back.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">trimmed</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;ORF1ab&#39;, &#39; himalayan  palm civet&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we then want to clean up the items in <code class="docutils literal notranslate"><span class="pre">data</span></code>, removing their leading trailing spaces, we need to call <code class="docutils literal notranslate"><span class="pre">strip()</span></code> on each item. This is solved by doing a loop.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;ORF1ab&#39;, &#39;himalayan  palm civet&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In doing that we can see there’s still two spaces in one item. We will address that at the end.</p>
+</div>
+<div class="section" id="preparing-data-for-writing-to-file">
+<h2><span class="section-number">5.36.7. </span>Preparing data for writing to file<a class="headerlink" href="#preparing-data-for-writing-to-file" title="Permalink to this headline">¶</a></h2>
+<p>In order to do this, we often need to concatenate items into being a single string. The most common so called “delimited” file format is csv (which stands for comma separated). So we will now convert <code class="docutils literal notranslate"><span class="pre">data</span></code> into a single string with the items separated by a comma.</p>
+<p>In this case, our data instance is a list and its items are all strings. Transforming these into a single string requires defining the string you want to join them with and using the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method on <strong>that</strong> instance.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">csv_line</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">csv_line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ORF1ab,himalayan  palm civet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This output highlights the fact that one of the items has an unwanted double space. How can ensure that we have a csv delimited file where all items are separated by a single space and have no leading or trailing white space?</p>
+<p>We do that by combining the above. We start by doing it the long-handed, but explicit, way – using a for loop – building the algorithm up in increasingly longer pieces.</p>
+<p>We start again with the tab-split.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">trimmed</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>We then loop over the items in <code class="docutils literal notranslate"><span class="pre">data</span></code>, and apply strip and then split. Why in that order? because <code class="docutils literal notranslate"><span class="pre">strip()</span></code> works with the ends of the string and returns another string while <code class="docutils literal notranslate"><span class="pre">split()</span></code> affects the entire string.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;ORF1ab&#39;]
+[&#39;himalayan&#39;, &#39;palm&#39;, &#39;civet&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>That output shows, the first time through the loop, we get back a list with a single member. The Second time through the loop, we get back a list with 3 members. What we want is to join the words with a single space. We know from above what <code class="docutils literal notranslate"><span class="pre">join()</span></code> will do on a list with multiple members (puts the character in between them), but what will it do to a list with one member? Let’s experiment!</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">one</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">]</span>
+<span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">one</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;one&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>That experiment shows the method will just return the single string member. Awesome! So let’s transform list <code class="docutils literal notranslate"><span class="pre">item</span></code> in our <code class="docutils literal notranslate"><span class="pre">for</span></code> loop into a string using this join.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>ORF1ab
+himalayan palm civet
+</pre></div>
+</div>
+</div>
+</div>
+<p>Well that works, so now let’s just add it to the <code class="docutils literal notranslate"><span class="pre">cleaned</span></code> list variable.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">cleaned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">cleaned</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;ORF1ab&#39;, &#39;himalayan palm civet&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Getting excited now! Let’s finish off this production of a cleaned csv delimited line.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">cleaned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">cleaned</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cleaned</span><span class="p">)</span>
+<span class="n">cleaned</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ORF1ab,himalayan palm civet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="not-done-yet">
+<h3><span class="section-number">5.36.7.1. </span>Not done yet…<a class="headerlink" href="#not-done-yet" title="Permalink to this headline">¶</a></h3>
+<p>We can clean this code up quite a bit. First, we can combine the first two lines of the loop into a single statement. Because the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method returns an instance that’s compatible with the required input of the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method, we can combine these into a single statement without needing to define an intermediate variable.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">cleaned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">cleaned</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cleaned</span><span class="p">)</span>
+<span class="n">cleaned</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ORF1ab,himalayan palm civet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This does exactly the same thing as before since – just like in mathematics – expressions are evaluated from the inner most parentheses first (i.e. <code class="docutils literal notranslate"><span class="pre">item.split()</span></code> is called first, then <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;.join()</span></code>).</p>
+<p>We can go further since the result of  <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;.join()</span></code> produces output compatible with the required input of <code class="docutils literal notranslate"><span class="pre">append()</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">cleaned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+<span class="n">cleaned</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cleaned</span><span class="p">)</span>
+<span class="n">cleaned</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ORF1ab,himalayan palm civet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>And even further</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+<span class="n">cleaned</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cleaned</span><span class="p">)</span>
+<span class="n">cleaned</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ORF1ab,himalayan palm civet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>and further</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
+<span class="n">cleaned</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ORF1ab,himalayan palm civet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="just-because-you-can-doesn-t-mean-you-should">
+<h3><span class="section-number">5.36.7.2. </span>Just because you can doesn’t mean you should!<a class="headerlink" href="#just-because-you-can-doesn-t-mean-you-should" title="Permalink to this headline">¶</a></h3>
+<p>Hopefully, that’s not an unfamiliar realisation. The difference between the long-winded way and the much more compact expression is, at least, a loss of some clarity. The more compact expression is somewhat harder to understand and definitely harder to debug should anything go wrong.</p>
+<p>My advice is to be more verbose as you learn to program and gradually increase the compactness of your code as these patterns become more familiar.</p>
+</div>
+</div>
+<div class="section" id="but-wait-it-s-still-not-ready-to-write-to-a-file">
+<h2><span class="section-number">5.36.8. </span>But wait, it’s still not ready to write to a file!<a class="headerlink" href="#but-wait-it-s-still-not-ready-to-write-to-a-file" title="Permalink to this headline">¶</a></h2>
+<p>Good catch! Unless you really want to have all your data on a single line, you should end the line with a line feed character. This can be done with the following addition</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="n">cleaned</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>and then this can be safely written into a file onto its own line and thus readily recovered at a later date.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../genindex.html" class="btn btn-neutral float-right" title="6. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="visualisation.html" class="btn btn-neutral float-left" title="5.35. Data Visualisation using Plotly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

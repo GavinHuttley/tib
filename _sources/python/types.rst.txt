@@ -1,3 +1,5 @@
+.. _types:
+
 The basic data types
 ====================
 
