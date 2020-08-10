@@ -10,7 +10,7 @@ The most common tasks concern:
 - Transforming lines in a file into data types that can be processed
 - Transforming python objects into text so it can be written to a file
 
-All such text manipulation involves the string data type, so becoming deeply familiar with what strings are and how to interrogate and manipulate, them is crucial.
+All such text manipulation involves the string data type, so becoming deeply familiar with what strings are and how to interrogate and manipulate them is crucial.
 
 Creating a string type from a non-string type
 ---------------------------------------------
@@ -33,10 +33,14 @@ Even complex objects, which I demonstrate using a list.
     data_as_str = str(data)
     data_as_str
 
+Being able to convert complex objects into strings is useful for display to screen since it gives you exact insight into the state of an object during program execution. It's less useful as precursor for storage because there is no universally simple (and secure) operation for reconstructing the original objects. This latter issue is a case of "data serialisation" and is beyond the scope of these notes [1]_.
+
+.. [1] The native serialisation approach for Python is called `pickling <https://docs.python.org/3/library/pickle.html>`_. This approach has many problems. A popular alternative is `json <https://docs.python.org/3/library/json.html>`_.
+
 Defining strings
 ----------------
 
-Defining a string can be done using balanced quote marks. You can use either single quotes, or double quotes. For instance
+Defining a string can be done using balanced quote marks. You can use either single (``'``), or double (``"``) quotes. For instance
 
 .. jupyter-execute::
     :linenos:
@@ -71,7 +75,7 @@ An empty string is defined by balanced quotes with nothing between them.
 How to include a quote character in a string
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since we define a string using quotes, including a quote character can be solved in two ways. By "escaping" (see :ref:`escaping_chars`) the quotes.
+Since we define a string using quotes, including a quote character can be solved in two ways. By "escaping" (see :ref:`escaping_chars`) the quotes with a preceding backslash (``\``).
 
 .. jupyter-execute::
     :linenos:
@@ -104,9 +108,9 @@ This is a special case in which the strings can include line breaks and other fo
     """
     print(multi_line)
 
-The actual formatting is revealed by using the representation of the object [1]_.
+The actual formatting is revealed by using the representation of the object [2]_.
 
-.. [1] In an interactive interpreter, you do not need to do anything special to see this, other than simply having a statement that consists of only the variable name itself. In a python script, however, you would need to print the result of calling ``repr()``, i.e. ``print(repr(multi_line))``
+.. [2] In an interactive interpreter, you do not need to do anything special to see this, other than simply having a statement that consists of only the variable name itself. In a python script, however, you would need to print the result of calling ``repr()``, i.e. ``print(repr(multi_line))``
 
 .. jupyter-execute::
     :linenos:
@@ -147,9 +151,9 @@ White space exists in files in part to make it easier for humans to understand t
 Finding out things about a string
 ---------------------------------
 
-We often want to know whether a string contains a particular character or substring [2]_. There are specific string methods and more general Python approaches to discovering this.
+We often want to know whether a string contains a particular character or substring [3]_. There are specific string methods and more general Python approaches to discovering this.
 
-.. [2] a substring is just a smaller string than what you currently have. For example, `"b"` is a substring of ``"ab"``.
+.. [3] a substring is just a smaller string than what you currently have. For example, `"b"` is a substring of ``"ab"``.
 
 Using standard Python operators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -185,7 +189,9 @@ Returning to the task of finding substrings, we can establish whether a string c
     index = i.find(j)
     type(index), index
 
-In this case, the value tells you whether the substring exists (``index >= 0``) and where, in the string, the first instance occurs. There are other search related methods too.
+In this case, the value tells you whether the substring exists (``index >= 0``) and where, in the string, the first instance occurs. There are other search related methods too [4]_.
+
+.. [4] Another, extremely powerful, approach to querying strings in a more general way is achieved by using regular expressions (also referred to as regexes). Again, unfortunately, these are beyond the scope of this course. That said, you should definitely `read about them <read about them>`_.
 
 .. note:: The general pattern in using a method is you first specify the object and then the method of interest like so ``<instance>.<method name>()``.
 
@@ -406,3 +412,23 @@ Good catch! Unless you really want to have all your data on a single line, you s
     out = cleaned + "\n"
 
 and then this can be safely written into a file onto its own line and thus readily recovered at a later date.
+
+
+Other really useful methods on string objects
+---------------------------------------------
+
+.. csv-table:: Useful string methods
+    :header: Method name, Method does
+
+    ``count()``, Counting characters in the string.
+    ``encode()``, Converting to a different character sets (e.g. to bytes).
+    ``startswith()``, Whether string starts with a substring.
+    ``endswith()``, Whether string ends with a substring.
+    ``find()``, Find the index of substring.
+    ``index()``, Like find but raises an exception if not present.
+    ``replace()``, Replace substring.
+    ``splitlines()``, Splits the string at new line characters.
+    ``lower()``, Convert the string to all lower case.
+    ``upper()``, Convert the string to all upper case.
+
+These are all accessed using the ``<instance variable>.<method name>()`` approach.
