@@ -7,6 +7,8 @@ Miscellaneous Python features
     pair: raw; str
     pair: r""; str
 
+.. _escaping_chars:
+
 Raw strings and escaping characters
 -----------------------------------
 
