@@ -76,6 +76,8 @@ Although ``a`` and ``b`` are equivalently defined -- both lists of exactly the s
 
 .. index:: methods
 
+.. _methods:
+
 Methods
 -------
 

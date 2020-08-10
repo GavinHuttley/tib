@@ -38,5 +38,6 @@ Introduction to Python
     misc
     how_to_write_a_program
     visualisation
+    strings
 
 .. todo:: write a section on string maniupulation
