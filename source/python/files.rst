@@ -26,6 +26,8 @@
 .. role:: python(code)
    :language: python
 
+.. _files:
+
 Working with files
 ==================
 
