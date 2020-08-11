@@ -413,7 +413,6 @@ Good catch! Unless you really want to have all your data on a single line, you s
 
 and then this can be safely written into a file onto its own line and thus readily recovered at a later date.
 
-
 Other really useful methods on string objects
 ---------------------------------------------
 
