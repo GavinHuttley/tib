@@ -46,7 +46,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.35. Data Visualisation using Plotly" href="visualisation.html" />
+    <link rel="next" title="5.36. Data Visualisation using Plotly" href="visualisation.html" />
     <link rel="prev" title="5.33. Miscellaneous Python features" href="misc.html" /> 
 </head>
 
@@ -132,8 +132,9 @@
 <li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.32. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html">5.33. Miscellaneous Python features</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5.34. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.35. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.36. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.35. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.36. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.37. Dealing with strings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -232,81 +233,230 @@
 </style>
 <div class="section" id="pulling-it-together-writing-your-own-programs">
 <h1><span class="section-number">5.34. </span>Pulling it together – writing your own programs<a class="headerlink" href="#pulling-it-together-writing-your-own-programs" title="Permalink to this headline">¶</a></h1>
-<p>While it can seem daunting, the key to writing a program is to just start typing.</p>
-<p>First, do you need to open a file for reading? Then that’s the first piece of code you write.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">datafile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;some-data.txt&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
-<span class="n">datafile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="section" id="break-the-problem-into-pieces">
+<h2><span class="section-number">5.34.1. </span>Break the problem into pieces<a class="headerlink" href="#break-the-problem-into-pieces" title="Permalink to this headline">¶</a></h2>
+<p>While it can seem daunting, the key to writing a program is to break the problem into smaller pieces and solve those individually. How do I recognise what to work on first, how can I decide what a piece is? I suggest thinking in terms of order of operations. To illustrate these steps let’s look at a simple equation.</p>
+<div class="math notranslate nohighlight">
+\[x=b+\sqrt{b^2 + 4ac}\]</div>
+<p>Here’s a listing of the parts:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(b\)</span></p></li>
+<li><p>the <span class="math notranslate nohighlight">\(\sqrt{~}\)</span>, which contains</p>
+<blockquote>
+<div><p>2.1. <span class="math notranslate nohighlight">\(b^2\)</span>, which is</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(b\times b\)</span></p></li>
+</ul>
+</div></blockquote>
+<p>2.2. <span class="math notranslate nohighlight">\(4ac\)</span>, which is</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(4\times a \times c\)</span></p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+<p>To actually solve this problem requires we work from the inside (the most indented bullet points) towards the outside (the least indented bullet points). So let’s do this thing!</p>
+<p>I’m going to rewrite the bullet list, defining the names of python variables I will use for each level.</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code> (well that was easy!)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqrt_term</span></code></p>
+<blockquote>
+<div><p>2.1 <code class="docutils literal notranslate"><span class="pre">b_sq</span></code></p>
+<p>2.2 <code class="docutils literal notranslate"><span class="pre">four_ac</span></code></p>
+</div></blockquote>
+</li>
+</ol>
+<p>The first thing we have to do is define the variables we will use before we actually use them. We will just give them some starting numerical values (we know they have to be numbers because maths!) <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Let’s also make our life easy by defining only positive numerical values so we don’t have to worry about handling the <span class="math notranslate nohighlight">\(\sqrt{~}\)</span> of a negative number.</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.1</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">32</span>
 </pre></div>
 </div>
-<p>Second, what type of data are you going to be handling? If you can, it’s a good idea to make a really small sample data file. You can do this by grabbing a larger one and editing it down to be small (say just a few records). Having a small file means you know exactly what’s in there, and your program should run really quick.</p>
-<p>When you’ve got the sample data organised, think about what you’re supposed to be producing. Do you need to produce a certain type of data structure? For example, a dictionary with “labels” as keys and the biological sequence as the “value”. In this example, you know then there are two different types of information you need to extract from your file and that the program must satisfy 3 criteria:</p>
-<ol class="arabic simple">
-<li><p>extracts sequence labels correctly</p></li>
-<li><p>extracts sequences correctly</p></li>
-<li><p>associates labels and sequences correctly, i.e. “label1” is the key for “sequence1”.</p></li>
-</ol>
-<p>Broken down like this, it becomes the case that you solve one of these pieces at a time. Solving means write the code and a test that (given known input) checks your code produces the correct output.</p>
-<p>This approach then becomes the foundation for an algorithm with modular design. A modular approach to implementing software makes it easier to validate correctness of the code.</p>
-<p>One approach to modularising code is to write a number of functions which are then used to build more extensive programs. Some good pointers for whether some code should be written as function are:</p>
-<ul class="simple">
-<li><p>the code is likely to be useful in multiple locations, so making it a function will eliminate redundancy</p></li>
-<li><p>the code is relatively short (say under 100 lines) and its correctness is critical to overall correctness of a program</p></li>
-</ul>
-<p>Either of these is sufficient reason to write a function.</p>
-<p>Building a program from functions requires only that the function is defined before it is used and that it is in the name space where it is to be used. So for the example I’ve given above, you have two functions you could write.</p>
-<p>That said, don’t be too rigid in how you approach a problem. It may be that keeping things as separate functions doesn’t “work well”. But it never hurts to start writing in that way.</p>
-<p>I illustrate the semantics of this process here using a simple numerical example of computing some summary statistics. The <code class="docutils literal notranslate"><span class="pre">get_summary_stats</span></code> functions is an example of a <em>wrapper function</em>. It’s primary purpose is to call two other functions without any additional computations.</p>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>That actually defines <code class="docutils literal notranslate"><span class="pre">b</span></code> (1.), so the first of our parts is solved. Now let’s solve go to the inner most pieces and define <code class="docutils literal notranslate"><span class="pre">b_sq</span></code> (2.1).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b_sq</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Then <code class="docutils literal notranslate"><span class="pre">four_ac</span></code> (2.2).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">four_ac</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Now we can compute <code class="docutils literal notranslate"><span class="pre">sqrt_term</span></code> (2.).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 
-<span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;returns the mean of x&quot;&quot;&quot;</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">total</span> <span class="o">/</span> <span class="n">num</span>
-
-<span class="k">assert</span> <span class="n">mean</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span> <span class="o">==</span> <span class="mf">6.0</span><span class="p">,</span> <span class="s2">&quot;error in mean calculation&quot;</span>
-
-<span class="k">def</span> <span class="nf">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;returns the sample standard deviation of x given mu (the mean of x).&quot;&quot;&quot;</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">variance</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
-        <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">element</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
-        <span class="n">variance</span> <span class="o">+=</span> <span class="n">val</span>
-    <span class="n">variance</span> <span class="o">/=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># sample std dev</span>
-    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
-
-<span class="k">assert</span> <span class="nb">round</span><span class="p">(</span><span class="n">std</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">6</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mf">4.6904</span><span class="p">,</span> <span class="s2">&quot;error in calculating std dev&quot;</span>
+<span class="n">sqrt_term</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">b_sq</span> <span class="o">+</span> <span class="n">four_ac</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 </div>
 </div>
-<p>We can now use the <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span></code> functions with confidence.</p>
+<p>and the final solution (<code class="docutils literal notranslate"><span class="pre">x</span></code>)</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_summary_stats</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;returns the mean and sample standard deviation&quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Cannot compute mean, std on zero-length array&quot;</span>
-    <span class="n">mu</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">std_dev</span> <span class="o">=</span> <span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">mu</span><span class="p">,</span> <span class="n">std_dev</span>
-
-<span class="n">mu</span><span class="p">,</span> <span class="n">std_dev</span> <span class="o">=</span> <span class="n">get_summary_stats</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
-<span class="n">mu</span><span class="p">,</span> <span class="n">std_dev</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">sqrt_term</span>
+<span class="n">x</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(9.5, 5.916079783099616)
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>17.876334882255897
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can, of course, write this as a single statement.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>17.876334882255897
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now this is a simple problem. For more challenging problems, as discussed below, breaking problems into pieces and making sure each piece works is a more successful strategy.</p>
+</div>
+<div class="section" id="look-for-patterns">
+<h2><span class="section-number">5.34.2. </span>Look for patterns<a class="headerlink" href="#look-for-patterns" title="Permalink to this headline">¶</a></h2>
+<p>Part of what we have just done is to look at the “problem” (execute an equation) and recognised patterns in it (based on mathematical order of operations). That approach also applies to more complicated challenges.</p>
+<p>Let’s say we want to read in a plain text file which contains a header column followed by rows of numbers where fields are delimited by tabs. Here’s the first few lines of just such a file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">length</span>      <span class="n">kappa</span>
+<span class="mf">0.017963959082536105</span>        <span class="mf">8.567983199899585</span>
+<span class="mf">0.036913880515213056</span>        <span class="mf">7.658395694530731</span>
+</pre></div>
+</div>
+<p>Algorithmically, here are the top level problems:</p>
+<ol class="arabic">
+<li><p>Open the file (see <a class="reference internal" href="files.html#files"><span class="std std-ref">Working with files</span></a>)</p></li>
+<li><p>Read the file line by line  (see <a class="reference internal" href="files.html#files"><span class="std std-ref">Working with files</span></a>)</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Transform each line into usable data</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<p>That last point is the inner most, so we focus our attention on the challenge of transforming lines. We look at the sample of the file to we identify any patterns and notice 2 features. The first is that all lines have the same number of fields (separated by <code class="docutils literal notranslate"><span class="pre">\t</span></code>). The second is that the header row is different in that the values are not numbers. We now modify the enumeration to give some more detail.</p>
+<ol class="arabic">
+<li><p>Open the file (see <a class="reference internal" href="files.html#files"><span class="std std-ref">Working with files</span></a>)</p></li>
+<li><p>Read the first line in the file</p>
+<blockquote>
+<div><p>2.1. Split the line into fields</p>
+</div></blockquote>
+</li>
+<li><p>Read the remaining lines in the file (see <a class="reference internal" href="files.html#files"><span class="std std-ref">Working with files</span></a>)</p>
+<blockquote>
+<div><p>3.1. Split a line into fields</p>
+<blockquote>
+<div><p>3.1.1. Convert the line items into <code class="docutils literal notranslate"><span class="pre">float</span></code>’s</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Close the file (see <a class="reference internal" href="files.html#files"><span class="std std-ref">Working with files</span></a>)</p></li>
+</ol>
+<p>So I suggest the place to start is 3.1.1. I’m going to write separate functions for each of these steps. The reason being that it allows us to reuse code <a class="footnote-reference brackets" href="#id4" id="id3">2</a>, makes checking the code correctness easier and simplifies building more complex algorithms into being just the inclusion of already written functions.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Important here since 2.1 and 3.1 are the same. Using a function means we only have to write it once and we can use it as many times as seems appropriate.</p>
+</dd>
+</dl>
+<p>We start this program with a function that takes a list of strings where every value needs to be converted into a <code class="docutils literal notranslate"><span class="pre">float</span></code>. I’m going to write it and test it, using an <code class="docutils literal notranslate"><span class="pre">assert</span></code>, with some sample data.</p>
+<div class="jupyter_cell jupyter_container docutils container" id="index-0">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cast_to_floats</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;turns a series of strings into floats&quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;0.0&quot;</span><span class="p">,</span> <span class="s2">&quot;24.3&quot;</span><span class="p">,</span> <span class="s2">&quot;13.5&quot;</span><span class="p">]</span>
+<span class="n">got</span> <span class="o">=</span> <span class="n">cast_to_floats</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">got</span> <span class="o">==</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">24.3</span><span class="p">,</span> <span class="mf">13.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Yay! So that’s 3.1.1 out of the way. The next step out is solve 3.1. We also do this by writing a separate function that we check using some synthetic data and make sure it gives us the result we expect.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">line_to_fields</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;splits at \t and cleans up the elements&quot;&quot;&quot;</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># I think we should remove any leading / trailing white space from elements</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># this sample is \t delimited with a \n character at the end</span>
+<span class="c1"># just as it would be if read from a file</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="s2">&quot;0.0</span><span class="se">\t</span><span class="s2">24.3</span><span class="se">\t</span><span class="s2">13.5</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">got</span> <span class="o">=</span> <span class="n">line_to_fields</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">got</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;0.0&quot;</span><span class="p">,</span> <span class="s2">&quot;24.3&quot;</span><span class="p">,</span> <span class="s2">&quot;13.5&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Double Yay! That’s 3.1 (and thus 2.1) out of the way <a class="footnote-reference brackets" href="#id6" id="id5">3</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>Also note this code will work if a line has 1 field, or 1 million fields.</p>
+</dd>
+</dl>
+<p>Returning to the task list, we remove the steps we’ve already done, making it simpler to see what remains.</p>
+<ol class="arabic simple">
+<li><p>Open the file</p></li>
+<li><p>Read the first line in the file</p></li>
+<li><p>Read the remaining lines in the file</p></li>
+<li><p>Close the file</p></li>
+</ol>
+<p>The first and last are easy (see <a class="reference internal" href="files.html#files"><span class="std std-ref">Working with files</span></a>). The remaining tasks (listed in the Exercise below) need to be solved before these 4 steps can all be combined into a single function. That function should use the <code class="docutils literal notranslate"><span class="pre">line_to_fields()</span></code> and <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> functions that we have already written. At which point, job well done!</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1><span class="section-number">5.35. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p><strong>1.</strong> Using any text file, identify how to read just the first line.</p>
+<p><strong>2.</strong> Identify how to loop over all the lines in a file.</p>
+<p><strong>3.</strong> Identify how you can keep all the results of converting lines into floats.</p>
+<p><strong>4.</strong> Write a function <code class="docutils literal notranslate"><span class="pre">parser()</span></code> that completes the algorithm. You can apply it to the sample data you make up that looks like the above, or use <code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">file</span></code>.</p>
 </div>
 
 
@@ -317,7 +467,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="visualisation.html" class="btn btn-neutral float-right" title="5.35. Data Visualisation using Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="visualisation.html" class="btn btn-neutral float-right" title="5.36. Data Visualisation using Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="misc.html" class="btn btn-neutral float-left" title="5.33. Miscellaneous Python features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

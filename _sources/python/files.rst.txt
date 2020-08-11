@@ -1,5 +1,8 @@
 .. sidebar:: Paths to files and folders
 
+    .. index::
+        pair: Paths to files and folders; screencasts
+
     .. raw:: html
     
         <video width="50%" height="50%" controls>
@@ -10,6 +13,9 @@
 
 .. sidebar:: Reading a text file using an IDE
 
+    .. index::
+        pair: Reading a text file using an IDE; screencasts
+
     .. raw:: html
     
         <video width="50%" height="50%" controls>
@@ -19,6 +25,8 @@
 
 .. role:: python(code)
    :language: python
+
+.. _files:
 
 Working with files
 ==================

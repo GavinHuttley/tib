@@ -66,6 +66,9 @@ But they cannot be modified within the local scope (unless you use the ``global`
 
 .. sidebar:: Exploring namespaces using the debugger
 
+    .. index::
+        pair: Exploring namespaces using the debugger; screencasts
+
     .. raw:: html
     
         <video width="50%" height="50%" controls>

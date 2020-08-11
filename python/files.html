@@ -132,8 +132,9 @@
 <li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.32. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html">5.33. Miscellaneous Python features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.34. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.35. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.36. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.35. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.36. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.37. Dealing with strings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -243,8 +244,8 @@
   Your browser does not support the video tag.
 </video></div>
 <div class="section" id="working-with-files">
-<h1><span class="section-number">5.22. </span>Working with files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">The location of a file (its file path) is specified as a string (see the screencast on Unix Paths). We use the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function to open files. Whether a file is opened for reading or writing is defined by the <em>mode</em> argument. For example <code class="docutils literal notranslate"><span class="pre">mode=&quot;w&quot;</span></code> means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.</p>
+<span id="files"></span><h1><span class="section-number">5.22. </span>Working with files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
+<p id="index-2">The location of a file (its file path) is specified as a string (see the screencast on Unix Paths). We use the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function to open files. Whether a file is opened for reading or writing is defined by the <em>mode</em> argument. For example <code class="docutils literal notranslate"><span class="pre">mode=&quot;w&quot;</span></code> means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.</p>
 <div class="sidebar">
 <p class="sidebar-title">File properties</p>
 <p>File objects behave like a standard Python series, you can <em>iterate</em> over their lines. See the “Reading a text file…” screencast.</p>
@@ -278,7 +279,7 @@
 </div>
 </div>
 </div>
-<p id="index-1">Then closing it using the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method.</p>
+<p id="index-3">Then closing it using the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seqfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -329,7 +330,7 @@
 <div class="section" id="reading-contents-of-a-file">
 <h2><span class="section-number">5.22.1. </span>Reading contents of a file<a class="headerlink" href="#reading-contents-of-a-file" title="Permalink to this headline">¶</a></h2>
 <p>File objects are iterable and the “unit” of iteration is a line, i.e. the file object returns all data up until the next line-feed character.</p>
-<div class="jupyter_cell jupyter_container docutils container" id="index-2">
+<div class="jupyter_cell jupyter_container docutils container" id="index-4">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the default mode argument value is &quot;r&quot;</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/sample.fasta&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">seqfile</span><span class="p">:</span>
@@ -364,7 +365,7 @@
 <h2><span class="section-number">5.22.2. </span>Writing data to a file<a class="headerlink" href="#writing-data-to-a-file" title="Permalink to this headline">¶</a></h2>
 <p>In order to write data to a file, we must specify the <code class="docutils literal notranslate"><span class="pre">mode=&quot;w&quot;</span></code>.</p>
 <p>The data also needs to be converted to strings. One way to do this is to use a string format conversion. For instance, consider the example of having a list of float’s. If we try to write this to a file, it will raise an exception.</p>
-<div class="jupyter_cell jupyter_container docutils container" id="index-3">
+<div class="jupyter_cell jupyter_container docutils container" id="index-5">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.378</span><span class="p">,</span> <span class="mf">0.711</span><span class="p">,</span> <span class="mf">0.349</span><span class="p">,</span> <span class="mf">0.897</span><span class="p">]</span>
 

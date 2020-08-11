@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.35. Data Visualisation using Plotly &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>5.36. Data Visualisation using Plotly &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -46,7 +46,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.36. Dealing with strings" href="strings.html" />
+    <link rel="next" title="5.37. Dealing with strings" href="strings.html" />
     <link rel="prev" title="5.34. Pulling it together – writing your own programs" href="how_to_write_a_program.html" /> 
 </head>
 
@@ -132,8 +132,9 @@
 <li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.32. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html">5.33. Miscellaneous Python features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.34. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.35. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.36. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.35. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.36. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.37. Dealing with strings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -185,7 +186,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.35. </span>Data Visualisation using Plotly</li>
+      <li><span class="section-number">5.36. </span>Data Visualisation using Plotly</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -231,10 +232,10 @@
 }
 </style>
 <div class="section" id="data-visualisation-using-plotly">
-<h1><span class="section-number">5.35. </span>Data Visualisation using Plotly<a class="headerlink" href="#data-visualisation-using-plotly" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.36. </span>Data Visualisation using Plotly<a class="headerlink" href="#data-visualisation-using-plotly" title="Permalink to this headline">¶</a></h1>
 <p>With <code class="docutils literal notranslate"><span class="pre">Plotly</span></code>, the basic data structure for defining a plot is a dict. This dict has two components, a “trace” and a “layout”.</p>
 <div class="section" id="plot-trace">
-<h2><span class="section-number">5.35.1. </span>Plot trace<a class="headerlink" href="#plot-trace" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.36.1. </span>Plot trace<a class="headerlink" href="#plot-trace" title="Permalink to this headline">¶</a></h2>
 <p>The trace is a dict and, at a minimum, it requires 3 keys:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;type&quot;</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;scatter&quot;</span></code> for a scatter plot</p></li>
@@ -265,7 +266,7 @@
 </div>
 </div>
 <div class="section" id="simple-layout">
-<h2><span class="section-number">5.35.2. </span>Simple layout<a class="headerlink" href="#simple-layout" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.36.2. </span>Simple layout<a class="headerlink" href="#simple-layout" title="Permalink to this headline">¶</a></h2>
 <p>We want some axis titles, a plot title and define the figure height and width (in pixels).</p>
 <p>We define those in the <code class="docutils literal notranslate"><span class="pre">layout</span></code>. For this very simple demo, we do this as follows</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -379,20 +380,20 @@ var n,a=t("./lib/build-log"),i=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 </div><div class="output text_html"><div>
 
 
-            <div id="6b383cb2-53ce-4509-ac1c-d0dca5204526" class="plotly-graph-div" style="height:600px; width:600px;"></div>
+            <div id="17c01f6a-7784-4bf0-a424-7e4043813035" class="plotly-graph-div" style="height:600px; width:600px;"></div>
             <script type="text/javascript">
                 require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
 
-                if (document.getElementById("6b383cb2-53ce-4509-ac1c-d0dca5204526")) {
+                if (document.getElementById("17c01f6a-7784-4bf0-a424-7e4043813035")) {
                     Plotly.newPlot(
-                        '6b383cb2-53ce-4509-ac1c-d0dca5204526',
+                        '17c01f6a-7784-4bf0-a424-7e4043813035',
                         [{"marker": {"size": 12}, "mode": "markers", "type": "scatter", "x": [0, 1], "y": [0, 1]}],
                         {"height": 600, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Sample Title"}, "width": 600, "xaxis": {"title": {"text": "value along x-axis"}}, "yaxis": {"title": {"text": "value along y-axis"}}},
                         {"responsive": true}
                     ).then(function(){
 
-var gd = document.getElementById('6b383cb2-53ce-4509-ac1c-d0dca5204526');
+var gd = document.getElementById('17c01f6a-7784-4bf0-a424-7e4043813035');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -431,7 +432,7 @@ if (outputEl) {{
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="strings.html" class="btn btn-neutral float-right" title="5.36. Dealing with strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="strings.html" class="btn btn-neutral float-right" title="5.37. Dealing with strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="how_to_write_a_program.html" class="btn btn-neutral float-left" title="5.34. Pulling it together – writing your own programs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

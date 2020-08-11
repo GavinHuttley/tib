@@ -132,8 +132,9 @@
 <li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.32. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html">5.33. Miscellaneous Python features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.34. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.35. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.36. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.35. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.36. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.37. Dealing with strings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -388,7 +389,7 @@
 </div>
 </div>
 <dl class="simple" id="index-7">
-<dt><strong>dict</strong></dt><dd><p>A dictionary. Like a conventional one, we look up entries in it using some “key” and get a “value” in return. Note the special parentheses used in the definition and also usage of <code class="docutils literal notranslate"><span class="pre">:</span></code> to separate the key and value. As with tuples and lists, they can contain different data types.</p>
+<dt><strong>dict</strong></dt><dd><p>A dictionary. Like a conventional one, we look up entries in it using some “key” and get a “value” in return. Note the special parentheses used in the definition and also usage of <code class="docutils literal notranslate"><span class="pre">:</span></code> to separate the key and value. As with tuples and lists, they can contain different data types. The keys for a dictionary must always be of an immutable data type (so <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>) but the values can be of any data type. <code class="docutils literal notranslate"><span class="pre">dict</span></code>’s are mutable, you can add keys or remove keys. You can modify the values for a key as you want.</p>
 </dd>
 </dl>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -400,6 +401,20 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: &#39;first character&#39;, &#39;b&#39;: 2}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Add another key</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;new key&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;some text&quot;</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: &#39;first character&#39;, &#39;b&#39;: 2, &#39;new key&#39;: &#39;some text&#39;}
 </pre></div>
 </div>
 </div>
@@ -485,7 +500,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">ec850ff971da</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">ec850ff971da</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;  4.45&#39;
