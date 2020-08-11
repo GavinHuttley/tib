@@ -5,7 +5,10 @@ How to Contribute
 *****************
 
 .. sidebar:: How to ask for help related to these notes
-
+    
+    .. index::
+        pair: How to ask for help related to these notes; screencasts
+    
     .. raw:: html
     
         <video width="50%" height="50%" controls>
@@ -14,6 +17,9 @@ How to Contribute
         </video>
 
 .. sidebar:: How to edit these documents and "make a pull request"
+
+    .. index::
+        pair: Editing the documents and "make a pull request"; screencasts
 
     .. raw:: html
     

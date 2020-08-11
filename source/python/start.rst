@@ -1,5 +1,8 @@
 .. sidebar:: Executing Python using a REPL
 
+    .. index::
+        pair: Executing Python using a REPL; screencasts
+
     .. raw:: html
     
         <video width="50%" height="50%" controls>
@@ -9,6 +12,9 @@
 
 
 .. sidebar:: Executing Python from a text file
+
+    .. index::
+        pair: Executing Python from a text file; screencasts
 
     .. raw:: html
     
