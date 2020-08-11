@@ -1,77 +1,189 @@
 Pulling it together -- writing your own programs
 ================================================
 
-While it can seem daunting, the key to writing a program is to just start typing.
+Break the problem into pieces
+-----------------------------
 
-First, do you need to open a file for reading? Then that's the first piece of code you write.
+While it can seem daunting, the key to writing a program is to break the problem into smaller pieces and solve those individually. How do I recognise what to work on first, how can I decide what a piece is? I suggest thinking in terms of order of operations. To illustrate these steps let's look at a simple equation.
 
-.. code:: python
+.. math::
+
+    x=b+\sqrt{b^2 + 4ac}
+
+Here's a listing of the parts:
+
+1. :math:`b`
+2. the :math:`\sqrt{~}`, which contains
+
+    2.1. :math:`b^2`, which is
     
-    datafile = open("some-data.txt")
-    print(datafile)
-    datafile.close()
+        - :math:`b\times b`
+    
+    2.2. :math:`4ac`, which is
+    
+        - :math:`4\times a \times c`
 
-Second, what type of data are you going to be handling? If you can, it's a good idea to make a really small sample data file. You can do this by grabbing a larger one and editing it down to be small (say just a few records). Having a small file means you know exactly what's in there, and your program should run really quick.
+To actually solve this problem requires we work from the inside (the most indented bullet points) towards the outside (the least indented bullet points). So let's do this thing!
 
-When you've got the sample data organised, think about what you're supposed to be producing. Do you need to produce a certain type of data structure? For example, a dictionary with "labels" as keys and the biological sequence as the "value". In this example, you know then there are two different types of information you need to extract from your file and that the program must satisfy 3 criteria:
+I'm going to rewrite the bullet list, defining the names of python variables I will use for each level.
 
-1. extracts sequence labels correctly 
-2. extracts sequences correctly 
-3. associates labels and sequences correctly, i.e. "label1" is the key for "sequence1".
+1. ``b`` (well that was easy!)
+2. ``sqrt_term``
 
-Broken down like this, it becomes the case that you solve one of these pieces at a time. Solving means write the code and a test that (given known input) checks your code produces the correct output.
+    2.1 ``b_sq``
 
-This approach then becomes the foundation for an algorithm with modular design. A modular approach to implementing software makes it easier to validate correctness of the code.
+    2.2 ``four_ac``
 
-One approach to modularising code is to write a number of functions which are then used to build more extensive programs. Some good pointers for whether some code should be written as function are:
+The first thing we have to do is define the variables we will use before we actually use them. We will just give them some starting numerical values (we know they have to be numbers because maths!) [1]_.
 
-- the code is likely to be useful in multiple locations, so making it a function will eliminate redundancy
-- the code is relatively short (say under 100 lines) and its correctness is critical to overall correctness of a program
-
-Either of these is sufficient reason to write a function.
-
-Building a program from functions requires only that the function is defined before it is used and that it is in the name space where it is to be used. So for the example I've given above, you have two functions you could write.
-
-That said, don't be too rigid in how you approach a problem. It may be that keeping things as separate functions doesn't "work well". But it never hurts to start writing in that way.
-
-I illustrate the semantics of this process here using a simple numerical example of computing some summary statistics. The ``get_summary_stats`` functions is an example of a *wrapper function*. It's primary purpose is to call two other functions without any additional computations.
+.. [1] Let's also make our life easy by defining only positive numerical values so we don't have to worry about handling the :math:`\sqrt{~}` of a negative number.
 
 .. jupyter-execute::
     :linenos:
 
+    b = 5
+    a = 1.1
+    c = 32
+
+That actually defines ``b`` (1.), so the first of our parts is solved. Now let's solve go to the inner most pieces and define ``b_sq`` (2.1).
+
+.. jupyter-execute::
+    :linenos:
+
+    b_sq = b * b
+
+Then ``four_ac`` (2.2).
+
+.. jupyter-execute::
+    :linenos:
+
+    four_ac = 4 * a * c
+
+Now we can compute ``sqrt_term`` (2.).
+
+.. jupyter-execute::
+    :linenos:
+    
     from math import sqrt
 
-    def mean(x):
-        """returns the mean of x"""
-        total = sum(x)
-        num = len(x)
-        return total / num
+    sqrt_term = sqrt(b_sq + four_ac)
 
-    assert mean([0, 5, 8, 11]) == 6.0, "error in mean calculation"
-
-    def std(x, mu):
-        """returns the sample standard deviation of x given mu (the mean of x)."""
-        n = len(x)
-        variance = 0.0
-        for element in x:
-            val = (element - mu) ** 2
-            variance += val
-        variance /= n - 1  # sample std dev
-        return sqrt(variance)
-
-    assert round(std([0, 5, 8, 11], 6), 4) == 4.6904, "error in calculating std dev"
-
-We can now use the ``mean`` and ``std`` functions with confidence.
+and the final solution (``x``)
 
 .. jupyter-execute::
     :linenos:
 
-    def get_summary_stats(x):
-        """returns the mean and sample standard deviation"""
-        assert len(x) > 0, "Cannot compute mean, std on zero-length array"
-        mu = mean(x)
-        std_dev = std(x, mu)
-        return mu, std_dev
+    x = b + sqrt_term
+    x
 
-    mu, std_dev = get_summary_stats(range(20))
-    mu, std_dev
+We can, of course, write this as a single statement.
+
+.. jupyter-execute::
+    :linenos:
+
+    x = b + (b**2 + 4 * a * c) ** 0.5
+    x
+
+Now this is a simple problem. For more challenging problems, as discussed below, breaking problems into pieces and making sure each piece works is a more successful strategy.
+
+Look for patterns
+-----------------
+
+Part of what we have just done is to look at the "problem" (execute an equation) and recognised patterns in it (based on mathematical order of operations). That approach also applies to more complicated challenges.
+
+Let's say we want to read in a plain text file which contains a header column followed by rows of numbers where fields are delimited by tabs. Here's the first few lines of just such a file.
+
+::
+
+    length	kappa
+    0.017963959082536105	8.567983199899585
+    0.036913880515213056	7.658395694530731
+
+Algorithmically, here are the top level problems:
+
+#. Open the file (see :ref:`files`)
+#. Read the file line by line  (see :ref:`files`)
+
+    #. Transform each line into usable data
+
+That last point is the inner most, so we focus our attention on the challenge of transforming lines. We look at the sample of the file to we identify any patterns and notice 2 features. The first is that all lines have the same number of fields (separated by ``\t``). The second is that the header row is different in that the values are not numbers. We now modify the enumeration to give some more detail.
+
+1. Open the file (see :ref:`files`)
+2. Read the first line in the file
+
+    2.1. Split the line into fields
+
+3. Read the remaining lines in the file (see :ref:`files`)
+    
+    3.1. Split a line into fields
+    
+        3.1.1. Convert the line items into ``float``'s
+    
+4. Close the file (see :ref:`files`)
+
+So I suggest the place to start is 3.1.1. I'm going to write separate functions for each of these steps. The reason being that it allows us to reuse code [2]_, makes checking the code correctness easier and simplifies building more complex algorithms into being just the inclusion of already written functions.
+
+.. [2] Important here since 2.1 and 3.1 are the same. Using a function means we only have to write it once and we can use it as many times as seems appropriate.
+
+We start this program with a function that takes a list of strings where every value needs to be converted into a ``float``. I'm going to write it and test it, using an ``assert``, with some sample data.
+
+.. index:: assert, type casting
+
+.. jupyter-execute::
+    :linenos:
+
+    def cast_to_floats(values):
+        """turns a series of strings into floats"""
+        result = []
+        for value in values:
+            value = float(value)
+            result.append(value)
+        return result
+    
+    sample = ["0.0", "24.3", "13.5"]
+    got = cast_to_floats(sample)
+    assert got == [0.0, 24.3, 13.5]
+
+Yay! So that's 3.1.1 out of the way. The next step out is solve 3.1. We also do this by writing a separate function that we check using some synthetic data and make sure it gives us the result we expect.
+
+.. jupyter-execute::
+    :linenos:
+
+    def line_to_fields(line):
+        """splits at \t and cleans up the elements"""
+        line = line.split("\t")
+        # I think we should remove any leading / trailing white space from elements
+        result = []
+        for item in line:
+            result.append(item.strip())
+        return result
+    
+    # this sample is \t delimited with a \n character at the end
+    # just as it would be if read from a file
+    sample = "0.0\t24.3\t13.5\n"
+    got = line_to_fields(sample)
+    assert got == ["0.0", "24.3", "13.5"]
+
+Double Yay! That's 3.1 (and thus 2.1) out of the way [3]_.
+
+.. [3] Also note this code will work if a line has 1 field, or 1 million fields.
+
+Returning to the task list, we remove the steps we've already done, making it simpler to see what remains.
+
+1. Open the file
+2. Read the first line in the file
+3. Read the remaining lines in the file
+4. Close the file
+
+The first and last are easy (see :ref:`files`). The remaining tasks (listed in the Exercise below) need to be solved before these 4 steps can all be combined into a single function. That function should use the ``line_to_fields()`` and ``cast_to_floats()`` functions that we have already written. At which point, job well done!
+
+Exercises
+=========
+
+**1.** Using any text file, identify how to read just the first line.
+
+**2.** Identify how to loop over all the lines in a file.
+
+**3.** Identify how you can keep all the results of converting lines into floats.
+
+**4.** Write a function ``parser()`` that completes the algorithm. You can apply it to the sample data you make up that looks like the above, or use :download:`this file <../data/numbers.tsv>`.

@@ -1,5 +1,8 @@
 .. sidebar:: Debugging a simple Python script using an IDE
 
+    .. index::
+        pair: Debugging a simple Python script using an IDE; screencasts
+
     .. raw:: html
     
         <video width="50%" height="50%" controls>
