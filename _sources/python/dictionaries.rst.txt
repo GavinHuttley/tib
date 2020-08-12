@@ -1,7 +1,7 @@
-.. _dicts:
-
 .. index::
     pair: dict; types
+
+.. _dicts:
 
 Dealing with dictionaries
 =========================

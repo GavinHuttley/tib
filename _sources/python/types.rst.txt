@@ -11,10 +11,11 @@ Based on the context, you infer the numerical meaning of the characters ``3``, `
 
 This leads directly to the notion of *data types*. Python comes with a number of core data types that I define below.
 
-.. index:: string, str
+.. index::
+    pair: string; types
 
 **string**
-    specified either using ``''`` or ``""`` around the content of interest. This is just a series of characters. It can be empty (has length 0) or much greater than that [1]_.
+    specified either using ``''`` or ``""`` around the content of interest. This is just a series of characters. It can be empty (has length 0) or much greater than that [1]_.  For more detailed discussion of using strings, see :ref:`strings`.
 
 .. [1] Immutable means once the variable has been defined, it's value cannot be modified.
 
@@ -113,7 +114,7 @@ In defining instances of collection types, different elements are delimited usin
     triple: dict; types; collection objects
 
 **dict**
-    A dictionary. Like a conventional one, we look up entries in it using some "key" and get a "value" in return. Note the special parentheses used in the definition and also usage of ``:`` to separate the key and value. As with tuples and lists, they can contain different data types. The keys for a dictionary must always be of an immutable data type (so ``str``, ``tuple``, ``int``, ``float``) but the values can be of any data type. ``dict``'s are mutable, you can add keys or remove keys. You can modify the values for a key as you want.
+    A dictionary. Like a conventional one, we look up entries in it using some "key" and get a "value" in return. Note the special parentheses used in the definition and also usage of ``:`` to separate the key and value. As with tuples and lists, they can contain different data types. The keys for a dictionary must always be of an immutable data type (so ``str``, ``tuple``, ``int``, ``float``) but the values can be of any data type. ``dict``'s are mutable, you can add keys or remove keys. You can modify the values for a key as you want. For more detailed discussion of using dicts, see :ref:`dicts`.
 
 .. jupyter-execute::
 
