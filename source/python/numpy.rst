@@ -293,6 +293,8 @@ Conditional operations on ``numpy`` arrays are important. We illustrate the util
 
 The above expression is evaluated element wise and returns a numpy array of type ``bool``.
 
+.. index:: method chaining
+
 .. code:: python
     
     # conditionals using arrays
