@@ -1,3 +1,6 @@
+.. index::
+    pair: string; types
+
 .. _strings:
 
 Dealing with strings
