@@ -204,3 +204,21 @@ You can also unzip series. For example, consider the following list of lists. We
     x, y = zip(*coords)
     x
     y
+
+.. index:: method chaining
+
+.. _method_chaining:
+
+Method chaining
+---------------
+    
+When you make multiple method calls on the "same" object, this is called "chaining" or "method chaining". It can be done when the method call returns an object that contains the next method. These statements are read left to right. For example, in the following, I chain the string methods ``strip()`` and ``split()``.
+
+.. jupyter-execute::
+    :linenos:
+
+    text = "A\tB\t\n"
+    data = text.strip().split()
+    data
+
+These types of expressions are used to save creating intermediate variables and, some argue, for clarity.

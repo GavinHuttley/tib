@@ -135,6 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.35. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.36. Data Visualisation using Plotly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings.html">5.37. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.38. Dealing with dictionaries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -709,7 +710,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <p>The above expression is evaluated element wise and returns a numpy array of type <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># conditionals using arrays</span>
+<div class="highlight-python notranslate" id="index-9"><div class="highlight"><pre><span></span><span class="c1"># conditionals using arrays</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes&quot;</span><span class="p">)</span>
@@ -733,7 +734,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="comparisons-of-multiple-arrays">
-<span id="index-9"></span><h2><span class="section-number">5.31.13. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Permalink to this headline">¶</a></h2>
+<span id="index-10"></span><h2><span class="section-number">5.31.13. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><cite>numpy</cite> provides tools for element-wise comparisons</p></li>
 <li><p>this is more complicated than just using the standard python syntax</p></li>
@@ -785,7 +786,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="using-the-result-of-array-comparisons-to-count">
-<span id="index-10"></span><h2><span class="section-number">5.31.14. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Permalink to this headline">¶</a></h2>
+<span id="index-11"></span><h2><span class="section-number">5.31.14. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Permalink to this headline">¶</a></h2>
 <p>Scenario, you want to count (from multiple arrays that consist of a continuously distributed random variable) the number of times a specific threshold is reached for each “position” on a reference coordinate system.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">

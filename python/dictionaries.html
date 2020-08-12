@@ -1,0 +1,702 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.38. Dealing with dictionaries &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Index" href="../genindex.html" />
+    <link rel="prev" title="5.37. Dealing with strings" href="strings.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">5. Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="resources.html">5.1. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">5.2. Introduction to programming using Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html">5.3. Computing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#everyones-first-program-in-python">5.4. Everyones first program in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">5.5. Basic arithmetic operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#exercises">5.6. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">5.7. Variables and assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.8. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">5.9. Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.10. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">5.11. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.12. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">5.13. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.14. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.15. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">5.16. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.18. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.19. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.20. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.21. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.22. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.23. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.24. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.26. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.28. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.30. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.31. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.32. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.33. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.34. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.35. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.36. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.37. Dealing with strings</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.38. Dealing with dictionaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
+        
+      <li><span class="section-number">5.38. </span>Dealing with dictionaries</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/dictionaries.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<span class="target" id="dicts"></span><div class="section" id="dealing-with-dictionaries">
+<span id="index-0"></span><h1><span class="section-number">5.38. </span>Dealing with dictionaries<a class="headerlink" href="#dealing-with-dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">dict</span></code> type is a mutable collection data structure that is extraordinarily useful. They provide super fast lookups of items and allow a more natural specification of how things are stored and retrieved. In general, a dictionary consists of key/value pairs <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. The value is the object of interest and the key is how you retrieve it from a dictionary instance. This means that dictionaries are not “ordered”, i.e. you can’t rely on the first element in always appearing “first” if you start to loop over</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>When discussing dictionaries, a key/value pair is referred to as an “item”.</p>
+</dd>
+</dl>
+<div class="section" id="creating-an-empty-dict">
+<h2><span class="section-number">5.38.1. </span>Creating an empty <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#creating-an-empty-dict" title="Permalink to this headline">¶</a></h2>
+<p>There are two approaches to defining a <code class="docutils literal notranslate"><span class="pre">dict</span></code>, the first uses “empty” curly braces <a class="footnote-reference brackets" href="#id4" id="id3">2</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>A dict is empty if you don’t specify any key/value pairs. So having blank spaces, or tab characters within the braces has no impact.</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or by calling the builtin <code class="docutils literal notranslate"><span class="pre">dict()</span></code> without any arguments.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dictionaries have a length, which in this case is 0.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-non-empty-dict">
+<h2><span class="section-number">5.38.2. </span>Creating a non-empty <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#creating-a-non-empty-dict" title="Permalink to this headline">¶</a></h2>
+<p>The syntax differs between the two different approaches. In the case of using <code class="docutils literal notranslate"><span class="pre">{}</span></code>, you separate keys from values using the <code class="docutils literal notranslate"><span class="pre">:</span></code> and from the next key/value pair using a <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;first&quot;</span><span class="p">:</span> <span class="s2">&quot;GAVIN&quot;</span><span class="p">,</span> <span class="s2">&quot;last&quot;</span><span class="p">:</span> <span class="s2">&quot;Huttley&quot;</span><span class="p">}</span>
+<span class="n">names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;first&#39;: &#39;GAVIN&#39;, &#39;last&#39;: &#39;Huttley&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only immutable data types can be used for dictionary keys.</p>
+</div>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> function allows a quite different approach that can only be applied if the keys are going to be strings. In this approach, the keys become argument names to <code class="docutils literal notranslate"><span class="pre">dict()</span></code> and the values are assigned to them in the function call. In the following notice that we remove the quotes from the key and the assignment is done using <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">first</span><span class="o">=</span><span class="s2">&quot;GAVIN&quot;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s2">&quot;Huttley&quot;</span><span class="p">)</span>
+<span class="n">names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;first&#39;: &#39;GAVIN&#39;, &#39;last&#39;: &#39;Huttley&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This approach only works if the string can be a valid python variable. For instance “first_name” would work, but “first name” would not.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dictionary keys are always unique. If you make successive assignments to a dict with the same key name, you are simply overwriting the previous value for that key.</p>
+</div>
+</div>
+<div class="section" id="retrieving-values-from-a-dict-by-indexing">
+<span id="index-1"></span><h2><span class="section-number">5.38.3. </span>Retrieving values from a <code class="docutils literal notranslate"><span class="pre">dict</span></code> by “indexing”<a class="headerlink" href="#retrieving-values-from-a-dict-by-indexing" title="Permalink to this headline">¶</a></h2>
+<p>We obtain values from a <code class="docutils literal notranslate"><span class="pre">dict</span></code> instance using the key. Using the <code class="docutils literal notranslate"><span class="pre">names</span></code> instance, we can get the value corresponding to the key <code class="docutils literal notranslate"><span class="pre">&quot;first&quot;</span></code> using the standard looking indexing syntax (i.e. using <code class="docutils literal notranslate"><span class="pre">[]</span></code>).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">]</span>
+<span class="n">f</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GAVIN&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you try to get a key that does not exist, Python raises a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="s2">&quot;first name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">ec922112f48b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="s2">&quot;first name&quot;</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: &#39;first name&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">KeyError</span></code> exception</p>
+</div>
+<div class="section" id="retrieving-values-from-a-dict-using-the-get-method">
+<h2><span class="section-number">5.38.4. </span>Retrieving values from a <code class="docutils literal notranslate"><span class="pre">dict</span></code> using the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method<a class="headerlink" href="#retrieving-values-from-a-dict-using-the-get-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">get()</span></code> method is an alternate to indexing using <code class="docutils literal notranslate"><span class="pre">[]</span></code>. If a key does not exist, it defaults to return <code class="docutils literal notranslate"><span class="pre">None</span></code> instead of raising a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;first name&quot;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(NoneType, None)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can provide your own “default” value for when a key is missing. If we were using a dict to record counts of nucleotides, for instance, we can define a default value of 0 (for an alternate approach to counting).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;ACGGCCG&quot;</span>
+<span class="k">for</span> <span class="n">nucleotide</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+    <span class="n">counts</span><span class="p">[</span><span class="n">nucleotide</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">nucleotide</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">counts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 1, &#39;C&#39;: 3, &#39;G&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sidebar" id="no-dict">
+<p class="sidebar-title">Counting without using a dict</p>
+<p>It’s worth showing building counts if you don’t use a dict. Let’s say we want to use a list instead. Here’s one approach.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nucleotides</span> <span class="o">=</span> <span class="s2">&quot;ACGT&quot;</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;ACGGCCG&quot;</span>
+<span class="n">ordered_counts</span> <span class="o">=</span> <span class="p">[</span><span class="n">seq</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">nuc</span><span class="p">)</span> <span class="k">for</span> <span class="n">nuc</span> <span class="ow">in</span> <span class="n">nucleotides</span><span class="p">]</span>
+<span class="n">ordered_counts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 3, 3, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is compact but does not have the nice association of a count with it’s corresponding nucleotide. Hence, looking up the counts of “A” requires getting its index in <code class="docutils literal notranslate"><span class="pre">nucleotides</span></code> and using that value to get the count from <code class="docutils literal notranslate"><span class="pre">ordered_counts</span></code>. This is fragile since it relies on the ordering of both always being the same (not guaranteed for a list). It also doesn’t scale well for counting larger length strings (e.g. all dinucleotides or trinucleotides, etc…) since every state must be evaluated.</p>
+</div>
+</div>
+<div class="section" id="looping-over-a-dict">
+<h2><span class="section-number">5.38.5. </span>Looping over a dict<a class="headerlink" href="#looping-over-a-dict" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">dict</span></code> object is an iterable data type. This means you can loop over it. This process returns the keys of the instance.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+    <span class="c1"># printing both the key and it&#39;s value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">counts</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>A 1
+C 3
+G 3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="seeing-if-a-dict-contains-a-key">
+<h2><span class="section-number">5.38.6. </span>Seeing if a <code class="docutils literal notranslate"><span class="pre">dict</span></code> contains a key<a class="headerlink" href="#seeing-if-a-dict-contains-a-key" title="Permalink to this headline">¶</a></h2>
+<p>This is done using the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">has_a</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span> <span class="ow">in</span> <span class="n">counts</span>
+<span class="n">has_a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">has_t</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span> <span class="ow">in</span> <span class="n">counts</span>
+<span class="n">has_t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="displaying-all-the-keys-or-all-the-values-or-all-the-items-of-a-dict">
+<h2><span class="section-number">5.38.7. </span>Displaying all the keys or all the values or all the items of a <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#displaying-all-the-keys-or-all-the-values-or-all-the-items-of-a-dict" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getting-all-the-keys">
+<h3><span class="section-number">5.38.7.1. </span>Getting all the keys<a class="headerlink" href="#getting-all-the-keys" title="Permalink to this headline">¶</a></h3>
+<p>To find what keys are present  in a dict, we use the aptly named <code class="docutils literal notranslate"><span class="pre">keys()</span></code> method. This returns a custom type <a class="footnote-reference brackets" href="#id8" id="id5">3</a>, which can be iterated over.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>dict_keys
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use that to get the keys as a different data type, e.g. a tuple or list, using the respective builtin functions.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">keys</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39;A&#39;, &#39;C&#39;, &#39;G&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>But you can get the same thing by passing the <code class="docutils literal notranslate"><span class="pre">dict</span></code> instance itself. This works because the <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> and <code class="docutils literal notranslate"><span class="pre">list()</span></code> functions take an iterable as their argument and, as we showed above, iterating over a dict returns the keys.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<span class="n">keys</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39;A&#39;, &#39;C&#39;, &#39;G&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-all-the-values">
+<h3><span class="section-number">5.38.7.2. </span>Getting all the values<a class="headerlink" href="#getting-all-the-values" title="Permalink to this headline">¶</a></h3>
+<p>This is what the <code class="docutils literal notranslate"><span class="pre">values()</span></code> method does! It returns a custom data type <a class="footnote-reference brackets" href="#id8" id="id6">3</a> which can be iterated over.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>dict_values([1, 3, 3])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-all-the-key-value-pairs">
+<h3><span class="section-number">5.38.7.3. </span>Getting all the key/value pairs<a class="headerlink" href="#getting-all-the-key-value-pairs" title="Permalink to this headline">¶</a></h3>
+<p>We can achieve this by using the <code class="docutils literal notranslate"><span class="pre">items()</span></code> method which, again, returns a custom data type <a class="footnote-reference brackets" href="#id8" id="id7">3</a>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;A&#39;, 1), (&#39;C&#39;, 3), (&#39;G&#39;, 3)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>A common usage pattern for the <code class="docutils literal notranslate"><span class="pre">items()</span></code> method is for looping with <span class="target" id="index-2"></span>assignment unpacking.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;key=</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> and value=</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>key=A and value=1
+key=C and value=3
+key=G and value=3
+</pre></div>
+</div>
+</div>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id8"><span class="brackets">3</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>,<a href="#id7">3</a>)</span></dt>
+<dd><p>These custom types can all be iterated over and/or used to create one of the other standard data types by using their builtin functions, e.g. <code class="docutils literal notranslate"><span class="pre">list()</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple()</span></code>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="adding-new-items-to-a-dict">
+<h2><span class="section-number">5.38.8. </span>Adding new items to a <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#adding-new-items-to-a-dict" title="Permalink to this headline">¶</a></h2>
+<p>Adding a new item to an existing dict is just an assignment.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="section" id="updating-an-existing-item">
+<h2><span class="section-number">5.38.9. </span>Updating an existing item<a class="headerlink" href="#updating-an-existing-item" title="Permalink to this headline">¶</a></h2>
+<p>But where dicts become really valuable is when you need to dynamically update a value. We’ve shown this above in the case of constructing our dict of nucleotide counts (the counts are incremented). But consider the case when we have a mutable data type, such as a <code class="docutils literal notranslate"><span class="pre">list</span></code>, as the value. Let’s consider the following data</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;FlyingFox&#39;</span><span class="p">,</span> <span class="s1">&#39;8.57&#39;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;DogFaced&#39;</span><span class="p">,</span> <span class="s1">&#39;7.66&#39;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;edge.0&#39;</span><span class="p">,</span> <span class="s1">&#39;4.66&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Say we want to convert the second column to floats. We can do this by iterating over the rows and only convert the index <code class="docutils literal notranslate"><span class="pre">1</span></code>. Another approach is to construct separate lists for each column and convert the entire column <a class="footnote-reference brackets" href="#id10" id="id9">4</a>. We start by defining our dictionary with the keys assigned values of empty lists. (I’m using assignment unpacking again.)</p>
+<dl class="footnote brackets">
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id9">4</a></span></dt>
+<dd><p>I know this is a little contrived, but it’s the best example I can come up with right now. The point is how we can update the value of a mutable object!</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">by_column</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;stat&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span>
+
+<span class="n">by_column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: [&#39;FlyingFox&#39;, &#39;DogFaced&#39;, &#39;edge.0&#39;], &#39;stat&#39;: [&#39;8.57&#39;, &#39;7.66&#39;, &#39;4.66&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above, the <code class="docutils literal notranslate"><span class="pre">by_column[&lt;key</span> <span class="pre">name&gt;]</span></code> returns the value for that key. We can then directly access methods on that returned object using the <code class="docutils literal notranslate"><span class="pre">.</span></code> syntax (in this case, the <code class="docutils literal notranslate"><span class="pre">append()</span></code> method) which we use, appending a new value to.  This is an example of <span class="target" id="index-3"></span>method chaining (see <a class="reference internal" href="misc.html#method-chaining"><span class="std std-ref">Method chaining</span></a>).</p>
+<p>We can now apply our casting to the numerical column only.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]]</span>
+<span class="n">by_column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: [&#39;FlyingFox&#39;, &#39;DogFaced&#39;, &#39;edge.0&#39;], &#39;stat&#39;: [8.57, 7.66, 4.66]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>This pattern of modifying the value associated with a key based on its current value is extremely useful.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../genindex.html" class="btn btn-neutral float-right" title="6. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="strings.html" class="btn btn-neutral float-left" title="5.37. Dealing with strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

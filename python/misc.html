@@ -135,6 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.35. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.36. Data Visualisation using Plotly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings.html">5.37. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.38. Dealing with dictionaries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -519,6 +520,25 @@ NO Empty string
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="method-chaining">
+<span id="index-6"></span><span id="id3"></span><h2><span class="section-number">5.33.8. </span>Method chaining<a class="headerlink" href="#method-chaining" title="Permalink to this headline">¶</a></h2>
+<p>When you make multiple method calls on the “same” object, this is called “chaining” or “method chaining”. It can be done when the method call returns an object that contains the next method. These statements are read left to right. For example, in the following, I chain the string methods <code class="docutils literal notranslate"><span class="pre">strip()</span></code> and <code class="docutils literal notranslate"><span class="pre">split()</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;A</span><span class="se">\t</span><span class="s2">B</span><span class="se">\t\n</span><span class="s2">&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, &#39;B&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>These types of expressions are used to save creating intermediate variables and, some argue, for clarity.</p>
 </div>
 </div>
 
