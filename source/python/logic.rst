@@ -189,7 +189,7 @@ The for loop definition is completed by adding the code you wanted to execute on
     for letter in word:
         print(letter)
 
-In this case, out series of objects is ``word``, a string (it's a series because there can be more than one character). The variable ``letter`` is defined in the ``for`` loop statement and it will take on the value of each object (a string of length 1) in ``word``. The code to be executed at each iteration through the loop is just a print statement. All lines of code indented at the same level immediately following a ``for`` loop will be executed at each iteration.
+In this case, our series of objects is ``word`` (a string). The variable ``letter`` is defined in the ``for`` loop statement and it will take on the value of each object (a string of length 1) in ``word``. The code to be executed at each iteration through the loop is just a print statement. All lines of indented code following the ``for`` statement will be executed at each iteration.
 
 .. note:: Strings have the special property of being *iterable*. Many other Python data types also have this property, including lists, tuples, dicts and files.
 
