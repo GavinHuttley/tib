@@ -178,7 +178,7 @@ So the key parts of a valid for statement line are:
 3. the series of objects to be iterated over, ``my_series`` in the above
 4. terminated by a ``:``
 
-.. [1] So far, variable :ref:`assignment` has been done using :ref:`explicit assignment statements <assignment>`. But in the for loop, ``variable_name`` is defined as part of the ``for`` statement. Python will set update the value of ``variable_name`` at each iteration to be the next object in ``my_series``.
+.. [1] So far, variable :index:`assignment` has been done using :ref:`explicit assignment statements <assignment>`. But in the for loop, ``variable_name`` is defined as part of the ``for`` statement. Python will set update the value of ``variable_name`` at each iteration to be the next object in ``my_series``.
 
 The for loop definition is completed by adding the code you wanted to execute on each iteration through the loop. Here's an example.
 
