@@ -47,6 +47,10 @@ blockquote {
 	border-left: solid 1px #808080;
 }
 
+li blockquote {
+	border-left: None;
+}
+
 blockquote p.attribution {
 	text-align: right;
     width: 95%;
