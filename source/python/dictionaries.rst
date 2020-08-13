@@ -54,7 +54,7 @@ The syntax differs between the two different approaches. In the case of using ``
 
 .. note:: Only immutable data types can be used for dictionary keys.
 
-Using the ``dict()`` function allows a quite different approach that can only be applied if the keys are going to be strings. In this approach, the keys become argument names to ``dict()`` and the values are assigned to them in the function call. In the following notice that we remove the quotes from the key and the assignment is done using ``=``.
+Using the ``dict()`` function allows a quite different approach that can only be applied if the keys are going to be strings. In this approach, the keys become argument names to ``dict()`` and the values are assigned to them in the function call. In the following, notice that we use what a standard keyword argument statement within a function call -- we remove the quotes from the key and use ``=`` to assign the value.
 
 .. jupyter-execute::
     :linenos:
