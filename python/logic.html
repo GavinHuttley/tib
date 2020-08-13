@@ -240,14 +240,14 @@
 <div class="section" id="indentation-levels-in-a-file">
 <span id="index-1"></span><h2><span class="section-number">5.13.1. </span>Indentation levels in a file<a class="headerlink" href="#indentation-levels-in-a-file" title="Permalink to this headline">¶</a></h2>
 <p>When you are writing scripts, your file <strong>must</strong> have some lines that have no indentation.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Like this</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Like this</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Not like this!</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Not like this!</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Correct&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
@@ -396,6 +396,26 @@ After the while loop
 </div>
 <div class="section" id="for-loops">
 <span id="index-5"></span><h3><span class="section-number">5.13.5.2. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop operates until it gets to the end of the series it’s given. The components of a for statement are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variable_name</span> <span class="ow">in</span> <span class="n">my_series</span><span class="p">:</span>
+    <span class="c1"># indented code to be executed at each step</span>
+
+<span class="c1"># de-indented code executed after the for loop</span>
+</pre></div>
+</div>
+<p>So the key parts of a valid for statement line are:</p>
+<ol class="arabic simple">
+<li><p>Begins with the <code class="docutils literal notranslate"><span class="pre">for</span></code> keyword</p></li>
+<li><p>a valid python variable name, <code class="docutils literal notranslate"><span class="pre">variable_name</span></code> in the above <a class="footnote-reference brackets" href="#id4" id="id3">1</a></p></li>
+<li><p>the series of objects to be iterated over, <code class="docutils literal notranslate"><span class="pre">my_series</span></code> in the above</p></li>
+<li><p>terminated by a <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+</ol>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p>So far, variable <a class="reference internal" href="variables.html#assignment"><span class="std std-ref">Variables and assignment</span></a> has been done using <a class="reference internal" href="variables.html#assignment"><span class="std std-ref">explicit assignment statements</span></a>. But in the for loop, <code class="docutils literal notranslate"><span class="pre">variable_name</span></code> is defined as part of the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement. Python will set update the value of <code class="docutils literal notranslate"><span class="pre">variable_name</span></code> at each iteration to be the next object in <code class="docutils literal notranslate"><span class="pre">my_series</span></code>.</p>
+</dd>
+</dl>
+<p>The for loop definition is completed by adding the code you wanted to execute on each iteration through the loop. Here’s an example.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;cheese&quot;</span>
@@ -415,6 +435,7 @@ e
 </div>
 </div>
 </div>
+<p>In this case, out series of objects is <code class="docutils literal notranslate"><span class="pre">word</span></code>, a string (it’s a series because there can be more than one character). The variable <code class="docutils literal notranslate"><span class="pre">letter</span></code> is defined in the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop statement and it will take on the value of each object (a string of length 1) in <code class="docutils literal notranslate"><span class="pre">word</span></code>. The code to be executed at each iteration through the loop is just a print statement. All lines of code indented at the same level immediately following a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop will be executed at each iteration.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Strings have the special property of being <em>iterable</em>. Many other Python data types also have this property, including lists, tuples, dicts and files.</p>
