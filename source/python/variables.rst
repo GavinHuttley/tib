@@ -1,3 +1,5 @@
+.. _assignment:
+
 Variables and assignment
 ========================
 

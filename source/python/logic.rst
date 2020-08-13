@@ -162,12 +162,34 @@ These are mechanisms for doing exactly the same thing over and over. The primary
 ``for`` loops
 ^^^^^^^^^^^^^
 
+A ``for`` loop operates until it gets to the end of the series it's given. The components of a for statement are:
+
+.. code-block:: python
+
+    for variable_name in my_series:
+        # indented code to be executed at each step
+    
+    # de-indented code executed after the for loop
+
+So the key parts of a valid for statement line are:
+
+1. Begins with the ``for`` keyword
+2. a valid python variable name, ``variable_name`` in the above [1]_
+3. the series of objects to be iterated over, ``my_series`` in the above
+4. terminated by a ``:``
+
+.. [1] So far, variable :ref:`assignment` has been done using :ref:`explicit assignment statements <assignment>`. But in the for loop, ``variable_name`` is defined as part of the ``for`` statement. Python will set update the value of ``variable_name`` at each iteration to be the next object in ``my_series``.
+
+The for loop definition is completed by adding the code you wanted to execute on each iteration through the loop. Here's an example.
+
 .. jupyter-execute::
     :linenos:
 
     word = "cheese"
     for letter in word:
         print(letter)
+
+In this case, out series of objects is ``word``, a string (it's a series because there can be more than one character). The variable ``letter`` is defined in the ``for`` loop statement and it will take on the value of each object (a string of length 1) in ``word``. The code to be executed at each iteration through the loop is just a print statement. All lines of code indented at the same level immediately following a ``for`` loop will be executed at each iteration.
 
 .. note:: Strings have the special property of being *iterable*. Many other Python data types also have this property, including lists, tuples, dicts and files.
 
