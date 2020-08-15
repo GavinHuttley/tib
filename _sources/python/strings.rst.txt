@@ -194,7 +194,7 @@ Returning to the task of finding substrings, we can establish whether a string c
 
 In this case, the value tells you whether the substring exists (``index >= 0``) and where, in the string, the first instance occurs. There are other search related methods too [4]_.
 
-.. [4] Another, extremely powerful, approach to querying strings in a more general way is achieved by using regular expressions (also referred to as regexes). Again, unfortunately, these are beyond the scope of this course. That said, you should definitely `read about them <read about them>`_.
+.. [4] Another, extremely powerful, approach to querying strings in a more general way is achieved by using regular expressions (also referred to as regexes). Again, unfortunately, these are beyond the scope of this course. That said, you should definitely `read about them <https://docs.python.org/3/howto/regex.html>`_.
 
 .. note:: The general pattern in using a method is you first specify the object and then the method of interest like so ``<instance>.<method name>()``.
 
