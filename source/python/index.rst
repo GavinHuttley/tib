@@ -4,8 +4,6 @@ Introduction to Python
 
 .. sectionauthor:: Gavin Huttley
 
-.. todo:: have a section on setting up their own computer
-
 .. raw:: html
     
     <figure style="padding: 4px;">
@@ -41,4 +39,6 @@ Introduction to Python
     strings
     dictionaries
 
+.. todo:: have a section on setting up their own computer
+.. todo:: have a section on pip installing packages
 .. todo:: write a section on string maniupulation
