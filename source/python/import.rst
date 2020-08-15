@@ -5,7 +5,7 @@
 Extending capabilities using ``import``
 =======================================
 
-In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, the ``math`` module is part of what is referred to as the Python *standard library*, i.e. it comes standard with all Python installations. How we gain access to these is through the ``import`` statement. ``math`` contains many basic mathematical operations, e.g. ``log`` or ``sqrt``, as functions. We get access to those using the ``.`` notation.
+In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, the ``math`` module is part of what is referred to as the Python *standard library*, i.e. it comes standard with all Python installations. How we gain access to these is through the ``import`` statement. ``math`` contains many basic mathematical operations, e.g. ``log()`` or ``sqrt()``, as functions. We get access to those using the ``.`` notation.
 
 .. jupyter-execute::
     :linenos:
