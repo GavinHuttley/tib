@@ -1,9 +1,11 @@
 .. index:: import, modules
 
+.. _import_module:
+
 Extending capabilities using ``import``
 =======================================
 
-In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, many basic mathematical operations must be imported, e.g. ``log`` or ``sqrt`` are functions that exist within the ``math`` module. This module is part of what is referred to as the Python *standard library*, i.e. it comes standard with all Python installations. How we gain access to these is through the ``import`` statement.
+In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, the ``math`` module is part of what is referred to as the Python *standard library*, i.e. it comes standard with all Python installations. How we gain access to these is through the ``import`` statement. ``math`` contains many basic mathematical operations, e.g. ``log()`` or ``sqrt()``, as functions. We get access to those using the ``.`` notation.
 
 .. jupyter-execute::
     :linenos:
@@ -11,6 +13,25 @@ In Python, the capabilities of the core name space is relatively stripped down. 
     import math
 
     math.sqrt(4)
+
+Modules have their own type.
+
+.. index::
+    pair: module; types
+
+.. jupyter-execute::
+    :linenos:
+
+    type(math)
+
+Just like standard Python objects, you can see what capabilities a module has using ``dir()`` [1]_ and ``help()`` works too.
+
+.. [1] The ``dir()`` command returns a list. I'm truncating that to just display a small listing of what's in ``math``.
+
+.. jupyter-execute::
+    :linenos:
+
+    dir(math)[:10]
 
 .. jupyter-execute::
     :linenos:
@@ -22,7 +43,45 @@ In Python, the capabilities of the core name space is relatively stripped down. 
 
     math.log(10)
 
+You can also import a specific module function using the keyword ``from``
+
+.. jupyter-execute::
+    :linenos:
+
+    from math import sqrt
+    
+    sqrt(4)
+
+or multiple functions by separating them with a ``,``.
+
+.. jupyter-execute::
+    :linenos:
+
+    from math import sqrt, log10
+    
+    log10(4)
+
 Modules also serve to allow simplification of code. This enable putting logically related functions into a single file. They facilitate reuse of those functions in different programs, thus reducing redundancy and increasing the robustness of software.
+
+Modules can be organised hierarchically, meaning that some modules are nested within others. How Python achieves this is actually dead simple, the name of a directory containing some Python scripts becomes the import name [2]_. For instance, the Python standard library includes (among a multitude of goodies) the ``os`` module which is used for handling operating system related calls. Inside this module is another one called ``path`` that contain useful functions, among which is the ``dirname()`` function. Using ``.`` notation, we full specify that function as ``os.path.dirname``.
+
+.. jupyter-execute::
+    :linenos:
+
+    import os
+    
+    os.path.dirname("data/nested_dir/somefile.txt")
+
+We can also import just that function
+
+.. jupyter-execute::
+    :linenos:
+
+    from os.path import dirname
+    
+    dirname("data/nested_dir/somefile.txt")
+
+.. [2] Since Python version 3.3, having a python file ``bar.py`` inside a directory ``foo`` means you can use the `from foo import bar` statement. Prior to version 3.3, it was necessary to have a special file ``__init__.py`` inside ``foo``.
 
 "third party" libraries
 -----------------------
@@ -49,7 +108,9 @@ There are an increasing number of Biology specific libraries. My own lab produce
 Writing your own modules
 ------------------------
 
-You can easily write you own modules so that your own code can be readily reused by yourself, or shared with others. You will do this!
+Since a Python script is a module, then all you have to do is write your code in a python script. If that script os on what is called the *python path*, then it can be imported and any functions within can be used.
+
+The python path refers to the places on your computer that Python will look for modules. The first is the directory from which the Python executable was started. The second is the "installed packages" location, typically a directory called ``site-packages`` which is "within" Python itself. The third is a custom location which you have to tell Python about, for instance using a special `PYTHONPATH <https://docs.python.org/3/using/cmdline.html?highlight=pythonpath#envvar-PYTHONPATH>`_ environment variable.
 
 .. _numpy: https://www.numpy.org
 .. _Cogent3: https://cogent3.org
