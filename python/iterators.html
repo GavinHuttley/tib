@@ -134,8 +134,9 @@
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.34. Pulling it together – writing your own programs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.35. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.36. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.37. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.38. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.37. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.38. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.39. Dealing with dictionaries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -244,7 +245,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x7fa69fbccb20&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x7fc27a3ceaf0&gt;
 </pre></div>
 </div>
 </div>
@@ -285,6 +286,15 @@ e
 <span id="index-2"></span><h2><span class="section-number">5.28.1. </span>The <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword<a class="headerlink" href="#the-yield-keyword" title="Permalink to this headline">¶</a></h2>
 <p>You can write your own generator functions by using the keyword <code class="docutils literal notranslate"><span class="pre">yield</span></code> instead of <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
 <p>There are several benefits of generator functions. Just one of which is they provide a means for iterating over some data series without having to load everything into memory. For instance, if you have a massive data file of human genetic variants and but you only want 100 records where the alleles are C/T and on chromosome 10.</p>
+</div>
+<div class="section" id="the-as-keyword">
+<span id="index-3"></span><h2><span class="section-number">5.28.2. </span>The <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword<a class="headerlink" href="#the-as-keyword" title="Permalink to this headline">¶</a></h2>
+<p>This keyword facilitates a type of assignment. They can be used in a number of different contents, such as part of a with statement.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;some_path.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>They can also be used in imports and when trapping exceptions.</p>
 </div>
 </div>
 <div class="section" id="exercises">

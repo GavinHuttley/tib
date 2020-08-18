@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.37. Dealing with strings &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>5.38. Dealing with strings &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -46,7 +46,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.38. Dealing with dictionaries" href="dictionaries.html" />
+    <link rel="next" title="5.39. Dealing with dictionaries" href="dictionaries.html" />
     <link rel="prev" title="5.36. Data Visualisation using Plotly" href="visualisation.html" /> 
 </head>
 
@@ -134,8 +134,9 @@
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.34. Pulling it together – writing your own programs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.35. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.36. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.37. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.38. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.37. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.38. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.39. Dealing with dictionaries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -187,7 +188,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.37. </span>Dealing with strings</li>
+      <li><span class="section-number">5.38. </span>Dealing with strings</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -233,7 +234,7 @@
 }
 </style>
 <div class="section" id="dealing-with-strings">
-<span id="strings"></span><span id="index-0"></span><h1><span class="section-number">5.37. </span>Dealing with strings<a class="headerlink" href="#dealing-with-strings" title="Permalink to this headline">¶</a></h1>
+<span id="strings"></span><span id="index-0"></span><h1><span class="section-number">5.38. </span>Dealing with strings<a class="headerlink" href="#dealing-with-strings" title="Permalink to this headline">¶</a></h1>
 <p>Text is the dominant way in which bioinformatics data is stored and shared. So any bioinformatician needs to become expert in manipulating text data.</p>
 <p>The most common tasks concern:</p>
 <ul class="simple">
@@ -242,7 +243,7 @@
 </ul>
 <p>All such text manipulation involves the string data type, so becoming deeply familiar with what strings are and how to interrogate and manipulate them is crucial.</p>
 <div class="section" id="creating-a-string-type-from-a-non-string-type">
-<h2><span class="section-number">5.37.1. </span>Creating a string type from a non-string type<a class="headerlink" href="#creating-a-string-type-from-a-non-string-type" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.38.1. </span>Creating a string type from a non-string type<a class="headerlink" href="#creating-a-string-type-from-a-non-string-type" title="Permalink to this headline">¶</a></h2>
 <p>All objects in python can be turned into a string using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -281,7 +282,7 @@
 </dl>
 </div>
 <div class="section" id="defining-strings">
-<h2><span class="section-number">5.37.2. </span>Defining strings<a class="headerlink" href="#defining-strings" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.38.2. </span>Defining strings<a class="headerlink" href="#defining-strings" title="Permalink to this headline">¶</a></h2>
 <p>Defining a string can be done using balanced quote marks. You can use either single (<code class="docutils literal notranslate"><span class="pre">'</span></code>), or double (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) quotes. For instance</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -335,7 +336,7 @@
 </div>
 </div>
 <div class="section" id="how-to-include-a-quote-character-in-a-string">
-<h3><span class="section-number">5.37.2.1. </span>How to include a quote character in a string<a class="headerlink" href="#how-to-include-a-quote-character-in-a-string" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.38.2.1. </span>How to include a quote character in a string<a class="headerlink" href="#how-to-include-a-quote-character-in-a-string" title="Permalink to this headline">¶</a></h3>
 <p>Since we define a string using quotes, including a quote character can be solved in two ways. By “escaping” (see <a class="reference internal" href="misc.html#escaping-chars"><span class="std std-ref">Raw strings and escaping characters</span></a>) the quotes with a preceding backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -367,7 +368,7 @@
 </div>
 </div>
 <div class="section" id="literal-strings">
-<span id="index-1"></span><h2><span class="section-number">5.37.3. </span>Literal strings<a class="headerlink" href="#literal-strings" title="Permalink to this headline">¶</a></h2>
+<span id="index-1"></span><h2><span class="section-number">5.38.3. </span>Literal strings<a class="headerlink" href="#literal-strings" title="Permalink to this headline">¶</a></h2>
 <p>This is a special case in which the strings can include line breaks and other formatting. These are created by triple-quoting. For instance</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -409,7 +410,7 @@ And blank lines etc..
 <p>Literal strings are most often used for writing documentation strings (or docstrings) on functions and methods.</p>
 </div>
 <div class="section" id="special-characters-in-strings-tabs-new-lines-spaces">
-<span id="index-2"></span><h2><span class="section-number">5.37.4. </span>Special characters in strings – tabs, new lines, spaces<a class="headerlink" href="#special-characters-in-strings-tabs-new-lines-spaces" title="Permalink to this headline">¶</a></h2>
+<span id="index-2"></span><h2><span class="section-number">5.38.4. </span>Special characters in strings – tabs, new lines, spaces<a class="headerlink" href="#special-characters-in-strings-tabs-new-lines-spaces" title="Permalink to this headline">¶</a></h2>
 <p>White space exists in files in part to make it easier for humans to understand the contents. (Reading this text if there were no spaces between the words would be a massive cognitive strain.) It also exists in files to make it easier to separate different types of data. So it is crucial to know what white space is (beyond it’s central role in the Python language itself). I’m showing the most common below.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -453,7 +454,7 @@ lines
 </div>
 </div>
 <div class="section" id="finding-out-things-about-a-string">
-<h2><span class="section-number">5.37.5. </span>Finding out things about a string<a class="headerlink" href="#finding-out-things-about-a-string" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.38.5. </span>Finding out things about a string<a class="headerlink" href="#finding-out-things-about-a-string" title="Permalink to this headline">¶</a></h2>
 <p>We often want to know whether a string contains a particular character or substring <a class="footnote-reference brackets" href="#id6" id="id5">3</a>. There are specific string methods and more general Python approaches to discovering this.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
@@ -461,7 +462,7 @@ lines
 </dd>
 </dl>
 <div class="section" id="using-standard-python-operators">
-<h3><span class="section-number">5.37.5.1. </span>Using standard Python operators<a class="headerlink" href="#using-standard-python-operators" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.38.5.1. </span>Using standard Python operators<a class="headerlink" href="#using-standard-python-operators" title="Permalink to this headline">¶</a></h3>
 <p>Let’s look at the general Python approach first. We can compare strings in a number of ways. We can ask whether they have the same value.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -493,7 +494,7 @@ lines
 <p>In this second case, there is no information about where the substring is located only that there is a “match”.</p>
 </div>
 <div class="section" id="using-string-methods">
-<h3><span class="section-number">5.37.5.2. </span>Using string methods<a class="headerlink" href="#using-string-methods" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.38.5.2. </span>Using string methods<a class="headerlink" href="#using-string-methods" title="Permalink to this headline">¶</a></h3>
 <p>If you’re not sure what a method is, read <a class="reference internal" href="functions.html#methods"><span class="std std-ref">Methods</span></a>. Briefly, if we want to establish whether some text data has a particular property we first need to be able to reference the data by the name of the variable storing it. This variable is called an “instance” of type <code class="docutils literal notranslate"><span class="pre">str</span></code>. In object-oriented languages like python, we then use <em>a method on that instance</em> to evaluate the property of interest.</p>
 <p>Returning to the task of finding substrings, we can establish whether a string contains a substring using the <code class="docutils literal notranslate"><span class="pre">find()</span></code> method. In this case, an integer is returned.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -521,7 +522,7 @@ lines
 </div>
 </div>
 <div class="section" id="useful-string-descriptor-methods">
-<h3><span class="section-number">5.37.5.3. </span>Useful string descriptor methods<a class="headerlink" href="#useful-string-descriptor-methods" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.38.5.3. </span>Useful string descriptor methods<a class="headerlink" href="#useful-string-descriptor-methods" title="Permalink to this headline">¶</a></h3>
 <p>Other common string processing tasks concern checking the beginning of a string, or the end of a string. The former is commonly encountered for processing file formats where lines start with specific characters. The latter commonly encountered when processing filenames.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -540,7 +541,7 @@ lines
 </div>
 </div>
 <div class="section" id="transforming-strings">
-<h2><span class="section-number">5.37.6. </span>Transforming strings<a class="headerlink" href="#transforming-strings" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.38.6. </span>Transforming strings<a class="headerlink" href="#transforming-strings" title="Permalink to this headline">¶</a></h2>
 <p>One common string transformation operation involves removing specific characters. Here it’s useful to utilise positional information. For instance, if you’re reading lines from a text file you know that the line will end with a trailing new line character (depending on your operating system). In this instance, the <code class="docutils literal notranslate"><span class="pre">strip()</span></code> method is what you want. The steps to doing this are:</p>
 <ol class="arabic simple">
 <li><p>Have the variable of interest</p></li>
@@ -634,7 +635,7 @@ lines
 <p>In doing that we can see there’s still two spaces in one item. We will address that at the end.</p>
 </div>
 <div class="section" id="preparing-data-for-writing-to-file">
-<h2><span class="section-number">5.37.7. </span>Preparing data for writing to file<a class="headerlink" href="#preparing-data-for-writing-to-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.38.7. </span>Preparing data for writing to file<a class="headerlink" href="#preparing-data-for-writing-to-file" title="Permalink to this headline">¶</a></h2>
 <p>In order to do this, we often need to concatenate items into being a single string. The most common so called “delimited” file format is csv (which stands for comma separated). So we will now convert <code class="docutils literal notranslate"><span class="pre">data</span></code> into a single string with the items separated by a comma.</p>
 <p>In this case, our data instance is a list and its items are all strings. Transforming these into a single string requires defining the string you want to join them with and using the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method on <strong>that</strong> instance.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -706,6 +707,9 @@ lines
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>ORF1ab
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
 himalayan palm civet
 </pre></div>
 </div>
@@ -751,7 +755,7 @@ himalayan palm civet
 </div>
 </div>
 <div class="section" id="not-done-yet">
-<h3><span class="section-number">5.37.7.1. </span>Not done yet…<a class="headerlink" href="#not-done-yet" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.38.7.1. </span>Not done yet…<a class="headerlink" href="#not-done-yet" title="Permalink to this headline">¶</a></h3>
 <p>We can clean this code up quite a bit. First, we can combine the first two lines of the loop into a single statement. Because the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method returns an instance that’s compatible with the required input of the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method, we can combine these into a single statement without needing to define an intermediate variable.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -821,13 +825,13 @@ himalayan palm civet
 </div>
 </div>
 <div class="section" id="just-because-you-can-doesn-t-mean-you-should">
-<h3><span class="section-number">5.37.7.2. </span>Just because you can doesn’t mean you should!<a class="headerlink" href="#just-because-you-can-doesn-t-mean-you-should" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.38.7.2. </span>Just because you can doesn’t mean you should!<a class="headerlink" href="#just-because-you-can-doesn-t-mean-you-should" title="Permalink to this headline">¶</a></h3>
 <p>Hopefully, that’s not an unfamiliar realisation. The difference between the long-winded way and the much more compact expression is, at least, a loss of some clarity. The more compact expression is somewhat harder to understand and definitely harder to debug should anything go wrong.</p>
 <p>My advice is to be more verbose as you learn to program and gradually increase the compactness of your code as these patterns become more familiar.</p>
 </div>
 </div>
 <div class="section" id="but-wait-it-s-still-not-ready-to-write-to-a-file">
-<h2><span class="section-number">5.37.8. </span>But wait, it’s still not ready to write to a file!<a class="headerlink" href="#but-wait-it-s-still-not-ready-to-write-to-a-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.38.8. </span>But wait, it’s still not ready to write to a file!<a class="headerlink" href="#but-wait-it-s-still-not-ready-to-write-to-a-file" title="Permalink to this headline">¶</a></h2>
 <p>Good catch! Unless you really want to have all your data on a single line, you should end the line with a line feed character. This can be done with the following addition</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -841,7 +845,7 @@ himalayan palm civet
 <p>and then this can be safely written into a file onto its own line and thus readily recovered at a later date.</p>
 </div>
 <div class="section" id="other-really-useful-methods-on-string-objects">
-<h2><span class="section-number">5.37.9. </span>Other really useful methods on string objects<a class="headerlink" href="#other-really-useful-methods-on-string-objects" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.38.9. </span>Other really useful methods on string objects<a class="headerlink" href="#other-really-useful-methods-on-string-objects" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default" id="id9">
 <caption><span class="caption-text">Useful string methods</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -898,7 +902,7 @@ himalayan palm civet
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dictionaries.html" class="btn btn-neutral float-right" title="5.38. Dealing with dictionaries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dictionaries.html" class="btn btn-neutral float-right" title="5.39. Dealing with dictionaries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="visualisation.html" class="btn btn-neutral float-left" title="5.36. Data Visualisation using Plotly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
