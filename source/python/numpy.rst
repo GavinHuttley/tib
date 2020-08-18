@@ -63,7 +63,7 @@ These can be specified on construction. ``array``'s can be constructed from norm
     data = numpy.array([[0, 1, 2, 3], [4, 5, 6, 7]])
     data, data.shape
 
-Or, other arrays [1]_. 
+Or, other arrays [1]_.
 
 .. [1] I've used the ``numpy.arange()`` function, which returns an ``array`` object.
 
@@ -148,7 +148,7 @@ Array iteration
     pair: indexing; numpy
     pair: slicing; numpy
 
-indexing and slicing
+Indexing and slicing
 --------------------
 
 We can select an individual element using the standard looking slice notation.
@@ -178,6 +178,68 @@ or a single row across all columns. In both cases the `:` represents the complet
     :linenos:
 
     data[1, :]  # the [1] row
+
+.. index::
+    pair: advanced indexing; numpy
+    pair: bool indexing; numpy
+
+Advanced indexing
+-----------------
+
+There are two types of advanced indexing, boolean and integer.
+
+Boolean indexing
+^^^^^^^^^^^^^^^^
+
+This applies when the object being used to slice the array is of type ``bool``. These typically result from some array comparison operation.
+
+.. jupyter-execute::
+    :linenos:
+
+    m = numpy.array([[1, 2], [-3, 4], [5, -6]])
+    m
+
+.. jupyter-execute::
+    :linenos:
+
+    negative = m < 0
+    negative
+
+.. jupyter-execute::
+    :linenos:
+
+    m[negative]
+
+This can be used, for instance, to do specific operations on just those elements such as an assigning a distinct value.
+
+.. jupyter-execute::
+    :linenos:
+
+    m[negative] = 0
+    m
+
+Integer indexing
+^^^^^^^^^^^^^^^^
+
+This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of ``m``). Let's build one up first from a single index. We select row 0, column 1.
+
+.. jupyter-execute::
+    :linenos:
+
+    row_index = 0
+    col_index = 1
+    m[row_index, col_index]
+
+We now enclose those indices, where each value corresponds to another row, another column. As suc these sequential arrays correspond to array coordinates and thus must have the same dimension (length in our example below).
+
+.. jupyter-execute::
+    :linenos:
+
+    row_indices = [0, 2, 1]
+    col_indices = [1, 0, 1]
+    m[row_indices, col_indices]
+
+This corresponds to the following array coordinates: (0, 1), (2, 0), (1, 2). Thus, the result of advanced indexing is an array with same length as the indexing array length (3 in our case).
 
 Array assignment
 ----------------
@@ -296,7 +358,7 @@ The above expression is evaluated element wise and returns a numpy array of type
 .. index:: method chaining
 
 .. code:: python
-    
+
     # conditionals using arrays
 
     if (data > 100).any():
@@ -310,7 +372,7 @@ The above expression is evaluated element wise and returns a numpy array of type
         print("Yes")
     else:
         print("No")
-    
+
     # conditionals using arrays
 
     if (data == 1000).all():
@@ -325,8 +387,7 @@ The above expression is evaluated element wise and returns a numpy array of type
 Comparisons of multiple arrays
 ------------------------------
 
-- `numpy` provides tools for element-wise comparisons
-- this is more complicated than just using the standard python syntax
+`numpy` provides tools for element-wise comparisons. This is more complicated than just using the standard python syntax.
 
 .. jupyter-execute::
     :linenos:
@@ -386,4 +447,45 @@ Scenario, you want to count (from multiple arrays that consist of a continuously
 Exercises
 =========
 
-**1.** ``bool`` data types can be summed. Create an array with ``dtype=bool`` and try it.
+**1.** Create a list of 10 positive integers and convert it into a ``numpy`` array. Use ``array`` methods to compute the total. Divide the original array by the total to proiduce a nromalised array, which you assign to a variable ``freqs``. Using ``numpy`` logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.
+
+**2.** Many methods on ``numpy`` arrays have an axis argument, one of which is sum. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.
+
+.. code-block:: plain
+
+    [[0, 0],
+     [0, 0]]
+
+is a 2D array. Assign values that make it easy to distinguish operations that operate across rows versus those which operate across columns. Demonstrate this matrix serves that purpose using ``sum()``.
+
+**3.** ``bool`` data types can be summed. Create a sample array with ``dtype=bool`` and show that when you sum that you get the expected answers (what you expect is the sum will equal the number of occurrences of ``True``).
+
+-----
+
+Use the following array to answer the next question.
+
+.. jupyter-execute::
+    :linenos:
+
+    data = numpy.array([[1, 9, 0, 3, 9],
+                        [9, 2, 8, 2, 1],
+                        [3, 1, 9, 9, 5]])
+
+
+**4.** Look at the array ``data`` and identify the array coordinates where the values equal 9. Now use advanced array indexing to extract those coordinates in a single statement. The result should be
+
+.. jupyter-execute::
+    :hide-code:
+
+    numpy.array([9, 9, 9, 9, 9])
+
+**5.** Use boolean array indexing to assign -3 to all values of ``data`` less than 2. The result should be
+
+.. jupyter-execute::
+    :hide-code:
+
+    numpy.array([[-3, 9, -3, 3, 9],
+                 [9, 2, 8, 2, -3],
+                 [3, -3, 9, 9, 5]])
+
+**6.** Do some googling for testing ``numpy`` arrays are equal within precision.
