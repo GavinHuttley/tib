@@ -81,6 +81,15 @@ We can also import just that function
     
     dirname("data/nested_dir/somefile.txt")
 
+You can renamed imported modules using the :index:`as` keyword.
+
+.. jupyter-execute::
+    :linenos:
+
+    from math import sqrt as msqrt
+    
+    msqrt(16)
+
 .. [2] Since Python version 3.3, having a python file ``bar.py`` inside a directory ``foo`` means you can use the `from foo import bar` statement. Prior to version 3.3, it was necessary to have a special file ``__init__.py`` inside ``foo``.
 
 "third party" libraries
