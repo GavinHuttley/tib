@@ -233,8 +233,8 @@
 }
 </style>
 <div class="section" id="extending-capabilities-using-import">
-<span id="index-0"></span><h1><span class="section-number">5.30. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#extending-capabilities-using-import" title="Permalink to this headline">¶</a></h1>
-<p>In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, many basic mathematical operations must be imported, e.g. <code class="docutils literal notranslate"><span class="pre">log</span></code> or <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> are functions that exist within the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. This module is part of what is referred to as the Python <em>standard library</em>, i.e. it comes standard with all Python installations. How we gain access to these is through the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
+<span id="import-module"></span><span id="index-0"></span><h1><span class="section-number">5.30. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#extending-capabilities-using-import" title="Permalink to this headline">¶</a></h1>
+<p>In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, the <code class="docutils literal notranslate"><span class="pre">math</span></code> module is part of what is referred to as the Python <em>standard library</em>, i.e. it comes standard with all Python installations. How we gain access to these is through the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. <code class="docutils literal notranslate"><span class="pre">math</span></code> contains many basic mathematical operations, e.g. <code class="docutils literal notranslate"><span class="pre">log()</span></code> or <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>, as functions. We get access to those using the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -245,6 +245,46 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Modules have their own type.</p>
+<div class="jupyter_cell jupyter_container docutils container" id="index-1">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>module
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like standard Python objects, you can see what capabilities a module has using <code class="docutils literal notranslate"><span class="pre">dir()</span></code> <a class="footnote-reference brackets" href="#id2" id="id1">1</a> and <code class="docutils literal notranslate"><span class="pre">help()</span></code> works too.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">dir()</span></code> command returns a list. I’m truncating that to just display a small listing of what’s in <code class="docutils literal notranslate"><span class="pre">math</span></code>.</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;acos&#39;,
+ &#39;acosh&#39;,
+ &#39;asin&#39;,
+ &#39;asinh&#39;]
 </pre></div>
 </div>
 </div>
@@ -273,10 +313,75 @@
 </div>
 </div>
 </div>
+<p>You can also import a specific module function using the keyword <code class="docutils literal notranslate"><span class="pre">from</span></code></p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>or multiple functions by separating them with a <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">log10</span>
+
+<span class="n">log10</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.6020599913279624
+</pre></div>
+</div>
+</div>
+</div>
 <p>Modules also serve to allow simplification of code. This enable putting logically related functions into a single file. They facilitate reuse of those functions in different programs, thus reducing redundancy and increasing the robustness of software.</p>
+<p>Modules can be organised hierarchically, meaning that some modules are nested within others. How Python achieves this is actually dead simple, the name of a directory containing some Python scripts becomes the import name <a class="footnote-reference brackets" href="#id4" id="id3">2</a>. For instance, the Python standard library includes (among a multitude of goodies) the <code class="docutils literal notranslate"><span class="pre">os</span></code> module which is used for handling operating system related calls. Inside this module is another one called <code class="docutils literal notranslate"><span class="pre">path</span></code> that contain useful functions, among which is the <code class="docutils literal notranslate"><span class="pre">dirname()</span></code> function. Using <code class="docutils literal notranslate"><span class="pre">.</span></code> notation, we full specify that function as <code class="docutils literal notranslate"><span class="pre">os.path.dirname</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s2">&quot;data/nested_dir/somefile.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;data/nested_dir&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also import just that function</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">dirname</span>
+
+<span class="n">dirname</span><span class="p">(</span><span class="s2">&quot;data/nested_dir/somefile.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;data/nested_dir&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Since Python version 3.3, having a python file <code class="docutils literal notranslate"><span class="pre">bar.py</span></code> inside a directory <code class="docutils literal notranslate"><span class="pre">foo</span></code> means you can use the <cite>from foo import bar</cite> statement. Prior to version 3.3, it was necessary to have a special file <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> inside <code class="docutils literal notranslate"><span class="pre">foo</span></code>.</p>
+</dd>
+</dl>
 <div class="section" id="third-party-libraries">
 <h2><span class="section-number">5.30.1. </span>“third party” libraries<a class="headerlink" href="#third-party-libraries" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">An even greater appeal of Python is the availability of highly sophisticated modules written by others.</p>
+<p id="index-2">An even greater appeal of Python is the availability of highly sophisticated modules written by others.</p>
 <p>Of particular note is <a class="reference external" href="https://www.numpy.org">numpy</a> (numerical Python). This library is arguably the main reason Python is so popular in science. Numpy provides critical routines in numerical mathematics, particularly linear algebra. But it’s very broadly useful, being ~10x faster than straight Python implementations. It also allows succinct expressions for arrays and provides very useful methods on arrays.</p>
 <p>Other invaluable libraries for science are Scipy, Pandas, Matplotlib, IPython and biology specific libraries (such as <a class="reference external" href="https://cogent3.org">Cogent3</a>).</p>
 <p>We will cover <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in a separate section.</p>
@@ -292,7 +397,8 @@
 </div>
 <div class="section" id="writing-your-own-modules">
 <h2><span class="section-number">5.30.3. </span>Writing your own modules<a class="headerlink" href="#writing-your-own-modules" title="Permalink to this headline">¶</a></h2>
-<p>You can easily write you own modules so that your own code can be readily reused by yourself, or shared with others. You will do this!</p>
+<p>Since a Python script is a module, then all you have to do is write your code in a python script. If that script os on what is called the <em>python path</em>, then it can be imported and any functions within can be used.</p>
+<p>The python path refers to the places on your computer that Python will look for modules. The first is the directory from which the Python executable was started. The second is the “installed packages” location, typically a directory called <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> which is “within” Python itself. The third is a custom location which you have to tell Python about, for instance using a special <a class="reference external" href="https://docs.python.org/3/using/cmdline.html?highlight=pythonpath#envvar-PYTHONPATH">PYTHONPATH</a> environment variable.</p>
 </div>
 </div>
 
