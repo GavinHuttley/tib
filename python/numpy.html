@@ -485,7 +485,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="indexing-and-slicing">
-<span id="index-3"></span><h2><span class="section-number">5.31.6. </span>indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">¶</a></h2>
+<span id="index-3"></span><h2><span class="section-number">5.31.6. </span>Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">¶</a></h2>
 <p>We can select an individual element using the standard looking slice notation.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -539,8 +539,108 @@ After: [ 0  5 12 21]
 </div>
 </div>
 </div>
+<div class="section" id="advanced-indexing">
+<span id="index-4"></span><h2><span class="section-number">5.31.7. </span>Advanced indexing<a class="headerlink" href="#advanced-indexing" title="Permalink to this headline">¶</a></h2>
+<p>There are two types of advanced indexing, boolean and integer.</p>
+<div class="section" id="boolean-indexing">
+<h3><span class="section-number">5.31.7.1. </span>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Permalink to this headline">¶</a></h3>
+<p>This applies when the object being used to slice the array is of type <code class="docutils literal notranslate"><span class="pre">bool</span></code>. These typically result from some array comparison operation.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">]])</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 1,  2],
+       [-3,  4],
+       [ 5, -6]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">negative</span> <span class="o">=</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="mi">0</span>
+<span class="n">negative</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[False, False],
+       [ True, False],
+       [False,  True]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">[</span><span class="n">negative</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-3, -6])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can be used, for instance, to do specific operations on just those elements such as an assigning a distinct value.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">[</span><span class="n">negative</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 2],
+       [0, 4],
+       [5, 0]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="integer-indexing">
+<h3><span class="section-number">5.31.7.2. </span>Integer indexing<a class="headerlink" href="#integer-indexing" title="Permalink to this headline">¶</a></h3>
+<p>This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of <code class="docutils literal notranslate"><span class="pre">m</span></code>). Let’s build one up first from a single index. We select row 0, column 1.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">row_index</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">col_index</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">m</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">col_index</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now enclose those indices, where each value corresponds to another row, another column. As suc these sequential arrays correspond to array coordinates and thus must have the same dimension (length in our example below).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">row_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">col_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">m</span><span class="p">[</span><span class="n">row_indices</span><span class="p">,</span> <span class="n">col_indices</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([2, 5, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This corresponds to the following array coordinates: (0, 1), (2, 0), (1, 2). Thus, the result of advanced indexing is an array with same length as the indexing array length (3 in our case).</p>
+</div>
+</div>
 <div class="section" id="array-assignment">
-<h2><span class="section-number">5.31.7. </span>Array assignment<a class="headerlink" href="#array-assignment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.31.8. </span>Array assignment<a class="headerlink" href="#array-assignment" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">99</span>
@@ -557,7 +657,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="evaluation-operations">
-<span id="index-4"></span><h2><span class="section-number">5.31.8. </span>Evaluation operations<a class="headerlink" href="#evaluation-operations" title="Permalink to this headline">¶</a></h2>
+<span id="index-5"></span><h2><span class="section-number">5.31.9. </span>Evaluation operations<a class="headerlink" href="#evaluation-operations" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">indices</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&lt;</span> <span class="mi">0</span>
@@ -603,7 +703,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="the-numpy-array-axis">
-<span id="index-5"></span><h2><span class="section-number">5.31.9. </span>The numpy array axis<a class="headerlink" href="#the-numpy-array-axis" title="Permalink to this headline">¶</a></h2>
+<span id="index-6"></span><h2><span class="section-number">5.31.10. </span>The numpy array axis<a class="headerlink" href="#the-numpy-array-axis" title="Permalink to this headline">¶</a></h2>
 <p>This is akin to specifying whether a method / function operates on rows (<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>) or columns (<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -619,7 +719,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="getting-useful-quantities">
-<span id="index-6"></span><h2><span class="section-number">5.31.10. </span>Getting useful quantities<a class="headerlink" href="#getting-useful-quantities" title="Permalink to this headline">¶</a></h2>
+<span id="index-7"></span><h2><span class="section-number">5.31.11. </span>Getting useful quantities<a class="headerlink" href="#getting-useful-quantities" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Overall mean, all elements</span>
@@ -674,7 +774,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="linear-algebra-matrix-multiplication">
-<span id="index-7"></span><h2><span class="section-number">5.31.11. </span>Linear algebra – matrix multiplication<a class="headerlink" href="#linear-algebra-matrix-multiplication" title="Permalink to this headline">¶</a></h2>
+<span id="index-8"></span><h2><span class="section-number">5.31.12. </span>Linear algebra – matrix multiplication<a class="headerlink" href="#linear-algebra-matrix-multiplication" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -693,7 +793,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="conditionals-on-arrays">
-<span id="index-8"></span><h2><span class="section-number">5.31.12. </span>Conditionals on arrays<a class="headerlink" href="#conditionals-on-arrays" title="Permalink to this headline">¶</a></h2>
+<span id="index-9"></span><h2><span class="section-number">5.31.13. </span>Conditionals on arrays<a class="headerlink" href="#conditionals-on-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Conditional operations on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays are important. We illustrate the utility of these operations with some simple examples.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -711,7 +811,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <p>The above expression is evaluated element wise and returns a numpy array of type <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
-<div class="highlight-python notranslate" id="index-9"><div class="highlight"><pre><span></span><span class="c1"># conditionals using arrays</span>
+<div class="highlight-python notranslate" id="index-10"><div class="highlight"><pre><span></span><span class="c1"># conditionals using arrays</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes&quot;</span><span class="p">)</span>
@@ -735,11 +835,8 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="comparisons-of-multiple-arrays">
-<span id="index-10"></span><h2><span class="section-number">5.31.13. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><cite>numpy</cite> provides tools for element-wise comparisons</p></li>
-<li><p>this is more complicated than just using the standard python syntax</p></li>
-</ul>
+<span id="index-11"></span><h2><span class="section-number">5.31.14. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Permalink to this headline">¶</a></h2>
+<p><cite>numpy</cite> provides tools for element-wise comparisons. This is more complicated than just using the standard python syntax.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
@@ -751,7 +848,7 @@ After: [ 0  5 12 21]
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="n">bbc93bc3b33d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="n">bbc93bc3b33d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">y</span>
@@ -787,7 +884,7 @@ After: [ 0  5 12 21]
 </div>
 </div>
 <div class="section" id="using-the-result-of-array-comparisons-to-count">
-<span id="index-11"></span><h2><span class="section-number">5.31.14. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Permalink to this headline">¶</a></h2>
+<span id="index-12"></span><h2><span class="section-number">5.31.15. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Permalink to this headline">¶</a></h2>
 <p>Scenario, you want to count (from multiple arrays that consist of a continuously distributed random variable) the number of times a specific threshold is reached for each “position” on a reference coordinate system.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -823,9 +920,6 @@ After: [ 0  5 12 21]
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[ True False False  True  True]
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1, 0, 0, 2, 2])
 </pre></div>
 </div>
@@ -849,7 +943,46 @@ After: [ 0  5 12 21]
 </div>
 <div class="section" id="exercises">
 <h1><span class="section-number">5.32. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<p><strong>1.</strong> <code class="docutils literal notranslate"><span class="pre">bool</span></code> data types can be summed. Create an array with <code class="docutils literal notranslate"><span class="pre">dtype=bool</span></code> and try it.</p>
+<p><strong>1.</strong> Create a list of 10 positive integers and convert it into a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. Use <code class="docutils literal notranslate"><span class="pre">array</span></code> methods to compute the total. Divide the original array by the total to proiduce a nromalised array, which you assign to a variable <code class="docutils literal notranslate"><span class="pre">freqs</span></code>. Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.</p>
+<p><strong>2.</strong> Many methods on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays have an axis argument, one of which is sum. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.</p>
+<div class="highlight-plain notranslate"><div class="highlight"><pre><span></span>[[0, 0],
+ [0, 0]]
+</pre></div>
+</div>
+<p>is a 2D array. Assign values that make it easy to distinguish operations that operate across rows versus those which operate across columns. Demonstrate this matrix serves that purpose using <code class="docutils literal notranslate"><span class="pre">sum()</span></code>.</p>
+<p><strong>3.</strong> <code class="docutils literal notranslate"><span class="pre">bool</span></code> data types can be summed. Create a sample array with <code class="docutils literal notranslate"><span class="pre">dtype=bool</span></code> and show that when you sum that you get the expected answers (what you expect is the sum will equal the number of occurrences of <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
+<hr class="docutils" />
+<p>Use the following array to answer the next question.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p><strong>4.</strong> Look at the array <code class="docutils literal notranslate"><span class="pre">data</span></code> and identify the array coordinates where the values equal 9. Now use advanced array indexing to extract those coordinates in a single statement. The result should be</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([9, 9, 9, 9, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>5.</strong> Use boolean array indexing to assign -3 to all values of <code class="docutils literal notranslate"><span class="pre">data</span></code> less than 2. The result should be</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-3,  9, -3,  3,  9],
+       [ 9,  2,  8,  2, -3],
+       [ 3, -3,  9,  9,  5]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>6.</strong> Do some googling for testing <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays are equal within precision.</p>
 </div>
 
 
