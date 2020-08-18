@@ -42,6 +42,21 @@ You can write your own generator functions by using the keyword ``yield`` instea
 
 There are several benefits of generator functions. Just one of which is they provide a means for iterating over some data series without having to load everything into memory. For instance, if you have a massive data file of human genetic variants and but you only want 100 records where the alleles are C/T and on chromosome 10.
 
+.. index::
+    pair: as; keyword
+
+The ``as`` keyword
+------------------
+
+This keyword facilitates a type of assignment. They can be used in a number of different contents, such as part of a with statement.
+
+.. code-block::
+    
+    with open("some_path.txt") as infile:
+        lines = infile.readlines()
+
+They can also be used in imports and when trapping exceptions.
+
 Exercises
 =========
 
