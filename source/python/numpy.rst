@@ -3,9 +3,14 @@
 ``numpy`` -- numerical routines for python
 ==========================================
 
-For numerical calculation, based on notion of arrays (which include matrices). The ``array`` object has several key attributes, including:
+The numpy_ library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use ``numpy`` will deliver a 10x speedup. In fact, it can be much faster than that. But that's not the focus of this extremely brief summary of ``numpy``. Instead, we introduce you to the major usage patterns that ``numpy`` enables. These patterns greatly simplify the algorithms you have to write. So it's truly worthwhile becoming familiar with this library.
 
-- ``array.shape`` attribute, which reflects the dimensions of the array. This can be derived from the input data.
+.. _numpy: https://numpy.org
+
+``numpy`` is designed for numerical calculation and the primary object the library provides is an array. The ``array`` object has several key attributes, including:
+
+- ``array.ndim`` attribute, which indicates how many dimensions an array has
+- ``array.shape`` attribute, which reflects indicates the number of elements on each. This can be derived from the input data.
 - ``array.dtype`` attribute, which specifies the data type. This can also be determined by the input data, or by using the ``dtype`` argument.
 
 .. jupyter-execute::
@@ -19,6 +24,11 @@ For numerical calculation, based on notion of arrays (which include matrices). T
 .. jupyter-execute::
     :linenos:
 
+    data.ndim
+
+.. jupyter-execute::
+    :linenos:
+
     data.shape
 
 .. jupyter-execute::
@@ -26,7 +36,7 @@ For numerical calculation, based on notion of arrays (which include matrices). T
 
     data.dtype
 
-Once created, you cannot extend an array, i.e. it's total number of elements is immutable. However, the array "shape" can be changed and the value at individual coordinate can be changed.
+Once created, you cannot extend an array, i.e. it's total number of elements is immutable. However, the array "shape" (and thus dimensions) can be changed and the value at individual coordinates can be changed.
 
 .. jupyter-execute::
     :linenos:
@@ -52,16 +62,21 @@ Conversion to standard python data types
 .. index::
     pair: matrix; numpy
 
-Specifying matrices
--------------------
+Constructing matrices
+---------------------
 
-These can be specified on construction. ``array``'s can be constructed from normal python data types.
+Matrices can be specified on construction by providing, for example, lists of lists. In this example we use a list consisting of two lists, each with 4 elements. This results in a :math:`2\times4` array.
 
 .. jupyter-execute::
     :linenos:
 
     data = numpy.array([[0, 1, 2, 3], [4, 5, 6, 7]])
-    data, data.shape
+    data.shape
+
+.. jupyter-execute::
+    :linenos:
+
+    data
 
 Or, other arrays [1]_.
 
@@ -114,6 +129,8 @@ And here it is on the numpy array equivalent.
     data += 20
     data
 
+Nice!
+
 Standard mathematical operations on arrays
 ------------------------------------------
 
@@ -122,9 +139,9 @@ If two or more arrays have the same shape, then element-wise operations between 
 .. jupyter-execute::
     :linenos:
 
-    print("Before:", a, b)
+    print("Before:", a, b, sep="\n")
     c = a * b
-    print("After:", c)
+    print("After:", c, sep="\n")
 
 If they do not have the same shape, an exception is raised.
 
@@ -151,7 +168,14 @@ Array iteration
 Indexing and slicing
 --------------------
 
-We can select an individual element using the standard looking slice notation.
+In the following, we are working on this array.
+
+.. jupyter-execute::
+    :hide-code:
+
+    data
+
+We can select an individual element using the standard looking slice notation. 
 
 .. jupyter-execute::
     :linenos:
@@ -172,7 +196,7 @@ The slicing capabilities of arrays is rich and very useful! We can slice a matri
 
     data[:, 1]  # the [1] column
 
-or a single row across all columns. In both cases the `:` represents the complete set.
+or a single row across all columns. In both cases the ``:`` represents the complete set.
 
 .. jupyter-execute::
     :linenos:
@@ -182,6 +206,41 @@ or a single row across all columns. In both cases the `:` represents the complet
 .. index::
     pair: advanced indexing; numpy
     pair: bool indexing; numpy
+
+.. index::
+    pair: assignment; numpy
+
+Array assignment
+----------------
+
+.. jupyter-execute::
+    :linenos:
+
+    data[1, 2] = -99
+    data
+
+.. index::
+    pair: evaluation; numpy
+
+.. index::
+    pair: bool array; numpy
+
+Evaluation operations
+---------------------
+
+Using standard python evaluation operations on ``numpy`` arrays returns element wise ``bool`` arrays. We show uses for these below.
+
+.. jupyter-execute::
+    :linenos:
+
+    indices = data < 0
+    indices
+
+.. index::
+    pair: bool array; numpy
+    pair: advanced indexing; numpy
+    pair: boolean indexing; numpy
+    pair: integer indexing; numpy
 
 Advanced indexing
 -----------------
@@ -199,11 +258,15 @@ This applies when the object being used to slice the array is of type ``bool``. 
     m = numpy.array([[1, 2], [-3, 4], [5, -6]])
     m
 
+Let's identify all elements that are :math:`<0`.
+
 .. jupyter-execute::
     :linenos:
 
     negative = m < 0
     negative
+
+The result is an array with boolean elements indicating whether the corresponding value in ``m`` satisfied (indicated by ``True``) or not (indicated by ``False``) the condition (:math:`<0`). We can use bool arrays to slice the others with the same shape.
 
 .. jupyter-execute::
     :linenos:
@@ -221,7 +284,7 @@ This can be used, for instance, to do specific operations on just those elements
 Integer indexing
 ^^^^^^^^^^^^^^^^
 
-This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of ``m``). Let's build one up first from a single index. We select row 0, column 1.
+This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of ``m``). Let's build start first from a single index. We select row 0, column 1.
 
 .. jupyter-execute::
     :linenos:
@@ -230,7 +293,7 @@ This involves as many series of integers as there are dimensions to the array (e
     col_index = 1
     m[row_index, col_index]
 
-We now enclose those indices, where each value corresponds to another row, another column. As suc these sequential arrays correspond to array coordinates and thus must have the same dimension (length in our example below).
+We now enclose those indices in lists, such that each successive value corresponds to another row, another column. As such these sequential arrays correspond to array coordinates and thus must have the same dimension (length in our example below).
 
 .. jupyter-execute::
     :linenos:
@@ -241,48 +304,22 @@ We now enclose those indices, where each value corresponds to another row, anoth
 
 This corresponds to the following array coordinates: (0, 1), (2, 0), (1, 2). Thus, the result of advanced indexing is an array with same length as the indexing array length (3 in our case).
 
-Array assignment
-----------------
-
-.. jupyter-execute::
-    :linenos:
-
-    data[1, 2] = -99
-    data
-
-.. index::
-    pair: evaluation; numpy
-
-Evaluation operations
----------------------
-
-.. jupyter-execute::
-    :linenos:
-
-    indices = data < 0
-    indices
-
-You can use the resulting ``bool`` array to slice, and for assignment.
-
-.. jupyter-execute::
-    :linenos:
-
-    data[indices] = 1000
-    data
-
-.. jupyter-execute::
-    :linenos:
-
-    data[data > 100] = 999
-    data
-
 .. index::
     pair: axis; numpy
 
 The numpy array axis
 --------------------
 
-This is akin to specifying whether a method / function operates on rows (``axis=0``) or columns (``axis=1``).
+This is akin to specifying whether a method / function operates on rows (``axis=0``) or columns (``axis=1``) [2]_.
+
+.. [2] You can many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of ``axis`` may be required.
+
+Working on this array.
+
+.. jupyter-execute::
+    :hide-code:
+
+    data
 
 .. jupyter-execute::
     :linenos:
@@ -292,7 +329,6 @@ This is akin to specifying whether a method / function operates on rows (``axis=
 .. index::
     pair: mean; numpy
     pair: standard deviation; numpy
-
 
 Getting useful quantities
 -------------------------
@@ -323,6 +359,9 @@ Getting useful quantities
 
 .. index::
     pair: matrix multiply; numpy
+
+.. index::
+    pair: matrix multiplication; numpy
 
 Linear algebra -- matrix multiplication
 ---------------------------------------
@@ -355,27 +394,34 @@ Conditional operations on ``numpy`` arrays are important. We illustrate the util
 
 The above expression is evaluated element wise and returns a numpy array of type ``bool``.
 
+We use the standard Python ``in`` operator.
+
+.. jupyter-execute::
+    :linenos:
+
+    if 3 in data:
+        print("Yes")
+    else:
+        print("No")
+
+We apply a conditional to an array and use the ``any()`` method, which will return ``True`` if any single element satisfied this condition.
+
 .. index:: method chaining
 
-.. code:: python
+.. jupyter-execute::
+    :linenos:
 
-    # conditionals using arrays
-
-    if (data > 100).any():
+    if (data > 3).any():
         print("Yes")
     else:
         print("No")
 
-    # conditionals using arrays
+Using the ``all()`` method, which will return ``True`` only if **all** elements satisfied the condition.
 
-    if 1000 in data:
-        print("Yes")
-    else:
-        print("No")
+.. jupyter-execute::
+    :linenos:
 
-    # conditionals using arrays
-
-    if (data == 1000).all():
+    if (data > 3).all():
         print("Yes")
     else:
         print("No")
@@ -391,11 +437,19 @@ Comparisons of multiple arrays
 
 .. jupyter-execute::
     :linenos:
-    :raises:
 
     x = numpy.array([True, False, False, True], dtype=bool)
     y = numpy.array([False, False, False, True], dtype=bool)
+
+Applying equivalence operators to arrays can result in exceptions because the result is ambiguous.
+
+.. jupyter-execute::
+    :linenos:
+    :raises:
+
     x or y
+
+Instead, you should use special functions which will operate element wise. Here's a couple of examples.
 
 .. jupyter-execute::
     :linenos:
@@ -447,11 +501,11 @@ Scenario, you want to count (from multiple arrays that consist of a continuously
 Exercises
 =========
 
-**1.** Create a list of 10 positive integers and convert it into a ``numpy`` array. Use ``array`` methods to compute the total. Divide the original array by the total to proiduce a nromalised array, which you assign to a variable ``freqs``. Using ``numpy`` logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.
+**1.** Create a list of 10 positive integers and convert it into a ``numpy`` array. Use ``array`` methods to compute the total. Divide the original array by the total to produce a normalised array, which you assign to a variable ``freqs``. Using ``numpy`` logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.
 
 **2.** Many methods on ``numpy`` arrays have an axis argument, one of which is sum. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.
 
-.. code-block:: plain
+.. code-block:: text
 
     [[0, 0],
      [0, 0]]
@@ -488,4 +542,4 @@ Use the following array to answer the next question.
                  [9, 2, 8, 2, -3],
                  [3, -3, 9, 9, 5]])
 
-**6.** Do some googling for testing ``numpy`` arrays are equal within precision.
+**6.** Do some googling for testing ``numpy`` arrays using ``assert_allclose``. Then use this to check your array ``freqs`` created above sums to 1.
