@@ -1,3 +1,5 @@
+.. _intro_to_python:
+
 ######################
 Introduction to Python
 ######################
