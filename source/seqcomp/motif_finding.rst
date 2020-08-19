@@ -1,7 +1,7 @@
 Finding motifs
 ==============
 
-So how do we find occurrences of a motif that is "noisy"? If we use the consensus approach, it's trivial --  exact string match. For the IUPAC ambiguity case, it's also quite trivial -- we could use a regular expression, e.g.
+So how do we find occurrences of a motif that is "noisy"? If we use the consensus approach, it's trivial --  exact string match. For the IUPAC ambiguity case, it's also quite trivial -- we could use a regular expression [1]_, e.g.
 
 .. jupyter-execute::
 
@@ -9,11 +9,11 @@ So how do we find occurrences of a motif that is "noisy"? If we use the consensu
 
     re.findall("T[CT][ACT][GCT][AC]", "AGCGTTTCTCAGATGCA")
 
-In the above, I've used the regular expression module (``re``) that's distributed with python.
+.. [1] I've used the regular expression module (``re``) that's distributed with python. Parts of the expression such as ``[CT]`` means call it a match if we have either a C or a T at this position.
 
-Alternatively, we could use a "probabilistic model" [1]_. That's what we're going to do now.
+Alternatively, we could use a "probabilistic model" [2]_. That's what we're going to do now.
 
-.. [1] A probabilistic model is one where a specific outcome is quantified via explicit probability calculation.
+.. [2] A probabilistic model is one where a specific outcome is quantified via explicit probability calculation.
 
 Simple probability model for generating sequences
 -------------------------------------------------
@@ -38,9 +38,9 @@ PSSMs: Position Specific Scoring Matrices
 
 Among the simplest probabilistic approaches are PSSMs. A PSSM is a matrix of log-odds ratios per position of a sequence motif. They are also referred to as profiles. They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but also used to characterise protein domains.
 
-Great, where can I get one? Well ... recall JASPAR (the open access database of TFBS profiles) [2]_.
+Great, where can I get one? Well ... recall JASPAR (the open access database of TFBS profiles) [3]_.
 
-.. [2] *Sandelin et al (2004). JASPAR: an open-access database for eukaryotic transcription factor binding profiles. Nucleic Acids Research, 32(90001), 91D–94*
+.. [3] *Sandelin et al (2004). JASPAR: an open-access database for eukaryotic transcription factor binding profiles. Nucleic Acids Research, 32(90001), 91D–94*
 
 Below is the TATA box position weight matrix from JASPAR. ::
 
@@ -91,9 +91,9 @@ The latter case is potentially real -- binding only happens with A at the 3rd po
 Pseudo-counts -- handling missing data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Handling small sample sizes is a substantial problem [3]_. The easiest way to tackle it, which we will use here, is to employ a pseudo-count. A pseudo-count is a "synthetic observation" that is added to all the elements in the counts matrix. It eliminates 0 counts and thus precludes cases such as (2) above, where a sequence is otherwise considered impossible. I'll illustrate that using the above example.
+Handling small sample sizes is a substantial problem [4]_. The easiest way to tackle it, which we will use here, is to employ a pseudo-count. A pseudo-count is a "synthetic observation" that is added to all the elements in the counts matrix. It eliminates 0 counts and thus precludes cases such as (2) above, where a sequence is otherwise considered impossible. I'll illustrate that using the above example.
 
-.. [3] When sample sizes are large, the effect of adding a pseudo-count is small.
+.. [4] When sample sizes are large, the effect of adding a pseudo-count is small.
 
 .. jupyter-execute::
 

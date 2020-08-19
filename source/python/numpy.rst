@@ -1,5 +1,7 @@
 .. index:: numpy, maths, array
 
+.. _using_numpy:
+
 ``numpy`` -- numerical routines for python
 ==========================================
 

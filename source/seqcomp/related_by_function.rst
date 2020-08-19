@@ -12,7 +12,7 @@ Here's a fuller description of the experimental procedures [4]_, albeit a bit of
 SELEX -- Systematic evolution of ligands by exponential enrichment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /images/selex.png
+.. figure:: /_static/images/seqcomp/selex.png
     :scale: 50 %
     
     A synthetic sequence assessment procedure.
@@ -20,7 +20,7 @@ SELEX -- Systematic evolution of ligands by exponential enrichment
 ChIP -- chromatin immunoprecipitation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /images/chipseq.png
+.. figure:: /_static/images/seqcomp/chipseq.png
     :scale: 50 %
     
     An empirical survey of naturally occurring DNA [5]_.

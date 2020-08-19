@@ -82,9 +82,9 @@ If we sample sequences that share this mutation in common, aligning them centred
 
 .. list-table::
 
-    * - .. image:: /images/CtoT_MI.png
+    * - .. image:: /_static/images/seqcomp/CtoT_MI.png
             :scale: 50 %
-      - .. image:: /images/CtoT_RE.png
+      - .. image:: /_static/images/seqcomp/CtoT_RE.png
             :scale: 50 %
 
 These results originated from the honours research project of Ms Yicheng Zhu, published in [2]_.
