@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.34. Pulling it together – writing your own programs &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>5.36. Pulling it together – writing your own programs &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.36. Data Visualisation using Plotly" href="visualisation.html" />
-    <link rel="prev" title="5.33. Miscellaneous Python features" href="misc.html" /> 
+    <link rel="next" title="5.38. Data Visualisation using Plotly" href="visualisation.html" />
+    <link rel="prev" title="5.35. Miscellaneous Python features" href="misc.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -127,16 +127,18 @@
 <li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.27. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iterators.html">5.28. Iterators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.29. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.30. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.31. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.32. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.33. Miscellaneous Python features</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.34. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.35. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.36. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.37. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.38. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.39. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.30. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.31. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.32. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.33. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.34. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.35. Miscellaneous Python features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.36. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.37. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.38. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.39. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.40. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.41. Dealing with dictionaries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
@@ -188,7 +190,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.34. </span>Pulling it together – writing your own programs</li>
+      <li><span class="section-number">5.36. </span>Pulling it together – writing your own programs</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -234,9 +236,9 @@
 }
 </style>
 <div class="section" id="pulling-it-together-writing-your-own-programs">
-<h1><span class="section-number">5.34. </span>Pulling it together – writing your own programs<a class="headerlink" href="#pulling-it-together-writing-your-own-programs" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.36. </span>Pulling it together – writing your own programs<a class="headerlink" href="#pulling-it-together-writing-your-own-programs" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="break-the-problem-into-pieces">
-<h2><span class="section-number">5.34.1. </span>Break the problem into pieces<a class="headerlink" href="#break-the-problem-into-pieces" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.36.1. </span>Break the problem into pieces<a class="headerlink" href="#break-the-problem-into-pieces" title="Permalink to this headline">¶</a></h2>
 <p>While it can seem daunting, the key to writing a program is to break the problem into smaller pieces and solve those individually. How do I recognise what to work on first, how can I decide what a piece is? I suggest thinking in terms of order of operations. To illustrate these steps let’s look at a simple equation.</p>
 <div class="math notranslate nohighlight">
 \[x=b+\sqrt{b^2 + 4ac}\]</div>
@@ -351,7 +353,7 @@
 <p>Now this is a simple problem. For more challenging problems, as discussed below, breaking problems into pieces and making sure each piece works is a more successful strategy.</p>
 </div>
 <div class="section" id="look-for-patterns">
-<h2><span class="section-number">5.34.2. </span>Look for patterns<a class="headerlink" href="#look-for-patterns" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.36.2. </span>Look for patterns<a class="headerlink" href="#look-for-patterns" title="Permalink to this headline">¶</a></h2>
 <p>Part of what we have just done is to look at the “problem” (execute an equation) and recognised patterns in it (based on mathematical order of operations). That approach also applies to more complicated challenges.</p>
 <p>Let’s say we want to read in a plain text file which contains a header column followed by rows of numbers where fields are delimited by tabs. Here’s the first few lines of just such a file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">length</span>      <span class="n">kappa</span>
@@ -454,7 +456,7 @@
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.35. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.37. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <p><strong>1.</strong> Using any text file, identify how to read just the first line.</p>
 <p><strong>2.</strong> Identify how to loop over all the lines in a file.</p>
 <p><strong>3.</strong> Identify how you can keep all the results of converting lines into floats.</p>
@@ -469,10 +471,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="visualisation.html" class="btn btn-neutral float-right" title="5.36. Data Visualisation using Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="visualisation.html" class="btn btn-neutral float-right" title="5.38. Data Visualisation using Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="misc.html" class="btn btn-neutral float-left" title="5.33. Miscellaneous Python features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="misc.html" class="btn btn-neutral float-left" title="5.35. Miscellaneous Python features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
