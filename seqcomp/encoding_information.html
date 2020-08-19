@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.2. The role of sequence in encoding life &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.3. \(k\)-mers and Motifs" href="motifs.html" />
+    <link rel="prev" title="6.1. Introduction to Comparison of Biological Sequences" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Sequence Comparison</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">6.1. Introduction to Comparison of Biological Sequences</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2. The role of sequence in encoding life</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.4. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.5. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.7. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.8. Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.9. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.10. Pairwise alignment using dynamic programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.11. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
+        
+      <li><span class="section-number">6.2. </span>The role of sequence in encoding life</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/encoding_information.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="sidebar" id="binding-to-dna">
+<p class="sidebar-title">Protein binding to DNA and sequence information</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/tata_bp.png"><img alt="../_images/tata_bp.png" src="../_images/tata_bp.png" style="width: 255.0px; height: 193.5px;" /></a>
+<p class="caption"><span class="caption-text">Crystal structure of TBP bound to a short segment of DNA</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>Structure <a class="reference external" href="http://bit.ly/2i0s4pk">from NCBI</a></p>
+</div>
+</div>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/tata_logo.png"><img alt="../_images/tata_logo.png" src="../_images/tata_logo.png" style="width: 418.0px; height: 182.0px;" /></a>
+<p class="caption"><span class="caption-text">An information theoretic representation of sequence preference of TBP</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>Logo <a class="reference external" href="http://jaspar.genereg.net/matrix/MA0108.2/">from Jaspar</a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-role-of-sequence-in-encoding-life">
+<h1><span class="section-number">6.2. </span>The role of sequence in encoding life<a class="headerlink" href="#the-role-of-sequence-in-encoding-life" title="Permalink to this headline">¶</a></h1>
+<p>A grand challenge in biology is to understand how life is encoded. We know that the genome of an organism contains, at the very least, the instructions required to specify a substantial part of organismal phenotype. But we also know that an organism is not simply represented by the ordering of nucleotides into large DNA molecules.</p>
+<p>All <span class="math notranslate nohighlight">\(\sim 10^{13}\)</span> cells in our body contain the same genome. And yet somehow, these cells manage to attain distinct cellular phenotypes, such as cardiac cells, sperm cells, hair follicle cells, etc. How is this achieved when they have the same information system? The answer lies in their selective reading of that information.</p>
+<p>It is long been appreciated that regulatory control of genes underpins cell-type-specific differentiation. This is achieved by a layer of regulatory encoding – referred to as epigenetics – and associated molecular mechanisms. For instance, in eukaryotes DNA associated with an octamer of histone proteins forms of structure referred to as a nucleosome (see <a class="reference internal" href="#organisation-of-eukaryotic-dna">Organisation of eukaryotic DNA</a>). These provide the molecular foundation for changing the level of compaction of DNA. Highly compacted chromatin is inaccessible to the machinery responsible for transcribing DNA into RNA, thus preventing it from contributing to cellular phenotype. Cell type differences in which genomic regions are accessible thus leads to cell type differences in phenotype.</p>
+<div class="figure align-default" id="organisation-of-eukaryotic-dna">
+<a class="reference internal image-reference" href="../_images/transcription.png"><img alt="../_images/transcription.png" src="../_images/transcription.png" style="width: 398.25px; height: 357.75px;" /></a>
+<p class="caption"><span class="caption-text">Organisation of eukaryotic DNA</span><a class="headerlink" href="#organisation-of-eukaryotic-dna" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>From <a class="reference external" href="http://doi.org/10.1038/nrg1315">Wasserman, &amp; Sandelin</a></p>
+</div>
+</div>
+<p>Mechanistically, how do these interactions with DNA work? Some short stretches of DNA sequence (referred to as motifs) are central to regulation of gene expression. One instance of this is illustrated in <a class="reference internal" href="#binding-to-dna">Binding to DNA</a>. The crystal structure of the transcription factor protein TBP and it’s target DNA sequence shows how the former slots into the minor groove of the associated DNA sequence. The lower panel shows a visualisation (referred to as a sequence logo) that summarises the affinity of TBP to specific bases in a DNA sequence. I point out here, not all DNA interacting molecules demonstrate such clear target sequence specificity. Of particular note is evidence that histone octamers do not have such specificity.</p>
+<div class="sidebar" id="encoded-in-dna">
+<p class="sidebar-title">Encoded in DNA</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/in_dna.png"><img alt="../_images/in_dna.png" src="../_images/in_dna.png" style="width: 363.5px; height: 214.0px;" /></a>
+</div>
+<p>Epigenetic factor positioning encoded by DNA.</p>
+<p>From <a class="reference external" href="http://doi.org/10.1126/science.1160930">Science, 322, 434–438</a></p>
+</div>
+<p>Understanding epigenetics is clearly crucial to understanding cellular processes. But the question remains, where is the information for epigenetic control encoded? One elegant experiment that endeavoured to tackle this question is highlighted in the sidebar (<a class="reference internal" href="#encoded-in-dna">Encoded in DNA</a>). Wilson et al took advantage of an inbred mouse strain that segregates human chromosome 21. They asked the question, do the mouse epigenetic factors (e.g. transcription factors and other DNA binding molecules) bind to this piece of human DNA where the human epigenetic factors do? This would indicate the information is encoded in the human DNA sequence. Or, do they bind elsewhere? This would indicate they are guided to their position by mouse-specific information.</p>
+<p>The results best supported the former interpretation – epigenetic factor binding and thus regulatory control is specified in the DNA. So perhaps DNA really does encode everything!</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="motifs.html" class="btn btn-neutral float-right" title="6.3. \(k\)-mers and Motifs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral float-left" title="6.1. Introduction to Comparison of Biological Sequences" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

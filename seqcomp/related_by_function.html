@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Experimental procedures for detecting functionally related sequences &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>6.6. Experimental procedures for detecting functionally related sequences &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -45,7 +45,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.7. Measuring information using Shannon’s entropy" href="information.html" />
+    <link rel="prev" title="6.5. Finding motifs" href="motif_finding.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,13 +92,27 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Sequence Comparison</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">6.1. Introduction to Comparison of Biological Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.2. The role of sequence in encoding life</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.4. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.5. Finding motifs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.6. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.7. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.8. Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.9. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.10. Pairwise alignment using dynamic programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.11. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
 </ul>
 
             
@@ -143,7 +159,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Experimental procedures for detecting functionally related sequences</li>
+          <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
+        
+      <li><span class="section-number">6.6. </span>Experimental procedures for detecting functionally related sequences</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,7 +207,7 @@
 }
 </style>
 <div class="section" id="experimental-procedures-for-detecting-functionally-related-sequences">
-<span id="experimental-data"></span><h1>Experimental procedures for detecting functionally related sequences<a class="headerlink" href="#experimental-procedures-for-detecting-functionally-related-sequences" title="Permalink to this headline">¶</a></h1>
+<span id="experimental-data"></span><h1><span class="section-number">6.6. </span>Experimental procedures for detecting functionally related sequences<a class="headerlink" href="#experimental-procedures-for-detecting-functionally-related-sequences" title="Permalink to this headline">¶</a></h1>
 <p>Sequences that a possess a shared functional property (e.g. protein binding) will share sequence features in common. For instance, the sequences that are able to bind TBP. How can we identify where something binds DNA? We need to obtain a sample of sequences that have this property in common.</p>
 <p>Here’s a fuller description of the experimental procedures <a class="footnote-reference brackets" href="#id2" id="id1">4</a>, albeit a bit of out date.</p>
 <dl class="footnote brackets">
@@ -198,16 +216,16 @@
 </dd>
 </dl>
 <div class="section" id="selex-systematic-evolution-of-ligands-by-exponential-enrichment">
-<h2>SELEX – Systematic evolution of ligands by exponential enrichment<a class="headerlink" href="#selex-systematic-evolution-of-ligands-by-exponential-enrichment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.6.1. </span>SELEX – Systematic evolution of ligands by exponential enrichment<a class="headerlink" href="#selex-systematic-evolution-of-ligands-by-exponential-enrichment" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id6">
-<a class="reference internal image-reference" href="images/selex.png"><img alt="images/selex.png" src="images/selex.png" /></a>
+<a class="reference internal image-reference" href="../_images/selex.png"><img alt="../_images/selex.png" src="../_images/selex.png" style="width: 190.5px; height: 271.0px;" /></a>
 <p class="caption"><span class="caption-text">A synthetic sequence assessment procedure.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="chip-chromatin-immunoprecipitation">
-<h2>ChIP – chromatin immunoprecipitation<a class="headerlink" href="#chip-chromatin-immunoprecipitation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.6.2. </span>ChIP – chromatin immunoprecipitation<a class="headerlink" href="#chip-chromatin-immunoprecipitation" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id7">
-<a class="reference internal image-reference" href="images/chipseq.png"><img alt="images/chipseq.png" src="images/chipseq.png" /></a>
+<a class="reference internal image-reference" href="../_images/chipseq.png"><img alt="../_images/chipseq.png" src="../_images/chipseq.png" style="width: 283.5px; height: 212.5px;" /></a>
 <p class="caption"><span class="caption-text">An empirical survey of naturally occurring DNA <a class="footnote-reference brackets" href="#id4" id="id3">5</a>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="footnote brackets">
@@ -217,7 +235,7 @@
 </dl>
 </div>
 <div class="section" id="with-the-sequence-data-from-those-experimental-procedures">
-<h2>With the sequence data from those experimental procedures<a class="headerlink" href="#with-the-sequence-data-from-those-experimental-procedures" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.6.3. </span>With the sequence data from those experimental procedures<a class="headerlink" href="#with-the-sequence-data-from-those-experimental-procedures" title="Permalink to this headline">¶</a></h2>
 <p>identifying a dominant motif requires a way of summarising features across a collection of sequences. For instance, we can “align” fragments and employ a majority rule consensus approach. This just picks the most frequent state in a column of <em>aligned</em> sequences.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">01234</span> <span class="o">&lt;--</span> <span class="n">the</span> <span class="s2">&quot;index&quot;</span> <span class="ow">or</span> <span class="n">position</span>
 <span class="n">TCAGA</span>
@@ -246,7 +264,7 @@
 </div>
 </div>
 <div class="section" id="transformation-of-the-data-for-analysis">
-<span id="pssm-origins"></span><h2>Transformation of the data for analysis<a class="headerlink" href="#transformation-of-the-data-for-analysis" title="Permalink to this headline">¶</a></h2>
+<span id="pssm-origins"></span><h2><span class="section-number">6.6.4. </span>Transformation of the data for analysis<a class="headerlink" href="#transformation-of-the-data-for-analysis" title="Permalink to this headline">¶</a></h2>
 <p>From an experimental procedure, we ultimately seek to obtain a curated set of “aligned” sequences.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -463,6 +481,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="information.html" class="btn btn-neutral float-right" title="6.7. Measuring information using Shannon’s entropy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="motif_finding.html" class="btn btn-neutral float-left" title="6.5. Finding motifs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

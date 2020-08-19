@@ -1,6 +1,32 @@
 Pairwise alignment using dynamic programming
 ============================================
 
+::
+
+                  |
+       +--------ACAGT--------+     Ancestor
+       |                     |
+       |                   AxxxT   3 bp deletion
+       |                     |
+     ACAGT                  AT     Sampled sequences
+ 
+     seq1                  seq2
+
+But we typically do not observe the process and must infer an *alignment* that can be applied to deduce what happened.
+
+::
+
+    seq1  ACAGT
+    seq2  A---T
+
+OR
+
+::
+    
+    seq1  ACAGT
+    seq2  --A-T
+
+
 There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of *global alignment*.
 
 Needleman and Wunsch (NW) [1]_

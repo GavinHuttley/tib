@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction to Comparison of Biological Sequences &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>6.1. Introduction to Comparison of Biological Sequences &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -45,7 +45,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.2. The role of sequence in encoding life" href="encoding_information.html" />
+    <link rel="prev" title="6. Sequence Comparison" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,13 +92,27 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">6. Index</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Sequence Comparison</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.1. Introduction to Comparison of Biological Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.2. The role of sequence in encoding life</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.4. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.5. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.7. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.8. Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.9. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.10. Pairwise alignment using dynamic programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.11. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
 </ul>
 
             
@@ -143,7 +159,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Introduction to Comparison of Biological Sequences</li>
+          <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
+        
+      <li><span class="section-number">6.1. </span>Introduction to Comparison of Biological Sequences</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,55 +207,42 @@
 }
 </style>
 <div class="section" id="introduction-to-comparison-of-biological-sequences">
-<h1>Introduction to Comparison of Biological Sequences<a class="headerlink" href="#introduction-to-comparison-of-biological-sequences" title="Permalink to this headline">¶</a></h1>
-<p>The comparison of biological sequences is arguably the core task of bioinformatics. In this course, we split this into two segments: whether the sequences are related solely by function, or whether they share a common ancestor.</p>
-<p>For this topic, we frame problems in terms of biological questions and, where relevant, specific biological theory. Computational development is focussed on representing research questions as algorithms and interpreting their application on biological data.</p>
-<div class="section" id="the-role-of-sequence-in-encoding-life">
-<h2>The role of sequence in encoding life<a class="headerlink" href="#the-role-of-sequence-in-encoding-life" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="id8">
-<a class="reference internal image-reference" href="images/transcription.png"><img alt="images/transcription.png" src="images/transcription.png" /></a>
-<p class="caption"><span class="caption-text">The organisation of eukaryotic DNA <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</div>
+<h1><span class="section-number">6.1. </span>Introduction to Comparison of Biological Sequences<a class="headerlink" href="#introduction-to-comparison-of-biological-sequences" title="Permalink to this headline">¶</a></h1>
+<p>The comparison of biological sequences is arguably the core task of bioinformatics. In this course, we split this into two domains: comparison of sequences that are related solely by function; comparison of sequences that share a common ancestor.</p>
+<p>We start the topic by framing the problem of sequence analysis from the perspective of what we understand about the origins of biological sequences and the role they play in living systems. Our purpose with these descriptions is not to provide an exhaustive background but, hopefully, just a refresher of things you already know.</p>
+<div class="section" id="descended-from-a-common-ancestor">
+<h2><span class="section-number">6.1.1. </span>Descended from a common ancestor<a class="headerlink" href="#descended-from-a-common-ancestor" title="Permalink to this headline">¶</a></h2>
+<p>In 1859, Charles Darwin (aka the Dude!) published his seminal work on the origin of species. In it, he proposed that descent occurred with modification and that this “modification” was heritable variation which affected an individuals ability to survive and reproduce. Evolution thus occurring as a consequence of natural selection eliminating individuals that contained variants not well suited to their environment and / or had a lower ability to reproduce when compared to their contemporaries.</p>
+<p>Darwin clearly understood that organismal phenotype was heritable and thus required an information system with associated mechanisms for its transmission. He further understood that differences existed between individuals in the copy of the information system they possessed which must be responsible for those differences in phenotype. But he did not understand the mechanism of how inheritance occurred <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>From <a class="reference external" href="http://doi.org/10.1038/nrg1315">Wasserman, &amp; Sandelin</a></p>
+<dd><p>Well he did have a model, but it was disproved by his cousin, Francis Galton, a major figure in the history of statistics.</p>
 </dd>
 </dl>
-<div class="figure align-default" id="id9">
-<a class="reference internal image-reference" href="images/in_dna.png"><img alt="images/in_dna.png" src="images/in_dna.png" /></a>
-<p class="caption"><span class="caption-text">Epigenetic factor positioning encoded by DNA <a class="footnote-reference brackets" href="#id4" id="id3">2</a>.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</div>
+<p>Darwin’s work was highly controversial at the time, including his conclusion that all living things on Earth had descended from a common ancestor.</p>
+<p>Just 6 years later, in 1865, Gregor Mendel published his work on the laws of inheritance. These constitute the foundation principles of what we now refer to as genetics <a class="footnote-reference brackets" href="#id4" id="id3">2</a>. Unfortunately, Mendel’s work was largely ignored for 35 years until after it was replicated by 3 botanists (de Vries, Correns, and von Tschermak-Seysenegg). It took another 53 years before Watson and Crick presented evidence for the physical structure of the hereditary molecule – DNA. This laid the foundation for examination of how information for life is encoded.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
-<dd><p>From <a class="reference external" href="http://doi.org/10.1126/science.1160930">Science, 322, 434–438</a></p>
+<dd><p>Mendel did not use that term.</p>
 </dd>
 </dl>
-<p>Some short stretches of DNA sequence (referred to as motifs) are central to regulation of gene expression. This property can arise from direct binding of protein to DNA.</p>
-<table class="docutils align-default" id="id10">
-<caption><span class="caption-text">Crystal structure of TBP bound to a short segment of DNA <a class="footnote-reference brackets" href="#id7" id="id5">3</a></span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><div class="figure align-left" id="id11">
-<a class="reference internal image-reference" href="images/tata_bp.png"><img alt="images/tata_bp.png" src="images/tata_bp.png" /></a>
-<p class="caption"><span class="caption-text"><a class="footnote-reference brackets" href="#id7" id="id6">3</a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
-</td>
-<td><div class="figure align-right">
-<a class="reference internal image-reference" href="images/tata_logo.png"><img alt="images/tata_logo.png" src="images/tata_logo.png" /></a>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
+<p>In the 1920-40’s, seminal work done by <a class="reference external" href="https://en.wikipedia.org/wiki/Sewall_Wright">Sewall Wright</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/J._B._S._Haldane">J. B. S. Haldane</a>, Ronald Fisher <a class="reference external" href="https://en.wikipedia.org/wiki/Ronald_Fisher">https://en.wikipedia.org/wiki/Ronald_Fisher</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Theodosius_Dobzhansky">Theodosius Dobzhansky</a> and others established what is referred to as the “Neo-Darwinian Synthesis”. This work re-expressed Darwin’s theory in terms of genetical mechanisms of inheritance – unifying the two fields. The work is dominantly mathematical, it constitutes the foundations of population genetics, and it provides the basis from which we now view the distribution of genetic variation. Another major extension to those foundations from which we interpret genetic variation was the work of Motoo Kimura in 1968 on the Neutral Theory of Molecular Evolution. (As in all the above, there were numerous other contributors to development of these ideas and theory.)</p>
+<p>These large frameworks provide a perspective from within which we can view biological systems, irrespective of the scale we are interested in. Ranging from biochemical reactions, to cellular biology to organisms to ecosystems. All levels of biological organisation have been shaped by the processes that govern the inheritance of the molecular information system and by the relationship between the information encoded in DNA and its manifestation in phenotype.</p>
+<p>In this topic we will begin thinking about how we can interrogate DNA sequences to discover how information is encoded and how we can quantify relationships among DNA sequences. The latter is a precursor to a mechanistic understanding of how evolution has, and is, operating.</p>
+<div class="section" id="the-major-take-home-messages-relevant-to-this-topic">
+<h3><span class="section-number">6.1.1.1. </span>The major take-home messages relevant to this topic<a class="headerlink" href="#the-major-take-home-messages-relevant-to-this-topic" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>All living things on the planet ultimately descended from a common ancestor</p></li>
+<li><p>Both parents transmit hereditary information to progeny <a class="footnote-reference brackets" href="#id6" id="id5">3</a></p></li>
+<li><p>Hereditary information is encoded in a nucleic acid, typically DNA</p></li>
+<li><p>Each position in a DNA sequence derived from a residue in an ancestor</p></li>
+</ul>
 <dl class="footnote brackets">
-<dt class="label" id="id7"><span class="brackets">3</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>)</span></dt>
-<dd><p>Structure <a class="reference external" href="http://bit.ly/2i0s4pk">from NCBI</a></p>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>For diploid, sexually reproducing organisms.</p>
 </dd>
 </dl>
-<p>The figure shows the  on the left, while the right panel is a representation of the DNA sequences to which TBP binds.</p>
+</div>
 </div>
 </div>
 
@@ -246,6 +251,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="encoding_information.html" class="btn btn-neutral float-right" title="6.2. The role of sequence in encoding life" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="6. Sequence Comparison" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

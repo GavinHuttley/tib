@@ -16,10 +16,10 @@ Bioinformatics and its Applications
     contribute
     notation
     python/index
+    seqcomp/index
     genindex
     
 .. disconnecting this for now
-    seqcomp/index
 
 .. todo:: add an advanced python topic
 
