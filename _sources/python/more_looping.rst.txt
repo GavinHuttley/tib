@@ -72,14 +72,14 @@ We can also combine these loops with conditional statements so that we can selec
 Exercises
 =========
 
-**1.** Consider the following two-dimension list
+**1.** Consider the following two-dimensional list
 
 .. code-block:: text
     
     [[0, 4, 1],
      [1, 7]]
 
-The number of "columns" is different between the first and second rows. Write a nested foor loop that prints the row index, column index and the value fof every element in that list.
+The number of "columns" is different between the first and second rows. Write a nested for loop that prints the row index, column index and the value of every element in that list.
 
 It should produce output like:
 
