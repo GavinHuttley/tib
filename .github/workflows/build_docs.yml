@@ -12,6 +12,14 @@ jobs:
         with:
            path: tib
 
+      - uses: actions/cache@v2
+        if: startsWith(runner.os, 'macOS')
+        with:
+          path: /Users/runner/conda_pkgs_dir
+          key: ${{ runner.os }}-conda-${{ hashFiles('tib/tib-env.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-conda-
+
       - name: Make conda environment
         uses: goanpeca/setup-miniconda@v1
         with:
