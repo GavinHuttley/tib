@@ -542,4 +542,44 @@ Use the following array to answer the next question.
                  [9, 2, 8, 2, -3],
                  [3, -3, 9, 9, 5]])
 
-**6.** Do some googling for testing ``numpy`` arrays using ``assert_allclose``. Then use this to check your array ``freqs`` created above sums to 1.
+**6.** Comparing performance of pure Python and numpy implementations. Investigate usage of ``numpy.where()`` to obtain the row and column coordinates of a 2D array where the value equals ``1`` (that's a one). Write a function called ``np_where()`` that takes a matrix as an argument and returns the row coordinates and column coordinates.
+
+First, use the following code to generate a random square matrix.
+
+.. jupyter-execute::
+    :linenos:
+
+    from numpy.random import randint
+    
+    dim = 5
+    mat = randint(0, 2, size=dim * dim)
+    mat.resize(dim, dim)
+    mat
+
+Compare ``np_where()`` to the performance of a function implemented using only pure python called ``py_where()`` that takes the matrix as an argument and returns the ``<row coordinates>, <column coordinates>`` as lists. For ``mat``, it should return the following.
+
+.. jupyter-execute::
+    :hide-code:
+
+    def py_where(matrix):
+        row_coords, col_coords = [], []
+        for i in range(matrix.shape[0]):
+            for j in range(matrix.shape[1]):
+                if matrix[i][j] == 1:
+                    row_coords.append(i)
+                    col_coords.append(j)
+        return row_coords, col_coords
+    
+    coords = py_where(mat)
+    print(coords)
+
+Use the "magic" ``%timeit`` command builtin to Jupyter to assess performance of each function on the same value of ``mat``.
+
+.. jupyter-execute::
+    :linenos:
+
+    %timeit py_where(mat)
+
+Then try setting ``dim=20`` and repeat. Which is faster, and by how much?
+
+**7.** Do some googling for testing ``numpy`` arrays using ``assert_allclose``. Then use this to check your array ``freqs`` created above sums to 1.

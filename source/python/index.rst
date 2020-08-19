@@ -33,6 +33,7 @@ Introduction to Python
     writing_functions
     namespace
     iterators
+    more_looping
     import
     numpy
     misc
