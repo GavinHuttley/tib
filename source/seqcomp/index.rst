@@ -15,8 +15,9 @@ There are additional coding skills that you need to develop, but these skills ar
     intro
     encoding_information
     motifs
-    motif_finding
+    gene_expression
     related_by_function
+    motif_finding
     information
     pssm
     odds_ratios
