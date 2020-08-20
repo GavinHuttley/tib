@@ -19,7 +19,8 @@ We convert the PWM into a PPM, but I'm restricting the examples to just 4 positi
                              "2": [0.1, 0., 0.9, 0.],
                              "3": [.6, 0., 0.4, 0.]},
                              title="PPM --",
-                             legend="Position specific probability matrix")
+                             legend="Position specific probability matrix",
+                             digits=1)
     table
 
 A worked example
@@ -28,7 +29,7 @@ A worked example
 Calculating the Expected Under the Background
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-let's use the sequence
+Let's use the sequence
 
 .. jupyter-execute::
     :linenos:
@@ -49,7 +50,7 @@ Calculating the Expected Under the Alternate
 
 In this case, I'm just doing this "manually". First, note the base order is T, C, A, G [1]_. Here's a pseudo-code algorithm describing this calculation:
 
-.. [1] This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software
+.. [1] This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software.
 
 .. code-block:: rest
 
@@ -105,10 +106,6 @@ We can form an odds-ratio as
 
 How should you interpret this? Look at the OR equation!
 
-.. topic:: You Try
-    
-    What does an OR equal 1 mean? What about an OR > 1? Or, an OR<1?
-
 Computing the PSSM
 ^^^^^^^^^^^^^^^^^^
 
@@ -149,3 +146,7 @@ From these, the log-odds of ``seq1`` being derived from the experimental sample 
 
 For more on the interpretation of odds ratios, see :ref:`odds-ratios`.
 
+Exercises
+=========
+
+**1.** What does an OR equal 1 mean? What about an OR > 1? Or, an OR<1?
