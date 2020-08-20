@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.10. Pairwise alignment using dynamic programming &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>6.11. Pairwise alignment using dynamic programming &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.11. Dotplot – Alignment of sequences related by descent from a common ancestor" href="dotplot.html" />
-    <link rel="prev" title="6.9. Odds-ratio’s" href="odds_ratios.html" /> 
+    <link rel="next" title="6.12. Dotplot – Alignment of sequences related by descent from a common ancestor" href="dotplot.html" />
+    <link rel="prev" title="6.10. Odds-ratio’s" href="odds_ratios.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,13 +103,14 @@
 <li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.2. The role of sequence in encoding life</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.4. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.5. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.5. Gene expression in a nutshell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html">6.7. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.8. Position Specific Scoring Matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.9. Odds-ratio’s</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.10. Pairwise alignment using dynamic programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.11. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.7. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.8. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.9. Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.10. Odds-ratio’s</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.11. Pairwise alignment using dynamic programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.12. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
@@ -161,7 +162,7 @@
         
           <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
         
-      <li><span class="section-number">6.10. </span>Pairwise alignment using dynamic programming</li>
+      <li><span class="section-number">6.11. </span>Pairwise alignment using dynamic programming</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,7 +208,7 @@
 }
 </style>
 <div class="section" id="pairwise-alignment-using-dynamic-programming">
-<h1><span class="section-number">6.10. </span>Pairwise alignment using dynamic programming<a class="headerlink" href="#pairwise-alignment-using-dynamic-programming" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.11. </span>Pairwise alignment using dynamic programming<a class="headerlink" href="#pairwise-alignment-using-dynamic-programming" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="o">|</span>
   <span class="o">+--------</span><span class="n">ACAGT</span><span class="o">--------+</span>     <span class="n">Ancestor</span>
   <span class="o">|</span>                     <span class="o">|</span>
@@ -230,7 +231,7 @@
 </div>
 <p>There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of <em>global alignment</em>.</p>
 <div class="section" id="needleman-and-wunsch-nw-1">
-<h2><span class="section-number">6.10.1. </span>Needleman and Wunsch (NW) <a class="footnote-reference brackets" href="#id2" id="id1">1</a><a class="headerlink" href="#needleman-and-wunsch-nw-1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.11.1. </span>Needleman and Wunsch (NW) <a class="footnote-reference brackets" href="#id2" id="id1">1</a><a class="headerlink" href="#needleman-and-wunsch-nw-1" title="Permalink to this headline">¶</a></h2>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
 <dd><p>Needleman &amp; Wunsch (1970). A general method applicable to the search for similarities in the amino acid sequence of two proteins. Journal of Molecular Biology, 48: 443–453</p>
@@ -238,7 +239,7 @@
 </dl>
 <p>Compared to the dotplot approach, it allows for more sophisticated “match”, i.e. the sequence state may be different but still considered a match. It efficiently (in terms of computation) identifies the optimal “path” through the matrix.</p>
 <div class="section" id="the-scoring-system">
-<h3><span class="section-number">6.10.1.1. </span>The scoring system<a class="headerlink" href="#the-scoring-system" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.1.1. </span>The scoring system<a class="headerlink" href="#the-scoring-system" title="Permalink to this headline">¶</a></h3>
 <p>We will start by using the exact same <em>scoring matrix</em> as NW <a class="footnote-reference brackets" href="#id2" id="id3">1</a>:</p>
 <ul class="simple">
 <li><p>states matched, score = 1</p></li>
@@ -251,7 +252,7 @@
 </div>
 </div>
 <div class="section" id="scored-match-mismatch">
-<h3><span class="section-number">6.10.1.2. </span>Scored match / mismatch<a class="headerlink" href="#scored-match-mismatch" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.1.2. </span>Scored match / mismatch<a class="headerlink" href="#scored-match-mismatch" title="Permalink to this headline">¶</a></h3>
 <p>We construct a matrix <span class="math notranslate nohighlight">\(F\)</span>, such that <span class="math notranslate nohighlight">\(F[i, j]\)</span> is the score for the <em>best</em> alignment up to <span class="math notranslate nohighlight">\(i,j\)</span>. <span class="math notranslate nohighlight">\(F\)</span> is built recursively using the following cases:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}F[i,j] = \max
@@ -304,7 +305,7 @@ F[i, j-1] + \delta\\
 </div>
 </div>
 <div class="section" id="demonstrating-nw-on-an-example">
-<h2><span class="section-number">6.10.2. </span>Demonstrating NW on an example<a class="headerlink" href="#demonstrating-nw-on-an-example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.11.2. </span>Demonstrating NW on an example<a class="headerlink" href="#demonstrating-nw-on-an-example" title="Permalink to this headline">¶</a></h2>
 <p>We apply NW to the two sequences: <code class="docutils literal notranslate"><span class="pre">GAGTAC</span></code> and <code class="docutils literal notranslate"><span class="pre">GGTAC</span></code> gradually building up the algorithmic components in Python. We first define the scoring function:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -418,10 +419,10 @@ F[i, j-1] + \delta\\
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dotplot.html" class="btn btn-neutral float-right" title="6.11. Dotplot – Alignment of sequences related by descent from a common ancestor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dotplot.html" class="btn btn-neutral float-right" title="6.12. Dotplot – Alignment of sequences related by descent from a common ancestor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="odds_ratios.html" class="btn btn-neutral float-left" title="6.9. Odds-ratio’s" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="odds_ratios.html" class="btn btn-neutral float-left" title="6.10. Odds-ratio’s" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

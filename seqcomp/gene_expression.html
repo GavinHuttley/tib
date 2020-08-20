@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.5. Gene expression in a nutshell &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.6. Experimental procedures for detecting functionally related sequences" href="related_by_function.html" />
+    <link rel="prev" title="6.3. \(k\)-mers and Motifs" href="motifs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Sequence Comparison</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">6.1. Introduction to Comparison of Biological Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.2. The role of sequence in encoding life</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.4. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.5. Gene expression in a nutshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.7. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.8. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.9. Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.10. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.11. Pairwise alignment using dynamic programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.12. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
+        
+      <li><span class="section-number">6.5. </span>Gene expression in a nutshell</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/gene_expression.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="gene-expression-in-a-nutshell">
+<span id="gene-expression"></span><h1><span class="section-number">6.5. </span>Gene expression in a nutshell<a class="headerlink" href="#gene-expression-in-a-nutshell" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of this section is not to present an authoritative synopsis of gene expression. Instead, the objective is to present a simplified overview of what we understand about the nature of information encoding in DNA which influences gene expression and how that information is organised.</p>
+<div class="figure align-default" id="gene-regulation">
+<img alt="../_images/Gene_structure_eukaryote_2_annotated.svg" src="../_images/Gene_structure_eukaryote_2_annotated.svg" /><p class="caption"><span class="caption-text">The structural elements of eukaryotic genes</span><a class="headerlink" href="#gene-regulation" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>Image by <a class="reference external" href="https://en.wikipedia.org/wiki/File:Gene_structure_eukaryote_2_annotated.svg">Thomas Shafee</a></p>
+</div>
+</div>
+<p id="index-0">The <a class="reference internal" href="#gene-regulation"><span class="std std-ref">structural elements of eukaryotic genes</span></a> figure illustrates both the generalised information content associated with genes, and the stepwise processes via which a gene is transcribed and ultimately translated into a protein. I want to draw your attention to the annotated segments that are listed as regulatory sequence. Such segments exist at the 5’- and 3’- boundaries of a gene. Between these lies the gene body, consisting of exons and introns. Immediately flanking the gene are the UTR (untranslated region). Preceding the 5’-UTR is the promoter region which is further broken into “core” and “proximal”. The promoter region is the target for binding of molecules that facilitate and/or initiate transcription the downstream gene into RNA. The transcript includes the UTRs as well as the gene body. One important feature not explicitly represented in this figure is the actual site at which transcription starts. This is commonly referred to as the TSS (transcription start site). The TSS is largely defined by the core promoter <a class="bibtex reference internal" href="#juven-gershon-2008aa" id="id1">[JGHTK08]</a>. As that citation argues, there can be variability in the TSS for an individual gene. We are primarily interested in how information is encoded in promoter regions.</p>
+<div class="sidebar" id="regulatory-element-organisation">
+<span id="index-1"></span><p class="sidebar-title">Cartoon of regulatory element organisation</p>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/transcription.png"><img alt="../_images/transcription.png" src="../_images/transcription.png" style="width: 398.25px; height: 357.75px;" /></a>
+<p class="caption"><span class="caption-text">Regulatory element organisation in eukaryotic DNA</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>From <a class="reference external" href="http://doi.org/10.1038/nrg1315">Wasserman, &amp; Sandelin</a></p>
+</div>
+</div>
+</div>
+<div class="sidebar" id="binding-to-dna">
+<p class="sidebar-title">Binding to DNA</p>
+<div class="figure align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/tata_bp.png"><img alt="../_images/tata_bp.png" src="../_images/tata_bp.png" style="width: 255.0px; height: 193.5px;" /></a>
+<p class="caption"><span class="caption-text">Crystal structure of TBP bound to a short segment of DNA</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>Structure <a class="reference external" href="http://bit.ly/2i0s4pk">from NCBI</a></p>
+</div>
+</div>
+</div>
+<p>A somewhat more detailed cartoon presenting concepts of regulatory encoding is shown in the <a class="reference internal" href="#regulatory-element-organisation"><span class="std std-ref">Figure on regulatory element organisation</span></a>. One elementary encoding unit of regulatory information is the TFBS (transcription factor binding site). These are the target binding sequence of transcription factors (or TFs, see <a class="reference internal" href="#binding-to-dna">Binding to DNA</a>). As illustrated, some TFBS are localised proximal to the TSS while others are more distant. The exact distance (measured in terms of length of DNA sequence between the TFBS and the gene TSS) can be quite extensive <a class="footnote-reference brackets" href="#id3" id="id2">1</a>. Also of interest here is the occurrence of cis-regulatory modules (CRMs) where multiple TFBS occur in a cluster, indicating binding by multiple TFs is involved in regulating a genes expression. This figure incorrectly implies that gene regulatory signals only exist outside the gene. Enhancer elements located within introns have been reported.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Application of chromatin conformation capture experimental procedures have demonstrated  that, within the nucleus, primary sequence span is not always a reliable measure of physical proximity between regulatory elements and the genes regulate <a class="bibtex reference internal" href="#fullwood-2009aa" id="id4">[FLP+09]</a><a class="bibtex reference internal" href="#lieberman-aiden-2009aa" id="id5">[LAvBW+09]</a>.</p>
+</dd>
+</dl>
+<p>This is a grossly simplified representation of how gene regulation happens. Regulatory control is a complicated process mediated by multiple elements.</p>
+<p>How can we, as data analysts, inform the understanding of this complex problem? All statistical, and / or computational, analyses should start simple. Start with simple hypotheses and evaluate it and define a new hypotheses. By iterating this process we can gradually build well founded, more complicated models. In this process there should also be, ideally, empirical experiments.</p>
+<hr class="docutils" />
+<p class="rubric">Citations</p>
+<p id="bibtex-bibliography-seqcomp/gene_expression-0"><dl class="citation">
+<dt class="bibtex label" id="fullwood-2009aa"><span class="brackets"><a class="fn-backref" href="#id4">FLP+09</a></span></dt>
+<dd><p>Melissa J Fullwood, Mei Hui Liu, You Fu Pan, Jun Liu, Han Xu, Yusoff Bin Mohamed, Yuriy L Orlov, Stoyan Velkov, Andrea Ho, Poh Huay Mei, Elaine G Y Chew, Phillips Yao Hui Huang, Willem-Jan Welboren, Yuyuan Han, Hong Sain Ooi, Pramila N Ariyaratne, Vinsensius B Vega, Yanquan Luo, Peck Yean Tan, Pei Ye Choy, K D Senali Abayratna Wansa, Bing Zhao, Kar Sian Lim, Shi Chi Leow, Jit Sin Yow, Roy Joseph, Haixia Li, Kartiki V Desai, Jane S Thomsen, Yew Kok Lee, R Krishna Murthy Karuturi, Thoreau Herve, Guillaume Bourque, Hendrik G Stunnenberg, Xiaoan Ruan, Valere Cacheux-Rataboul, Wing-Kin Sung, Edison T Liu, Chia-Lin Wei, Edwin Cheung, and Yijun Ruan. An oestrogen-receptor-alpha-bound human chromatin interactome. <em>Nature</em>, 462:58–64, 2009. <a class="reference external" href="https://doi.org/10.1038/nature08497">doi:10.1038/nature08497</a>.</p>
+</dd>
+<dt class="bibtex label" id="juven-gershon-2008aa"><span class="brackets"><a class="fn-backref" href="#id1">JGHTK08</a></span></dt>
+<dd><p>Tamar Juven-Gershon, Jer-Yuan Hsu, Joshua Wm Theisen, and James T Kadonaga. The rna polymerase ii core promoter - the gateway to transcription. <em>Curr Opin Cell Biol</em>, 20:253–9, 2008. <a class="reference external" href="https://doi.org/10.1016/j.ceb.2008.03.003">doi:10.1016/j.ceb.2008.03.003</a>.</p>
+</dd>
+<dt class="bibtex label" id="lieberman-aiden-2009aa"><span class="brackets"><a class="fn-backref" href="#id5">LAvBW+09</a></span></dt>
+<dd><p>Erez Lieberman-Aiden, Nynke L van Berkum, Louise Williams, Maxim Imakaev, Tobias Ragoczy, Agnes Telling, Ido Amit, Bryan R Lajoie, Peter J Sabo, Michael O Dorschner, Richard Sandstrom, Bradley Bernstein, M A Bender, Mark Groudine, Andreas Gnirke, John Stamatoyannopoulos, Leonid A Mirny, Eric S Lander, and Job Dekker. Comprehensive mapping of long-range interactions reveals folding principles of the human genome. <em>Science</em>, 326:289–93, 2009. <a class="reference external" href="https://doi.org/10.1126/science.1181369">doi:10.1126/science.1181369</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="related_by_function.html" class="btn btn-neutral float-right" title="6.6. Experimental procedures for detecting functionally related sequences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="motifs.html" class="btn btn-neutral float-left" title="6.3. \(k\)-mers and Motifs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
