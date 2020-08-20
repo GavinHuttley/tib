@@ -6,7 +6,6 @@ Gene expression in a nutshell
 The purpose of this section is not to present an authoritative synopsis of gene expression. Instead, the objective is to present a simplified overview of what we understand about the nature of information encoding in DNA which influences gene expression and how that information is organised.
 
 .. figure:: /_static/images/seqcomp/Gene_structure_eukaryote_2_annotated.svg
-    :scale: 50 %
     :name: gene regulation
     
     The structural elements of eukaryotic genes
