@@ -153,3 +153,9 @@ Exercises
 =========
 
 **1.** What does an OR equal 1 mean? What about an OR > 1? Or, an OR<1?
+
+**2.** What does a log-odds ratio > 1 mean? What about a log-odds ratio equal to 0?
+
+**3.** Write a function that takes a numpy array of odds-ratios and returns their :math:`\log_2`.
+
+**4.** Write a function that takes a numpy array of log odds-ratios (assume the base is 2, i.e. :math:`log_2`) and returns their odds ratios.
