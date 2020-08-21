@@ -88,7 +88,40 @@ These results originated from the honours research project of Ms Yicheng Zhu :ci
 Exercises
 =========
 
-**1.** Converting the mathematical expression for entropy into a Python function.
+Defining a short sequence for use below.
+
+.. jupyter-execute::
+    :linenos:
+
+    seq = "AGCCATTGCAAA"
+
+**1.** Write a function that converts ``seq`` into counts of nucleotides. (Use the standard library ``collections.Counter`` class.)
+
+**2.** Write a function that takes a dict like object (e.g. the counter you've just created from (1)) of counts and converts it to numpy array whose length is 4.
+
+You should consider it critical that your function always returns arrays where the counts for each nucleotide are always in the same position. For instance, if you define the state order as T, C, A, G then the counts for T are always at index 0 -- even if a T was not observed.
+
+**3.** Write a function that converts these counts into a frequencies.
+
+**4.** Converting the mathematical expression for entropy into a Python function. Apply it to the results from applying the functions you wrote for (1-3) to ``seq``.
+
+**5.** Apply the functions you've written to the following randomly generated sequence.
+
+.. jupyter-execute::
+    :hide-code:
+
+    from random import choices
+    
+    rand_seq = "".join(choices("AAACCGGGG", k=50))
+    rand_seq
+
+What do you observe? Why is it happening?
+
+**6.** Modify your function for answer (3) so, if there are zero values, it adds a pseudocount to **all** of the array elements before converting to frequencies. Set a default pseudocount of 0.5.
+
+Make sure your frequencies sum to 1.
+
+Is there another approach to solving this issue?
 
 ------
 

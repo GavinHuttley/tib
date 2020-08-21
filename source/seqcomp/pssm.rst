@@ -1,7 +1,10 @@
 Position Specific Scoring Matrices
 ==================================
 
-A Position Specific Scoring Matrix, or PSSM, is a matrix of log-odds ratios per position of a sequence motif (also called profiles). They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but are also used to characterise protein domains.
+.. index::
+    pair: PSSM; Position Specific Scoring Matrix
+
+A Position Specific Scoring Matrix, or PSSM, is a matrix of :index:`log-odds ratios` per position of a sequence motif. (PSSMs are also called :index:`profiles`.) They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but are also used to characterise protein domains.
 
 See :ref:`experimental_data` for how the counts data are derived. To illustrate the transformation of those counts data into a PSSM, we will start with a simple worked example. First we take the counts table presented in :ref:`pssm-origins`.
 
