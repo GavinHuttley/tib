@@ -498,13 +498,36 @@ myfunc()
 </div>
 </div>
 <p><strong>1.</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> that takes a single string (as per <code class="docutils literal notranslate"><span class="pre">data</span></code>) and converts it into a list of floats. Apply this function to <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
-<p><strong>2.</strong> Write another function called <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> that takes a series of floats (like the result of 1.) and has an optional argument <code class="docutils literal notranslate"><span class="pre">pseudocount</span></code> (with a default value of 0). The function adds <code class="docutils literal notranslate"><span class="pre">pseudocount</span></code> <a class="footnote-reference brackets" href="#id4" id="id3">2</a> to every frequency.</p>
-<p>Then add some assert statements to your function to check the user input for both the frequencies and the constant are valid (e.g. all values are <code class="docutils literal notranslate"><span class="pre">0&lt;=freq&lt;1</span></code>).</p>
+<p><strong>2.</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> that takes a series of frequencies (each value is 0 &lt; val &lt; 1 and the series sums to 1) and has an optional argument <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> (with a default value of 0). The function adds <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> <a class="footnote-reference brackets" href="#id4" id="id3">2</a> to every frequency.</p>
+<p>Add some assert statements to your function to check input values are valid (e.g. all values are <code class="docutils literal notranslate"><span class="pre">0&lt;=freq&lt;1</span></code>).</p>
 <p>Use an assert to check the result satisfies the following, all numbers sum to 1.0 (within numerical precision) and all values satisfy <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">v</span> <span class="pre">&lt;</span> <span class="pre">1</span></code>.</p>
-<p><strong>3.</strong> Write another function, <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> that takes the same input of <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> and also has an optional argument for <code class="docutils literal notranslate"><span class="pre">pseudocount</span></code>. This function should first call <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> to get the floats. Then call <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> with that result to get the final normalised series.  <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> then returns this value.</p>
+<p>For example, with the following input values</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">freqs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
+<span class="n">add_to_all</span><span class="o">=</span><span class="mf">0.0001</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Your function should return</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[0.10005997600959618,
+ 9.996001599360257e-05,
+ 0.29998000799680125,
+ 0.5998600559776089]
+</pre></div>
+</div>
+</div>
+</div>
+<p>But if, for example, <code class="docutils literal notranslate"><span class="pre">add_to_all</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> your function generates an exception.</p>
+<p><strong>3.</strong> Write another function, <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> that takes the same input of <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> and also has an optional argument for <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code>. This function should first call <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> to get the floats. Then call <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> with that result to get the final normalised series.  <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> then returns this value.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
-<dd><p>A pseudocount is a number, typically a frequency (e.g. 0.5), used to avoid zeros. They’re used in statistical models where the empirical data have zero observations but the prior belief holds those states are possible and thus should have a frequency &gt; 0.</p>
+<dd><p>This type of adjustment to avoid zeros is used to avoid numerical errors.</p>
 </dd>
 </dl>
 </div>

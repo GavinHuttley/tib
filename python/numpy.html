@@ -684,17 +684,18 @@ After:
 </div>
 <div class="section" id="integer-indexing">
 <h3><span class="section-number">5.33.9.2. </span>Integer indexing<a class="headerlink" href="#integer-indexing" title="Permalink to this headline">¶</a></h3>
-<p>This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of <code class="docutils literal notranslate"><span class="pre">m</span></code>). Let’s build start first from a single index. We select row 0, column 1.</p>
+<p>This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of <code class="docutils literal notranslate"><span class="pre">m</span></code>).</p>
+<p>Before we start using actual integer series, I’ll start by using conventional indexing to get the value of a single item. Specifically, I select row <code class="docutils literal notranslate"><span class="pre">1</span></code>, column <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">row_index</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">row_index</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">col_index</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">m</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">col_index</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -702,19 +703,19 @@ After:
 <p>We now enclose those indices in lists, such that each successive value corresponds to another row, another column. As such these sequential arrays correspond to array coordinates and thus must have the same dimension (length in our example below).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">row_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">row_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">col_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">m</span><span class="p">[</span><span class="n">row_indices</span><span class="p">,</span> <span class="n">col_indices</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([2, 5, 4])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([4, 5, 2])
 </pre></div>
 </div>
 </div>
 </div>
-<p>This corresponds to the following array coordinates: (0, 1), (2, 0), (1, 2). Thus, the result of advanced indexing is an array with same length as the indexing array length (3 in our case).</p>
+<p>This corresponds to the following array coordinates: (1, 1), (2, 0), (0, 1). Thus, the returned value from advanced indexing is an array with same length as the indexing array length (3 in our case).</p>
 </div>
 </div>
 <div class="section" id="the-numpy-array-axis">
@@ -1059,11 +1060,11 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 0, 0, 0, 0],
-       [1, 1, 1, 1, 0],
-       [0, 0, 0, 0, 0],
-       [0, 0, 0, 1, 1],
-       [1, 1, 0, 1, 0]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 0, 1, 0, 1],
+       [0, 0, 1, 0, 1],
+       [0, 1, 1, 1, 1],
+       [0, 1, 0, 0, 1],
+       [0, 1, 1, 1, 1]])
 </pre></div>
 </div>
 </div>
@@ -1071,7 +1072,7 @@ After:
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 1, 1, 1, 1, 3, 3, 4, 4, 4], [0, 0, 1, 2, 3, 3, 4, 0, 1, 3])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4], [0, 2, 4, 2, 4, 1, 2, 3, 4, 1, 4, 1, 2, 3, 4])
 </pre></div>
 </div>
 </div>
@@ -1084,7 +1085,7 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>19.9 µs ± 880 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>18.3 µs ± 196 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>

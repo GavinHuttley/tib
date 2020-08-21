@@ -16,14 +16,12 @@ where :math:`H` is Shannon entropy, `p` is a series of probabilities with `n` me
 
 .. note:: :math:`\sum_{i=0}^n` means take the sum of the series starting at index 0 and ending at index `n`.
 
-.. topic:: You Try
-    
-    Converting that mathematical expression into a Python expression.
-
 Measuring entropy for a simple alignment
 ----------------------------------------
 
-Here's the simple alignment from the previous section ::
+Here's the simple alignment from the previous section.
+
+.. code-block:: text
     
     TCAGA
     TTCCA
@@ -31,10 +29,10 @@ Here's the simple alignment from the previous section ::
     TTTTC
     TTTTC
 
-and here's the entropy calculation. ::
+Applying Shannon entropy to the sample alignment above gives:
 
-    Applying Shannon entropy to the sample alignment above gives:
-
+.. code-block:: text
+    
     Pos.   0     1     2     3     4
            T     C     A     G     A
            T     T     C     C     A
@@ -43,9 +41,7 @@ and here's the entropy calculation. ::
            T     T     T     T     C
     Ent.   0    0.72  1.52  1.52  0.97
 
-In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo [1]_. That representation is computed using position-wise entropy.
-
-.. [1] *Schneider & Stephens (1990). Sequence logos: a new way to display consensus sequences. Nucleic Acids Research, 18(20), 6097–100.*
+In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo :cite:`Schneider:1990aa`. That representation is computed using position-wise entropy.
 
 Information at a position
 -------------------------
@@ -87,6 +83,17 @@ If we sample sequences that share this mutation in common, aligning them centred
       - .. image:: /_static/images/seqcomp/CtoT_RE.png
             :scale: 50 %
 
-These results originated from the honours research project of Ms Yicheng Zhu, published in [2]_.
+These results originated from the honours research project of Ms Yicheng Zhu :cite:`Zhu:2017aa`.
 
-.. [2] *Zhu, Neeman, Yap, Huttley (2017). Statistical Methods for Identifying Sequence Motifs Affecting Point Mutations. Genetics, 205, 843–856*
+Exercises
+=========
+
+**1.** Converting the mathematical expression for entropy into a Python function.
+
+------
+
+.. rubric:: Citations
+
+.. bibliography:: /references.bib
+    :filter: docname in docnames
+    :style: alpha

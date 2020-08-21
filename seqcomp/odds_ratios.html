@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.10. Odds-ratio’s &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>6.12. Odds-ratio’s &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.11. Pairwise alignment using dynamic programming" href="pairwise_alignment.html" />
-    <link rel="prev" title="6.9. Position Specific Scoring Matrices" href="pssm.html" /> 
+    <link rel="next" title="6.13. Pairwise alignment using dynamic programming" href="pairwise_alignment.html" />
+    <link rel="prev" title="6.10. Position Specific Scoring Matrices" href="pssm.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -107,10 +107,12 @@
 <li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.7. Finding motifs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="information.html">6.8. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.9. Position Specific Scoring Matrices</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.10. Odds-ratio’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.11. Pairwise alignment using dynamic programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.12. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.9. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.10. Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.11. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.12. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.13. Pairwise alignment using dynamic programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
@@ -162,7 +164,7 @@
         
           <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
         
-      <li><span class="section-number">6.10. </span>Odds-ratio’s</li>
+      <li><span class="section-number">6.12. </span>Odds-ratio’s</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -208,7 +210,7 @@
 }
 </style>
 <div class="section" id="odds-ratio-s">
-<span id="odds-ratios"></span><h1><span class="section-number">6.10. </span>Odds-ratio’s<a class="headerlink" href="#odds-ratio-s" title="Permalink to this headline">¶</a></h1>
+<span id="odds-ratios"></span><h1><span class="section-number">6.12. </span>Odds-ratio’s<a class="headerlink" href="#odds-ratio-s" title="Permalink to this headline">¶</a></h1>
 <p>There are a multitude of statistical measures that are presented as odds-ratios (hereafter OR). They are often seen in terms of evaluating clinical studies. For instance, the odds-ratio of statin medication increasing life-span. We will be concerned with using the odds-ratio to distinguish between competing hypotheses.</p>
 <p>Consider an odds ratio that contrast the probability of a sequence under an alternate hypothesis (<span class="math notranslate nohighlight">\(p_{alt}\)</span>) against the probability of the sequence under a null hypothesis (<span class="math notranslate nohighlight">\(p_{null}\)</span>). In this instance, an OR equal to 1 if <span class="math notranslate nohighlight">\(p_{alt} = p_{null}\)</span>, i.e. the sequence is equally likely under both models. OR &gt; 1 indicates the sequence is more likely under the alternate, while a value less than 1 implies the converse.</p>
 <dl class="footnote brackets">
@@ -217,7 +219,7 @@
 </dd>
 </dl>
 <div class="section" id="log-odds-the-logarithm-variant">
-<h2><span class="section-number">6.10.1. </span>Log-odds – the logarithm variant<a class="headerlink" href="#log-odds-the-logarithm-variant" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.12.1. </span>Log-odds – the logarithm variant<a class="headerlink" href="#log-odds-the-logarithm-variant" title="Permalink to this headline">¶</a></h2>
 <p>A log-odds ratio is simply the log-transformation of the odds ratio <a class="footnote-reference brackets" href="#id1" id="id2">1</a>. For example, for OR=1, the log-odds <span class="math notranslate nohighlight">\(log_{10}(OR)=0\)</span> <a class="footnote-reference brackets" href="#id4" id="id3">2</a>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
@@ -235,10 +237,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pairwise_alignment.html" class="btn btn-neutral float-right" title="6.11. Pairwise alignment using dynamic programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pairwise_alignment.html" class="btn btn-neutral float-right" title="6.13. Pairwise alignment using dynamic programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pssm.html" class="btn btn-neutral float-left" title="6.9. Position Specific Scoring Matrices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pssm.html" class="btn btn-neutral float-left" title="6.10. Position Specific Scoring Matrices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

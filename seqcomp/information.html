@@ -46,7 +46,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.9. Position Specific Scoring Matrices" href="pssm.html" />
+    <link rel="next" title="6.10. Position Specific Scoring Matrices" href="pssm.html" />
     <link rel="prev" title="6.7. Finding motifs" href="motif_finding.html" /> 
 </head>
 
@@ -107,10 +107,12 @@
 <li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.7. Finding motifs</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">6.8. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.9. Position Specific Scoring Matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.10. Odds-ratio’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.11. Pairwise alignment using dynamic programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.12. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">6.9. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.10. Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.12. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.13. Pairwise alignment using dynamic programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
@@ -220,38 +222,27 @@
 <p class="admonition-title">Note</p>
 <p><span class="math notranslate nohighlight">\(\sum_{i=0}^n\)</span> means take the sum of the series starting at index 0 and ending at index <cite>n</cite>.</p>
 </div>
-<div class="topic">
-<p class="topic-title">You Try</p>
-<p>Converting that mathematical expression into a Python expression.</p>
-</div>
 <div class="section" id="measuring-entropy-for-a-simple-alignment">
 <h2><span class="section-number">6.8.1. </span>Measuring entropy for a simple alignment<a class="headerlink" href="#measuring-entropy-for-a-simple-alignment" title="Permalink to this headline">¶</a></h2>
-<p>Here’s the simple alignment from the previous section</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TCAGA</span>
-<span class="n">TTCCA</span>
-<span class="n">TTCCA</span>
-<span class="n">TTTTC</span>
-<span class="n">TTTTC</span>
+<p>Here’s the simple alignment from the previous section.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>TCAGA
+TTCCA
+TTCCA
+TTTTC
+TTTTC
 </pre></div>
 </div>
-<p>and here’s the entropy calculation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Applying</span> <span class="n">Shannon</span> <span class="n">entropy</span> <span class="n">to</span> <span class="n">the</span> <span class="n">sample</span> <span class="n">alignment</span> <span class="n">above</span> <span class="n">gives</span><span class="p">:</span>
-
-<span class="n">Pos</span><span class="o">.</span>   <span class="mi">0</span>     <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span>
-       <span class="n">T</span>     <span class="n">C</span>     <span class="n">A</span>     <span class="n">G</span>     <span class="n">A</span>
-       <span class="n">T</span>     <span class="n">T</span>     <span class="n">C</span>     <span class="n">C</span>     <span class="n">A</span>
-       <span class="n">T</span>     <span class="n">T</span>     <span class="n">C</span>     <span class="n">C</span>     <span class="n">A</span>
-       <span class="n">T</span>     <span class="n">T</span>     <span class="n">T</span>     <span class="n">T</span>     <span class="n">C</span>
-       <span class="n">T</span>     <span class="n">T</span>     <span class="n">T</span>     <span class="n">T</span>     <span class="n">C</span>
-<span class="n">Ent</span><span class="o">.</span>   <span class="mi">0</span>    <span class="mf">0.72</span>  <span class="mf">1.52</span>  <span class="mf">1.52</span>  <span class="mf">0.97</span>
+<p>Applying Shannon entropy to the sample alignment above gives:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Pos.   0     1     2     3     4
+       T     C     A     G     A
+       T     T     C     C     A
+       T     T     C     C     A
+       T     T     T     T     C
+       T     T     T     T     C
+Ent.   0    0.72  1.52  1.52  0.97
 </pre></div>
 </div>
-<p>In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. That representation is computed using position-wise entropy.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p><em>Schneider &amp; Stephens (1990). Sequence logos: a new way to display consensus sequences. Nucleic Acids Research, 18(20), 6097–100.</em></p>
-</dd>
-</dl>
+<p>In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo <a class="bibtex reference internal" href="#schneider-1990aa" id="id1">[SS90]</a>. That representation is computed using position-wise entropy.</p>
 </div>
 <div class="section" id="information-at-a-position">
 <h2><span class="section-number">6.8.2. </span>Information at a position<a class="headerlink" href="#information-at-a-position" title="Permalink to this headline">¶</a></h2>
@@ -287,13 +278,23 @@
 </tr>
 </tbody>
 </table>
-<p>These results originated from the honours research project of Ms Yicheng Zhu, published in <a class="footnote-reference brackets" href="#id5" id="id4">2</a>.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
-<dd><p><em>Zhu, Neeman, Yap, Huttley (2017). Statistical Methods for Identifying Sequence Motifs Affecting Point Mutations. Genetics, 205, 843–856</em></p>
+<p>These results originated from the honours research project of Ms Yicheng Zhu <a class="bibtex reference internal" href="#zhu-2017aa" id="id3">[ZNYH17]</a>.</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1><span class="section-number">6.9. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p><strong>1.</strong> Converting the mathematical expression for entropy into a Python function.</p>
+<hr class="docutils" />
+<p class="rubric">Citations</p>
+<p id="bibtex-bibliography-seqcomp/information-0"><dl class="citation">
+<dt class="bibtex label" id="schneider-1990aa"><span class="brackets"><a class="fn-backref" href="#id1">SS90</a></span></dt>
+<dd><p>T D Schneider and R M Stephens. Sequence logos: a new way to display consensus sequences. <em>Nucleic Acids Res</em>, 18:6097–100, 1990. <a class="reference external" href="https://doi.org/10.1093/nar/18.20.6097">doi:10.1093/nar/18.20.6097</a>.</p>
+</dd>
+<dt class="bibtex label" id="zhu-2017aa"><span class="brackets"><a class="fn-backref" href="#id3">ZNYH17</a></span></dt>
+<dd><p>Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. <em>Genetics</em>, 205:843–856, 2017. <a class="reference external" href="https://doi.org/10.1534/genetics.116.195677">doi:10.1534/genetics.116.195677</a>.</p>
 </dd>
 </dl>
-</div>
+</p>
 </div>
 
 
@@ -304,7 +305,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pssm.html" class="btn btn-neutral float-right" title="6.9. Position Specific Scoring Matrices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pssm.html" class="btn btn-neutral float-right" title="6.10. Position Specific Scoring Matrices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="motif_finding.html" class="btn btn-neutral float-left" title="6.7. Finding motifs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

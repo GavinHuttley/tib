@@ -124,7 +124,7 @@ There are some general principles in how to use functions and methods. First, us
     The function signature lists the required and optional arguments.
     
     1. Required arguments are listed first. In this case, the name of that argument tells you it must be an "iterable" object.
-    2. Optional arguments are listed as `<argumemt name>=<default value>`. In this case, there are two optional arguments. Omn called ``key``, another called ``reverse``.
+    2. Optional arguments are listed as `<argumemt name>=<default value>`. In this case, there are two optional arguments. One called ``key``, another called ``reverse``.
     3. Return value. The help text tells us this function will return a new list with members sorted in ascending order.
 
 Functions

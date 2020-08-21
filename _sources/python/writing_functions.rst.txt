@@ -193,12 +193,31 @@ Using the following data
 
 **1.** Write a function called ``cast_to_floats()`` that takes a single string (as per ``data``) and converts it into a list of floats. Apply this function to ``data``.
 
-**2.** Write another function called ``normalised_freqs()`` that takes a series of floats (like the result of 1.) and has an optional argument ``pseudocount`` (with a default value of 0). The function adds ``pseudocount`` [2]_ to every frequency.
+**2.** Write a function called ``normalised_freqs()`` that takes a series of frequencies (each value is 0 < val < 1 and the series sums to 1) and has an optional argument ``add_to_all`` (with a default value of 0). The function adds ``add_to_all`` [2]_ to every frequency. 
 
-Then add some assert statements to your function to check the user input for both the frequencies and the constant are valid (e.g. all values are ``0<=freq<1``).
+Add some assert statements to your function to check input values are valid (e.g. all values are ``0<=freq<1``).
 
 Use an assert to check the result satisfies the following, all numbers sum to 1.0 (within numerical precision) and all values satisfy ``0 < v < 1``.
 
-**3.** Write another function, ``str_to_normalised()`` that takes the same input of ``cast_to_floats()`` and also has an optional argument for ``pseudocount``. This function should first call ``cast_to_floats()`` to get the floats. Then call ``normalised_freqs()`` with that result to get the final normalised series.  ``str_to_normalised()`` then returns this value.
+For example, with the following input values
 
-.. [2] A pseudocount is a number, typically a frequency (e.g. 0.5), used to avoid zeros. They're used in statistical models where the empirical data have zero observations but the prior belief holds those states are possible and thus should have a frequency > 0.
+.. jupyter-execute::
+    :linenos:
+
+    freqs = [0.1, 0, 0.3, 0.6]
+    add_to_all=0.0001
+
+Your function should return
+
+.. jupyter-execute::
+    :hide-code:
+
+    import numpy
+    d = numpy.array(freqs) + add_to_all
+    (d / d.sum()).tolist()
+
+But if, for example, ``add_to_all < 0`` your function generates an exception.
+
+**3.** Write another function, ``str_to_normalised()`` that takes the same input of ``cast_to_floats()`` and also has an optional argument for ``add_to_all``. This function should first call ``cast_to_floats()`` to get the floats. Then call ``normalised_freqs()`` with that result to get the final normalised series.  ``str_to_normalised()`` then returns this value.
+
+.. [2] This type of adjustment to avoid zeros is used to avoid numerical errors.

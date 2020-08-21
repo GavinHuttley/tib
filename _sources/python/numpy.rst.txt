@@ -286,12 +286,14 @@ This can be used, for instance, to do specific operations on just those elements
 Integer indexing
 ^^^^^^^^^^^^^^^^
 
-This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of ``m``). Let's build start first from a single index. We select row 0, column 1.
+This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of ``m``).
+
+Before we start using actual integer series, I'll start by using conventional indexing to get the value of a single item. Specifically, I select row ``1``, column ``1``.
 
 .. jupyter-execute::
     :linenos:
 
-    row_index = 0
+    row_index = 1
     col_index = 1
     m[row_index, col_index]
 
@@ -300,11 +302,11 @@ We now enclose those indices in lists, such that each successive value correspon
 .. jupyter-execute::
     :linenos:
 
-    row_indices = [0, 2, 1]
+    row_indices = [1, 2, 0]
     col_indices = [1, 0, 1]
     m[row_indices, col_indices]
 
-This corresponds to the following array coordinates: (0, 1), (2, 0), (1, 2). Thus, the result of advanced indexing is an array with same length as the indexing array length (3 in our case).
+This corresponds to the following array coordinates: (1, 1), (2, 0), (0, 1). Thus, the returned value from advanced indexing is an array with same length as the indexing array length (3 in our case).
 
 .. index::
     pair: axis; numpy
