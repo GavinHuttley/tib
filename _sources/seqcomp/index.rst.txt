@@ -21,5 +21,6 @@ There are additional coding skills that you need to develop, but these skills ar
     information
     pssm
     odds_ratios
+    statistics
     pairwise_alignment
     dotplot

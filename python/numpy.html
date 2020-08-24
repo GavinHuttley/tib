@@ -1060,11 +1060,11 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 0, 0, 1],
-       [1, 1, 0, 0, 0],
-       [0, 1, 1, 0, 1],
-       [1, 0, 1, 1, 1],
-       [0, 0, 1, 0, 1]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 1, 0, 0],
+       [1, 0, 0, 0, 0],
+       [1, 0, 1, 0, 0],
+       [0, 0, 1, 1, 0],
+       [1, 1, 1, 0, 1]])
 </pre></div>
 </div>
 </div>
@@ -1072,7 +1072,7 @@ After:
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4], [0, 1, 4, 0, 1, 1, 2, 4, 0, 2, 3, 4, 2, 4])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 1, 2, 2, 3, 3, 4, 4, 4, 4], [0, 1, 2, 0, 0, 2, 2, 3, 0, 1, 2, 4])
 </pre></div>
 </div>
 </div>
@@ -1085,7 +1085,7 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>22.4 µs ± 3.78 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>37.5 µs ± 22.2 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
