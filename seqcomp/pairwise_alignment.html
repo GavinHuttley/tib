@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.14. Pairwise alignment using dynamic programming &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>6.16. Pairwise alignment using dynamic programming &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -46,8 +46,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.15. Dotplot – Alignment of sequences related by descent from a common ancestor" href="dotplot.html" />
-    <link rel="prev" title="6.13. Refresher on statistical inference" href="statistics.html" /> 
+    <link rel="next" title="7. Index" href="../genindex.html" />
+    <link rel="prev" title="6.14. Dotplot – Alignment of sequences related by descent from a common ancestor" href="dotplot.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -112,8 +112,9 @@
 <li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.11. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.12. Odds-ratio’s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">6.13. Refresher on statistical inference</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.14. Pairwise alignment using dynamic programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.15. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.16. Pairwise alignment using dynamic programming</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
@@ -165,7 +166,7 @@
         
           <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
         
-      <li><span class="section-number">6.14. </span>Pairwise alignment using dynamic programming</li>
+      <li><span class="section-number">6.16. </span>Pairwise alignment using dynamic programming</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,7 +212,9 @@
 }
 </style>
 <div class="section" id="pairwise-alignment-using-dynamic-programming">
-<h1><span class="section-number">6.14. </span>Pairwise alignment using dynamic programming<a class="headerlink" href="#pairwise-alignment-using-dynamic-programming" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.16. </span>Pairwise alignment using dynamic programming<a class="headerlink" href="#pairwise-alignment-using-dynamic-programming" title="Permalink to this headline">¶</a></h1>
+<p>The transmission of genetic information from one generation to the next is imperfect. DNA sequences can differs from their parent in a number of ways. This occurs due to mutations. There are different categories of mutations. Large scale rearrangements, such as translocations, inversions, duplications are important features of genome evolution and are (in humans) contributors to disease. Smaller scale changes such as those affecting individual mutations – referred to as point mutations – as are small deletions or insertions.</p>
+<p>Comparisons of related DNA sequences that have been subjected to such processes are performed using alignment algorithms where the goal is to identify those positions in two (or more) sequences that have descended from a common ancestor. Consider the following case where we have an ancestral sequence with two descendants, one of whom experienced a deletion event.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="o">|</span>
   <span class="o">+--------</span><span class="n">ACAGT</span><span class="o">--------+</span>     <span class="n">Ancestor</span>
   <span class="o">|</span>                     <span class="o">|</span>
@@ -222,7 +225,13 @@
 <span class="n">seq1</span>                  <span class="n">seq2</span>
 </pre></div>
 </div>
-<p>But we typically do not observe the process and must infer an <em>alignment</em> that can be applied to deduce what happened.</p>
+<p>What we typically observe, as in this case, is the outcomes of the process.</p>
+<dl class="simple">
+<dt>::</dt><dd><p>seq1  ACAGT
+seq2  AT</p>
+</dd>
+</dl>
+<p>As the “history” is hidden, we must infer an <em>alignment</em> that can then be applied to deduce what happened. There are 2 possibilities in this instance.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq1</span>  <span class="n">ACAGT</span>
 <span class="n">seq2</span>  <span class="n">A</span><span class="o">---</span><span class="n">T</span>
 </pre></div>
@@ -232,18 +241,13 @@
 <span class="n">seq2</span>  <span class="o">--</span><span class="n">A</span><span class="o">-</span><span class="n">T</span>
 </pre></div>
 </div>
-<p>There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of <em>global alignment</em>.</p>
-<div class="section" id="needleman-and-wunsch-nw-1">
-<h2><span class="section-number">6.14.1. </span>Needleman and Wunsch (NW) <a class="footnote-reference brackets" href="#id2" id="id1">1</a><a class="headerlink" href="#needleman-and-wunsch-nw-1" title="Permalink to this headline">¶</a></h2>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
-<dd><p>Needleman &amp; Wunsch (1970). A general method applicable to the search for similarities in the amino acid sequence of two proteins. Journal of Molecular Biology, 48: 443–453</p>
-</dd>
-</dl>
+<p>Making inferences regarding historical relatedness underpins much of how we utilise biological sequence data. So how can we decide which positions in two (or more) sequences are related? There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of <em>global alignment</em> <a class="bibtex reference internal" href="#needleman-1970aa" id="id1">[NW70]</a>.</p>
+<div class="section" id="needleman-and-wunsch-nw">
+<h2><span class="section-number">6.16.1. </span>Needleman and Wunsch (NW)<a class="headerlink" href="#needleman-and-wunsch-nw" title="Permalink to this headline">¶</a></h2>
 <p>Compared to the dotplot approach, it allows for more sophisticated “match”, i.e. the sequence state may be different but still considered a match. It efficiently (in terms of computation) identifies the optimal “path” through the matrix.</p>
 <div class="section" id="the-scoring-system">
-<h3><span class="section-number">6.14.1.1. </span>The scoring system<a class="headerlink" href="#the-scoring-system" title="Permalink to this headline">¶</a></h3>
-<p>We will start by using the exact same <em>scoring matrix</em> as NW <a class="footnote-reference brackets" href="#id2" id="id3">1</a>:</p>
+<h3><span class="section-number">6.16.1.1. </span>The scoring system<a class="headerlink" href="#the-scoring-system" title="Permalink to this headline">¶</a></h3>
+<p>We will start by using the exact same <em>scoring matrix</em> as NW  <a class="bibtex reference internal" href="#needleman-1970aa" id="id2">[NW70]</a>:</p>
 <ul class="simple">
 <li><p>states matched, score = 1</p></li>
 <li><p>states mismatched, score = -1</p></li>
@@ -255,7 +259,7 @@
 </div>
 </div>
 <div class="section" id="scored-match-mismatch">
-<h3><span class="section-number">6.14.1.2. </span>Scored match / mismatch<a class="headerlink" href="#scored-match-mismatch" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.16.1.2. </span>Scored match / mismatch<a class="headerlink" href="#scored-match-mismatch" title="Permalink to this headline">¶</a></h3>
 <p>We construct a matrix <span class="math notranslate nohighlight">\(F\)</span>, such that <span class="math notranslate nohighlight">\(F[i, j]\)</span> is the score for the <em>best</em> alignment up to <span class="math notranslate nohighlight">\(i,j\)</span>. <span class="math notranslate nohighlight">\(F\)</span> is built recursively using the following cases:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}F[i,j] = \max
@@ -271,9 +275,9 @@ F[i, j-1] + \delta\\
 <li><p><span class="math notranslate nohighlight">\((i-1,j)\)</span>, from <span class="math notranslate nohighlight">\(\uparrow\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\((i-1,j-1)\)</span>, from <span class="math notranslate nohighlight">\(\nwarrow\)</span></p></li>
 </ul>
-<p>We arrive at <span class="math notranslate nohighlight">\(F[1, 1]\)</span>, <span class="math notranslate nohighlight">\(X\)</span>, by adding <span class="math notranslate nohighlight">\(\delta\)</span> to the <span class="math notranslate nohighlight">\(F\)</span> from each of the possible flanking cells and take the maximum of these. (<span class="math notranslate nohighlight">\(\delta\)</span> is the mismatch and gap insertion penalties equal <span class="math notranslate nohighlight">\(-1\)</span>.)</p>
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-text">The 3 possible paths leading to cell <span class="math notranslate nohighlight">\(F[i, j]\)</span></span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<p>We arrive at <span class="math notranslate nohighlight">\(F[1, 1]\)</span>, <span class="math notranslate nohighlight">\(X\)</span>, by adding <span class="math notranslate nohighlight">\(\delta\)</span> to the <span class="math notranslate nohighlight">\(F\)</span> from each of the possible flanking cells and take the maximum of these. (<span class="math notranslate nohighlight">\(\delta\)</span>, the mismatch and gap insertion penalties, equal <span class="math notranslate nohighlight">\(-1\)</span>.)</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">The 3 possible paths leading to cell <span class="math notranslate nohighlight">\(F[i, j]\)</span></span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -308,7 +312,7 @@ F[i, j-1] + \delta\\
 </div>
 </div>
 <div class="section" id="demonstrating-nw-on-an-example">
-<h2><span class="section-number">6.14.2. </span>Demonstrating NW on an example<a class="headerlink" href="#demonstrating-nw-on-an-example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.16.2. </span>Demonstrating NW on an example<a class="headerlink" href="#demonstrating-nw-on-an-example" title="Permalink to this headline">¶</a></h2>
 <p>We apply NW to the two sequences: <code class="docutils literal notranslate"><span class="pre">GAGTAC</span></code> and <code class="docutils literal notranslate"><span class="pre">GGTAC</span></code> gradually building up the algorithmic components in Python. We first define the scoring function:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -331,8 +335,8 @@ F[i, j-1] + \delta\\
 </div>
 </div>
 </div>
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-text">The completed score matrix</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">The completed score matrix</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 13%" />
@@ -411,6 +415,14 @@ F[i, j-1] + \delta\\
 </tr>
 </tbody>
 </table>
+<hr class="docutils" />
+<p class="rubric">Citations</p>
+<p id="bibtex-bibliography-seqcomp/pairwise_alignment-0"><dl class="citation">
+<dt class="bibtex label" id="needleman-1970aa"><span class="brackets">NW70</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Saul B. Needleman and Christian D. Wunsch. A general method applicable to the search for similarities in the amino acid sequence of two proteins. <em>Journal of Molecular Biology</em>, 48:443–453, 1970. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/0022283670900574">http://linkinghub.elsevier.com/retrieve/pii/0022283670900574</a>, <a class="reference external" href="https://doi.org/10.1016/0022-2836(70)90057-4">doi:10.1016/0022-2836(70)90057-4</a>.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 
@@ -422,10 +434,10 @@ F[i, j-1] + \delta\\
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dotplot.html" class="btn btn-neutral float-right" title="6.15. Dotplot – Alignment of sequences related by descent from a common ancestor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../genindex.html" class="btn btn-neutral float-right" title="7. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="statistics.html" class="btn btn-neutral float-left" title="6.13. Refresher on statistical inference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dotplot.html" class="btn btn-neutral float-left" title="6.14. Dotplot – Alignment of sequences related by descent from a common ancestor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
