@@ -1,10 +1,14 @@
 Dotplot -- Alignment of sequences related by descent from a common ancestor
 ===========================================================================
 
-This very neat approach to establishing the relatedness between biological sequences was invented here at ANU, by Dr. Adrian Gibbs.
+This very neat approach to establishing the relatedness between biological sequences was invented here at ANU, by Gibbs and McIntyre :cite:`Gibbs:1970aa`.
 
-.. image:: /_static/images/seqcomp/dotplot_pub.png
-    :scale: 50%
+.. sidebar:: The original dotplot
+
+    .. image:: /_static/images/seqcomp/dotplot_pub.png
+        :scale: 50%
+    
+    After :cite:`Gibbs:1970aa`.
 
 Below is a subset of Figure 1 of Gibbs and McIntyre. Dotplot of cytochrome C amino acid sequences from Human to: Rhesus macaque, Tuna fish. (The N-terminus is at the top left, which corresponds to the "translation start" the protein.) Each dot indicates where the amino acid is identical between the two sequences.
 
@@ -12,5 +16,66 @@ Long stretches of identity form a diagonal. A break -- existence of multiple dia
 
 .. note:: When analysing two sequences, it is typically not possible to establish whether it was a deletion or an insertion.
 
-.. image:: /_static/images/seqcomp/dotplot_fig1ab.png
-    :scale: 75%
+.. sidebar:: Comparison of cytochrome C
+
+    .. image:: /_static/images/seqcomp/dotplot_fig1ab.png
+        :scale: 75%
+    
+    After :cite:`Gibbs:1970aa`.
+
+The original dotplot algorithm
+------------------------------
+
+Consider two sequences, `X` and `Y` with lengths `n` and `m` respectively. We establish the matches between them using the following algorithm (written as `pseudocode <https://en.wikipedia.org/wiki/Pseudocode>`_) [1]_:
+
+.. code-block:: text
+    
+    create a matrix of ones, matches, with dimensions n x m
+    for i in 1 ... n:
+        for j in 1 ... m:
+            if X[i] == Y[j] then
+                matches[i, j] = 0
+
+
+.. note:: I am *not* using Python indexing here! This is, in effect, a :math:`k`-mer matching algorithm where :math:`k=1`.
+
+.. [1] Because of the Plotly colour scale, we use values of 0 to indicate a match which will display as black, 1 means a mismatch which will be white. For the two sample sequences ``"AGCGT"`` and ``"AT"`` we construct by hand the resulting.
+
+.. jupyter-execute::
+    :linenos:
+
+    import plotly.express as px
+
+    #        A  G  C  G  T
+    matches = [[0, 1, 1, 1, 1],  #  A
+               [1, 1, 1, 1, 0]]  #  T
+
+    fig = px.imshow(
+        matches,
+        range_color=[0.0, 1.0],
+        x=list("AGCGT"),
+        y=list("AT"),
+        color_continuous_scale="gray",
+    )
+    # we want to suppress the colour scale bar
+    fig.update_layout(coloraxis_showscale=False)
+    fig.update_xaxes(showgrid=True, linewidth=2, linecolor="black", mirror=True)
+    fig.update_yaxes(showgrid=True, linewidth=2, linecolor="black", mirror=True)
+    fig.show()
+
+Most of the above code is concerned with simplifying the plotly display. Aside from that, I draw your attention to the fact that array coordinates (see :ref:`for explanation on array coordinates <array_coordinates>`) are used in both this display and that presented in the original publication.
+
+Exercises
+=========
+
+**1.** Implement the simple dotplot algorithm. Write a function that takes two sequences and returns an array with 1 where the sequences do not match and 0 where they do.
+
+.. todo:: get short examples of DNA sequences with repeats and and short examples of amino acid sequences, make generating dotplot using those an exercise and get them to interpret
+
+------
+
+.. rubric:: Citations
+
+.. bibliography:: /references.bib
+    :filter: docname in docnames
+    :style: alpha

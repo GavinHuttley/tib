@@ -1,6 +1,10 @@
 Pairwise alignment using dynamic programming
 ============================================
 
+The transmission of genetic information from one generation to the next is imperfect. DNA sequences can differs from their parent in a number of ways. This occurs due to mutations. There are different categories of mutations. Large scale rearrangements, such as translocations, inversions, duplications are important features of genome evolution and are (in humans) contributors to disease. Smaller scale changes such as those affecting individual mutations -- referred to as point mutations -- as are small deletions or insertions.
+
+Comparisons of related DNA sequences that have been subjected to such processes are performed using alignment algorithms where the goal is to identify those positions in two (or more) sequences that have descended from a common ancestor. Consider the following case where we have an ancestral sequence with two descendants, one of whom experienced a deletion event.
+
 ::
 
                   |
@@ -12,7 +16,14 @@ Pairwise alignment using dynamic programming
  
      seq1                  seq2
 
-But we typically do not observe the process and must infer an *alignment* that can be applied to deduce what happened.
+What we typically observe, as in this case, is the outcomes of the process.
+
+::
+    seq1  ACAGT
+    seq2  AT
+
+
+As the "history" is hidden, we must infer an *alignment* that can then be applied to deduce what happened. There are 2 possibilities in this instance.
 
 ::
 
@@ -26,20 +37,17 @@ OR
     seq1  ACAGT
     seq2  --A-T
 
+Making inferences regarding historical relatedness underpins much of how we utilise biological sequence data. So how can we decide which positions in two (or more) sequences are related? There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of *global alignment* :cite:`Needleman:1970aa`.
 
-There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of *global alignment*.
-
-Needleman and Wunsch (NW) [1]_
-------------------------------
-
-.. [1] Needleman & Wunsch (1970). A general method applicable to the search for similarities in the amino acid sequence of two proteins. Journal of Molecular Biology, 48: 443–453
+Needleman and Wunsch (NW)
+-------------------------
 
 Compared to the dotplot approach, it allows for more sophisticated "match", i.e. the sequence state may be different but still considered a match. It efficiently (in terms of computation) identifies the optimal "path" through the matrix.
 
 The scoring system
 ^^^^^^^^^^^^^^^^^^
 
-We will start by using the exact same *scoring matrix* as NW [1]_:
+We will start by using the exact same *scoring matrix* as NW  :cite:`Needleman:1970aa`:
 
 - states matched, score = 1
 - states mismatched, score = -1
@@ -68,7 +76,7 @@ If we set :math:`i=1,j=1`, then the possible alignment paths leading to cell :ma
 - :math:`(i-1,j)`, from :math:`\uparrow`
 - :math:`(i-1,j-1)`, from :math:`\nwarrow`
 
-We arrive at :math:`F[1, 1]`, :math:`X`, by adding :math:`\delta` to the :math:`F` from each of the possible flanking cells and take the maximum of these. (:math:`\delta` is the mismatch and gap insertion penalties equal :math:`-1`.)
+We arrive at :math:`F[1, 1]`, :math:`X`, by adding :math:`\delta` to the :math:`F` from each of the possible flanking cells and take the maximum of these. (:math:`\delta`, the mismatch and gap insertion penalties, equal :math:`-1`.)
 
 .. csv-table:: The 3 possible paths leading to cell :math:`F[i, j]`
     :header: "seq1 / seq2", ":math:`\\delta`", "**G** (j=0)","**A** (j=1)"
@@ -106,3 +114,10 @@ We apply NW to the two sequences: ``GAGTAC`` and ``GGTAC`` gradually building up
     "**A** :math:`(y=4)`",              "-4",       "-2",        "0",       "-1",        "1",    "**3**",        "2"
     "**C** :math:`(y=5)`",              "-5",       "-3",       "-1",       "-1",        "0",        "2",    "**4**"
 
+------
+
+.. rubric:: Citations
+
+.. bibliography:: /references.bib
+    :filter: docname in docnames
+    :style: alpha
