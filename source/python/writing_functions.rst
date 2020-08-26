@@ -243,35 +243,35 @@ Using the following data
 
     data = " [ 0.2 0.1 0.3 0.4 0.0 ] "
 
-**1.** Write a function called ``cast_to_floats()`` that takes a single string (as per ``data``) and converts it into a list of floats. Apply this function to ``data``.
+#. Write a function called ``cast_to_floats()`` that takes a single string (as per ``data``) and converts it into a list of floats. Apply this function to ``data``.
 
-**2.** Write a function called ``normalised_freqs()`` that takes a series of frequencies (each value is 0 < val < 1 and the series sums to 1) and has an optional argument ``add_to_all`` (with a default value of 0). The function adds ``add_to_all`` [2]_ to every frequency.
+#. Write a function called ``normalised_freqs()`` that takes a series of frequencies (each value is 0 < val < 1 and the series sums to 1) and has an optional argument ``add_to_all`` (with a default value of 0). The function adds ``add_to_all`` [2]_ to every frequency.
 
-Add some assert statements to your function to check input values are valid (e.g. all values are ``0<=freq<1``).
+    Add some assert statements to your function to check input values are valid (e.g. all values are ``0<=freq<1``).
 
-Use an assert to check the result satisfies the following, all numbers sum to 1.0 (within numerical precision) and all values satisfy ``0 < v < 1``.
+    Use an assert to check the result satisfies the following, all numbers sum to 1.0 (within numerical precision) and all values satisfy ``0 < v < 1``.
 
-For example, with the following input values
+    For example, with the following input values
 
-.. jupyter-execute::
-    :linenos:
+    .. jupyter-execute::
+        :linenos:
 
-    freqs = [0.1, 0, 0.3, 0.6]
-    add_to_all=0.0001
+        freqs = [0.1, 0, 0.3, 0.6]
+        add_to_all=0.0001
 
-Your function should return
+    Your function should return
 
-.. jupyter-execute::
-    :hide-code:
+    .. jupyter-execute::
+        :hide-code:
 
-    import numpy
-    d = numpy.array(freqs) + add_to_all
-    (d / d.sum()).tolist()
+        import numpy
+        d = numpy.array(freqs) + add_to_all
+        (d / d.sum()).tolist()
 
-But if, for example, ``add_to_all < 0`` your function generates an exception.
+    But if, for example, ``add_to_all < 0`` your function generates an exception.
 
-**3.** Write another function, ``str_to_normalised()`` that takes the same input of ``cast_to_floats()`` and also has an optional argument for ``add_to_all``. This function should first call ``cast_to_floats()`` to get the floats. Then call ``normalised_freqs()`` with that result to get the final normalised series. ``str_to_normalised()`` then returns this value.
+#. Write another function, ``str_to_normalised()`` that takes the same input of ``cast_to_floats()`` and also has an optional argument for ``add_to_all``. This function should first call ``cast_to_floats()`` to get the floats. Then call ``normalised_freqs()`` with that result to get the final normalised series. ``str_to_normalised()`` then returns this value.
+
+#. Implement the ``myfunc2()`` variant from above. Then try using differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to ``myfunc2()``. Make those calls without providing a value to ``result``. Show that the ``myfunc3()`` does not have this problem.
 
 .. [2] This type of adjustment to avoid zeros is used to avoid numerical errors.
-
-**4.** Implement the ``myfunc2()`` variant from above. Then try using differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to ``myfunc2()``. Make those calls without providing a value to ``result``. Show that the ``myfunc3()`` does not have this problem.

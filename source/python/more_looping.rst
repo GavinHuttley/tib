@@ -73,21 +73,21 @@ We can also combine these loops with conditional statements so that we can selec
 Exercises
 =========
 
-**1.** Consider the following two-dimensional list
+#. Consider the following two-dimensional list
 
-.. code-block:: text
+    .. code-block:: text
     
-    [[0, 4, 1],
-     [1, 7]]
+        [[0, 4, 1],
+         [1, 7]]
 
-The number of "columns" is different between the first and second rows. Write a nested for loop that prints the row index, column index and the value of every element in that list.
+    The number of "columns" is different between the first and second rows. Write a nested for loop that prints the row index, column index and the value of every element in that list.
 
-It should produce output like:
+    It should produce output like:
 
-.. code-block:: text
+    .. code-block:: text
     
-    row=0 col=0 val=0
-    row=0 col=1 val=4
-    ...
+        row=0 col=0 val=0
+        row=0 col=1 val=4
+        ...
 
-**2.** Construct a list of lists that contains different data types, some ints, some floats, some strings. Then using nested iteration, record the row and column coordinates (in separate lists) when the value is a string. For instance, if I used ``[[0, "data", 3.1]]`` and I would produce ``[0], [1]``.
+#. Construct a list of lists that contains different data types, some ints, some floats, some strings. Then using nested iteration, record the row and column coordinates (in separate lists) when the value is a string. For instance, if I used ``[[0, "data", 3.1]]`` and I would produce ``[0], [1]``.

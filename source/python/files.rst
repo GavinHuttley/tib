@@ -145,45 +145,42 @@ According to the format specification, these fields are tab (``'\t'``) delimited
 Exercises
 =========
 
-**1.** Below I have two GFF records stored as a list of records, each record being a list. Write these data to a tab-delimited file.
+#. Below I have two GFF records stored as a list of records, each record being a list. Write these data to a tab-delimited file.
 
-.. jupyter-execute::
-    :linenos:
+    .. jupyter-execute::
+        :linenos:
 
-    annotations = [
-        [
-            "scaffold-650",
-            "projected",
-            "gene",
-            "71406",
-            "72760",
-            ".",
-            "+",
-            ".",
-            "ID=TRIVIDRAFT_53420;Name=TRIVIDRAFT_53420",
-        ],
-        [
-            "scaffold-650",
-            "projected",
-            "exon",
-            "71406",
-            "71690",
-            ".",
-            "+",
-            "0",
-            "Name=exon-1;Parent=TRIVIDRAFT_53420",
-        ],
-    ]
+        annotations = [
+            [
+                "scaffold-650",
+                "projected",
+                "gene",
+                "71406",
+                "72760",
+                ".",
+                "+",
+                ".",
+                "ID=TRIVIDRAFT_53420;Name=TRIVIDRAFT_53420",
+            ],
+            [
+                "scaffold-650",
+                "projected",
+                "exon",
+                "71406",
+                "71690",
+                ".",
+                "+",
+                "0",
+                "Name=exon-1;Parent=TRIVIDRAFT_53420",
+            ],
+        ]
 
-**2.** On linux and MacOS, the ``\n`` character is used to denote line endings. Windows uses ``\r\n``. Using ``help(open)``. Figure out how you would specify a file is written using line endings that differ to your operating system. Then do that for the data above.
+#. On linux and MacOS, the ``\n`` character is used to denote line endings. Windows uses ``\r\n``. Using ``help(open)``. Figure out how you would specify a file is written using line endings that differ to your operating system. Then do that for the data above.
 
-**3.** How you can check the line-endings of a file using Python. Is their another tool for your operating system?
+#. How you can check the line-endings of a file using Python. Is their another tool for your operating system?
 
-----
+#. The file [1]_ contains two columns: ``Donor_ID``, ``Project_Code``. Parse this file to produce a list of ``Donor_ID`` whose ``Project_Code`` equals ``"Skin-Melanoma"``. Use plain python only (no 3rd party libraries).
 
-This :download:`tab delimited text file <../data/donor_by_cancer_type.tsv>` is derived from the `Pan-Cancer Analysis of Whole Genomes project <https://dcc.icgc.org/pcawg>`_. Using this file, answer the following using plain python only (no 3rd party libraries).
+#. Read the lines from the file [1]_ and create a ``dict`` with keys corresponding to ``Project_Code`` and values being the list of all corresponding ``Donor_ID``, e.g. :python:`{'CNS-PiloAstro': ['DO36068', 'DO35934', ...`. Use plain python only (no 3rd party libraries).
 
-**4.**  The file contains two columns: ``Donor_ID``, ``Project_Code``. Parse this file to produce a list of ``Donor_ID`` whose ``Project_Code`` equals ``"Skin-Melanoma"``.
-
-**5.** Read the lines from this file and create a ``dict`` with keys corresponding to ``Project_Code`` and values being the list of all corresponding ``Donor_ID``, e.g. :python:`{'CNS-PiloAstro': ['DO36068', 'DO35934', ...`.
-
+.. [1] This :download:`tab delimited text file <../data/donor_by_cancer_type.tsv>` is derived from the `Pan-Cancer Analysis of Whole Genomes project <https://dcc.icgc.org/pcawg>`_.

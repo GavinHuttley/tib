@@ -182,7 +182,7 @@ Construct the bar chart
 Exercises
 =========
 
-**1.** Look at the plotly documentation and convert one of the scatter plots into a line plot.
+#. Look at the plotly documentation and convert one of the scatter plots into a line plot.
 
-**2.** In the bar chart example above, the numbers were generated from 10-31. The midpoint of this range is 20 (there are 10 smaller numbers and 10 larger numbers). Modify the x-axis values so that instead of showing the x-axis values rangig from 10 to 30, centred on 20, they range from -10 to 10, centred on 0. The result should look identical to the above but any current x-axis values < 20 will be negative.
+#. In the bar chart example above, the numbers were generated from 10-31. The midpoint of this range is 20 (there are 10 smaller numbers and 10 larger numbers). Modify the x-axis values so that instead of showing the x-axis values rangig from 10 to 30, centred on 20, they range from -10 to 10, centred on 0. The result should look identical to the above but any current x-axis values < 20 will be negative.
 

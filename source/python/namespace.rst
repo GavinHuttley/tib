@@ -99,10 +99,10 @@ Consider this broken code
     sqd = add_squared_constant(data)
 
 
-**1.** Fix ``add_squared_constant()`` so it works to return ``[8, 16, 46]`` given ``data``.
+#. Fix ``add_squared_constant()`` so it works to return ``[8, 16, 46]`` given ``data``.
 
-**2.** Fix, without using the ``global`` keyword, so it works to return ``[8, 16, 46]`` given ``data``.
+#. Fix, without using the ``global`` keyword, so it works to return ``[8, 16, 46]`` given ``data``.
 
-**3.** Fix, using the ``global`` keyword, so it works to return ``[8, 16, 46]`` given ``data``. What happens to the global variable ``CONSTANT`` [2]_?
+#. Fix, using the ``global`` keyword, so it works to return ``[8, 16, 46]`` given ``data``. What happens to the global variable ``CONSTANT`` [2]_?
 
 .. [2] A part of the coding style guidelines I use is to use ALL CAPS for variables that are meant to be treated as constants.

@@ -53,35 +53,33 @@ Sometimes, its useful to do multiple variable assignments in one go. Which value
 Exercises
 =========
 
-**1.** Enter the following. What happens? Why?
+#. Enter the following. What happens? Why?
 
-.. code-block:: python
+    .. code-block:: python
 
-    h = (a ** 2 + b ** 2) ** (1 / 2)
-    a = 3
-    b = 4
-    print(h)
+        h = (a ** 2 + b ** 2) ** (1 / 2)
+        a = 3
+        b = 4
+        print(h)
 
-Fix it!
+    Fix it!
 
-**2.** Consider the following two variables
+#. Consider the following two variables
 
-.. jupyter-execute::
-    :linenos:
+    .. code-block:: python
 
-    a = 4
-    b = 6
+        a = 4
+        b = 6
 
-Do these assignments on a single line (without using a ``;``).
+        Do these assignments on a single line (without using a ``;``).
 
-**3.** Consider execution of the following
+#. Consider execution of the following
 
-.. jupyter-execute::
-    :linenos:
+    .. code-block:: python
 
-    a = "2.2"
-    a = 2.2
+        a = "2.2"
+        a = 2.2
 
-What type is ``a``?
+        What type is ``a``?
 
-**4.** Define a variable using invalid syntax, i.e. your code should generate a ``SyntaxError``.
+#. Define a variable using invalid syntax, i.e. your code should generate a ``SyntaxError``.

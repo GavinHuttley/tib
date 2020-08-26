@@ -119,45 +119,27 @@ Slicing to beyond the length of a series does not cause an exception.
 Exercises
 =========
 
-**1.** Consider the ``dict`` defined below
+#. Consider the ``dict`` defined below
 
-.. jupyter-execute::
-    :linenos:
+    .. code-block:: python
 
-    d = {0: "value for 0", ("a-key",): "funky key"}
+        d = {0: "value for 0", ("a-key",): "funky key"}
 
-Get each value of ``d`` using ``index`` notation [1]_.
+    Get each value of ``d`` using ``index`` notation [1]_.
+
+#. What does ``nums[::-1]`` do on the following?
+
+    .. code-block:: python
+
+        nums = [0, 1, 2, 3, 4]
+
+#. For the simple protein coding DNA sequence ``ATGATGATG`` [2]_, use a slice to extract the first codon [3]_. Do the same for the last codon.
+
+
+#. For the same sequence, use a slice operation to obtain the first nucleotide of each codon, i.e. you should produce ``["A", "A", "A"]``. Do this for the second codon position (producing ``["T", "T", "T"]``) and then the third codon position.
+
+#.  Split the sequence ``ATGAAATAA`` into codons (non-overlapping letter triples). (The most succinct solution uses a list comprehension.)
 
 .. [1] This is actually not indexing, because elements in a dict are not ordered. But the notation for "getting" an item from a ``dict`` is the same as for other data types (i.e. you use ``[]``). The difference is the "index" does not need to be an integer.
-
------
-
-Answer the following questions using this simple list of numbers.
-
-.. jupyter-execute::
-    :linenos:
-
-    nums = [0, 1, 2, 3, 4]
-
-
-**2.** What does ``nums[::-1]`` do?
-
------
-
-Answer the following questions using this simple protein coding DNA sequence ``ATGATGATG`` [2]_.
-
 .. [2] In the standard genetic code, this corresponds to 3 repeats of the methionine codon
-
-.. jupyter-execute::
-    :linenos:
-
-    seq =  "ATGATGATG"
-
-**3.** Use a slice to extract the first codon [3]_. Do the same for the last codon.
-
-**4.** Use a slice operation to obtain the first nucleotide of each codon, i.e. you should produce ``["A", "A", "A"]``. Do this for the second codon position (producing ``["T", "T", "T"]``) and then the third codon position.
-
 .. [3] DNA encodes amino acid sequences using 3 consecutive bases. This unit is referred to as a :index:`codon`.
-
-**5.**  Split the sequence ``ATGAAATAA`` into codons (non-overlapping letter triples). (The most succinct solution uses a list comprehension.)
-

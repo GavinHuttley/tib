@@ -68,7 +68,7 @@ Most of the above code is concerned with simplifying the plotly display. Aside f
 Exercises
 =========
 
-**1.** Implement the simple dotplot algorithm. Write a function that takes two sequences and returns an array with 1 where the sequences do not match and 0 where they do.
+#. Implement the simple dotplot algorithm. Write a function that takes two sequences and returns an array with 1 where the sequences do not match and 0 where they do.
 
 .. todo:: get short examples of DNA sequences with repeats and and short examples of amino acid sequences, make generating dotplot using those an exercise and get them to interpret
 

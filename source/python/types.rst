@@ -267,22 +267,20 @@ These are new to Python, since version 3.6. I'll bundle the int and float into a
 Exercises
 =========
 
-**1.** What happens when you cast the following to a dict using the ``dict()`` command.
+#. What happens when you cast the following to a dict using the ``dict()`` command.
 
-.. jupyter-execute::
-    :linenos:
+    .. code-block:: python
 
-    data = [0, "a", 1, "b"]
+        data = [0, "a", 1, "b"]
 
-**2.** What happens when you cast the following to a dict using the ``dict()`` command.
+#. What happens when you cast the following to a dict using the ``dict()`` command.
 
-.. jupyter-execute::
-    :linenos:
+    .. code-block:: python
 
-    data = [[0, "a"], [1, "b"]]
+        data = [[0, "a"], [1, "b"]]
 
-**3.** Try creating a dict using different data types as keys. Do they all work?
+#. Try creating a dict using different data types as keys. Do they all work?
 
-**4.** Make a really large int. Format it as a string with a thousands separator.
+#. Make a really large int. Format it as a string with a thousands separator.
 
-**5.** Create a float and convert it to a string. Repeat this, but change the displayed precision (how many decimal places are shown).
+#. Create a float and convert it to a string. Repeat this, but change the displayed precision (how many decimal places are shown).
