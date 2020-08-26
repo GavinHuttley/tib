@@ -59,7 +59,7 @@ In this case, I'm just doing this "manually". First, note the base order is T, C
 
 .. code-block:: rest
 
-    PSSM is a 2D matrix with rows corresponding to bases, columns to positions
+    PPM is a 2D matrix with rows corresponding to bases, columns to positions
     define the index order of bases as T at index 0, C index 1, A index 2, G index 3
     prob_of_seq = 1.0
     for seq_index in sequence
