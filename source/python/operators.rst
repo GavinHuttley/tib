@@ -18,12 +18,11 @@ In addition to the mathematical operators we have covered, there are *relational
 Exercises
 =========
 
-**1.** Try these operators on different data types, e.g.
+#. Try these operators on different data types, e.g.
 
-.. jupyter-execute::
-    :linenos:
+    .. jupyter-execute::
+        :linenos:
 
-    "abcd" < "ABCD"
+        "abcd" < "ABCD"
 
-
-**2.** What happens if you try them on different data types?
+#. What happens if you try them on different data types?

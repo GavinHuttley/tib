@@ -136,18 +136,18 @@ More sophisticated mathematical routines are included in the `math` module. We w
 Exercises
 =========
 
-**1.** Do the hello world example yourself.
+#. Do the hello world example yourself.
 
-**2.** Order of operations rules. Compute the following expressions
+#. Order of operations rules. Compute the following expressions
 
-.. code-block:: python
+    .. code-block:: python
 
-    (10 + 2) * 2
+        (10 + 2) * 2
     
-and
+    and
 
-.. code-block:: python
+    .. code-block:: python
 
-    10 + 2 * 2
+        10 + 2 * 2
 
-Hopefully, the conventional rules of mathematics apply!
+    Hopefully, the conventional rules of mathematics apply!

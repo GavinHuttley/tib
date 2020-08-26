@@ -232,8 +232,8 @@ Getting help on a string method that can be used to concatenate.
 Exercises
 =========
 
-**1.** What comparison operators can you use to confirm my statements regarding same value and different instance?
+#. What comparison operators can you use to confirm my statements regarding same value and different instance?
 
-**2.** For the built-in ``len``, is it a function or a method? Demonstrate its usage.
+#. For the built-in ``len``, is it a function or a method? Demonstrate its usage.
 
-**3.** Join the ``data`` variable from above with the new line character.
+#. Join the ``data`` variable from above with the new line character.

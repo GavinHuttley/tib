@@ -69,8 +69,8 @@ As the start codon example illustrates, motifs represent a fundamental concept i
 Exercises
 =========
 
-**1.** Write an algorithm that produces all possible dinucleotides for ``seq``.
+#. Write an algorithm that produces all possible dinucleotides for ``seq``.
 
-**2.** Then do it for all possible trinucleotides in ``seq``.
+#. Then do it for all possible trinucleotides in ``seq``.
 
-**3.** The Python standard library has lots of very useful goodies. Investigate the ``Counter`` class from ``collections`` and apply it to your result from (1) and (2) to determine the :math:`k`-mer distribution. (Use google!)
+#. The Python standard library has lots of very useful goodies. Investigate the ``Counter`` class from ``collections`` and apply it to your result from (1) and (2) to determine the :math:`k`-mer distribution. (Use google!)

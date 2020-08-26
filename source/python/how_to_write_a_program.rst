@@ -180,10 +180,10 @@ The first and last are easy (see :ref:`files`). The remaining tasks (listed in t
 Exercises
 =========
 
-**1.** Using any text file, identify how to read just the first line.
+#. Using any text file, identify how to read just the first line.
 
-**2.** Identify how to loop over all the lines in a file.
+#. Identify how to loop over all the lines in a file.
 
-**3.** Identify how you can keep all the results of converting lines into floats.
+#. Identify how you can keep all the results of converting lines into floats.
 
-**4.** Write a function ``parser()`` that completes the algorithm. You can apply it to the sample data you make up that looks like the above, or use :download:`this file <../data/numbers.tsv>`.
+#. Write a function ``parser()`` that completes the algorithm. You can apply it to the sample data you make up that looks like the above, or use :download:`this file <../data/numbers.tsv>`.
