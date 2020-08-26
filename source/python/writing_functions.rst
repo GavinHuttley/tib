@@ -274,4 +274,4 @@ But if, for example, ``add_to_all < 0`` your function generates an exception.
 
 .. [2] This type of adjustment to avoid zeros is used to avoid numerical errors.
 
-**4.** Implement the ``myfunc2()`` variant from above with differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to ``myfunc2()``. Make those calls without providing a value to ``result``. Show that the ``myfunc3()`` does not have this problem.
+**4.** Implement the ``myfunc2()`` variant from above. Then try using differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to ``myfunc2()``. Make those calls without providing a value to ``result``. Show that the ``myfunc3()`` does not have this problem.
