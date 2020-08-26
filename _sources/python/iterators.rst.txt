@@ -60,6 +60,6 @@ They can also be used in imports and when trapping exceptions.
 Exercises
 =========
 
-**1.** Write a function that takes a file path, opens the file and returns all the lines in that file.
+#. Write a function that takes a file path, opens the file and returns all the lines in that file.
 
-**2.** Convert the above function to a generator that yields one line at a time.
+#. Convert the above function to a generator that yields one line at a time.

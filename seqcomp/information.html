@@ -295,23 +295,34 @@ Ent.   0    0.72  1.52  1.52  0.97
 <div class="cell_output docutils container">
 </div>
 </div>
-<p><strong>1.</strong> Write a function that converts <code class="docutils literal notranslate"><span class="pre">seq</span></code> into counts of nucleotides. (Use the standard library <code class="docutils literal notranslate"><span class="pre">collections.Counter</span></code> class.)</p>
-<p><strong>2.</strong> Write a function that takes a dict like object (e.g. the counter you’ve just created from (1)) of counts and converts it to numpy array whose length is 4.</p>
-<p>You should consider it critical that your function always returns arrays where the counts for each nucleotide are always in the same position. For instance, if you define the state order as T, C, A, G then the counts for T are always at index 0 – even if a T was not observed.</p>
-<p><strong>3.</strong> Write a function that converts these counts into a frequencies.</p>
-<p><strong>4.</strong> Converting the mathematical expression for entropy into a Python function. Apply it to the results from applying the functions you wrote for (1-3) to <code class="docutils literal notranslate"><span class="pre">seq</span></code>.</p>
-<p><strong>5.</strong> Apply the functions you’ve written to the following randomly generated sequence.</p>
-<div class="jupyter_cell docutils container">
+<ol class="arabic">
+<li><p>Write a function that converts <code class="docutils literal notranslate"><span class="pre">seq</span></code> into counts of nucleotides. (Use the standard library <code class="docutils literal notranslate"><span class="pre">collections.Counter</span></code> class.)</p></li>
+<li><p>Write a function that takes a dict like object (e.g. the counter you’ve just created from (1)) of counts and converts it to numpy array whose length is 4.</p>
+<blockquote>
+<div><p>You should consider it critical that your function always returns arrays where the counts for each nucleotide are always in the same position. For instance, if you define the state order as T, C, A, G then the counts for T are always at index 0 – even if a T was not observed.</p>
+</div></blockquote>
+</li>
+<li><p>Write a function that converts these counts into a frequencies.</p></li>
+<li><p>Converting the mathematical expression for entropy into a Python function. Apply it to the results from applying the functions you wrote for (1-3) to <code class="docutils literal notranslate"><span class="pre">seq</span></code>.</p></li>
+<li><p>Apply the functions you’ve written to the following randomly generated sequence.</p>
+<blockquote>
+<div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AGACGCCGGGAGGCGAAACACAGAGAGCGAGCCCCGGCGGGAGCCGAGAG&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ACAAGGAGCAAGGGACGAGACCACGCCCAACGAGGGCCGAGGACGAAAGA&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <p>What do you observe? Why is it happening?</p>
-<p><strong>6.</strong> Modify your function for answer (3) so, if there are zero values, it adds a pseudocount to <strong>all</strong> of the array elements before converting to frequencies. Set a default pseudocount of 0.5.</p>
-<p>Make sure your frequencies sum to 1.</p>
+</div></blockquote>
+</li>
+<li><p>Modify your function for answer (3) so, if there are zero values, it adds a pseudocount to <strong>all</strong> of the array elements before converting to frequencies. Set a default pseudocount of 0.5.</p>
+<blockquote>
+<div><p>Make sure your frequencies sum to 1.</p>
 <p>Is there another approach to solving this issue?</p>
+</div></blockquote>
+</li>
+</ol>
 <hr class="docutils" />
 <p class="rubric">Citations</p>
 <p id="bibtex-bibliography-seqcomp/information-0"><dl class="citation">

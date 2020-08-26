@@ -425,8 +425,10 @@
 </div>
 <div class="section" id="exercises">
 <h1><span class="section-number">5.23. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<p><strong>1.</strong> Below I have two GFF records stored as a list of records, each record being a list. Write these data to a tab-delimited file.</p>
-<div class="jupyter_cell jupyter_container docutils container">
+<ol class="arabic">
+<li><p>Below I have two GFF records stored as a list of records, each record being a list. Write these data to a tab-delimited file.</p>
+<blockquote>
+<div><div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span>
@@ -458,12 +460,18 @@
 <div class="cell_output docutils container">
 </div>
 </div>
-<p><strong>2.</strong> On linux and MacOS, the <code class="docutils literal notranslate"><span class="pre">\n</span></code> character is used to denote line endings. Windows uses <code class="docutils literal notranslate"><span class="pre">\r\n</span></code>. Using <code class="docutils literal notranslate"><span class="pre">help(open)</span></code>. Figure out how you would specify a file is written using line endings that differ to your operating system. Then do that for the data above.</p>
-<p><strong>3.</strong> How you can check the line-endings of a file using Python. Is their another tool for your operating system?</p>
-<hr class="docutils" />
-<p>This <a class="reference download internal" download="" href="../_downloads/353153d767b8dd5568be63cd60cf2971/donor_by_cancer_type.tsv"><code class="xref download docutils literal notranslate"><span class="pre">tab</span> <span class="pre">delimited</span> <span class="pre">text</span> <span class="pre">file</span></code></a> is derived from the <a class="reference external" href="https://dcc.icgc.org/pcawg">Pan-Cancer Analysis of Whole Genomes project</a>. Using this file, answer the following using plain python only (no 3rd party libraries).</p>
-<p><strong>4.</strong>  The file contains two columns: <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code>, <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code>. Parse this file to produce a list of <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code> whose <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code> equals <code class="docutils literal notranslate"><span class="pre">&quot;Skin-Melanoma&quot;</span></code>.</p>
-<p><strong>5.</strong> Read the lines from this file and create a <code class="docutils literal notranslate"><span class="pre">dict</span></code> with keys corresponding to <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code> and values being the list of all corresponding <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code>, e.g. <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">{</span></span><span class="literal string single"><span class="pre">‘CNS-PiloAstro’</span></span><span class="punctuation"><span class="pre">:</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="literal string single"><span class="pre">‘DO36068’</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal string single"><span class="pre">‘DO35934’</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="operator"><span class="pre">…</span></span></code>.</p>
+</div></blockquote>
+</li>
+<li><p>On linux and MacOS, the <code class="docutils literal notranslate"><span class="pre">\n</span></code> character is used to denote line endings. Windows uses <code class="docutils literal notranslate"><span class="pre">\r\n</span></code>. Using <code class="docutils literal notranslate"><span class="pre">help(open)</span></code>. Figure out how you would specify a file is written using line endings that differ to your operating system. Then do that for the data above.</p></li>
+<li><p>How you can check the line-endings of a file using Python. Is their another tool for your operating system?</p></li>
+<li><p>The file <a class="footnote-reference brackets" href="#id3" id="id1">1</a> contains two columns: <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code>, <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code>. Parse this file to produce a list of <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code> whose <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code> equals <code class="docutils literal notranslate"><span class="pre">&quot;Skin-Melanoma&quot;</span></code>. Use plain python only (no 3rd party libraries).</p></li>
+<li><p>Read the lines from the file <a class="footnote-reference brackets" href="#id3" id="id2">1</a> and create a <code class="docutils literal notranslate"><span class="pre">dict</span></code> with keys corresponding to <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code> and values being the list of all corresponding <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code>, e.g. <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">{</span></span><span class="literal string single"><span class="pre">‘CNS-PiloAstro’</span></span><span class="punctuation"><span class="pre">:</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="literal string single"><span class="pre">‘DO36068’</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal string single"><span class="pre">‘DO35934’</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="operator"><span class="pre">…</span></span></code>. Use plain python only (no 3rd party libraries).</p></li>
+</ol>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>This <a class="reference download internal" download="" href="../_downloads/353153d767b8dd5568be63cd60cf2971/donor_by_cancer_type.tsv"><code class="xref download docutils literal notranslate"><span class="pre">tab</span> <span class="pre">delimited</span> <span class="pre">text</span> <span class="pre">file</span></code></a> is derived from the <a class="reference external" href="https://dcc.icgc.org/pcawg">Pan-Cancer Analysis of Whole Genomes project</a>.</p>
+</dd>
+</dl>
 </div>
 
 

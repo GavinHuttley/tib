@@ -505,85 +505,84 @@ Scenario, you want to count (from multiple arrays that consist of a continuously
 Exercises
 =========
 
-**1.** Create a list of 10 positive integers and convert it into a ``numpy`` array. Use ``array`` methods to compute the total. Divide the original array by the total to produce a normalised array, which you assign to a variable ``freqs``. Using ``numpy`` logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.
+#. Create a list of 10 positive integers and convert it into a ``numpy`` array. Use ``array`` methods to compute the total. Divide the original array by the total to produce a normalised array, which you assign to a variable ``freqs``. Using ``numpy`` logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.
 
-**2.** Many methods on ``numpy`` arrays have an axis argument, one of which is sum. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.
+#. Many methods on ``numpy`` arrays have an axis argument, one of which is sum. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.
 
-.. code-block:: text
+    .. code-block:: text
 
-    [[0, 0],
-     [0, 0]]
+        [[0, 0],
+         [0, 0]]
 
-is a 2D array. Assign values that make it easy to distinguish operations that operate across rows versus those which operate across columns. Demonstrate this matrix serves that purpose using ``sum()``.
+    is a 2D array. Assign values that make it easy to distinguish operations that operate across rows versus those which operate across columns. Demonstrate this matrix serves that purpose using ``sum()``.
 
-**3.** ``bool`` data types can be summed. Create a sample array with ``dtype=bool`` and show that when you sum that you get the expected answers (what you expect is the sum will equal the number of occurrences of ``True``).
+#. ``bool`` data types can be summed. Create a sample array with ``dtype=bool`` and show that when you sum that you get the expected answers (what you expect is the sum will equal the number of occurrences of ``True``).
 
------
+#. Look at the array ``data`` and identify the array coordinates where the values equal 9. Now use advanced array indexing to extract those coordinates in a single statement.
 
-Use the following array to answer the next question.
+    Use the following array to answer the next question.
 
-.. jupyter-execute::
-    :linenos:
+    .. jupyter-execute::
+        :linenos:
 
-    data = numpy.array([[1, 9, 0, 3, 9],
-                        [9, 2, 8, 2, 1],
-                        [3, 1, 9, 9, 5]])
+        data = numpy.array([[1, 9, 0, 3, 9],
+                            [9, 2, 8, 2, 1],
+                            [3, 1, 9, 9, 5]])
 
-
-**4.** Look at the array ``data`` and identify the array coordinates where the values equal 9. Now use advanced array indexing to extract those coordinates in a single statement. The result should be
-
-.. jupyter-execute::
-    :hide-code:
-
-    numpy.array([9, 9, 9, 9, 9])
-
-**5.** Use boolean array indexing to assign -3 to all values of ``data`` less than 2. The result should be
-
-.. jupyter-execute::
-    :hide-code:
-
-    numpy.array([[-3, 9, -3, 3, 9],
-                 [9, 2, 8, 2, -3],
-                 [3, -3, 9, 9, 5]])
-
-**6.** Comparing performance of pure Python and numpy implementations. Investigate usage of ``numpy.where()`` to obtain the row and column coordinates of a 2D array where the value equals ``1`` (that's a one). Write a function called ``np_where()`` that takes a matrix as an argument and returns the row coordinates and column coordinates.
-
-First, use the following code to generate a random square matrix.
-
-.. jupyter-execute::
-    :linenos:
-
-    from numpy.random import randint
+    The result should be
     
-    dim = 5
-    mat = randint(0, 2, size=dim * dim)
-    mat.resize(dim, dim)
-    mat
+    .. jupyter-execute::
+        :hide-code:
 
-Compare ``np_where()`` to the performance of a function implemented using only pure python called ``py_where()`` that takes the matrix as an argument and returns the ``<row coordinates>, <column coordinates>`` as lists. For ``mat``, it should return the following.
+        numpy.array([9, 9, 9, 9, 9])
 
-.. jupyter-execute::
-    :hide-code:
+#. Use boolean array indexing to assign -3 to all values of ``data`` less than 2. The result should be
 
-    def py_where(matrix):
-        row_coords, col_coords = [], []
-        for i in range(matrix.shape[0]):
-            for j in range(matrix.shape[1]):
-                if matrix[i][j] == 1:
-                    row_coords.append(i)
-                    col_coords.append(j)
-        return row_coords, col_coords
+    .. jupyter-execute::
+        :hide-code:
+
+        numpy.array([[-3, 9, -3, 3, 9],
+                     [9, 2, 8, 2, -3],
+                     [3, -3, 9, 9, 5]])
+
+#. Comparing performance of pure Python and numpy implementations. Investigate usage of ``numpy.where()`` to obtain the row and column coordinates of a 2D array where the value equals ``1`` (that's a one). Write a function called ``np_where()`` that takes a matrix as an argument and returns the row coordinates and column coordinates.
+
+    First, use the following code to generate a random square matrix.
+
+    .. jupyter-execute::
+        :linenos:
+
+        from numpy.random import randint
     
-    coords = py_where(mat)
-    print(coords)
+        dim = 5
+        mat = randint(0, 2, size=dim * dim)
+        mat.resize(dim, dim)
+        mat
 
-Use the "magic" ``%timeit`` command builtin to Jupyter to assess performance of each function on the same value of ``mat``.
+    Compare ``np_where()`` to the performance of a function implemented using only pure python called ``py_where()`` that takes the matrix as an argument and returns the ``<row coordinates>, <column coordinates>`` as lists. For ``mat``, it should return the following.
 
-.. jupyter-execute::
-    :linenos:
+    .. jupyter-execute::
+        :hide-code:
 
-    %timeit py_where(mat)
+        def py_where(matrix):
+            row_coords, col_coords = [], []
+            for i in range(matrix.shape[0]):
+                for j in range(matrix.shape[1]):
+                    if matrix[i][j] == 1:
+                        row_coords.append(i)
+                        col_coords.append(j)
+            return row_coords, col_coords
+    
+        coords = py_where(mat)
+        print(coords)
 
-Then try setting ``dim=20`` and repeat. Which is faster, and by how much?
+    Use the "magic" ``%timeit`` command builtin to Jupyter to assess performance of each function on the same value of ``mat``.
 
-**7.** Do some googling for testing ``numpy`` arrays using ``assert_allclose``. Then use this to check your array ``freqs`` created above sums to 1.
+    .. jupyter-execute::
+        :linenos:
+
+        %timeit py_where(mat)
+
+    Then try setting ``dim=20`` and repeat. Which is faster, and by how much?
+
+#. Do some googling for testing ``numpy`` arrays using ``assert_allclose``. Then use this to check your array ``freqs`` created above sums to 1.

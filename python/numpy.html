@@ -1007,16 +1007,21 @@ After:
 </div>
 <div class="section" id="exercises">
 <h1><span class="section-number">5.34. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<p><strong>1.</strong> Create a list of 10 positive integers and convert it into a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. Use <code class="docutils literal notranslate"><span class="pre">array</span></code> methods to compute the total. Divide the original array by the total to produce a normalised array, which you assign to a variable <code class="docutils literal notranslate"><span class="pre">freqs</span></code>. Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.</p>
-<p><strong>2.</strong> Many methods on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays have an axis argument, one of which is sum. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[[0, 0],
+<ol class="arabic">
+<li><p>Create a list of 10 positive integers and convert it into a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. Use <code class="docutils literal notranslate"><span class="pre">array</span></code> methods to compute the total. Divide the original array by the total to produce a normalised array, which you assign to a variable <code class="docutils literal notranslate"><span class="pre">freqs</span></code>. Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.</p></li>
+<li><p>Many methods on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays have an axis argument, one of which is sum. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[[0, 0],
  [0, 0]]
 </pre></div>
 </div>
 <p>is a 2D array. Assign values that make it easy to distinguish operations that operate across rows versus those which operate across columns. Demonstrate this matrix serves that purpose using <code class="docutils literal notranslate"><span class="pre">sum()</span></code>.</p>
-<p><strong>3.</strong> <code class="docutils literal notranslate"><span class="pre">bool</span></code> data types can be summed. Create a sample array with <code class="docutils literal notranslate"><span class="pre">dtype=bool</span></code> and show that when you sum that you get the expected answers (what you expect is the sum will equal the number of occurrences of <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
-<hr class="docutils" />
-<p>Use the following array to answer the next question.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> data types can be summed. Create a sample array with <code class="docutils literal notranslate"><span class="pre">dtype=bool</span></code> and show that when you sum that you get the expected answers (what you expect is the sum will equal the number of occurrences of <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p></li>
+<li><p>Look at the array <code class="docutils literal notranslate"><span class="pre">data</span></code> and identify the array coordinates where the values equal 9. Now use advanced array indexing to extract those coordinates in a single statement.</p>
+<blockquote>
+<div><p>Use the following array to answer the next question.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
@@ -1028,7 +1033,7 @@ After:
 <div class="cell_output docutils container">
 </div>
 </div>
-<p><strong>4.</strong> Look at the array <code class="docutils literal notranslate"><span class="pre">data</span></code> and identify the array coordinates where the values equal 9. Now use advanced array indexing to extract those coordinates in a single statement. The result should be</p>
+<p>The result should be</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([9, 9, 9, 9, 9])
@@ -1036,8 +1041,11 @@ After:
 </div>
 </div>
 </div>
-<p><strong>5.</strong> Use boolean array indexing to assign -3 to all values of <code class="docutils literal notranslate"><span class="pre">data</span></code> less than 2. The result should be</p>
-<div class="jupyter_cell docutils container">
+</div></blockquote>
+</li>
+<li><p>Use boolean array indexing to assign -3 to all values of <code class="docutils literal notranslate"><span class="pre">data</span></code> less than 2. The result should be</p>
+<blockquote>
+<div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-3,  9, -3,  3,  9],
        [ 9,  2,  8,  2, -3],
@@ -1046,8 +1054,11 @@ After:
 </div>
 </div>
 </div>
-<p><strong>6.</strong> Comparing performance of pure Python and numpy implementations. Investigate usage of <code class="docutils literal notranslate"><span class="pre">numpy.where()</span></code> to obtain the row and column coordinates of a 2D array where the value equals <code class="docutils literal notranslate"><span class="pre">1</span></code> (that’s a one). Write a function called <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> that takes a matrix as an argument and returns the row coordinates and column coordinates.</p>
-<p>First, use the following code to generate a random square matrix.</p>
+</div></blockquote>
+</li>
+<li><p>Comparing performance of pure Python and numpy implementations. Investigate usage of <code class="docutils literal notranslate"><span class="pre">numpy.where()</span></code> to obtain the row and column coordinates of a 2D array where the value equals <code class="docutils literal notranslate"><span class="pre">1</span></code> (that’s a one). Write a function called <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> that takes a matrix as an argument and returns the row coordinates and column coordinates.</p>
+<blockquote>
+<div><p>First, use the following code to generate a random square matrix.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randint</span>
@@ -1061,10 +1072,10 @@ After:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 0, 0, 0],
+       [0, 0, 0, 1, 1],
+       [0, 0, 0, 0, 1],
        [1, 1, 0, 1, 1],
-       [1, 1, 1, 1, 1],
-       [1, 0, 1, 0, 0],
-       [1, 1, 0, 1, 0]])
+       [1, 0, 0, 0, 0]])
 </pre></div>
 </div>
 </div>
@@ -1072,7 +1083,7 @@ After:
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4], [0, 1, 0, 1, 3, 4, 0, 1, 2, 3, 4, 0, 2, 0, 1, 3])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 1, 1, 2, 3, 3, 3, 3, 4], [0, 1, 3, 4, 4, 0, 1, 3, 4, 0])
 </pre></div>
 </div>
 </div>
@@ -1085,13 +1096,16 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>20.4 µs ± 794 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>21.2 µs ± 1.97 µs per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 <p>Then try setting <code class="docutils literal notranslate"><span class="pre">dim=20</span></code> and repeat. Which is faster, and by how much?</p>
-<p><strong>7.</strong> Do some googling for testing <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays using <code class="docutils literal notranslate"><span class="pre">assert_allclose</span></code>. Then use this to check your array <code class="docutils literal notranslate"><span class="pre">freqs</span></code> created above sums to 1.</p>
+</div></blockquote>
+</li>
+<li><p>Do some googling for testing <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays using <code class="docutils literal notranslate"><span class="pre">assert_allclose</span></code>. Then use this to check your array <code class="docutils literal notranslate"><span class="pre">freqs</span></code> created above sums to 1.</p></li>
+</ol>
 </div>
 
 

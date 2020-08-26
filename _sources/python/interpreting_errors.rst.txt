@@ -71,28 +71,26 @@ This is a ``SyntaxError`` -- imbalanced ``()``. Note the ``^`` in the traceback,
 Exercises
 =========
 
-Fix the errors in the following.
+#. Fix the errors in the following.
 
-**1.**
+    .. jupyter-execute::
+        :linenos:
+        :raises:
 
-.. jupyter-execute::
-    :linenos:
-    :raises:
+        name = "Tim"
+        if name = "Tim":
+            greet = "Fist bump!"
+        else:
+            greet = "Hi"
 
-    name = "Tim"
-    if name = "Tim":
-        greet = "Fist bump!"
-    else:
-        greet = "Hi"
+#. Consider the following function, which is meant to compute the square of a number, i.e. :math:`x^2`
 
-**2.** Consider the following function, which is meant to compute the square of a number, i.e. :math:`x^2`
+    .. jupyter-execute::
+        :linenos:
+        :raises:
 
-.. jupyter-execute::
-    :linenos:
-    :raises:
-
-    def squared(num):
-        return num * 2
+        def squared(num):
+            return num * 2
 
 
 .. _article: https://realpython.com/python-traceback/

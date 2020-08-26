@@ -554,9 +554,11 @@ myfunc()
 <div class="cell_output docutils container">
 </div>
 </div>
-<p><strong>1.</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> that takes a single string (as per <code class="docutils literal notranslate"><span class="pre">data</span></code>) and converts it into a list of floats. Apply this function to <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
-<p><strong>2.</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> that takes a series of frequencies (each value is 0 &lt; val &lt; 1 and the series sums to 1) and has an optional argument <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> (with a default value of 0). The function adds <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> <a class="footnote-reference brackets" href="#id4" id="id3">2</a> to every frequency.</p>
-<p>Add some assert statements to your function to check input values are valid (e.g. all values are <code class="docutils literal notranslate"><span class="pre">0&lt;=freq&lt;1</span></code>).</p>
+<ol class="arabic">
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> that takes a single string (as per <code class="docutils literal notranslate"><span class="pre">data</span></code>) and converts it into a list of floats. Apply this function to <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></li>
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> that takes a series of frequencies (each value is 0 &lt; val &lt; 1 and the series sums to 1) and has an optional argument <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> (with a default value of 0). The function adds <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> <a class="footnote-reference brackets" href="#id4" id="id3">2</a> to every frequency.</p>
+<blockquote>
+<div><p>Add some assert statements to your function to check input values are valid (e.g. all values are <code class="docutils literal notranslate"><span class="pre">0&lt;=freq&lt;1</span></code>).</p>
 <p>Use an assert to check the result satisfies the following, all numbers sum to 1.0 (within numerical precision) and all values satisfy <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">v</span> <span class="pre">&lt;</span> <span class="pre">1</span></code>.</p>
 <p>For example, with the following input values</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -581,13 +583,16 @@ myfunc()
 </div>
 </div>
 <p>But if, for example, <code class="docutils literal notranslate"><span class="pre">add_to_all</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> your function generates an exception.</p>
-<p><strong>3.</strong> Write another function, <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> that takes the same input of <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> and also has an optional argument for <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code>. This function should first call <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> to get the floats. Then call <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> with that result to get the final normalised series. <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> then returns this value.</p>
+</div></blockquote>
+</li>
+<li><p>Write another function, <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> that takes the same input of <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> and also has an optional argument for <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code>. This function should first call <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> to get the floats. Then call <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> with that result to get the final normalised series. <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> then returns this value.</p></li>
+<li><p>Implement the <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> variant from above. Then try using differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code>. Make those calls without providing a value to <code class="docutils literal notranslate"><span class="pre">result</span></code>. Show that the <code class="docutils literal notranslate"><span class="pre">myfunc3()</span></code> does not have this problem.</p></li>
+</ol>
 <dl class="footnote brackets">
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
 <dd><p>This type of adjustment to avoid zeros is used to avoid numerical errors.</p>
 </dd>
 </dl>
-<p><strong>4.</strong> Implement the <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> variant from above. Then try using differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code>. Make those calls without providing a value to <code class="docutils literal notranslate"><span class="pre">result</span></code>. Show that the <code class="docutils literal notranslate"><span class="pre">myfunc3()</span></code> does not have this problem.</p>
 </div>
 
 
