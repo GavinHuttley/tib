@@ -507,7 +507,7 @@ myfunc()
 </div>
 </div>
 </div>
-<p>Calls to <code class="docutils literal notranslate"><span class="pre">myfunc1()</span></code> will modify the module level variable <code class="docutils literal notranslate"><span class="pre">result</span></code>, which is mutable and so will retain all such changes.</p>
+<p>As I show in that code snippet, each call to <code class="docutils literal notranslate"><span class="pre">myfunc1()</span></code> modifies the module level variable <code class="docutils literal notranslate"><span class="pre">result</span></code> because it is a mutable type. So <code class="docutils literal notranslate"><span class="pre">result</span></code> records all such calls! If you really need a list inside that function, define it within the function or pass it in as an argument. But see the next point.</p>
 <p><strong>DO NOT</strong> define the default value of an optional variable to be a mutable data type. Here’s an example</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -527,14 +527,14 @@ myfunc()
 </div>
 </div>
 </div>
-<p>However many times you call <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> is how many elements will be in the returned list. This effect holds for any mutable data type. Here’s a better approach.</p>
+<p>Same behaviour as the previous example because that definition of <code class="docutils literal notranslate"><span class="pre">result</span></code> is actually happening at the module level, even if it’s in a function signature! However many times you call <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> is how many elements will be in the returned list. This effect holds for any mutable data type. Here’s a better approach.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc3</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="ow">or</span> <span class="p">[]</span>
     <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
-<p><strong>DO NOT</strong> modify an input data structure unless your docstring (or the name of your function) states clearly that’s what it will do. Copying can be expensive in terms of speed and memory, but unexpected changes in state of some data can cause hard to debug problems and so be more expensive in terms of programmer time. This is why it’s a good idea to put important data into data types that are imuutable (pick a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> over a <code class="docutils literal notranslate"><span class="pre">list</span></code> for instance) or at least harder to change.</p>
+<p><strong>DO NOT</strong> modify an input data structure unless your docstring (or the name of your function) states clearly that’s what it will do. Copying can be expensive in terms of speed and memory, but unexpected changes in state of some data can cause hard to debug problems and so be more expensive in terms of programmer time. This is why it’s a good idea to put important data into data types that are imutable (e.g. pick a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> over a <code class="docutils literal notranslate"><span class="pre">list</span></code> for instance) or at least harder to change.</p>
 <blockquote class="epigraph">
 <div><p>A Foolish Consistency is the Hobgoblin of Little Minds</p>
 <p class="attribution">—Ralph Waldo Emerson, Self-reliance, 1841</p>
@@ -587,7 +587,7 @@ myfunc()
 <dd><p>This type of adjustment to avoid zeros is used to avoid numerical errors.</p>
 </dd>
 </dl>
-<p><strong>4.</strong> Implement the <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> variant from above with differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code>. Make those calls without providing a value to <code class="docutils literal notranslate"><span class="pre">result</span></code>. Show that the <code class="docutils literal notranslate"><span class="pre">myfunc3()</span></code> does not have this problem.</p>
+<p><strong>4.</strong> Implement the <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> variant from above. Then try using differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code>. Make those calls without providing a value to <code class="docutils literal notranslate"><span class="pre">result</span></code>. Show that the <code class="docutils literal notranslate"><span class="pre">myfunc3()</span></code> does not have this problem.</p>
 </div>
 
 

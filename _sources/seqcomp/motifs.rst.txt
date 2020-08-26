@@ -73,4 +73,4 @@ Exercises
 
 **2.** Then do it for all possible trinucleotides in ``seq``.
 
-**3.** The Python standard library has lots of very useful goodies. Investigate the ``Counter`` class from ``itertools`` and apply it to your result from (1) and (2) to determine the :math:`k`-mer distribution. (Use google!)
+**3.** The Python standard library has lots of very useful goodies. Investigate the ``Counter`` class from ``collections`` and apply it to your result from (1) and (2) to determine the :math:`k`-mer distribution. (Use google!)
