@@ -33,9 +33,9 @@ ChIP-seq is an *in vivo* process. A precursor for this technique is availability
 .. figure:: /_static/images/seqcomp/chipseq.png
     :scale: 50 %
     
-    An empirical survey of naturally occurring DNA [5]_.
+    An empirical survey of naturally occurring DNA [3]_.
 
-.. [5] `Wikipedia entry <https://en.wikipedia.org/wiki/ChIP-sequencing>`_
+.. [3] `Wikipedia entry <https://en.wikipedia.org/wiki/ChIP-sequencing>`_
 
 With the sequence data from those experimental procedures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,38 +73,39 @@ Challenges to this approach include handling the case of equally abundant states
 Transformation of the data for analysis
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-From an experimental procedure, we ultimately seek to obtain a curated set of "aligned" sequences. 
+From an experimental procedure, we ultimately seek to obtain a curated set of "aligned" sequences. I illustrate a hypothetical such case below [4]_.
+
+.. [4] Positions displaying a ``.`` have the same nucleotide as ``"seq-0"`` for that column.
 
 .. todo:: fix width of tables in display
 
 .. jupyter-execute::
     :hide-code:
 
-    from numpy import array
-    from cogent3 import make_table
+    from cogent3 import make_aligned_seqs
 
-    header = ['Label \\ Position', '0', '1', '2', '3', '4', '5', '6']
-    data = {'Label \\ Position': array(['seq-0', 'seq-1', 'seq-2', 'seq-3', 'seq-4', 'seq-5', 'seq-6',
-       'seq-7', 'seq-8', 'seq-9'], dtype='<U5'), '0': array(['A', '.', 'T', 'T', '.', '.', '.', '.', '.', '.'], dtype='<U1'), '1': array(['T', '.', '.', '.', '.', '.', '.', '.', '.', '.'], dtype='<U1'), '2': array(['T', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'], dtype='<U1'), '3': array(['T', '.', '.', 'A', 'A', '.', '.', 'A', 'A', '.'], dtype='<U1'), '4': array(['A', '.', '.', '.', '.', '.', '.', '.', '.', 'T'], dtype='<U1'), '5': array(['T', 'A', 'A', 'A', '.', '.', 'G', 'A', '.', '.'], dtype='<U1'), '6': array(['G', 'A', 'A', '.', '.', '.', '.', 'A', 'C', 'A'], dtype='<U1')}
-    data = {k: array(data[k], dtype='U') for k in data}
-    table = make_table(header, data=data, title="Hypothetical sequence data from an enrichment experiment",
-    legend="Position -- alignment position; label -- sequence identifier. The value '.' indicates the nucleotide is identical to that of the first sequence.")
-    table
+    seqs = {'seq-0': 'ATTTATG', 'seq-1': 'ATATAAA', 'seq-2': 'TTATAAA', 'seq-3': 'TTAAAAG', 
+            'seq-4': 'ATAAATG', 'seq-5': 'ATATATG', 'seq-6': 'ATATAGG', 'seq-7': 'ATAAAAA',
+            'seq-8': 'ATAAATC', 'seq-9': 'ATATTTA'}
+    aln = make_aligned_seqs(data=seqs, moltype="dna")
+    aln.set_repr_policy(ref_name="seq-0")
+    aln
 
-This is converted to a table of counts by simply counting occurrences of bases in each alignment column.
+.. index::
+    pair: PWM; Position Specific Weights Matrix
+
+This is converted to a table of nucleotide counts per aligned column, resulting in a Position specific Weights Matrix (or PWM).
 
 .. jupyter-execute::
     :hide-code:
 
-    from numpy import array
-    from cogent3 import make_table
+    c = aln.counts_per_pos()
+    c = c.to_table()
+    tr = c.transposed(r"Base \ Position", select_as_header="", index=r"Base \ Position",
+                      title="PWM", legend="position specific weights matrix")
+    tr
 
-    header = ['Base \\ Position', '0', '1', '2', '3', '4', '5', '6']
-    data = {'Base \\ Position': array(['T', 'C', 'A', 'G'], dtype='<U1'), '0': array(['2', '0', '8', '0'], dtype='<U1'), '1': array(['10', '0', '0', '0'], dtype='<U2'), '2': array(['1', '0', '9', '0'], dtype='<U1'), '3': array(['6', '0', '4', '0'], dtype='<U1'), '4': array(['1', '0', '9', '0'], dtype='<U1'), '5': array(['5', '0', '4', '1'], dtype='<U1'), '6': array(['0', '1', '4', '5'], dtype='<U1')}
-    data = {k: array(data[k], dtype='U') for k in data}
-    table = make_table(header, data=data, title="PWM", legend="position specific weights matrix")
-    table
-
+This table becomes the primary source for defining :ref:`PSSMs <PSSMs>`.
 
 ------
 

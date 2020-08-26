@@ -181,6 +181,59 @@ The following illustrates the form of a docstring with a simple function with no
 
     help(myfunc)
 
+Things not to do!
+-----------------
+
+**DO NOT** use global variables (see :ref:`namespaces`). Either pass the variable in as an argument or create it within the function. Adhere to the principle of making code "Easy To Change". In the case of functions, this means making them depend only on the arguments you give them. The following is bad.
+
+.. jupyter-execute::
+    :linenos:
+
+    result = []
+    
+    def myfunc1(arg):
+        result.append(arg)
+        return result
+    
+    myfunc1(4)
+    myfunc1(4)
+    result
+
+Calls to ``myfunc1()`` will modify the module level variable ``result``, which is mutable and so will retain all such changes.
+
+**DO NOT** define the default value of an optional variable to be a mutable data type. Here's an example
+
+.. jupyter-execute::
+    :linenos:
+
+    def myfunc2(arg, result=[]):
+        result.append(arg)
+        return result
+
+    r = myfunc2(20)
+    r = myfunc2(90)
+    r
+
+
+However many times you call ``myfunc2()`` is how many elements will be in the returned list. This effect holds for any mutable data type. Here's a better approach.
+
+.. code-block:: python
+    
+    def myfunc3(arg, result=None):
+        result = result or []
+        result.append(arg)
+        return result
+
+**DO NOT** modify an input data structure unless your docstring (or the name of your function) states clearly that's what it will do. Copying can be expensive in terms of speed and memory, but unexpected changes in state of some data can cause hard to debug problems and so be more expensive in terms of programmer time. This is why it's a good idea to put important data into data types that are imuutable (pick a ``tuple`` over a ``list`` for instance) or at least harder to change.
+
+.. epigraph::
+
+    A Foolish Consistency is the Hobgoblin of Little Minds
+    
+    --- Ralph Waldo Emerson, Self-reliance, 1841
+
+That quote applies to the above remarks, make exceptions to those thoughtfully. Except for mutable data types as default values -- never do that unless you love hard to debug problems and mysery.
+
 Exercises
 =========
 
@@ -221,3 +274,5 @@ But if, for example, ``add_to_all < 0`` your function generates an exception.
 **3.** Write another function, ``str_to_normalised()`` that takes the same input of ``cast_to_floats()`` and also has an optional argument for ``add_to_all``. This function should first call ``cast_to_floats()`` to get the floats. Then call ``normalised_freqs()`` with that result to get the final normalised series. ``str_to_normalised()`` then returns this value.
 
 .. [2] This type of adjustment to avoid zeros is used to avoid numerical errors.
+
+**4.** Implement the ``myfunc2()`` variant from above with differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to ``myfunc2()``. Make those calls without providing a value to ``result``. Show that the ``myfunc3()`` does not have this problem.

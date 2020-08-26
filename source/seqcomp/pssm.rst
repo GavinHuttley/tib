@@ -1,5 +1,7 @@
-Position Specific Scoring Matrices
-==================================
+.. _PSSMs:
+
+Position Specific Scoring Matrices (PSSMs)
+==========================================
 
 .. index::
     pair: PSSM; Position Specific Scoring Matrix
