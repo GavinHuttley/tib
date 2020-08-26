@@ -22,7 +22,7 @@ The critical syntax elements
 
 - ``def``, the critical keyword telling Python you are defining a function
 - a valid Python name, which is used to reference the function
-- ``()``, which flank any arguments that might be a part of the function signature 
+- ``()``, which flank any arguments that might be a part of the function signature
 - ``:``, to indicate completion of the signature
 - arguments, required or optional (have a default value)
 - body of function must be indented
@@ -47,7 +47,7 @@ The following is a valid, but not particularly useful, function. As the function
     
     echo_hello()
 
-.. note::  By convention, functions are put at the top of script files. The convention is motivated by the desire to make the code easy to read.
+.. note:: By convention, functions are put at the top of script files. The convention is motivated by the desire to make the code easy to read.
 
 .. index::
     pair: void; functions
@@ -71,7 +71,7 @@ These are functions that return something from their execution. We have encounte
     result = get_diff(4, 6)
     result
 
-.. note::  The function was defined before it was used. There were multiple arguments separated by a ``","``. We used the ``return`` keyword to deliver the result of this calculation to the calling code (line starting with ``result =...``).
+.. note:: The function was defined before it was used. There were multiple arguments separated by a ``","``. We used the ``return`` keyword to deliver the result of this calculation to the calling code (line starting with ``result =...``).
 
 .. index::
     pair: arguments; function
@@ -122,7 +122,7 @@ Writing and using functions that have optional arguments
 
     def get_diff(a, b, absolute=False):
         diff = a - b
-        if absolute and diff < 0:  # both absolute AND (diff < 0) must be True
+        if absolute and diff < 0: # both absolute AND (diff < 0) must be True
             diff = abs(diff)
         return diff
 
@@ -193,7 +193,7 @@ Using the following data
 
 **1.** Write a function called ``cast_to_floats()`` that takes a single string (as per ``data``) and converts it into a list of floats. Apply this function to ``data``.
 
-**2.** Write a function called ``normalised_freqs()`` that takes a series of frequencies (each value is 0 < val < 1 and the series sums to 1) and has an optional argument ``add_to_all`` (with a default value of 0). The function adds ``add_to_all`` [2]_ to every frequency. 
+**2.** Write a function called ``normalised_freqs()`` that takes a series of frequencies (each value is 0 < val < 1 and the series sums to 1) and has an optional argument ``add_to_all`` (with a default value of 0). The function adds ``add_to_all`` [2]_ to every frequency.
 
 Add some assert statements to your function to check input values are valid (e.g. all values are ``0<=freq<1``).
 
@@ -218,6 +218,6 @@ Your function should return
 
 But if, for example, ``add_to_all < 0`` your function generates an exception.
 
-**3.** Write another function, ``str_to_normalised()`` that takes the same input of ``cast_to_floats()`` and also has an optional argument for ``add_to_all``. This function should first call ``cast_to_floats()`` to get the floats. Then call ``normalised_freqs()`` with that result to get the final normalised series.  ``str_to_normalised()`` then returns this value.
+**3.** Write another function, ``str_to_normalised()`` that takes the same input of ``cast_to_floats()`` and also has an optional argument for ``add_to_all``. This function should first call ``cast_to_floats()`` to get the floats. Then call ``normalised_freqs()`` with that result to get the final normalised series. ``str_to_normalised()`` then returns this value.
 
 .. [2] This type of adjustment to avoid zeros is used to avoid numerical errors.
