@@ -108,7 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.7. Finding motifs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="information.html">6.8. Measuring information using Shannon’s entropy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.9. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.10. Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.10. Position Specific Scoring Matrices (PSSMs)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.11. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.12. Odds-ratio’s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">6.13. Refresher on statistical inference</a></li>
@@ -223,9 +223,9 @@
 <dd><p>The requirement for a lot of protein limits the utility of this technique.</p>
 </dd>
 </dl>
-<div class="figure align-default" id="id9">
+<div class="figure align-default" id="id11">
 <a class="reference internal image-reference" href="../_images/selex.png"><img alt="../_images/selex.png" src="../_images/selex.png" style="width: 190.5px; height: 271.0px;" /></a>
-<p class="caption"><span class="caption-text">A synthetic sequence assessment procedure.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">A synthetic sequence assessment procedure.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="chip-chromatin-immunoprecipitation">
@@ -236,12 +236,12 @@
 <dd><p>Sonication being one approach.</p>
 </dd>
 </dl>
-<div class="figure align-default" id="id10">
+<div class="figure align-default" id="id12">
 <a class="reference internal image-reference" href="../_images/chipseq.png"><img alt="../_images/chipseq.png" src="../_images/chipseq.png" style="width: 283.5px; height: 212.5px;" /></a>
-<p class="caption"><span class="caption-text">An empirical survey of naturally occurring DNA <a class="footnote-reference brackets" href="#id7" id="id6">5</a>.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">An empirical survey of naturally occurring DNA <a class="footnote-reference brackets" href="#id7" id="id6">3</a>.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id6">5</a></span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id6">3</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/ChIP-sequencing">Wikipedia entry</a></p>
 </dd>
 </dl>
@@ -277,141 +277,45 @@ TYHBM &lt;-- the IUPAC consensus
 </div>
 <div class="section" id="transformation-of-the-data-for-analysis">
 <span id="pssm-origins"></span><h2><span class="section-number">6.6.4. </span>Transformation of the data for analysis<a class="headerlink" href="#transformation-of-the-data-for-analysis" title="Permalink to this headline">¶</a></h2>
-<p>From an experimental procedure, we ultimately seek to obtain a curated set of “aligned” sequences.</p>
+<p>From an experimental procedure, we ultimately seek to obtain a curated set of “aligned” sequences. I illustrate a hypothetical such case below <a class="footnote-reference brackets" href="#id9" id="id8">4</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id8">4</a></span></dt>
+<dd><p>Positions displaying a <code class="docutils literal notranslate"><span class="pre">.</span></code> have the same nucleotide as <code class="docutils literal notranslate"><span class="pre">&quot;seq-0&quot;</span></code> for that column.</p>
+</dd>
+</dl>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><style>
-.c3table table {margin: 10px 0;}
-.c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
-.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
-.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
-.c3table .cell_title {font-weight: bold;}
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
 </style>
-<div class="c3table">
+<div class="c3align">
 <table>
-<caption><span class="cell_title">Hypothetical sequence data from an enrichment experiment</span><br><span class="cell_legend">Position -- alignment position; label -- sequence identifier. The value '.' indicates the nucleotide is identical to that of the first sequence.</span></caption>
-<thead class="head_cell">
-<th>Label \ Position</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-</thead>
-<tbody>
-<tr>
-<td>seq-0</td>
-<td>A</td>
-<td>T</td>
-<td>T</td>
-<td>T</td>
-<td>A</td>
-<td>T</td>
-<td>G</td>
-</tr>
-<tr>
-<td>seq-1</td>
-<td>.</td>
-<td>.</td>
-<td>A</td>
-<td>.</td>
-<td>.</td>
-<td>A</td>
-<td>A</td>
-</tr>
-<tr>
-<td>seq-2</td>
-<td>T</td>
-<td>.</td>
-<td>A</td>
-<td>.</td>
-<td>.</td>
-<td>A</td>
-<td>A</td>
-</tr>
-<tr>
-<td>seq-3</td>
-<td>T</td>
-<td>.</td>
-<td>A</td>
-<td>A</td>
-<td>.</td>
-<td>A</td>
-<td>.</td>
-</tr>
-<tr>
-<td>seq-4</td>
-<td>.</td>
-<td>.</td>
-<td>A</td>
-<td>A</td>
-<td>.</td>
-<td>.</td>
-<td>.</td>
-</tr>
-<tr>
-<td>seq-5</td>
-<td>.</td>
-<td>.</td>
-<td>A</td>
-<td>.</td>
-<td>.</td>
-<td>.</td>
-<td>.</td>
-</tr>
-<tr>
-<td>seq-6</td>
-<td>.</td>
-<td>.</td>
-<td>A</td>
-<td>.</td>
-<td>.</td>
-<td>G</td>
-<td>.</td>
-</tr>
-<tr>
-<td>seq-7</td>
-<td>.</td>
-<td>.</td>
-<td>A</td>
-<td>A</td>
-<td>.</td>
-<td>A</td>
-<td>A</td>
-</tr>
-<tr>
-<td>seq-8</td>
-<td>.</td>
-<td>.</td>
-<td>A</td>
-<td>A</td>
-<td>.</td>
-<td>.</td>
-<td>C</td>
-</tr>
-<tr>
-<td>seq-9</td>
-<td>.</td>
-<td>.</td>
-<td>A</td>
-<td>.</td>
-<td>T</td>
-<td>.</td>
-<td>A</td>
-</tr>
-</tbody>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">seq-0</td><td><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span></td></tr>
+<tr><td class="label">seq-1</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">A</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">seq-2</td><td><span class="T_dna">T</span><span class="T_dna">.</span><span class="A_dna">A</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">seq-3</td><td><span class="T_dna">T</span><span class="T_dna">.</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="G_dna">.</span></td></tr>
+<tr><td class="label">seq-4</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span></td></tr>
+<tr><td class="label">seq-5</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">A</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span></td></tr>
+<tr><td class="label">seq-6</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">A</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="G_dna">G</span><span class="G_dna">.</span></td></tr>
+<tr><td class="label">seq-7</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">seq-8</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="C_dna">C</span></td></tr>
+<tr><td class="label">seq-9</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">A</span><span class="T_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="A_dna">A</span></td></tr>
 </table>
-<p>
-10 rows x 8 columns</p>
+<p><i>10 x 7 dna alignment</i></p>
 </div></div></div>
 </div>
-<p>This is converted to a table of counts by simply counting occurrences of bases in each alignment column.</p>
+<p id="index-2">This is converted to a table of nucleotide counts per aligned column, resulting in a Position specific Weights Matrix (or PWM).</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><style>
@@ -440,7 +344,7 @@ TYHBM &lt;-- the IUPAC consensus
 </thead>
 <tbody>
 <tr>
-<td>T</td>
+<td class="index">T</td>
 <td>2</td>
 <td>10</td>
 <td>1</td>
@@ -450,7 +354,7 @@ TYHBM &lt;-- the IUPAC consensus
 <td>0</td>
 </tr>
 <tr>
-<td>C</td>
+<td class="index">C</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -460,7 +364,7 @@ TYHBM &lt;-- the IUPAC consensus
 <td>1</td>
 </tr>
 <tr>
-<td>A</td>
+<td class="index">A</td>
 <td>8</td>
 <td>0</td>
 <td>9</td>
@@ -470,7 +374,7 @@ TYHBM &lt;-- the IUPAC consensus
 <td>4</td>
 </tr>
 <tr>
-<td>G</td>
+<td class="index">G</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -485,6 +389,7 @@ TYHBM &lt;-- the IUPAC consensus
 4 rows x 8 columns</p>
 </div></div></div>
 </div>
+<p>This table becomes the primary source for defining <a class="reference internal" href="pssm.html#pssms"><span class="std std-ref">PSSMs</span></a>.</p>
 <hr class="docutils" />
 <p class="rubric">Citations</p>
 <p id="bibtex-bibliography-seqcomp/related_by_function-0"><dl class="citation">

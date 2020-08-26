@@ -386,7 +386,7 @@
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_diff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">diff</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
-    <span class="k">if</span> <span class="n">absolute</span> <span class="ow">and</span> <span class="n">diff</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># both absolute AND (diff &lt; 0) must be True</span>
+    <span class="k">if</span> <span class="n">absolute</span> <span class="ow">and</span> <span class="n">diff</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># both absolute AND (diff &lt; 0) must be True</span>
         <span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">diff</span>
 
@@ -484,6 +484,63 @@ myfunc()
 </div>
 </div>
 </div>
+<div class="section" id="things-not-to-do">
+<h2><span class="section-number">5.24.9. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline">¶</a></h2>
+<p><strong>DO NOT</strong> use global variables (see <a class="reference internal" href="namespace.html#namespaces"><span class="std std-ref">Namespaces</span></a>). Either pass the variable in as an argument or create it within the function. Adhere to the principle of making code “Easy To Change”. In the case of functions, this means making them depend only on the arguments you give them. The following is bad.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">myfunc1</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">myfunc1</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">myfunc1</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[4, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calls to <code class="docutils literal notranslate"><span class="pre">myfunc1()</span></code> will modify the module level variable <code class="docutils literal notranslate"><span class="pre">result</span></code>, which is mutable and so will retain all such changes.</p>
+<p><strong>DO NOT</strong> define the default value of an optional variable to be a mutable data type. Here’s an example</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc2</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">myfunc2</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">myfunc2</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[20, 90]
+</pre></div>
+</div>
+</div>
+</div>
+<p>However many times you call <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> is how many elements will be in the returned list. This effect holds for any mutable data type. Here’s a better approach.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc3</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="ow">or</span> <span class="p">[]</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p><strong>DO NOT</strong> modify an input data structure unless your docstring (or the name of your function) states clearly that’s what it will do. Copying can be expensive in terms of speed and memory, but unexpected changes in state of some data can cause hard to debug problems and so be more expensive in terms of programmer time. This is why it’s a good idea to put important data into data types that are imuutable (pick a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> over a <code class="docutils literal notranslate"><span class="pre">list</span></code> for instance) or at least harder to change.</p>
+<blockquote class="epigraph">
+<div><p>A Foolish Consistency is the Hobgoblin of Little Minds</p>
+<p class="attribution">—Ralph Waldo Emerson, Self-reliance, 1841</p>
+</div></blockquote>
+<p>That quote applies to the above remarks, make exceptions to those thoughtfully. Except for mutable data types as default values – never do that unless you love hard to debug problems and mysery.</p>
+</div>
 </div>
 <div class="section" id="exercises">
 <h1><span class="section-number">5.25. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
@@ -524,12 +581,13 @@ myfunc()
 </div>
 </div>
 <p>But if, for example, <code class="docutils literal notranslate"><span class="pre">add_to_all</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> your function generates an exception.</p>
-<p><strong>3.</strong> Write another function, <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> that takes the same input of <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> and also has an optional argument for <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code>. This function should first call <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> to get the floats. Then call <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> with that result to get the final normalised series.  <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> then returns this value.</p>
+<p><strong>3.</strong> Write another function, <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> that takes the same input of <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> and also has an optional argument for <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code>. This function should first call <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> to get the floats. Then call <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> with that result to get the final normalised series. <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> then returns this value.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
 <dd><p>This type of adjustment to avoid zeros is used to avoid numerical errors.</p>
 </dd>
 </dl>
+<p><strong>4.</strong> Implement the <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> variant from above with differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code>. Make those calls without providing a value to <code class="docutils literal notranslate"><span class="pre">result</span></code>. Show that the <code class="docutils literal notranslate"><span class="pre">myfunc3()</span></code> does not have this problem.</p>
 </div>
 
 

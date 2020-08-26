@@ -245,7 +245,7 @@
 </ol>
 </div>
 <div class="section" id="namespaces">
-<span id="index-0"></span><h1><span class="section-number">5.26. </span>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h1>
+<span id="index-0"></span><span id="id1"></span><h1><span class="section-number">5.26. </span>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h1>
 <p>A fundamental concept in programming, most easily explained with reference to the <a class="reference internal" href="#variable-scope">Variable scope</a>.</p>
 <p>In brief, variables defined within the local scope are only “available” within that scope. Variables defined within the global scope can be accessed within a local scope.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -286,9 +286,9 @@ b -&gt; bn;
 }</p></object></div>
 <p><a class="reference external" href="https://pt.slideshare.net/p3infotech_solutions/python-programming-essentials-m19-namespaces-global-variables-and-docstrings/3">After Skillbrew</a>.</p>
 </div>
-<p>But they cannot be modified within the local scope (unless you use the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword <a class="footnote-reference brackets" href="#id3" id="id2">1</a>).</p>
+<p>But they cannot be modified within the local scope (unless you use the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword <a class="footnote-reference brackets" href="#id4" id="id3">1</a>).</p>
 <dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
 <dd><p>Using <code class="docutils literal notranslate"><span class="pre">global</span></code> is typically a bad idea in terms of algorithmic robustness.</p>
 </dd>
 </dl>
@@ -369,9 +369,9 @@ b -&gt; bn;
 </div>
 <p><strong>1.</strong> Fix <code class="docutils literal notranslate"><span class="pre">add_squared_constant()</span></code> so it works to return <code class="docutils literal notranslate"><span class="pre">[8,</span> <span class="pre">16,</span> <span class="pre">46]</span></code> given <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 <p><strong>2.</strong> Fix, without using the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword, so it works to return <code class="docutils literal notranslate"><span class="pre">[8,</span> <span class="pre">16,</span> <span class="pre">46]</span></code> given <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
-<p><strong>3.</strong> Fix, using the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword, so it works to return <code class="docutils literal notranslate"><span class="pre">[8,</span> <span class="pre">16,</span> <span class="pre">46]</span></code> given <code class="docutils literal notranslate"><span class="pre">data</span></code>. What happens to the global variable <code class="docutils literal notranslate"><span class="pre">CONSTANT</span></code> <a class="footnote-reference brackets" href="#id5" id="id4">2</a>?</p>
+<p><strong>3.</strong> Fix, using the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword, so it works to return <code class="docutils literal notranslate"><span class="pre">[8,</span> <span class="pre">16,</span> <span class="pre">46]</span></code> given <code class="docutils literal notranslate"><span class="pre">data</span></code>. What happens to the global variable <code class="docutils literal notranslate"><span class="pre">CONSTANT</span></code> <a class="footnote-reference brackets" href="#id6" id="id5">2</a>?</p>
 <dl class="footnote brackets">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">2</a></span></dt>
 <dd><p>A part of the coding style guidelines I use is to use ALL CAPS for variables that are meant to be treated as constants.</p>
 </dd>
 </dl>

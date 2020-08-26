@@ -9,6 +9,8 @@
 
 .. index:: namespace, scope
 
+.. _namespaces:
+
 Namespaces
 ==========
 

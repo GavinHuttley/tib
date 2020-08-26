@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.10. Position Specific Scoring Matrices &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>6.10. Position Specific Scoring Matrices (PSSMs) &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
@@ -108,7 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.7. Finding motifs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="information.html">6.8. Measuring information using Shannon’s entropy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.9. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.10. Position Specific Scoring Matrices</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.10. Position Specific Scoring Matrices (PSSMs)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercises">6.11. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.12. Odds-ratio’s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">6.13. Refresher on statistical inference</a></li>
@@ -166,7 +166,7 @@
         
           <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
         
-      <li><span class="section-number">6.10. </span>Position Specific Scoring Matrices</li>
+      <li><span class="section-number">6.10. </span>Position Specific Scoring Matrices (PSSMs)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,8 +211,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="position-specific-scoring-matrices">
-<h1><span class="section-number">6.10. </span>Position Specific Scoring Matrices<a class="headerlink" href="#position-specific-scoring-matrices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="position-specific-scoring-matrices-pssms">
+<span id="pssms"></span><h1><span class="section-number">6.10. </span>Position Specific Scoring Matrices (PSSMs)<a class="headerlink" href="#position-specific-scoring-matrices-pssms" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">A Position Specific Scoring Matrix, or PSSM, is a matrix of <span class="target" id="index-1"></span>log-odds ratios per position of a sequence motif. (PSSMs are also called <span class="target" id="index-2"></span>profiles.) They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but are also used to characterise protein domains.</p>
 <p>See <a class="reference internal" href="related_by_function.html#experimental-data"><span class="std std-ref">Experimental procedures for detecting functionally related sequences</span></a> for how the counts data are derived. To illustrate the transformation of those counts data into a PSSM, we will start with a simple worked example. First we take the counts table presented in <a class="reference internal" href="related_by_function.html#pssm-origins"><span class="std std-ref">Transformation of the data for analysis</span></a>.</p>
 <p>We convert the PWM into a PPM, but I’m restricting the examples to just 4 positions.</p>
