@@ -71,7 +71,7 @@ In this case, I'm just doing this "manually". First, note the base order is T, C
 
 At sequence position ``0``, we have base ``G``. This has the value of 0.0, so we stop.
 
-This raises the question of whether a ``G`` at index ``[0]`` is truly impossible? More likely, the 0 is due to the sample size of the experiment. One approach is to ad a small number to all elements. (This is akin to imagining the next observation would have been of the unobserved type.) Typically, a pseudocount ≤ 1 is chosen.
+This raises the question of whether a ``G`` at index ``[0]`` is truly impossible? More likely, the 0 is due to the sample size of the experiment. One approach is to add a "small" number to all elements. (This is akin to imagining the next observation would have been of the unobserved type.) This number is referred to as a pseudocount and typically, a pseudocount ≤ 1 is chosen.
 
 Adjusting the PWM with a pseudocount
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
