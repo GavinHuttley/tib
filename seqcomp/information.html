@@ -14,8 +14,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
 
@@ -35,6 +36,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -114,7 +116,8 @@
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">6.13. Refresher on statistical inference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.16. Pairwise alignment using dynamic programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.16. Global Pairwise Alignment Using Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.17. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
@@ -288,9 +291,9 @@ Ent.   0    0.72  1.52  1.52  0.97
 <p>Defining a short sequence for use below.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;AGCCATTGCAAA&quot;</span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;AGCCATTGCAAA&quot;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="cell_output docutils container">
 </div>
@@ -308,7 +311,7 @@ Ent.   0    0.72  1.52  1.52  0.97
 <blockquote>
 <div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GCGCAGAAGAAACACACAAACAAGCAACAAGAGGCCAGAACAGGCGCGAA&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GGCCCCAGCGGGAGCAGGGGGGCGAGCACGAGAACCGGAGGGACGGAAGA&#39;
 </pre></div>
 </div>
 </div>

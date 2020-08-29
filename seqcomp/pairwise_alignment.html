@@ -7,15 +7,16 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.16. Pairwise alignment using dynamic programming &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>6.16. Global Pairwise Alignment Using Dynamic Programming &mdash; Topics in Bioinformatics 2020 documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
 
@@ -35,6 +36,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -114,7 +116,8 @@
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">6.13. Refresher on statistical inference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.16. Pairwise alignment using dynamic programming</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.16. Global Pairwise Alignment Using Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">6.17. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
@@ -166,7 +169,7 @@
         
           <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
         
-      <li><span class="section-number">6.16. </span>Pairwise alignment using dynamic programming</li>
+      <li><span class="section-number">6.16. </span>Global Pairwise Alignment Using Dynamic Programming</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,9 +214,9 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="pairwise-alignment-using-dynamic-programming">
-<h1><span class="section-number">6.16. </span>Pairwise alignment using dynamic programming<a class="headerlink" href="#pairwise-alignment-using-dynamic-programming" title="Permalink to this headline">¶</a></h1>
-<p>The transmission of genetic information from one generation to the next is imperfect. DNA sequences can differs from their parent in a number of ways. This occurs due to mutations. There are different categories of mutations. Large scale rearrangements, such as translocations, inversions, duplications are important features of genome evolution and are (in humans) contributors to disease. Smaller scale changes such as those affecting individual mutations – referred to as point mutations – as are small deletions or insertions.</p>
+<div class="section" id="global-pairwise-alignment-using-dynamic-programming">
+<h1><span class="section-number">6.16. </span>Global Pairwise Alignment Using Dynamic Programming<a class="headerlink" href="#global-pairwise-alignment-using-dynamic-programming" title="Permalink to this headline">¶</a></h1>
+<p>The transmission of genetic information from one generation to the next is imperfect. DNA sequences can differs from their parent in a number of ways due to mutations. There are different categories of mutations. Large scale rearrangements, such as translocations, inversions, duplications are important features of genome evolution and are (in humans) contributors to disease. Smaller scale changes such as those affecting individual mutations – referred to as point mutations – as are small deletions or insertions.</p>
 <p>Comparisons of related DNA sequences that have been subjected to such processes are performed using alignment algorithms where the goal is to identify those positions in two (or more) sequences that have descended from a common ancestor. Consider the following case where we have an ancestral sequence with two descendants, one of whom experienced a deletion event.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="o">|</span>
   <span class="o">+--------</span><span class="n">ACAGT</span><span class="o">--------+</span>     <span class="n">Ancestor</span>
@@ -241,43 +244,129 @@ seq2  AT</p>
 <span class="n">seq2</span>  <span class="o">--</span><span class="n">A</span><span class="o">-</span><span class="n">T</span>
 </pre></div>
 </div>
-<p>Making inferences regarding historical relatedness underpins much of how we utilise biological sequence data. So how can we decide which positions in two (or more) sequences are related? There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of <em>global alignment</em> <a class="bibtex reference internal" href="#needleman-1970aa" id="id1">[NW70]</a>.</p>
+<p>Making inferences regarding historical relatedness underpins much of how we utilise biological sequence data. So how can we decide which positions in two (or more) sequences are related? There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of <em>global alignment</em> <a class="footnote-reference brackets" href="#id3" id="id1">1</a> <a class="bibtex reference internal" href="#needleman-1970aa" id="id2">[NW70]</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Global here means aligning the entire sequences. This contrasts with a “local” alignment, which computes the best aligned segment for a pair of sequences. That is solved using another dynamic programming algorithm referred to as Smith-Waterman, which we don’t address.</p>
+</dd>
+</dl>
 <div class="section" id="needleman-and-wunsch-nw">
 <h2><span class="section-number">6.16.1. </span>Needleman and Wunsch (NW)<a class="headerlink" href="#needleman-and-wunsch-nw" title="Permalink to this headline">¶</a></h2>
-<p>Compared to the dotplot approach, it allows for more sophisticated “match”, i.e. the sequence state may be different but still considered a match. It efficiently (in terms of computation) identifies the optimal “path” through the matrix.</p>
-<div class="section" id="the-scoring-system">
-<h3><span class="section-number">6.16.1.1. </span>The scoring system<a class="headerlink" href="#the-scoring-system" title="Permalink to this headline">¶</a></h3>
-<p>We will start by using the exact same <em>scoring matrix</em> as NW  <a class="bibtex reference internal" href="#needleman-1970aa" id="id2">[NW70]</a>:</p>
+<p>A more elaborate case is presented in the dotplot below. There are obvious diagonal lines here which I will refer to as a “path”.</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+</div><div class="output text_html"><div>
+
+
+            <div id="7ca2c923-2e86-4b82-95db-0841e66aeda1" class="plotly-graph-div" style="height:527.7777777777778px; width:500px;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+
+                if (document.getElementById("7ca2c923-2e86-4b82-95db-0841e66aeda1")) {
+                    Plotly.newPlot(
+                        '7ca2c923-2e86-4b82-95db-0841e66aeda1',
+                        [{"line": {"color": "blue"}, "mode": "lines", "name": "+ strand", "type": "scatter", "x": [0, 12, null, 33, 54, null, 11, 33], "xaxis": "x", "y": [0, 12, null, 36, 57, null, 17, 39], "yaxis": "y"}],
+                        {"autosize": false, "font": {"family": "Balto", "size": 14}, "height": 527.7777777777778, "hovermode": "closest", "margin": {"b": 50, "l": 50, "pad": 4, "r": 50, "t": 50}, "showlegend": false, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": ""}, "width": 500, "xaxis": {"mirror": true, "range": [0, 54], "showgrid": false, "showline": true, "title": {"text": "A"}, "visible": true}, "yaxis": {"mirror": true, "range": [0, 57], "showgrid": false, "showline": true, "title": {"text": "B"}, "visible": true}},
+                        {"responsive": true}
+                    ).then(function(){
+
+var gd = document.getElementById('7ca2c923-2e86-4b82-95db-0841e66aeda1');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div></div></div>
+</div>
+<p>When the path breaks and starts again higher up, that means there is some sequence missing from <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>. This will be represented by hyphens in <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code> in the final alignment. When it breaks and starts again to the right, it means that there is some sequence “missing” from sequence <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code>. In the final alignment, that will be represented by the hyphen (<cite>“-“</cite> character) in <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code>.</p>
+<p>The aim of an alignment algorithm is to find this path efficiently (in terms of time) given biological input sequences like.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A    CCTCTGAATAGGAGACAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT
+B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATAGGTGGCGCACATAGATTT
+</pre></div>
+</div>
+<p>The resulting alignment will look like the following.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A    CCTCTGAATAGG------AGACAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT
+B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
+</pre></div>
+</div>
+<p>In this result, each column of this alignment corresponds to characters that have descended from a common ancestor.</p>
+<p>Compared to the dotplot approach, it allows for more sophisticated “match”, i.e. the sequence state may be different but still considered a match. It is also efficient in terms of computation and identifies the optimal path <a class="footnote-reference brackets" href="#id5" id="id4">2</a> through the matrix.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>The use of the word optimal in this case means given a specific model, which we will define. There can, however, be multiple solutions (paths) that are equal in terms of the alignment score. In this instance, there are multiple optimal solutions.</p>
+</dd>
+</dl>
+<p>The NW algorithm works via building an alignment from solutions of smaller alignments. Instead of a graph, we now think in terms of a matrix. This matrix shares the row and column labelling as that for <a class="reference internal" href="dotplot.html#dotplot-matrix"><span class="std std-ref">the dotplot</span></a> but has some differences.</p>
+<p>In the dotplot matrix, elements in the matrix simply reflect presence absence of a match between the two sequences. For NW, the values correspond to <em>the score of the optimal alignment up to that point</em>.</p>
+<p>We need 4 things for the NW algorithm  <a class="footnote-reference brackets" href="#id7" id="id6">3</a>:</p>
+<dl class="footnote brackets">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id6">3</a></span></dt>
+<dd><p>I’m presenting the algorithm of <a class="bibtex reference internal" href="#gotoh-1982aa" id="id8">[Got82]</a>.</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><p>states matched, score = 1</p></li>
-<li><p>states mismatched, score = -1</p></li>
-<li><p>gap insertion / deletion (<span class="math notranslate nohighlight">\(\delta\)</span>), score = -1</p></li>
+<li><p>a scoring system</p></li>
+<li><p>a matrix of “path scores”</p></li>
+<li><p>a corresponding matrix of “path choices”</p></li>
+<li><p>a way of recovering the alignment from the path choices</p></li>
 </ul>
+<div class="section" id="the-scoring-system">
+<span id="index-0"></span><h3><span class="section-number">6.16.1.1. </span>The scoring system<a class="headerlink" href="#the-scoring-system" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is a linear gap score</p>
+<p>To simplify the following discussion, I will only refer to DNA states for my examples but emphasise that the same reasoning applies to protein sequences.</p>
 </div>
+<p>For any pair of sequence states <a class="footnote-reference brackets" href="#id12" id="id9">4</a> (nucleotides) we define a score function <span class="math notranslate nohighlight">\(s(i, j)\)</span>, where <span class="math notranslate nohighlight">\(i, j\)</span> are the nucleotides being compared from sequences <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>. This function <span class="math notranslate nohighlight">\(s()\)</span> returns a score that the two nucleotides are a “match”. Typically there are distinct values for when the two states are the same (<span class="math notranslate nohighlight">\(i=j\)</span>), compared to when the states are different (<span class="math notranslate nohighlight">\(i\neq j\)</span>). For our purpose, we start by using the exact same scoring function as NW <a class="bibtex reference internal" href="#needleman-1970aa" id="id10">[NW70]</a>. I their case <span class="math notranslate nohighlight">\(s(i, j)\)</span> returns 1 when <span class="math notranslate nohighlight">\(i=j\)</span> and -1 otherwise. We also define a gap introduction score, <span class="math notranslate nohighlight">\(\delta=-1\)</span> <a class="footnote-reference brackets" href="#id13" id="id11">5</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id9">4</a></span></dt>
+<dd><p>The word “state” refers to a single character in the corresponding biological alphabet. For instance, for DNA, the valid states are A, C, G and T.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id11">5</a></span></dt>
+<dd><p>This is a linear gap score, meaning that each additional gap character has the same score.</p>
+</dd>
+</dl>
 </div>
-<div class="section" id="scored-match-mismatch">
-<h3><span class="section-number">6.16.1.2. </span>Scored match / mismatch<a class="headerlink" href="#scored-match-mismatch" title="Permalink to this headline">¶</a></h3>
-<p>We construct a matrix <span class="math notranslate nohighlight">\(F\)</span>, such that <span class="math notranslate nohighlight">\(F[i, j]\)</span> is the score for the <em>best</em> alignment up to <span class="math notranslate nohighlight">\(i,j\)</span>. <span class="math notranslate nohighlight">\(F\)</span> is built recursively using the following cases:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}F[i,j] = \max
-\begin{cases}
-F[i-1, j-1] + score(S_1[i], S_2[j])\\
-F[i-1, j] + \delta\\
-F[i, j-1] + \delta\\
-\end{cases}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(score(S_1[i], S_2[j])\)</span> is the <em>score</em> for the match of position <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> from sequences <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> respectively.</p>
-<p>If we set <span class="math notranslate nohighlight">\(i=1,j=1\)</span>, then the possible alignment paths leading to cell <span class="math notranslate nohighlight">\(X[i,j]\)</span> are:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\((i,j-1)\)</span>, from <span class="math notranslate nohighlight">\(\leftarrow\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((i-1,j)\)</span>, from <span class="math notranslate nohighlight">\(\uparrow\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((i-1,j-1)\)</span>, from <span class="math notranslate nohighlight">\(\nwarrow\)</span></p></li>
-</ul>
-<p>We arrive at <span class="math notranslate nohighlight">\(F[1, 1]\)</span>, <span class="math notranslate nohighlight">\(X\)</span>, by adding <span class="math notranslate nohighlight">\(\delta\)</span> to the <span class="math notranslate nohighlight">\(F\)</span> from each of the possible flanking cells and take the maximum of these. (<span class="math notranslate nohighlight">\(\delta\)</span>, the mismatch and gap insertion penalties, equal <span class="math notranslate nohighlight">\(-1\)</span>.)</p>
-<table class="docutils align-default" id="id3">
-<caption><span class="caption-text">The 3 possible paths leading to cell <span class="math notranslate nohighlight">\(F[i, j]\)</span></span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<div class="section" id="a-matrix-of-path-scores">
+<h3><span class="section-number">6.16.1.2. </span>A matrix of path scores<a class="headerlink" href="#a-matrix-of-path-scores" title="Permalink to this headline">¶</a></h3>
+<p>We illustrate the notion of the path matrix (which we denote <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>), by considering the calculation of the score in the cell <span class="math notranslate nohighlight">\(\mathcal{P}[i, j]\)</span>.</p>
+<table class="docutils align-default" id="path-table">
+<caption><span class="caption-text">The path scores matrix <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>. The 3 possible paths leading to cell <span class="math notranslate nohighlight">\(\mathcal{P}[i, j]\)</span>. <span class="math notranslate nohighlight">\(i, j\)</span> refer to positions within sequence <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> respectively.</span><a class="headerlink" href="#path-table" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -285,49 +374,195 @@ F[i, j-1] + \delta\\
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>seq1 / seq2</p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(\delta\)</span></p></th>
-<th class="head"><p><strong>G</strong> (j=0)</p></th>
-<th class="head"><p><strong>A</strong> (j=1)</p></th>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">A</span></code> / <code class="docutils literal notranslate"><span class="pre">B</span></code></p></th>
+<th class="head"><p>…</p></th>
+<th class="head"><p>G <sub>j-1</sub></p></th>
+<th class="head"><p>A <sub>j</sub></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\delta\)</span></p></td>
-<td><p>0</p></td>
+<tr class="row-even"><td><p>…</p></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>G</strong> (i=0)</p></td>
+<tr class="row-odd"><td><p>G<sub>i-1</sub></p></td>
 <td></td>
 <td><p><span class="math notranslate nohighlight">\([i-1,j-1]\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\([i-1,j]\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>G</strong> (i=1)</p></td>
+<tr class="row-even"><td><p>G<sub>i</sub></p></td>
 <td></td>
 <td><p><span class="math notranslate nohighlight">\([i,j-1]\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\leftarrow \nwarrow \uparrow\)</span></p></td>
 </tr>
 </tbody>
 </table>
+<p>As indicated in the table, there are 3 different ways of arriving at the alignment score ending at this cell. In the case of either a <span class="math notranslate nohighlight">\(\leftarrow, \uparrow\)</span>, <span class="math notranslate nohighlight">\(\mathcal{P}[i, j]\)</span> is aligned to a gap character. In the case of <span class="math notranslate nohighlight">\(\leftarrow\)</span>, the gap is in <code class="docutils literal notranslate"><span class="pre">A</span></code> and in the case of <span class="math notranslate nohighlight">\(\uparrow\)</span> the gap is in <code class="docutils literal notranslate"><span class="pre">B</span></code>. The <span class="math notranslate nohighlight">\(\nwarrow\)</span> indicates a diagonal move and corresponds to a match. The selection of which direction gives the optimal alignment path to <span class="math notranslate nohighlight">\(i, j\)</span> stems from the following function</p>
+<div class="math notranslate nohighlight" id="equation-path-score">
+<span class="eqno">(1)<a class="headerlink" href="#equation-path-score" title="Permalink to this equation">¶</a></span>\[\begin{split}\mathcal{P}[i, j] = \max
+\begin{cases}
+\mathcal{P}[i-1, j-1] + score(A[i], B[j])\\
+\mathcal{P}[i-1, j] + \delta\\
+\mathcal{P}[i, j-1] + \delta\\
+\end{cases}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(score(A[i], B[j])\)</span> is the <em>score</em> for the match of position <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> from sequences <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> respectively. Being able to choose amongst these possible paths requires that the scores for all 3 possible input cells (<span class="math notranslate nohighlight">\(\mathcal{P}[i-1,j]\)</span>, <span class="math notranslate nohighlight">\(\mathcal{P}[i-1,j-1]\)</span>, mathcal{P}[i,j-1]) already exist. And if we tried to compute the score for any of those cells we would discover that we needed the scores of their 3 input cells, and so on. This is a recursive function, which we address below.</p>
+</div>
+<div class="section" id="the-path-choices-matrix">
+<h3><span class="section-number">6.16.1.3. </span>The path choices matrix<a class="headerlink" href="#the-path-choices-matrix" title="Permalink to this headline">¶</a></h3>
+<p>If we want to recover the optimal alignment path through the matrix, we need to be recording at every cell, which of the possible input directions was chosen. We will refer to this <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> and it’s a companion matrix to <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>, with exactly the same dimensions.</p>
+</div>
+<div class="section" id="handling-the-recursion">
+<h3><span class="section-number">6.16.1.4. </span>Handling the recursion<a class="headerlink" href="#handling-the-recursion" title="Permalink to this headline">¶</a></h3>
+<p>We have to start somewhere, and the first issue we encounter is a need to handle the boundaries. If we are on the top row, <span class="math notranslate nohighlight">\(i=0\)</span>. We are restricted to a single possible input path (<span class="math notranslate nohighlight">\(\leftarrow\)</span>, the others are undefined). As a consequence, these boundary elements consist of an alignment of one sequence to a prefix of only gaps. With this notion in place, we then introduce the beginning state row/column into the <span class="math notranslate nohighlight">\(\mathcal{P, T}\)</span> matrices. Thus these matrices both have dimensions <span class="math notranslate nohighlight">\(n+1, m+1\)</span> where <span class="math notranslate nohighlight">\(n, m\)</span> are the lengths of sequences <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> respectively. Given the form of <a class="reference external" href="path_score">equation</a>.</p>
 </div>
 </div>
 <div class="section" id="demonstrating-nw-on-an-example">
 <h2><span class="section-number">6.16.2. </span>Demonstrating NW on an example<a class="headerlink" href="#demonstrating-nw-on-an-example" title="Permalink to this headline">¶</a></h2>
-<p>We apply NW to the two sequences: <code class="docutils literal notranslate"><span class="pre">GAGTAC</span></code> and <code class="docutils literal notranslate"><span class="pre">GGTAC</span></code> gradually building up the algorithmic components in Python. We first define the scoring function:</p>
+<p>We apply NW to the following two sequences, gradually building up the algorithmic components in Python. We will use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays to implement this algorithm.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">seq1</span> <span class="o">=</span> <span class="s2">&quot;GGTAC&quot;</span>
+<span class="n">seq2</span> <span class="o">=</span> <span class="s2">&quot;GAGTAC&quot;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="section" id="create-the-data-structures-we-need">
+<h3><span class="section-number">6.16.2.1. </span>Create the data structures we need<a class="headerlink" href="#create-the-data-structures-we-need" title="Permalink to this headline">¶</a></h3>
+<p>Because of the boundary condition, the dimensions of our matrices are +1 that of the sequence lengths.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dim_x</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">dim_y</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>We next define the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> matrix (which represents <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>). We will specify this as a float array populated with zeros to start.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="n">path_scores</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">dim_x</span><span class="p">,</span> <span class="n">dim_y</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>As described above, every boundary cell has only one possible entry path. We define index <code class="docutils literal notranslate"><span class="pre">i</span></code> as the row index, and <code class="docutils literal notranslate"><span class="pre">j</span></code> as the column index. Then for every boundary cell where <span class="math notranslate nohighlight">\(i=0, j\)</span>, the only possible path into it is from <span class="math notranslate nohighlight">\(i=0, j-1\)</span>. (The same applies to the other boundary, but noting in that case <span class="math notranslate nohighlight">\(j=0\)</span>). In this case, the scores for the boundary cells can be pre-computed as simply the index multiplied by <span class="math notranslate nohighlight">\(\delta\)</span>. We represent the latter parameter in python as <code class="docutils literal notranslate"><span class="pre">delta</span></code> and apply this operation to the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> matrix across both boundaries.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">delta</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dim_x</span><span class="p">):</span>
+    <span class="n">path_scores</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">delta</span> <span class="o">*</span> <span class="n">i</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dim_y</span><span class="p">):</span>
+    <span class="n">path_scores</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">delta</span> <span class="o">*</span> <span class="n">j</span>
+
+<span class="n">path_scores</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0., -1., -2., -3., -4., -5., -6.],
+       [-1.,  0.,  0.,  0.,  0.,  0.,  0.],
+       [-2.,  0.,  0.,  0.,  0.,  0.,  0.],
+       [-3.,  0.,  0.,  0.,  0.,  0.,  0.],
+       [-4.,  0.,  0.,  0.,  0.,  0.,  0.],
+       [-5.,  0.,  0.,  0.,  0.,  0.,  0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define a <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> matrix (which represents <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>). We specify this as an <code class="docutils literal notranslate"><span class="pre">object</span></code> array since we want to store tuples inside it. Specifically, we will store the <span class="math notranslate nohighlight">\(i, j\)</span> coordinates for the optimal alignment leading into the current cell. Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, we initialise the matrix as being empty.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">path_choices</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">dim_x</span><span class="p">,</span> <span class="n">dim_y</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>We then address the boundary conditions. Since boundary cells can have only one input path, and since the <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> array records that path, we can easily initialise the array. But note that we need to point into the <em>previous cell</em>, so we must start our loops from the value <code class="docutils literal notranslate"><span class="pre">1</span></code>, not <code class="docutils literal notranslate"><span class="pre">0</span></code>. We also set the special value of <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> for the vert first cell.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">path_choices</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim_x</span><span class="p">):</span>
+    <span class="n">path_choices</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim_y</span><span class="p">):</span>
+    <span class="n">path_choices</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">path_choices</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[(0, 0), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0)],
+       [(0, 0), None, None, None, None, None, None],
+       [(1, 0), None, None, None, None, None, None],
+       [(2, 0), None, None, None, None, None, None],
+       [(3, 0), None, None, None, None, None, None],
+       [(4, 0), None, None, None, None, None, None]], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>All the cells with the value <code class="docutils literal notranslate"><span class="pre">None</span></code> will be completed during the calculation of the scores.</p>
+</div>
+<div class="section" id="the-scoring-function">
+<h3><span class="section-number">6.16.2.2. </span>The scoring function<a class="headerlink" href="#the-scoring-function" title="Permalink to this headline">¶</a></h3>
+<p>We write this as a function since it will be called for every comparison of sequence states.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score_match</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
         <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">val</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">val</span>
 
-<span class="n">score_func</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
-<span class="n">score_func</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="n">score_func</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">score_match</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">score_match</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-1
@@ -335,8 +570,100 @@ F[i, j-1] + \delta\\
 </div>
 </div>
 </div>
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-text">The completed score matrix</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+</div>
+<div class="section" id="computing-the-best-score-and-path-for-a-particular-comparison">
+<h3><span class="section-number">6.16.2.3. </span>Computing the best score and path for a particular comparison<a class="headerlink" href="#computing-the-best-score-and-path-for-a-particular-comparison" title="Permalink to this headline">¶</a></h3>
+<p>I write a function that corresponds to the algorithmic implementation of <a class="reference external" href="path_score">equation</a>. In this case, I’m anticipating what information I need – the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> matrix, the coordinates of the current cell, the score for the states represented by that cell and the gap penalty (<code class="docutils literal notranslate"><span class="pre">delta</span></code>).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_best_score_path</span><span class="p">(</span><span class="n">path_scores</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">delta</span><span class="p">):</span>
+    <span class="n">match_path</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">match_score</span> <span class="o">=</span> <span class="n">path_scores</span><span class="p">[</span><span class="n">match_path</span><span class="p">]</span> <span class="o">+</span> <span class="n">score</span>
+
+    <span class="n">left_path</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">left_score</span> <span class="o">=</span> <span class="n">path_scores</span><span class="p">[</span><span class="n">left_path</span><span class="p">]</span> <span class="o">+</span> <span class="n">delta</span>
+
+    <span class="n">up_path</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+    <span class="n">up_score</span> <span class="o">=</span> <span class="n">path_scores</span><span class="p">[</span><span class="n">up_path</span><span class="p">]</span> <span class="o">+</span> <span class="n">delta</span>
+
+    <span class="c1"># make a list with [[score, path coord], ..] so we can take max</span>
+    <span class="c1"># This function will select based on score first, then break ties using</span>
+    <span class="c1"># path coord</span>
+
+    <span class="n">best_score_path</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="p">[</span><span class="n">match_score</span><span class="p">,</span> <span class="n">match_path</span><span class="p">],</span>
+            <span class="p">[</span><span class="n">left_score</span><span class="p">,</span> <span class="n">left_path</span><span class="p">],</span>
+            <span class="p">[</span><span class="n">up_score</span><span class="p">,</span> <span class="n">up_path</span><span class="p">],</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">best_score_path</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="section" id="populating-the-path-scores-and-path-choices-matrices">
+<h3><span class="section-number">6.16.2.4. </span>Populating the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> and <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> matrices<a class="headerlink" href="#populating-the-path-scores-and-path-choices-matrices" title="Permalink to this headline">¶</a></h3>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">base1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">seq1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">base2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">seq2</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">score_match</span><span class="p">(</span><span class="n">base1</span><span class="p">,</span> <span class="n">base2</span><span class="p">)</span>
+        <span class="n">best_score</span><span class="p">,</span> <span class="n">best_path</span> <span class="o">=</span> <span class="n">get_best_score_path</span><span class="p">(</span><span class="n">path_scores</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+        <span class="n">path_scores</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">best_score</span>
+        <span class="n">path_choices</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">best_path</span>
+
+<span class="n">path_scores</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0., -1., -2., -3., -4., -5., -6.],
+       [-1.,  1.,  0., -1., -2., -3., -4.],
+       [-2.,  0.,  0.,  1.,  0., -1., -2.],
+       [-3., -1., -1.,  0.,  2.,  1.,  0.],
+       [-4., -2.,  0., -1.,  1.,  3.,  2.],
+       [-5., -3., -1., -1.,  0.,  2.,  4.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following table uses bold font to emphasise the path choices that are made to produce the alignment and provides the indices to make it clearer how the path is interpreted.</p>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">The completed score matrix</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 13%" />
@@ -348,18 +675,18 @@ F[i, j-1] + \delta\\
 <col style="width: 13%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(\mathbf \delta(x=0)\)</span></p></th>
-<th class="head"><p>G <span class="math notranslate nohighlight">\((x=1)\)</span></p></th>
-<th class="head"><p>A <span class="math notranslate nohighlight">\((x=2)\)</span></p></th>
-<th class="head"><p>G <span class="math notranslate nohighlight">\((x=3)\)</span></p></th>
-<th class="head"><p>T <span class="math notranslate nohighlight">\((x=4)\)</span></p></th>
-<th class="head"><p>A <span class="math notranslate nohighlight">\((x=5)\)</span></p></th>
-<th class="head"><p>C <span class="math notranslate nohighlight">\((x=6)\)</span></p></th>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">seq1[i]</span> <span class="pre">\</span> <span class="pre">seq2[j]</span></code></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathbf \delta_0\)</span></p></th>
+<th class="head"><p>G <sub>1</sub></p></th>
+<th class="head"><p>A <sub>2</sub></p></th>
+<th class="head"><p>G <sub>3</sub></p></th>
+<th class="head"><p>T <sub>4</sub></p></th>
+<th class="head"><p>A <sub>5</sub></p></th>
+<th class="head"><p>C <sub>6</sub></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\delta(y=0)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\delta_0\)</span></p></td>
 <td><p><strong>0</strong></p></td>
 <td><p>-1</p></td>
 <td><p>-2</p></td>
@@ -368,7 +695,7 @@ F[i, j-1] + \delta\\
 <td><p>-5</p></td>
 <td><p>-6</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>G</strong> <span class="math notranslate nohighlight">\((y=1)\)</span></p></td>
+<tr class="row-odd"><td><p><strong>G</strong>  <sub>1</sub></p></td>
 <td><p>-1</p></td>
 <td><p><strong>1</strong></p></td>
 <td><p><strong>0</strong></p></td>
@@ -377,7 +704,7 @@ F[i, j-1] + \delta\\
 <td><p>-3</p></td>
 <td><p>-4</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>G</strong> <span class="math notranslate nohighlight">\((y=2)\)</span></p></td>
+<tr class="row-even"><td><p><strong>G</strong>  <sub>2</sub></p></td>
 <td><p>-2</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
@@ -386,7 +713,7 @@ F[i, j-1] + \delta\\
 <td><p>-1</p></td>
 <td><p>-2</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>T</strong> <span class="math notranslate nohighlight">\((y=3)\)</span></p></td>
+<tr class="row-odd"><td><p><strong>T</strong>  <sub>3</sub></p></td>
 <td><p>-3</p></td>
 <td><p>-1</p></td>
 <td><p>-1</p></td>
@@ -395,7 +722,7 @@ F[i, j-1] + \delta\\
 <td><p>1</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>A</strong> <span class="math notranslate nohighlight">\((y=4)\)</span></p></td>
+<tr class="row-even"><td><p><strong>A</strong>  <sub>4</sub></p></td>
 <td><p>-4</p></td>
 <td><p>-2</p></td>
 <td><p>0</p></td>
@@ -404,7 +731,7 @@ F[i, j-1] + \delta\\
 <td><p><strong>3</strong></p></td>
 <td><p>2</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>C</strong> <span class="math notranslate nohighlight">\((y=5)\)</span></p></td>
+<tr class="row-odd"><td><p><strong>C</strong>  <sub>5</sub></p></td>
 <td><p>-5</p></td>
 <td><p>-3</p></td>
 <td><p>-1</p></td>
@@ -415,15 +742,133 @@ F[i, j-1] + \delta\\
 </tr>
 </tbody>
 </table>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">path_choices</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[(0, 0), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0)],
+       [(0, 0), (0, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5)],
+       [(1, 0), (1, 1), (1, 1), (1, 2), (2, 3), (2, 4), (2, 5)],
+       [(2, 0), (2, 1), (2, 2), (2, 3), (2, 3), (3, 4), (3, 5)],
+       [(3, 0), (3, 1), (3, 1), (4, 2), (3, 4), (3, 4), (4, 5)],
+       [(4, 0), (4, 1), (4, 2), (4, 2), (4, 4), (4, 5), (4, 5)]],
+      dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-exciting-bit-the-viterbi-algorithm">
+<h3><span class="section-number">6.16.2.5. </span>The exciting bit – the Viterbi algorithm!<a class="headerlink" href="#the-exciting-bit-the-viterbi-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>The NW algorithm is a solution to the complex challenge of finding the optimal global alignment. Up to now it’s been quite mundane and very conventional. The elegance and efficiency of NW stems from this step – the traceback. This part is referred to as the Viterbi algorithm, which is a <span class="target" id="index-1"></span>dynamic programming solution for efficiently tracing back the optimal path through the matrix. It’s referred to as a traceback since the final path score is at the very end of the matrix.</p>
+<p>We will solve this using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop since we don’t know precisely how many steps this will take. Our <code class="docutils literal notranslate"><span class="pre">while</span></code> loop exit condition will be based on having reached a <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> cell whose value is <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>. Since we are tracing back the alignment, our initial coordinate for <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> is the very last cell.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span>
+<span class="n">j</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>We then define two lists which we will use to hold the aligned sequences as they are built.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">aligned_1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">aligned_2</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="c1"># the next step backwards</span>
+    <span class="n">i_next</span><span class="p">,</span> <span class="n">j_next</span> <span class="o">=</span> <span class="n">path_choices</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+    <span class="n">base1</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span> <span class="k">if</span> <span class="n">i_next</span> <span class="o">==</span> <span class="n">i</span> <span class="k">else</span> <span class="n">seq1</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">base2</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span> <span class="k">if</span> <span class="n">j_next</span> <span class="o">==</span> <span class="n">j</span> <span class="k">else</span> <span class="n">seq2</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">aligned_1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">base1</span><span class="p">)</span>
+    <span class="n">aligned_2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">base2</span><span class="p">)</span>
+
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i_next</span><span class="p">,</span> <span class="n">j_next</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>So that didn’t fail – awesome! But our sequences are actually in reverse order (we did start at the end of the alignment after all). So to recover them in their correct orientation, we simply reverse the lists and transform them into a string.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">aligned_1</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">aligned_1</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aligned_1</span><span class="p">)</span>
+
+<span class="n">aligned_2</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">aligned_2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aligned_2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;seq1: </span><span class="si">{</span><span class="n">aligned_1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;seq2: </span><span class="si">{</span><span class="n">aligned_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>seq1: G-GTAC
+seq2: GAGTAC
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aligning-the-sequences-from-the-dotplot-example">
+<h2><span class="section-number">6.16.3. </span>Aligning the sequences from the dotplot example<a class="headerlink" href="#aligning-the-sequences-from-the-dotplot-example" title="Permalink to this headline">¶</a></h2>
+<p>So how well does our algorithm go in aligning the sequences we used for the doplot example at the top? If you try it, you will likely see the following.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A: CCTCTGAATAGG--A-GA---CAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT
+B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
+</pre></div>
+</div>
+<p>This is not the same. The single large gap in <code class="docutils literal notranslate"><span class="pre">A</span></code> from the above has now been fragmented into multiple smaller gaps. This illustrates a limitation of the linear gap score. Examination of real biological sequences indicates that indels tend to affect multiple adjacent positions. For instance, in a protein coding gene indels sizes are products of 3. This has the effect of maintaining the reading frame. A more advanced indel (e.g. an affine gap) model is used to represent this property. We don’t address that here aside from saying this is just one of the ways alignment algorithms have improved since the original NW publication.</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1><span class="section-number">6.17. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>Convert the above code into functions so that you can align any pair of sequences you like.</p></li>
+<li><p>Write some tests of your functions to make they behave appropriately. For instance, if you give two sequences that are completely different (e.g. “AAAA” and “TTTT”), what should you see? Does the algorithm generate that?</p></li>
+<li><p>Modify the scoring function to be more tuned to DNA sequences. Specifically, allow transitions (changes between pyrimidines or between purines) to have a higher match score than transversions, but less than a perfect match.</p></li>
+</ol>
 <hr class="docutils" />
 <p class="rubric">Citations</p>
 <p id="bibtex-bibliography-seqcomp/pairwise_alignment-0"><dl class="citation">
-<dt class="bibtex label" id="needleman-1970aa"><span class="brackets">NW70</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dt class="bibtex label" id="gotoh-1982aa"><span class="brackets"><a class="fn-backref" href="#id8">Got82</a></span></dt>
+<dd><p>Osamu Gotoh. An improved algorithm for matching biological sequences. <em>Journal of Molecular Biology</em>, 162:705 – 708, 1982. URL: <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/0022283682903989">http://www.sciencedirect.com/science/article/pii/0022283682903989</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/0022-2836(82)90398-9">doi:https://doi.org/10.1016/0022-2836(82)90398-9</a>.</p>
+</dd>
+<dt class="bibtex label" id="needleman-1970aa"><span class="brackets">NW70</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id10">2</a>)</span></dt>
 <dd><p>Saul B. Needleman and Christian D. Wunsch. A general method applicable to the search for similarities in the amino acid sequence of two proteins. <em>Journal of Molecular Biology</em>, 48:443–453, 1970. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/0022283670900574">http://linkinghub.elsevier.com/retrieve/pii/0022283670900574</a>, <a class="reference external" href="https://doi.org/10.1016/0022-2836(70)90057-4">doi:10.1016/0022-2836(70)90057-4</a>.</p>
 </dd>
 </dl>
 </p>
-</div>
 </div>
 
 

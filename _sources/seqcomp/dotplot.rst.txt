@@ -29,6 +29,7 @@ The original dotplot algorithm
 Consider two sequences, `X` and `Y` with lengths `n` and `m` respectively. We establish the matches between them using the following algorithm (written as `pseudocode <https://en.wikipedia.org/wiki/Pseudocode>`_) [1]_:
 
 .. code-block:: text
+    :name: dotplot_algorithm
     
     create a matrix of ones, matches, with dimensions n x m
     for i in 1 ... n:
@@ -41,14 +42,24 @@ Consider two sequences, `X` and `Y` with lengths `n` and `m` respectively. We es
 
 .. [1] Because of the Plotly colour scale, we use values of 0 to indicate a match which will display as black, 1 means a mismatch which will be white. For the two sample sequences ``"AGCGT"`` and ``"AT"`` we construct by hand the resulting.
 
+.. code-block:: python
+    :name: dotplot_matrix
+    
+    #           A  G  C  G  T
+    matches = [[0, 1, 1, 1, 1],  #  A
+               [1, 1, 1, 1, 0]]  #  T
+
+
+.. jupyter-execute::
+    :hide-code:
+
+    matches = [[0, 1, 1, 1, 1],  #  A
+               [1, 1, 1, 1, 0]]  #  T
+
 .. jupyter-execute::
     :linenos:
 
     import plotly.express as px
-
-    #        A  G  C  G  T
-    matches = [[0, 1, 1, 1, 1],  #  A
-               [1, 1, 1, 1, 0]]  #  T
 
     fig = px.imshow(
         matches,
@@ -68,7 +79,16 @@ Most of the above code is concerned with simplifying the plotly display. Aside f
 Exercises
 =========
 
-#. Implement the simple dotplot algorithm. Write a function that takes two sequences and returns an array with 1 where the sequences do not match and 0 where they do.
+#. Implement the simple dotplot algorithm. Write a function that takes the following two sequences and returns an array with 1 where the sequences do not match and 0 where they do.
+
+    .. code-block:: python
+    
+        seq1 = "CCTCTGAATAGGAGACAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT"
+        seq2 = "CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATAGGTGGCGCACATAGATTT"
+
+#. Write a function that returns cartesian coordinates for the same sequences.
+
+#. Plot the cartesian coordinates using a scatter plot, with axis labels representing the sequence names.
 
 .. todo:: get short examples of DNA sequences with repeats and and short examples of amino acid sequences, make generating dotplot using those an exercise and get them to interpret
 

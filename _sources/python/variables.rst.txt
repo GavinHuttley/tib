@@ -71,7 +71,7 @@ Exercises
         a = 4
         b = 6
 
-        Do these assignments on a single line (without using a ``;``).
+    Do these assignments on a single line (without using a ``;``).
 
 #. Consider execution of the following
 
@@ -80,6 +80,6 @@ Exercises
         a = "2.2"
         a = 2.2
 
-        What type is ``a``?
+    What type is ``a``?
 
 #. Define a variable using invalid syntax, i.e. your code should generate a ``SyntaxError``.
