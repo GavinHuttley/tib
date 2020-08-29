@@ -3,9 +3,11 @@
 Experimental procedures for detecting functionally related sequences
 ====================================================================
 
-Sequences that a possess a shared functional property (e.g. protein binding) will share sequence features in common. For instance, the DNA sequences that are able to bind TBP. What sort of experiments can be conducted that allow identifying whether there is a particular diagnostic DNA sequence motif to which a protein binds? Whatever the nature of the experiment, we need a means for isolating a collection of sequences that are enriched for those that bind to the protein of interest. The experiment also needs to be able to identify individual sequences that have bound. Once that data exists we enter the world of computation and statistical analysis.
+Since DNA sequences can encode function, it holds that different sequences demonstrated to encode a comparable property should be similar. For instance, different sequences that are able to bind a specific protein (e.g. TBP) will share sequence features in common. This perspective motivates development of experimental and statistical techniques to uncover how such functional information is encoded.
 
-There are a variety experimental procedures that can used for this purpose :cite:`Geertz:2010aa`. I will discuss just two of those here.
+What sort of experiments can be conducted that allow identifying whether there is a particular diagnostic DNA sequence motif to which a protein binds? Whatever the nature of the experiment, we need a means for isolating a collection of sequences that are enriched for those that bind to the protein of interest. The experiment also needs to be able to identify the sequence of DNA molecules that have bound. Once that data exists we enter the world of computation and statistical analysis.
+
+There are a variety of experimental procedures that can used for this purpose :cite:`Geertz:2010aa`. I will discuss just two of those here.
 
 .. index:: SELEX
 
@@ -26,7 +28,7 @@ This procedure is entirely *in vitro*. The inputs are a substantial amount of en
 ChIP -- chromatin immunoprecipitation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ChIP-seq is an *in vivo* process. A precursor for this technique is availability of an antibody with high specificity for the protein of interest. With this in place, the cellular material of interest is exposed to formaldehyde which causes formation of cross linking (via covalent bonds) between DNA and whatever else is bound to it. The cells are then lysed and the DNA protein mix extracted and sheared [2]_ to a size suitable for the sequencing technology that will be used. You then expose the sheared DNA+protein mixture to the antibody and precipitate bound complexes. This step is followed by chemistry that reverses the cross linking, the protein is removed and the collection of DNA fragments are sequenced.
+ChIP-seq is an *in vivo* process. A precursor for this technique is the availability of an antibody with high specificity for the protein of interest. With this in place, the cellular material of interest is exposed to formaldehyde which causes formation of cross linking (via covalent bonds) between DNA and whatever else is bound to it. The cells are then lysed and the DNA protein mix extracted and sheared [2]_ to a size suitable for the sequencing technology that will be used. You then expose the sheared DNA+protein mixture to the antibody and precipitate bound complexes. This step is followed by chemistry that reverses the cross linking, the protein is removed and the collection of DNA fragments are sequenced.
 
 .. [2] Sonication being one approach.
 

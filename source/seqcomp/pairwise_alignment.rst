@@ -58,7 +58,7 @@ A more elaborate case is presented in the dotplot below. There are obvious diago
     fig.layout.showlegend = False
     fig.show()
 
-When the path breaks and starts again higher up, that means there is some sequence missing from ``"B"``. This will be represented by hyphens in ``"B"`` in the final alignment. When it breaks and starts again to the right, it means that there is some sequence "missing" from sequence ``"A"``. In the final alignment, that will be represented by the hyphen (`"-"` character) in ``"A"``.
+When the path breaks and starts again higher up, that means there is some sequence missing from ``"A"``. This will be represented by hyphens in ``"A"`` in the final alignment. When it breaks and starts again to the right, it means that there is some sequence "missing" from sequence ``"B"``. In the final alignment, that will be represented by the hyphen (`"-"` character) in ``"B"``.
 
 The aim of an alignment algorithm is to find this path efficiently (in terms of time) given biological input sequences like.
 
