@@ -3,7 +3,9 @@
 Experimental procedures for detecting functionally related sequences
 ====================================================================
 
-Sequences that possess a shared functional property (e.g. protein binding) will share sequence features in common. For instance, the DNA sequences that are able to bind TBP. What sort of experiments can be conducted that allow identifying whether there is a particular diagnostic DNA sequence motif to which a protein binds? Whatever the nature of the experiment, we need a means for isolating a collection of sequences that are enriched for those that bind to the protein of interest. The experiment also needs to be able to identify individual sequences that have bound. Once that data exists we enter the world of computation and statistical analysis.
+Since DNA sequences can encode function, it holds that different sequences demonstrated to encode a comparable property should be similar. For instance, different sequences that are able to bind a specific protein (e.g. TBP) will share sequence features in common. This perspective motivates development of experimental and statistical techniques to uncover how such functional information is encoded.
+
+What sort of experiments can be conducted that allow identifying whether there is a particular diagnostic DNA sequence motif to which a protein binds? Whatever the nature of the experiment, we need a means for isolating a collection of sequences that are enriched for those that bind to the protein of interest. The experiment also needs to be able to identify the sequence of DNA molecules that have bound. Once that data exists we enter the world of computation and statistical analysis.
 
 There are a variety of experimental procedures that can used for this purpose :cite:`Geertz:2010aa`. I will discuss just two of those here.
 
