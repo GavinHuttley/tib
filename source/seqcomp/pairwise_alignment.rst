@@ -22,7 +22,6 @@ What we typically observe, as in this case, is the outcomes of the process.
     seq1  ACAGT
     seq2  AT
 
-
 As the "history" is hidden, we must infer an *alignment* that can then be applied to deduce what happened. There are 2 possibilities in this instance.
 
 ::
@@ -113,13 +112,13 @@ We illustrate the notion of the path matrix (which we denote :math:`\mathcal{P}`
 
 .. csv-table:: The path scores matrix :math:`\mathcal{P}`. The 3 possible paths leading to cell :math:`\mathcal{P}[i, j]`. :math:`i, j` refer to positions within sequence ``A``, ``B`` respectively.
     :name: path_table
-    :header: ``A`` / ``B``, ..., G\ :sub:`j-1`,A\ :sub:`j`
+    :header: ``A`` |backslash| ``B``, ..., G\ :sub:`j-1`,A\ :sub:`j`
 
     ..., , ,
     G\ :sub:`i-1`, ,":math:`[i-1,j-1]`",":math:`[i-1,j]`"
     G\ :sub:`i`, ,":math:`[i,j-1]`", ":math:`\leftarrow \nwarrow \uparrow`"
 
-As indicated in the table, there are 3 different ways of arriving at the alignment score ending at this cell. In the case of either a :math:`\leftarrow, \uparrow`, :math:`\mathcal{P}[i, j]` is aligned to a gap character. In the case of :math:`\leftarrow`, the gap is in ``A`` and in the case of :math:`\uparrow` the gap is in ``B``. The :math:`\nwarrow` indicates a diagonal move and corresponds to a match. The selection of which direction gives the optimal alignment path to :math:`i, j` stems from the following function
+As indicated in the table, there are 3 different ways of arriving at the alignment score ending at this cell. In the case of either a :math:`\leftarrow, \uparrow`, the best alignment leading to :math:`\mathcal{P}[i, j]` was from a gap. In the case of :math:`\leftarrow`, the gap is in ``A`` and in the case of :math:`\uparrow` the gap is in ``B``. The :math:`\nwarrow` indicates a diagonal move and corresponds to an alignment path coming from a match. The selection of which direction gives the optimal alignment path to :math:`i, j` stems from the following function
 
 .. math::
     :label: path_score
@@ -131,7 +130,7 @@ As indicated in the table, there are 3 different ways of arriving at the alignme
     \mathcal{P}[i, j-1] + \delta\\
     \end{cases}
 
-where :math:`score(A[i], B[j])` is the *score* for the match of position :math:`i` and :math:`j` from sequences ``A`` and ``B`` respectively. Being able to choose amongst these possible paths requires that the scores for all 3 possible input cells (:math:`\mathcal{P}[i-1,j]`, :math:`\mathcal{P}[i-1,j-1]`, \mathcal{P}[i,j-1]) already exist. And if we tried to compute the score for any of those cells we would discover that we needed the scores of their 3 input cells, and so on. This is a recursive function, which we address below.
+where :math:`score(A[i], B[j])` is the *score* for the match of position :math:`i` and :math:`j` from sequences ``A`` and ``B`` respectively. Being able to choose amongst these possible paths requires that the scores for all 3 possible input cells (:math:`\mathcal{P}[i-1,j]`, :math:`\mathcal{P}[i-1,j-1]`, :math:`\mathcal{P}[i,j-1]`) already exist. And if we tried to compute the score for any of those cells we would discover that we needed the scores of their 3 input cells, and so on. This is a recursive function, which we address below.
 
 The path choices matrix
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -162,8 +161,8 @@ Because of the boundary condition, the dimensions of our matrices are +1 that of
 .. jupyter-execute::
     :linenos:
 
-    dim_x = len(seq1) + 1
-    dim_y = len(seq2) + 1
+    dim_r = len(seq1) + 1
+    dim_c = len(seq2) + 1
 
 We next define the ``path_scores`` matrix (which represents :math:`\mathcal{P}`). We will specify this as a float array populated with zeros to start.
 
@@ -172,29 +171,29 @@ We next define the ``path_scores`` matrix (which represents :math:`\mathcal{P}`)
 
     import numpy
 
-    path_scores = numpy.zeros((dim_x, dim_y), dtype=float)
+    path_scores = numpy.zeros((dim_r, dim_c), dtype=float)
 
-As described above, every boundary cell has only one possible entry path. We define index ``i`` as the row index, and ``j`` as the column index. Then for every boundary cell where :math:`i=0, j`, the only possible path into it is from :math:`i=0, j-1`. (The same applies to the other boundary, but noting in that case :math:`j=0`). In this case, the scores for the boundary cells can be pre-computed as simply the index multiplied by :math:`\delta`. We represent the latter parameter in python as ``delta`` and apply this operation to the ``path_scores`` matrix across both boundaries.
+As described above, every boundary cell has only one possible entry path. We define index ``r`` as the row index, and ``c`` as the column index. Then for every boundary cell where :math:`r=0, c`, the only possible path into it is from :math:`r=0, c-1`. (The same applies to the other boundary, but noting in that case :math:`c=0`). In this case, the scores for the boundary cells can be pre-computed as simply the index multiplied by :math:`\delta`. We represent the latter parameter in python as ``delta`` and apply this operation to the ``path_scores`` matrix across both boundaries.
 
 .. jupyter-execute::
     :linenos:
 
     delta = -1
 
-    for i in range(dim_x):
-        path_scores[i, 0] = delta * i
+    for r in range(dim_r):
+        path_scores[r, 0] = delta * r
 
-    for j in range(dim_y):
-        path_scores[0, j] = delta * j
+    for c in range(dim_c):
+        path_scores[0, c] = delta * c
 
     path_scores
 
-We define a ``path_choices`` matrix (which represents :math:`\mathcal{T}`). We specify this as an ``object`` array since we want to store tuples inside it. Specifically, we will store the :math:`i, j` coordinates for the optimal alignment leading into the current cell. Using ``numpy``, we initialise the matrix as being empty.
+We define a ``path_choices`` matrix (which represents :math:`\mathcal{T}`). We specify this as an ``object`` array since we want to store tuples inside it. Specifically, we will store the :math:`r, c` coordinates for the optimal alignment leading into the current cell. Using ``numpy``, we initialise the matrix as being empty.
 
 .. jupyter-execute::
     :linenos:
 
-    path_choices = numpy.empty((dim_x, dim_y), dtype=object)
+    path_choices = numpy.empty((dim_r, dim_c), dtype=object)
 
 We then address the boundary conditions. Since boundary cells can have only one input path, and since the ``path_choices`` array records that path, we can easily initialise the array. But note that we need to point into the *previous cell*, so we must start our loops from the value ``1``, not ``0``. We also set the special value of ``(0, 0)`` for the vert first cell.
 
@@ -203,11 +202,11 @@ We then address the boundary conditions. Since boundary cells can have only one 
 
     path_choices[0, 0] = (0, 0)
 
-    for i in range(1, dim_x):
-        path_choices[i, 0] = (i - 1, 0)
+    for r in range(1, dim_r):
+        path_choices[r, 0] = (r - 1, 0)
 
-    for j in range(1, dim_y):
-        path_choices[0, j] = (j - 1, 0)
+    for c in range(1, dim_c):
+        path_choices[0, c] = (c - 1, 0)
 
     path_choices
 
@@ -228,8 +227,12 @@ We write this as a function since it will be called for every comparison of sequ
             val = -1
         return val
 
-    score_match("A", "A")
     score_match("A", "C")
+
+.. jupyter-execute::
+    :linenos:
+
+    score_match("A", "A")
 
 Computing the best score and path for a particular comparison
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -239,26 +242,22 @@ I write a function that corresponds to the algorithmic implementation of `equati
 .. jupyter-execute::
     :linenos:
 
-    def get_best_score_path(path_scores, i, j, score, delta):
-        match_path = (i - 1, j - 1)
+    def get_best_score_path(path_scores, r, c, score, delta):
+        match_path = (r - 1, c - 1)
         match_score = path_scores[match_path] + score
 
-        left_path = (i, j - 1)
+        left_path = (r, c - 1)
         left_score = path_scores[left_path] + delta
 
-        up_path = (i - 1, j)
+        up_path = (r - 1, c)
         up_score = path_scores[up_path] + delta
 
-        # make a list with [[score, path coord], ..] so we can take max
+        # call max on lists with [score, path coord]
         # This function will select based on score first, then break ties using
         # path coord
 
         best_score_path = max(
-            [
-                [match_score, match_path],
-                [left_score, left_path],
-                [up_score, up_path],
-            ]
+            [match_score, match_path], [left_score, left_path], [up_score, up_path]
         )
 
         return best_score_path
@@ -269,19 +268,19 @@ Populating the ``path_scores`` and ``path_choices`` matrices
 .. jupyter-execute::
     :linenos:
 
-    for i, base1 in enumerate(seq1, 1):
-        for j, base2 in enumerate(seq2, 1):
+    for r, base1 in enumerate(seq1, 1):
+        for c, base2 in enumerate(seq2, 1):
             score = score_match(base1, base2)
-            best_score, best_path = get_best_score_path(path_scores, i, j, score, delta)
-            path_scores[i, j] = best_score
-            path_choices[i, j] = best_path
+            best_score, best_path = get_best_score_path(path_scores, r, c, score, delta)
+            path_scores[r, c] = best_score
+            path_choices[r, c] = best_path
 
     path_scores
 
 The following table uses bold font to emphasise the path choices that are made to produce the alignment and provides the indices to make it clearer how the path is interpreted.
 
 .. csv-table:: The completed score matrix
-    :header: ``seq1[i] \\ seq2[j]``,:math:`\\mathbf \\delta_0`,G\ :sub:`1`,A\ :sub:`2`,G\ :sub:`3`,T\ :sub:`4`,A\ :sub:`5`,C\ :sub:`6`
+    :header: ``seq1[r]`` |backslash| ``seq2[c]``,:math:`\\mathbf \\delta_0`,G\ :sub:`1`,A\ :sub:`2`,G\ :sub:`3`,T\ :sub:`4`,A\ :sub:`5`,C\ :sub:`6`
 
     ":math:`\delta_0`",          "**0**",       "-1",       "-2",       "-3",       "-4",       "-5",       "-6"
     **G**  :sub:`1`,              "-1",    "**1**",    "**0**",       "-1",       "-2",       "-3",       "-4"
@@ -289,7 +288,6 @@ The following table uses bold font to emphasise the path choices that are made t
     **T**  :sub:`3`,              "-3",       "-1",       "-1",        "0",    "**2**",        "1",        "0"
     **A**  :sub:`4`,              "-4",       "-2",        "0",       "-1",        "1",    "**3**",        "2"
     **C**  :sub:`5`,              "-5",       "-3",       "-1",       "-1",        "0",        "2",    "**4**"
-
 
 .. jupyter-execute::
     :linenos:
@@ -306,8 +304,8 @@ We will solve this using a ``while`` loop since we don't know precisely how many
 .. jupyter-execute::
     :linenos:
 
-    i = len(seq1)
-    j = len(seq2)
+    r = len(seq1)
+    c = len(seq2)
 
 We then define two lists which we will use to hold the aligned sequences as they are built.
 
@@ -320,15 +318,15 @@ We then define two lists which we will use to hold the aligned sequences as they
 .. jupyter-execute::
     :linenos:
 
-    while (i, j) != (0, 0):
+    while (r, c) != (0, 0):
         # the next step backwards
-        i_next, j_next = path_choices[i, j]
-        base1 = "-" if i_next == i else seq1[i - 1]
-        base2 = "-" if j_next == j else seq2[j - 1]
+        r_next, c_next = path_choices[r, c]
+        base1 = "-" if r_next == r else seq1[r - 1]
+        base2 = "-" if c_next == c else seq2[c - 1]
         aligned_1.append(base1)
         aligned_2.append(base2)
 
-        i, j = i_next, j_next
+        r, c = r_next, c_next
 
 So that didn't fail -- awesome! But our sequences are actually in reverse order (we did start at the end of the alignment after all). So to recover them in their correct orientation, we simply reverse the lists and transform them into a string.
 
@@ -350,8 +348,8 @@ So how well does our algorithm go in aligning the sequences we used for the dopl
 
 .. code-block:: text
 
-    A: CCTCTGAATAGG--A-GA---CAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT
-    B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
+    A: CCTCTGAATAGG - -A - GA - --CAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT
+    B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA - --GGTGGCGCACATAGATTT
 
 This is not the same. The single large gap in ``A`` from the above has now been fragmented into multiple smaller gaps. This illustrates a limitation of the linear gap score. Examination of real biological sequences indicates that indels tend to affect multiple adjacent positions. For instance, in a protein coding gene indels sizes are products of 3. This has the effect of maintaining the reading frame. A more advanced indel (e.g. an affine gap) model is used to represent this property. We don't address that here aside from saying this is just one of the ways alignment algorithms have improved since the original NW publication.
 
@@ -371,3 +369,6 @@ Exercises
 .. bibliography:: /references.bib
     :filter: docname in docnames
     :style: alpha
+
+.. |backslash| replace:: \\
+
