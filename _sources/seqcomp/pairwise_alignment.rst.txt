@@ -358,7 +358,7 @@ Exercises
 
 #. Convert the above code into functions so that you can align any pair of sequences you like.
 
-#. Write some tests of your functions to make they behave appropriately. For instance, if you give two sequences that are completely different (e.g. "AAAA" and "TTTT"), what should you see? Does the algorithm generate that?
+#. Write some tests of your functions to make sure they are working correctly. For instance, if you give two sequences that are completely different (e.g. "AAAA" and "TTTT"), what should you see? Does the algorithm generate that?
 
 #. Modify the scoring function to be more tuned to DNA sequences. Specifically, allow transitions (changes between pyrimidines or between purines) to have a higher match score than transversions, but less than a perfect match.
 

@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.43. The set data type &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Sequence Comparison" href="../seqcomp/index.html" />
+    <link rel="prev" title="5.42. Dealing with dictionaries" href="dictionaries.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">5. Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="resources.html">5.1. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">5.2. Introduction to programming using Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html">5.3. Computing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#everyones-first-program-in-python">5.4. Everyones first program in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">5.5. Basic arithmetic operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#exercises">5.6. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">5.7. Variables and assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.8. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">5.9. Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#bitwise-operators">5.10. Bitwise operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">5.12. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.13. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">5.14. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.15. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">5.17. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.18. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.19. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.20. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.21. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.22. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.23. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.24. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.25. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.26. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.27. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.28. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.29. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.30. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.31. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.32. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.33. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.34. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.35. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.36. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.37. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.38. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.39. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.40. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.41. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.42. Dealing with dictionaries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.43. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
+        
+      <li><span class="section-number">5.43. </span>The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/sets.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="the-set-data-type">
+<span id="index-0"></span><h1><span class="section-number">5.43. </span>The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type<a class="headerlink" href="#the-set-data-type" title="Permalink to this headline">¶</a></h1>
+<p>This data type represents the mathematical object of a set. A set stores <em>unique values</em>, no matter how the object was initialised. They also cannot be indexed (or subscripted) since that has no meaning. The elements in a set are also unordered.</p>
+<p>Sets are defined either explicitly using <code class="docutils literal notranslate"><span class="pre">{}</span></code> with different members separated by commas.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">a</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{0, 1, 3}
+</pre></div>
+</div>
+</div>
+</div>
+<p>or by calling the builtin function <code class="docutils literal notranslate"><span class="pre">set()</span></code> passing the data in as a series.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">a</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{0, 1, 3}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As the latter expression indicates, the input to <code class="docutils literal notranslate"><span class="pre">set()</span></code> must be an iterable. This matters! The latter two <strong>are not</strong> equivalent.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ABC&quot;</span><span class="p">}</span>
+<span class="n">a</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;ABC&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The former states explicitly that the string “ABC” is a set member and the set has one member.</p>
+<p>But using the builtin function states the items in “ABC” are set members.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">)</span>
+<span class="n">b</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;, &#39;B&#39;, &#39;C&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>To have the latter correspond with the former requires placing the string inside another iterable.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;ABC&quot;</span><span class="p">])</span>
+<span class="n">b</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;ABC&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">set</span></code> type is iterable.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dinucs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;AA&quot;</span><span class="p">,</span> <span class="s2">&quot;CG&quot;</span><span class="p">,</span> <span class="s2">&quot;GA&quot;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">dinucs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>GA
+AA
+CG
+</pre></div>
+</div>
+</div>
+</div>
+<p>Only immutable data types can be members of sets (so not lists etc..)</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span> <span class="p">[]}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">3</span><span class="n">b0826386525</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">{</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span> <span class="p">[]}</span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The great power of this data type is the ability to do very succinct comparisons. These use <a class="reference internal" href="operators.html#bitwise-operators"><span class="std std-ref">bitwise operators</span></a>. For instance, we identify the overlap between two sets using the bitwise <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> character (bitwise AND).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;ACGGCCT&quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;ACGGAAA&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;, &#39;C&#39;, &#39;G&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can establish that one set is a subset of another using the <code class="docutils literal notranslate"><span class="pre">in</span></code> logical operator</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">}</span>
+<span class="n">a</span> <span class="ow">in</span> <span class="n">bases</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can compute the difference (what nucleotides is <code class="docutils literal notranslate"><span class="pre">b</span></code> missing) using the standard <code class="docutils literal notranslate"><span class="pre">-</span></code> operator</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">-</span> <span class="n">b</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;T&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or a “symmetric” difference using the <code class="docutils literal notranslate"><span class="pre">^</span></code> character (bitwise exclusive OR, analogous to NOT)</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">^</span> <span class="n">b</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;T&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can take the union of two sets using the <code class="docutils literal notranslate"><span class="pre">|</span></code> character (bitwise inclusive OR).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="n">a</span> <span class="o">|</span> <span class="n">b</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{0, 1, 2, 3, 4}
+</pre></div>
+</div>
+</div>
+</div>
+<p>These operations are also available as methods on the <code class="docutils literal notranslate"><span class="pre">set</span></code> instances.</p>
+<p>Having created a set, you can add new elements using the <code class="docutils literal notranslate"><span class="pre">add()</span></code> method.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{0, 2, 3, 22}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or remove elements using the <code class="docutils literal notranslate"><span class="pre">remove()</span></code> method.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{0, 2, 3}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Given that a <code class="docutils literal notranslate"><span class="pre">set</span></code> is mutable, you cannot have sets as part of sets. Python provides an <code class="docutils literal notranslate"><span class="pre">immutable</span></code> set type, <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> that can be. This is defined using the builtin function of that name.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="s2">&quot;ABCD&quot;</span><span class="p">)</span>
+<span class="n">f</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>frozenset({&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{0, 2, 3, frozenset({&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;})}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once created, a <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> instance cannot be changed.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../seqcomp/index.html" class="btn btn-neutral float-right" title="6. Sequence Comparison" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dictionaries.html" class="btn btn-neutral float-left" title="5.42. Dealing with dictionaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

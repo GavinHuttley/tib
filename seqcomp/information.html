@@ -103,8 +103,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Sequence Comparison</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">6.1. Introduction to Comparison of Biological Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.2. The role of sequence in encoding life</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.4. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#motifs">6.4. Motifs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.5. Gene expression in a nutshell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.7. Finding motifs</a></li>
@@ -222,10 +222,10 @@
 <p>There is a formal definition for entropy.</p>
 <div class="math notranslate nohighlight">
 \[H = -\sum_{i=0}^n p_i \log_2(p_i)\]</div>
-<p>where <span class="math notranslate nohighlight">\(H\)</span> is Shannon entropy, <cite>p</cite> is a series of probabilities with <cite>n</cite> members and <span class="math notranslate nohighlight">\(p_i\)</span> the probability of state <cite>i</cite>. In words, entropy is calculated as the sum of <span class="math notranslate nohighlight">\(p_i\log_2(p_i)\)</span>. Further, in words the latter can be described as multiplying a probability by the log base 2 of itself.</p>
+<p>where <span class="math notranslate nohighlight">\(H\)</span> is Shannon entropy, <span class="incremental">p</span> is a series of probabilities with <span class="incremental">n</span> members and <span class="math notranslate nohighlight">\(p_i\)</span> the probability of state <span class="incremental">i</span>. In words, entropy is calculated as the sum of <span class="math notranslate nohighlight">\(p_i\log_2(p_i)\)</span>. Further, in words the latter can be described as multiplying a probability by the log base 2 of itself.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><span class="math notranslate nohighlight">\(\sum_{i=0}^n\)</span> means take the sum of the series starting at index 0 and ending at index <cite>n</cite>.</p>
+<p><span class="math notranslate nohighlight">\(\sum_{i=0}^n\)</span> means take the sum of the series starting at index 0 and ending at index <span class="incremental">n</span>.</p>
 </div>
 <div class="section" id="measuring-entropy-for-a-simple-alignment">
 <h2><span class="section-number">6.8.1. </span>Measuring entropy for a simple alignment<a class="headerlink" href="#measuring-entropy-for-a-simple-alignment" title="Permalink to this headline">¶</a></h2>
@@ -253,7 +253,7 @@ Ent.   0    0.72  1.52  1.52  0.97
 <h2><span class="section-number">6.8.2. </span>Information at a position<a class="headerlink" href="#information-at-a-position" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[R_i=\log(n) - H_i\]</div>
-<p>where <span class="math notranslate nohighlight">\(R_i\)</span> is the information at position <cite>i</cite>, <cite>n</cite> is the number of possible states (4 for DNA), <span class="math notranslate nohighlight">\(\log(n)\)</span> is the maximum possible entropy, and <span class="math notranslate nohighlight">\(H_i\)</span> is the Shannon entropy for position <cite>i</cite>.</p>
+<p>where <span class="math notranslate nohighlight">\(R_i\)</span> is the information at position <span class="incremental">i</span>, <span class="incremental">n</span> is the number of possible states (4 for DNA), <span class="math notranslate nohighlight">\(\log(n)\)</span> is the maximum possible entropy, and <span class="math notranslate nohighlight">\(H_i\)</span> is the Shannon entropy for position <span class="incremental">i</span>.</p>
 <p>In this display, the letter height at a position is <span class="math notranslate nohighlight">\(p_{i,l} R_i\)</span>.</p>
 </div>
 <div class="section" id="problems-with-sequence-logo">
@@ -262,14 +262,14 @@ Ent.   0    0.72  1.52  1.52  0.97
 </div>
 <div class="section" id="using-relative-entropy-as-an-alternate">
 <h2><span class="section-number">6.8.4. </span>Using relative entropy as an alternate<a class="headerlink" href="#using-relative-entropy-as-an-alternate" title="Permalink to this headline">¶</a></h2>
-<p>Relative entropy (<cite>RE</cite>) is defined as</p>
+<p>Relative entropy (<span class="incremental">RE</span>) is defined as</p>
 <p><span class="math notranslate nohighlight">\(RE_i = \sum_{i=0}^n p_i \log(p_i / q_i)\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(q_i\)</span> is the background (e.g. genome) frequency of <cite>i</cite>.</p>
+<p>where <span class="math notranslate nohighlight">\(q_i\)</span> is the background (e.g. genome) frequency of <span class="incremental">i</span>.</p>
 </div>
 <div class="section" id="an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation">
 <h2><span class="section-number">6.8.5. </span>An illustration of the difference – identifying neighbouring base effects on mutation<a class="headerlink" href="#an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation" title="Permalink to this headline">¶</a></h2>
-<p><span class="math notranslate nohighlight">\(C\rightarrow T\)</span> mutations in vertebrates typically arise from deamination of 5-methyl-cytosine. The latter modification is typically applied to <cite>5’-CpG-3’</cite>. Hence, there is a striking association of <cite>3’G</cite> and this point mutation direction.</p>
-<p>If we sample sequences that share this mutation in common, aligning them centred on the mutated position, we can assess which statistic better captures the neighbouring base association. What we <em>should</em> see is that the 3’ position should have high information which arises from the base <cite>G</cite>.</p>
+<p><span class="math notranslate nohighlight">\(C\rightarrow T\)</span> mutations in vertebrates typically arise from deamination of 5-methyl-cytosine. The latter modification is typically applied to <span class="incremental">5’-CpG-3’</span>. Hence, there is a striking association of <span class="incremental">3’G</span> and this point mutation direction.</p>
+<p>If we sample sequences that share this mutation in common, aligning them centred on the mutated position, we can assess which statistic better captures the neighbouring base association. What we <em>should</em> see is that the 3’ position should have high information which arises from the base <span class="incremental">G</span>.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -311,7 +311,7 @@ Ent.   0    0.72  1.52  1.52  0.97
 <blockquote>
 <div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GGCACGGGAGAAAGAGGCAAACAAACGGAGACAAGAAGCCAACAGGCACG&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;CAGACCAGAAGAAGCACAAGCGAGCCCCGGGAGGGCGGACCGGCGAGAGG&#39;
 </pre></div>
 </div>
 </div>

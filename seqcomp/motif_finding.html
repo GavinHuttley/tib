@@ -103,8 +103,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Sequence Comparison</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">6.1. Introduction to Comparison of Biological Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.2. The role of sequence in encoding life</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.4. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#motifs">6.4. Motifs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.5. Gene expression in a nutshell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">6.7. Finding motifs</a></li>
@@ -285,10 +285,10 @@
 </div>
 <div class="section" id="formal-definition-of-the-probability-model">
 <h2><span class="section-number">6.7.3. </span>Formal definition of the probability model<a class="headerlink" href="#formal-definition-of-the-probability-model" title="Permalink to this headline">¶</a></h2>
-<p>We now layout the equations for computing the probability of a sequence. To start, we make some simplifying assumptions. Namely, we assume a counts matrix reflects the true underlying probabilities of bases per position of a motif; that each base in a motif occurs independently of the other bases. We can compute the probability under the PPM (position probability matrix) model <cite>M</cite> of a sequence <cite>x</cite> with length <cite>L</cite> as:</p>
+<p>We now layout the equations for computing the probability of a sequence. To start, we make some simplifying assumptions. Namely, we assume a counts matrix reflects the true underlying probabilities of bases per position of a motif; that each base in a motif occurs independently of the other bases. We can compute the probability under the PPM (position probability matrix) model <span class="incremental">M</span> of a sequence <span class="incremental">x</span> with length <span class="incremental">L</span> as:</p>
 <div class="math notranslate nohighlight">
 \[P(x|M)=\Pi_{i=0}^L p_i(x_i)\]</div>
-<p>where <span class="math notranslate nohighlight">\(x_i\)</span> is the base at position <cite>i</cite>. This probability can also be referred to as the <em>odds</em> of observing the sequence given the model <cite>M</cite>.</p>
+<p>where <span class="math notranslate nohighlight">\(x_i\)</span> is the base at position <span class="incremental">i</span>. This probability can also be referred to as the <em>odds</em> of observing the sequence given the model <span class="incremental">M</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>the <span class="math notranslate nohighlight">\(\Pi\)</span> symbol means “take the product of the series”. So what <span class="math notranslate nohighlight">\(\sum\)</span> is to addition, <span class="math notranslate nohighlight">\(\Pi\)</span> is for multiplication.</p>
@@ -388,10 +388,10 @@
 <p>For convenience, define the background distribution of sequence states to be equally frequent. Then the odds ratio is:</p>
 <div class="math notranslate nohighlight">
 \[OR(x|M)=\Pi_{i=0}^L \frac{p_i(x_i)}{0.25}\]</div>
-<p>Which is expressed as a log-odds score <cite>S</cite>:</p>
+<p>Which is expressed as a log-odds score <span class="incremental">S</span>:</p>
 <div class="math notranslate nohighlight">
 \[S=\sum_{i=0}^L \log p_i(x_i) - \log 0.25\]</div>
-<p>We then interpret the values of <cite>S</cite> as</p>
+<p>We then interpret the values of <span class="incremental">S</span> as</p>
 <ul class="simple">
 <li><p>if S=0, the sequence is equally likely in the PSSM and background</p></li>
 <li><p>if S&lt;0, the sequence is less likely under the PSSM than background</p></li>
