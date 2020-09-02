@@ -41,6 +41,7 @@ Introduction to Python
     visualisation
     strings
     dictionaries
+    sets
 
 .. todo:: have a section on setting up their own computer
 .. todo:: have a section on pip installing packages
