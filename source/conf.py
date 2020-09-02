@@ -7,6 +7,11 @@ release = "2020"
 
 # -- General configuration ---------------------------------------------------
 
+rst_prolog = """
+.. include:: <s5defs.txt>
+
+"""
+ 
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.graphviz",

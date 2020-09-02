@@ -223,7 +223,7 @@ Same behaviour as the previous example because that definition of ``result`` is 
         result.append(arg)
         return result
 
-**DO NOT** modify an input data structure unless your docstring (or the name of your function) states clearly that's what it will do. Copying can be expensive in terms of speed and memory, but unexpected changes in state of some data can cause hard to debug problems and so be more expensive in terms of programmer time. This is why it's a good idea to put important data into data types that are imutable (e.g. pick a ``tuple`` over a ``list`` for instance) or at least harder to change.
+**DO NOT** modify an input data structure unless your docstring (or the name of your function) states clearly that's what it will do. Copying can be expensive in terms of speed and memory, but unexpected changes in state of some data can cause hard to debug problems and so be more expensive in terms of programmer time. This is why it's a good idea to put important data into data types that are immutable (e.g. pick a ``tuple`` over a ``list`` for instance) or at least harder to change.
 
 .. epigraph::
 
