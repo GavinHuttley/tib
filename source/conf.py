@@ -9,7 +9,7 @@ release = "2020"
 
 rst_prolog = """
 .. include:: <s5defs.txt>
-
+.. include:: /_globals.rst
 """
  
 extensions = [
