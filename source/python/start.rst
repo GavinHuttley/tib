@@ -106,10 +106,33 @@ Integer division uses ``//``
     20 // 3
 
 .. index::
+    pair: division remainder; maths
+    pair: modulo operator; maths
+    pair: divmod(); maths
+    pair: %; maths
+
+Division remainder
+------------------
+
+While integer division (``a // b``) returns how many times ``b`` goes into ``a``, the modulo operation returns the remainder. This is denoted by the ``%`` symbol in Python (and many other languages). In the example, 3 goes into 20 6 times, with 2 remainder. The modulo operation only returns the latter.
+
+.. jupyter-execute::
+    :linenos:
+
+    20 % 3
+
+The builtin ``divmod()`` returns both parts.
+
+.. jupyter-execute::
+    :linenos:
+
+    divmod(20, 3)
+
+The remainder is zero when ``b`` is a factor of ``a``, (for example ``20 % 2``). 
+
+.. index::
     pair: exponents; maths
     pair: powers; maths
-
-.. todo:: add modulo operator, index with % symbol, maths
 
 Exponents / Powers
 ------------------
