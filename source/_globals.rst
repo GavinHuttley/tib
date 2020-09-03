@@ -1,5 +1,7 @@
 .. replacements
 
+.. |kmer| replace:: :sup:`k`-mer
+.. |kmers| replace:: :sup:`k`-mers
 .. |5mC| replace:: :sup:`5`\ mC
 .. |AtoC| replace:: A→C
 .. |AtoG| replace:: A→G
@@ -31,5 +33,14 @@
 .. _text_book: http://greenteapress.com/wp/think-python-2e/
 .. |Sewall_Wright| replace:: Sewall Wright
 .. _Sewall_Wright: https://en.wikipedia.org/wiki/Sewall_Wright
+
 .. _ucsc: https://genome.ucsc.edu
 .. _ensembl: https://ensembl.org
+.. _GenBank: https://www.ncbi.nlm.nih.gov/genbank/
+.. _gff3: https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md
+.. _cogent3: https://cogent3.org
+.. _ArrayAlignment: https://cogent3.org/doc/api/alignment/classes/cogent3.core.alignment.ArrayAlignment.html#cogent3.core.alignment.ArrayAlignment
+.. _SequenceCollection: https://cogent3.org/doc/api/alignment/classes/cogent3.core.alignment.SequenceCollection.html#cogent3.core.alignment.SequenceCollection
+.. _DnaSequence: https://cogent3.org/doc/api/sequence/classes/cogent3.core.sequence.DnaSequence.html#cogent3.core.sequence.DnaSequence
+.. _ProteinSequence: https://cogent3.org/doc/api/sequence/classes/cogent3.core.sequence.ProteinSequence.html#cogent3.core.sequence.ProteinSequence
+.. _Table: https://cogent3.org/doc/api/table/classes/cogent3.util.table.Table.html#cogent3.util.table.Table
