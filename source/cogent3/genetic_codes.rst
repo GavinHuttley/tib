@@ -78,17 +78,15 @@ See the cogent3_ cookbook documentation for more on using genetic codes.
 Exercises
 ---------
 
-Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position.
+Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position. The following questions refer to these groupings.
 
-The following questions refer to these groupings.
+#. Pick a genetic code and, for each such codon position group, count the number of changes that are synonymous. Is there a difference between the codon position and the proportion of synonymous changes?
 
-    #. Pick a genetic code and, for each such codon position group, count the number of changes that are synonymous. Is there a difference between the positions in the proportion of synonymous changes?
+#. Does the property measured in 2.) vary between the genetic codes?
 
-    #. Does the property measured in 2.) vary between the genetic codes?
+#. Now categorise the codon differences by whether they are a transition or transversion change. Assess whether the fraction of synonymous changes differs between transition and transversion changes.
 
-    #. Now categorise the codon differences by whether they are a transition or transversion change. Assess whether the fraction of synonymous changes differs between transition and transversion changes.
-
-#. Is there variation (between the genetic codes) in the number of stop codons?
+#. Is there variation (between the genetic codes) in the number of stop codons? Assess this programmatically.
 
     *Hint: look at the attributes on the genetic code instance.*
 
