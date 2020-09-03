@@ -27,6 +27,7 @@ The ``ArrayAlignment`` is one of the two different ``cogent3`` types for handlin
 For all the methods, see ArrayAlignment_.
 
 .. [1] Unless you want to be manipulating sequences via their sequence annotations, this is what you want. See the cogent3_ documentation for the other class.
+
 When we talk about an alignment with ``cogent3``, this is what we mean.
 
 Getting the sequence names
@@ -52,8 +53,6 @@ or by the ``named_seqs`` attribute, which is a dictionary.
 .. jupyter-execute::
 
     aln.named_seqs["TombBat"]
-
-.. aln.get_translation(incomplete_ok=True) comment on the incomplete_ok argument
 
 .. index::
     pair: slice; cogent3 Alignment
