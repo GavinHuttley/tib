@@ -1,0 +1,913 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8.2. Alignments, Sequence Collections and Sequences &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8.4. Exploring genetic variation using Alignments" href="explore_variation.html" />
+    <link rel="prev" title="8.1. Biological Data Formats" href="data_formats.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_formats.html">8.1. Biological Data Formats</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.2. Alignments, Sequence Collections and Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">8.3. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.4. Exploring genetic variation using Alignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html#exercises">8.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="genetic_codes.html">8.6. Genetic Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moltype.html">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">9. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a> &raquo;</li>
+        
+      <li><span class="section-number">8.2. </span>Alignments, Sequence Collections and Sequences</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/sequences.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="alignments-sequence-collections-and-sequences">
+<h1><span class="section-number">8.2. </span>Alignments, Sequence Collections and Sequences<a class="headerlink" href="#alignments-sequence-collections-and-sequences" title="Permalink to this headline">¶</a></h1>
+<p>Biological sequences are represented by several objects in <code class="docutils literal notranslate"><span class="pre">cogent3</span></code>. Typically, these are created by loading from file or by making them directly from standard python types. There is no more fundamental type than that of sequences. So let’s just get cracking and actually load some data from a file. Along the way, I’ll point out different aspects of the process of creating objects that you need to pay attention to.</p>
+<div class="section" id="alignments">
+<h2><span class="section-number">8.2.1. </span>Alignments<a class="headerlink" href="#alignments" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loading-aligned-sequences-from-a-file">
+<h3><span class="section-number">8.2.1.1. </span>Loading aligned sequences from a file<a class="headerlink" href="#loading-aligned-sequences-from-a-file" title="Permalink to this headline">¶</a></h3>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">load_aligned_seqs</span>
+
+<span class="n">aln</span> <span class="o">=</span> <span class="n">load_aligned_seqs</span><span class="p">(</span><span class="s2">&quot;source/data/brca1-bats.fasta&quot;</span><span class="p">,</span> <span class="n">moltype</span><span class="o">=</span><span class="s2">&quot;dna&quot;</span><span class="p">)</span>
+<span class="n">aln</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="C_dna">C</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="ambig_dna">-</span><span class="ambig_dna">-</span><span class="ambig_dna">-</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">TombBat</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">G</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span></td></tr>
+</table>
+<p><i>5 x 3009 (truncated to 5 x 60) dna alignment</i></p>
+</div></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">moltype</span></code> argument specifies the molecular type of the sequence. See <a class="reference internal" href="moltype.html#moltypes"><span class="std std-ref">MolType – specifying biological sequence type</span></a> for more information.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">aln</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>cogent3.core.alignment.ArrayAlignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ArrayAlignment</span></code> is one of the two different <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> types for handling sequence alignments and is built using <code class="docutils literal notranslate"><span class="pre">numpy.arrays</span></code> <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. So, under the hood, sequences are represented as arrays of integers with the integer values corresponding to the index of the character in the alphabet. The class handles conversions to / from the standard text representation.</p>
+<p>For all the methods, see <a class="reference external" href="https://cogent3.org/doc/api/alignment/classes/cogent3.core.alignment.ArrayAlignment.html#cogent3.core.alignment.ArrayAlignment">ArrayAlignment</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Unless you want to be manipulating sequences via their sequence annotations, this is what you want. See the <a class="reference external" href="https://cogent3.org">cogent3</a> documentation for the other class.</p>
+</dd>
+</dl>
+<p>When we talk about an alignment with <code class="docutils literal notranslate"><span class="pre">cogent3</span></code>, this is what we mean.</p>
+</div>
+<div class="section" id="getting-the-sequence-names">
+<h3><span class="section-number">8.2.1.2. </span>Getting the sequence names<a class="headerlink" href="#getting-the-sequence-names" title="Permalink to this headline">¶</a></h3>
+<p>These are available as the <code class="docutils literal notranslate"><span class="pre">names</span></code> attribute.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;FlyingFox&#39;, &#39;DogFaced&#39;, &#39;FreeTaile&#39;, &#39;LittleBro&#39;, &#39;TombBat&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-the-individual-sequences">
+<h3><span class="section-number">8.2.1.3. </span>Getting the individual sequences<a class="headerlink" href="#getting-the-individual-sequences" title="Permalink to this headline">¶</a></h3>
+<p>Alignments have many useful attributes, including the individual sequences. These can be accessed either by the <code class="docutils literal notranslate"><span class="pre">seqs</span></code> attribute of the instance (this is just a list of sequence objects).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">get_seq</span><span class="p">(</span><span class="n">aln</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3seq td { border: none !important; text-align: left !important; }
+.c3seq tr:not(.num_row) td span {margin: 0 2px;}
+.c3seq tr:nth-child(even) {background: #f7f7f7;}
+.c3seq .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3seq .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; }
+.c3seq .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3seq .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3seq .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3seq .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3seq .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3seq .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3seq">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="ambig_dna">-</span><span class="ambig_dna">-</span><span class="ambig_dna">-</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span></td></tr>
+</table>
+<p><i>3009 (truncated to 60) DnaSequence</i></p>
+</div></div></div>
+</div>
+<p>or by the <code class="docutils literal notranslate"><span class="pre">named_seqs</span></code> attribute, which is a dictionary.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">named_seqs</span><span class="p">[</span><span class="s2">&quot;TombBat&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3seq td { border: none !important; text-align: left !important; }
+.c3seq tr:not(.num_row) td span {margin: 0 2px;}
+.c3seq tr:nth-child(even) {background: #f7f7f7;}
+.c3seq .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3seq .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; }
+.c3seq .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3seq .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3seq .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3seq .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3seq .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3seq .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3seq">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">TombBat</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span></td></tr>
+</table>
+<p><i>3009 (truncated to 60) DnaSequence</i></p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="alignments-are-aligned-column-based">
+<span id="index-0"></span><h3><span class="section-number">8.2.1.4. </span>Alignments are aligned column based<a class="headerlink" href="#alignments-are-aligned-column-based" title="Permalink to this headline">¶</a></h3>
+<p>This means when you slice them, you are slicing alignment columns.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">TombBat</td><td><span class="G_dna">G</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="A_dna">A</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="A_dna">A</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="A_dna">A</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="A_dna">A</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span></td></tr>
+</table>
+<p><i>5 x 10 dna alignment</i></p>
+</div></div></div>
+</div>
+<p>You can also use a “stride”.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">TombBat</td><td><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="A_dna">A</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="A_dna">A</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="A_dna">A</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="A_dna">A</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span></td></tr>
+</table>
+<p><i>5 x 4 dna alignment</i></p>
+</div></div></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Slicing with a stride only works for the <code class="docutils literal notranslate"><span class="pre">ArrayAlignment</span></code> class.</p>
+</div>
+</div>
+<div class="section" id="alignments-are-immutable">
+<h3><span class="section-number">8.2.1.5. </span>Alignments are immutable!<a class="headerlink" href="#alignments-are-immutable" title="Permalink to this headline">¶</a></h3>
+<p>So any operation their data returns a new instance.</p>
+</div>
+<div class="section" id="getting-a-subset-of-sequences">
+<h3><span class="section-number">8.2.1.6. </span>Getting a subset of sequences<a class="headerlink" href="#getting-a-subset-of-sequences" title="Permalink to this headline">¶</a></h3>
+<p>This is done via a method.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="n">aln</span><span class="o">.</span><span class="n">take_seqs</span><span class="p">([</span><span class="s2">&quot;TombBat&quot;</span><span class="p">,</span> <span class="s2">&quot;FlyingFox&quot;</span><span class="p">])</span>
+<span class="n">subset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">TombBat</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="ambig_dna">-</span><span class="ambig_dna">-</span><span class="ambig_dna">-</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span></td></tr>
+</table>
+<p><i>2 x 3009 (truncated to 2 x 60) dna alignment</i></p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="converting-sequences-into-a-standard-python-dict">
+<h3><span class="section-number">8.2.1.7. </span>Converting sequences into a standard Python <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#converting-sequences-into-a-standard-python-dict" title="Permalink to this headline">¶</a></h3>
+<p>This is useful if you want to directly manipulate the strings, for instance. (I’m slicing the alignment only because I want the dict to be sensibly displayed in this documentation.)</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[:</span><span class="mi">21</span><span class="p">]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;TombBat&#39;: &#39;TGTGGCACAAGTACTCATGCC&#39;, &#39;FlyingFox&#39;: &#39;TGTGGCACAAATGCTCATGCC&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-an-alignment-from-a-python-dict">
+<h3><span class="section-number">8.2.1.8. </span>Creating an alignment from a Python <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#creating-an-alignment-from-a-python-dict" title="Permalink to this headline">¶</a></h3>
+<p>We use a different function for building an alignment from standard Python types. The function has a very similar interface to <code class="docutils literal notranslate"><span class="pre">load_unaligned_seqs()</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_aligned_seqs</span>
+
+<span class="n">subset2</span> <span class="o">=</span> <span class="n">make_aligned_seqs</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">moltype</span><span class="o">=</span><span class="s2">&quot;dna&quot;</span><span class="p">)</span>
+<span class="n">subset2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">TombBat</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span></td></tr>
+</table>
+<p><i>2 x 21 dna alignment</i></p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="writing-sequences-to-file">
+<span id="index-1"></span><h3><span class="section-number">8.2.1.9. </span>Writing sequences to file<a class="headerlink" href="#writing-sequences-to-file" title="Permalink to this headline">¶</a></h3>
+<p>The various alignment and sequence collection objects have a <code class="docutils literal notranslate"><span class="pre">write()</span></code> method. Providing a file path with a known suffix generates a text file with that format. For example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subset2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;some_dir/subset2.fasta&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will produce a fasta formatted sequence file.</p>
+</div>
+<div class="section" id="interpreting-the-display-of-alignments-in-jupyter-notebooks">
+<h3><span class="section-number">8.2.1.10. </span>Interpreting the display of alignments in Jupyter notebooks<a class="headerlink" href="#interpreting-the-display-of-alignments-in-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<p>The visualisation you see is a style known as a pretty print. The <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code> character indicates a match to the character in the first sequence in that column. We refer to this first sequence as the reference.</p>
+<p>Colouring is provided for alignments with RNA, DNA or PROTEIN moltypes. If you do not specify a moltype on loading / creating an alignment, the display will not be coloured.</p>
+</div>
+<div class="section" id="controlling-the-display-in-jupyter-notebooks">
+<h3><span class="section-number">8.2.1.11. </span>Controlling the display in Jupyter notebooks<a class="headerlink" href="#controlling-the-display-in-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<p>This is done via modifying the representation policy. You can change the number of sequences, or the number of aligned positions that will be shown.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">set_repr_policy</span><span class="p">(</span><span class="n">num_pos</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">aln</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="C_dna">C</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="ambig_dna">-</span><span class="ambig_dna">-</span><span class="ambig_dna">-</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">TombBat</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">G</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span></td></tr>
+<tr class="num_row"><td></td><td><b>60</b></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="C_dna">C</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="C_dna">C</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
+<tr><td class="label">TombBat</td><td><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="C_dna">C</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="C_dna">C</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
+</table>
+<p><i>5 x 3009 (truncated to 5 x 100) dna alignment</i></p>
+</div></div></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Rendering the html can take a long time if the number of positions (and/or sequences) is large.</p>
+</div>
+<p>You can also specify the sequence to be used as a reference (the default is to use the longest sequence without gaps).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">set_repr_policy</span><span class="p">(</span><span class="n">ref_name</span><span class="o">=</span><span class="s2">&quot;FreeTaile&quot;</span><span class="p">,</span> <span class="n">num_pos</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">num_seqs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">aln</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span></td></tr>
+</table>
+<p><i>5 x 3009 (truncated to 4 x 40) dna alignment</i></p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="translating-nucleic-acids-to-protein">
+<h3><span class="section-number">8.2.1.12. </span>Translating nucleic acids to protein<a class="headerlink" href="#translating-nucleic-acids-to-protein" title="Permalink to this headline">¶</a></h3>
+<p>There are a few factors to consider here. First, some sequences may be incomplete – meaning the actual sequence does not cover the entire gene and may end with an incomplete codon. Second, the sequence may be complete but terminate with a stop codon. Both of those will cause the translation method to fail. In this case,  the data has an incomplete codon (it contains a gap character), which we address as follows</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aa_aln</span> <span class="o">=</span> <span class="n">aln</span><span class="o">.</span><span class="n">get_translation</span><span class="p">(</span><span class="n">incomplete_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">aa_aln</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .A_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #009999; }
+.c3align .C_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: orange; }
+.c3align .D_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .E_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .F_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #ff6600; }
+.c3align .G_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #009999; }
+.c3align .H_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .I_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #009999; }
+.c3align .K_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .L_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #009999; }
+.c3align .M_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: orange; }
+.c3align .N_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #993300; }
+.c3align .P_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #cc0099; }
+.c3align .Q_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #993300; }
+.c3align .R_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .S_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #009900; }
+.c3align .T_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #009900; }
+.c3align .U_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .V_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #009999; }
+.c3align .W_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #ff6600; }
+.c3align .Y_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #ff6600; }
+.c3align .terminal_ambig_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_protein{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="C_protein">C</span><span class="G_protein">G</span><span class="T_protein">T</span><span class="D_protein">D</span><span class="T_protein">T</span><span class="H_protein">H</span><span class="A_protein">A</span><span class="S_protein">S</span><span class="S_protein">S</span><span class="L_protein">L</span><span class="Q_protein">Q</span><span class="H_protein">H</span><span class="E_protein">E</span><span class="N_protein">N</span><span class="S_protein">S</span><span class="S_protein">S</span><span class="L_protein">L</span><span class="L_protein">L</span><span class="L_protein">L</span><span class="T_protein">T</span><span class="K_protein">K</span><span class="D_protein">D</span><span class="R_protein">R</span><span class="M_protein">M</span><span class="N_protein">N</span><span class="V_protein">V</span><span class="E_protein">E</span><span class="K_protein">K</span><span class="A_protein">A</span><span class="E_protein">E</span><span class="F_protein">F</span><span class="C_protein">C</span><span class="N_protein">N</span><span class="K_protein">K</span><span class="S_protein">S</span><span class="K_protein">K</span><span class="Q_protein">Q</span><span class="P_protein">P</span><span class="G_protein">G</span><span class="L_protein">L</span><span class="A_protein">A</span><span class="R_protein">R</span><span class="S_protein">S</span><span class="Q_protein">Q</span><span class="Q_protein">Q</span><span class="S_protein">S</span><span class="R_protein">R</span><span class="W_protein">W</span><span class="A_protein">A</span><span class="E_protein">E</span><span class="S_protein">S</span><span class="K_protein">K</span><span class="E_protein">E</span><span class="T_protein">T</span><span class="C_protein">C</span><span class="N_protein">N</span><span class="D_protein">D</span><span class="ambig_protein">-</span><span class="R_protein">R</span><span class="Q_protein">Q</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="C_protein">.</span><span class="G_protein">.</span><span class="T_protein">.</span><span class="N_protein">N</span><span class="A_protein">A</span><span class="H_protein">.</span><span class="A_protein">.</span><span class="S_protein">.</span><span class="S_protein">.</span><span class="L_protein">.</span><span class="Q_protein">.</span><span class="H_protein">.</span><span class="E_protein">.</span><span class="N_protein">.</span><span class="ambig_protein">-</span><span class="S_protein">.</span><span class="L_protein">.</span><span class="L_protein">.</span><span class="Y_protein">Y</span><span class="T_protein">.</span><span class="K_protein">.</span><span class="D_protein">.</span><span class="R_protein">.</span><span class="M_protein">.</span><span class="N_protein">.</span><span class="V_protein">.</span><span class="E_protein">.</span><span class="K_protein">.</span><span class="T_protein">T</span><span class="D_protein">D</span><span class="F_protein">.</span><span class="C_protein">.</span><span class="N_protein">.</span><span class="K_protein">.</span><span class="S_protein">.</span><span class="K_protein">.</span><span class="Q_protein">.</span><span class="P_protein">.</span><span class="G_protein">.</span><span class="L_protein">.</span><span class="A_protein">.</span><span class="R_protein">.</span><span class="S_protein">.</span><span class="Q_protein">.</span><span class="Q_protein">.</span><span class="N_protein">N</span><span class="R_protein">.</span><span class="W_protein">.</span><span class="V_protein">V</span><span class="E_protein">.</span><span class="T_protein">T</span><span class="K_protein">.</span><span class="E_protein">.</span><span class="T_protein">.</span><span class="C_protein">.</span><span class="N_protein">.</span><span class="D_protein">.</span><span class="ambig_protein">.</span><span class="M_protein">M</span><span class="Q_protein">.</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="C_protein">.</span><span class="G_protein">.</span><span class="T_protein">.</span><span class="N_protein">N</span><span class="T_protein">.</span><span class="H_protein">.</span><span class="A_protein">.</span><span class="N_protein">N</span><span class="S_protein">.</span><span class="L_protein">.</span><span class="Q_protein">.</span><span class="H_protein">.</span><span class="E_protein">.</span><span class="N_protein">.</span><span class="S_protein">.</span><span class="S_protein">.</span><span class="L_protein">.</span><span class="L_protein">.</span><span class="Y_protein">Y</span><span class="T_protein">.</span><span class="K_protein">.</span><span class="D_protein">.</span><span class="R_protein">.</span><span class="M_protein">.</span><span class="N_protein">.</span><span class="V_protein">.</span><span class="E_protein">.</span><span class="K_protein">.</span><span class="T_protein">T</span><span class="D_protein">D</span><span class="F_protein">.</span><span class="C_protein">.</span><span class="N_protein">.</span><span class="K_protein">.</span><span class="S_protein">.</span><span class="K_protein">.</span><span class="Q_protein">.</span><span class="P_protein">.</span><span class="G_protein">.</span><span class="L_protein">.</span><span class="A_protein">.</span><span class="R_protein">.</span><span class="S_protein">.</span><span class="Q_protein">.</span><span class="Q_protein">.</span><span class="N_protein">N</span><span class="R_protein">.</span><span class="W_protein">.</span><span class="V_protein">V</span><span class="E_protein">.</span><span class="T_protein">T</span><span class="K_protein">.</span><span class="E_protein">.</span><span class="T_protein">.</span><span class="C_protein">.</span><span class="N_protein">.</span><span class="D_protein">.</span><span class="ambig_protein">.</span><span class="R_protein">.</span><span class="Q_protein">.</span></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="C_protein">.</span><span class="G_protein">.</span><span class="T_protein">.</span><span class="D_protein">.</span><span class="T_protein">.</span><span class="H_protein">.</span><span class="A_protein">.</span><span class="S_protein">.</span><span class="S_protein">.</span><span class="L_protein">.</span><span class="Q_protein">.</span><span class="H_protein">.</span><span class="E_protein">.</span><span class="N_protein">.</span><span class="S_protein">.</span><span class="S_protein">.</span><span class="L_protein">.</span><span class="L_protein">.</span><span class="L_protein">.</span><span class="T_protein">.</span><span class="K_protein">.</span><span class="D_protein">.</span><span class="R_protein">.</span><span class="M_protein">.</span><span class="N_protein">.</span><span class="V_protein">.</span><span class="E_protein">.</span><span class="K_protein">.</span><span class="A_protein">.</span><span class="E_protein">.</span><span class="F_protein">.</span><span class="C_protein">.</span><span class="N_protein">.</span><span class="K_protein">.</span><span class="S_protein">.</span><span class="K_protein">.</span><span class="Q_protein">.</span><span class="P_protein">.</span><span class="G_protein">.</span><span class="L_protein">.</span><span class="A_protein">.</span><span class="K_protein">K</span><span class="S_protein">.</span><span class="Q_protein">.</span><span class="Q_protein">.</span><span class="S_protein">.</span><span class="R_protein">.</span><span class="W_protein">.</span><span class="A_protein">.</span><span class="E_protein">.</span><span class="S_protein">.</span><span class="K_protein">.</span><span class="E_protein">.</span><span class="T_protein">.</span><span class="C_protein">.</span><span class="N_protein">.</span><span class="D_protein">.</span><span class="ambig_protein">.</span><span class="R_protein">.</span><span class="Q_protein">.</span></td></tr>
+<tr><td class="label">TombBat</td><td><span class="C_protein">.</span><span class="G_protein">.</span><span class="T_protein">.</span><span class="S_protein">S</span><span class="T_protein">.</span><span class="H_protein">.</span><span class="A_protein">.</span><span class="S_protein">.</span><span class="S_protein">.</span><span class="V_protein">V</span><span class="Q_protein">.</span><span class="H_protein">.</span><span class="E_protein">.</span><span class="N_protein">.</span><span class="S_protein">.</span><span class="S_protein">.</span><span class="L_protein">.</span><span class="L_protein">.</span><span class="L_protein">.</span><span class="T_protein">.</span><span class="K_protein">.</span><span class="D_protein">.</span><span class="R_protein">.</span><span class="M_protein">.</span><span class="N_protein">.</span><span class="V_protein">.</span><span class="E_protein">.</span><span class="K_protein">.</span><span class="L_protein">L</span><span class="D_protein">D</span><span class="F_protein">.</span><span class="C_protein">.</span><span class="N_protein">.</span><span class="K_protein">.</span><span class="S_protein">.</span><span class="K_protein">.</span><span class="Q_protein">.</span><span class="P_protein">.</span><span class="G_protein">.</span><span class="L_protein">.</span><span class="A_protein">.</span><span class="R_protein">.</span><span class="S_protein">.</span><span class="Q_protein">.</span><span class="Q_protein">.</span><span class="S_protein">.</span><span class="R_protein">.</span><span class="W_protein">.</span><span class="A_protein">.</span><span class="E_protein">.</span><span class="S_protein">.</span><span class="K_protein">.</span><span class="E_protein">.</span><span class="T_protein">.</span><span class="C_protein">.</span><span class="N_protein">.</span><span class="D_protein">.</span><span class="ambig_protein">.</span><span class="R_protein">.</span><span class="Q_protein">.</span></td></tr>
+</table>
+<p><i>5 x 1003 (truncated to 5 x 60) protein alignment</i></p>
+</div></div></div>
+</div>
+<p>If the failure is due to having a stop codon, using the <code class="docutils literal notranslate"><span class="pre">trim_stop_codons()</span></code> method first will do the trick, so long as the stop is at the end.</p>
+<p>Another key consideration for translation is to specify the genetic code. The default is to use the standard vertebrate code. (See <a class="reference internal" href="genetic_codes.html#genetic-codes"><span class="std std-ref">Genetic Codes</span></a> for more details on what <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> provides.) We will demonstrate specifying the standard code explicitly (using <code class="docutils literal notranslate"><span class="pre">gc=1</span></code>).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aa_aln</span> <span class="o">=</span> <span class="n">aln</span><span class="o">.</span><span class="n">get_translation</span><span class="p">(</span><span class="n">incomplete_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="section" id="getting-the-reverse-complement-of-nucleic-acid-sequences">
+<h3><span class="section-number">8.2.1.13. </span>Getting the reverse complement of nucleic acid sequences<a class="headerlink" href="#getting-the-reverse-complement-of-nucleic-acid-sequences" title="Permalink to this headline">¶</a></h3>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">rc()</span></code> method!</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">subset_rc</span> <span class="o">=</span> <span class="n">subset</span><span class="o">.</span><span class="n">rc</span><span class="p">()</span>
+<span class="n">subset_rc</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">TombBat</td><td><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="terminal_ambig_dna">-</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="G_dna">G</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="terminal_ambig_dna">.</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="G_dna">.</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="C_dna">C</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="G_dna">.</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="G_dna">.</span></td></tr>
+</table>
+<p><i>2 x 3009 (truncated to 2 x 60) dna alignment</i></p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="sequencecollection-for-unaligned-collections-of-sequences">
+<h2><span class="section-number">8.2.2. </span><code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> – for unaligned collections of sequences<a class="headerlink" href="#sequencecollection-for-unaligned-collections-of-sequences" title="Permalink to this headline">¶</a></h2>
+<p>If you sequences are not aligned, your sequences will likely not be of the same length. To load such sequence data from file, or create from Python objects, you use the functions <code class="docutils literal notranslate"><span class="pre">load_unaligned_seqs()</span></code> and <code class="docutils literal notranslate"><span class="pre">make_unaligned_seqs()</span></code>. The signatures of these functions match those of their counterparts for aligned sequences. Likewise, many of the methods on <code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> are the same as for the alignment data types (see <a class="reference external" href="https://cogent3.org/doc/api/alignment/classes/cogent3.core.alignment.SequenceCollection.html#cogent3.core.alignment.SequenceCollection">SequenceCollection</a> for documentation). However, the <code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> type cannot be sliced.</p>
+<div class="section" id="making-from-a-collection-of-unaligned-sequences-from-dict">
+<h3><span class="section-number">8.2.2.1. </span>Making from a collection of unaligned sequences from dict<a class="headerlink" href="#making-from-a-collection-of-unaligned-sequences-from-dict" title="Permalink to this headline">¶</a></h3>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_unaligned_seqs</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;seq-0&quot;</span><span class="p">:</span> <span class="s2">&quot;ACGGT&quot;</span><span class="p">,</span> <span class="s2">&quot;seq-1&quot;</span><span class="p">:</span> <span class="s2">&quot;AGGGACGTA&quot;</span><span class="p">}</span>
+<span class="n">coll</span> <span class="o">=</span> <span class="n">make_unaligned_seqs</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">moltype</span><span class="o">=</span><span class="s2">&quot;dna&quot;</span><span class="p">)</span>
+<span class="n">coll</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7fa10cf9f400&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq_0</span> <span class="o">=</span> <span class="n">coll</span><span class="o">.</span><span class="n">named_seqs</span><span class="p">[</span><span class="s2">&quot;seq-0&quot;</span><span class="p">]</span>
+<span class="n">seq_0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3seq td { border: none !important; text-align: left !important; }
+.c3seq tr:not(.num_row) td span {margin: 0 2px;}
+.c3seq tr:nth-child(even) {background: #f7f7f7;}
+.c3seq .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3seq .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; }
+.c3seq .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3seq .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3seq .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3seq .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3seq .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3seq .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3seq">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">seq-0</td><td><span class="A_dna">A</span><span class="C_dna">C</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="T_dna">T</span></td></tr>
+</table>
+<p><i>5 DnaSequence</i></p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="making-from-a-collection-of-unaligned-sequences-an-alignment">
+<h3><span class="section-number">8.2.2.2. </span>Making from a collection of unaligned sequences an Alignment<a class="headerlink" href="#making-from-a-collection-of-unaligned-sequences-an-alignment" title="Permalink to this headline">¶</a></h3>
+<p>Just use the <code class="docutils literal notranslate"><span class="pre">degap()</span></code> method. This strips all gap characters (<span class="incremental">“-“</span>) from the sequences.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq_coll</span> <span class="o">=</span> <span class="n">aln</span><span class="o">.</span><span class="n">degap</span><span class="p">()</span>
+<span class="n">seq_coll</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7fa10cf9fca0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reverse-complement-and-many-other-methods-are-available-as-for-alignment-data-types">
+<h3><span class="section-number">8.2.2.3. </span>Reverse complement and many other methods are available as for alignment data types<a class="headerlink" href="#reverse-complement-and-many-other-methods-are-available-as-for-alignment-data-types" title="Permalink to this headline">¶</a></h3>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rc_ed</span> <span class="o">=</span> <span class="n">coll</span><span class="o">.</span><span class="n">rc</span><span class="p">()</span>
+<span class="n">rc_ed</span><span class="o">.</span><span class="n">named_seqs</span><span class="p">[</span><span class="s2">&quot;seq-0&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3seq td { border: none !important; text-align: left !important; }
+.c3seq tr:not(.num_row) td span {margin: 0 2px;}
+.c3seq tr:nth-child(even) {background: #f7f7f7;}
+.c3seq .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3seq .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; }
+.c3seq .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3seq .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3seq .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3seq .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3seq .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3seq .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3seq">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">seq-0</td><td><span class="A_dna">A</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="G_dna">G</span><span class="T_dna">T</span></td></tr>
+</table>
+<p><i>5 DnaSequence</i></p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="sequences">
+<h2><span class="section-number">8.2.3. </span>Sequences<a class="headerlink" href="#sequences" title="Permalink to this headline">¶</a></h2>
+<p>Collections and alignments give you an organised interface to manipulate groups of sequences. There is also a specific set of sequence data types. These consist of classes that are specific to the different <a class="reference internal" href="moltype.html#moltypes"><span class="std std-ref">molecular types</span></a>. (See <a class="reference external" href="https://cogent3.org/doc/api/sequence/classes/cogent3.core.sequence.DnaSequence.html#cogent3.core.sequence.DnaSequence">DnaSequence</a> and <a class="reference external" href="https://cogent3.org/doc/api/sequence/classes/cogent3.core.sequence.ProteinSequence.html#cogent3.core.sequence.ProteinSequence">ProteinSequence</a> for the documentation.)</p>
+<p>We can make a sequence from a Python data types.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_seq</span>
+
+<span class="n">seq</span> <span class="o">=</span> <span class="n">make_seq</span><span class="p">(</span><span class="s2">&quot;ACGTTTAAA&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;seq-0&quot;</span><span class="p">,</span> <span class="n">moltype</span><span class="o">=</span><span class="s2">&quot;dna&quot;</span><span class="p">)</span>
+<span class="n">seq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3seq td { border: none !important; text-align: left !important; }
+.c3seq tr:not(.num_row) td span {margin: 0 2px;}
+.c3seq tr:nth-child(even) {background: #f7f7f7;}
+.c3seq .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3seq .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; }
+.c3seq .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3seq .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3seq .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3seq .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3seq .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3seq .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3seq">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">seq-0</td><td><span class="A_dna">A</span><span class="C_dna">C</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span></td></tr>
+</table>
+<p><i>9 DnaSequence</i></p>
+</div></div></div>
+</div>
+<p>Sequences are loaded from file using the load functions for collections, or alignments.</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1><span class="section-number">8.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p>Download the <a class="reference download internal" download="" href="../_downloads/b772b1a069dd1c0925b4e5a7f3ceb4f9/brca1-bats.fasta"><code class="xref download docutils literal notranslate"><span class="pre">alignment</span> <span class="pre">of</span> <span class="pre">bat</span> <span class="pre">BRCA1</span> <span class="pre">sequences</span></code></a>.</p>
+<ol class="arabic simple">
+<li><p>Try removing the <code class="docutils literal notranslate"><span class="pre">incomplete_ok</span></code> argument from the <code class="docutils literal notranslate"><span class="pre">get_translation()</span></code> method.</p></li>
+<li><p>Create an alignment from a dict with sequences that you make up. Slice the alignment to get every second codon position.</p></li>
+<li><p>Using the downloaded alignment, count the number of second codon positions that have variation.</p></li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="explore_variation.html" class="btn btn-neutral float-right" title="8.4. Exploring genetic variation using Alignments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data_formats.html" class="btn btn-neutral float-left" title="8.1. Biological Data Formats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

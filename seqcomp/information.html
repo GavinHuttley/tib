@@ -120,7 +120,9 @@
 <li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.17. Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">7. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">9. Index</a></li>
 </ul>
 
             
@@ -215,7 +217,7 @@
 }
 </style>
 <div class="section" id="measuring-information-using-shannon-s-entropy">
-<h1><span class="section-number">6.8. </span>Measuring information using Shannon’s entropy<a class="headerlink" href="#measuring-information-using-shannon-s-entropy" title="Permalink to this headline">¶</a></h1>
+<span id="shannon-entropy"></span><h1><span class="section-number">6.8. </span>Measuring information using Shannon’s entropy<a class="headerlink" href="#measuring-information-using-shannon-s-entropy" title="Permalink to this headline">¶</a></h1>
 <p>We can measure the information content of “something” using a measurement called “entropy” (like a scale for information). The core unit is the “bit”, called a measure of surprise, which is the answer to a yes/no question.</p>
 <p>Consider a state space containing only the letter <code class="docutils literal notranslate"><span class="pre">A</span></code>. We can never be “surprised” by the outcome of drawing a new letter from this space as it can only be of one type. So our entropy, in this case is 0. Add another letter and we have a chance to be “surprised”. So in general, as predictability goes up, entropy goes down.</p>
 <p>As it turns out, entropy is a very fundamental quantity. You will see numerous expressions in statistics that relate to this. Given that the very purpose of genetical systems is to contain all the information sufficient to specify a living thing, application of statistical techniques built around the notion of “information” as a fundamental quantity seems quite natural.</p>
@@ -250,7 +252,7 @@ Ent.   0    0.72  1.52  1.52  0.97
 <p>In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo <a class="bibtex reference internal" href="#schneider-1990aa" id="id1">[SS90]</a>. That representation is computed using position-wise entropy.</p>
 </div>
 <div class="section" id="information-at-a-position">
-<h2><span class="section-number">6.8.2. </span>Information at a position<a class="headerlink" href="#information-at-a-position" title="Permalink to this headline">¶</a></h2>
+<span id="information"></span><h2><span class="section-number">6.8.2. </span>Information at a position<a class="headerlink" href="#information-at-a-position" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[R_i=\log(n) - H_i\]</div>
 <p>where <span class="math notranslate nohighlight">\(R_i\)</span> is the information at position <span class="incremental">i</span>, <span class="incremental">n</span> is the number of possible states (4 for DNA), <span class="math notranslate nohighlight">\(\log(n)\)</span> is the maximum possible entropy, and <span class="math notranslate nohighlight">\(H_i\)</span> is the Shannon entropy for position <span class="incremental">i</span>.</p>
@@ -311,7 +313,7 @@ Ent.   0    0.72  1.52  1.52  0.97
 <blockquote>
 <div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;CAGACCAGAAGAAGCACAAGCGAGCCCCGGGAGGGCGGACCGGCGAGAGG&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GCGACACGACGCGCCCCAAGGGCGGGGAGGACGGAGCGCCGAGGAGGGGA&#39;
 </pre></div>
 </div>
 </div>

@@ -1,3 +1,5 @@
+.. _shannon_entropy:
+
 Measuring information using Shannon's entropy
 =============================================
 
@@ -42,6 +44,8 @@ Applying Shannon entropy to the sample alignment above gives:
     Ent.   0    0.72  1.52  1.52  0.97
 
 In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo :cite:`Schneider:1990aa`. That representation is computed using position-wise entropy.
+
+.. _information:
 
 Information at a position
 -------------------------

@@ -1,0 +1,73 @@
+****************************
+What is molecular evolution?
+****************************
+
+.. index:: pretty print
+
+.. sidebar:: Variation between species
+    :name: Variation between species
+
+    .. jupyter-execute::
+        :linenos:
+
+        from cogent3 import load_aligned_seqs
+
+        aln = load_aligned_seqs("source/data/brca1_primate.fasta", moltype="dna")
+
+    .. jupyter-execute::
+        :hide-code:
+
+        aln = aln[36:]
+        aln.set_repr_policy(num_pos=36, ref_name="Human")
+
+    .. jupyter-execute::
+        :linenos:
+
+        aln
+    
+    This is a "pretty print" display style in which only the first sequence is shown in full. All other sequences display a base only when it doesn't match that reference sequence, otherwise a ``.`` is displayed.
+
+Molecular Evolution is a domain of research that is concerned with why biological sequences look the way they do. Can we explain the distribution of genetic variation between biological sequences (RNA, DNA, and proteins) in terms of their evolutionary origins? Can we establish whether severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) is showing signs of adaptive evolution to its new host - us? These questions are within the domain of molecular evolution.
+
+Since the nucleic acids are the information system of living things and can also be, along with proteins, functional, molecular evolution draws on genetics, molecular and cell biology, biochemistry, and chemistry. At a conceptual level, molecular evolution is closely related to population genetics and, as such, is very much focussed on the process of evolution as it manifests in biological sequences.
+
+At a practical level, using genetic variation as an indicator of biological importance is central to much of modern biology. Researchers who are engaged in molecular studies of specific proteins or genes rely on resources provided by a genome portal (like `UCSC Genome Browser <ucsc>`_ or `Ensembl <ensembl>`_) to get insights into what a molecule of interest might actually be doing. One of the types of information that these portals present to facilitate understanding is a comparison of the biological sequences from different species. Why? We will answer that question in this topic.
+
+#. define biological problem and make testable predictions
+#. sample appropriate homologous sequences
+#. align the sequences
+#. select a single phylogenetic tree
+#. pick evolutionary model(s)
+#. fit model(s) and evaluate hypotheses
+
+**********************
+What is phylogenetics?
+**********************
+
+Phylogenetics is concerned with the problem of inferring the relationships between members of a collection of biological sequences. This relationship is displayed as a tree. As the methods employed to estimate relationships in phylogenetics are the same methods used to understand process in molecular evolution, phylogenetics is a sub-discipline (albeit highly specialised) of molecular evolution.
+
+.. jupyter-execute::
+    :hide-code:
+    
+    from cogent3 import make_tree
+    
+    tree = make_tree("(Galago,Howler Monkey,(Rhesus,(Orangutan,(Gorilla,(Human,Chimpanzee)))));")
+    fig = tree.get_figure()
+    fig.tip_font = {"size": 18, "color": "blue"}
+    fig_dim = 500
+    fig.show(width=fig_dim, height=fig_dim)
+
+In the figure I display the basic workflow for phylogenetic reconstruction. There is substantial overlap with molecular evolutionary analysis in general, but the emphasis here is on the problem of estimating a tree. The steps are:
+
+#. sample homologous sequences from tax of interest
+#. align the sequences
+#. choose method to build the phylogenetic tree.
+    
+    - pick a substitution model
+    
+#. Estimate the phylogenetic tree
+
+    - we may include a technique for estimating the level of uncertainty in that tree
+
+.. _ucsc: https://genome.ucsc.edu
+.. _ensembl: https://ensembl.org

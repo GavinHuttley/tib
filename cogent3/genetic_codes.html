@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8.6. Genetic Codes &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8.7. MolType – specifying biological sequence type" href="moltype.html" />
+    <link rel="prev" title="8.4. Exploring genetic variation using Alignments" href="explore_variation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_formats.html">8.1. Biological Data Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html">8.2. Alignments, Sequence Collections and Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html#exercises">8.3. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.4. Exploring genetic variation using Alignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html#exercises">8.5. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.6. Genetic Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moltype.html">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">9. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a> &raquo;</li>
+        
+      <li><span class="section-number">8.6. </span>Genetic Codes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/genetic_codes.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="genetic-codes">
+<span id="id1"></span><h1><span class="section-number">8.6. </span>Genetic Codes<a class="headerlink" href="#genetic-codes" title="Permalink to this headline">¶</a></h1>
+<p>Fundmental information encoding system and a fascinating subject of study. <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> provides a dedicated object for handling genetic code information. The genetic codes included with <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> are indicated in the following table indicates.</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Specify a genetic code using either 'Name' or Code ID (as an integer or string)</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>Code ID</th>
+<th>Name</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">1</td>
+<td>Standard Nuclear</td>
+</tr>
+<tr>
+<td class="index">2</td>
+<td>Vertebrate Mitochondrial</td>
+</tr>
+<tr>
+<td class="index">3</td>
+<td>Yeast Mitochondrial</td>
+</tr>
+<tr>
+<td class="index">4</td>
+<td>Mold, Protozoan, and Coelenterate Mitochondrial, and Mycoplasma/Spiroplasma Nuclear</td>
+</tr>
+<tr>
+<td class="index">5</td>
+<td>Invertebrate Mitochondrial</td>
+</tr>
+<tr>
+<td class="index">6</td>
+<td>Ciliate, Dasycladacean and Hexamita Nuclear</td>
+</tr>
+<tr>
+<td class="index">9</td>
+<td>Echinoderm and Flatworm Mitochondrial</td>
+</tr>
+<tr>
+<td class="index">10</td>
+<td>Euplotid Nuclear</td>
+</tr>
+<tr>
+<td class="index">11</td>
+<td>Bacterial Nuclear and Plant Plastid</td>
+</tr>
+<tr>
+<td class="index">12</td>
+<td>Alternative Yeast Nuclear</td>
+</tr>
+<tr>
+<td class="index">13</td>
+<td>Ascidian Mitochondrial</td>
+</tr>
+<tr>
+<td class="index">14</td>
+<td>Alternative Flatworm Mitochondrial</td>
+</tr>
+<tr>
+<td class="index">15</td>
+<td>Blepharisma Nuclear</td>
+</tr>
+<tr>
+<td class="index">16</td>
+<td>Chlorophycean Mitochondrial</td>
+</tr>
+<tr>
+<td class="index">20</td>
+<td>Trematode Mitochondrial</td>
+</tr>
+<tr>
+<td class="index">22</td>
+<td>Scenedesmus obliquus Mitochondrial</td>
+</tr>
+<tr>
+<td class="index">23</td>
+<td>Thraustochytrium Mitochondrial</td>
+</tr>
+</tbody>
+</table>
+<p>
+17 rows x 2 columns</p>
+</div></div></div>
+</div>
+<p>Use the top level <code class="docutils literal notranslate"><span class="pre">get_code()</span></code> function to get a specific genetic code. Use a code ID from the above table.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">get_code</span>
+
+<span class="n">gc</span> <span class="o">=</span> <span class="n">get_code</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">gc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Standard Nuclear</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>aa</th>
+<th>IUPAC code</th>
+<th>codons</th>
+</thead>
+<tbody>
+<tr>
+<td>Alanine</td>
+<td>A</td>
+<td>GCT,GCC,GCA,GCG</td>
+</tr>
+<tr>
+<td>Cysteine</td>
+<td>C</td>
+<td>TGT,TGC</td>
+</tr>
+<tr>
+<td>Aspartic Acid</td>
+<td>D</td>
+<td>GAT,GAC</td>
+</tr>
+<tr>
+<td>Glutamic Acid</td>
+<td>E</td>
+<td>GAA,GAG</td>
+</tr>
+<tr>
+<td>Phenylalanine</td>
+<td>F</td>
+<td>TTT,TTC</td>
+</tr>
+<tr>
+<td>Glycine</td>
+<td>G</td>
+<td>GGT,GGC,GGA,GGG</td>
+</tr>
+<tr>
+<td>Histidine</td>
+<td>H</td>
+<td>CAT,CAC</td>
+</tr>
+<tr>
+<td>Isoleucine</td>
+<td>I</td>
+<td>ATT,ATC,ATA</td>
+</tr>
+<tr>
+<td>Lysine</td>
+<td>K</td>
+<td>AAA,AAG</td>
+</tr>
+<tr>
+<td>Leucine</td>
+<td>L</td>
+<td>TTA,TTG,CTT,CTC,CTA,CTG</td>
+</tr>
+<tr>
+<td>Methionine</td>
+<td>M</td>
+<td>ATG</td>
+</tr>
+<tr>
+<td>Asparagine</td>
+<td>N</td>
+<td>AAT,AAC</td>
+</tr>
+<tr>
+<td>Proline</td>
+<td>P</td>
+<td>CCT,CCC,CCA,CCG</td>
+</tr>
+<tr>
+<td>Glutamine</td>
+<td>Q</td>
+<td>CAA,CAG</td>
+</tr>
+<tr>
+<td>Arginine</td>
+<td>R</td>
+<td>CGT,CGC,CGA,CGG,AGA,AGG</td>
+</tr>
+<tr>
+<td>Serine</td>
+<td>S</td>
+<td>TCT,TCC,TCA,TCG,AGT,AGC</td>
+</tr>
+<tr>
+<td>Threonine</td>
+<td>T</td>
+<td>ACT,ACC,ACA,ACG</td>
+</tr>
+<tr>
+<td>Valine</td>
+<td>V</td>
+<td>GTT,GTC,GTA,GTG</td>
+</tr>
+<tr>
+<td>Tryptophan</td>
+<td>W</td>
+<td>TGG</td>
+</tr>
+<tr>
+<td>Tyrosine</td>
+<td>Y</td>
+<td>TAT,TAC</td>
+</tr>
+<tr>
+<td>STOP</td>
+<td>*</td>
+<td>TAA,TAG,TGA</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>Genetic code objects act like dictionaries for trinucleotide strings or single letter strings. The former are interpreted as RNA or DNA, the latter as the single code amino acid.</p>
+<p>You can get the encoded amino acid from a RNA triplet</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aa</span> <span class="o">=</span> <span class="n">gc</span><span class="p">[</span><span class="s2">&quot;UAC&quot;</span><span class="p">]</span>
+<span class="n">aa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Y&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>or DNA triplet.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aa</span> <span class="o">=</span> <span class="n">gc</span><span class="p">[</span><span class="s2">&quot;TAC&quot;</span><span class="p">]</span>
+<span class="n">aa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Y&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can get all the codons that encode an amino acid.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">codons</span> <span class="o">=</span> <span class="n">gc</span><span class="p">[</span><span class="s2">&quot;Y&quot;</span><span class="p">]</span>
+<span class="n">codons</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;TAT&#39;, &#39;TAC&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can check whether a codon is a start</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="o">.</span><span class="n">is_start</span><span class="p">(</span><span class="s2">&quot;ATG&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>or stop codon</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="o">.</span><span class="n">is_start</span><span class="p">(</span><span class="s2">&quot;TAA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Stop codons are represented by <code class="docutils literal notranslate"><span class="pre">&quot;*&quot;</span></code> character.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="p">[</span><span class="s2">&quot;TGA&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;*&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;TCGACCGTTTAAGCC&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;STV*A&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can get the code as a Table,</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">gc</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Standard Nuclear</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>aa</th>
+<th>IUPAC code</th>
+<th>codons</th>
+</thead>
+<tbody>
+<tr>
+<td>Alanine</td>
+<td>A</td>
+<td>GCT,GCC,GCA,GCG</td>
+</tr>
+<tr>
+<td>Cysteine</td>
+<td>C</td>
+<td>TGT,TGC</td>
+</tr>
+<tr>
+<td>Aspartic Acid</td>
+<td>D</td>
+<td>GAT,GAC</td>
+</tr>
+<tr>
+<td>Glutamic Acid</td>
+<td>E</td>
+<td>GAA,GAG</td>
+</tr>
+<tr>
+<td>Phenylalanine</td>
+<td>F</td>
+<td>TTT,TTC</td>
+</tr>
+<tr>
+<td>Glycine</td>
+<td>G</td>
+<td>GGT,GGC,GGA,GGG</td>
+</tr>
+<tr>
+<td>Histidine</td>
+<td>H</td>
+<td>CAT,CAC</td>
+</tr>
+<tr>
+<td>Isoleucine</td>
+<td>I</td>
+<td>ATT,ATC,ATA</td>
+</tr>
+<tr>
+<td>Lysine</td>
+<td>K</td>
+<td>AAA,AAG</td>
+</tr>
+<tr>
+<td>Leucine</td>
+<td>L</td>
+<td>TTA,TTG,CTT,CTC,CTA,CTG</td>
+</tr>
+<tr>
+<td>Methionine</td>
+<td>M</td>
+<td>ATG</td>
+</tr>
+<tr>
+<td>Asparagine</td>
+<td>N</td>
+<td>AAT,AAC</td>
+</tr>
+<tr>
+<td>Proline</td>
+<td>P</td>
+<td>CCT,CCC,CCA,CCG</td>
+</tr>
+<tr>
+<td>Glutamine</td>
+<td>Q</td>
+<td>CAA,CAG</td>
+</tr>
+<tr>
+<td>Arginine</td>
+<td>R</td>
+<td>CGT,CGC,CGA,CGG,AGA,AGG</td>
+</tr>
+<tr>
+<td>Serine</td>
+<td>S</td>
+<td>TCT,TCC,TCA,TCG,AGT,AGC</td>
+</tr>
+<tr>
+<td>Threonine</td>
+<td>T</td>
+<td>ACT,ACC,ACA,ACG</td>
+</tr>
+<tr>
+<td>Valine</td>
+<td>V</td>
+<td>GTT,GTC,GTA,GTG</td>
+</tr>
+<tr>
+<td>Tryptophan</td>
+<td>W</td>
+<td>TGG</td>
+</tr>
+<tr>
+<td>Tyrosine</td>
+<td>Y</td>
+<td>TAT,TAC</td>
+</tr>
+<tr>
+<td>STOP</td>
+<td>*</td>
+<td>TAA,TAG,TGA</td>
+</tr>
+</tbody>
+</table>
+<p>
+21 rows x 3 columns</p>
+</div></div></div>
+</div>
+<p>See the <a class="reference external" href="https://cogent3.org">cogent3</a> cookbook documentation for more on using genetic codes.</p>
+<div class="section" id="exercises">
+<h2><span class="section-number">8.6.1. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position. The following questions refer to these groupings.</p>
+<ol class="arabic">
+<li><p>Pick a genetic code and, for each such codon position group, count the number of changes that are synonymous. Is there a difference between the codon position and the proportion of synonymous changes?</p></li>
+<li><p>Does the property measured in 2.) vary between the genetic codes?</p></li>
+<li><p>Now categorise the codon differences by whether they are a transition or transversion change. Assess whether the fraction of synonymous changes differs between transition and transversion changes.</p></li>
+<li><p>Is there variation (between the genetic codes) in the number of stop codons? Assess this programmatically.</p>
+<blockquote>
+<div><p><em>Hint: look at the attributes on the genetic code instance.</em></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="moltype.html" class="btn btn-neutral float-right" title="8.7. MolType – specifying biological sequence type" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="explore_variation.html" class="btn btn-neutral float-left" title="8.4. Exploring genetic variation using Alignments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

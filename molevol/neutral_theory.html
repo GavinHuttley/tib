@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.4. The neutral theory of molecular evolution &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.5. Mutation – the origin of genetic variation" href="mutation.html" />
+    <link rel="prev" title="7.3. Data" href="data.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">7. Molecular Evolution</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">7.1. What is molecular evolution?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-is-phylogenetics">7.2. What is phylogenetics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">7.3. Data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.4. The neutral theory of molecular evolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutation.html">7.5. Mutation – the origin of genetic variation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">7.6. Glossary of terms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">9. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">7. </span>Molecular Evolution</a> &raquo;</li>
+        
+      <li><span class="section-number">7.4. </span>The neutral theory of molecular evolution</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/molevol/neutral_theory.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="the-neutral-theory-of-molecular-evolution">
+<h1><span class="section-number">7.4. </span>The neutral theory of molecular evolution<a class="headerlink" href="#the-neutral-theory-of-molecular-evolution" title="Permalink to this headline">¶</a></h1>
+<p>If the complete DNA sequence of an organism (its genome) encodes that organism then, under Darwin’s theory of evolution by natural selection, the attributes that distinguish that organism will also distinguish its DNA from that of others.</p>
+<p>While Darwin’s theory provides our guidance, including that natural selection is the fundamental driving force underpinning adaptation, it is incomplete. It turns out that evolution also happens entirely by chance and, in fact, this may be the dominant force underpinning the divergence between species. The seeds of this rather remarkable (and simultaneously banal) amendment to Darwin’s work originated principally with the population genetic empirical and theoretical work of <a class="reference external" href="https://en.wikipedia.org/wiki/Sewall_Wright">Sewall Wright</a>.</p>
+<div class="section" id="examination-of-genetic-divergence">
+<h2><span class="section-number">7.4.1. </span>Examination of genetic divergence<a class="headerlink" href="#examination-of-genetic-divergence" title="Permalink to this headline">¶</a></h2>
+<p>We start our exploration of this idea by looking at early results from comparisons of molecular sequences. As displayed in <a class="reference internal" href="#molecular-clock"><span class="std std-ref">the figure</span></a>, there appeared to be a linear relationship between chronological time and the accumulation of differences in amino acid sequences between species.</p>
+<div class="sidebar" id="molecular-clock">
+<p class="sidebar-title">Variation in proteins seems to accumulate linearly with time</p>
+<a class="reference internal image-reference" href="../_images/molecular_clock.png"><img alt="../_images/molecular_clock.png" src="../_images/molecular_clock.png" style="width: 552.5px; height: 534.5px;" /></a>
+<p>Number of amino acid differences versus species divergence time. The former were estimated allowing for multiple changes, the latter derived from paleontological studies. Mean error in estimate of amino acid differences are indicated by the vertical bars <a class="footnote-reference brackets" href="#id3" id="id1">1</a>. Figure from <a class="bibtex reference internal" href="#dickerson-1971aa" id="id2">[Dic71]</a>.</p>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Amusingly, there is no such uncertainty portrayed for the paleontological estimates.</p>
+</dd>
+</dl>
+<p>This result was difficult to reconcile under a model in which most genetic variation was under the scrutiny of natural selection. In 1968, 2 seminal papers provided an elegant mathematical and conceptual basis for understanding these clock-like behaviours. They also provide the critical framework from within which to examine and understand the forces affecting the distribution of genetic variation, both within and between species.</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">7.4.2. </span>The Neutral Theory of Molecular Evolution<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>This theory proposes that most genetic variation, both within and between species, has not been affected by natural selection, but instead reflects the influence of chance events on new mutations. The theory was dominantly developed by Motoo Kimura <a class="bibtex reference internal" href="#kimura-1968aa" id="id5">[Kim68]</a> but independently proposed by King and Jukes <a class="bibtex reference internal" href="#king-1969aa" id="id6">[KJ69]</a>.</p>
+</div>
+<div class="section" id="a-simplified-example-of-neutral-evolution">
+<h2><span class="section-number">7.4.3. </span>A simplified example of neutral evolution<a class="headerlink" href="#a-simplified-example-of-neutral-evolution" title="Permalink to this headline">¶</a></h2>
+<p>Let us begin by making the simplistic assumption that the actual probability of a mutation (in a single generation) to any of the amino acids is equal. We denote this <span class="math notranslate nohighlight">\(p(a, b)=\epsilon\)</span> where <span class="math notranslate nohighlight">\(a, b\)</span> are two different amino acids. For a sequence position where any amino acid is allowed, the total probability an existing amino acid changes is <span class="math notranslate nohighlight">\(19\epsilon\)</span> <a class="footnote-reference brackets" href="#id8" id="id7">2</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id7">2</a></span></dt>
+<dd><p>There are 19 amino acids that can be changed into.</p>
+</dd>
+</dl>
+<p>Now let us consider an extreme scenario of a specific position in a hypothetical human protein sequence that only tolerates hydrophilic amino acids and any other type is recessive lethal before birth. I have illustrated this hypothetical sequence as having an arginine (<code class="docutils literal notranslate"><span class="pre">R</span></code>, see <a class="reference internal" href="#neutral"><span class="std std-ref">Neutral variation</span></a>). If we watch that sequence through time, we can never see any changes other than those which generate another hydrophilic amino acid because of natural selection. For this position, the actual total probability of mutation is the same as above. But if viewed from a longer time depth, after natural selection has operated, there can only be 5 hydrophilic amino acids. Thus, the probability of a mutation that is not lethal is <span class="math notranslate nohighlight">\(4\epsilon\)</span>.</p>
+<p>Now imagine we view variation in this protein at the population level. At our strictly hydrophilic position, only other hydrophilic amino acids can exist because they exhibit no difference with respect to natural selection. In this sense, we say they are “neutral” with respect to natural selection (not to be confused with chemically neutral). Now let us examine a different position in our hypothetical protein where, for instance, all amino acids are equivalent. We will see many more distinct variants and, as for the hydrophilic position, all such variants are neutral with respect to natural selection.</p>
+<div class="sidebar" id="neutral">
+<p class="sidebar-title">Neutral variation</p>
+<div class="graphviz"><object data="../_images/graphviz-2a6577fbe7cc990560a4d66719923e82e407090c.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph neutrality {
+layout=twopi
+node [shape=&quot;circle&quot;];
+
+R [fontcolor=&quot;white&quot; color=&quot;blue&quot; style=filled];
+D [fontcolor=&quot;white&quot; color=&quot;blue&quot; style=filled];
+E [fontcolor=&quot;white&quot; color=&quot;blue&quot; style=filled];
+H [fontcolor=&quot;white&quot; color=&quot;blue&quot; style=filled];
+K [fontcolor=&quot;white&quot; color=&quot;blue&quot; style=filled];
+A [color=&quot;#33333555&quot; style=filled];
+G [color=&quot;#33333555&quot; style=filled];
+P [color=&quot;#33333555&quot; style=filled];
+Q [color=&quot;#33333555&quot; style=filled];
+W [color=&quot;#33333555&quot; style=filled];
+ellipsis [label=&quot;…&quot; color=&quot;#33333555&quot; style=filled];
+R -&gt; D;
+R -&gt; E;
+R -&gt; H;
+R -&gt; K;
+R -&gt; A [style=dotted arrowhead=none];
+R -&gt; G [style=dotted arrowhead=none];
+R -&gt; P [style=dotted arrowhead=none];
+R -&gt; Q [style=dotted arrowhead=none];
+R -&gt; W [style=dotted arrowhead=none];
+R -&gt; ellipsis [style=dotted arrowhead=none];
+}</p></object></div>
+<p>Each node represents an amino acid (not all amino acids are shown). Hydrophilic amino acids are shown in <span class="blue">blue</span>.</p>
+</div>
+</div>
+<div class="section" id="what-does-neutral-mean">
+<h2><span class="section-number">7.4.4. </span>What does “neutral” mean?<a class="headerlink" href="#what-does-neutral-mean" title="Permalink to this headline">¶</a></h2>
+<p>A genetic variant is considered selectively neutral, or just neutral, if it is “invisible” to natural selection.
+For neutral variation, the evolutionary dynamics (changes in frequency) are dictated by random genetic drift and mutation only (these are the “neutral processes”). But, as Kimura showed, the designation of neutral is a moving target.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Random genetic drift is the fluctuation in allele frequencies between generations that occurs due to random sampling of individuals.</p>
+</div>
+</div>
+<div class="section" id="some-important-results-from-kimura">
+<h2><span class="section-number">7.4.5. </span>Some important results from Kimura<a class="headerlink" href="#some-important-results-from-kimura" title="Permalink to this headline">¶</a></h2>
+<p>One important result from Kimura, often referred to as his “rule of thumb”, is that natural selection is only effective against random genetic drift when <span class="math notranslate nohighlight">\(4N_e s &gt;&gt; 1\)</span> where <span class="math notranslate nohighlight">\(N_e\)</span> is the effective population size and <span class="math notranslate nohighlight">\(s\)</span> is the selection coefficient. What this means is that, as population size shrinks, the magnitude of natural selection must increase in order overcome the stochastic fluctuations of random genetic drift. Very bad news for endangered species, since deleterious genetic variants can become fixed <a class="footnote-reference brackets" href="#id10" id="id9">3</a></p>
+<dl class="footnote brackets">
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id9">3</a></span></dt>
+<dd><p>Fixation is the condition in which a genetic variant achieves a frequency of 1.0 (all population members have it). It becomes a substitution when that frequency applies to all members of the species.</p>
+</dd>
+</dl>
+<p>Another striking result is that the neutral substitution rate <span class="math notranslate nohighlight">\(k\)</span> <strong>is</strong> the number of mutations per site per generation <span class="math notranslate nohighlight">\(\mu\)</span> for strictly neutral variation. Irrespective of population size. This elegant result provides the foundation for why a molecular clock can exist.</p>
+<p>Perhaps the most crucial corollary from this body of theory is the theoretical foundations establish how what goes on within a species shapes what we see between species.</p>
+<p>Finally, returning to our simplistic example of how variation can be neutral but natural selection can be operated, the following quite provides another key perspective on how this body of work applies to modern day genomics.</p>
+<blockquote class="epigraph">
+<div><p>“..functionally less important molecules or parts of a molecule evolve faster than more important ones..”</p>
+<p>King and Jukes <a class="bibtex reference internal" href="#king-1969aa" id="id11">[KJ69]</a></p>
+</div></blockquote>
+<div class="section" id="summary">
+<h3><span class="section-number">7.4.5.1. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>The great value of the neutral theory is as a null hypothesis. Models have been developed for explicitly testing for departure from neutrality for both population genetic and molecular evolutionary analyses. When we can reject the null convincingly, we are able to state that a specific genomic location encodes critical information for the organism.</p>
+<p>While that seems all beautiful, be aware that, as with many other difficult problems, Kimura’s theory rests on a number of very restrictive assumptions about biology that are known to be incorrect. Understanding how important those are remains a highly active area of research by many, including myself.</p>
+<hr class="docutils" />
+<p class="rubric">Citations</p>
+<p id="bibtex-bibliography-molevol/neutral_theory-0"><dl class="citation">
+<dt class="bibtex label" id="dickerson-1971aa"><span class="brackets"><a class="fn-backref" href="#id2">Dic71</a></span></dt>
+<dd><p>R E Dickerson. The structures of cytochrome c and the rates of molecular evolution. <em>J Mol Evol</em>, 1:26–45, 1971.</p>
+</dd>
+<dt class="bibtex label" id="kimura-1968aa"><span class="brackets"><a class="fn-backref" href="#id5">Kim68</a></span></dt>
+<dd><p>Motoo Kimura. Evolutionary Rate at the Molecular Level. <em>Nature</em>, 217:624–626, 1968. <a class="reference external" href="https://doi.org/10.1038/217624a0">doi:10.1038/217624a0</a>.</p>
+</dd>
+<dt class="bibtex label" id="king-1969aa"><span class="brackets">KJ69</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id11">2</a>)</span></dt>
+<dd><p>J L King and T H Jukes. Non-Darwinian evolution. <em>Science</em>, 164:788–798, 1969.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mutation.html" class="btn btn-neutral float-right" title="7.5. Mutation – the origin of genetic variation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data.html" class="btn btn-neutral float-left" title="7.3. Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

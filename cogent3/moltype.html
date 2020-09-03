@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8.7. MolType – specifying biological sequence type &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Index" href="../genindex.html" />
+    <link rel="prev" title="8.6. Genetic Codes" href="genetic_codes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_formats.html">8.1. Biological Data Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html">8.2. Alignments, Sequence Collections and Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html#exercises">8.3. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.4. Exploring genetic variation using Alignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html#exercises">8.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="genetic_codes.html">8.6. Genetic Codes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">9. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a> &raquo;</li>
+        
+      <li><span class="section-number">8.7. </span><code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/moltype.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="moltype-specifying-biological-sequence-type">
+<span id="moltypes"></span><h1><span class="section-number">8.7. </span><code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type<a class="headerlink" href="#moltype-specifying-biological-sequence-type" title="Permalink to this headline">¶</a></h1>
+<p>True biological sequences are polymers of monomeric units with distinct chemical properties. These are represented by specific alphabets of allowed characters, a collection of ambiguous characters <a class="footnote-reference brackets" href="#id2" id="id1">1</a>, and various operations that can be performed on them. In <code class="docutils literal notranslate"><span class="pre">cogent3</span></code>, we represent some of these using concepts with the an object type called a <code class="docutils literal notranslate"><span class="pre">MolType</span></code>. The available moltypes are displayed by calling a convenience function, <code class="docutils literal notranslate"><span class="pre">available_moltypes()</span></code>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The nomenclature (character alphabets) for representing biological sequences are defined by the International Union of Pure and Applied Chemistry (IUPAC).</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container" id="index-0">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">available_moltypes</span>
+
+<span class="n">available_moltypes</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Specify a moltype by the Abbreviation (case insensitive).</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>Abbreviation</th>
+<th>Number of states</th>
+<th>Moltype</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">'ab'</td>
+<td>2</td>
+<td>MolType(('a', 'b'))</td>
+</tr>
+<tr>
+<td class="index">'dna'</td>
+<td>4</td>
+<td>MolType(('T', 'C', 'A', 'G'))</td>
+</tr>
+<tr>
+<td class="index">'rna'</td>
+<td>4</td>
+<td>MolType(('U', 'C', 'A', 'G'))</td>
+</tr>
+<tr>
+<td class="index">'protein'</td>
+<td>21</td>
+<td>MolType(('A', 'C', 'D', 'E', 'F', 'G', ...</td>
+</tr>
+<tr>
+<td class="index">'protein_with_stop'</td>
+<td>22</td>
+<td>MolType(('A', 'C', 'D', 'E', 'F', 'G', ...</td>
+</tr>
+<tr>
+<td class="index">'text'</td>
+<td>52</td>
+<td>MolType(('a', 'b', 'c', 'd', 'e', 'f', ...</td>
+</tr>
+<tr>
+<td class="index">'bytes'</td>
+<td>256</td>
+<td>MolType(('\x00', '\x01', '\x02', '\x03'...</td>
+</tr>
+</tbody>
+</table>
+<p>
+7 rows x 3 columns</p>
+</div></div></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Typically you specify what moltype your data is simply using the string abbreviation of the appropriate molecular type.</p>
+</div>
+<p>To illustrate the object capabilities, we load the DNA moltype and use some of the methods.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">get_moltype</span>
+
+<span class="n">dna</span> <span class="o">=</span> <span class="n">get_moltype</span><span class="p">(</span><span class="s2">&quot;dna&quot;</span><span class="p">)</span>
+<span class="n">dna</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>MolType((&#39;T&#39;, &#39;C&#39;, &#39;A&#39;, &#39;G&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+<p>For this moltype, there’s a notion of the complement of a sequence</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">complement</span><span class="p">(</span><span class="s2">&quot;TTGG&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AACC&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>and of the reverse complement.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&quot;TTGG&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;CCAA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The IUPAC ambiguities for DNA are accessed as an attribute (which is just a <code class="docutils literal notranslate"><span class="pre">dict</span></code>).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">ambiguities</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;?&#39;: (&#39;T&#39;, &#39;C&#39;, &#39;A&#39;, &#39;G&#39;, &#39;-&#39;),
+ &#39;-&#39;: (&#39;-&#39;,),
+ &#39;N&#39;: (&#39;A&#39;, &#39;C&#39;, &#39;T&#39;, &#39;G&#39;),
+ &#39;R&#39;: (&#39;A&#39;, &#39;G&#39;),
+ &#39;Y&#39;: (&#39;C&#39;, &#39;T&#39;),
+ &#39;W&#39;: (&#39;A&#39;, &#39;T&#39;),
+ &#39;S&#39;: (&#39;C&#39;, &#39;G&#39;),
+ &#39;K&#39;: (&#39;T&#39;, &#39;G&#39;),
+ &#39;M&#39;: (&#39;C&#39;, &#39;A&#39;),
+ &#39;B&#39;: (&#39;C&#39;, &#39;T&#39;, &#39;G&#39;),
+ &#39;D&#39;: (&#39;A&#39;, &#39;T&#39;, &#39;G&#39;),
+ &#39;H&#39;: (&#39;A&#39;, &#39;C&#39;, &#39;T&#39;),
+ &#39;V&#39;: (&#39;A&#39;, &#39;C&#39;, &#39;G&#39;),
+ &#39;T&#39;: (&#39;T&#39;,),
+ &#39;C&#39;: (&#39;C&#39;,),
+ &#39;A&#39;: (&#39;A&#39;,),
+ &#39;G&#39;: (&#39;G&#39;,)}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The alphabet attribute stores defines the alphabet states and provides, among other things, mapping’s between characters “A”, “C” etc.. to integers (which is how some data structures represent sequences).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">alphabet</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39;T&#39;, &#39;C&#39;, &#39;A&#39;, &#39;G&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../genindex.html" class="btn btn-neutral float-right" title="9. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="genetic_codes.html" class="btn btn-neutral float-left" title="8.6. Genetic Codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
