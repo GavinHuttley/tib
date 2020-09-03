@@ -63,11 +63,11 @@ In the figure I display the basic workflow for phylogenetic reconstruction. Ther
 #. align the sequences
 #. choose method to build the phylogenetic tree.
     
-    #. pick a substitution model
+    - pick a substitution model
     
 #. Estimate the phylogenetic tree
 
-    #. we may include a technique for estimating the level of uncertainty in that tree
+    - we may include a technique for estimating the level of uncertainty in that tree
 
 .. _ucsc: https://genome.ucsc.edu
 .. _ensembl: https://ensembl.org
