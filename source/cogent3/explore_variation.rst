@@ -149,3 +149,4 @@ Download the :download:`large alignment of BRCA1 sequences </data/brca1.fasta>`.
 #. Select a smallish segment from the one of the sequences within the downloaded data set (say < 50 bases). Manually edit that so that contains an inversion. Use ``make_unaligned_seqs()`` to create a sequence collection and dotplot this synthetic sequence to itself using ``rc=True``.
 
 #. Modify your synthetic sequence to have some repeats and see what the effect of changing ``window`` and ``threshold`` are on the detection of those.
+
