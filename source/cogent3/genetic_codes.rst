@@ -3,7 +3,7 @@
 Genetic Codes
 =============
 
-Fundmental information encoding system and a fascinating subject of study. ``cogent3`` provides a dedicated object for handling genetic code information. There are quite a few different genetic codes, as the following table indicates.
+Fundmental information encoding system and a fascinating subject of study. ``cogent3`` provides a dedicated object for handling genetic code information. The genetic codes included with ``cogent3`` are indicated in the following table indicates.
 
 .. jupyter-execute::
     :hide-code:
@@ -12,7 +12,7 @@ Fundmental information encoding system and a fascinating subject of study. ``cog
 
     available_codes()
 
-Use the top level function to get a specific genetic code.
+Use the top level ``get_code()`` function to get a specific genetic code. Use a code ID from the above table.
 
 .. jupyter-execute::
 
