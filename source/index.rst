@@ -17,6 +17,8 @@ Bioinformatics and its Applications
     notation
     python/index
     seqcomp/index
+    molevol/index
+    cogent3/index
     genindex
     
 .. disconnecting this for now

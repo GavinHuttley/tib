@@ -30,12 +30,12 @@ In bioinformatics, if we're lucky, the random variable of interest belongs to a 
 .. index::
     pair: uniform; statistical distribution
 
-.. index:: hypothesis testing, :math:`H_o`
+.. index:: hypothesis testing, |Ho|
 
 Hypothesis testing and the :math:`p`-value
 ------------------------------------------
 
-I'm going to present this principally by focussing on the null hypothesis (denoted :math:`H_o`). This corresponds most closely with the approach for data analysis advocated by Fisher (see :cite:`Perezgonzalez:2015aa`).
+I'm going to present this principally by focussing on the null hypothesis (denoted |Ho|). This corresponds most closely with the approach for data analysis advocated by Fisher (see :cite:`Perezgonzalez:2015aa`).
 
 In this instance, our null corresponds to some notion of how we think the data may be distributed. Let's imagine we have the complete genome sequences of two different species. We could pose the null hypothesis that the abundance of the different nucleotides in the sequence will be the same. To quantify this, we select a statistical procedure for comparing counts data (e.g. a chi-square test) and decide, *a priori*, on our significance threshold (we will choose 0.05 for now, but more on this later). We compute our test-statistic (a :math:`\chi^2` in this hypothetical case) and "look up" the corresponding :math:`p`-value. Say our hypothetical analysis of nucleotide counts returned a :math:`\chi^2=7.9`. Then, given 3 degrees-of-freedom, our p-value is :math:`\approx 0.048<0.05`.
 
@@ -47,7 +47,7 @@ Importantly, a :math:`p`-value corresponds to the cumulative probability of obse
 
 A significance threshold is a decision point that you choose. It is a cutoff for you to decide when to reject the null hypothesis as an acceptable explanation for the data. In the Fisherian approach, which does not formalise the role of an alternate hypothesis, this is a sufficient basis for pursuing additional experimental avenues. The :math:`p`-value cannot, however, be proof that the null is wrong. (Given where the :math:`p`-value comes from, I hope that the logical fallacy of such a conclusion is obvious.)
 
-The notion of an alternate hypothesis (denoted :math:`H_a`) originates from the framework of Neyman-Pearson. There are overlaps in outcome with the approach of Fisher, but significant differences too (again, see :cite:`Perezgonzalez:2015aa` for an accessible summary). You will also encounter the Neyman-Pearson approach in the material here.
+The notion of an alternate hypothesis (denoted |Ha|) originates from the framework of Neyman-Pearson. There are overlaps in outcome with the approach of Fisher, but significant differences too (again, see :cite:`Perezgonzalez:2015aa` for an accessible summary). You will also encounter the Neyman-Pearson approach in the material here.
 
 The uniform distribution
 ------------------------

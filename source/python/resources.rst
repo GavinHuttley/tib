@@ -25,12 +25,3 @@ Do you know any more?
 =====================
 
 If you know of any more useful resources, please click the "Edit on GitHub" link above, add them to the appropriate section and make a pull request. For more information on this, read the :ref:`contribute` section to learn how to become a contributor.
-
-.. |python_bytes| replace:: Python Bytes
-.. _python_bytes: https://pythonbytes.fm
-.. |test_n_code| replace:: Test & Code
-.. _test_n_code: https://testandcode.com
-.. |talkpython| replace:: Talk Python
-.. _talkpython: https://talkpython.fm/home
-.. |text_book| replace:: free open access text book on Python
-.. _text_book: http://greenteapress.com/wp/think-python-2e/

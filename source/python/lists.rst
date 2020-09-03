@@ -49,3 +49,5 @@ For instance, you can have a list whose elements are also lists.
 
     seq_records.append(["label 2", "TT"])
     print(seq_records)
+
+.. todo:: indexing, modifying elements of a list

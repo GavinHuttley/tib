@@ -5,6 +5,8 @@
 ``numpy`` -- numerical routines for python
 ==========================================
 
+.. todo:: do a screencast on the fundamentals, how you don't need loops
+
 The numpy_ library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use ``numpy`` will deliver a 10x speedup. In fact, it can be much faster than that. But that's not the focus of this extremely brief summary of ``numpy``. Instead, we introduce you to the major usage patterns that ``numpy`` enables. These patterns greatly simplify the algorithms you have to write. So it's truly worthwhile becoming familiar with this library.
 
 .. _numpy: https://numpy.org
