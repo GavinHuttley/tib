@@ -240,10 +240,10 @@ Sequences are loaded from file using the load functions for collections, or alig
 Exercises
 =========
 
+Download the :download:`alignment of bat BRCA1 sequences </data/brca1-bats.fasta>`.
 
+#. Try removing the ``incomplete_ok`` argument from the ``get_translation()`` method.
 
-..
-    exercises
-     try removing the incomplete_ok argument
-     create an alignment with some synthetic sequences from a dict
-     slice the alignment to get back every 3rd position
+#. Create an alignment from a dict with sequences that you make up. Slice the alignment to get every second codon position.
+
+#. Using the downloaded alignment, count the number of second codon positions that have variation.
