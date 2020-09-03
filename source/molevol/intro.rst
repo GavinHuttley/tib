@@ -12,7 +12,7 @@ What is molecular evolution?
 
         from cogent3 import load_aligned_seqs
 
-        aln = load_aligned_seqs("data/brca1_primate.fasta", moltype="dna")
+        aln = load_aligned_seqs("source/data/brca1_primate.fasta", moltype="dna")
 
     .. jupyter-execute::
         :hide-code:
