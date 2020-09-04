@@ -137,11 +137,11 @@ Colouring is provided for alignments with RNA, DNA or PROTEIN moltypes. If you d
 Controlling the display in Jupyter notebooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is done via modifying the representation policy. You can change the number of sequences, or the number of aligned positions that will be shown.
+This is done via modifying the representation policy. You can change the number of sequences (``num_seqs``), the number of aligned positions that will be shown (``num_pos``), how many columns to display per line (``wrap``).
 
 .. jupyter-execute::
 
-    aln.set_repr_policy(num_pos=100)
+    aln.set_repr_policy(num_pos=100, wrap=25)
     aln
 
 .. warning:: Rendering the html can take a long time if the number of positions (and/or sequences) is large.
@@ -247,3 +247,5 @@ Download the :download:`alignment of bat BRCA1 sequences </data/brca1-bats.fasta
 #. Create an alignment from a dict with sequences that you make up. Slice the alignment to get every second codon position.
 
 #. Using the downloaded alignment, count the number of second codon positions that have variation.
+
+#. Load a data set without specifying the ``moltype``. Use a method on the object to convert it to DNA.
