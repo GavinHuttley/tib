@@ -1,5 +1,6 @@
 import os
 os.environ["COGENT3_WARNINGS"] = "ignore"
+os.environ["COGENT3_ALIGNMENT_REPR_POLICY"] = "wrap=50"
 
 project = "Topics in Bioinformatics"
 copyright = "2020, Gavin Huttley"
