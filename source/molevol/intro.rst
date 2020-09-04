@@ -31,7 +31,7 @@ Molecular Evolution is a domain of research that is concerned with why biologica
 
 Since the nucleic acids are the information system of living things and can also be, along with proteins, functional, molecular evolution draws on genetics, molecular and cell biology, biochemistry, and chemistry. At a conceptual level, molecular evolution is closely related to population genetics and, as such, is very much focussed on the process of evolution as it manifests in biological sequences.
 
-At a practical level, using genetic variation as an indicator of biological importance is central to much of modern biology. Researchers who are engaged in molecular studies of specific proteins or genes rely on resources provided by a genome portal (like `UCSC Genome Browser <ucsc>`_ or `Ensembl <ensembl>`_) to get insights into what a molecule of interest might actually be doing. One of the types of information that these portals present to facilitate understanding is a comparison of the biological sequences from different species. Why? We will answer that question in this topic.
+At a practical level, using genetic variation as an indicator of biological importance is central to much of modern biology. Researchers who are engaged in molecular studies of specific proteins or genes rely on resources provided by a genome portal (like ucsc_ or ensembl_) to get insights into what a molecule of interest might actually be doing. One of the types of information that these portals present to facilitate understanding is a comparison of the biological sequences from different species. Why? We will answer that question in this topic.
 
 #. define biological problem and make testable predictions
 #. sample appropriate homologous sequences
@@ -68,6 +68,3 @@ In the figure I display the basic workflow for phylogenetic reconstruction. Ther
 #. Estimate the phylogenetic tree
 
     - we may include a technique for estimating the level of uncertainty in that tree
-
-.. _ucsc: https://genome.ucsc.edu
-.. _ensembl: https://ensembl.org
