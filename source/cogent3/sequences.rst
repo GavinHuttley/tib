@@ -177,7 +177,6 @@ Getting the reverse complement of nucleic acid sequences
 Use the ``rc()`` method!
 
 .. jupyter-execute::
-    :linenos:
 
     subset_rc = subset.rc()
     subset_rc

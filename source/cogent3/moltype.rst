@@ -11,7 +11,6 @@ True biological sequences are polymers of monomeric units with distinct chemical
     pair: moltype; cogent3
 
 .. jupyter-execute::
-    :linenos:
 
     from cogent3 import available_moltypes
 
@@ -22,7 +21,6 @@ True biological sequences are polymers of monomeric units with distinct chemical
 To illustrate the object capabilities, we load the DNA moltype and use some of the methods.
 
 .. jupyter-execute::
-    :linenos:
 
     from cogent3 import get_moltype
 
@@ -32,27 +30,23 @@ To illustrate the object capabilities, we load the DNA moltype and use some of t
 For this moltype, there's a notion of the complement of a sequence
 
 .. jupyter-execute::
-    :linenos:
 
     dna.complement("TTGG")
 
 and of the reverse complement.
 
 .. jupyter-execute::
-    :linenos:
 
     dna.rc("TTGG")
 
 The IUPAC ambiguities for DNA are accessed as an attribute (which is just a ``dict``).
 
 .. jupyter-execute::
-    :linenos:
 
     dna.ambiguities
 
 The alphabet attribute stores defines the alphabet states and provides, among other things, mapping's between characters "A", "C" etc.. to integers (which is how some data structures represent sequences).
 
 .. jupyter-execute::
-    :linenos:
 
     dna.alphabet
