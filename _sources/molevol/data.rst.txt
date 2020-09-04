@@ -40,7 +40,6 @@ I have queried the Ensembl database for some haemoglobins from Human and Macaque
 #. Which are paralogs?
 #. For these sequences, how would you describe the divergence between orthologs compared to that between paralogs?
 
-
 ------
 
 .. rubric:: Citations
