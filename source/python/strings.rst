@@ -21,7 +21,6 @@ Creating a string type from a non-string type
 All objects in python can be turned into a string using the ``str()`` function.
 
 .. jupyter-execute::
-    :linenos:
 
     num = 42
     num_as_str = str(num)
@@ -30,7 +29,6 @@ All objects in python can be turned into a string using the ``str()`` function.
 Even complex objects, which I demonstrate using a list.
 
 .. jupyter-execute::
-    :linenos:
 
     data = ["text", 42, 3.14]
     data_as_str = str(data)
@@ -46,7 +44,6 @@ Defining strings
 Defining a string can be done using balanced quote marks. You can use either single (``'``), or double (``"``) quotes. For instance
 
 .. jupyter-execute::
-    :linenos:
 
     single = 'text'
     single
@@ -54,7 +51,6 @@ Defining a string can be done using balanced quote marks. You can use either sin
 and
 
 .. jupyter-execute::
-    :linenos:
 
     double = "text"
     double
@@ -62,7 +58,6 @@ and
 are both valid and equal.
 
 .. jupyter-execute::
-    :linenos:
 
     single == double
 
@@ -71,7 +66,6 @@ The convention is to use double quotes.
 An empty string is defined by balanced quotes with nothing between them.
 
 .. jupyter-execute::
-    :linenos:
 
     empty = ""
 
@@ -81,7 +75,6 @@ How to include a quote character in a string
 Since we define a string using quotes, including a quote character can be solved in two ways. By "escaping" (see :ref:`escaping_chars`) the quotes with a preceding backslash (``\``).
 
 .. jupyter-execute::
-    :linenos:
 
     text = "escaping \"quotes\""
     print(text)
@@ -89,7 +82,6 @@ Since we define a string using quotes, including a quote character can be solved
 Or, defining the string with the other type of quote. In this example, the string is defined using single quotes so we can safely include double quote characters in the string. This approach is preferred since it's more readable.
 
 .. jupyter-execute::
-    :linenos:
 
     text = 'escaping "quotes"'
     print(text)
@@ -103,7 +95,6 @@ Literal strings
 This is a special case in which the strings can include line breaks and other formatting. These are created by triple-quoting. For instance
 
 .. jupyter-execute::
-    :linenos:
 
     multi_line = """We can have multiple lines of content.
 
@@ -116,7 +107,6 @@ The actual formatting is revealed by using the representation of the object [2]_
 .. [2] In an interactive interpreter, you do not need to do anything special to see this, other than simply having a statement that consists of only the variable name itself. In a python script, however, you would need to print the result of calling ``repr()``, i.e. ``print(repr(multi_line))``
 
 .. jupyter-execute::
-    :linenos:
 
     multi_line
 
@@ -134,19 +124,16 @@ Special characters in strings – tabs, new lines, spaces
 White space exists in files in part to make it easier for humans to understand the contents. (Reading this text if there were no spaces between the words would be a massive cognitive strain.) It also exists in files to make it easier to separate different types of data. So it is crucial to know what white space is (beyond it's central role in the Python language itself). I'm showing the most common below.
 
 .. jupyter-execute::
-    :linenos:
 
     using_space = "separate words"
     print(using_space)
 
 .. jupyter-execute::
-    :linenos:
 
     using_tab = "separate\twords"
     print(using_tab)
 
 .. jupyter-execute::
-    :linenos:
 
     using_newline = "separate\nlines"
     print(using_newline)
@@ -164,7 +151,6 @@ Using standard Python operators
 Let's look at the general Python approach first. We can compare strings in a number of ways. We can ask whether they have the same value.
 
 .. jupyter-execute::
-    :linenos:
 
     i = "ab"
     j = "b"
@@ -173,7 +159,6 @@ Let's look at the general Python approach first. We can compare strings in a num
 We can ask whether a substring is part of a string using the ``in`` operator.
 
 .. jupyter-execute::
-    :linenos:
 
     j in i
 
@@ -187,7 +172,6 @@ If you're not sure what a method is, read :ref:`methods`. Briefly, if we want to
 Returning to the task of finding substrings, we can establish whether a string contains a substring using the ``find()`` method. In this case, an integer is returned.
 
 .. jupyter-execute::
-    :linenos:
 
     index = i.find(j)
     type(index), index
@@ -204,7 +188,6 @@ Useful string descriptor methods
 Other common string processing tasks concern checking the beginning of a string, or the end of a string. The former is commonly encountered for processing file formats where lines start with specific characters. The latter commonly encountered when processing filenames.
 
 .. jupyter-execute::
-    :linenos:
 
     path = "data/chrom1.fa"
     is_data = path.startswith("data")
@@ -222,13 +205,11 @@ One common string transformation operation involves removing specific characters
 In this example, I'm defining a ``line`` variable with leading and trailing white space and some internal white space of different types. To remove leading/trailing using strip.
 
 .. jupyter-execute::
-    :linenos:
 
     line = "  ORF1ab\t himalayan  palm civet\n"
     line
 
 .. jupyter-execute::
-    :linenos:
 
     trimmed = line.strip()
     trimmed
@@ -236,7 +217,6 @@ In this example, I'm defining a ``line`` variable with leading and trailing whit
 Another approach to removing characters is to use the ``replace()`` method. Removing the new line character is easy, since it is unique. We replace characters by specifying what we want to replace and what we wish to replace it with. In this case, we wish to remove the ``"\n"`` and replace it with nothing so we specify an empty string as the second argument.
 
 .. jupyter-execute::
-    :linenos:
 
     trimmed_via_replace = line.replace("\n", "")
     trimmed_via_replace
@@ -244,7 +224,6 @@ Another approach to removing characters is to use the ``replace()`` method. Remo
 That doesn't address the leading spaces problem. We could do so by ``line.replace(". ", "")``, but that has an unfortunate side-effect.
 
 .. jupyter-execute::
-    :linenos:
 
     trimmed_via_replace = trimmed_via_replace.replace("  ", "")
     trimmed_via_replace
@@ -254,7 +233,6 @@ We have concatenated two words together because there was a double space between
 Another key string transformation is to split a string into pieces. Working with ``trimmed``, if we split at the tab character (``"\t"``) we get a list of strings back.
 
 .. jupyter-execute::
-    :linenos:
 
     data = trimmed.split("\t")
     data
@@ -262,7 +240,6 @@ Another key string transformation is to split a string into pieces. Working with
 If we then want to clean up the items in ``data``, removing their leading trailing spaces, we need to call ``strip()`` on each item. This is solved by doing a loop.
 
 .. jupyter-execute::
-    :linenos:
 
     data = [item.strip() for item in data]
     data
@@ -277,7 +254,6 @@ In order to do this, we often need to concatenate items into being a single stri
 In this case, our data instance is a list and its items are all strings. Transforming these into a single string requires defining the string you want to join them with and using the ``join()`` method on **that** instance.
 
 .. jupyter-execute::
-    :linenos:
 
     csv_line = ",".join(data)
     csv_line
@@ -289,14 +265,12 @@ We do that by combining the above. We start by doing it the long-handed, but exp
 We start again with the tab-split.
 
 .. jupyter-execute::
-    :linenos:
 
     data = trimmed.split("\t")
 
 We then loop over the items in ``data``, and apply strip and then split. Why in that order? because ``strip()`` works with the ends of the string and returns another string while ``split()`` affects the entire string.
 
 .. jupyter-execute::
-    :linenos:
 
     cleaned = []
     for item in data:
@@ -306,7 +280,6 @@ We then loop over the items in ``data``, and apply strip and then split. Why in 
 That output shows, the first time through the loop, we get back a list with a single member. The Second time through the loop, we get back a list with 3 members. What we want is to join the words with a single space. We know from above what ``join()`` will do on a list with multiple members (puts the character in between them), but what will it do to a list with one member? Let's experiment!
 
 .. jupyter-execute::
-    :linenos:
 
     one = ["one"]
     " ".join(one)
@@ -314,7 +287,6 @@ That output shows, the first time through the loop, we get back a list with a si
 That experiment shows the method will just return the single string member. Awesome! So let's transform list ``item`` in our ``for`` loop into a string using this join.
 
 .. jupyter-execute::
-    :linenos:
 
     cleaned = []
     for item in data:
@@ -326,7 +298,6 @@ Well that works, so now let's just add it to the ``cleaned`` list variable.
 
 
 .. jupyter-execute::
-    :linenos:
 
     cleaned = []
     for item in data:
@@ -339,7 +310,6 @@ Well that works, so now let's just add it to the ``cleaned`` list variable.
 Getting excited now! Let's finish off this production of a cleaned csv delimited line.
 
 .. jupyter-execute::
-    :linenos:
 
     cleaned = []
     for item in data:
@@ -356,7 +326,6 @@ Not done yet...
 We can clean this code up quite a bit. First, we can combine the first two lines of the loop into a single statement. Because the ``split()`` method returns an instance that's compatible with the required input of the ``join()`` method, we can combine these into a single statement without needing to define an intermediate variable.
 
 .. jupyter-execute::
-    :linenos:
 
     cleaned = []
     for item in data:
@@ -371,7 +340,6 @@ This does exactly the same thing as before since – just like in mathematics �
 We can go further since the result of  ``" ".join()`` produces output compatible with the required input of ``append()``.
 
 .. jupyter-execute::
-    :linenos:
 
     cleaned = []
     for item in data:
@@ -383,7 +351,6 @@ We can go further since the result of  ``" ".join()`` produces output compatible
 And even further
 
 .. jupyter-execute::
-    :linenos:
 
     cleaned = [" ".join(item.split()) for item in data]
     cleaned = ",".join(cleaned)
@@ -392,7 +359,6 @@ And even further
 and further
 
 .. jupyter-execute::
-    :linenos:
 
     cleaned = ",".join([" ".join(item.split()) for item in data])
     cleaned
@@ -410,7 +376,6 @@ But wait, it's still not ready to write to a file!
 Good catch! Unless you really want to have all your data on a single line, you should end the line with a line feed character. This can be done with the following addition
 
 .. jupyter-execute::
-    :linenos:
 
     out = cleaned + "\n"
 

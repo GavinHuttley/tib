@@ -16,7 +16,6 @@ Examples of using ``dir()`` and ``help()``
 Let's create a list and see what it's attributes are using ``dir()``.
 
 .. jupyter-execute::
-    :linenos:
 
     data = []
     dir(data)
@@ -26,7 +25,6 @@ Let's create a list and see what it's attributes are using ``dir()``.
 So what are these things?
 
 .. jupyter-execute::
-    :linenos:
 
     print(type(data.append))
 
@@ -35,6 +33,5 @@ So what are these things?
 Use ``help()`` to figure out what can they do.
 
 .. jupyter-execute::
-    :linenos:
 
     help(data.append)

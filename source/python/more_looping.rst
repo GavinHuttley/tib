@@ -9,7 +9,6 @@ So far, all the looping has been quite simple -- iterating over a one dimensiona
 Let's illustrate this problem with a constructed example.
 
 .. jupyter-execute::
-    :linenos:
 
     two_d = [[0, 4, 1, 9, 5],
              [1, 4, 7, 1, 3]]
@@ -17,14 +16,12 @@ Let's illustrate this problem with a constructed example.
 ``two_d`` is a list of lists. It has 2 "rows" and 5 "columns". So rows is the first dimension, columns the second. First let's recap some standard Python operations. First, we will index the first row.
 
 .. jupyter-execute::
-    :linenos:
 
     two_d[0]
 
 The second row, second column.
 
 .. jupyter-execute::
-    :linenos:
 
     two_d[1][1]
 
@@ -36,7 +33,6 @@ The second row, second column.
 Knowing, in this case, that we have 2 rows and 5 columns we can generate all possible indices with nested for loops combined with the builtin ``range()`` function.
 
 .. jupyter-execute::
-    :linenos:
 
     for i in range(2):
         for j in range(5):
@@ -45,7 +41,6 @@ Knowing, in this case, that we have 2 rows and 5 columns we can generate all pos
 In the above, for each step through the "outer most loop" (``for i in ...``) we execute the entire "inner most loop". I'll demonstrate this by just adding a print statement.
 
 .. jupyter-execute::
-    :linenos:
 
     for i in range(2):
         for j in range(5):
@@ -54,7 +49,6 @@ In the above, for each step through the "outer most loop" (``for i in ...``) we 
 These ``for`` loops have only generated series of integers. These are useful, in the context of ``two_d``, in that we can use these to obtain the corresponding values using indexing, like so.
 
 .. jupyter-execute::
-    :linenos:
 
     for i in range(2):
         for j in range(5):
@@ -63,7 +57,6 @@ These ``for`` loops have only generated series of integers. These are useful, in
 We can also combine these loops with conditional statements so that we can selectively do operations only when we encounter a value that matches some condition. I'll just display the row and column indices when we the value is 4.
 
 .. jupyter-execute::
-    :linenos:
 
     for i in range(2):
         for j in range(5):

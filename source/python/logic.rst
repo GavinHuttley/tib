@@ -24,13 +24,11 @@ Indentation levels in a file
 When you are writing scripts, your file **must** have some lines that have no indentation.
 
 .. code-block:: python
-    :linenos:
     :caption: Like this
 
     print("Hello World!")
 
 .. code-block:: python
-    :linenos:
     :caption: Not like this!
 
         print("# Correct")
@@ -48,7 +46,6 @@ Conditionals
 Python conditionals require using the ``:`` (colon) character to complete a statement.
 
 .. code-block:: python
-    :linenos:
 
     name = "Timbo"
     if name == "Gavin":
@@ -62,7 +59,6 @@ More complicated conditionals
 If you have more than two conditions, you can use ``elif``. The first case is always assessed using ``if``, then ``elif``, and last is ``else``.
 
 .. code:: python
-    :linenos:
 
     name = "Timbo"
     if name == "Gavin":
@@ -78,7 +74,6 @@ Conditional statement with multiple clauses
 There are binary operations that can be combined to increase the complexity of conditional clauses. Specifically, ``and``, ``or`` ``not``.
 
 .. jupyter-execute::
-    :linenos:
 
     k = 24
     j = 3
@@ -106,7 +101,6 @@ We can use ``not`` to negate a statement.
 As an alternate, there may be causes where you wish to check for existence of a value in a series.
 
 .. jupyter-execute::
-    :linenos:
 
     sequence = "ACGTTAGGTATGTAA"
     if "ATG" in sequence:
@@ -115,7 +109,6 @@ As an alternate, there may be causes where you wish to check for existence of a 
 Or
 
 .. jupyter-execute::
-    :linenos:
 
     numbers = [0, 23, 47, 61]
     if 2 not in numbers:
@@ -135,7 +128,6 @@ These are mechanisms for doing exactly the same thing over and over. The primary
 ^^^^^^^^^^^^^^^
 
 .. jupyter-execute::
-    :linenos:
 
     print("Before the while loop")
     count = 0
@@ -145,7 +137,6 @@ These are mechanisms for doing exactly the same thing over and over. The primary
     print("After the while loop")
 
 .. jupyter-execute::
-    :linenos:
 
     count = 0
     while count < 1000:
@@ -183,7 +174,6 @@ So the key parts of a valid for statement line are:
 The for loop definition is completed by adding the code you wanted to execute on each iteration through the loop. Here's an example.
 
 .. jupyter-execute::
-    :linenos:
 
     word = "cheese"
     for letter in word:
@@ -202,7 +192,6 @@ In this case, our series of objects is ``word`` (a string). The variable ``lette
 A ``for`` loop with the convenience of also returning the index of the element in the series.
 
 .. jupyter-execute::
-    :linenos:
 
     word = "cheese"
     for value in enumerate(word):
@@ -249,7 +238,6 @@ Comments in code
 In Python, a comment is all text occurring after the  ``#`` symbol line. All characters occurring after it are ignored by the interpreter. Comment lines are used to explain in normal language what a block of code is doing, or to record other information such as the license.
 
 .. jupyter-execute::
-    :linenos:
 
     # this is a comment
 
