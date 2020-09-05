@@ -51,7 +51,6 @@ The location of a file (its file path) is specified as a string (see the screenc
     print(type(seqfile))
 
 .. jupyter-execute::
-    :linenos:
 
     print(seqfile)
 
@@ -89,7 +88,6 @@ File objects are iterable and the "unit" of iteration is a line, i.e. the file o
    pair: iterate contents; files
 
 .. jupyter-execute::
-    :linenos:
 
     # the default mode argument value is "r"
     with open("data/sample.fasta") as seqfile:
@@ -109,7 +107,6 @@ The data also needs to be converted to strings. One way to do this is to use a s
    pair: writing; files
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     nums = [0.378, 0.711, 0.349, 0.897]
@@ -122,7 +119,6 @@ The data also needs to be converted to strings. One way to do this is to use a s
 So we need to convert to strings AND we need to put a new-line character at the end of each one.
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     text = ["%f\n" % v for v in nums]
@@ -148,7 +144,6 @@ Exercises
 #. Below I have two GFF records stored as a list of records, each record being a list. Write these data to a tab-delimited file.
 
     .. jupyter-execute::
-        :linenos:
 
         annotations = [
             [

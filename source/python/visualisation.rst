@@ -22,7 +22,6 @@ Scatter plots
 A quirk of Plotly is that cartesian coordinates (i.e. :math:`x`, :math:`y` coordinates) are represented as separate series for the :math:`x` and :math:`y` components. For instance, let's display a single point at :math:`x=1,y=3` (or :math:`(1,3)`) on a scatter plot using the ``scatter()`` function. This returns a Plotly figure object which can be used for display.
 
 .. jupyter-execute::
-    :linenos:
 
     import plotly.express as px
 
@@ -32,7 +31,6 @@ A quirk of Plotly is that cartesian coordinates (i.e. :math:`x`, :math:`y` coord
 To add another point at ``(3, 7)`` we append `3` to the `x` list and `7` to the `y` list.
 
 .. jupyter-execute::
-    :linenos:
 
     import plotly.express as px
 
@@ -45,7 +43,6 @@ Modifying axis labels
 We can specify our own labels for the *x* and *y* axes
 
 .. jupyter-execute::
-    :linenos:
 
     import plotly.express as px
 
@@ -65,7 +62,6 @@ Modifying figure size
 The figure dimensions will adjust to your browser width, unless you specify their width and/or height. The units for those settings are pixels. We make a square plot.
 
 .. jupyter-execute::
-    :linenos:
 
     import plotly.express as px
 
@@ -87,26 +83,22 @@ Selecting different symbols and/or sizes
 Making more refined changes to display properties requires some inspection of the base objects. As mentioned above, dictionaries are the basis for all Plotly objects and the dict has two top-level components: "data" and "layout". The data consists of a series of "traces". Attributes, such as coordinates of scatter points and the type of plot are recorded in individual traces. Inspecting the last figure from above.
 
 .. jupyter-execute::
-    :linenos:
 
     len(fig.data) # there's a single trace
 
 .. jupyter-execute::
-    :linenos:
 
     fig.data[0]
 
 We can access an individual element using standard dictionary operations.
 
 .. jupyter-execute::
-    :linenos:
 
     fig.data[0]["marker"]
 
 We can change these values and the change will affect the figure [3]_.
 
 .. jupyter-execute::
-    :linenos:
 
     fig.data[0]["marker"]["size"] = 18
     fig.data[0]["marker"]["symbol"] = "square"
@@ -118,7 +110,6 @@ Histograms
 ----------
 
 .. jupyter-execute::
-    :linenos:
 
     import plotly.express as px
     import numpy as np
@@ -141,7 +132,6 @@ This specific example is contrived as I'm using simulated data points, but the a
 Generate some 100 random integers between 0 and 21.
 
 .. jupyter-execute::
-    :linenos:
 
     from numpy.random import randint
 
@@ -152,7 +142,6 @@ Use a builtin Python counter class to count the number of occurrences of the dif
 .. [5] You use this class just like a ``dict``.
 
 .. jupyter-execute::
-    :linenos:
 
     from collections import Counter
 
@@ -162,7 +151,6 @@ Use a builtin Python counter class to count the number of occurrences of the dif
 Generate the x and y series for plotting.
 
 .. jupyter-execute::
-    :linenos:
 
     x, y = [], []
     for n in sorted(counts):
@@ -172,7 +160,6 @@ Generate the x and y series for plotting.
 Construct the bar chart
 
 .. jupyter-execute::
-    :linenos:
 
     import plotly.express as px
     

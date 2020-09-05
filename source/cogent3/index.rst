@@ -36,11 +36,10 @@ We have focussed, thus far, on developing an understanding of programming logic 
     filtering rows
     counting rows
     immutable
-    
+    doing contingency tests
     exercises
 
-.. todo:: genetic codes
-    available codes
+.. todo:: 
     code object capabilities
 
     exercises

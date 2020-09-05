@@ -21,7 +21,6 @@ A fundamental concept in programming, most easily explained with reference to th
 In brief, variables defined within the local scope are only "available" within that scope. Variables defined within the global scope can be accessed within a local scope.
 
 .. jupyter-execute::
-    :linenos:
 
     a = 2
     def foo():
@@ -57,7 +56,6 @@ But they cannot be modified within the local scope (unless you use the ``global`
 .. [1] Using ``global`` is typically a bad idea in terms of algorithmic robustness.
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     def foo2():
@@ -84,7 +82,6 @@ Exercises
 Consider this broken code
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     CONSTANT = 2

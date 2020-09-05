@@ -3,6 +3,7 @@ Alignments, Sequence Collections and Sequences
 
 Biological sequences are represented by several objects in ``cogent3``. Typically, these are created by loading from file or by making them directly from standard python types. There is no more fundamental type than that of sequences. So let's just get cracking and actually load some data from a file. Along the way, I'll point out different aspects of the process of creating objects that you need to pay attention to.
 
+
 Alignments
 ----------
 
@@ -46,13 +47,19 @@ Alignments have many useful attributes, including the individual sequences. Thes
 
 .. jupyter-execute::
 
-    aln.get_seq(aln.names[0])
+    aln.seqs[0]
 
-or by the ``named_seqs`` attribute, which is a dictionary.
+by the ``named_seqs`` attribute, which is a dictionary.
 
 .. jupyter-execute::
 
     aln.named_seqs["TombBat"]
+
+or by the method ``get_seq()``.
+
+.. jupyter-execute::
+
+    aln.get_seq(aln.names[0])
 
 .. index::
     pair: slice; cogent3 Alignment
@@ -177,7 +184,6 @@ Getting the reverse complement of nucleic acid sequences
 Use the ``rc()`` method!
 
 .. jupyter-execute::
-    :linenos:
 
     subset_rc = subset.rc()
     subset_rc

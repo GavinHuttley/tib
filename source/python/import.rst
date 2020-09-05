@@ -8,7 +8,6 @@ Extending capabilities using ``import``
 In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, the ``math`` module is part of what is referred to as the Python *standard library*, i.e. it comes standard with all Python installations. How we gain access to these is through the ``import`` statement. ``math`` contains many basic mathematical operations, e.g. ``log()`` or ``sqrt()``, as functions. We get access to those using the ``.`` notation.
 
 .. jupyter-execute::
-    :linenos:
 
     import math
 
@@ -20,7 +19,6 @@ Modules have their own type.
     pair: module; types
 
 .. jupyter-execute::
-    :linenos:
 
     type(math)
 
@@ -29,24 +27,20 @@ Just like standard Python objects, you can see what capabilities a module has us
 .. [1] The ``dir()`` command returns a list. I'm truncating that to just display a small listing of what's in ``math``.
 
 .. jupyter-execute::
-    :linenos:
 
     dir(math)[:10]
 
 .. jupyter-execute::
-    :linenos:
 
     math.log10(10)
 
 .. jupyter-execute::
-    :linenos:
 
     math.log(10)
 
 You can also import a specific module function using the keyword ``from``
 
 .. jupyter-execute::
-    :linenos:
 
     from math import sqrt
     
@@ -55,7 +49,6 @@ You can also import a specific module function using the keyword ``from``
 or multiple functions by separating them with a ``,``.
 
 .. jupyter-execute::
-    :linenos:
 
     from math import sqrt, log10
     
@@ -66,7 +59,6 @@ Modules also serve to allow simplification of code. This enable putting logicall
 Modules can be organised hierarchically, meaning that some modules are nested within others. How Python achieves this is actually dead simple, the name of a directory containing some Python scripts becomes the import name [2]_. For instance, the Python standard library includes (among a multitude of goodies) the ``os`` module which is used for handling operating system related calls. Inside this module is another one called ``path`` that contain useful functions, among which is the ``dirname()`` function. Using ``.`` notation, we full specify that function as ``os.path.dirname``.
 
 .. jupyter-execute::
-    :linenos:
 
     import os
     
@@ -75,7 +67,6 @@ Modules can be organised hierarchically, meaning that some modules are nested wi
 We can also import just that function
 
 .. jupyter-execute::
-    :linenos:
 
     from os.path import dirname
     
@@ -84,7 +75,6 @@ We can also import just that function
 You can renamed imported modules using the :index:`as` keyword.
 
 .. jupyter-execute::
-    :linenos:
 
     from math import sqrt as msqrt
     

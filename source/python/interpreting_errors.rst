@@ -24,7 +24,6 @@ Every programmer makes errors, it's normal. The most important step towards fixi
 Here's some broken code:
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     a = 42
@@ -48,7 +47,6 @@ First, in the traceback, the last line indicates the type of the exception (``Na
 And a slightly more complicated case
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     def echo(name):
@@ -74,7 +72,6 @@ Exercises
 #. Fix the errors in the following.
 
     .. jupyter-execute::
-        :linenos:
         :raises:
 
         name = "Tim"
@@ -86,7 +83,6 @@ Exercises
 #. Consider the following function, which is meant to compute the square of a number, i.e. :math:`x^2`
 
     .. jupyter-execute::
-        :linenos:
         :raises:
 
         def squared(num):

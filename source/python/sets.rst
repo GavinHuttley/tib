@@ -10,7 +10,6 @@ This data type represents the mathematical object of a set. A set stores *unique
 Sets are defined either explicitly using ``{}`` with different members separated by commas.
 
 .. jupyter-execute::
-    :linenos:
 
     a = {0, 1, 1, 3, 1}
     a
@@ -18,7 +17,6 @@ Sets are defined either explicitly using ``{}`` with different members separated
 or by calling the builtin function ``set()`` passing the data in as a series.
 
 .. jupyter-execute::
-    :linenos:
 
     a = set([0, 1, 1, 3, 1])
     a
@@ -26,7 +24,6 @@ or by calling the builtin function ``set()`` passing the data in as a series.
 As the latter expression indicates, the input to ``set()`` must be an iterable. This matters! The latter two **are not** equivalent.
 
 .. jupyter-execute::
-    :linenos:
 
     a = {"ABC"}
     a
@@ -36,7 +33,6 @@ The former states explicitly that the string "ABC" is a set member and the set h
 But using the builtin function states the items in "ABC" are set members.
 
 .. jupyter-execute::
-    :linenos:
 
     b = set("ABC")
     b
@@ -44,7 +40,6 @@ But using the builtin function states the items in "ABC" are set members.
 To have the latter correspond with the former requires placing the string inside another iterable.
 
 .. jupyter-execute::
-    :linenos:
 
     b = set(["ABC"])
     b
@@ -52,7 +47,6 @@ To have the latter correspond with the former requires placing the string inside
 The ``set`` type is iterable.
 
 .. jupyter-execute::
-    :linenos:
     
     dinucs = {"AA", "CG", "GA"}
     for item in dinucs:
@@ -61,7 +55,6 @@ The ``set`` type is iterable.
 Only immutable data types can be members of sets (so not lists etc..)
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     {"ABC", []}
@@ -69,7 +62,6 @@ Only immutable data types can be members of sets (so not lists etc..)
 The great power of this data type is the ability to do very succinct comparisons. These use :ref:`bitwise operators <bitwise_operators>`. For instance, we identify the overlap between two sets using the bitwise ``&`` character (bitwise AND).
 
 .. jupyter-execute::
-    :linenos:
 
     a = set("ACGGCCT")
     b = set("ACGGAAA")
@@ -78,7 +70,6 @@ The great power of this data type is the ability to do very succinct comparisons
 We can establish that one set is a subset of another using the ``in`` logical operator
 
 .. jupyter-execute::
-    :linenos:
 
     bases = {"A", "C", "G", "T"}
     a in bases
@@ -86,21 +77,18 @@ We can establish that one set is a subset of another using the ``in`` logical op
 We can compute the difference (what nucleotides is ``b`` missing) using the standard ``-`` operator
 
 .. jupyter-execute::
-    :linenos:
 
     bases - b
 
 Or a "symmetric" difference using the ``^`` character (bitwise exclusive OR, analogous to NOT)
 
 .. jupyter-execute::
-    :linenos:
 
     bases ^ b
 
 We can take the union of two sets using the ``|`` character (bitwise inclusive OR).
 
 .. jupyter-execute::
-    :linenos:
 
     a = {0, 2, 3}
     b = {1, 4}
@@ -112,7 +100,6 @@ These operations are also available as methods on the ``set`` instances.
 Having created a set, you can add new elements using the ``add()`` method.
 
 .. jupyter-execute::
-    :linenos:
 
     a.add(22)
     a
@@ -120,7 +107,6 @@ Having created a set, you can add new elements using the ``add()`` method.
 Or remove elements using the ``remove()`` method.
 
 .. jupyter-execute::
-    :linenos:
 
     a.remove(22)
     a
@@ -128,13 +114,11 @@ Or remove elements using the ``remove()`` method.
 Given that a ``set`` is mutable, you cannot have sets as part of sets. Python provides an ``immutable`` set type, ``frozenset`` that can be. This is defined using the builtin function of that name.
 
 .. jupyter-execute::
-    :linenos:
 
     f = frozenset("ABCD")
     f
 
 .. jupyter-execute::
-    :linenos:
 
     a.add(f)
     a

@@ -39,7 +39,6 @@ The first thing we have to do is define the variables we will use before we actu
 .. [1] Let's also make our life easy by defining only positive numerical values so we don't have to worry about handling the :math:`\sqrt{~}` of a negative number.
 
 .. jupyter-execute::
-    :linenos:
 
     b = 5
     a = 1.1
@@ -48,21 +47,18 @@ The first thing we have to do is define the variables we will use before we actu
 That actually defines ``b`` (1.), so the first of our parts is solved. Now let's solve go to the inner most pieces and define ``b_sq`` (2.1).
 
 .. jupyter-execute::
-    :linenos:
 
     b_sq = b * b
 
 Then ``four_ac`` (2.2).
 
 .. jupyter-execute::
-    :linenos:
 
     four_ac = 4 * a * c
 
 Now we can compute ``sqrt_term`` (2.).
 
 .. jupyter-execute::
-    :linenos:
     
     from math import sqrt
 
@@ -71,7 +67,6 @@ Now we can compute ``sqrt_term`` (2.).
 and the final solution (``x``)
 
 .. jupyter-execute::
-    :linenos:
 
     x = b + sqrt_term
     x
@@ -79,7 +74,6 @@ and the final solution (``x``)
 We can, of course, write this as a single statement.
 
 .. jupyter-execute::
-    :linenos:
 
     x = b + (b**2 + 4 * a * c) ** 0.5
     x
@@ -130,7 +124,6 @@ We start this program with a function that takes a list of strings where every v
 .. index:: assert, type casting
 
 .. jupyter-execute::
-    :linenos:
 
     def cast_to_floats(values):
         """turns a series of strings into floats"""
@@ -147,7 +140,6 @@ We start this program with a function that takes a list of strings where every v
 Yay! So that's 3.1.1 out of the way. The next step out is solve 3.1. We also do this by writing a separate function that we check using some synthetic data and make sure it gives us the result we expect.
 
 .. jupyter-execute::
-    :linenos:
 
     def line_to_fields(line):
         """splits at \t and cleans up the elements"""

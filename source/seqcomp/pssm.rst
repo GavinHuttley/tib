@@ -37,14 +37,12 @@ Calculating the Expected Under the Background
 Let's use the sequence
 
 .. jupyter-execute::
-    :linenos:
 
     seq1 = "GTAT"
 
 We define a background distribution as one where all bases are equally frequent. In the above case, we then obtain the :math:`p(seq1|background)` as
 
 .. jupyter-execute::
-    :linenos:
 
     seq_len = len(seq1)
     p_seq1_background = 0.25 ** seq_len

@@ -44,7 +44,6 @@ Exercises
 #. Try these operators on different data types, e.g.
 
     .. jupyter-execute::
-        :linenos:
 
         "abcd" < "ABCD"
 

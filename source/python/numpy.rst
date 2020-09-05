@@ -18,7 +18,6 @@ The numpy_ library is the foundation of the vast majority of scientific computin
 - ``array.dtype`` attribute, which specifies the data type. This can also be determined by the input data, or by using the ``dtype`` argument.
 
 .. jupyter-execute::
-    :linenos:
 
     import numpy
 
@@ -26,30 +25,25 @@ The numpy_ library is the foundation of the vast majority of scientific computin
     data
 
 .. jupyter-execute::
-    :linenos:
 
     data.ndim
 
 .. jupyter-execute::
-    :linenos:
 
     data.shape
 
 .. jupyter-execute::
-    :linenos:
 
     data.dtype
 
 Once created, you cannot extend an array, i.e. it's total number of elements is immutable. However, the array "shape" (and thus dimensions) can be changed and the value at individual coordinates can be changed.
 
 .. jupyter-execute::
-    :linenos:
 
     data.resize((2, 2))
     data
 
 .. jupyter-execute::
-    :linenos:
 
     data[0][0] = 42
     data
@@ -58,7 +52,6 @@ Conversion to standard python data types
 ----------------------------------------
 
 .. jupyter-execute::
-    :linenos:
 
     raw = data.tolist()
     raw
@@ -72,13 +65,11 @@ Constructing matrices
 Matrices can be specified on construction by providing, for example, lists of lists. In this example we use a list consisting of two lists, each with 4 elements. This results in a :math:`2\times4` array.
 
 .. jupyter-execute::
-    :linenos:
 
     data = numpy.array([[0, 1, 2, 3], [4, 5, 6, 7]])
     data.shape
 
 .. jupyter-execute::
-    :linenos:
 
     data
 
@@ -87,19 +78,16 @@ Or, other arrays [1]_.
 .. [1] I've used the ``numpy.arange()`` function, which returns an ``array`` object.
 
 .. jupyter-execute::
-    :linenos:
 
     a = numpy.arange(4)
     a
 
 .. jupyter-execute::
-    :linenos:
 
     b = numpy.arange(4, 8)
     b
 
 .. jupyter-execute::
-    :linenos:
 
     # from the above numpy arrays
     m = numpy.array([a, b])
@@ -118,7 +106,6 @@ The laborious (and slow) way
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. jupyter-execute::
-    :linenos:
 
     for i in range(len(raw)):
         for j in range(len(raw[i])):
@@ -128,7 +115,6 @@ The laborious (and slow) way
 And here it is on the numpy array equivalent.
 
 .. jupyter-execute::
-    :linenos:
 
     data += 20
     data
@@ -141,7 +127,6 @@ Standard mathematical operations on arrays
 If two or more arrays have the same shape, then element-wise operations between corresponding elements is also very simply expressed.
 
 .. jupyter-execute::
-    :linenos:
 
     print("Before:", a, b, sep="\n")
     c = a * b
@@ -150,7 +135,6 @@ If two or more arrays have the same shape, then element-wise operations between 
 If they do not have the same shape, an exception is raised.
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     d = numpy.arange(5)
@@ -160,7 +144,6 @@ Array iteration
 ---------------
 
 .. jupyter-execute::
-    :linenos:
 
     for e in data:
         print(e)
@@ -182,28 +165,24 @@ In the following, we are working on this array.
 We can select an individual element using the standard looking slice notation. 
 
 .. jupyter-execute::
-    :linenos:
 
     data[0][1]
 
 or using the numpy extended slicing notation, which allows combining the slice notation into one set of ``[]``.
 
 .. jupyter-execute::
-    :linenos:
 
     data[0, 1]
 
 The slicing capabilities of arrays is rich and very useful! We can slice a matrix for a single column across all rows
 
 .. jupyter-execute::
-    :linenos:
 
     data[:, 1]  # the [1] column
 
 or a single row across all columns. In both cases the ``:`` represents the complete set.
 
 .. jupyter-execute::
-    :linenos:
 
     data[1, :]  # the [1] row
 
@@ -218,7 +197,6 @@ Array assignment
 ----------------
 
 .. jupyter-execute::
-    :linenos:
 
     data[1, 2] = -99
     data
@@ -235,7 +213,6 @@ Evaluation operations
 Using standard python evaluation operations on ``numpy`` arrays returns element wise ``bool`` arrays. We show uses for these below.
 
 .. jupyter-execute::
-    :linenos:
 
     indices = data < 0
     indices
@@ -257,7 +234,6 @@ Boolean indexing
 This applies when the object being used to slice the array is of type ``bool``. These typically result from some array comparison operation.
 
 .. jupyter-execute::
-    :linenos:
 
     m = numpy.array([[1, 2], [-3, 4], [5, -6]])
     m
@@ -265,7 +241,6 @@ This applies when the object being used to slice the array is of type ``bool``. 
 Let's identify all elements that are :math:`<0`.
 
 .. jupyter-execute::
-    :linenos:
 
     negative = m < 0
     negative
@@ -273,14 +248,12 @@ Let's identify all elements that are :math:`<0`.
 The result is an array with boolean elements indicating whether the corresponding value in ``m`` satisfied (indicated by ``True``) or not (indicated by ``False``) the condition (:math:`<0`). We can use bool arrays to slice the others with the same shape.
 
 .. jupyter-execute::
-    :linenos:
 
     m[negative]
 
 This can be used, for instance, to do specific operations on just those elements such as an assigning a distinct value.
 
 .. jupyter-execute::
-    :linenos:
 
     m[negative] = 0
     m
@@ -293,7 +266,6 @@ This involves as many series of integers as there are dimensions to the array (e
 Before we start using actual integer series, I'll start by using conventional indexing to get the value of a single item. Specifically, I select row ``1``, column ``1``.
 
 .. jupyter-execute::
-    :linenos:
 
     row_index = 1
     col_index = 1
@@ -302,7 +274,6 @@ Before we start using actual integer series, I'll start by using conventional in
 We now enclose those indices in lists, such that each successive value corresponds to another row, another column. As such these sequential arrays correspond to array coordinates and thus must have the same dimension (length in our example below).
 
 .. jupyter-execute::
-    :linenos:
 
     row_indices = [1, 2, 0]
     col_indices = [1, 0, 1]
@@ -328,7 +299,6 @@ Working on this array.
     data
 
 .. jupyter-execute::
-    :linenos:
 
     data.sum(axis=0)
 
@@ -340,25 +310,21 @@ Getting useful quantities
 -------------------------
 
 .. jupyter-execute::
-    :linenos:
 
     # Overall mean, all elements
     data.mean()
 
 .. jupyter-execute::
-    :linenos:
 
     # Unbiased estimate of standard deviation, all elements
     data.std(ddof=1)
 
 .. jupyter-execute::
-    :linenos:
 
     # Column means, operating on rows
     data.mean(axis=0)
 
 .. jupyter-execute::
-    :linenos:
 
     # Row means, operating on columns
     data.mean(axis=1)
@@ -373,7 +339,6 @@ Linear algebra -- matrix multiplication
 ---------------------------------------
 
 .. jupyter-execute::
-    :linenos:
 
     data1 = numpy.array([0, 1, 2, 3])
     data2 = numpy.array([4, 5, 6, 7])
@@ -392,7 +357,6 @@ Conditionals on arrays
 Conditional operations on ``numpy`` arrays are important. We illustrate the utility of these operations with some simple examples.
 
 .. jupyter-execute::
-    :linenos:
 
     data = numpy.array([[1, 2, 1, 9], [9, 1, 1, 3]])
     matched = data > 3
@@ -403,7 +367,6 @@ The above expression is evaluated element wise and returns a numpy array of type
 We use the standard Python ``in`` operator.
 
 .. jupyter-execute::
-    :linenos:
 
     if 3 in data:
         print("Yes")
@@ -415,7 +378,6 @@ We apply a conditional to an array and use the ``any()`` method, which will retu
 .. index:: method chaining
 
 .. jupyter-execute::
-    :linenos:
 
     if (data > 3).any():
         print("Yes")
@@ -425,7 +387,6 @@ We apply a conditional to an array and use the ``any()`` method, which will retu
 Using the ``all()`` method, which will return ``True`` only if **all** elements satisfied the condition.
 
 .. jupyter-execute::
-    :linenos:
 
     if (data > 3).all():
         print("Yes")
@@ -442,7 +403,6 @@ Comparisons of multiple arrays
 `numpy` provides tools for element-wise comparisons. This is more complicated than just using the standard python syntax.
 
 .. jupyter-execute::
-    :linenos:
 
     x = numpy.array([True, False, False, True], dtype=bool)
     y = numpy.array([False, False, False, True], dtype=bool)
@@ -450,7 +410,6 @@ Comparisons of multiple arrays
 Applying equivalence operators to arrays can result in exceptions because the result is ambiguous.
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     x or y
@@ -458,12 +417,10 @@ Applying equivalence operators to arrays can result in exceptions because the re
 Instead, you should use special functions which will operate element wise. Here's a couple of examples.
 
 .. jupyter-execute::
-    :linenos:
 
     numpy.logical_or(x, y)
 
 .. jupyter-execute::
-    :linenos:
 
     numpy.logical_and(x, y)
 
@@ -476,7 +433,6 @@ Using the result of array comparisons to count
 Scenario, you want to count (from multiple arrays that consist of a continuously distributed random variable) the number of times a specific threshold is reached for each "position" on a reference coordinate system.
 
 .. jupyter-execute::
-    :linenos:
 
     data = [
         numpy.array([0.923, 0.022, 0.360, 0.970, 0.585]),
@@ -489,7 +445,6 @@ Scenario, you want to count (from multiple arrays that consist of a continuously
     counts
 
 .. jupyter-execute::
-    :linenos:
 
     print(data[0] > 0.5)
     for da in data:
@@ -498,7 +453,6 @@ Scenario, you want to count (from multiple arrays that consist of a continuously
     counts
 
 .. jupyter-execute::
-    :linenos:
 
     data = numpy.array(data)
 
@@ -525,7 +479,6 @@ Exercises
     Use the following array to answer the next question.
 
     .. jupyter-execute::
-        :linenos:
 
         data = numpy.array([[1, 9, 0, 3, 9],
                             [9, 2, 8, 2, 1],
@@ -552,7 +505,6 @@ Exercises
     First, use the following code to generate a random square matrix.
 
     .. jupyter-execute::
-        :linenos:
 
         from numpy.random import randint
     
@@ -581,7 +533,6 @@ Exercises
     Use the "magic" ``%timeit`` command builtin to Jupyter to assess performance of each function on the same value of ``mat``.
 
     .. jupyter-execute::
-        :linenos:
 
         %timeit py_where(mat)
 
