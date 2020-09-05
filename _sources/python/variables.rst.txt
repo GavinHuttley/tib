@@ -46,7 +46,6 @@ Assignment unpacking
 Sometimes, its useful to do multiple variable assignments in one go. Which value maps to which variable? (You can answer that definitively by trying it.)
 
 .. jupyter-execute::
-    :linenos:
 
     a, b = 3, 4
 

@@ -216,13 +216,11 @@
 </dl>
 <div class="jupyter_cell jupyter_container docutils container" id="index-0">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">available_moltypes</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">available_moltypes</span>
 
 <span class="n">available_moltypes</span><span class="p">()</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style>
@@ -293,15 +291,12 @@
 <p>To illustrate the object capabilities, we load the DNA moltype and use some of the methods.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">get_moltype</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">get_moltype</span>
 
 <span class="n">dna</span> <span class="o">=</span> <span class="n">get_moltype</span><span class="p">(</span><span class="s2">&quot;dna&quot;</span><span class="p">)</span>
 <span class="n">dna</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>MolType((&#39;T&#39;, &#39;C&#39;, &#39;A&#39;, &#39;G&#39;))
@@ -312,9 +307,9 @@
 <p>For this moltype, there’s a notion of the complement of a sequence</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">complement</span><span class="p">(</span><span class="s2">&quot;TTGG&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">complement</span><span class="p">(</span><span class="s2">&quot;TTGG&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AACC&#39;
@@ -325,9 +320,9 @@
 <p>and of the reverse complement.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&quot;TTGG&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&quot;TTGG&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;CCAA&#39;
@@ -338,9 +333,9 @@
 <p>The IUPAC ambiguities for DNA are accessed as an attribute (which is just a <code class="docutils literal notranslate"><span class="pre">dict</span></code>).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">ambiguities</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">ambiguities</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;?&#39;: (&#39;T&#39;, &#39;C&#39;, &#39;A&#39;, &#39;G&#39;, &#39;-&#39;),
@@ -367,9 +362,9 @@
 <p>The alphabet attribute stores defines the alphabet states and provides, among other things, mapping’s between characters “A”, “C” etc.. to integers (which is how some data structures represent sequences).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">alphabet</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span><span class="o">.</span><span class="n">alphabet</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39;T&#39;, &#39;C&#39;, &#39;A&#39;, &#39;G&#39;)

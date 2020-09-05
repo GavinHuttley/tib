@@ -248,14 +248,13 @@
 <p id="index-1">For example, the built in function <code class="docutils literal notranslate"><span class="pre">reversed()</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">new_order</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">([</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new_order</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">([</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
 <span class="n">new_order</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x7face8c25310&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x7fb653b12280&gt;
 </pre></div>
 </div>
 </div>
@@ -263,11 +262,10 @@
 <p>Looping works</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">new_order</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">new_order</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>g
@@ -281,13 +279,11 @@ e
 <p>If you just want such an object to be a list, for example, then a more succinct approach is to cast it using <code class="docutils literal notranslate"><span class="pre">list()</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">new_order</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">([</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new_order</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">([</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
 <span class="n">new_order</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">new_order</span><span class="p">)</span>
 <span class="n">new_order</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;g&#39;, &#39;b&#39;, &#39;a&#39;, &#39;e&#39;]

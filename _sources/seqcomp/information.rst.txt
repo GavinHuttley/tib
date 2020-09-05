@@ -95,7 +95,6 @@ Exercises
 Defining a short sequence for use below.
 
 .. jupyter-execute::
-    :linenos:
 
     seq = "AGCCATTGCAAA"
 

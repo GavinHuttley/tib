@@ -57,7 +57,6 @@ Consider two sequences, `X` and `Y` with lengths `n` and `m` respectively. We es
                [1, 1, 1, 1, 0]]  #  T
 
 .. jupyter-execute::
-    :linenos:
 
     import plotly.express as px
 

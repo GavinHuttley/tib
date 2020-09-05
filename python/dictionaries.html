@@ -260,11 +260,10 @@
 </dl>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">x</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{}
@@ -275,11 +274,10 @@
 <p>Or by calling the builtin <code class="docutils literal notranslate"><span class="pre">dict()</span></code> without any arguments.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="n">x</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{}
@@ -290,9 +288,9 @@
 <p>Dictionaries have a length, which in this case is 0.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0
@@ -306,11 +304,10 @@
 <p>The syntax differs between the two different approaches. In the case of using <code class="docutils literal notranslate"><span class="pre">{}</span></code>, you separate keys from values using the <code class="docutils literal notranslate"><span class="pre">:</span></code> and from the next key/value pair using a <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;first&quot;</span><span class="p">:</span> <span class="s2">&quot;GAVIN&quot;</span><span class="p">,</span> <span class="s2">&quot;last&quot;</span><span class="p">:</span> <span class="s2">&quot;Huttley&quot;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;first&quot;</span><span class="p">:</span> <span class="s2">&quot;GAVIN&quot;</span><span class="p">,</span> <span class="s2">&quot;last&quot;</span><span class="p">:</span> <span class="s2">&quot;Huttley&quot;</span><span class="p">}</span>
 <span class="n">names</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;first&#39;: &#39;GAVIN&#39;, &#39;last&#39;: &#39;Huttley&#39;}
@@ -325,11 +322,10 @@
 <p>Using the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> function allows a quite different approach that can only be applied if the keys are going to be strings. In this approach, the keys become argument names to <code class="docutils literal notranslate"><span class="pre">dict()</span></code> and the values are assigned to them in the function call. In the following, notice that we use what a standard keyword argument statement within a function call – we remove the quotes from the key and use <code class="docutils literal notranslate"><span class="pre">=</span></code> to assign the value.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">first</span><span class="o">=</span><span class="s2">&quot;GAVIN&quot;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s2">&quot;Huttley&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">first</span><span class="o">=</span><span class="s2">&quot;GAVIN&quot;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s2">&quot;Huttley&quot;</span><span class="p">)</span>
 <span class="n">names</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;first&#39;: &#39;GAVIN&#39;, &#39;last&#39;: &#39;Huttley&#39;}
@@ -351,11 +347,10 @@
 <p>We obtain values from a <code class="docutils literal notranslate"><span class="pre">dict</span></code> instance using the key. Using the <code class="docutils literal notranslate"><span class="pre">names</span></code> instance, we can get the value corresponding to the key <code class="docutils literal notranslate"><span class="pre">&quot;first&quot;</span></code> using the standard looking indexing syntax (i.e. using <code class="docutils literal notranslate"><span class="pre">[]</span></code>).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">]</span>
 <span class="n">f</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GAVIN&#39;
@@ -366,9 +361,9 @@
 <p>If you try to get a key that does not exist, Python raises a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="s2">&quot;first name&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="s2">&quot;first name&quot;</span><span class="p">]</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -388,11 +383,10 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">get()</span></code> method is an alternate to indexing using <code class="docutils literal notranslate"><span class="pre">[]</span></code>. If a key does not exist, it defaults to return <code class="docutils literal notranslate"><span class="pre">None</span></code> instead of raising a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;first name&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;first name&quot;</span><span class="p">)</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">v</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(NoneType, None)
@@ -403,19 +397,14 @@
 <p>You can provide your own “default” value for when a key is missing. If we were using a dict to record counts of nucleotides, for instance, we can define a default value of 0 (for an alternate approach to counting).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;ACGGCCG&quot;</span>
 <span class="k">for</span> <span class="n">nucleotide</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
     <span class="n">counts</span><span class="p">[</span><span class="n">nucleotide</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">nucleotide</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="n">counts</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 1, &#39;C&#39;: 3, &#39;G&#39;: 3}
@@ -428,15 +417,12 @@
 <p>It’s worth showing building counts if you don’t use a dict. Let’s say we want to use a list instead. Here’s one approach.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">nucleotides</span> <span class="o">=</span> <span class="s2">&quot;ACGT&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nucleotides</span> <span class="o">=</span> <span class="s2">&quot;ACGT&quot;</span>
 <span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;ACGGCCG&quot;</span>
 <span class="n">ordered_counts</span> <span class="o">=</span> <span class="p">[</span><span class="n">seq</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">nuc</span><span class="p">)</span> <span class="k">for</span> <span class="n">nuc</span> <span class="ow">in</span> <span class="n">nucleotides</span><span class="p">]</span>
 <span class="n">ordered_counts</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 3, 3, 0]
@@ -452,13 +438,11 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">dict</span></code> object is an iterable data type. This means you can loop over it. This process returns the keys of the instance.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
     <span class="c1"># printing both the key and it&#39;s value</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">counts</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>A 1
@@ -474,11 +458,10 @@ G 3
 <p>This is done using the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">has_a</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span> <span class="ow">in</span> <span class="n">counts</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">has_a</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span> <span class="ow">in</span> <span class="n">counts</span>
 <span class="n">has_a</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
@@ -488,11 +471,10 @@ G 3
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">has_t</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span> <span class="ow">in</span> <span class="n">counts</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">has_t</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span> <span class="ow">in</span> <span class="n">counts</span>
 <span class="n">has_t</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
@@ -508,11 +490,10 @@ G 3
 <p>To find what keys are present  in a dict, we use the aptly named <code class="docutils literal notranslate"><span class="pre">keys()</span></code> method. This returns a custom type <a class="footnote-reference brackets" href="#id8" id="id5">3</a>, which can be iterated over.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>dict_keys
@@ -523,11 +504,10 @@ G 3
 <p>You can use that to get the keys as a different data type, e.g. a tuple or list, using the respective builtin functions.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">keys</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39;A&#39;, &#39;C&#39;, &#39;G&#39;)
@@ -538,11 +518,10 @@ G 3
 <p>But you can get the same thing by passing the <code class="docutils literal notranslate"><span class="pre">dict</span></code> instance itself. This works because the <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> and <code class="docutils literal notranslate"><span class="pre">list()</span></code> functions take an iterable as their argument and, as we showed above, iterating over a dict returns the keys.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
 <span class="n">keys</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39;A&#39;, &#39;C&#39;, &#39;G&#39;)
@@ -556,9 +535,9 @@ G 3
 <p>This is what the <code class="docutils literal notranslate"><span class="pre">values()</span></code> method does! It returns a custom data type <a class="footnote-reference brackets" href="#id8" id="id6">3</a> which can be iterated over.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>dict_values([1, 3, 3])
@@ -572,9 +551,9 @@ G 3
 <p>We can achieve this by using the <code class="docutils literal notranslate"><span class="pre">items()</span></code> method which, again, returns a custom data type <a class="footnote-reference brackets" href="#id8" id="id7">3</a>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;A&#39;, 1), (&#39;C&#39;, 3), (&#39;G&#39;, 3)])
@@ -585,11 +564,10 @@ G 3
 <p>A common usage pattern for the <code class="docutils literal notranslate"><span class="pre">items()</span></code> method is for looping with <span class="target" id="index-2"></span>assignment unpacking.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;key=</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> and value=</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>key=A and value=1
@@ -611,9 +589,9 @@ key=G and value=3
 <p>Adding a new item to an existing dict is just an assignment.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 </div>
@@ -624,13 +602,11 @@ key=G and value=3
 <p>But where dicts become really valuable is when you need to dynamically update a value. We’ve shown this above in the case of constructing our dict of nucleotide counts (the counts are incremented). But consider the case when we have a mutable data type, such as a <code class="docutils literal notranslate"><span class="pre">list</span></code>, as the value. Let’s consider the following data</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;FlyingFox&#39;</span><span class="p">,</span> <span class="s1">&#39;8.57&#39;</span><span class="p">],</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;FlyingFox&#39;</span><span class="p">,</span> <span class="s1">&#39;8.57&#39;</span><span class="p">],</span>
         <span class="p">[</span><span class="s1">&#39;DogFaced&#39;</span><span class="p">,</span> <span class="s1">&#39;7.66&#39;</span><span class="p">],</span>
         <span class="p">[</span><span class="s1">&#39;edge.0&#39;</span><span class="p">,</span> <span class="s1">&#39;4.66&#39;</span><span class="p">]]</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 </div>
@@ -643,19 +619,14 @@ key=G and value=3
 </dl>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">by_column</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;stat&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">by_column</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;stat&quot;</span><span class="p">:</span> <span class="p">[]}</span>
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
     <span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span>
 
 <span class="n">by_column</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: [&#39;FlyingFox&#39;, &#39;DogFaced&#39;, &#39;edge.0&#39;], &#39;stat&#39;: [&#39;8.57&#39;, &#39;7.66&#39;, &#39;4.66&#39;]}
@@ -667,11 +638,10 @@ key=G and value=3
 <p>We can now apply our casting to the numerical column only.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">by_column</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]]</span>
 <span class="n">by_column</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: [&#39;FlyingFox&#39;, &#39;DogFaced&#39;, &#39;edge.0&#39;], &#39;stat&#39;: [8.57, 7.66, 4.66]}

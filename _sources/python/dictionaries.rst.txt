@@ -20,7 +20,6 @@ There are two approaches to defining a ``dict``, the first uses "empty" curly br
 .. [2] A dict is empty if you don't specify any key/value pairs. So having blank spaces, or tab characters within the braces has no impact.
 
 .. jupyter-execute::
-    :linenos:
 
     x = {}
     x
@@ -28,7 +27,6 @@ There are two approaches to defining a ``dict``, the first uses "empty" curly br
 Or by calling the builtin ``dict()`` without any arguments.
 
 .. jupyter-execute::
-    :linenos:
 
     x = dict()
     x
@@ -36,7 +34,6 @@ Or by calling the builtin ``dict()`` without any arguments.
 Dictionaries have a length, which in this case is 0.
 
 .. jupyter-execute::
-    :linenos:
 
     len(x)
 
@@ -47,7 +44,6 @@ Creating a non-empty ``dict``
 The syntax differs between the two different approaches. In the case of using ``{}``, you separate keys from values using the ``:`` and from the next key/value pair using a ``,``.
 
 .. jupyter-execute::
-    :linenos:
 
     names = {"first": "GAVIN", "last": "Huttley"}
     names
@@ -57,7 +53,6 @@ The syntax differs between the two different approaches. In the case of using ``
 Using the ``dict()`` function allows a quite different approach that can only be applied if the keys are going to be strings. In this approach, the keys become argument names to ``dict()`` and the values are assigned to them in the function call. In the following, notice that we use what a standard keyword argument statement within a function call -- we remove the quotes from the key and use ``=`` to assign the value.
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     names = dict(first="GAVIN", last="Huttley")
@@ -76,7 +71,6 @@ Retrieving values from a ``dict`` by "indexing"
 We obtain values from a ``dict`` instance using the key. Using the ``names`` instance, we can get the value corresponding to the key ``"first"`` using the standard looking indexing syntax (i.e. using ``[]``).
 
 .. jupyter-execute::
-    :linenos:
 
     f = names["first"]
     f
@@ -84,7 +78,6 @@ We obtain values from a ``dict`` instance using the key. Using the ``names`` ins
 If you try to get a key that does not exist, Python raises a ``KeyError``.
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     f = names["first name"]
@@ -98,7 +91,6 @@ Retrieving values from a ``dict`` using the ``get()`` method
 The ``get()`` method is an alternate to indexing using ``[]``. If a key does not exist, it defaults to return ``None`` instead of raising a ``KeyError``.
 
 .. jupyter-execute::
-    :linenos:
 
     v = names.get("first name")
     type(v), v
@@ -106,7 +98,6 @@ The ``get()`` method is an alternate to indexing using ``[]``. If a key does not
 You can provide your own "default" value for when a key is missing. If we were using a dict to record counts of nucleotides, for instance, we can define a default value of 0 (for an alternate approach to counting).
 
 .. jupyter-execute::
-    :linenos:
 
     counts = {}
     seq = "ACGGCCG"
@@ -121,7 +112,6 @@ You can provide your own "default" value for when a key is missing. If we were u
     It's worth showing building counts if you don't use a dict. Let's say we want to use a list instead. Here's one approach.
     
     .. jupyter-execute::
-        :linenos:
     
         nucleotides = "ACGT"
         seq = "ACGGCCG"
@@ -136,7 +126,6 @@ Looping over a dict
 The ``dict`` object is an iterable data type. This means you can loop over it. This process returns the keys of the instance.
 
 .. jupyter-execute::
-    :linenos:
 
     for k in counts:
         # printing both the key and it's value
@@ -148,13 +137,11 @@ Seeing if a ``dict`` contains a key
 This is done using the ``in`` operator.
 
 .. jupyter-execute::
-    :linenos:
 
     has_a = "A" in counts
     has_a
 
 .. jupyter-execute::
-    :linenos:
 
     has_t = "T" in counts
     has_t
@@ -168,7 +155,6 @@ Getting all the keys
 To find what keys are present  in a dict, we use the aptly named ``keys()`` method. This returns a custom type [3]_, which can be iterated over.
 
 .. jupyter-execute::
-    :linenos:
 
     v = counts.keys()
     type(v)
@@ -176,7 +162,6 @@ To find what keys are present  in a dict, we use the aptly named ``keys()`` meth
 You can use that to get the keys as a different data type, e.g. a tuple or list, using the respective builtin functions.
 
 .. jupyter-execute::
-    :linenos:
 
     keys = tuple(counts.keys())
     keys
@@ -184,7 +169,6 @@ You can use that to get the keys as a different data type, e.g. a tuple or list,
 But you can get the same thing by passing the ``dict`` instance itself. This works because the ``tuple()`` and ``list()`` functions take an iterable as their argument and, as we showed above, iterating over a dict returns the keys.
 
 .. jupyter-execute::
-    :linenos:
 
     keys = tuple(counts)
     keys
@@ -195,7 +179,6 @@ Getting all the values
 This is what the ``values()`` method does! It returns a custom data type [3]_ which can be iterated over.
 
 .. jupyter-execute::
-    :linenos:
 
     counts.values()
 
@@ -205,14 +188,12 @@ Getting all the key/value pairs
 We can achieve this by using the ``items()`` method which, again, returns a custom data type [3]_.
 
 .. jupyter-execute::
-    :linenos:
 
     counts.items()
 
 A common usage pattern for the ``items()`` method is for looping with :index:`assignment unpacking`.
 
 .. jupyter-execute::
-    :linenos:
 
     for key, value in counts.items():
         print(f"key={key} and value={value}")
@@ -225,7 +206,6 @@ Adding new items to a ``dict``
 Adding a new item to an existing dict is just an assignment.
 
 .. jupyter-execute::
-    :linenos:
 
     counts["T"] = 0
 
@@ -235,7 +215,6 @@ Updating an existing item
 But where dicts become really valuable is when you need to dynamically update a value. We've shown this above in the case of constructing our dict of nucleotide counts (the counts are incremented). But consider the case when we have a mutable data type, such as a ``list``, as the value. Let's consider the following data
 
 .. jupyter-execute::
-    :linenos:
 
     data = [['FlyingFox', '8.57'],
             ['DogFaced', '7.66'],
@@ -246,7 +225,6 @@ Say we want to convert the second column to floats. We can do this by iterating 
 .. [4] I know this is a little contrived, but it's the best example I can come up with right now. The point is how we can update the value of a mutable object!
 
 .. jupyter-execute::
-    :linenos:
 
     by_column = {"name": [], "stat": []}
     for name, stat in data:
@@ -260,7 +238,6 @@ In the above, the ``by_column[<key name>]`` returns the value for that key. We c
 We can now apply our casting to the numerical column only.
 
 .. jupyter-execute::
-    :linenos:
 
     by_column["stat"] = [float(v) for v in by_column["stat"]]
     by_column

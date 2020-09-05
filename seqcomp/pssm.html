@@ -281,9 +281,9 @@
 <p>Let’s use the sequence</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">seq1</span> <span class="o">=</span> <span class="s2">&quot;GTAT&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq1</span> <span class="o">=</span> <span class="s2">&quot;GTAT&quot;</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 </div>
@@ -291,13 +291,11 @@
 <p>We define a background distribution as one where all bases are equally frequent. In the above case, we then obtain the <span class="math notranslate nohighlight">\(p(seq1|background)\)</span> as</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">seq_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span>
 <span class="n">p_seq1_background</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">**</span> <span class="n">seq_len</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p_seq1_background</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.003906

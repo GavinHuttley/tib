@@ -256,19 +256,14 @@
 <p>In brief, variables defined within the local scope are only “available” within that scope. Variables defined within the global scope can be accessed within a local scope.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="n">foo</span><span class="p">()</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5
@@ -305,17 +300,13 @@ b -&gt; bn;
 </dl>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo2</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo2</span><span class="p">():</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
 <span class="n">foo2</span><span class="p">()</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -349,16 +340,7 @@ b -&gt; bn;
 <p>Consider this broken code</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">CONSTANT</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CONSTANT</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="k">def</span> <span class="nf">add_squared_constant</span><span class="p">(</span><span class="n">data_series</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;adds squared constant to elements of data_series&quot;&quot;&quot;</span>
@@ -369,7 +351,7 @@ b -&gt; bn;
 <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">42</span><span class="p">]</span>
 <span class="n">sqd</span> <span class="o">=</span> <span class="n">add_squared_constant</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>

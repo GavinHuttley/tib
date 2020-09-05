@@ -35,7 +35,6 @@ Another useful builtin function is ``sorted()``. As the name implies, this takes
 .. [1] The elements don't have to be numbers.
 
 .. jupyter-execute::
-    :linenos:
 
     nums = [3, 0, 6, 1]
     sorted(nums)
@@ -43,7 +42,6 @@ Another useful builtin function is ``sorted()``. As the name implies, this takes
 The original object is left unmodified.
 
 .. jupyter-execute::
-    :linenos:
 
     nums
 
@@ -61,13 +59,11 @@ So what is an "object"? It's an abstract concept, but in essence an object repre
 So what's an instance? An instance is an occurrence of a type of data, which will have a location in memory that is different to other occurrences of the same type of data. I'll use the built-in function ``id()`` (which returns a unique identifier, related to the address in memory):
 
 .. jupyter-execute::
-    :linenos:
 
     a = [3, 0, 6, 1]
     id(a)
 
 .. jupyter-execute::
-    :linenos:
 
     b = [3, 0, 6, 1]
     id(b)
@@ -86,13 +82,11 @@ Which leads us to methods. A method is a function bound to a specific object tha
 This means that when you call a method on one object, it only operates on that object. I'll demonstrate that by using a method on lists to sort the elements.
 
 .. jupyter-execute::
-    :linenos:
 
     a.sort()
     a
 
 .. jupyter-execute::
-    :linenos:
 
     b
 
@@ -147,7 +141,6 @@ Recalling that methods are bound to the data they operate on, we can divide meth
 Consider the string ``"GGTCATGAAGGTC"``. Example string methods that describe the data are ``find()``, ``startswith()``. In these cases, the method will return a value.
 
 .. jupyter-execute::
-    :linenos:
 
     seq = "GGTCATGAAGGTC"
     seq.find("ATG")
@@ -155,7 +148,6 @@ Consider the string ``"GGTCATGAAGGTC"``. Example string methods that describe th
 In an interactive interpreter (like Jupyter which we've used here), the returned value is displayed. In order to use the information, we have to assign it to a variable which we now do.
 
 .. jupyter-execute::
-    :linenos:
 
     orf_start = seq.find("ATG")
 
@@ -172,14 +164,12 @@ These descriptive methods are pretty simple to comprehend. The challenge comes w
 In this example given in `Interpreting help() for a method`_, a new string will be returned. This means the original instance will be unchanged.
 
 .. jupyter-execute::
-    :linenos:
 
     text = "HELLO WORLD"
     capitalized = text.capitalize()
     text
 
 .. jupyter-execute::
-    :linenos:
 
     capitalized
 
@@ -188,7 +178,6 @@ In this example given in `Interpreting help() for a method`_, a new string will 
 If we were working on a ``list`` type, however, transforming methods **do not** return a value and in fact are void methods. Instead the data in the instance is modified itself.
 
 .. jupyter-execute::
-    :linenos:
 
     words = ["HELLO", "WORLD"]
     words.reverse() # reverse the item order
@@ -204,25 +193,21 @@ A useful trick for concatenating strings
 Getting help on a string method that can be used to concatenate.
 
 .. jupyter-execute::
-    :linenos:
 
     help("".join)
 
 .. note:: All elements of the series must be of type ``str``.
 
 .. jupyter-execute::
-    :linenos:
 
     data = ["AAA", "CCC"]
     "".join(data)
 
 .. jupyter-execute::
-    :linenos:
 
     "-".join(data)
 
 .. jupyter-execute::
-    :linenos:
 
     "\t".join(data)
 

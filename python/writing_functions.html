@@ -356,9 +356,9 @@
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -426,9 +426,9 @@
 <p>Required arguments MUST occur before optional arguments. This constraint holds for both writing your own functions and for using functions.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_diff</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_diff</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-8-b77b26114f13&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
@@ -459,28 +459,23 @@
 </dl>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;a do nothing demo</span>
 
 <span class="sd">    multi-line docs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 </div>
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">myfunc</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">myfunc</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function myfunc in module __main__:
@@ -500,15 +495,7 @@ myfunc()
 <p><strong>DO NOT</strong> use global variables (see <a class="reference internal" href="namespace.html#namespaces"><span class="std std-ref">Namespaces</span></a>). Either pass the variable in as an argument or create it within the function. Adhere to the principle of making code “Easy To Change”. In the case of functions, this means making them depend only on the arguments you give them. The following is bad.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">def</span> <span class="nf">myfunc1</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
     <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
@@ -518,7 +505,7 @@ myfunc()
 <span class="n">myfunc1</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">result</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[4, 4]
@@ -530,13 +517,7 @@ myfunc()
 <p><strong>DO NOT</strong> define the default value of an optional variable to be a mutable data type. Here’s an example</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc2</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="p">[]):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc2</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
 
@@ -544,7 +525,7 @@ myfunc()
 <span class="n">r</span> <span class="o">=</span> <span class="n">myfunc2</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">r</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[20, 90]
@@ -572,9 +553,9 @@ myfunc()
 <p>Using the following data</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s2">&quot; [ 0.2 0.1 0.3 0.4 0.0 ] &quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s2">&quot; [ 0.2 0.1 0.3 0.4 0.0 ] &quot;</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 </div>
@@ -588,11 +569,10 @@ myfunc()
 <p>For example, with the following input values</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">freqs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">freqs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
 <span class="n">add_to_all</span><span class="o">=</span><span class="mf">0.0001</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 </div>

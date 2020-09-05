@@ -124,7 +124,6 @@ In defining instances of collection types, different elements are delimited usin
 Add another key
 
 .. jupyter-execute::
-    :linenos:
 
     d["new key"] = "some text"
     d

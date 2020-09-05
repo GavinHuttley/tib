@@ -148,7 +148,6 @@ Demonstrating NW on an example
 We apply NW to the following two sequences, gradually building up the algorithmic components in Python. We will use ``numpy`` arrays to implement this algorithm.
 
 .. jupyter-execute::
-    :linenos:
 
     seq1 = "GGTAC"
     seq2 = "GAGTAC"
@@ -159,7 +158,6 @@ Create the data structures we need
 Because of the boundary condition, the dimensions of our matrices are +1 that of the sequence lengths.
 
 .. jupyter-execute::
-    :linenos:
 
     dim_r = len(seq1) + 1
     dim_c = len(seq2) + 1
@@ -167,7 +165,6 @@ Because of the boundary condition, the dimensions of our matrices are +1 that of
 We next define the ``path_scores`` matrix (which represents :math:`\mathcal{P}`). We will specify this as a float array populated with zeros to start.
 
 .. jupyter-execute::
-    :linenos:
 
     import numpy
 
@@ -176,7 +173,6 @@ We next define the ``path_scores`` matrix (which represents :math:`\mathcal{P}`)
 As described above, every boundary cell has only one possible entry path. We define index ``r`` as the row index, and ``c`` as the column index. Then for every boundary cell where :math:`r=0, c`, the only possible path into it is from :math:`r=0, c-1`. (The same applies to the other boundary, but noting in that case :math:`c=0`). In this case, the scores for the boundary cells can be pre-computed as simply the index multiplied by :math:`\delta`. We represent the latter parameter in python as ``delta`` and apply this operation to the ``path_scores`` matrix across both boundaries.
 
 .. jupyter-execute::
-    :linenos:
 
     delta = -1
 
@@ -191,14 +187,12 @@ As described above, every boundary cell has only one possible entry path. We def
 We define a ``path_choices`` matrix (which represents :math:`\mathcal{T}`). We specify this as an ``object`` array since we want to store tuples inside it. Specifically, we will store the :math:`r, c` coordinates for the optimal alignment leading into the current cell. Using ``numpy``, we initialise the matrix as being empty.
 
 .. jupyter-execute::
-    :linenos:
 
     path_choices = numpy.empty((dim_r, dim_c), dtype=object)
 
 We then address the boundary conditions. Since boundary cells can have only one input path, and since the ``path_choices`` array records that path, we can easily initialise the array. But note that we need to point into the *previous cell*, so we must start our loops from the value ``1``, not ``0``. We also set the special value of ``(0, 0)`` for the vert first cell.
 
 .. jupyter-execute::
-    :linenos:
 
     path_choices[0, 0] = (0, 0)
 
@@ -218,7 +212,6 @@ The scoring function
 We write this as a function since it will be called for every comparison of sequence states.
 
 .. jupyter-execute::
-    :linenos:
 
     def score_match(a, b):
         if a == b:
@@ -230,7 +223,6 @@ We write this as a function since it will be called for every comparison of sequ
     score_match("A", "C")
 
 .. jupyter-execute::
-    :linenos:
 
     score_match("A", "A")
 
@@ -240,7 +232,6 @@ Computing the best score and path for a particular comparison
 I write a function that corresponds to the algorithmic implementation of `equation <path_score>`_. In this case, I'm anticipating what information I need -- the ``path_scores`` matrix, the coordinates of the current cell, the score for the states represented by that cell and the gap penalty (``delta``).
 
 .. jupyter-execute::
-    :linenos:
 
     def get_best_score_path(path_scores, r, c, score, delta):
         match_path = (r - 1, c - 1)
@@ -266,7 +257,6 @@ Populating the ``path_scores`` and ``path_choices`` matrices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. jupyter-execute::
-    :linenos:
 
     for r, base1 in enumerate(seq1, 1):
         for c, base2 in enumerate(seq2, 1):
@@ -290,7 +280,6 @@ The following table uses bold font to emphasise the path choices that are made t
     **C**  :sub:`5`,              "-5",       "-3",       "-1",       "-1",        "0",        "2",    "**4**"
 
 .. jupyter-execute::
-    :linenos:
 
     path_choices
 
@@ -302,7 +291,6 @@ The NW algorithm is a solution to the complex challenge of finding the optimal g
 We will solve this using a ``while`` loop since we don't know precisely how many steps this will take. Our ``while`` loop exit condition will be based on having reached a ``path_choices`` cell whose value is ``(0, 0)``. Since we are tracing back the alignment, our initial coordinate for ``path_choices`` is the very last cell.
 
 .. jupyter-execute::
-    :linenos:
 
     r = len(seq1)
     c = len(seq2)
@@ -310,13 +298,11 @@ We will solve this using a ``while`` loop since we don't know precisely how many
 We then define two lists which we will use to hold the aligned sequences as they are built.
 
 .. jupyter-execute::
-    :linenos:
 
     aligned_1 = []
     aligned_2 = []
 
 .. jupyter-execute::
-    :linenos:
 
     while (r, c) != (0, 0):
         # the next step backwards
@@ -331,7 +317,6 @@ We then define two lists which we will use to hold the aligned sequences as they
 So that didn't fail -- awesome! But our sequences are actually in reverse order (we did start at the end of the alignment after all). So to recover them in their correct orientation, we simply reverse the lists and transform them into a string.
 
 .. jupyter-execute::
-    :linenos:
 
     aligned_1.reverse()
     aligned_1 = "".join(aligned_1)

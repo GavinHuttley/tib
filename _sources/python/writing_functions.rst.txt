@@ -97,7 +97,6 @@ Required arguments
     get_diff(b=6, a=4)
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     get_diff(1)
@@ -140,7 +139,6 @@ Ordering arguments
 Required arguments MUST occur before optional arguments. This constraint holds for both writing your own functions and for using functions.
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     get_diff(absolute=True, 0.1, -0.5)
@@ -167,7 +165,6 @@ The following illustrates the form of a docstring with a simple function with no
 .. [1] The Python ``pass`` statement is a null ("do-nothing") operation. It's used as a placeholder when the language requires a syntactic element.
 
 .. jupyter-execute::
-    :linenos:
 
     def myfunc():
         """a do nothing demo
@@ -177,7 +174,6 @@ The following illustrates the form of a docstring with a simple function with no
         pass
 
 .. jupyter-execute::
-    :linenos:
 
     help(myfunc)
 
@@ -187,7 +183,6 @@ Things not to do!
 **DO NOT** use global variables (see :ref:`namespaces`). Either pass the variable in as an argument or create it within the function. Adhere to the principle of making code "Easy To Change". In the case of functions, this means making them depend only on the arguments you give them. The following is bad.
 
 .. jupyter-execute::
-    :linenos:
 
     result = []
     
@@ -204,7 +199,6 @@ As I show in that code snippet, each call to ``myfunc1()`` modifies the module l
 **DO NOT** define the default value of an optional variable to be a mutable data type. Here's an example
 
 .. jupyter-execute::
-    :linenos:
 
     def myfunc2(arg, result=[]):
         result.append(arg)
@@ -239,7 +233,6 @@ Exercises
 Using the following data
 
 .. jupyter-execute::
-    :linenos:
 
     data = " [ 0.2 0.1 0.3 0.4 0.0 ] "
 
@@ -254,7 +247,6 @@ Using the following data
     For example, with the following input values
 
     .. jupyter-execute::
-        :linenos:
 
         freqs = [0.1, 0, 0.3, 0.6]
         add_to_all=0.0001

@@ -252,42 +252,32 @@
 <p>When you are writing scripts, your file <strong>must</strong> have some lines that have no indentation.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">Like this</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">Not like this!</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Correct&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Correct&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 </div>
 <div class="section" id="conditionals">
 <span id="index-2"></span><h2><span class="section-number">5.14.2. </span>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h2>
 <p>Python conditionals require using the <code class="docutils literal notranslate"><span class="pre">:</span></code> (colon) character to complete a statement.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Timbo&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Timbo&quot;</span>
 <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Gavin&quot;</span><span class="p">:</span>
      <span class="n">greet</span> <span class="o">=</span> <span class="s2">&quot;Hello Guru&quot;</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">greet</span> <span class="o">=</span> <span class="s2">&quot;What Up&quot;</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="section" id="more-complicated-conditionals">
 <h2><span class="section-number">5.14.3. </span>More complicated conditionals<a class="headerlink" href="#more-complicated-conditionals" title="Permalink to this headline">¶</a></h2>
 <p>If you have more than two conditions, you can use <code class="docutils literal notranslate"><span class="pre">elif</span></code>. The first case is always assessed using <code class="docutils literal notranslate"><span class="pre">if</span></code>, then <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and last is <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Timbo&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Timbo&quot;</span>
 <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Gavin&quot;</span><span class="p">:</span>
     <span class="n">greet</span> <span class="o">=</span> <span class="s2">&quot;Hello guru&quot;</span>
 <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Timbo&quot;</span><span class="p">:</span>
@@ -295,22 +285,19 @@
 <span class="k">else</span><span class="p">:</span>
     <span class="n">greet</span> <span class="o">=</span> <span class="s2">&quot;Sorry, but I do not know your name.&quot;</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="section" id="conditional-statement-with-multiple-clauses">
 <h2><span class="section-number">5.14.4. </span>Conditional statement with multiple clauses<a class="headerlink" href="#conditional-statement-with-multiple-clauses" title="Permalink to this headline">¶</a></h2>
 <p>There are binary operations that can be combined to increase the complexity of conditional clauses. Specifically, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">24</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">24</span>
 <span class="n">j</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Both positive&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Both positive
@@ -335,13 +322,11 @@
 <p>As an alternate, there may be causes where you wish to check for existence of a value in a series.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">sequence</span> <span class="o">=</span> <span class="s2">&quot;ACGTTAGGTATGTAA&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sequence</span> <span class="o">=</span> <span class="s2">&quot;ACGTTAGGTATGTAA&quot;</span>
 <span class="k">if</span> <span class="s2">&quot;ATG&quot;</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
     <span class="n">start_codon</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 </div>
@@ -349,13 +334,11 @@
 <p>Or</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">61</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">61</span><span class="p">]</span>
 <span class="k">if</span> <span class="mi">2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
     <span class="n">absent</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 </div>
@@ -368,19 +351,14 @@
 <span id="index-4"></span><h3><span class="section-number">5.14.5.1. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before the while loop&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before the while loop&quot;</span><span class="p">)</span>
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After the while loop&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Before the while loop
@@ -394,19 +372,14 @@ After the while loop
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
         <span class="k">break</span>  <span class="c1"># a special key word for exiting loops</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0
@@ -445,13 +418,11 @@ After the while loop
 <p>The for loop definition is completed by adding the code you wanted to execute on each iteration through the loop. Here’s an example.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;cheese&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;cheese&quot;</span>
 <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>c
@@ -474,13 +445,11 @@ e
 <p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop with the convenience of also returning the index of the element in the series.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;cheese&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;cheese&quot;</span>
 <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>(0, &#39;c&#39;)
@@ -549,13 +518,11 @@ e
 <p>In Python, a comment is all text occurring after the  <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol line. All characters occurring after it are ignored by the interpreter. Comment lines are used to explain in normal language what a block of code is doing, or to record other information such as the license.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># this is a comment</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is a comment</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">16</span> <span class="c1"># and this is another comment</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="cell_output docutils container">
 </div>

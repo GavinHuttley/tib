@@ -89,7 +89,6 @@ Quantiles are rank order statistics. They are locations in a sorted collection o
 Let's play with the quantiles from the uniform distribution that I generated above. We use the ``numpy.quantile`` function for this purpose. Since we're using a uniform distribution, and following from the definition of this distribution, we can expect that 5% of all uniform random values will be :math:`\le 0.05`. Does our data support this?
 
 .. jupyter-execute::
-    :linenos:
 
     from numpy import quantile
     
@@ -98,7 +97,6 @@ Let's play with the quantiles from the uniform distribution that I generated abo
 Conversely, we expect that 5% of all uniform random values will be :math:`\ge 0.95`
 
 .. jupyter-execute::
-    :linenos:
 
     1 - quantile(x_uniform, 0.95)
 
@@ -130,7 +128,6 @@ We have a DNA sequence and we want to evaluate whether nucleotides occur randoml
 Here's the sequence we will use.
 
 .. jupyter-execute::
-    :linenos:
 
     seq = [
         "ATGAAATCCAACCAAGAGCGGAGCAACGAATGCCTGCCTCCCAAGAAGCG",
@@ -161,7 +158,6 @@ This is actually the calculation made when we perform a chi-square test for inde
 #. **Split the sequence into dinucleotides**: From our sample sequence, we need to produce the series of dinucleotides ``["AA", "CC", "CC", "GT"]``.
 
     .. jupyter-execute::
-        :linenos:
 
         def seq_to_dinucs(seq):
             seq = "".join(seq)
@@ -173,14 +169,12 @@ This is actually the calculation made when we perform a chi-square test for inde
 #. **Define a nucleotide order**: We need this in order to be able to convert the dinucleotide string into array coordinates. We define nucleotides to be in alphabetical order. This means that the dinucleotide ``"AA"`` corresponds to indices ``(0, 0)`` while ``GT`` corresponds to indices ``(2, 3)``.
 
     .. jupyter-execute::
-        :linenos:
     
         nucleotide_order = "ACGT"
 
 #. **Convert dinucleotides into pairs of indices**: I'll do this by writing a function that converts a single dinucleotide into coordinates. Applying this to the sample sequence we get
 
     .. jupyter-execute::
-        :linenos:
     
         def dinuc_to_indices(dinuc):
             return tuple(nucleotide_order.index(nuc) for nuc in dinuc)
@@ -206,7 +200,6 @@ This is actually the calculation made when we perform a chi-square test for inde
 #. **Use those counts to compute the expected values**: This can be achieved quite simply here by first generating row and column sums, converting those to frequencies plus a couple of other steps (detail is below).
 
     .. jupyter-execute::
-        :linenos:
         
         from numpy import outer
 
@@ -235,7 +228,6 @@ This is actually the calculation made when we perform a chi-square test for inde
     We express this as a Python function and apply it to our simple example. (The numpy array operations greatly simplify the calculation.)
     
     .. jupyter-execute::
-        :linenos:
     
         def calc_chisq(observed, expected):
             chisq = (observed - expected)**2 / expected
@@ -248,7 +240,6 @@ This is actually the calculation made when we perform a chi-square test for inde
 Let's provide a simplified interface to all these function calls such that if we provide our sequence, all the above steps are called and we get back our chi-square statistic.
 
 .. jupyter-execute::
-    :linenos:
 
     def chiqsq_independent_nucs(seq):
         dinucs = seq_to_dinucs(seq)
@@ -262,7 +253,6 @@ Let's provide a simplified interface to all these function calls such that if we
 So that's nice, we are now able to compute the statistic of interest given our sequence. How do we generate the null? We can generate synthetic data sets consistent with the null by randomly sampling from our actual data. This requires we have a means for making a random choice of a nucleotide to sample from our observed data. Algorithms for generating pseudo-random numbers are important for scientific computing and, as you might expect, there are numerous choices. (The Python standard library comes with a builtin capability for generating such numbers using a well regarded algorithm.) In our case, we can just use a ``shuffle`` function. Note that ``shuffle`` works "in place", meaning it modifies the data you provide, so we need to convert our sequence into a list.
 
 .. jupyter-execute::
-    :linenos:
 
     from numpy.random import shuffle
     
@@ -273,7 +263,6 @@ So that's nice, we are now able to compute the statistic of interest given our s
 Will our functions still work if we give them a list?
 
 .. jupyter-execute::
-    :linenos:
 
     chiqsq_independent_nucs(list(seq))
 
@@ -284,7 +273,6 @@ To recap, we have a function that (given a sequence) returns the chi-square stat
 So here's the final function.
 
 .. jupyter-execute::
-    :linenos:
 
     def calc_chisq_pval(seq, num_reps):
         obs_stat = chiqsq_independent_nucs(seq)

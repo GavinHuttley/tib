@@ -8,7 +8,6 @@ What is molecular evolution?
     :name: Variation between species
 
     .. jupyter-execute::
-        :linenos:
 
         from cogent3 import load_aligned_seqs
 
@@ -21,7 +20,6 @@ What is molecular evolution?
         aln.set_repr_policy(num_pos=36, ref_name="Human")
 
     .. jupyter-execute::
-        :linenos:
 
         aln
     

@@ -15,7 +15,6 @@ For all data types, the `[]` are used to specify the indices.
 .. note:: Python indexes start at `0`.
 
 .. jupyter-execute::
-    :linenos:
 
     #       0123...
     data = "ACGTACGTACGT"
@@ -24,7 +23,6 @@ For all data types, the `[]` are used to specify the indices.
 Indexing is also used for assignment.
 
 .. jupyter-execute::
-    :linenos:
 
     more_data = ["some text", 4, 23.4]
     more_data[0] = -2
@@ -33,7 +31,6 @@ Indexing is also used for assignment.
 But assignment is not possible with an immutable data type like a string.
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     data[0] = "T"
@@ -41,7 +38,6 @@ But assignment is not possible with an immutable data type like a string.
 Indexing beyond the length of a series causes an exception. Here is a little gotcha. Although ``more_data`` is 3 elements long, there is no element at index 3. That's because Python indexes start at 0.
 
 .. jupyter-execute::
-    :linenos:
     :raises:
 
     print(more_data[3])
@@ -52,18 +48,15 @@ Indexing in multiple-dimensions
 Using the list of lists I created earlier.
 
 .. jupyter-execute::
-    :linenos:
 
     seq_records = [["label 1", "AA"], ["label 2", "TT"]]
     seq_records[0]
 
 .. jupyter-execute::
-    :linenos:
 
     seq_records[0][1]
 
 .. jupyter-execute::
-    :linenos:
 
     seq_records[1][1]
 
@@ -84,7 +77,6 @@ Slicing is just an indexing operation that refers to a range of elements. A slic
 - ``stride`` refers to the separation between selected elements. Defaults to 1.
 
 .. jupyter-execute::
-    :linenos:
 
     data
     codon1 = data[:3]
@@ -98,21 +90,18 @@ Slicing is just an indexing operation that refers to a range of elements. A slic
 Negative slicing works from the *end*.
 
 .. jupyter-execute::
-    :linenos:
 
     data[-3:]
 
 You can even specify a *stride*, which causes the slice to occur in steps of the specified length. Below I set the stride `=3` (which is what you would do if you wanted to select 1st codon positions, for example).
 
 .. jupyter-execute::
-    :linenos:
 
     data[0:9:3]
 
 Slicing to beyond the length of a series does not cause an exception.
 
 .. jupyter-execute::
-    :linenos:
 
     data[:15]
 
