@@ -3,7 +3,6 @@ Alignments, Sequence Collections and Sequences
 
 Biological sequences are represented by several objects in ``cogent3``. Typically, these are created by loading from file or by making them directly from standard python types. There is no more fundamental type than that of sequences. So let's just get cracking and actually load some data from a file. Along the way, I'll point out different aspects of the process of creating objects that you need to pay attention to.
 
-
 Alignments
 ----------
 
@@ -30,6 +29,29 @@ For all the methods, see ArrayAlignment_.
 .. [1] Unless you want to be manipulating sequences via their sequence annotations, this is what you want. See the cogent3_ documentation for the other class.
 
 When we talk about an alignment with ``cogent3``, this is what we mean.
+
+Getting the length of an alignment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. jupyter-execute::
+
+    len(aln)
+
+Getting the lengths of individual sequences
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Wait! Aren't all sequences in a alignment exactly the same length? Yes, but only because the include gaps. It's often the case that you want to know how much actual sequence data there is for each sequence. In this case, we use the ``get_lengths()`` method.
+
+.. jupyter-execute::
+
+    aln.get_lengths()
+
+Getting the number of sequences
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. jupyter-execute::
+
+    aln.num_seqs
 
 Getting the sequence names
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,10 +104,10 @@ You can also use a "stride".
 
 .. warning:: Slicing with a stride only works for the ``ArrayAlignment`` class.
 
-Alignments are immutable!
-^^^^^^^^^^^^^^^^^^^^^^^^^
+``cogent3`` ``Alignment`` types are immutable!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-So any operation their data returns a new instance.
+So any method that modifies their data returns a new instance.
 
 Getting a subset of sequences
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,7 +122,9 @@ This is done via a method.
 Converting sequences into a standard Python ``dict``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is useful if you want to directly manipulate the strings, for instance. (I'm slicing the alignment only because I want the dict to be sensibly displayed in this documentation.)
+This is useful if you want to directly manipulate the strings, for instance [2]_
+
+.. [2] I'm slicing the alignment only because I want the dict to be sensibly displayed in this documentation.
 
 .. jupyter-execute::
 
@@ -163,7 +187,7 @@ You can also specify the sequence to be used as a reference (the default is to u
 Translating nucleic acids to protein
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are a few factors to consider here. First, some sequences may be incomplete -- meaning the actual sequence does not cover the entire gene and may end with an incomplete codon. Second, the sequence may be complete but terminate with a stop codon. Both of those will cause the translation method to fail. In this case,  the data has an incomplete codon (it contains a gap character), which we address as follows
+There are a few factors to consider here. First, some sequences may be incomplete -- meaning the actual sequence does not cover the entire gene and may end with an incomplete codon. Second, the sequence may be complete but terminate with a stop codon. Both of those will cause the translation method to fail. In this case, the data has an incomplete codon (it contains a gap character), which we address as follows
 
 .. jupyter-execute::
 
@@ -249,6 +273,8 @@ Exercises
 Download the :download:`alignment of bat BRCA1 sequences </data/brca1-bats.fasta>`.
 
 #. Try removing the ``incomplete_ok`` argument from the ``get_translation()`` method.
+
+#. Create an alignment from a dict with sequences that you make up. Slice the alignment to remove the last 3 aligned columns.
 
 #. Create an alignment from a dict with sequences that you make up. Slice the alignment to get every second codon position.
 
