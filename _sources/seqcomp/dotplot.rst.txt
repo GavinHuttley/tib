@@ -37,18 +37,16 @@ Consider two sequences, `X` and `Y` with lengths `n` and `m` respectively. We es
             if X[i] == Y[j] then
                 matches[i, j] = 0
 
-
 .. note:: I am *not* using Python indexing here! This is, in effect, a :math:`k`-mer matching algorithm where :math:`k=1`.
 
 .. [1] Because of the Plotly colour scale, we use values of 0 to indicate a match which will display as black, 1 means a mismatch which will be white. For the two sample sequences ``"AGCGT"`` and ``"AT"`` we construct by hand the resulting.
 
 .. code-block:: python
     :name: dotplot_matrix
-    
-    #           A  G  C  G  T
-    matches = [[0, 1, 1, 1, 1],  #  A
-               [1, 1, 1, 1, 0]]  #  T
 
+    #           A  G  C  G  T
+    matches = [[0, 1, 1, 1, 1],
+               [1, 1, 1, 1, 0]]  #  A  #  T
 
 .. jupyter-execute::
     :hide-code:
@@ -63,17 +61,40 @@ Consider two sequences, `X` and `Y` with lengths `n` and `m` respectively. We es
     fig = px.imshow(
         matches,
         range_color=[0.0, 1.0],
-        x=list("AGCGT"),
-        y=list("AT"),
         color_continuous_scale="gray",
     )
+
+We make some adjustments to simplify the display.  First, suppress a colour bar.
+
+.. jupyter-execute::
+
     # we want to suppress the colour scale bar
-    fig.update_layout(coloraxis_showscale=False)
-    fig.update_xaxes(showgrid=True, linewidth=2, linecolor="black", mirror=True)
-    fig.update_yaxes(showgrid=True, linewidth=2, linecolor="black", mirror=True)
+    fig = fig.update_layout(coloraxis_showscale=False)
+
+We want to place a box around the matrix and specify a font size for both the |xaxis| and |yaxis| text, which we define as a ``dict``.
+
+.. jupyter-execute::
+
+    # these settings are applied to both x- and y-axis. Using the
+    # **kwargs idiom, the dict is interpreted as keyword arguments to
+    # a method or function
+    common_settings = dict(
+        linewidth=2, linecolor="black", mirror=True, tickfont={"size": 28}
+    )
+
+.. index:: **kwargs 
+
+This one object can then be provided as the keyword arguments for a method calls using a ``**kwargs`` idiom. We also set the sequence text as the tick text on their respective axes.
+
+.. jupyter-execute::
+
+    fig.update_xaxes(
+        ticktext=["A", "G", "C", "G", "T"], tickvals=[0, 1, 2, 3, 4], **common_settings
+    )
+    fig.update_yaxes(ticktext=["A", "T"], tickvals=[0, 1], **common_settings)
     fig.show()
 
-Most of the above code is concerned with simplifying the plotly display. Aside from that, I draw your attention to the fact that array coordinates (see :ref:`for explanation on array coordinates <array_coordinates>`) are used in both this display and that presented in the original publication.
+I draw your attention to the fact that array coordinates (see :ref:`explanation on array coordinates <array_coordinates>`) are used in both this display and that presented in the original publication.
 
 Exercises
 =========
@@ -81,7 +102,7 @@ Exercises
 #. Implement the simple dotplot algorithm. Write a function that takes the following two sequences and returns an array with 1 where the sequences do not match and 0 where they do.
 
     .. code-block:: python
-    
+
         seq1 = "CCTCTGAATAGGAGACAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT"
         seq2 = "CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATAGGTGGCGCACATAGATTT"
 
