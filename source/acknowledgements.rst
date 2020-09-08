@@ -2,14 +2,14 @@
 Acknowledgements
 ****************
 
-Many thanks to Sheng Koh for his assistance in improving the Sphinx theme template and CSS to enhance the reading experience.
+**Thanks to**
 
-Thanks to
-- Brendan Beaton for fixing a mismatch between code and corresponding text description!
-- Nigel Heng for identifying a bug in Plotly `imshow()`!
-- Amber Condell for reporting dead links! 
-- Amber Condell, Sean Broderick and Brendan Beaton for identifying issues that needed better explanations!
-- Jesse Wallace for suggesting assorted improvements and fixes!
+- Sheng Koh for his assistance in improving the Sphinx theme template and CSS to enhance the reading experience.
+- Brendan Beaton for fixing a mismatch between code and corresponding text description.
+- Nigel Heng for identifying a bug in Plotly `imshow()`.
+- Amber Condell for reporting dead links.
+- Amber Condell, Sean Broderick and Brendan Beaton for identifying issues that needed better explanations.
+- Jesse Wallace for suggesting assorted improvements and fixes.
 
 I also wish to thank WingIDE_, who have donated licenses to their professional python IDE for well over a decade. Their sustained support for open source projects is greatly appreciated!
 
