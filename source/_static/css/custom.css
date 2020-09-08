@@ -61,12 +61,14 @@ blockquote p.attribution {
 	text-align: right;
     width: 95%;
 }
+
 blockquote.epigraph {
 	font-size: 1.125rem;
 	font-weight: 300;
 	font-style: oblique;
 	padding-left: 1em
 }
+
 blockquote.epigraph p.attribution {
 	font-size: 0.75rem;
 	font-weight: 400;
@@ -76,6 +78,21 @@ blockquote.epigraph p.attribution {
 /* override table no-wrap */
 .wy-table-responsive table td, .wy-table-responsive table th {
     white-space: normal;
+}
+
+.section ol li {
+	list-style: none !important;
+	counter-increment: section-counter;
+	margin-left: 8px !important;
+}
+
+.section ol li p {
+	padding-left: 20px;
+}
+.section ol li::before {
+	content: counter(section-counter) ". ";
+	font-weight: bold;
+	position: absolute;
 }
 
 /* Colors and text decoration.
@@ -164,3 +181,4 @@ blockquote.epigraph p.attribution {
 .purple {
     color: purple;
 }
+
