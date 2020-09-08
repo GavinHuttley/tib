@@ -1,3 +1,8 @@
+.. jupyter-execute::
+    :hide-code:
+
+    import set_working_directory
+
 Alignments, Sequence Collections and Sequences
 ==============================================
 
@@ -13,7 +18,7 @@ Loading aligned sequences from a file
 
     from cogent3 import load_aligned_seqs
 
-    aln = load_aligned_seqs("source/data/brca1-bats.fasta", moltype="dna")
+    aln = load_aligned_seqs("data/brca1-bats.fasta", moltype="dna")
     aln
 
 The ``moltype`` argument specifies the molecular type of the sequence. See :ref:`moltypes` for more information.

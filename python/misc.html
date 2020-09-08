@@ -242,6 +242,10 @@
     text-align: unset;
 }
 </style>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+</div>
+</div>
 <div class="section" id="miscellaneous-python-features">
 <h1><span class="section-number">5.36. </span>Miscellaneous Python features<a class="headerlink" href="#miscellaneous-python-features" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="raw-strings-and-escaping-characters">
@@ -369,7 +373,7 @@ world
 <p>Using <code class="docutils literal notranslate"><span class="pre">mode=&quot;rb&quot;</span></code> opens a file in binary mode. The file contents are returned as <code class="docutils literal notranslate"><span class="pre">bytes</span></code> without any decoding.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;source/python/misc.rst&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;python/misc.rst&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="n">line</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
 
 <span class="n">line</span>
@@ -377,7 +381,7 @@ world
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>b&#39;Miscellaneous Python features\n&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>b&#39;.. jupyter-execute::\n&#39;
 </pre></div>
 </div>
 </div>
@@ -438,7 +442,7 @@ NO Empty string
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">41630</span><span class="n">d7fb167</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">41630</span><span class="n">d7fb167</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;name [</span><span class="si">%s</span><span class="s2">] is not a string&quot;</span> <span class="o">%</span> <span class="n">name</span>
 

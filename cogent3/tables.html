@@ -1,0 +1,1514 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8.8. Tabular data &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx-dropdown.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.min.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Index" href="../genindex.html" />
+    <link rel="prev" title="8.7. MolType – specifying biological sequence type" href="moltype.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_formats.html">8.1. Biological Data Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html">8.2. Alignments, Sequence Collections and Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html#exercises">8.3. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.4. Exploring genetic variation using Alignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html#exercises">8.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="genetic_codes.html">8.6. Genetic Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moltype.html">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.8. Tabular data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">9. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a> &raquo;</li>
+        
+      <li><span class="section-number">8.8. </span>Tabular data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/tables.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="section" id="tabular-data">
+<span id="tables"></span><h1><span class="section-number">8.8. </span>Tabular data<a class="headerlink" href="#tabular-data" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> <code class="docutils literal notranslate"><span class="pre">Table</span></code> data type provides methods for manipulating tabular data. Here we summarise the basic capabilities. One important point to make is that tables are immutable, in that once a column has been created you cannot modify individual elements. But you can modify what columns a table has, their name and order. Table columns themselves are just numpy arrays. (See the cogent3  <a class="reference external" href="https://cogent3.org/doc/api/table/classes/cogent3.util.table.Table.html#cogent3.util.table.Table">Table</a> documentation for a more thorough description.)</p>
+<div class="section" id="making-a-table-from-standard-python-objects">
+<span id="index-0"></span><h2><span class="section-number">8.8.1. </span>Making a Table from standard Python objects<a class="headerlink" href="#making-a-table-from-standard-python-objects" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar" id="making-dinucs">
+<p class="sidebar-title">Generating some data</p>
+<p>I will produce a table that has two columns corresponding to base <code class="docutils literal notranslate"><span class="pre">1</span></code> and base <code class="docutils literal notranslate"><span class="pre">2</span></code> of all non-overlapping dinucleotides in DNA sequence. We will construct this using the Wombat sequence from <em>BRCA1</em>.</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3seq td { border: none !important; text-align: left !important; }
+.c3seq tr:not(.num_row) td span {margin: 0 2px;}
+.c3seq tr:nth-child(even) {background: #f7f7f7;}
+.c3seq .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3seq .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; }
+.c3seq .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3seq .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3seq .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3seq .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3seq .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3seq .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3seq">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">Wombat</td><td><span class="ambig_dna">N</span><span class="ambig_dna">N</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span></td></tr>
+</table>
+<p><i>2594 (truncated to 30) DnaSequence</i></p>
+</div></div></div>
+</div>
+<p id="index-1">We split into the separate positions using the builtin <code class="docutils literal notranslate"><span class="pre">zip()</span></code> <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dinucs</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">get_in_motif_size</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">log_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">base1</span><span class="p">,</span> <span class="n">base2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">dinucs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>By prefacing the argument to <code class="docutils literal notranslate"><span class="pre">zip</span></code> with <code class="docutils literal notranslate"><span class="pre">*</span></code>, we do an <span class="target" id="index-2"></span>unzip operation.</p>
+</dd>
+</dl>
+<div class="section" id="from-a-column-oriented-dict">
+<h3><span class="section-number">8.8.1.1. </span>From a column-oriented dict<a class="headerlink" href="#from-a-column-oriented-dict" title="Permalink to this headline">¶</a></h3>
+<p>We convert dinucleotide data into a column based <code class="docutils literal notranslate"><span class="pre">dict</span></code> – the keys will become the column names and the values will be the column.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;base1&quot;</span><span class="p">:</span> <span class="n">base1</span><span class="p">,</span> <span class="s2">&quot;base2&quot;</span><span class="p">:</span> <span class="n">base2</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>We make a <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> table using a utility function.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_table</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">make_table</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>base1</th>
+<th>base2</th>
+</thead>
+<tbody>
+<tr>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>T</td>
+<td>G</td>
+</tr>
+<tr>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr>
+<td>A</td>
+<td>G</td>
+</tr>
+<tr>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>C</td>
+<td>T</td>
+</tr>
+<tr>
+<td>G</td>
+<td>A</td>
+</tr>
+<tr>
+<td>T</td>
+<td>G</td>
+</tr>
+<tr>
+<td>A</td>
+<td>C</td>
+</tr>
+<tr>
+<td>C</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>Top 5 and bottom 5 rows from
+1,297 rows x 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="from-a-header-and-a-list-of-lists">
+<h3><span class="section-number">8.8.1.2. </span>From a header and a list of lists<a class="headerlink" href="#from-a-header-and-a-list-of-lists" title="Permalink to this headline">¶</a></h3>
+<p>I’m going to make a list of lists from <code class="docutils literal notranslate"><span class="pre">dinucs</span></code> by just convert each dinucleotide into a list.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">dinuc</span><span class="p">)</span> <span class="k">for</span> <span class="n">dinuc</span> <span class="ow">in</span> <span class="n">dinucs</span><span class="p">]</span>
+<span class="n">rows</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[[&#39;N&#39;, &#39;N&#39;], [&#39;T&#39;, &#39;G&#39;], [&#39;C&#39;, &#39;C&#39;], [&#39;A&#39;, &#39;G&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this instance, I need to specify the column names using the argument <code class="docutils literal notranslate"><span class="pre">header</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">make_table</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;base1&quot;</span><span class="p">,</span> <span class="s2">&quot;base2&quot;</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">rows</span><span class="p">)</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>base1</th>
+<th>base2</th>
+</thead>
+<tbody>
+<tr>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>T</td>
+<td>G</td>
+</tr>
+<tr>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr>
+<td>A</td>
+<td>G</td>
+</tr>
+<tr>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>C</td>
+<td>T</td>
+</tr>
+<tr>
+<td>G</td>
+<td>A</td>
+</tr>
+<tr>
+<td>T</td>
+<td>G</td>
+</tr>
+<tr>
+<td>A</td>
+<td>C</td>
+</tr>
+<tr>
+<td>C</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>Top 5 and bottom 5 rows from
+1,297 rows x 2 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-a-table-from-a-file">
+<span id="index-3"></span><h2><span class="section-number">8.8.2. </span>Loading a table from a file<a class="headerlink" href="#loading-a-table-from-a-file" title="Permalink to this headline">¶</a></h2>
+<p>We load a tab separated data file using the <code class="docutils literal notranslate"><span class="pre">load_table()</span></code> function. The format is inferred from the filename suffix.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">load_table</span>
+
+<span class="n">stats</span> <span class="o">=</span> <span class="n">load_table</span><span class="p">(</span><span class="s2">&quot;data/edge_stats.tsv&quot;</span><span class="p">)</span>
+<span class="n">stats</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>edge</th>
+<th>kappa</th>
+</thead>
+<tbody>
+<tr>
+<td>FlyingFox</td>
+<td>8.5680</td>
+</tr>
+<tr>
+<td>DogFaced</td>
+<td>7.6584</td>
+</tr>
+<tr>
+<td>edge.0</td>
+<td>4.6557</td>
+</tr>
+<tr>
+<td>FreeTaile</td>
+<td>4.1230</td>
+</tr>
+<tr>
+<td>LittleBro</td>
+<td>6.0653</td>
+</tr>
+<tr>
+<td>edge.1</td>
+<td>4.5488</td>
+</tr>
+<tr>
+<td>TombBat</td>
+<td>6.7665</td>
+</tr>
+<tr>
+<td>RoundEare</td>
+<td>5.8395</td>
+</tr>
+<tr>
+<td>edge.2</td>
+<td>5.2402</td>
+</tr>
+<tr>
+<td>edge.3</td>
+<td>8.2848</td>
+</tr>
+</tbody>
+</table>
+<p>Top 10 rows from
+10 rows x 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="getting-summary-using-table-head-or-table-tail">
+<h2><span class="section-number">8.8.3. </span>Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code><a class="headerlink" href="#getting-summary-using-table-head-or-table-tail" title="Permalink to this headline">¶</a></h2>
+<p>These display the top or bottom of a table.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>edge</th>
+<th>kappa</th>
+</thead>
+<tbody>
+<tr>
+<td>FlyingFox</td>
+<td>8.5680</td>
+</tr>
+<tr>
+<td>DogFaced</td>
+<td>7.6584</td>
+</tr>
+<tr>
+<td>edge.0</td>
+<td>4.6557</td>
+</tr>
+<tr>
+<td>FreeTaile</td>
+<td>4.1230</td>
+</tr>
+<tr>
+<td>LittleBro</td>
+<td>6.0653</td>
+</tr>
+</tbody>
+</table>
+<p>Top 5 rows from
+10 rows x 2 columns</p>
+</div></div></div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>edge</th>
+<th>kappa</th>
+</thead>
+<tbody>
+<tr>
+<td>edge.1</td>
+<td>4.5488</td>
+</tr>
+<tr>
+<td>TombBat</td>
+<td>6.7665</td>
+</tr>
+<tr>
+<td>RoundEare</td>
+<td>5.8395</td>
+</tr>
+<tr>
+<td>edge.2</td>
+<td>5.2402</td>
+</tr>
+<tr>
+<td>edge.3</td>
+<td>8.2848</td>
+</tr>
+</tbody>
+</table>
+<p>Bottom 5 rows from
+10 rows x 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="slicing-a-table">
+<h2><span class="section-number">8.8.4. </span>Slicing a Table<a class="headerlink" href="#slicing-a-table" title="Permalink to this headline">¶</a></h2>
+<p>Tables are “row oriented”, so the first index concerns rows, the column.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>edge</th>
+<th>kappa</th>
+</thead>
+<tbody>
+<tr>
+<td>FlyingFox</td>
+<td>8.5680</td>
+</tr>
+<tr>
+<td>DogFaced</td>
+<td>7.6584</td>
+</tr>
+<tr>
+<td>edge.0</td>
+<td>4.6557</td>
+</tr>
+<tr>
+<td>FreeTaile</td>
+<td>4.1230</td>
+</tr>
+</tbody>
+</table>
+<p>Top 4 rows from
+4 rows x 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="getting-a-column">
+<h2><span class="section-number">8.8.5. </span>Getting a column<a class="headerlink" href="#getting-a-column" title="Permalink to this headline">¶</a></h2>
+<p>Tables have a <code class="docutils literal notranslate"><span class="pre">column</span></code> attribute.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Columns(&#39;edge&#39;: &lt;U9, &#39;kappa&#39;: float64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This has <code class="docutils literal notranslate"><span class="pre">dict</span></code> like properties and supports you getting a column using the column header,</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="s2">&quot;kappa&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([8.5679832 , 7.65839569, 4.6557154 , 4.12300489, 6.06528905,
+       4.54883285, 6.76650876, 5.83950315, 5.24024651, 8.28483208])
+</pre></div>
+</div>
+</div>
+</div>
+<p>or, using an <code class="docutils literal notranslate"><span class="pre">int</span></code> like it’s a series – in this case indexes are defined by the <code class="docutils literal notranslate"><span class="pre">column.order</span></code> attribute.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">order</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39;edge&#39;, &#39;kappa&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;FlyingFox&#39;, &#39;DogFaced&#39;, &#39;edge.0&#39;, &#39;FreeTaile&#39;, &#39;LittleBro&#39;,
+       &#39;edge.1&#39;, &#39;TombBat&#39;, &#39;RoundEare&#39;, &#39;edge.2&#39;, &#39;edge.3&#39;], dtype=&#39;&lt;U9&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="filtering-a-table-to-include-rows-by-value">
+<span id="index-4"></span><h2><span class="section-number">8.8.6. </span>Filtering a table to include rows by value<a class="headerlink" href="#filtering-a-table-to-include-rows-by-value" title="Permalink to this headline">¶</a></h2>
+<p>In our dinucleotide table, we only want rows where both bases are in the canonical set <code class="docutils literal notranslate"><span class="pre">{A,</span> <span class="pre">C,</span> <span class="pre">G,</span> <span class="pre">T}</span></code>. We do this via a filter step using a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function and a <code class="docutils literal notranslate"><span class="pre">set</span></code> object consisting of these bases. The <code class="docutils literal notranslate"><span class="pre">filtered()</span></code> method calls the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> with each row. Only if the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> will the row be included in the new <code class="docutils literal notranslate"><span class="pre">Table</span></code>. In our case, our <code class="docutils literal notranslate"><span class="pre">lambda</span></code> will return true if the set of elements in the row is a subset of all the basses.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">})</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>base1</th>
+<th>base2</th>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>G</td>
+</tr>
+<tr>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr>
+<td>A</td>
+<td>G</td>
+</tr>
+<tr>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>C</td>
+<td>A</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>C</td>
+<td>T</td>
+</tr>
+<tr>
+<td>G</td>
+<td>A</td>
+</tr>
+<tr>
+<td>T</td>
+<td>G</td>
+</tr>
+<tr>
+<td>A</td>
+<td>C</td>
+</tr>
+<tr>
+<td>C</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>Top 5 and bottom 5 rows from
+1,296 rows x 2 columns</p>
+</div></div></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I did not specify which columns because the default is to use all columns.</p>
+</div>
+</div>
+<div class="section" id="counting-unique-values">
+<h2><span class="section-number">8.8.7. </span>Counting unique values<a class="headerlink" href="#counting-unique-values" title="Permalink to this headline">¶</a></h2>
+<p>This method returns counts of the unique combinations of values from the specified columns. The result is a <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> type, a <code class="docutils literal notranslate"><span class="pre">CategoryCounter</span></code> instance, which has some useful properties. Principal being that it behaves like a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unique</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">count_unique</span><span class="p">()</span>
+<span class="n">unique</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{(&#39;T&#39;, &#39;G&#39;): 87, (&#39;C&#39;, &#39;C&#39;): 81, (&#39;A&#39;, &#39;G&#39;): 142, (&#39;T&#39;, &#39;T&#39;): 58, (&#39;C&#39;, &#39;A&#39;): 110, (&#39;A&#39;, &#39;C&#39;): 66, (&#39;T&#39;, &#39;A&#39;): 59, (&#39;A&#39;, &#39;A&#39;): 158, (&#39;G&#39;, &#39;C&#39;): 65, (&#39;G&#39;, &#39;A&#39;): 113, (&#39;A&#39;, &#39;T&#39;): 81, (&#39;G&#39;, &#39;T&#39;): 63, (&#39;G&#39;, &#39;G&#39;): 69, (&#39;C&#39;, &#39;T&#39;): 72, (&#39;T&#39;, &#39;C&#39;): 57, (&#39;C&#39;, &#39;G&#39;): 15}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="to-categorical-count">
+<h3><span class="section-number">8.8.7.1. </span>To categorical count<a class="headerlink" href="#to-categorical-count" title="Permalink to this headline">¶</a></h3>
+<p>Another being that it can produce <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat_counts</span> <span class="o">=</span> <span class="n">unique</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">()</span>
+<span class="n">cat_counts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Observed</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>158</td>
+<td>66</td>
+<td>142</td>
+<td>81</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>110</td>
+<td>81</td>
+<td>15</td>
+<td>72</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>113</td>
+<td>65</td>
+<td>69</td>
+<td>63</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>59</td>
+<td>57</td>
+<td>87</td>
+<td>58</td>
+</tr>
+</tbody>
+</table>
+
+</div><br><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Expected</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>151.7593</td>
+<td>92.7801</td>
+<td>107.9560</td>
+<td>94.5046</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>94.3827</td>
+<td>57.7022</td>
+<td>67.1404</td>
+<td>58.7747</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>105.2469</td>
+<td>64.3441</td>
+<td>74.8688</td>
+<td>65.5401</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>88.6111</td>
+<td>54.1736</td>
+<td>63.0347</td>
+<td>55.1806</td>
+</tr>
+</tbody>
+</table>
+
+</div><br><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Residuals</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>0.5066</td>
+<td>-2.7803</td>
+<td>3.2766</td>
+<td>-1.3892</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>1.6075</td>
+<td>3.0670</td>
+<td>-6.3633</td>
+<td>1.7251</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>0.7557</td>
+<td>0.0818</td>
+<td>-0.6783</td>
+<td>-0.3138</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>-3.1457</td>
+<td>0.3840</td>
+<td>3.0185</td>
+<td>0.3796</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>which supports statistical testing of categorical data. For instance</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat_counts</span><span class="o">.</span><span class="n">chisq_test</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Chisq-test for independence</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>chisq</th>
+<th>df</th>
+<th>pvalue</th>
+</thead>
+<tbody>
+<tr>
+<td>96.545</td>
+<td>9</td>
+<td>7.8492e-17</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Observed</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>158</td>
+<td>66</td>
+<td>142</td>
+<td>81</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>110</td>
+<td>81</td>
+<td>15</td>
+<td>72</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>113</td>
+<td>65</td>
+<td>69</td>
+<td>63</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>59</td>
+<td>57</td>
+<td>87</td>
+<td>58</td>
+</tr>
+</tbody>
+</table>
+
+</div><br><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Expected</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>151.7593</td>
+<td>92.7801</td>
+<td>107.9560</td>
+<td>94.5046</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>94.3827</td>
+<td>57.7022</td>
+<td>67.1404</td>
+<td>58.7747</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>105.2469</td>
+<td>64.3441</td>
+<td>74.8688</td>
+<td>65.5401</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>88.6111</td>
+<td>54.1736</td>
+<td>63.0347</td>
+<td>55.1806</td>
+</tr>
+</tbody>
+</table>
+
+</div><br><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Residuals</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>0.5066</td>
+<td>-2.7803</td>
+<td>3.2766</td>
+<td>-1.3892</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>1.6075</td>
+<td>3.0670</td>
+<td>-6.3633</td>
+<td>1.7251</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>0.7557</td>
+<td>0.0818</td>
+<td>-0.6783</td>
+<td>-0.3138</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>-3.1457</td>
+<td>0.3840</td>
+<td>3.0185</td>
+<td>0.3796</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="generating-categorical-counts-from-a-table">
+<span id="index-5"></span><h2><span class="section-number">8.8.8. </span>Generating categorical counts from a Table<a class="headerlink" href="#generating-categorical-counts-from-a-table" title="Permalink to this headline">¶</a></h2>
+<p>We can also get a <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object via <code class="docutils literal notranslate"><span class="pre">Table.to_categorical()</span></code>. In this case, the counts must be fully specified prior to constructing the table. (Meaning you’ve already done the counting part.) In addition, we also need to specify a column whose values are the row categories. The latter is achieved setting <code class="docutils literal notranslate"><span class="pre">make_table(index=&lt;column</span> <span class="pre">name&gt;)</span></code>. In this case, I specify the column name of the index is an empty string.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">158</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">113</span><span class="p">,</span> <span class="mi">59</span><span class="p">),</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">57</span><span class="p">),</span>
+    <span class="s2">&quot;G&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">142</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">87</span><span class="p">),</span>
+    <span class="s2">&quot;T&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">81</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">58</span><span class="p">),</span>
+    <span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">make_table</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>158</td>
+<td>66</td>
+<td>142</td>
+<td>81</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>110</td>
+<td>81</td>
+<td>15</td>
+<td>72</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>113</td>
+<td>65</td>
+<td>69</td>
+<td>63</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>59</td>
+<td>57</td>
+<td>87</td>
+<td>58</td>
+</tr>
+</tbody>
+</table>
+<p>Top 4 rows from
+4 rows x 5 columns</p>
+</div></div></div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat_counts</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">()</span>
+<span class="n">cat_counts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Observed</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>158</td>
+<td>66</td>
+<td>142</td>
+<td>81</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>110</td>
+<td>81</td>
+<td>15</td>
+<td>72</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>113</td>
+<td>65</td>
+<td>69</td>
+<td>63</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>59</td>
+<td>57</td>
+<td>87</td>
+<td>58</td>
+</tr>
+</tbody>
+</table>
+
+</div><br><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Expected</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>151.7593</td>
+<td>92.7801</td>
+<td>107.9560</td>
+<td>94.5046</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>94.3827</td>
+<td>57.7022</td>
+<td>67.1404</td>
+<td>58.7747</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>105.2469</td>
+<td>64.3441</td>
+<td>74.8688</td>
+<td>65.5401</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>88.6111</td>
+<td>54.1736</td>
+<td>63.0347</td>
+<td>55.1806</td>
+</tr>
+</tbody>
+</table>
+
+</div><br><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Residuals</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">A</td>
+<td>0.5066</td>
+<td>-2.7803</td>
+<td>3.2766</td>
+<td>-1.3892</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>1.6075</td>
+<td>3.0670</td>
+<td>-6.3633</td>
+<td>1.7251</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>0.7557</td>
+<td>0.0818</td>
+<td>-0.6783</td>
+<td>-0.3138</td>
+</tr>
+<tr>
+<td class="index">T</td>
+<td>-3.1457</td>
+<td>0.3840</td>
+<td>3.0185</td>
+<td>0.3796</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../genindex.html" class="btn btn-neutral float-right" title="9. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="moltype.html" class="btn btn-neutral float-left" title="8.7. MolType – specifying biological sequence type" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

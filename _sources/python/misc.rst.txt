@@ -1,6 +1,10 @@
+.. jupyter-execute::
+    :hide-code:
+
+    import set_working_directory
+
 Miscellaneous Python features
 =============================
-
 
 .. index::
     pair: escaping characters; str
@@ -86,11 +90,10 @@ Using ``mode="rb"`` opens a file in binary mode. The file contents are returned 
 
 .. jupyter-execute::
 
-    with open("source/python/misc.rst", mode="rb") as infile:
+    with open("python/misc.rst", mode="rb") as infile:
         line = infile.readline()
 
     line
-
 
 Empty series evaluate to ``False``
 ----------------------------------
