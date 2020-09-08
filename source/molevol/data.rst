@@ -1,3 +1,8 @@
+.. jupyter-execute::
+    :hide-code:
+
+    import set_working_directory
+
 Data
 ====
 
@@ -32,7 +37,7 @@ I have queried the Ensembl database for some haemoglobins from Human and Macaque
 
     from cogent3 import load_aligned_seqs
 
-    aln = load_aligned_seqs("source/data/hba1_hbb-aligned.fasta", moltype="dna")
+    aln = load_aligned_seqs("data/hba1_hbb-aligned.fasta", moltype="dna")
     name_map = {"Human-HBA1": "Human-z", "Rhesus-HBA1": "Rhesus-e", "Human-HBB": "Human-j", 'Rhesus-HBB': "Rhesus-x"}
     aln.rename_seqs(lambda x: name_map[x])
 
