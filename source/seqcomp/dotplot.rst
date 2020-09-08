@@ -68,16 +68,12 @@ We make some adjustments to simplify the display.  First, suppress a colour bar.
 
 .. jupyter-execute::
 
-    # we want to suppress the colour scale bar
     fig = fig.update_layout(coloraxis_showscale=False)
 
 We want to place a box around the matrix and specify a font size for both the |xaxis| and |yaxis| text, which we define as a ``dict``.
 
 .. jupyter-execute::
 
-    # these settings are applied to both x- and y-axis. Using the
-    # **kwargs idiom, the dict is interpreted as keyword arguments to
-    # a method or function
     common_settings = dict(
         linewidth=2, linecolor="black", mirror=True, tickfont={"size": 28}
     )
