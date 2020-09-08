@@ -8,7 +8,7 @@
 Tabular data
 ============
 
-The ``cogent3`` Table_ data type provides methods for manipulating tabular data. Here we summarise the basic capabilities. One important point to make is that tables are immutable, in that once a column has been created you cannot modify individual elements. But you can modify what columns a table has, their name and order. Table columns themselves are just numpy arrays.
+The ``cogent3`` ``Table`` data type provides methods for manipulating tabular data. Here we summarise the basic capabilities. One important point to make is that tables are immutable, in that once a column has been created you cannot modify individual elements. But you can modify what columns a table has, their name and order. Table columns themselves are just numpy arrays. (See the cogent3  Table_ documentation for a more thorough description.)
 
 .. index::
     pair: make table; cogent3
@@ -16,39 +16,42 @@ The ``cogent3`` Table_ data type provides methods for manipulating tabular data.
 Making a Table from standard Python objects
 -------------------------------------------
 
-I want to produce a Table that has two columns, base 1 and base2 of a dinucleotide. We will construct this using a sequence from one of the alignment files.
+.. sidebar:: Generating some data
+    :name: making_dinucs
+    
+    I will produce a table that has two columns corresponding to base ``1`` and base ``2`` of all non-overlapping dinucleotides in DNA sequence. We will construct this using the Wombat sequence from *BRCA1*.
 
-.. jupyter-execute::
-    :hide-code:
+    .. jupyter-execute::
+        :hide-code:
 
-    from cogent3 import load_aligned_seqs
+        from cogent3 import load_aligned_seqs
 
-    seqs = load_aligned_seqs("data/brca1.fasta", moltype="dna").degap()
-    seq = seqs.named_seqs["Wombat"]
+        seqs = load_aligned_seqs("data/brca1.fasta", moltype="dna").degap()
+        seq = seqs.named_seqs["Wombat"]
+        seq
 
-.. jupyter-execute::
+    .. index::
+        triple: zip; builtin; function
 
-    seq
+    We split into the separate positions using the builtin ``zip()`` [1]_.
 
-We split into the separate positions using the builtin ``zip()`` [1]_.
+    .. jupyter-execute::
 
-.. [1] By prefacing the argument with ``*``, we do an unzip operation.
+        dinucs = seq.get_in_motif_size(2, log_warnings=False)
+        base1, base2 = list(zip(*dinucs))
 
-.. jupyter-execute::
-
-    dinucs = seq.get_in_motif_size(2, log_warnings=False)
-    base1, base2 = list(zip(*dinucs))
+.. [1] By prefacing the argument to ``zip`` with ``*``, we do an :index:`unzip` operation.
 
 From a column-oriented dict
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We convert the above into a column based ``dict`` -- the keys will become the column names and the values the column.
+We convert dinucleotide data into a column based ``dict`` -- the keys will become the column names and the values will be the column.
 
 .. jupyter-execute::
 
     data = {"base1": base1, "base2": base2}
 
-and then we import a utility function for making tables.
+We make a ``cogent3`` table using a utility function.
 
 .. jupyter-execute::
 
@@ -80,7 +83,7 @@ In this instance, I need to specify the column names using the argument ``header
 Loading a table from a file
 ---------------------------
 
-We load a tab separated data file using the ``load_table()`` function. The format is inferred from the filename suffix and you will note, in this case, it's not actually a `csv` file.
+We load a tab separated data file using the ``load_table()`` function. The format is inferred from the filename suffix.
 
 .. jupyter-execute::
 
