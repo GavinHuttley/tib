@@ -1,3 +1,8 @@
+.. jupyter-execute::
+    :hide-code:
+
+    import set_working_directory
+
 Exploring genetic variation using Alignments
 ============================================
 
@@ -10,7 +15,7 @@ Find the variable positions
 
     from cogent3 import load_aligned_seqs
     
-    aln = load_aligned_seqs("source/data/brca1-bats.fasta", moltype="dna")
+    aln = load_aligned_seqs("data/brca1-bats.fasta", moltype="dna")
     aln = aln[:30]
     var_pos = aln.variable_positions(include_gap_motif=False)
     var_pos
@@ -23,7 +28,7 @@ We start by looking at entropy measures (see :ref:`shannon_entropy` for backgrou
 
 .. jupyter-execute::
 
-    aln = load_aligned_seqs("source/data/brca1.fasta", moltype="dna")
+    aln = load_aligned_seqs("data/brca1.fasta", moltype="dna")
     aln = aln[9:120]
 
     aln.entropy_per_pos()
@@ -59,7 +64,7 @@ This is a line plot that smoothes the information scores and also displays them 
 
 .. jupyter-execute::
 
-    aln = load_aligned_seqs("source/data/brca1.fasta", moltype="dna")
+    aln = load_aligned_seqs("data/brca1.fasta", moltype="dna")
     aln = aln[:1500]
 
     info_plot = aln.information_plot()

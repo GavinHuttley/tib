@@ -21,8 +21,7 @@ We have focussed, thus far, on developing an understanding of programming logic 
     explore_variation
     genetic_codes
     moltype
-
-
+    tables
 
 .. todo:: json
     serialisation
