@@ -240,7 +240,7 @@ We evaluate whether the data from ``x`` are distributed normally. To do this, we
     norm_quants = theoretical_quantiles(len(x), "normal")
     norm_quants
 
-We then centre ``x`` on zero (by subtracting the mean of ``x``) and perform the KS test. (I'm sorting the original data so each value corresponds to a sample "quantile".)
+We then centre ``x`` on zero (by subtracting the mean of ``x``) and perform the KS test.
 
 .. jupyter-execute::
 
