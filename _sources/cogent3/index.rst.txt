@@ -22,6 +22,7 @@ We have focussed, thus far, on developing an understanding of programming logic 
     genetic_codes
     moltype
     tables
+    statistical_tests
 
 .. todo:: json
     serialisation

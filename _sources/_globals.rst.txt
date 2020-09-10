@@ -18,6 +18,8 @@
 .. |CpGtoCpA| replace:: CpG→CpA
 .. |yaxis| replace:: :math:`y`\ -axis
 .. |xaxis| replace:: :math:`x`\ -axis
+.. |pvalue| replace:: :math:`p`\ -value
+.. |pvalues| replace:: :math:`p`\ -values
 .. |Ho| replace:: :math:`H_o`
 .. |Ha| replace:: :math:`H_a`
 
