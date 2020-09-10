@@ -60,7 +60,58 @@ Phylogenetics is concerned with the problem of inferring the relationships betwe
     fig_dim = 500
     fig.show(width=fig_dim, height=fig_dim)
 
-In the figure I display the basic workflow for phylogenetic reconstruction. There is substantial overlap with molecular evolutionary analysis in general, but the emphasis here is on the problem of estimating a tree. The steps are:
+.. sidebar:: The phylogenetic workflow
+    :name: phylo_workflow
+
+    .. digraph:: phylo_workflow
+    
+        graph [fontsize=12 fontname="Verdana" compound=true];
+        node [shape="square"  color="white" style=filled];
+
+        subgraph cluster_preprocess {
+            style=filled;
+            color=lightgreen;
+            A;
+            B;
+            }
+
+        subgraph cluster_decide_model {
+            style=filled;
+            color=lemonchiffon3;
+            C;
+            D;
+            }
+
+        subgraph cluster_fit_model {
+            style=filled;
+            color=lightblue;
+            E;
+            F;
+            }
+
+        A [label="Sample\nHomologous\nSequences"];
+        B [label="Multiple\nSequence\nAlignment"];
+        C [label="Choose\nPhylogenetic\nMethod"];
+        D [label="Choose\nSubstitution\nModel"];
+        E [label="Estimate\nModel &\nTree"];
+        F [label="Display\nResults"];
+
+        A -> B;
+        C -> D;
+        E -> F;
+
+        A -> C [ltail=cluster_preprocess lhead=cluster_decide_model];
+        C -> E [ltail=cluster_decide_model lhead=cluster_fit_model];
+
+        Db [label="Database" shape=none];
+        Sft [label="Software" shape=none];
+        Db -> A [head=cluster_preprocess];
+        Db -> D [style=invis];
+        Db -> Sft [style=invis];
+        Sft ->C;
+        Sft ->E [style=invis];
+
+In the :ref:`Phylogenetic Workflow <phylo_workflow>` figure I display the basic workflow for phylogenetic reconstruction. There is substantial overlap with molecular evolutionary analysis in general, but the emphasis here is on the problem of estimating a tree. The steps are:
 
 #. sample homologous sequences from tax of interest
 #. align the sequences
