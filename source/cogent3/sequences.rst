@@ -173,11 +173,19 @@ Colouring is provided for alignments with RNA, DNA or PROTEIN moltypes. If you d
 Controlling the display in Jupyter notebooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. jupyter-execute::
+    :hide-code:
+
+    # need to remove the environment variable otherwise the following has no effect
+    import os
+    
+    env_setting = os.environ.pop("COGENT3_ALIGNMENT_REPR_POLICY", None)
+
 This is done via modifying the representation policy. You can change the number of sequences (``num_seqs``), the number of aligned positions that will be shown (``num_pos``), how many columns to display per line (``wrap``).
 
 .. jupyter-execute::
 
-    aln.set_repr_policy(num_pos=100, wrap=25)
+    aln.set_repr_policy(num_pos=15, wrap=10)
     aln
 
 .. warning:: Rendering the html can take a long time if the number of positions (and/or sequences) is large.
@@ -186,8 +194,15 @@ You can also specify the sequence to be used as a reference (the default is to u
 
 .. jupyter-execute::
 
-    aln.set_repr_policy(ref_name="FreeTaile", num_pos=40, num_seqs=4)
+    aln.set_repr_policy(ref_name="FreeTaile")
     aln
+
+.. jupyter-execute::
+    :hide-code:
+
+    # restore the environment variable
+    if env_setting:
+        os.environ["COGENT3_ALIGNMENT_REPR_POLICY"] = env_setting
 
 Translating nucleic acids to protein
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
