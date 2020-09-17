@@ -121,7 +121,7 @@ We illustrate the notion of the path matrix (which we denote :math:`\mathcal{P}`
 As indicated in the table, there are 3 different ways of arriving at the alignment score ending at this cell. In the case of either a :math:`\leftarrow, \uparrow`, the best alignment leading to :math:`\mathcal{P}[i, j]` was from a gap. In the case of :math:`\leftarrow`, the gap is in ``A`` and in the case of :math:`\uparrow` the gap is in ``B``. The :math:`\nwarrow` indicates a diagonal move and corresponds to an alignment path coming from a match. The selection of which direction gives the optimal alignment path to :math:`i, j` stems from the following function
 
 .. math::
-    :label: path_score
+    :name: path_score
 
     \mathcal{P}[i, j] = \max
     \begin{cases}
@@ -140,7 +140,7 @@ If we want to recover the optimal alignment path through the matrix, we need to 
 Handling the recursion
 ^^^^^^^^^^^^^^^^^^^^^^
 
-We have to start somewhere, and the first issue we encounter is a need to handle the boundaries. If we are on the top row, :math:`i=0`. We are restricted to a single possible input path (:math:`\leftarrow`, the others are undefined). As a consequence, these boundary elements consist of an alignment of one sequence to a prefix of only gaps. With this notion in place, we then introduce the beginning state row/column into the :math:`\mathcal{P, T}` matrices. Thus these matrices both have dimensions :math:`n+1, m+1` where :math:`n, m` are the lengths of sequences ``A`` and ``B`` respectively. Given the form of `equation <path_score>`_.
+We have to start somewhere, and the first issue we encounter is a need to handle the boundaries. If we are on the top row, :math:`i=0`. We are restricted to a single possible input path (:math:`\leftarrow`, the others are undefined). As a consequence, these boundary elements consist of an alignment of one sequence to a prefix of only gaps. With this notion in place, we then introduce the beginning state row/column into the :math:`\mathcal{P, T}` matrices. Thus these matrices both have dimensions :math:`n+1, m+1` where :math:`n, m` are the lengths of sequences ``A`` and ``B`` respectively. Given the form of :ref:`equation <path_score>`.
 
 Demonstrating NW on an example
 ------------------------------
