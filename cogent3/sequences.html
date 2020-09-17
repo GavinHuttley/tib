@@ -641,10 +641,14 @@
 </div>
 <div class="section" id="controlling-the-display-in-jupyter-notebooks">
 <h3><span class="section-number">8.2.1.14. </span>Controlling the display in Jupyter notebooks<a class="headerlink" href="#controlling-the-display-in-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+</div>
+</div>
 <p>This is done via modifying the representation policy. You can change the number of sequences (<code class="docutils literal notranslate"><span class="pre">num_seqs</span></code>), the number of aligned positions that will be shown (<code class="docutils literal notranslate"><span class="pre">num_pos</span></code>), how many columns to display per line (<code class="docutils literal notranslate"><span class="pre">wrap</span></code>).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">set_repr_policy</span><span class="p">(</span><span class="n">num_pos</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">wrap</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">set_repr_policy</span><span class="p">(</span><span class="n">num_pos</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">wrap</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">aln</span>
 </pre></div>
 </div>
@@ -666,13 +670,19 @@
 <div class="c3align">
 <table>
 <tr class="num_row"><td></td><td><b>0</b></td></tr>
-<tr><td class="label">LittleBro</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span></td></tr>
-<tr><td class="label">FlyingFox</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
-<tr><td class="label">DogFaced</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
-<tr><td class="label">FreeTaile</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
-<tr><td class="label">TombBat</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">G</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span></td></tr>
+<tr><td class="label">TombBat</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span></td></tr>
+<tr class="num_row"><td></td><td><b>10</b></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="A_dna">A</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span></td></tr>
+<tr><td class="label">TombBat</td><td><span class="G_dna">G</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span></td></tr>
 </table>
-<p><i>5 x 3009 (truncated to 5 x 30) dna alignment</i></p>
+<p><i>5 x 3009 (truncated to 5 x 15) dna alignment</i></p>
 </div></div></div>
 </div>
 <div class="admonition warning">
@@ -682,7 +692,7 @@
 <p>You can also specify the sequence to be used as a reference (the default is to use the longest sequence without gaps).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">set_repr_policy</span><span class="p">(</span><span class="n">ref_name</span><span class="o">=</span><span class="s2">&quot;FreeTaile&quot;</span><span class="p">,</span> <span class="n">num_pos</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">num_seqs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">set_repr_policy</span><span class="p">(</span><span class="n">ref_name</span><span class="o">=</span><span class="s2">&quot;FreeTaile&quot;</span><span class="p">)</span>
 <span class="n">aln</span>
 </pre></div>
 </div>
@@ -704,13 +714,24 @@
 <div class="c3align">
 <table>
 <tr class="num_row"><td></td><td><b>0</b></td></tr>
-<tr><td class="label">FreeTaile</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="A_dna">A</span></td></tr>
-<tr><td class="label">FlyingFox</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="T_dna">T</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
-<tr><td class="label">DogFaced</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
-<tr><td class="label">LittleBro</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="T_dna">T</span><span class="G_dna">G</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="G_dna">G</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="A_dna">A</span><span class="G_dna">G</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="G_dna">.</span></td></tr>
+<tr><td class="label">TombBat</td><td><span class="T_dna">.</span><span class="G_dna">.</span><span class="T_dna">.</span><span class="G_dna">.</span><span class="G_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="A_dna">.</span><span class="A_dna">A</span></td></tr>
+<tr class="num_row"><td></td><td><b>10</b></td></tr>
+<tr><td class="label">FreeTaile</td><td><span class="A_dna">A</span><span class="T_dna">T</span><span class="A_dna">A</span><span class="C_dna">C</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">FlyingFox</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="G_dna">G</span><span class="C_dna">.</span><span class="T_dna">.</span></td></tr>
+<tr><td class="label">DogFaced</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span></td></tr>
+<tr><td class="label">LittleBro</td><td><span class="A_dna">.</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span></td></tr>
+<tr><td class="label">TombBat</td><td><span class="G_dna">G</span><span class="T_dna">.</span><span class="A_dna">.</span><span class="C_dna">.</span><span class="T_dna">.</span></td></tr>
 </table>
-<p><i>5 x 3009 (truncated to 4 x 30) dna alignment</i></p>
+<p><i>5 x 3009 (truncated to 5 x 15) dna alignment</i></p>
 </div></div></div>
+</div>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+</div>
 </div>
 </div>
 <div class="section" id="translating-nucleic-acids-to-protein">
@@ -829,7 +850,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7ffd8690cbe0&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7fd57e10ce80&gt;
 </pre></div>
 </div>
 </div>
@@ -875,7 +896,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7ffd8690ca90&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7fd57e10c850&gt;
 </pre></div>
 </div>
 </div>
