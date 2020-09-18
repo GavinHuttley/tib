@@ -9,7 +9,6 @@ Bioinformatics and its Applications
     :maxdepth: 4
     :numbered: 4
     :hidden:
-    :titlesonly:
     
     acknowledgements
     intro

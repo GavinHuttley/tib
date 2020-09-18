@@ -105,7 +105,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="data_formats.html">8.1. Biological Data Formats</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.2. Alignments, Sequence Collections and Sequences</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.2. Alignments, Sequence Collections and Sequences</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alignments">8.2.1. Alignments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loading-aligned-sequences-from-a-file">8.2.1.1. Loading aligned sequences from a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-length-of-an-alignment">8.2.1.2. Getting the length of an alignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-lengths-of-individual-sequences">8.2.1.3. Getting the lengths of individual sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-number-of-sequences">8.2.1.4. Getting the number of sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-sequence-names">8.2.1.5. Getting the sequence names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-individual-sequences">8.2.1.6. Getting the individual sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#alignments-are-aligned-column-based">8.2.1.7. Alignments are aligned column based</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cogent3-alignment-types-are-immutable">8.2.1.8. <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> <code class="docutils literal notranslate"><span class="pre">Alignment</span></code> types are immutable!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-a-subset-of-sequences">8.2.1.9. Getting a subset of sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#converting-sequences-into-a-standard-python-dict">8.2.1.10. Converting sequences into a standard Python <code class="docutils literal notranslate"><span class="pre">dict</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-an-alignment-from-a-python-dict">8.2.1.11. Creating an alignment from a Python <code class="docutils literal notranslate"><span class="pre">dict</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#writing-sequences-to-file">8.2.1.12. Writing sequences to file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interpreting-the-display-of-alignments-in-jupyter-notebooks">8.2.1.13. Interpreting the display of alignments in Jupyter notebooks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controlling-the-display-in-jupyter-notebooks">8.2.1.14. Controlling the display in Jupyter notebooks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#translating-nucleic-acids-to-protein">8.2.1.15. Translating nucleic acids to protein</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-reverse-complement-of-nucleic-acid-sequences">8.2.1.16. Getting the reverse complement of nucleic acid sequences</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sequencecollection-for-unaligned-collections-of-sequences">8.2.2. <code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> – for unaligned collections of sequences</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#making-from-a-collection-of-unaligned-sequences-from-dict">8.2.2.1. Making from a collection of unaligned sequences from dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#making-from-a-collection-of-unaligned-sequences-an-alignment">8.2.2.2. Making from a collection of unaligned sequences an Alignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reverse-complement-and-many-other-methods-are-available-as-for-alignment-data-types">8.2.2.3. Reverse complement and many other methods are available as for alignment data types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sequences">8.2.3. Sequences</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#exercises">8.3. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.4. Exploring genetic variation using Alignments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore_variation.html#exercises">8.5. Exercises</a></li>
@@ -850,7 +878,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7f88b6ffadf0&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7fddfca11760&gt;
 </pre></div>
 </div>
 </div>
@@ -896,7 +924,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7f88b6ffa2e0&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7fddfca113a0&gt;
 </pre></div>
 </div>
 </div>
