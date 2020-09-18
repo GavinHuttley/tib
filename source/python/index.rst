@@ -14,7 +14,6 @@ Introduction to Python
     </figure>
 
 .. toctree::
-    :maxdepth: 3
     :hidden:
 
     resources

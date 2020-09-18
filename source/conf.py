@@ -62,11 +62,10 @@ html_theme_options = {
     'style_external_links': False,
     # Toc options
     'collapse_navigation': True,
-    'sticky_navigation': False,
-    'navigation_depth': -1,
+    'sticky_navigation': True,
+    'navigation_depth': 6,
     'includehidden': True,
     'titles_only': False,
-    "navigation_depth": 6,
 }
 
 html_css_files = [
