@@ -13,7 +13,6 @@ We have focussed, thus far, on developing an understanding of programming logic 
 .. note:: See cogent3_ for the full project documentation. We will link to specific sections as appropriate.
 
 .. toctree::
-    :maxdepth: 4
     :hidden:
 
     data_formats
