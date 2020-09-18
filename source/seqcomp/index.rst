@@ -9,7 +9,6 @@ There are additional coding skills that you need to develop, but these skills ar
 .. sectionauthor:: Gavin Huttley
 
 .. toctree::
-    :maxdepth: 2
     :hidden:
 
     intro
