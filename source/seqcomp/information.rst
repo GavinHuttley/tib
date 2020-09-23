@@ -24,7 +24,7 @@ Measuring entropy for a simple alignment
 Here's the simple alignment from the previous section.
 
 .. code-block:: text
-    
+
     TCAGA
     TTCCA
     TTCCA
@@ -34,7 +34,7 @@ Here's the simple alignment from the previous section.
 Applying Shannon entropy to the sample alignment above gives:
 
 .. code-block:: text
-    
+
     Pos.   0     1     2     3     4
            T     C     A     G     A
            T     T     C     C     A
@@ -44,6 +44,8 @@ Applying Shannon entropy to the sample alignment above gives:
     Ent.   0    0.72  1.52  1.52  0.97
 
 In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo :cite:`Schneider:1990aa`. That representation is computed using position-wise entropy.
+
+.. todo:: do this as an example
 
 .. _information:
 
@@ -114,7 +116,7 @@ Defining a short sequence for use below.
         :hide-code:
 
         from random import choices
-    
+
         rand_seq = "".join(choices("AAACCGGGG", k=50))
         rand_seq
 
@@ -125,6 +127,7 @@ Defining a short sequence for use below.
     Make sure your frequencies sum to 1.
 
     Is there another approach to solving this issue?
+
 
 ------
 

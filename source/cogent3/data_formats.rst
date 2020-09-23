@@ -94,3 +94,12 @@ Sounds like the cartoon at the top doesn't it! Anyway, it is widespread and an i
      1  ##sequence-region ctg123 1 1497228
      2  ctg123 . gene            1000  9000  .  +  .  ID=gene00001;Name=EDEN
      3  ctg123 . TF_binding_site 1000  1012  .  +  .  ID=tfbs00001;Parent=gene00001
+
+newick format for phylogenetic trees
+------------------------------------
+
+This is the most widespread text format for dsitributing phylogenetic trees. Clades of lineages are denoted by ``()`` and separate by ``,`` and can be grouped into subclades. Branch lengths are indicated by numbers after a colon character. There is some funky behaviour around dealing with spaces in tip names, they are often represented in the name as an underscore character (``"_"``). If you can, avoid any issues by not having spaces or underscores in names. Here's a sample. 
+
+.. code-block:: text
+    
+((Human:0.006062440217780064,Chimpanzee:0.003020541234140796):0.09488527928524751,((Mouse:0.06659142318491332,Rat:0.05783486638653178):0.17244926332734278,Wombat:0.4522900123679113):0.0424545337445269,Horse:0.05802695948476483);

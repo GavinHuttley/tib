@@ -28,43 +28,12 @@ We have focussed, thus far, on developing an understanding of programming logic 
 
 .. todo:: the apps
 
-.. todo:: introducing tabular data
-    loading
-    writing
-    accessing columns
-    filtering rows
-    counting rows
-    immutable
-    doing contingency tests
-    exercises
+.. todo:: advanced sequence and alignment
 
-.. todo:: 
-    code object capabilities
-
-    exercises
-
-.. todo:: moltypes
-    why so many types
-    making a sequence
-    capabilities
-
-.. todo:: intro sequences and alignments
-
-    file formats
     annotations, sequence features
-    unaligned -- collections
-    aligned -- Alignment, arrayalignment
-    slicing, selecting codon positions
-    degap
-    reverse complement
-    translation
-    getting variable positions
-    pretty print
     entropy
     provenance and the info attribute
     output formats
-    dotplot, aligned, unaligned, moltype
-    info plot
     strand symmetry
 
 .. todo:: intro phylogenies

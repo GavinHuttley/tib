@@ -34,5 +34,9 @@ site
 Likelihood ratio (LR)
      A test statistic that is distributed $\chi^2$ with degrees of freedom equal to the difference in the number of free parameters between alternate and null models.
 
-number of free parameters
+number of free parameters (nfp)
     Parameters in the likelihood function that are "free" -- can be modified by the numerical optimiser -- to modify the fit to data.
+
+degrees of freedom (df)
+    A quantity defining the difference in the number of parameters between two models.
+
