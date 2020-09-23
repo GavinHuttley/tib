@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.9. Hypothesis Testing &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.11. Glossary of terms" href="glossary.html" />
+    <link rel="prev" title="7.7. Substitution models" href="substitution_models.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">7. Molecular Evolution</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">7.1. What is molecular evolution?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-is-phylogenetics">7.2. What is phylogenetics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">7.3. Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neutral_theory.html">7.4. The neutral theory of molecular evolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutation.html">7.5. Mutation – the origin of genetic variation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="max_likelihood.html">7.6. Statistical methods for molecular evolutionary analyses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substitution_models.html">7.7. Substitution models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substitution_models.html#exercises">7.8. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.9. Hypothesis Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nesting-hypotheses">7.9.1. Nesting hypotheses</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#testing-the-molecular-clock">7.9.1.1. Testing the molecular clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-time-homogeneity">7.9.1.2. Testing time-homogeneity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rate-heterogeneity-models">7.9.1.3. Rate heterogeneity models</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#independent-sites">Independent sites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dependency-amongst-sites-phylo-hmms">Dependency amongst sites – phylo-HMMs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#jointly-modelling-loci-concatenating-alignments">Jointly modelling loci — concatenating alignments</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#mixed-time-and-rate-heterogeneity-models">7.9.1.4. Mixed time and rate heterogeneity models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">7.10. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">7.11. Glossary of terms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">9. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">7. </span>Molecular Evolution</a> &raquo;</li>
+        
+      <li><span class="section-number">7.9. </span>Hypothesis Testing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/molevol/hypothesis_testing.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="hypothesis-testing">
+<h1><span class="section-number">7.9. </span>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h1>
+<p>The likelihood models are parametric models, they are defined in terms of specific parameters whose values we seek to estimate from data. One of the major advantages of the development of phylogeny-based maximum likelihood methods is they allow us to take advantage of the large wealth of theoretical developments relating to using maximum likelihood for statistical inference. Developments that include hypothesis testing.</p>
+<p>The ratio of the likelihood of two different models is a natural measure for hypothesis testing. Let’s first define the LR statistic <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>While it is termed a ratio, we take a difference because we use log-likelihoods.</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight" id="likelihood-ratio">
+<span id="equation-likelihood-ratio"></span><span id="index-0"></span><span class="eqno">(1)<a class="headerlink" href="#likelihood-ratio" title="Permalink to this equation">¶</a></span>\[\text{LR} = 2 (\ln \mathcal{L}_{\text{alt}} - \ln \mathcal{L}_{\text{null}})\]</div>
+<p>Note that the likelihood from the alternate comes first. For nested models, it is guaranteed that the likelihood for the alternate will be ≥ that for the null <a class="footnote-reference brackets" href="#id4" id="id3">2</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>If this is not the case, it indicates that the alternate model has not been fully maximised during the fitting procedure. This typically results because the optimiser was trapped in a local optima. Such cases are common with certain types of models, in particular the rate-heterogeneity models.</p>
+</dd>
+</dl>
+<p>We obtain <span class="math notranslate nohighlight">\(\ln \mathcal{L}_{\text{null}}\)</span> and <span class="math notranslate nohighlight">\(\ln \mathcal{L}_{\text{alt}}\)</span> after fitting <a class="footnote-reference brackets" href="#id7" id="id5">3</a> both models to the data. If <span class="math notranslate nohighlight">\(H_o\)</span> and <span class="math notranslate nohighlight">\(H_a\)</span> are nested (more on that below), then the LR statistic computed according to the equation has the convenient property of being <span class="math notranslate nohighlight">\(\chi^2\)</span> distributed with degrees of freedom (abbreviated df) equal to the difference in the number of free parameters (abbreviated nfp) between those two models <a class="footnote-reference brackets" href="#id8" id="id6">4</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>Fitting is another way of saying using numerical optimisation to maximise the likelihood.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id6">4</a></span></dt>
+<dd><p>If the models are not nested, then we can still use the LR statistic but we can no longer use the <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution to obtain the <span class="math notranslate nohighlight">\(p\)</span>-value. In that case, a parametric bootstrap procedure is an option.</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight" id="degrees-of-freedom">
+<span id="equation-degrees-of-freedom"></span><span class="eqno">(2)<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this equation">¶</a></span>\[\text{df} = \text{nfp}_{\text{alt}} - \text{nfp}_{\text{null}}\]</div>
+<p>What being “<span class="math notranslate nohighlight">\(\chi^2\)</span> distributed” means is that we obtain the <span class="math notranslate nohighlight">\(p\)</span>-value for a LR from the theoretical <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution. For example if LR=3.84 and df=1, then the <span class="math notranslate nohighlight">\(p\)</span>-value=0.05.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The mathematical proof that LR statistics are <span class="math notranslate nohighlight">\(\chi^2\)</span> distributed assumes there is infinite data. In our case, the amount of data is specified by the length of the alignment. Clearly, alignments are never infinitely long so can we rely on this assumption? It has been demonstrated in some circumstances that alignments as short as a couple of hundred bases long are sufficient for the assumption of a <span class="math notranslate nohighlight">\(\chi^2\)</span> to be reasonable. The exact length will depend on the amount of variation between the sequences.</p>
+</div>
+<div class="section" id="nesting-hypotheses">
+<h2><span class="section-number">7.9.1. </span>Nesting hypotheses<a class="headerlink" href="#nesting-hypotheses" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar" id="hypothesis-model">
+<p class="sidebar-title">The relationship between a hypothesis and a model</p>
+<p>A model <em>is</em> a hypothesis. Hypothesis testing is a procedure for selecting the hypothesis (model) that best explains the data. Typically, hypothesis testing involves comparing two only hypotheses. For cases where there are more than 2 to chose from, we refer to the procedure as “model selection”.</p>
+<p>As you can see from that short paragraph, the term which is used depends on the context.</p>
+</div>
+<p>Hypotheses are considered nested if one model can be specified as a mathematical restriction of another. Recall the rate matrices from <a class="reference internal" href="substitution_models.html#f81"><span class="std std-ref">F81</span></a> and <a class="reference internal" href="substitution_models.html#hky85"><span class="std std-ref">HKY85</span></a>. These rate matrices are distinguished by the <span class="math notranslate nohighlight">\(\kappa\)</span> parameter in HKY85. Because of the multiplicative nature of the definition of HKY85, imposing the constraint <span class="math notranslate nohighlight">\(\kappa\)</span>= 1 transforms the HKY85 rate matrix into F81. Thus, we state that <strong>F81 is nested within HKY85</strong>. The null model in this case is <span class="math notranslate nohighlight">\(\kappa=1\)</span>.</p>
+<p>If we perform a hypothesis test and wind up in accepting the null, we would be accepting that the sequences could reasonably have been generated by the F81 model. If we rejected the null, we are concluding the sequences were more likely to be generated by a model in which transition substitutions had a distinctive rate. In this case, the MLE for <span class="math notranslate nohighlight">\(\kappa\)</span> indicates whether the transition substitutions occurred faster / slower than the transversion substitutions (see <a class="reference internal" href="substitution_models.html#exchangeability"><span class="std std-ref">The behaviour of parameters in Q</span></a>).</p>
+<p>To summarise, the hypothesis test outcome guides our choice of which model to prefer. The parameter values from that fitted model inform us as to why a model was superior (or adequate if we accepted the null).</p>
+<p>This F81 vs HKY85 example illustrates the general pattern of nested relationships. There are a multitude of ways this approach is employed to construct hypotheses. Here are some specific examples.</p>
+<div class="section" id="testing-the-molecular-clock">
+<h3><span class="section-number">7.9.1.1. </span>Testing the molecular clock<a class="headerlink" href="#testing-the-molecular-clock" title="Permalink to this headline">¶</a></h3>
+<p>In this case, it is branch length parameters that are constrained. In our usual applications, branch lengths are typically free parameters. The clock model imposes a constraint on that which I’ll illustrate with an example.</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+</div><div class="output text_html"><div>                            <div id="27ffc620-fc94-49c0-ba03-765d07fd6637" class="plotly-graph-div" style="height:400px; width:500px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("27ffc620-fc94-49c0-ba03-765d07fd6637")) {                    Plotly.newPlot(                        "27ffc620-fc94-49c0-ba03-765d07fd6637",                        [{"line": {"color": "black", "shape": "spline", "smoothing": 1.3, "width": 3}, "mode": "lines", "showlegend": false, "type": "scatter", "x": [null, null, 0, 0, null, 0, 0.02, null, 0, 0, null, 0, 0.03, null], "y": [null, null, -0.325, -0.325, null, -0.325, 0.65, null, -0.325, -0.325, null, -0.325, -1.3, null]}, {"line": {"color": "orange", "width": 3}, "mode": "lines", "type": "scatter", "x": [0.02, 0.02, null, 0.02, 0.03, null], "y": [0.65, 0.65, null, 0.65, 1.3, null]}, {"line": {"color": "blue", "width": 3}, "mode": "lines", "type": "scatter", "x": [0.02, 0.02, null, 0.02, 0.03, null], "y": [0.65, 0.65, null, 0.65, 0.0, null]}, {"hoverinfo": "text", "marker": {"color": "black", "size": 3, "symbol": "circle"}, "mode": "markers", "showlegend": false, "text": ["root", "edge.0", "Chimpanzee", "Human", "Macaque"], "type": "scatter", "x": [0, 0.02, 0.03, 0.03, 0.03], "y": [-0.325, 0.65, 1.3, 0.0, -1.3]}],                        {"annotations": [{"font": {"family": "Inconsolata, monospace", "size": 16}, "showarrow": false, "text": "Chimpanzee", "textangle": 0, "x": 0.03075, "xanchor": "left", "xref": "x", "y": 1.3, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 16}, "showarrow": false, "text": "Human", "textangle": 0, "x": 0.03075, "xanchor": "left", "xref": "x", "y": 0.0, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 16}, "showarrow": false, "text": "Macaque", "textangle": 0, "x": 0.03075, "xanchor": "left", "xref": "x", "y": -1.3, "yref": "y"}], "autosize": true, "font": {"family": "Balto", "size": 14}, "height": 400, "hovermode": "closest", "margin": {"b": 50, "l": 50, "pad": 4, "r": 50, "t": 50}, "showlegend": false, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "width": 500, "xaxis": {"visible": false}, "yaxis": {"visible": false}},                        {"responsive": true}                    ).then(function(){
+
+var gd = document.getElementById('27ffc620-fc94-49c0-ba03-765d07fd6637');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>For the above tree, we can test whether the <span class="blue">Human</span> and <span class="orange">Chimpanzee</span> lineages have been evolving in a clock-like manner since their descent from a common ancestor. We specify a clock model by constraining the Human and Chimpanzee branch lengths to be exactly the same. We would contrast that with a model in which the Human and Chimpanzee are allowed to be different.</p>
+</div>
+<div class="section" id="testing-time-homogeneity">
+<h3><span class="section-number">7.9.1.2. </span>Testing time-homogeneity<a class="headerlink" href="#testing-time-homogeneity" title="Permalink to this headline">¶</a></h3>
+<p>Time-homogeneity is the case when only one calibrated rate matrix is used (see <a class="reference internal" href="substitution_models.html#calibration"><span class="std std-ref">calibrating rate matrices</span></a>). The alternate hypothesis is time-heterogeneity, in which their are multiple rate matrices. For example, if we take a time-homogeneous HKY85 model as our null we could specify the alternate as different values of <span class="math notranslate nohighlight">\(\kappa\)</span> are used for the Human and Chimpanzee branch <a class="footnote-reference brackets" href="#id10" id="id9">5</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id9">5</a></span></dt>
+<dd><p>This style of test is most often applied to codon models (which we have not covered) but is also being used for examination of non-stationary nucleotide substitution models.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="rate-heterogeneity-models">
+<h3><span class="section-number">7.9.1.3. </span>Rate heterogeneity models<a class="headerlink" href="#rate-heterogeneity-models" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="independent-sites">
+<h4>Independent sites<a class="headerlink" href="#independent-sites" title="Permalink to this headline">¶</a></h4>
+<p>It has been known for a very long time <a class="bibtex reference internal" href="neutral_theory.html#king-1969aa" id="id11">[KJ69]</a> that some sequence positions evolve at different rates. The standard assumption of the likelihood analyses thus far is that all alignment columns are treated as evolving under precisely the same substitution process and thus at the same rate. This is a rate-homogeneous model. Rate heterogeneity models seek to account for observed differences in rate.</p>
+<p>In a nutshell, the typical rate-heterogeneity models are a “mixture model”. I illustrate this with the widely used <span class="math notranslate nohighlight">\(\Gamma\)</span> <a class="footnote-reference brackets" href="#id15" id="id12">6</a> distributed rate heterogeneity model. The <span class="math notranslate nohighlight">\(\Gamma\)</span> distribution shape is controlled by parameters that are included <a class="footnote-reference brackets" href="#id16" id="id13">7</a> as free parameters in the model. The distribution represents a scalar on branch length and is defined so its mean is 1. Typically, the <span class="math notranslate nohighlight">\(\Gamma\)</span> distribution is split into four bins <a class="footnote-reference brackets" href="#id17" id="id14">8</a> and the likelihood is computed for each bin separately. The mean value of each bin is used as a multiplier for <em>all</em> the branch lengths on a tree. The full likelihood is computed by summing the likelihoods computed for each bin.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id12">6</a></span></dt>
+<dd><p>That’s the symbol capital gamma.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id13">7</a></span></dt>
+<dd><p>I’m skipping quite a bit of detail!</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id14">8</a></span></dt>
+<dd><p>You can think of each bin as corresponding to a rate category. For the 4-bin case, really slow, somewhat slow, somewhat fast and really fast.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These models do not readily nest the rate-homogeneous models, so more complex methods are required for hypothesis testing.</p>
+</div>
+</div>
+<div class="section" id="dependency-amongst-sites-phylo-hmms">
+<h4>Dependency amongst sites – phylo-HMMs<a class="headerlink" href="#dependency-amongst-sites-phylo-hmms" title="Permalink to this headline">¶</a></h4>
+<p>In this form of rate heterogeneity, the rate categories of adjacent sites are correlated. So if one site is evolving slowly, the adjacent site is likely to belong to the same category. This form can be combined with the <span class="math notranslate nohighlight">\(\Gamma\)</span> models described above by addition of a switching parameter that controls whether to stay in the previous sites rate category or pick a new one.</p>
+<p>This class of model are termed phylogenetic Hidden Markov Models (or phylo-HMM). (See the <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/gb-2007-8-8-r171/figures/5">example application in the PyCogent publication</a> <a class="bibtex reference internal" href="#knight-2007aa" id="id18">[KMB+07]</a>.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These models also do not readily nest the rate-homogeneous models, so more complex methods are required for hypothesis testing.</p>
+</div>
+</div>
+<div class="section" id="jointly-modelling-loci-concatenating-alignments">
+<h4>Jointly modelling loci — concatenating alignments<a class="headerlink" href="#jointly-modelling-loci-concatenating-alignments" title="Permalink to this headline">¶</a></h4>
+<p>A common analysis strategy involves concatenating the alignments of different genes from the same group of species <a class="footnote-reference brackets" href="#id20" id="id19">9</a>. For instance, say I have alignments of one-to-one orthologs for gene A and B from 2 species. I concatenate these by simply concatenating the sequence strings in the same order for each species. For instance</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_aligned_seqs</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">make_aligned_seqs</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">B</span><span class="o">=</span><span class="s2">&quot;AGA&quot;</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="s2">&quot;AAA&quot;</span><span class="p">),</span> <span class="n">moltype</span><span class="o">=</span><span class="s2">&quot;dna&quot;</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">A</td><td><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span></td></tr>
+<tr><td class="label">B</td><td><span class="A_dna">.</span><span class="G_dna">G</span><span class="A_dna">.</span></td></tr>
+</table>
+<p><i>2 x 3 dna alignment</i></p>
+</div></div></div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">make_aligned_seqs</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="s2">&quot;TTT&quot;</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="s2">&quot;TCT&quot;</span><span class="p">),</span> <span class="n">moltype</span><span class="o">=</span><span class="s2">&quot;dna&quot;</span><span class="p">)</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">A</td><td><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">B</td><td><span class="T_dna">.</span><span class="C_dna">C</span><span class="T_dna">.</span></td></tr>
+</table>
+<p><i>2 x 3 dna alignment</i></p>
+</div></div></div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">concat</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">concat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3align td { border: none !important; text-align: left !important; }
+.c3align tr:not(.num_row) td span {margin: 0 2px;}
+.c3align tr:nth-child(even) {background: #f7f7f7;}
+.c3align .num_row {background-color:rgba(161, 195, 209, 0.5) !important; border-top: solid 1px black; }
+.c3align .label { font-size: 12pt ; text-align: right !important; color: black !important; padding: 0 4px; display: table-cell !important; font-weight: normal !important; }
+.c3align .T_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: blue; }
+.c3align .C_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: black; }
+.c3align .A_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: #FF0102; }
+.c3align .G_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: green; }
+.c3align .terminal_ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+.c3align .ambig_dna{font-family: "Lucida Console",monospace !important; font-size: 12pt !important; color: gray; }
+</style>
+<div class="c3align">
+<table>
+<tr class="num_row"><td></td><td><b>0</b></td></tr>
+<tr><td class="label">A</td><td><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="T_dna">T</span><span class="T_dna">T</span></td></tr>
+<tr><td class="label">B</td><td><span class="A_dna">.</span><span class="G_dna">G</span><span class="A_dna">.</span><span class="T_dna">.</span><span class="C_dna">C</span><span class="T_dna">.</span></td></tr>
+</table>
+<p><i>2 x 6 dna alignment</i></p>
+</div></div></div>
+</div>
+<p>The modelling is then done on the concatenated alignment (<code class="docutils literal notranslate"><span class="pre">concat</span></code> in our example).</p>
+<dl class="footnote brackets">
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id19">9</a></span></dt>
+<dd><p>This is typically a bad idea from a statistical perspective (you’re making the additional assumption about rate homogeneity). It is a good idea if you are only concerned with computational speed, want to finish fast and don’t care about the reliability of the results.</p>
+</dd>
+</dl>
+<p>This corresponds to a null model in which the two loci are constrained to be evolving in an identical manner – the rate of evolution is the same. The alternate in this case is to model the evolution of the two genes separately – the rate of evolution differs between the genes.</p>
+</div>
+</div>
+<div class="section" id="mixed-time-and-rate-heterogeneity-models">
+<h3><span class="section-number">7.9.1.4. </span>Mixed time and rate heterogeneity models<a class="headerlink" href="#mixed-time-and-rate-heterogeneity-models" title="Permalink to this headline">¶</a></h3>
+<p>These are focussed on attempting to identify specific codons at which lineage specific natural selection has operated.</p>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1><span class="section-number">7.10. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>In the case of the molecular clock, the two models are: (a) all branches are free parameters, (b) a pair of branches are constrained to be the same. Which of these is the null?</p></li>
+<li><p>What will be the degrees of freedom?</p></li>
+</ol>
+<hr class="docutils" />
+<p class="rubric">Citations</p>
+<p id="bibtex-bibliography-molevol/hypothesis_testing-0"><dl class="citation">
+<dt class="bibtex label" id="king-1969aa"><span class="brackets"><a class="fn-backref" href="#id11">KJ69</a></span></dt>
+<dd><p>J L King and T H Jukes. Non-Darwinian evolution. <em>Science</em>, 164:788–798, 1969.</p>
+</dd>
+<dt class="bibtex label" id="knight-2007aa"><span class="brackets"><a class="fn-backref" href="#id18">KMB+07</a></span></dt>
+<dd><p>Rob Knight, Peter Maxwell, Amanda Birmingham, Jason Carnes, J Gregory Caporaso, Brett C Easton, Michael Eaton, Micah Hamady, Helen Lindsay, Zongzhi Liu, Catherine Lozupone, Daniel McDonald, Michael Robeson, Raymond Sammut, Sandra Smit, Matthew J Wakefield, Jeremy Widmann, Shandy Wikman, Stephanie Wilson, Hua Ying, and Gavin A Huttley. PyCogent: a toolkit for making sense from sequence. <em>Genome Biol</em>, 8(8):R171, 2007. <a class="reference external" href="https://doi.org/10.1186/gb-2007-8-8-r171">doi:10.1186/gb-2007-8-8-r171</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="glossary.html" class="btn btn-neutral float-right" title="7.11. Glossary of terms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="substitution_models.html" class="btn btn-neutral float-left" title="7.7. Substitution models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

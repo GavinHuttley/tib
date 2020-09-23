@@ -8,7 +8,7 @@
 Tabular data
 ============
 
-The ``cogent3`` ``Table`` data type provides methods for manipulating tabular data. Here we summarise the basic capabilities. One important point to make is that tables are immutable, in that once a column has been created you cannot modify individual elements. But you can modify what columns a table has, their name and order. Table columns themselves are just numpy arrays. (See the cogent3  Table_ documentation for a more thorough description.)
+The ``cogent3`` ``Table`` data type provides methods for manipulating tabular data. Here we summarise the basic capabilities. One important point to make is that tables are immutable, in that once a column has been created you cannot modify individual elements. But you can modify what columns a table has, their name and order. Table columns themselves are just numpy arrays. (See the `cogent3 cookbook <https://cogent3.org/doc/cookbook/tables.html>`_ for a more thorough description.)
 
 .. index::
     pair: make table; cogent3
@@ -141,6 +141,18 @@ or, using an ``int`` like it's a series – in this case indexes are defined by 
 
 .. index::
     triple: filter; table; cogent3
+
+Creating a new column
+---------------------
+
+You write a function that takes the rows from the columns ytou want and returns the result of some operation. I'll just take the square root of kappa.
+
+.. jupyter-execute::
+
+    from math import sqrt
+
+    k_rt = stats.with_new_column("sqrt(kappa)", lambda x: sqrt(x), columns=["kappa"])
+    k_rt.head()
 
 Filtering a table to include rows by value
 ------------------------------------------

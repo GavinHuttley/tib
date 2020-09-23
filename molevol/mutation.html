@@ -17,9 +17,9 @@
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/spanels-bootstrap-index--5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
 
   
   
@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.6. Glossary of terms" href="glossary.html" />
+    <link rel="next" title="7.6. Statistical methods for molecular evolutionary analyses" href="max_likelihood.html" />
     <link rel="prev" title="7.4. The neutral theory of molecular evolution" href="neutral_theory.html" /> 
 </head>
 
@@ -113,7 +113,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#statistical-measures-of-sequence-composition-that-relate-to-mutation">7.5.3. Statistical measures of sequence composition that relate to mutation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html">7.6. Glossary of terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="max_likelihood.html">7.6. Statistical methods for molecular evolutionary analyses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substitution_models.html">7.7. Substitution models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substitution_models.html#exercises">7.8. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypothesis_testing.html">7.9. Hypothesis Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypothesis_testing.html#exercises">7.10. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">7.11. Glossary of terms</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
@@ -244,7 +249,7 @@
 </div>
 <div class="section" id="point-mutations">
 <h2><span class="section-number">7.5.2. </span>Point mutations<a class="headerlink" href="#point-mutations" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">There are 12 distinct point mutation events since each nucleotide can mutate to 3 possible alternates (e.g. A→C, A→G, A→T). These are often categorised by the chemical classes of the bases involved. Specifically, transitions and transversions. Point mutations that start and end in bases belonging to the same chemical class are referred to as transitions, i.e. changes involving A→G, G→A, C→T, T→C (blue lines in the <a class="reference internal" href="#directions"><span class="std std-ref">figure</span></a>). The remaining changes are assigned to the transversion category. As it turns out, there are differences in the rate at which mutations of these categories are observed and it has been argued that the excess of transitions reflects the chemical properties of DNA <a class="bibtex reference internal" href="#topal-1976aa" id="id5">[TF76]</a>.</p>
+<p id="index-1">There are 12 distinct point mutation events since each nucleotide can mutate to 3 possible alternates (e.g. A<span class="math notranslate nohighlight">\(\rightarrow\)</span>C, A<span class="math notranslate nohighlight">\(\rightarrow\)</span>G, A<span class="math notranslate nohighlight">\(\rightarrow\)</span>T). These are often categorised by the chemical classes of the bases involved. Specifically, transitions and transversions. Point mutations that start and end in bases belonging to the same chemical class are referred to as transitions, i.e. changes involving A<span class="math notranslate nohighlight">\(\rightarrow\)</span>G, G<span class="math notranslate nohighlight">\(\rightarrow\)</span>A, C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T, T<span class="math notranslate nohighlight">\(\rightarrow\)</span>C (blue lines in the <a class="reference internal" href="#directions"><span class="std std-ref">figure</span></a>). The remaining changes are assigned to the transversion category. As it turns out, there are differences in the rate at which mutations of these categories are observed and it has been argued that the excess of transitions reflects the chemical properties of DNA <a class="bibtex reference internal" href="#topal-1976aa" id="id5">[TF76]</a>.</p>
 <div class="sidebar" id="directions">
 <p class="sidebar-title">Mutation directions</p>
 <div class="graphviz"><object data="../_images/graphviz-b4cb238982177981577ef5d3c05d9d10e3724938.svg" type="image/svg+xml" class="graphviz">
@@ -263,11 +268,11 @@ G -&gt; T [dir=both];
 <p>The blue lines indicate transition mutations, point mutations between bases that belong to the same chemical class.</p>
 </div>
 <p>But the dominance of transition mutations reflects more than just the intrinsic properties of the canonical bases. In vertebrates and many other organisms, the modified base 5-methyl-cytosine (hereafter <sup>5</sup>mC or methylated cytosine) is present. In vertebrates, at least, this modification can be used to encode information – switching between methylated and unmethylated states is associated with changes to gene expression of flanking genes. As such, <sup>5</sup>mC is a part of the epigenetic control layer. The modified base <sup>5</sup>mC is also hypermutable <a class="bibtex reference internal" href="#coulondre-1978aa" id="id6">[CMFG78]</a>. The deamination of <sup>5</sup>mC (a hydrolysis reaction) occurs at a rate ~10x the same reaction of unmethylated C. The lesion arising from these reactions also differ, with <sup>5</sup>mC producing T while hydrolysis of unmethylated C produces uracil (U). These lesions cause a pairing mismatch in the helix, triggering DNA repair mechanisms. As you might expect, a repair system will do a better job of reverting U:G to the correct C:G compared with resolving a T:G mismatch.</p>
-<p id="index-2">Where <sup>5</sup>mC mutagenesis gets even more interesting is that this is an enzymatically induced modification and the recognition sequence for the DNA methylase is a C followed by a G, denote CpG (the p stands for the phosphodiester bond between adjacent nucleotides). This sequence “context dependence” of the introduction of the base modification therefore results in a context dependence of C→T point mutations (see <a class="reference internal" href="#ctot-motif"><span class="std std-ref">Sidebar Figure</span></a>).</p>
+<p id="index-2">Where <sup>5</sup>mC mutagenesis gets even more interesting is that this is an enzymatically induced modification and the recognition sequence for the DNA methylase is a C followed by a G, denote CpG (the p stands for the phosphodiester bond between adjacent nucleotides). This sequence “context dependence” of the introduction of the base modification therefore results in a context dependence of C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutations (see <a class="reference internal" href="#ctot-motif"><span class="std std-ref">Sidebar Figure</span></a>).</p>
 <div class="sidebar" id="ctot-motif">
-<p class="sidebar-title">Context dependence of C→T point mutations</p>
+<p class="sidebar-title">Context dependence of C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutations</p>
 <div class="figure align-default" id="id19">
-<img alt="../_images/CtoT-human-intergenic.svg" src="../_images/CtoT-human-intergenic.svg" /><p class="caption"><span class="caption-text">Information analysis of human intergenic SNPs resulting from a C→T point mutation <a class="bibtex reference internal" href="../seqcomp/information.html#zhu-2017aa" id="id7">[ZNYH17]</a>.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<img alt="../_images/CtoT-human-intergenic.svg" src="../_images/CtoT-human-intergenic.svg" /><p class="caption"><span class="caption-text">Information analysis of human intergenic SNPs resulting from a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutation <a class="bibtex reference internal" href="../seqcomp/information.html#zhu-2017aa" id="id7">[ZNYH17]</a>.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 <div class="legend">
 <p>RE is relative entropy. Position is relative to the point mutation (at 0). The normal letter orientation in the plot indicates that base was over-represented in mutant sequences compared to the reference distribution. The rotated orientation indicates that base was under-represented in mutant sequences.</p>
 </div>
@@ -276,9 +281,9 @@ G -&gt; T [dir=both];
 </div>
 <div class="section" id="statistical-measures-of-sequence-composition-that-relate-to-mutation">
 <h2><span class="section-number">7.5.3. </span>Statistical measures of sequence composition that relate to mutation<a class="headerlink" href="#statistical-measures-of-sequence-composition-that-relate-to-mutation" title="Permalink to this headline">¶</a></h2>
-<p>As the C→T case illustrates, chemical and metabolic processes affect how mutation occurs. To further illustrate this, we consider an additional property of DNA sequences – strand.</p>
+<p>As the C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T case illustrates, chemical and metabolic processes affect how mutation occurs. To further illustrate this, we consider an additional property of DNA sequences – strand.</p>
 <p>When we discuss processes via which lesions form in DNA, we are predominantly referencing chemical reactions affecting the base part of a nucleotide. Thymidine dimers arise from UV light induced covalent bonds between Thymine bases that are physically adjacent <em>on the same DNA strand</em>. This strand orientation leads to a simple question: Does mutation occur in a strand symmetric way?</p>
-<p>To address this, let’s think back to what we actually observe. We do not observe the mutation process, we observe the outcome <a class="footnote-reference brackets" href="#id12" id="id8">3</a>. Let’s assume we detect a G→A difference between the parent DNA sequence and its immediate descendant. We represent DNA sequences by picking one strand and displaying that information only <a class="footnote-reference brackets" href="#id13" id="id9">4</a>, often an entirely arbitrary choice. Accordingly, the designation of mutation direction is also arbitrary and, for our example, its possible this mutation was in fact a C→T on the other strand. If the mutation was of CpG→CpA, it’s likely the actual mutation involved the <sup>5</sup>mC on the opposite strand since CpG is a strand symmetric dinucleotide (the reverse complement is also CpG).</p>
+<p>To address this, let’s think back to what we actually observe. We do not observe the mutation process, we observe the outcome <a class="footnote-reference brackets" href="#id12" id="id8">3</a>. Let’s assume we detect a G<span class="math notranslate nohighlight">\(\rightarrow\)</span>A difference between the parent DNA sequence and its immediate descendant. We represent DNA sequences by picking one strand and displaying that information only <a class="footnote-reference brackets" href="#id13" id="id9">4</a>, often an entirely arbitrary choice. Accordingly, the designation of mutation direction is also arbitrary and, for our example, its possible this mutation was in fact a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T on the other strand. If the mutation was of CpG→CpA, it’s likely the actual mutation involved the <sup>5</sup>mC on the opposite strand since CpG is a strand symmetric dinucleotide (the reverse complement is also CpG).</p>
 <p>Let’s consider a though experiment in where we run a mutagenesis experiment for a very long time on DNA that does not encode any information. In the absence of any biochemical biases, we expect mutation processes to occur with equal probability on the two strands. As a consequence, we expect at chemical equilibrium, the bases that form the canonical Watson-Crick base pairs to have equals counts on the strand, i.e. they are strand-symmetric. For instance, the DNA sequence ATGC is strand symmetric, as is AATTGC. The following “Skewness” statistics are used to quantify strand symmetry (or strand parity).</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}S_{AT} = \frac{A-T}{A+T}\\S_{GC} = \frac{G-C}{G+C}\end{aligned}\end{align} \]</div>
@@ -350,7 +355,7 @@ G -&gt; T [dir=both];
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="glossary.html" class="btn btn-neutral float-right" title="7.6. Glossary of terms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="max_likelihood.html" class="btn btn-neutral float-right" title="7.6. Statistical methods for molecular evolutionary analyses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="neutral_theory.html" class="btn btn-neutral float-left" title="7.4. The neutral theory of molecular evolution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

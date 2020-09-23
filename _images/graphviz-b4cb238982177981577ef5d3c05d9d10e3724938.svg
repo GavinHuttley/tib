@@ -12,12 +12,12 @@
 <!-- A -->
 <g id="node1" class="node">
 <title>A</title>
-<text text-anchor="middle" x="107.21" y="-13.8" font-family="Times,serif" font-size="14.00">A</text>
+<text text-anchor="middle" x="107.21" y="-14.3" font-family="Times,serif" font-size="14.00">A</text>
 </g>
 <!-- C -->
 <g id="node2" class="node">
 <title>C</title>
-<text text-anchor="middle" x="187.43" y="-94.01" font-family="Times,serif" font-size="14.00">C</text>
+<text text-anchor="middle" x="187.43" y="-94.51" font-family="Times,serif" font-size="14.00">C</text>
 </g>
 <!-- A&#45;&gt;C -->
 <g id="edge1" class="edge">
@@ -29,7 +29,7 @@
 <!-- G -->
 <g id="node3" class="node">
 <title>G</title>
-<text text-anchor="middle" x="107.21" y="-174.23" font-family="Times,serif" font-size="14.00">G</text>
+<text text-anchor="middle" x="107.21" y="-174.73" font-family="Times,serif" font-size="14.00">G</text>
 </g>
 <!-- A&#45;&gt;G -->
 <g id="edge2" class="edge">
@@ -41,7 +41,7 @@
 <!-- T -->
 <g id="node4" class="node">
 <title>T</title>
-<text text-anchor="middle" x="27" y="-94.01" font-family="Times,serif" font-size="14.00">T</text>
+<text text-anchor="middle" x="27" y="-94.51" font-family="Times,serif" font-size="14.00">T</text>
 </g>
 <!-- A&#45;&gt;T -->
 <g id="edge3" class="edge">

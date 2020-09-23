@@ -17,9 +17,9 @@
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/spanels-bootstrap-index--5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
 
   
   
@@ -121,12 +121,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#getting-summary-using-table-head-or-table-tail">8.8.3. Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slicing-a-table">8.8.4. Slicing a Table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#getting-a-column">8.8.5. Getting a column</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#filtering-a-table-to-include-rows-by-value">8.8.6. Filtering a table to include rows by value</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#counting-unique-values">8.8.7. Counting unique values</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#to-categorical-count">8.8.7.1. To categorical count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-column">8.8.6. Creating a new column</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-a-table-to-include-rows-by-value">8.8.7. Filtering a table to include rows by value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#counting-unique-values">8.8.8. Counting unique values</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#to-categorical-count">8.8.8.1. To categorical count</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#generating-categorical-counts-from-a-table">8.8.8. Generating categorical counts from a Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-categorical-counts-from-a-table">8.8.9. Generating categorical counts from a Table</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="statistical_tests.html">8.9. Statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
@@ -232,7 +233,7 @@
 </div>
 <div class="section" id="tabular-data">
 <span id="tables"></span><h1><span class="section-number">8.8. </span>Tabular data<a class="headerlink" href="#tabular-data" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> <code class="docutils literal notranslate"><span class="pre">Table</span></code> data type provides methods for manipulating tabular data. Here we summarise the basic capabilities. One important point to make is that tables are immutable, in that once a column has been created you cannot modify individual elements. But you can modify what columns a table has, their name and order. Table columns themselves are just numpy arrays. (See the cogent3  <a class="reference external" href="https://cogent3.org/doc/api/table/classes/cogent3.util.table.Table.html#cogent3.util.table.Table">Table</a> documentation for a more thorough description.)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> <code class="docutils literal notranslate"><span class="pre">Table</span></code> data type provides methods for manipulating tabular data. Here we summarise the basic capabilities. One important point to make is that tables are immutable, in that once a column has been created you cannot modify individual elements. But you can modify what columns a table has, their name and order. Table columns themselves are just numpy arrays. (See the <a class="reference external" href="https://cogent3.org/doc/cookbook/tables.html">cogent3 cookbook</a> for a more thorough description.)</p>
 <div class="section" id="making-a-table-from-standard-python-objects">
 <span id="index-0"></span><h2><span class="section-number">8.8.1. </span>Making a Table from standard Python objects<a class="headerlink" href="#making-a-table-from-standard-python-objects" title="Permalink to this headline">¶</a></h2>
 <div class="sidebar" id="making-dinucs">
@@ -756,8 +757,72 @@
 </div>
 </div>
 </div>
+<div class="section" id="creating-a-new-column">
+<span id="index-4"></span><h2><span class="section-number">8.8.6. </span>Creating a new column<a class="headerlink" href="#creating-a-new-column" title="Permalink to this headline">¶</a></h2>
+<p>You write a function that takes the rows from the columns ytou want and returns the result of some operation. I’ll just take the square root of kappa.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="n">k_rt</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">with_new_column</span><span class="p">(</span><span class="s2">&quot;sqrt(kappa)&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;kappa&quot;</span><span class="p">])</span>
+<span class="n">k_rt</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>edge</th>
+<th>kappa</th>
+<th>sqrt(kappa)</th>
+</thead>
+<tbody>
+<tr>
+<td>FlyingFox</td>
+<td>8.5680</td>
+<td>2.9271</td>
+</tr>
+<tr>
+<td>DogFaced</td>
+<td>7.6584</td>
+<td>2.7674</td>
+</tr>
+<tr>
+<td>edge.0</td>
+<td>4.6557</td>
+<td>2.1577</td>
+</tr>
+<tr>
+<td>FreeTaile</td>
+<td>4.1230</td>
+<td>2.0305</td>
+</tr>
+<tr>
+<td>LittleBro</td>
+<td>6.0653</td>
+<td>2.4628</td>
+</tr>
+</tbody>
+</table>
+<p>Top 5 rows from
+10 rows x 3 columns</p>
+</div></div></div>
+</div>
+</div>
 <div class="section" id="filtering-a-table-to-include-rows-by-value">
-<span id="index-4"></span><h2><span class="section-number">8.8.6. </span>Filtering a table to include rows by value<a class="headerlink" href="#filtering-a-table-to-include-rows-by-value" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.8.7. </span>Filtering a table to include rows by value<a class="headerlink" href="#filtering-a-table-to-include-rows-by-value" title="Permalink to this headline">¶</a></h2>
 <p>In our dinucleotide table, we only want rows where both bases are in the canonical set <code class="docutils literal notranslate"><span class="pre">{A,</span> <span class="pre">C,</span> <span class="pre">G,</span> <span class="pre">T}</span></code>. We do this via a filter step using a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function and a <code class="docutils literal notranslate"><span class="pre">set</span></code> object consisting of these bases. The <code class="docutils literal notranslate"><span class="pre">filtered()</span></code> method calls the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> with each row. Only if the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> will the row be included in the new <code class="docutils literal notranslate"><span class="pre">Table</span></code>. In our case, our <code class="docutils literal notranslate"><span class="pre">lambda</span></code> will return true if the set of elements in the row is a subset of all the basses.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -841,7 +906,7 @@
 </div>
 </div>
 <div class="section" id="counting-unique-values">
-<h2><span class="section-number">8.8.7. </span>Counting unique values<a class="headerlink" href="#counting-unique-values" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.8.8. </span>Counting unique values<a class="headerlink" href="#counting-unique-values" title="Permalink to this headline">¶</a></h2>
 <p>This method returns counts of the unique combinations of values from the specified columns. The result is a <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> type, a <code class="docutils literal notranslate"><span class="pre">CategoryCounter</span></code> instance, which has some useful properties. Principal being that it behaves like a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -857,7 +922,7 @@
 </div>
 </div>
 <div class="section" id="to-categorical-count">
-<h3><span class="section-number">8.8.7.1. </span>To categorical count<a class="headerlink" href="#to-categorical-count" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.8.8.1. </span>To categorical count<a class="headerlink" href="#to-categorical-count" title="Permalink to this headline">¶</a></h3>
 <p>Another being that it can produce <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1229,7 +1294,7 @@
 </div>
 </div>
 <div class="section" id="generating-categorical-counts-from-a-table">
-<span id="index-5"></span><h2><span class="section-number">8.8.8. </span>Generating categorical counts from a Table<a class="headerlink" href="#generating-categorical-counts-from-a-table" title="Permalink to this headline">¶</a></h2>
+<span id="index-5"></span><h2><span class="section-number">8.8.9. </span>Generating categorical counts from a Table<a class="headerlink" href="#generating-categorical-counts-from-a-table" title="Permalink to this headline">¶</a></h2>
 <p>We can also get a <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object via <code class="docutils literal notranslate"><span class="pre">Table.to_categorical()</span></code>. In this case, the counts must be fully specified prior to constructing the table. (Meaning you’ve already done the counting part.) In addition, we also need to specify a column whose values are the row categories. The latter is achieved setting <code class="docutils literal notranslate"><span class="pre">make_table(index=&lt;column</span> <span class="pre">name&gt;)</span></code>. In this case, I specify the column name of the index is an empty string.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">

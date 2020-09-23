@@ -1,0 +1,716 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.7. Substitution models &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.9. Hypothesis Testing" href="hypothesis_testing.html" />
+    <link rel="prev" title="7.6. Statistical methods for molecular evolutionary analyses" href="max_likelihood.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">7. Molecular Evolution</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">7.1. What is molecular evolution?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-is-phylogenetics">7.2. What is phylogenetics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">7.3. Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neutral_theory.html">7.4. The neutral theory of molecular evolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutation.html">7.5. Mutation – the origin of genetic variation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="max_likelihood.html">7.6. Statistical methods for molecular evolutionary analyses</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.7. Substitution models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#time-reversible-continuous-time-substitution-models">7.7.1. Time reversible continuous-time substitution models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-jukes-cantor-substitution-model">7.7.1.1. The Jukes-Cantor substitution model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#f81">7.7.1.2. F81</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hky85">7.7.1.3. HKY85</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gtr">7.7.1.4. GTR</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#stationarity-base-frequencies-constant-through-time">7.7.2. Stationarity – base frequencies constant through time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-behaviour-of-parameters-in-q">7.7.3. The behaviour of parameters in <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-in-molecular-evolution">7.7.4. <em>Time</em> in molecular evolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calibrating-rate-matrices-to-facilitate-estimation-of-time-on-a-tree">7.7.5. Calibrating rate matrices to facilitate estimation of time on a tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assumptions-of-substitution-process">7.7.6. Assumptions of substitution process</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">7.8. Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-exercises">7.8.1. Advanced exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hypothesis_testing.html">7.9. Hypothesis Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypothesis_testing.html#exercises">7.10. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">7.11. Glossary of terms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">9. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">7. </span>Molecular Evolution</a> &raquo;</li>
+        
+      <li><span class="section-number">7.7. </span>Substitution models</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/molevol/substitution_models.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="sidebar">
+<p class="sidebar-title">Substitution models</p>
+<video width="50%" height="50%" controls>
+  <source src="https://cloudstor.aarnet.edu.au/plus/s/HwpLTt8oZxyCP7N/download" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div>
+<div class="section" id="substitution-models">
+<h1><span class="section-number">7.7. </span>Substitution models<a class="headerlink" href="#substitution-models" title="Permalink to this headline">¶</a></h1>
+<p>As we demonstrated, calculating a likelihood requires a matrix of substitution probabilities. We can define such matrices in two ways. In the first, we simply specify a matrix of probabilities which we have denoted <span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span>. This corresponds to a discrete-time Markov process. This class of Markov process (substitution model) is not widely used because every possible exchange requires a separate probability and this means the number of free parameters in the model is proportional to the square of the matrix dimensions multiplied by the number of edges on a phylogenetic genetic tree.</p>
+<p>The second approach uses an instantaneous transition rate matrix which we denote <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span>. This is a mathematical precursor to <span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span> that corresponds to a continuous-time Markov process. In this class of model, we do not define a matrix of probabilities but instead define a matrix of instantaneous rates. This is the most commonly used category of substitution models for molecular evolutionary analyses. Their popularity stems in part because they enable an intuitive measurement of elapsed time (described below) and because they can be defined with a very small number of parameters. Their construction can also be related to chemical and or biochemical properties of DNA. We will focus on this category from now on.</p>
+<div class="section" id="time-reversible-continuous-time-substitution-models">
+<span id="index-1"></span><h2><span class="section-number">7.7.1. </span>Time reversible continuous-time substitution models<a class="headerlink" href="#time-reversible-continuous-time-substitution-models" title="Permalink to this headline">¶</a></h2>
+<p>Recall the following equation.</p>
+<div class="math notranslate nohighlight">
+\[P_t = \exp^{Q}\]</div>
+<p>This shows how the substitution probabilities needed to compute a likelihood are obtained from a rate matrix <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span>. The properties of <span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span> are that all elements are valid probabilities and the row sums are 1. There are constraints on the construction of <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span> such that it can be used to generate a valid <span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span>. Those constraints are:</p>
+<ul class="simple">
+<li><p>off-diagonal elements are positive</p></li>
+<li><p>row sums are 0</p></li>
+</ul>
+<p>The following is an example of such a matrix. The constraint that rows sum to 0 is achieved by setting the diagonal element as equal to the negative of the sum of the remaining elements.</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Q</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th></th>
+<th>T</th>
+<th>C</th>
+<th>A</th>
+<th>G</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">T</td>
+<td>-0.0157</td>
+<td>0.0036</td>
+<td>0.0078</td>
+<td>0.0044</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>0.0050</td>
+<td>-0.0171</td>
+<td>0.0078</td>
+<td>0.0044</td>
+</tr>
+<tr>
+<td class="index">A</td>
+<td>0.0050</td>
+<td>0.0036</td>
+<td>-0.0130</td>
+<td>0.0044</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>0.0050</td>
+<td>0.0036</td>
+<td>0.0078</td>
+<td>-0.0164</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>It is typically the case that the Markov process is assumed to be <span class="target" id="index-2"></span>time-reversible. This means that, the probability of the forward and reverse substitutions are equal. For example, for a given time period <span class="math notranslate nohighlight">\(t\)</span>, a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T occurs with the same probability as T<span class="math notranslate nohighlight">\(\rightarrow\)</span>C.</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">π</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>T</th>
+<th>C</th>
+<th>A</th>
+<th>G</th>
+</thead>
+<tbody>
+<tr>
+<td>0.2402</td>
+<td>0.1744</td>
+<td>0.3748</td>
+<td>0.2106</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">from_t</span> <span class="o">=</span> <span class="n">pi</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">Q</span><span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">to_t</span> <span class="o">=</span> <span class="n">pi</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">Q</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">]</span>
+<span class="n">from_t</span><span class="p">,</span> <span class="n">to_t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(0.0008680857395685076, 0.0008680857395685077)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These values are not identical due to the limits of numerical precision.</p>
+</div>
+<div class="section" id="the-jukes-cantor-substitution-model">
+<span id="jc69"></span><h3><span class="section-number">7.7.1.1. </span>The Jukes-Cantor substitution model<a class="headerlink" href="#the-jukes-cantor-substitution-model" title="Permalink to this headline">¶</a></h3>
+<p>The Jukes-Cantor 1969 model (abbreviated JC69) <a class="bibtex reference internal" href="#jukes-1969aa" id="id2">[JC69]</a> was the first published substitution model. It assumes all bases are equally frequent and that all substitutions occur at the same rate, irrespective of the identify of the bases being exchanged.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+ &amp; \begin{matrix} {\bf A}\; &amp; {\bf C}\; &amp; {\bf G}\; &amp; {\bf T} \end{matrix} \\
+Q = \begin{matrix} {\bf A} \\[1mm] {\bf C} \\[1mm] {\bf G} \\[1mm] {\bf T} \end{matrix} &amp;
+      \begin{bmatrix}
+            \frac{-3}{4} &amp;  \frac{1}{4} &amp;   \frac{1}{4} &amp;  \frac{1}{4}\\
+            \frac{1}{4}  &amp; \frac{-3}{4} &amp;   \frac{1}{4} &amp;  \frac{1}{4}\\
+            \frac{1}{4}  &amp;  \frac{1}{4} &amp; \frac{-3}{4}  &amp;  \frac{1}{4}\\
+            \frac{1}{4}  &amp;  \frac{1}{4} &amp;   \frac{1}{4} &amp;  \frac{-3}{4}\\
+       \end{bmatrix}
+    \end{matrix}\end{split}\]</div>
+</div>
+<div class="section" id="f81">
+<span id="id3"></span><h3><span class="section-number">7.7.1.2. </span>F81<a class="headerlink" href="#f81" title="Permalink to this headline">¶</a></h3>
+<p>Described by Felsenstein in his seminal 1981 paper <a class="bibtex reference internal" href="#felsenstein-1981aa" id="id4">[Fel81]</a>. This matrix is time reversible and, therefore, stationary. The <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span> elements correspond to the stationary nucleotide frequencies. F81 allows nucleotide frequencies to differ (e.g. <span class="math notranslate nohighlight">\(\pi_A \neq \pi_C\)</span>) but assumes all exchanges otherwise occur at the same rate.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the following definition, “<span class="math notranslate nohighlight">\(-\)</span>” is being used for diagonal elements to simplify the expression. Those elements are computed as the negative sum of the remaining elements on the row.</p>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+ &amp; \begin{matrix} {\bf A}\; &amp; {\bf C}\; &amp; {\bf G}\; &amp; {\bf T} \end{matrix} \\
+Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
+  \begin{bmatrix}
+        - &amp; \pi_C  &amp;  \pi_G  &amp;  \pi_T \\
+    \pi_A &amp;   -    &amp;  \pi_G  &amp;  \pi_T \\
+    \pi_A &amp; \pi_C  &amp;  -      &amp;  \pi_T \\
+    \pi_A &amp; \pi_C  &amp;  \pi_G  &amp;  -\\
+  \end{bmatrix}
+\end{matrix}\end{split}\]</div>
+</div>
+<div class="section" id="hky85">
+<span id="id5"></span><h3><span class="section-number">7.7.1.3. </span>HKY85<a class="headerlink" href="#hky85" title="Permalink to this headline">¶</a></h3>
+<p>Named after its authors <a class="bibtex reference internal" href="#hasegawa-1985aa" id="id6">[HKY85]</a>, the Hasegawa-Kishino-Yano (HKY or HKY85) model includes an additional exchangeability parameter <a class="footnote-reference brackets" href="#id8" id="id7">1</a> <span class="math notranslate nohighlight">\(\kappa\)</span>. This parameter is within matrix cells that correspond to <span class="target" id="index-3"></span>transition substitutions. Because the parameter is applied multiplicatively in the matrix (discussed below), it is the ratio of transition / transversion substitution rates.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id7">1</a></span></dt>
+<dd><p>I use the term “exchangeability parameter” to refer to a parameter in a rate matrix that is not an element of <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span>.</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+ &amp; \begin{matrix} {\bf A}\quad &amp; {\bf C}\quad &amp; {\bf G}\quad &amp; {\bf T} \end{matrix} \\
+Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
+  \begin{bmatrix}
+        -         &amp;    \pi_C        &amp;  \pi_G {\color{blue}\bf\kappa} &amp;  \pi_T \\
+    \pi_A         &amp;               - &amp;  \pi_G        &amp;  \pi_T {\color{blue}\bf\kappa}\\
+    \pi_A {\color{blue}\bf\kappa}  &amp;    \pi_C        &amp;        -      &amp;  \pi_T \\
+    \pi_A         &amp;  \pi_C {\color{blue}\bf\kappa}   &amp;  \pi_G        &amp;  -\\
+  \end{bmatrix}
+\end{matrix}\end{split}\]</div>
+<p>The rate matrix of the HKY85 model illustrates a fundamental structure shared with all time-reversible Markov processes. Namely, that the exchangeability parameters are symmetric across the diagonal. As a consequence, time-reversible matrices can be expressed as the product of a diagonal matrix of the <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span> terms and a symmetric matrix consisting of the exchangeability terms.</p>
+</div>
+<div class="section" id="gtr">
+<span id="id9"></span><h3><span class="section-number">7.7.1.4. </span>GTR<a class="headerlink" href="#gtr" title="Permalink to this headline">¶</a></h3>
+<p>GTR stands for General Time Reversible <a class="bibtex reference internal" href="#lanave-1984aa" id="id10">[LS84]</a>. It is the most general nucleotide substitution model that is time-reversible. This model contains 6 additional parameters: <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(\delta\)</span>, <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\(\zeta\)</span>. This model is saying that all of the possible nucleotide exchanges have distinctive rates.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+ &amp; \begin{matrix} {\bf A}\quad &amp; {\bf C}\quad &amp; {\bf G}\quad &amp; {\bf T} \end{matrix} \\
+Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
+  \begin{bmatrix}
+        -         &amp;    \pi_C \alpha &amp;   \pi_G \beta &amp;  \pi_T \gamma\\
+    \pi_A \alpha  &amp;               - &amp;  \pi_G \delta &amp;  \pi_T \epsilon\\
+    \pi_A \beta   &amp;    \pi_C \delta &amp;        -      &amp;  \pi_T \zeta\\
+    \pi_A \gamma  &amp;  \pi_C \epsilon &amp;  \pi_G \zeta  &amp;  -\\
+  \end{bmatrix}
+\end{matrix}\end{split}\]</div>
+<p>Notice again that the exchangeability parameters are symmetric across the diagonal.</p>
+</div>
+</div>
+<div class="section" id="stationarity-base-frequencies-constant-through-time">
+<span id="index-4"></span><h2><span class="section-number">7.7.2. </span>Stationarity – base frequencies constant through time<a class="headerlink" href="#stationarity-base-frequencies-constant-through-time" title="Permalink to this headline">¶</a></h2>
+<p>A <span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span> matrix specifies the probabilities of changing from one base into another for a specific time period. So what will the base frequencies be at the end of that time period?</p>
+<p>Let us set <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span><span class="math notranslate nohighlight">\((0)\)</span> as the base frequencies at the beginning of our time interval and <span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span><span class="math notranslate nohighlight">\((t)\)</span> as the substitution probability matrix for time <span class="math notranslate nohighlight">\(t\)</span>. We then obtain the base frequencies at time <span class="math notranslate nohighlight">\(t\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[{\mathbf \pi}(t) = {\mathbf \pi}(0) \cdot {\mathbf {\rm P}}(t)\]</div>
+<p>where “<span class="math notranslate nohighlight">\(\cdot\)</span>” is <a class="reference external" href="https://en.wikipedia.org/wiki/Matrix_multiplication">matrix multiplication</a> <a class="footnote-reference brackets" href="#id12" id="id11">2</a>. If <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span><span class="math notranslate nohighlight">\((0)\)</span> equals <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span><span class="math notranslate nohighlight">\((t)\)</span> then the base frequencies have not changed and we can state that <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span><span class="math notranslate nohighlight">\((0)\)</span> is the stationary frequency vector of <span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span>. This is the condition of stationarity. For simplicity, we just denote this stationary vector as <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id11">2</a></span></dt>
+<dd><p>Matrix multiplication is also often referred to as a “dot product”. This is available in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> as <code class="docutils literal notranslate"><span class="pre">numpy.dot()</span></code> or using the  <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol, e.g. <code class="docutils literal notranslate"><span class="pre">pi</span> <span class="pre">&#64;</span> <span class="pre">Q</span></code>.</p>
+</dd>
+</dl>
+<p>In the case of a continuous-time Markov process, we can operate directly on the rate matrix <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span> without needing to specify a time period. Recall that the rate matrix specifies the instantaneous rates of exchanges between states. If <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span> is the stationarity frequency vector, then there will be <em>no</em> exchanges and we expect a vector of zeros. Thus,</p>
+<div class="math notranslate nohighlight">
+\[{\mathbf \pi} \cdot {{\mathbf\rm Q}} = \mathbf{0}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{0}\)</span> is a vector of zeros and indicates that <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span> is the stationary frequency vector of <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span>.</p>
+<p>All time-reversible substitution models are stationary Markov processes. However, not all stationary Markov processes are time-reversible.</p>
+</div>
+<div class="section" id="the-behaviour-of-parameters-in-q">
+<span id="exchangeability"></span><h2><span class="section-number">7.7.3. </span>The behaviour of parameters in <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span><a class="headerlink" href="#the-behaviour-of-parameters-in-q" title="Permalink to this headline">¶</a></h2>
+<p>For the models I’m presenting, exchangeability parameters are applied “multiplicatively” in the rate matrix. By this I mean the parameters in a “rate matrix cell” are multiplied together <a class="footnote-reference brackets" href="#id14" id="id13">3</a>. From the definition of a rate matrix, the only constraint operating on exchangeability parameters is that they are ≥0. This construction means that setting an exchangeability parameter value to 1 means it has no effect on the instantaneous rate of change. Setting <span class="math notranslate nohighlight">\(\kappa=1\)</span> in HKY85 simplifies the expression to produce the F81 rate matrix definition.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id13">3</a></span></dt>
+<dd><p>This is not a strict requirement of continuous-time Markov processes.</p>
+</dd>
+</dl>
+<p>The multiplicative construction of the rate matrices also provides guidance for interpreting parameter estimates from a model. Parameters whose estimate is &lt;1 are reducing the instantaneous rate of change for the substitutions they influence compared to the remainder. The converse applies when they are &gt; 1.</p>
+<p>As you will see below, we typically define one exchangeability parameter as the reference parameter, setting it to the value 1. This effectively means that all other exchangeability parameters are relative to this term. Which parameter is chosen to be the reference is arbitrary. This strategy is used to allow including a time parameter in our models of sequence evolution.</p>
+</div>
+<div class="section" id="time-in-molecular-evolution">
+<h2><span class="section-number">7.7.4. </span><em>Time</em> in molecular evolution<a class="headerlink" href="#time-in-molecular-evolution" title="Permalink to this headline">¶</a></h2>
+<p>What we call “time” in molecular evolution is not chronological time as we know it in our daily lives, but a measure of sequence change. Recall that Kimura showed the rate of substitution is equal to the neutral mutation rate for neutrally evolving genetic variants. Time comes into this via the neutral mutation rate as this quantity is measured as the probability of mutation <em>per generation</em>.</p>
+<p>In molecular evolutionary analyses, we measure time (<span class="math notranslate nohighlight">\(t\)</span>) as the <em>expected number of substitutions</em> per position. This is a product of the amount of elapsed chronological time and the mutation rate. For a stationary Markov process, we obtain the expected number of substitutions by multiplying the base frequencies by the <em>flow</em> away from the base (the diagonal element of <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span>) <a class="footnote-reference brackets" href="#id16" id="id15">4</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id15">4</a></span></dt>
+<dd><p>For a non-stationary Markov process, the calculation is trickier <a class="bibtex reference internal" href="#kaehler-2015aa" id="id17">[KYZH15]</a>.</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[t=-\sum_{i=1}^4\pi_i Q_{i,i}\]</div>
+<p>Although it is not possible to extract chronological time from just sequence divergence data alone, methods exist that use datings from the fossil record to facilitate estimation of chronological times.</p>
+</div>
+<div class="section" id="calibrating-rate-matrices-to-facilitate-estimation-of-time-on-a-tree">
+<span id="calibration"></span><span id="index-5"></span><h2><span class="section-number">7.7.5. </span>Calibrating rate matrices to facilitate estimation of time on a tree<a class="headerlink" href="#calibrating-rate-matrices-to-facilitate-estimation-of-time-on-a-tree" title="Permalink to this headline">¶</a></h2>
+<p>In order to estimate the expected number of substitutions on all the branches on a tree, molecular evolutionary software often employs a trick. It uses a rate matrix that has been calibrated such that <span class="math notranslate nohighlight">\(t\)</span>=1.</p>
+<p>The calibration step involves calculating <span class="math notranslate nohighlight">\(t\)</span> for a given <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span> according to the equation above and dividing both sides by it.</p>
+<p>There is a major computational advantage of this approach. Specifically, the <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">eigendecomposition</a> algorithm for matrix exponentiation allows us to do the algorithmically “hard part” once for an entire tree and store the next to final step in the computation <a class="bibtex reference internal" href="#schranz-2008aa" id="id18">[SYE+08]</a>. That final step — producing the different substitution probability matrices for edges with different <span class="math notranslate nohighlight">\(t\)</span> (<span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span><span class="math notranslate nohighlight">\((t)\)</span>) — is very efficiently obtained by applying the corresponding branch length to this intermediate product.</p>
+<p>By specifying time as a parameter in our models, we must eliminate another parameter to avoid over specifying the model <a class="footnote-reference brackets" href="#id20" id="id19">5</a>. This is achieved by selecting a reference exchangeability parameter and setting it to 1.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id19">5</a></span></dt>
+<dd><p>This basically means adding more parameters than the model can possibly accomodate.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="assumptions-of-substitution-process">
+<h2><span class="section-number">7.7.6. </span>Assumptions of substitution process<a class="headerlink" href="#assumptions-of-substitution-process" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>time-reversible</dt><dd><p>That the rate of forward substitutions is equal to their reverse rate. The consequence is that evolution looks the same going forwards or backwards.</p>
+</dd>
+<dt>stationary</dt><dd><p>The sequence composition, or frequencies of the states, is the same across the data set. An assumption of all time-reversible models and some others too. This becomes less likely with increasing time since species shared a common ancestor.</p>
+</dd>
+<dt>time-homogeneous</dt><dd><p>The substitution process remains the same <em>along</em> each branch. Translated, this means the same intrinsic dynamics governing mutation, and therefore substitution, operate across the entire branch for every branch that we might be analysing. If the lineages aren’t too long then this seems a pretty reasonable assumption. If we assume a single rate matrix for the entire tree we are further assuming the mutation and substitution processes have not changed between the different edges. As you increase the time depth of your sample, this assumption can be more problematic since the potential for changes affecting mutation increase. Accordingly, in such circumstances this property should be checked for <a class="bibtex reference internal" href="#verbyla-2013aa" id="id21">[VYP+13]</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1><span class="section-number">7.8. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p>What constraints would you impose on HKY85 to make it F81?</p></li>
+<li><p>Assume I have a rate matrix cell <span class="math notranslate nohighlight">\(q_{i,j}=r_j\theta\)</span>. Holding <span class="math notranslate nohighlight">\(r_j\)</span> fixed, what will be the effect on the magnitude of <span class="math notranslate nohighlight">\(q_{i,j}\)</span> if</p>
+<blockquote>
+<div><p>a.) <span class="math notranslate nohighlight">\(\theta&lt;1\)</span>?
+b.) <span class="math notranslate nohighlight">\(\theta&gt;1\)</span>?
+c.) <span class="math notranslate nohighlight">\(\theta=1\)</span>?</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="section" id="advanced-exercises">
+<h2><span class="section-number">7.8.1. </span>Advanced exercises<a class="headerlink" href="#advanced-exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Show that JC is a time-reversible process.</p></li>
+<li><p>Scale the JC matrix such that <span class="math notranslate nohighlight">\(t=1\)</span>.</p></li>
+<li><p>With <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span></p>
+<blockquote>
+<div><div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;T&quot;</span><span class="p">:</span> <span class="mf">0.2402306967984934</span><span class="p">,</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="mf">0.17443502824858756</span><span class="p">,</span>
+    <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="mf">0.3747645951035782</span><span class="p">,</span>
+    <span class="s2">&quot;G&quot;</span><span class="p">:</span> <span class="mf">0.21056967984934086</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>is the following a calibrated matrix?</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th></th>
+<th>T</th>
+<th>C</th>
+<th>A</th>
+<th>G</th>
+</thead>
+<tbody>
+<tr>
+<td class="index">T</td>
+<td>-0.850162</td>
+<td>0.530527</td>
+<td>0.204648</td>
+<td>0.114986</td>
+</tr>
+<tr>
+<td class="index">C</td>
+<td>0.730639</td>
+<td>-1.050273</td>
+<td>0.204648</td>
+<td>0.114986</td>
+</tr>
+<tr>
+<td class="index">A</td>
+<td>0.131183</td>
+<td>0.095254</td>
+<td>-0.866865</td>
+<td>0.640428</td>
+</tr>
+<tr>
+<td class="index">G</td>
+<td>0.131183</td>
+<td>0.095254</td>
+<td>1.139811</td>
+<td>-1.366248</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Test if the following orthologous sequences have been generated by a stationary process.</p></li>
+</ol>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seq1</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;TCCAAGTGCCTAACTACAGTAAGTACTTACAGTCAAGCATCAGTATGAAT&quot;</span>
+    <span class="s2">&quot;TTGGTCCAAGATGTTTCGTGAAAGTGAGACAGTTATTATTTGAAATCCTG&quot;</span>
+    <span class="s2">&quot;ATTGGTCATTAGATTTCATTGGTAATCAATTAGCTATGATATTTTAGAAC&quot;</span>
+    <span class="s2">&quot;AGCTTTTGTAATATAATCCAAAGTTACAATGACTGGGACCCCACTATATA&quot;</span>
+    <span class="s2">&quot;TAAATTTGAGAAAGTCCATAAGTAGATAACTTTGTTCGAATGATAGTTAG&quot;</span>
+    <span class="s2">&quot;ATGATCAGGGTTAGGTTTTTTTGTAAATTTTGTGATTCAAAACAAATTCA&quot;</span>
+    <span class="s2">&quot;GATATACCTACTGACAATCCTAAATAGTGGGGGTTCGTTTGTAAACTATA&quot;</span>
+    <span class="s2">&quot;CATTTTAGATTTTTCTAGAGAAGCCAGACGCCACAACGATATATACGGTC&quot;</span>
+    <span class="s2">&quot;GATAGATAATCCTTCAGGGAATATTTTTGTATCTATAATCTTCTAAAAAA&quot;</span>
+    <span class="s2">&quot;GAAAATATTACCAGATAAGTGATAATAGTCTTAGATTTTTCTGATCGAGA&quot;</span>
+<span class="p">)</span>
+
+<span class="n">seq2</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;TCTAATTACCTAGCCACAGTAAGTACCTACAGTCAAGCAGCTCTATGAAT&quot;</span>
+    <span class="s2">&quot;CTGCATCTGGTGGTCTTGTGGACAGGGGGCTGCTATTGCGTACAGACCTG&quot;</span>
+    <span class="s2">&quot;ATTGGACATTCTACTTCCCTGCTGGCAGGTTCAATGTCAGATTCTTGGTC&quot;</span>
+    <span class="s2">&quot;AGTCCTTTCGATGTAACTCGTAACTATAATAACTGAGATCTTGTTATACG&quot;</span>
+    <span class="s2">&quot;TTATGTTTCGCTAGTCACCGAGTAAGCATCGGTGTCCGGGCTATCACTAG&quot;</span>
+    <span class="s2">&quot;ATCTTCATCAACAGGCGTCTTTGGACATTTAGAGATTGAAGTGGAACTCA&quot;</span>
+    <span class="s2">&quot;TAAGTATCCACTGGTAATTATCAGAAACGGGGGTACGCCTTTGCATTACA&quot;</span>
+    <span class="s2">&quot;CTTTGTAGGCTCTCCTAGAGAATTAGGACACCAGTGGAAAATGTACGGCT&quot;</span>
+    <span class="s2">&quot;GATCAAAATTCTATCAAAAAACGTCTTTCTATTTGTAGATCCTCAAAATA&quot;</span>
+    <span class="s2">&quot;GCGAACACCACATGCGTAGGGATAACAACGGTGGTTTTTGCTGCTCAGTA&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<hr class="docutils" />
+<p class="rubric">Citations</p>
+<p id="bibtex-bibliography-molevol/substitution_models-0"><dl class="citation">
+<dt class="bibtex label" id="felsenstein-1981aa"><span class="brackets"><a class="fn-backref" href="#id4">Fel81</a></span></dt>
+<dd><p>J Felsenstein. Evolutionary trees from DNA sequences: a maximum likelihood approach. <em>J. Mol. Evol.</em>, 17:368–376, 1981.</p>
+</dd>
+<dt class="bibtex label" id="hasegawa-1985aa"><span class="brackets"><a class="fn-backref" href="#id6">HKY85</a></span></dt>
+<dd><p>M Hasegawa, H Kishino, and T Yano. Dating of the human-ape splitting by a molecular clock of mitochondrial DNA. <em>J Mol Evol</em>, 22:160–174, 1985.</p>
+</dd>
+<dt class="bibtex label" id="jukes-1969aa"><span class="brackets"><a class="fn-backref" href="#id2">JC69</a></span></dt>
+<dd><p>T Jukes and C Cantor. <em>Mammalian Protein Metabolism</em>, pages 21–132. Academic Press, New York, 1969.</p>
+</dd>
+<dt class="bibtex label" id="kaehler-2015aa"><span class="brackets"><a class="fn-backref" href="#id17">KYZH15</a></span></dt>
+<dd><p>Benjamin D Kaehler, Von Bing Yap, Rongli Zhang, and Gavin A Huttley. Genetic distance for a general non-stationary Markov substitution process. <em>Systematic Biology</em>, 64:281–93, 2015. URL: <a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/25503772">http://www.ncbi.nlm.nih.gov/pubmed/25503772</a>.</p>
+</dd>
+<dt class="bibtex label" id="lanave-1984aa"><span class="brackets"><a class="fn-backref" href="#id10">LS84</a></span></dt>
+<dd><p>Cecilia Lanave and C Saccone. A New Method for Calculating Evolutionary Substitution Rates. <em>J Molecular Evolution</em>, 20:86–93, 1984.</p>
+</dd>
+<dt class="bibtex label" id="schranz-2008aa"><span class="brackets"><a class="fn-backref" href="#id18">SYE+08</a></span></dt>
+<dd><p>Harold W Schranz, Von Bing Yap, Simon Easteal, Rob Knight, and Gavin A Huttley. Pathological rate matrices: from primates to pathogens. <em>BMC Bioinformatics</em>, 9:550, Dec 2008. <a class="reference external" href="https://doi.org/10.1186/1471-2105-9-550">doi:10.1186/1471-2105-9-550</a>.</p>
+</dd>
+<dt class="bibtex label" id="verbyla-2013aa"><span class="brackets"><a class="fn-backref" href="#id21">VYP+13</a></span></dt>
+<dd><p>Klara L Verbyla, Von Bing Yap, Anuj Pahwa, Yunli Shao, and Gavin A Huttley. The embedding problem for Markov models of nucleotide substitution. <em>PLoS One</em>, 8:e69187, 2013. <a class="reference external" href="https://doi.org/10.1371/journal.pone.0069187">doi:10.1371/journal.pone.0069187</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hypothesis_testing.html" class="btn btn-neutral float-right" title="7.9. Hypothesis Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="max_likelihood.html" class="btn btn-neutral float-left" title="7.6. Statistical methods for molecular evolutionary analyses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
