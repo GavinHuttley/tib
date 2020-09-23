@@ -305,7 +305,7 @@ The results of this calculation are shown below with the log-likelihood on the |
         lengths.append(i)
         lnLs.append(lf.lnL)
 
-    fig = px.scatter(x=lengths, y=lnLs, labels=dict(x="Branch Length (<i>t</i>)", y="lnL"), width=700, height=400)
+    fig = px.line(x=lengths, y=lnLs, labels=dict(x="Branch Length (<i>t</i>)", y="lnL"), width=700, height=400)
     fig.show()
 
 The peak of these data points (when :math:`t \approx 0.015`) is the maximum likelihood. That is the value that maximises the likelihood and that value of |t| gets a special label – we call it the maximum likelihood estimator (or MLE) [#]_.
