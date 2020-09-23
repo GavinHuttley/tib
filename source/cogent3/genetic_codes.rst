@@ -37,6 +37,15 @@ or DNA triplet.
     aa = gc["TAC"]
     aa
 
+The mapping from codon to amino acid is provided by a ``sense_codons`` attribute of genetic code instance. So taking the list of that dict returns just the sense codons [#]_.
+
+.. [#] I'm truncating that list to just 4 elements to simplify the display.
+
+.. jupyter-execute::
+
+    list(gc.sense_codons)[:4]
+
+
 You can get all the codons that encode an amino acid.
 
 .. jupyter-execute::

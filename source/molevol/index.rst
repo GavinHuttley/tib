@@ -13,6 +13,9 @@ The notes for this topic are focussed principally on the biological and statisti
     data
     neutral_theory
     mutation
+    max_likelihood
+    substitution_models
+    hypothesis_testing
     glossary
 
 

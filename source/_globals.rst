@@ -1,27 +1,46 @@
 .. replacements
 
+.. |t| replace:: :math:`t`
+.. |P| replace:: :math:`{\mathbf{\rm P}}`
+.. |Pt| replace:: :math:`{\mathbf{\rm P}}(t)`
+.. |Q| replace:: :math:`{\mathbf{\rm Q}}`
 .. |kmer| replace:: :sup:`k`-mer
 .. |kmers| replace:: :sup:`k`-mers
 .. |5mC| replace:: :sup:`5`\ mC
-.. |AtoC| replace:: A→C
-.. |AtoG| replace:: A→G
-.. |AtoT| replace:: A→T
-.. |CtoA| replace:: C→A
-.. |CtoG| replace:: C→G
-.. |CtoT| replace:: C→T
-.. |GtoA| replace:: G→A
-.. |GtoC| replace:: G→C
-.. |GtoT| replace:: G→T
-.. |TtoA| replace:: T→A
-.. |TtoC| replace:: T→C
-.. |TtoG| replace:: T→G
+.. |AtoC| replace:: A\ :math:`\rightarrow`\ C
+.. |AtoG| replace:: A\ :math:`\rightarrow`\ G
+.. |AtoT| replace:: A\ :math:`\rightarrow`\ T
+.. |CtoA| replace:: C\ :math:`\rightarrow`\ A
+.. |CtoG| replace:: C\ :math:`\rightarrow`\ G
+.. |CtoT| replace:: C\ :math:`\rightarrow`\ T
+.. |GtoA| replace:: G\ :math:`\rightarrow`\ A
+.. |GtoC| replace:: G\ :math:`\rightarrow`\ C
+.. |GtoT| replace:: G\ :math:`\rightarrow`\ T
+.. |TtoA| replace:: T\ :math:`\rightarrow`\ A
+.. |TtoC| replace:: T\ :math:`\rightarrow`\ C
+.. |TtoG| replace:: T\ :math:`\rightarrow`\ G
 .. |CpGtoCpA| replace:: CpG→CpA
+.. |pi| replace:: :math:`{\mathbf \pi}`
+.. |alpha| replace:: :math:`\alpha`
+.. |beta| replace:: :math:`\beta`
+.. |omega| replace:: :math:`\omega`
+.. |gamma| replace:: :math:`\gamma`
+.. |Gamma| replace:: :math:`\Gamma`
+.. |delta| replace:: :math:`\delta`
+.. |epsilon| replace:: :math:`\epsilon`
+.. |zeta| replace:: :math:`\zeta`
+.. |kappa| replace:: :math:`\kappa`
+.. |theta| replace:: :math:`\kappa`
+.. |chisq| replace:: :math:`\chi^2`
 .. |yaxis| replace:: :math:`y`\ -axis
 .. |xaxis| replace:: :math:`x`\ -axis
 .. |pvalue| replace:: :math:`p`\ -value
 .. |pvalues| replace:: :math:`p`\ -values
 .. |Ho| replace:: :math:`H_o`
 .. |Ha| replace:: :math:`H_a`
+.. |lnL_alt| replace:: :math:`\ln \mathcal{L}_{\text{alt}}`
+.. |lnL_null| replace:: :math:`\ln \mathcal{L}_{\text{null}}`
+
 
 .. common URLs and replacements
 
@@ -35,6 +54,8 @@
 .. _text_book: http://greenteapress.com/wp/think-python-2e/
 .. |Sewall_Wright| replace:: Sewall Wright
 .. _Sewall_Wright: https://en.wikipedia.org/wiki/Sewall_Wright
+.. |matmul| replace:: matrix multiplication
+.. _matmul: https://en.wikipedia.org/wiki/Matrix_multiplication
 
 .. _ucsc: https://genome.ucsc.edu
 .. _ensembl: https://ensembl.org

@@ -35,7 +35,7 @@ You can see that the object displays the observed (what we provided), expected v
     result = counts.G_fit()
     result
 
-The statistic, degrees-of-freedom and associated |pvalue| are all accessible as attributes on the ``result`` object.
+The statistic, degrees of freedom and associated |pvalue| are all accessible as attributes on the ``result`` object.
 
 .. jupyter-execute::
 
@@ -113,7 +113,7 @@ We will evaluate these data.
     x = (44.4, 45.9, 41.9, 53.3, 44.4, 44.1, 50.7, 45.2, 60.1)
     y = (2.6, 3.1, 2.5, 5.0, 3.6, 4.0, 5.2, 2.8, 3.8)
 
-Compute the Pearson product-moment correlation coefficient and it's |pvalue| (taken from the :math:`t`-distribution assuming the degrees-of-freedom equals n-2).
+Compute the Pearson product-moment correlation coefficient and it's |pvalue| (taken from the :math:`t`-distribution assuming the degrees of freedom equals n-2).
 
 .. jupyter-execute::
 
