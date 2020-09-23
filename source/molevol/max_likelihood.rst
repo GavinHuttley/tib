@@ -273,10 +273,10 @@ I'll give you a stripped down example of how this sort of operates. Let's make s
 
 - a :ref:`star phylogeny <star_tree>` for three taxa
 - the branch length on each edge is identical (so there's only one length)
-- the sequences evolve according to the Jukes Cantor substitution model (a very simple model).
+- the sequences evolve according to the Jukes Cantor substitution model (a very simple model, :ref:`jc69`).
 - Jukes-Cantor assumes the nucleotides occur with equal frequency in the ancestor
 
-So we only have one free parameter, the branch length which I will refer to as |t|. I am now going to st\yart with |t|\ =0.001. I compute my |P| matrix for that value of time and then the conditional probability of observing an alignment. I increment |t| by 0.001 and repeat.
+So we only have one free parameter, the branch length which I will refer to as |t|. I am now going to start with |t|\ =0.001. I compute my |P| matrix for that value of time and then the conditional probability of observing an alignment. I increment |t| by 0.001 and repeat.
 
 The results of this calculation are shown below with the log-likelihood on the |yaxis| and the branch length (|t|) on the |xaxis|. This is a brute-force "line search" and not how we normally do things!
 
@@ -312,7 +312,7 @@ The peak of these data points (when :math:`t \approx 0.015`) is the maximum like
 
 .. [#] Maximum likelihood estimators are typically denoted the caret character as :math:`\hat t`.
 
-When you have a really complex function, a probability model with lots of parameters, you don't have one line search, you have a line for every parameter! Numerical optimisation algorithms handle that. It's a bit of magic, and it's definitely beyond the scope of this course.
+When you have a really complex function, a probability model with lots of parameters, you don't have one line search, you have a line search for every parameter! Numerical optimisation algorithms handle that. It's a bit of magic, and it's definitely beyond the scope of this course.
 
 What are we actually measuring?
 -------------------------------

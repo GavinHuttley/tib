@@ -38,7 +38,7 @@ Recall the following equation.
 
     P_t = \exp^{Q}
 
-This shows how the substitution probabilities needed to compute a likelihood are obtained from a rate matrix |Q|. The properties of |P| are that all elements are valid probabilities and the row sums are 1. There are constraints on the construction of |Q| such that the equation generates a valid |P|. Those constraints are:
+This shows how the substitution probabilities needed to compute a likelihood are obtained from a rate matrix |Q|. The properties of |P| are that all elements are valid probabilities and the row sums are 1. There are constraints on the construction of |Q| such that it can be used to generate a valid |P|. Those constraints are:
 
 - off-diagonal elements are positive
 - row sums are 0
@@ -207,7 +207,7 @@ Let us set |pi|\ :math:`(0)` as the base frequencies at the beginning of our tim
 
      {\mathbf \pi}(t) = {\mathbf \pi}(0) \cdot {\mathbf {\rm P}}(t)
 
-where ":math:`\cdot`" is |matmul|_ [#]_. If |pi|\ :math:`(0)` equals |pi|\ :math:`(t)` then the base frequencies have not changed and we can state that |pi| is the stationary frequency vector of |P|. This is the condition of stationarity.
+where ":math:`\cdot`" is |matmul|_ [#]_. If |pi|\ :math:`(0)` equals |pi|\ :math:`(t)` then the base frequencies have not changed and we can state that |pi|\ :math:`(0)` is the stationary frequency vector of |P|. This is the condition of stationarity. For simplicity, we just denote this stationary vector as |pi|.
 
 .. [#] Matrix multiplication is also often referred to as a "dot product". This is available in ``numpy`` as ``numpy.dot()`` or using the  ``@`` symbol, e.g. ``pi @ Q``.
 
@@ -230,7 +230,7 @@ For the models I'm presenting, exchangeability parameters are applied "multiplic
 
 .. [#] This is not a strict requirement of continuous-time Markov processes.
 
-The multiplicative construction of the rate matrices also provides guidance for interpreting parameter estimates from a model. Parameters whose estimate is <1 are reducing the instantaneous rate of change compared to the other elements in the model. The converse applies when they are > 1.
+The multiplicative construction of the rate matrices also provides guidance for interpreting parameter estimates from a model. Parameters whose estimate is <1 are reducing the instantaneous rate of change for the substitutions they influence compared to the remainder. The converse applies when they are > 1.
 
 As you will see below, we typically define one exchangeability parameter as the reference parameter, setting it to the value 1. This effectively means that all other exchangeability parameters are relative to this term. Which parameter is chosen to be the reference is arbitrary. This strategy is used to allow including a time parameter in our models of sequence evolution.
 
@@ -239,7 +239,7 @@ As you will see below, we typically define one exchangeability parameter as the 
 
 What we call "time" in molecular evolution is not chronological time as we know it in our daily lives, but a measure of sequence change. Recall that Kimura showed the rate of substitution is equal to the neutral mutation rate for neutrally evolving genetic variants. Time comes into this via the neutral mutation rate as this quantity is measured as the probability of mutation *per generation*.
 
-We measure time (|t|) as the *expected number of substitutions* per position. This is a product of the amount of elapsed chronological time and the mutation rate. For a stationary Markov process, we obtain the expected number of substitutions by multiplying the base frequencies by the *flow* away from the base (the diagonal element of |Q|) [#]_.
+In molecular evolutionary analyses, we measure time (|t|) as the *expected number of substitutions* per position. This is a product of the amount of elapsed chronological time and the mutation rate. For a stationary Markov process, we obtain the expected number of substitutions by multiplying the base frequencies by the *flow* away from the base (the diagonal element of |Q|) [#]_.
 
 .. [#] For a non-stationary Markov process, the calculation is trickier :cite:`Kaehler:2015aa`.
 
@@ -263,7 +263,7 @@ The calibration step involves calculating |t| for a given |Q| according to the e
 
 There is a major computational advantage of this approach. Specifically, the eigendecomposition_ algorithm for matrix exponentiation allows us to do the algorithmically "hard part" once for an entire tree and store the next to final step in the computation :cite:`Schranz:2008aa`. That final step — producing the different substitution probability matrices for edges with different |t| (|P|\ :math:`(t)`) — is very efficiently obtained by applying the corresponding branch length to this intermediate product.
 
-By specifying time as a parameter in our models, we must eliminate another parameter in to avoid over specifying the model [#]_. This is achieved by selecting a reference exchangeability parameter and setting it to 1.
+By specifying time as a parameter in our models, we must eliminate another parameter to avoid over specifying the model [#]_. This is achieved by selecting a reference exchangeability parameter and setting it to 1.
 
 .. [#] This basically means adding more parameters than the model can possibly accomodate.
 
@@ -279,7 +279,7 @@ stationary
     The sequence composition, or frequencies of the states, is the same across the data set. An assumption of all time-reversible models and some others too. This becomes less likely with increasing time since species shared a common ancestor.
 
 time-homogeneous
-    The substitution process remains the same *along* each branch. Translated, this means the same intrinsic dynamics governing mutation, and therefore substitution, operate across all the lineages that we might be analysing. If the lineages are relatively closely related then this seems a pretty reasonable assumption. As you increase the time depth of your sample, the potential for changes affecting mutation increase. Accordingly, in such circumstances this property should be checked for :cite:`Verbyla:2013aa`.
+    The substitution process remains the same *along* each branch. Translated, this means the same intrinsic dynamics governing mutation, and therefore substitution, operate across the entire branch for every branch that we might be analysing. If the lineages aren't too long then this seems a pretty reasonable assumption. If we assume a single rate matrix for the entire tree we are further assuming the mutation and substitution processes have not changed between the different edges. As you increase the time depth of your sample, this assumption can be more problematic since the potential for changes affecting mutation increase. Accordingly, in such circumstances this property should be checked for :cite:`Verbyla:2013aa`.
 
 Exercises
 =========
