@@ -340,7 +340,7 @@ Independent and identically distributed, or iid
 Independence between lineages (branches)
     We assume that the different lineages on a tree are not interacting with each other in some way that's affecting the substitution rate.
 
-There are other assumptions of the substitution models which we will cover in those sections.
+.. note:: There are other assumptions of the substitution models which we will cover in that section.
 
 ------
 
