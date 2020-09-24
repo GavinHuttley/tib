@@ -22,11 +22,11 @@ We have focussed, thus far, on developing an understanding of programming logic 
     moltype
     tables
     statistical_tests
+    apps
+    using_models
 
 .. todo:: json
     serialisation
-
-.. todo:: the apps
 
 .. todo:: advanced sequence and alignment
 

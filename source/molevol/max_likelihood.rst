@@ -305,7 +305,7 @@ The results of this calculation are shown below with the log-likelihood on the |
         lengths.append(i)
         lnLs.append(lf.lnL)
 
-    fig = px.scatter(x=lengths, y=lnLs, labels=dict(x="Branch Length (<i>t</i>)", y="lnL"), width=700, height=400)
+    fig = px.line(x=lengths, y=lnLs, labels=dict(x="Branch Length (<i>t</i>)", y="lnL"), width=700, height=400)
     fig.show()
 
 The peak of these data points (when :math:`t \approx 0.015`) is the maximum likelihood. That is the value that maximises the likelihood and that value of |t| gets a special label – we call it the maximum likelihood estimator (or MLE) [#]_.
@@ -317,9 +317,13 @@ When you have a really complex function, a probability model with lots of parame
 What are we actually measuring?
 -------------------------------
 
-We are measuring changes in sequence through time. The sequences change under the influence of the :ref:`processes illustrated earlier <mutant_fate>`. The genetic differences we observe between species arise from mutagenic events that happened in the cells that produce the sex cells. Events that occur in the cells that make up the germline are those that shape the distribution of genetic variation in the next generation. So it's lesions and repair in the germline that give rise to mutations. The processes that shape those events shape polymorphism and the processes that shape polymorphism shape substitutions. 
+In a statistical sense, when using a likelihood model we are fitting it to the distribution of distinct alignment columns. For example, the :ref:`alignment shown above <tree_align_p>` has 5 distinct alignment columns. In our working through the calculation of the likelihood for an alignment column above, we produced a :math:`\mathcal{L}_i`, the likelihood value for alignment column :math:`i`. This value is the expected frequency of that alignment column under the model.
 
-So what we are measuring with these simple models, ultimately, is the aggregate of all of these effects.
+Our model arrives at those expected values by specifying the relationships amongst the sequences (the tree) and the way sequences change through time (the substitution model). So the model is measuring variation in the sequence through time.
+
+In a biological sense, it is the factors that influence genetic variation that we measure. Those changes arise from the influence of the :ref:`processes illustrated earlier <mutant_fate>`. When we compare sequences between vertebrate species, for instance, we are observing genetic differences that originated from mutagenic events in sex cells. It is events that occur in the germline that shape the distribution of genetic variation in the next generation. The formation of DNA lesions and their repair in the germline that give rise to mutations and the processes that shape those events shape polymorphism and the processes that shape polymorphism shape substitutions. With these simple models, we measure the aggregate of all of these factors.
+
+Precisely how much we can learn about the origins of genetic variation depends on the model of sequence change that we use. In other words, it is the definition of our substitution models that dictates what information we can extract from genetic variation. We will address that in the next section.
 
 Assumptions
 -----------
