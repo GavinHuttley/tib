@@ -95,6 +95,8 @@ Sounds like the cartoon at the top doesn't it! Anyway, it is widespread and an i
      2  ctg123 . gene            1000  9000  .  +  .  ID=gene00001;Name=EDEN
      3  ctg123 . TF_binding_site 1000  1012  .  +  .  ID=tfbs00001;Parent=gene00001
 
+.. _newick:
+
 newick format for phylogenetic trees
 ------------------------------------
 

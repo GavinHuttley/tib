@@ -1,0 +1,1443 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8.11. Modelling sequence evolution &mdash; Topics in Bioinformatics 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Index" href="../genindex.html" />
+    <link rel="prev" title="8.10. Overview of cogent3 apps" href="apps.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_formats.html">8.1. Biological Data Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html">8.2. Alignments, Sequence Collections and Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html#exercises">8.3. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.4. Exploring genetic variation using Alignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html#exercises">8.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="genetic_codes.html">8.6. Genetic Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moltype.html">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">8.8. Tabular data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_tests.html">8.9. Statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html">8.10. Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.11. Modelling sequence evolution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-model-app">8.11.1. Using the <code class="docutils literal notranslate"><span class="pre">model</span></code> app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model-result">8.11.2. <code class="docutils literal notranslate"><span class="pre">model_result</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#motif-params-are-the-state-probabilities">8.11.3. Motif params are the state probabilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#refining-the-model-app-settings">8.11.4. Refining the model app settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#optimising-the-motif-probabilities">8.11.4.1. Optimising the motif probabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constraining-a-substitution-model-parameter">8.11.4.2. Constraining a substitution model parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-hypotheses-using-the-hypothesis-app">8.11.5. Testing hypotheses using the <code class="docutils literal notranslate"><span class="pre">hypothesis</span></code> app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hypothesis-result">8.11.6. <code class="docutils literal notranslate"><span class="pre">hypothesis_result</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-notcompleted-object">8.11.7. The <code class="docutils literal notranslate"><span class="pre">NotCompleted</span></code> object</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">8.12. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">9. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a> &raquo;</li>
+        
+      <li><span class="section-number">8.11. </span>Modelling sequence evolution</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/using_models.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="section" id="modelling-sequence-evolution">
+<h1><span class="section-number">8.11. </span>Modelling sequence evolution<a class="headerlink" href="#modelling-sequence-evolution" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">cogent3</span></code> has a lot of substitution models! The following displays just the nucleotide models.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">available_models</span>
+
+<span class="n">available_models</span><span class="p">(</span><span class="n">model_types</span><span class="o">=</span><span class="s2">&quot;nucleotide&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Specify a model using 'Abbreviation' (case sensitive).</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>Model Type</th>
+<th>Abbreviation</th>
+<th>Description</th>
+</thead>
+<tbody>
+<tr>
+<td>nucleotide</td>
+<td>JC69</td>
+<td>Jukes and Cantor's 1969 model</td>
+</tr>
+<tr>
+<td>nucleotide</td>
+<td>K80</td>
+<td>Kimura 1980</td>
+</tr>
+<tr>
+<td>nucleotide</td>
+<td>F81</td>
+<td>Felsenstein's 1981 model</td>
+</tr>
+<tr>
+<td>nucleotide</td>
+<td>HKY85</td>
+<td>Hasegawa, Kishino and Yano 1985 model</td>
+</tr>
+<tr>
+<td>nucleotide</td>
+<td>TN93</td>
+<td>Tamura and Nei 1993 model</td>
+</tr>
+<tr>
+<td>nucleotide</td>
+<td>GTR</td>
+<td>General Time Reversible nucleotide substitution model.</td>
+</tr>
+<tr>
+<td>nucleotide</td>
+<td>ssGN</td>
+<td>strand-symmetric general Markov nucleotide (non-stationary, non-reversible). Kaehler, 2017, Journal of Theoretical Biology 420: 144–51</td>
+</tr>
+<tr>
+<td>nucleotide</td>
+<td>GN</td>
+<td>General Markov Nucleotide (non-stationary, non-reversible). Kaehler, Yap, Zhang, Huttley, 2015, Sys Biol 64 (2): 281–93</td>
+</tr>
+<tr>
+<td>nucleotide</td>
+<td>BH</td>
+<td>Barry and Hartigan Discrete Time substitution model Barry and Hartigan 1987. Biometrics 43: 261–76.</td>
+</tr>
+<tr>
+<td>nucleotide</td>
+<td>DT</td>
+<td>Discrete Time substitution model (non-stationary, non-reversible). motif_length=2 makes this a dinucleotide model, motif_length=3 a trinucleotide model.</td>
+</tr>
+</tbody>
+</table>
+<p>
+10 rows x 3 columns</p>
+</div></div></div>
+</div>
+<p>These are <a class="reference internal" href="apps.html#apps"><span class="std std-ref">cogent3 apps</span></a>. There’s also an app for performing hypothesis testing using these models.</p>
+<div class="section" id="using-the-model-app">
+<h2><span class="section-number">8.11.1. </span>Using the <code class="docutils literal notranslate"><span class="pre">model</span></code> app<a class="headerlink" href="#using-the-model-app" title="Permalink to this headline">¶</a></h2>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">model</span></code> app involves specifying the substitution model name and a tree. If you are analysing just 3 sequences, the tree is not required. Otherwise, the tree can be a path to a file or a <a class="reference internal" href="data_formats.html#newick"><span class="std std-ref">newick formatted string</span></a>.</p>
+<p>The resulting model instance can then be called as if it was a function, passing it an alignment instance. It will maximise the likelihood of the model for the alignment and return a custom result data type.</p>
+<p>I’m creating an app to apply the <a class="reference internal" href="../molevol/substitution_models.html#f81"><span class="std std-ref">F81</span></a> substitution model to an alignment and specifying the a tree as a file path.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3.app</span> <span class="kn">import</span> <span class="n">evo</span>
+
+<span class="n">f81</span> <span class="o">=</span> <span class="n">evo</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s2">&quot;F81&quot;</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="s2">&quot;data/brca1_primate.tree&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are providing a tree, the tip names must exactly match the names in the alignments that will be analysed.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are analysing 3 sequences, there is only one possible unrooted tree and the model object will automatically construct it for you.</p>
+</div>
+<p>We now load our alignment and fit the model to it.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">load_aligned_seqs</span>
+
+<span class="n">aln</span> <span class="o">=</span> <span class="n">load_aligned_seqs</span><span class="p">(</span><span class="s2">&quot;data/brca1_primate.fasta&quot;</span><span class="p">,</span> <span class="n">moltype</span><span class="o">=</span><span class="s2">&quot;dna&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">f81</span><span class="p">(</span><span class="n">aln</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="section" id="model-result">
+<h2><span class="section-number">8.11.2. </span><code class="docutils literal notranslate"><span class="pre">model_result</span></code><a class="headerlink" href="#model-result" title="Permalink to this headline">¶</a></h2>
+<p>The app returns a <code class="docutils literal notranslate"><span class="pre">model_result</span></code> object whose representation provides an overview of the fitted model.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">F81</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>key</th>
+<th>lnL</th>
+<th>nfp</th>
+<th>DLC</th>
+<th>unique_Q</th>
+</thead>
+<tbody>
+<tr>
+<td>'F81'</td>
+<td>-7175.7756</td>
+<td>11</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>The column titles in that summary display have the following meaning</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>Column Heading</th>
+<th></th>
+</thead>
+<tbody>
+<tr>
+<td class="index">key</td>
+<td>The dictionary key for accessing this model</td>
+</tr>
+<tr>
+<td class="index">lnL</td>
+<td>The log-likelihood value</td>
+</tr>
+<tr>
+<td class="index">nfp</td>
+<td>The number of free parameters in the model</td>
+</tr>
+<tr>
+<td class="index">DLC</td>
+<td>Diagonal largest in column in all P matrices.</td>
+</tr>
+<tr>
+<td class="index">unique_Q</td>
+<td>Whether the Q uniquely map to P</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>The last two are concerned with model identifiability (if either is <code class="docutils literal notranslate"><span class="pre">False</span></code>, the results could be unreliable).</p>
+<p>To see the parameter MLEs, we access the <code class="docutils literal notranslate"><span class="pre">lf</span></code> attribute <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This attribute is a special cogent3 type which has capabilities for deeper interrogation of model parameters.</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">lf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><h4>F81</h4>
+<p>log-likelihood = -7175.7756</p>
+<p>number of free parameters = 11</p>
+<style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Edge params</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>edge</th>
+<th>parent</th>
+<th>length</th>
+</thead>
+<tbody>
+<tr>
+<td>Galago</td>
+<td>root</td>
+<td>0.1666</td>
+</tr>
+<tr>
+<td>HowlerMon</td>
+<td>root</td>
+<td>0.0438</td>
+</tr>
+<tr>
+<td>Rhesus</td>
+<td>edge.3</td>
+<td>0.0215</td>
+</tr>
+<tr>
+<td>Orangutan</td>
+<td>edge.2</td>
+<td>0.0077</td>
+</tr>
+<tr>
+<td>Gorilla</td>
+<td>edge.1</td>
+<td>0.0025</td>
+</tr>
+<tr>
+<td>Human</td>
+<td>edge.0</td>
+<td>0.0061</td>
+</tr>
+<tr>
+<td>Chimpanzee</td>
+<td>edge.0</td>
+<td>0.0028</td>
+</tr>
+<tr>
+<td>edge.0</td>
+<td>edge.1</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>edge.1</td>
+<td>edge.2</td>
+<td>0.0035</td>
+</tr>
+<tr>
+<td>edge.2</td>
+<td>edge.3</td>
+<td>0.0117</td>
+</tr>
+<tr>
+<td>edge.3</td>
+<td>root</td>
+<td>0.0085</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Motif params</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td>0.3757</td>
+<td>0.1742</td>
+<td>0.2095</td>
+<td>0.2406</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>We can get all those statistics out as <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> tables using the <code class="docutils literal notranslate"><span class="pre">tabulate_stats</span></code> app</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tabulate</span> <span class="o">=</span> <span class="n">evo</span><span class="o">.</span><span class="n">tabulate_stats</span><span class="p">()</span>
+<span class="n">tables</span> <span class="o">=</span> <span class="n">tabulate</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">tables</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2x tabular_result(&#39;edge params&#39;: Table, &#39;motif params&#39;: Table)
+</pre></div>
+</div>
+</div>
+</div>
+<p>which allows us to get at the parts from the <code class="docutils literal notranslate"><span class="pre">lf</span></code> display</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;edge params&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">edge params</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>edge</th>
+<th>parent</th>
+<th>length</th>
+</thead>
+<tbody>
+<tr>
+<td>Galago</td>
+<td>root</td>
+<td>0.1666</td>
+</tr>
+<tr>
+<td>HowlerMon</td>
+<td>root</td>
+<td>0.0438</td>
+</tr>
+<tr>
+<td>Rhesus</td>
+<td>edge.3</td>
+<td>0.0215</td>
+</tr>
+<tr>
+<td>Orangutan</td>
+<td>edge.2</td>
+<td>0.0077</td>
+</tr>
+<tr>
+<td>Gorilla</td>
+<td>edge.1</td>
+<td>0.0025</td>
+</tr>
+<tr>
+<td>Human</td>
+<td>edge.0</td>
+<td>0.0061</td>
+</tr>
+<tr>
+<td>Chimpanzee</td>
+<td>edge.0</td>
+<td>0.0028</td>
+</tr>
+<tr>
+<td>edge.0</td>
+<td>edge.1</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>edge.1</td>
+<td>edge.2</td>
+<td>0.0035</td>
+</tr>
+<tr>
+<td>edge.2</td>
+<td>edge.3</td>
+<td>0.0117</td>
+</tr>
+<tr>
+<td>edge.3</td>
+<td>root</td>
+<td>0.0085</td>
+</tr>
+</tbody>
+</table>
+<p>
+11 rows x 3 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="motif-params-are-the-state-probabilities">
+<h2><span class="section-number">8.11.3. </span>Motif params are the state probabilities<a class="headerlink" href="#motif-params-are-the-state-probabilities" title="Permalink to this headline">¶</a></h2>
+<p>The “motif params” table has the state frequencies in the unobserved ancestor of the alignment. More generally, <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> uses the variable <code class="docutils literal notranslate"><span class="pre">motif_probs</span></code> to denote this. For instance, the alignment has a method for getting this. In that case, the values are the average across all sequences.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">get_motif_probs</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;T&#39;: 0.24063356685957965,
+ &#39;C&#39;: 0.17418011980911768,
+ &#39;A&#39;: 0.37572342369783734,
+ &#39;G&#39;: 0.20946288963346532}
+</pre></div>
+</div>
+</div>
+</div>
+<p>With default model settings, the values returned by the model will be the same as this.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;motif params&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">motif params</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td>0.3757</td>
+<td>0.1742</td>
+<td>0.2095</td>
+<td>0.2406</td>
+</tr>
+</tbody>
+</table>
+<p>
+1 rows x 4 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="refining-the-model-app-settings">
+<h2><span class="section-number">8.11.4. </span>Refining the model app settings<a class="headerlink" href="#refining-the-model-app-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="optimising-the-motif-probabilities">
+<h3><span class="section-number">8.11.4.1. </span>Optimising the motif probabilities<a class="headerlink" href="#optimising-the-motif-probabilities" title="Permalink to this headline">¶</a></h3>
+<p>For continuous-time substitution models, the default <code class="docutils literal notranslate"><span class="pre">model</span></code> settings are that the process is time-homogeneous (one rate matrix for the entire tree) and <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span>, the state (or motif) probabilities at the root is just that returned by the alignment method. The latter can be changed so that the motif probabilities are treated as free parameters and optimised.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f81_mprobs</span> <span class="o">=</span> <span class="n">evo</span><span class="o">.</span><span class="n">model</span><span class="p">(</span>
+    <span class="s2">&quot;F81&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;F81-mprobs free&quot;</span><span class="p">,</span>
+    <span class="n">sm_args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">optimise_motif_probs</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">tree</span><span class="o">=</span><span class="s2">&quot;data/brca1_primate.tree&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">f81_mprobs</span><span class="p">(</span><span class="n">aln</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>Note that the number of free parameters has now increased by 3.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">F81-mprobs free</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>key</th>
+<th>lnL</th>
+<th>nfp</th>
+<th>DLC</th>
+<th>unique_Q</th>
+</thead>
+<tbody>
+<tr>
+<td>'F81-mprobs free'</td>
+<td>-7174.8445</td>
+<td>14</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>and that the motif probs are different to those above.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">lf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><h4>F81-mprobs free</h4>
+<p>log-likelihood = -7174.8445</p>
+<p>number of free parameters = 14</p>
+<style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Edge params</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>edge</th>
+<th>parent</th>
+<th>length</th>
+</thead>
+<tbody>
+<tr>
+<td>Galago</td>
+<td>root</td>
+<td>0.1666</td>
+</tr>
+<tr>
+<td>HowlerMon</td>
+<td>root</td>
+<td>0.0438</td>
+</tr>
+<tr>
+<td>Rhesus</td>
+<td>edge.3</td>
+<td>0.0215</td>
+</tr>
+<tr>
+<td>Orangutan</td>
+<td>edge.2</td>
+<td>0.0077</td>
+</tr>
+<tr>
+<td>Gorilla</td>
+<td>edge.1</td>
+<td>0.0025</td>
+</tr>
+<tr>
+<td>Human</td>
+<td>edge.0</td>
+<td>0.0061</td>
+</tr>
+<tr>
+<td>Chimpanzee</td>
+<td>edge.0</td>
+<td>0.0028</td>
+</tr>
+<tr>
+<td>edge.0</td>
+<td>edge.1</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>edge.1</td>
+<td>edge.2</td>
+<td>0.0035</td>
+</tr>
+<tr>
+<td>edge.2</td>
+<td>edge.3</td>
+<td>0.0117</td>
+</tr>
+<tr>
+<td>edge.3</td>
+<td>root</td>
+<td>0.0085</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Motif params</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td>0.3744</td>
+<td>0.1755</td>
+<td>0.2170</td>
+<td>0.2331</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+</div>
+<div class="section" id="constraining-a-substitution-model-parameter">
+<h3><span class="section-number">8.11.4.2. </span>Constraining a substitution model parameter<a class="headerlink" href="#constraining-a-substitution-model-parameter" title="Permalink to this headline">¶</a></h3>
+<p>If we wish to modify the definition of a likelihood function we need to set rules for the parameter of interest. We do this using the <code class="docutils literal notranslate"><span class="pre">param_rules</span></code> argument to <code class="docutils literal notranslate"><span class="pre">model()</span></code>.</p>
+<p>Let’s create a new instance of the HKY85 and constrain the likelihood function so that it is F81. To do that, we need to set the <span class="math notranslate nohighlight">\(\kappa\)</span> parameter to be equal to 1, and constant (so the numerical optimiser does not modify it during it’s work).</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hky_as_f81</span> <span class="o">=</span> <span class="n">evo</span><span class="o">.</span><span class="n">model</span><span class="p">(</span>
+    <span class="s2">&quot;HKY85&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HKY85 with κ=1&quot;</span><span class="p">,</span>
+    <span class="n">tree</span><span class="o">=</span><span class="s2">&quot;data/brca1_primate.tree&quot;</span><span class="p">,</span>
+    <span class="n">param_rules</span><span class="o">=</span><span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">par_name</span><span class="o">=</span><span class="s2">&quot;kappa&quot;</span><span class="p">,</span> <span class="n">is_constant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">)],</span>
+<span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">hky_as_f81</span><span class="p">(</span><span class="n">aln</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">HKY85 with κ=1</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>key</th>
+<th>lnL</th>
+<th>nfp</th>
+<th>DLC</th>
+<th>unique_Q</th>
+</thead>
+<tbody>
+<tr>
+<td>'HKY85 with κ=1'</td>
+<td>-7175.7756</td>
+<td>11</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>As there can be more than one parameter rule applied to a function, we provide them as a list. Each element of the list must be a dictionary with at least one key <code class="docutils literal notranslate"><span class="pre">&quot;par_name&quot;</span></code>. This is the name of the parameter we wish to modify and the value must be a string. The <code class="docutils literal notranslate"><span class="pre">is_constant</span></code> key with value <code class="docutils literal notranslate"><span class="pre">True</span></code> sets that parameter as a constant with <code class="docutils literal notranslate"><span class="pre">value=1</span></code>.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">lf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><h4>HKY85 with κ=1</h4>
+<p>log-likelihood = -7175.7756</p>
+<p>number of free parameters = 11</p>
+<style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Global params</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>kappa</th>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Edge params</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>edge</th>
+<th>parent</th>
+<th>length</th>
+</thead>
+<tbody>
+<tr>
+<td>Galago</td>
+<td>root</td>
+<td>0.1666</td>
+</tr>
+<tr>
+<td>HowlerMon</td>
+<td>root</td>
+<td>0.0438</td>
+</tr>
+<tr>
+<td>Rhesus</td>
+<td>edge.3</td>
+<td>0.0215</td>
+</tr>
+<tr>
+<td>Orangutan</td>
+<td>edge.2</td>
+<td>0.0077</td>
+</tr>
+<tr>
+<td>Gorilla</td>
+<td>edge.1</td>
+<td>0.0025</td>
+</tr>
+<tr>
+<td>Human</td>
+<td>edge.0</td>
+<td>0.0061</td>
+</tr>
+<tr>
+<td>Chimpanzee</td>
+<td>edge.0</td>
+<td>0.0028</td>
+</tr>
+<tr>
+<td>edge.0</td>
+<td>edge.1</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>edge.1</td>
+<td>edge.2</td>
+<td>0.0035</td>
+</tr>
+<tr>
+<td>edge.2</td>
+<td>edge.3</td>
+<td>0.0117</td>
+</tr>
+<tr>
+<td>edge.3</td>
+<td>root</td>
+<td>0.0085</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Motif params</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>A</th>
+<th>C</th>
+<th>G</th>
+<th>T</th>
+</thead>
+<tbody>
+<tr>
+<td>0.3757</td>
+<td>0.1742</td>
+<td>0.2095</td>
+<td>0.2406</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>From that you can see the lnL and nfp are identical to our first fitting of the F81 model. While the display includes “kappa”, it has the value 1 and was not changed by the optimiser.</p>
+</div>
+</div>
+<div class="section" id="testing-hypotheses-using-the-hypothesis-app">
+<h2><span class="section-number">8.11.5. </span>Testing hypotheses using the <code class="docutils literal notranslate"><span class="pre">hypothesis</span></code> app<a class="headerlink" href="#testing-hypotheses-using-the-hypothesis-app" title="Permalink to this headline">¶</a></h2>
+<p>To perform a hypothesis test, we need two models. I will create a <a class="reference internal" href="../molevol/substitution_models.html#hky85"><span class="std std-ref">HKY85</span></a> model which will serve as our alternate to the null of F81.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hky85</span> <span class="o">=</span> <span class="n">evo</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s2">&quot;HKY85&quot;</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="s2">&quot;data/brca1_primate.tree&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>We construct the hypothesis app by providing the null and alternate models.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hyp</span> <span class="o">=</span> <span class="n">evo</span><span class="o">.</span><span class="n">hypothesis</span><span class="p">(</span><span class="n">f81</span><span class="p">,</span> <span class="n">hky85</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>We apply it to our alignment.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">hyp</span><span class="p">(</span><span class="n">aln</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">hypothesis</span></code> app fits both models to the alignment. One important point to make is, in the case of nested models, it will use the MLEs from the null as “seed” values to alternate as a pre-step to numerical optimisation. This is done for 2 reasons. First, it typically speeds up fitting. Second, it guarantees the likelihood from the alternate will be ≥ that of the null.</p>
+</div>
+<div class="section" id="hypothesis-result">
+<h2><span class="section-number">8.11.6. </span><code class="docutils literal notranslate"><span class="pre">hypothesis_result</span></code><a class="headerlink" href="#hypothesis-result" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">hypothesis</span></code> app returns a <code class="docutils literal notranslate"><span class="pre">hypothesis_result</span></code> object, which also provides an overview of the hypothesis test outcome.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">Statistics</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>LR</th>
+<th>df</th>
+<th>pvalue</th>
+</thead>
+<tbody>
+<tr>
+<td>341.8375</td>
+<td>1</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>hypothesis</th>
+<th>key</th>
+<th>lnL</th>
+<th>nfp</th>
+<th>DLC</th>
+<th>unique_Q</th>
+</thead>
+<tbody>
+<tr>
+<td>null</td>
+<td>'F81'</td>
+<td>-7175.7756</td>
+<td>11</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>'HKY85'</td>
+<td>-7004.8569</td>
+<td>12</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>The column titles in that summary display have the following meaning</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<thead class="head_cell">
+<th>Column Heading</th>
+<th></th>
+</thead>
+<tbody>
+<tr>
+<td class="index">LR</td>
+<td>Likelihood ratio statistic</td>
+</tr>
+<tr>
+<td class="index">df</td>
+<td>degrees of freedom</td>
+</tr>
+<tr>
+<td class="index">pvalue</td>
+<td>p-value</td>
+</tr>
+<tr>
+<td class="index">hypothesis</td>
+<td>null or alternate</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p>The LR statistic (computed <a class="reference internal" href="../molevol/hypothesis_testing.html#likelihood-ratio"><span class="std std-ref">using this equation</span></a>) and df are computed from the <code class="docutils literal notranslate"><span class="pre">lnL</span></code> and <code class="docutils literal notranslate"><span class="pre">nfp</span></code> values, respectively, of the different models under “hypothesis”. The p-value is the probability that LR ≤ a statistic from the theoretical <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution with df degrees of freedom.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">model_result</span></code> for each of the models is available as <code class="docutils literal notranslate"><span class="pre">.null</span></code> and <code class="docutils literal notranslate"><span class="pre">.alt</span></code> attributes.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">alt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">HKY85</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>key</th>
+<th>lnL</th>
+<th>nfp</th>
+<th>DLC</th>
+<th>unique_Q</th>
+</thead>
+<tbody>
+<tr>
+<td>'HKY85'</td>
+<td>-7004.8569</td>
+<td>12</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">hypothesis_result</span></code> also behaves like a dictionary, with the keys being the model name. So this display is identical to the previous one.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;HKY85&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.c3table table {margin: 10px 0;}
+.c3table tr:last-child {border-bottom: 1px solid #000;} 
+.c3table tr > th {text-align: center !important; padding: 0 5px;}
+.c3table tr > td {text-align: right !important; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7;}
+.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
+.c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
+.c3table .cell_title {font-weight: bold;}
+</style>
+<div class="c3table">
+<table>
+<caption><span class="cell_title">HKY85</span><br><span class="cell_legend"></span></caption>
+<thead class="head_cell">
+<th>key</th>
+<th>lnL</th>
+<th>nfp</th>
+<th>DLC</th>
+<th>unique_Q</th>
+</thead>
+<tbody>
+<tr>
+<td>'HKY85'</td>
+<td>-7004.8569</td>
+<td>12</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+
+</div></div></div>
+</div>
+</div>
+<div class="section" id="the-notcompleted-object">
+<h2><span class="section-number">8.11.7. </span>The <code class="docutils literal notranslate"><span class="pre">NotCompleted</span></code> object<a class="headerlink" href="#the-notcompleted-object" title="Permalink to this headline">¶</a></h2>
+<p>If your analysis returns one of these, it means there was an error or the algorithm could not complete. That object contains information about where the error occurred and what type it was. See the <a class="reference external" href="https://cogent3.org/doc/app/not-completed.html">cogent3 documentation</a> for more details.</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<h1><span class="section-number">8.12. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>Repeat the hypothesis test, but configure both models so that the motif probabilities are optimised.</p></li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../genindex.html" class="btn btn-neutral float-right" title="9. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="apps.html" class="btn btn-neutral float-left" title="8.10. Overview of cogent3 apps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gavin Huttley
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
