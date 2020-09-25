@@ -86,6 +86,16 @@ To see the parameter MLEs, we access the ``lf`` attribute [#]_
 
     result.lf 
 
+There are 2 tables always present in this display – "edge params" and "motif params". The former will always show the branch lengths. The following displays the tree, with the branch length defined by the values in the "edge params" table. The columns "edge" and "parent" denote which branch the "length" column value corresponds to [#]_. That value is the MLE for the expected number of substitutions (our measure of evolutionary time).
+
+.. [#] If you hover your mouse over the internal nodes on the tree, the name of the node will appear.
+
+.. jupyter-execute::
+
+    dnd = result.tree.get_figure()
+    dnd.scale_bar = "top left"
+    dnd.show()
+
 We can get all those statistics out as ``cogent3`` tables using the ``tabulate_stats`` app
 
 .. jupyter-execute::
@@ -103,7 +113,9 @@ which allows us to get at the parts from the ``lf`` display
 Motif params are the state probabilities
 ----------------------------------------
 
-The "motif params" table has the state frequencies in the unobserved ancestor of the alignment. More generally, ``cogent3`` uses the variable ``motif_probs`` to denote this. For instance, the alignment has a method for getting this. In that case, the values are the average across all sequences.
+The "motif params" table corresponds to |pi|, the frequencies of nucleotides in the unobserved ancestor [#]_ of the alignment. More generally, ``cogent3`` uses the variable ``motif_probs`` to denote this. For instance, the alignment has a method for getting the motif probabilities as the average across all sequences.
+
+.. [#] At the node labelled "root".
 
 .. jupyter-execute::
 
@@ -165,13 +177,15 @@ Let's create a new instance of the HKY85 and constrain the likelihood function s
     result = hky_as_f81(aln)
     result
 
-As there can be more than one parameter rule applied to a function, we provide them as a list. Each element of the list must be a dictionary with at least one key ``"par_name"``. This is the name of the parameter we wish to modify and the value must be a string. The ``is_constant`` key with value ``True`` sets that parameter as a constant with ``value=1``.
+As there can be more than one parameter rule applied to a function, we provide them as a list. Each element of the list must be a dictionary with at least one key ``"par_name"``. This is the name of the parameter we wish to modify and the value must be a string. The ``is_constant=True`` sets that parameter as a constant with ``value=1``.
 
 .. jupyter-execute::
 
     result.lf
 
-From that you can see the lnL and nfp are identical to our first fitting of the F81 model. While the display includes "kappa", it has the value 1 and was not changed by the optimiser.
+From that you can see the lnL and nfp are identical to our first fitting of the F81 model. While the display includes "kappa" (in the "global params" table), it has the value 1 and was not changed by the optimiser.
+
+More generally, the "global params" table shows MLEs for the exchangeability terms in |Q|.
 
 Testing hypotheses using the ``hypothesis`` app
 -----------------------------------------------
