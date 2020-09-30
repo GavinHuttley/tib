@@ -255,56 +255,38 @@
 <p>The following is an example of such a matrix. The constraint that rows sum to 0 is achieved by setting the diagonal element as equal to the negative of the sum of the remaining elements.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.25); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Q</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Q</span></br>
+</caption>
 <thead class="head_cell">
-<th></th>
-<th>T</th>
-<th>C</th>
-<th>A</th>
-<th>G</th>
+<th></th><th>T</th><th>C</th><th>A</th><th>G</th>
 </thead>
 <tbody>
-<tr>
-<td class="index">T</td>
-<td>-0.0157</td>
-<td>0.0036</td>
-<td>0.0078</td>
-<td>0.0044</td>
-</tr>
-<tr>
-<td class="index">C</td>
-<td>0.0050</td>
-<td>-0.0171</td>
-<td>0.0078</td>
-<td>0.0044</td>
-</tr>
-<tr>
-<td class="index">A</td>
-<td>0.0050</td>
-<td>0.0036</td>
-<td>-0.0130</td>
-<td>0.0044</td>
-</tr>
-<tr>
-<td class="index">G</td>
-<td>0.0050</td>
-<td>0.0036</td>
-<td>0.0078</td>
-<td>-0.0164</td>
-</tr>
+<tr><td class="index"><span class="c3col_left">T</span></td><td><span class="c3col_right">-0.0157</span></td><td><span class="c3col_right">0.0036</span></td><td><span class="c3col_right">0.0078</span></td><td><span class="c3col_right">0.0044</span></td></tr>
+<tr><td class="index"><span class="c3col_left">C</span></td><td><span class="c3col_right">0.0050</span></td><td><span class="c3col_right">-0.0171</span></td><td><span class="c3col_right">0.0078</span></td><td><span class="c3col_right">0.0044</span></td></tr>
+<tr><td class="index"><span class="c3col_left">A</span></td><td><span class="c3col_right">0.0050</span></td><td><span class="c3col_right">0.0036</span></td><td><span class="c3col_right">-0.0130</span></td><td><span class="c3col_right">0.0044</span></td></tr>
+<tr><td class="index"><span class="c3col_left">G</span></td><td><span class="c3col_right">0.0050</span></td><td><span class="c3col_right">0.0036</span></td><td><span class="c3col_right">0.0078</span></td><td><span class="c3col_right">-0.0164</span></td></tr>
 </tbody>
 </table>
 
@@ -313,33 +295,35 @@
 <p>It is typically the case that the Markov process is assumed to be <span class="target" id="index-2"></span>time-reversible. This means that, the probability of the forward and reverse substitutions are equal. For example, for a given time period <span class="math notranslate nohighlight">\(t\)</span>, a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T occurs with the same probability as T<span class="math notranslate nohighlight">\(\rightarrow\)</span>C.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">π</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">π</span></br>
+</caption>
 <thead class="head_cell">
-<th>T</th>
-<th>C</th>
-<th>A</th>
-<th>G</th>
+<th>T</th><th>C</th><th>A</th><th>G</th>
 </thead>
 <tbody>
-<tr>
-<td>0.2402</td>
-<td>0.1744</td>
-<td>0.3748</td>
-<td>0.2106</td>
-</tr>
+<tr><td><span class="c3col_right">0.2402</span></td><td><span class="c3col_right">0.1744</span></td><td><span class="c3col_right">0.3748</span></td><td><span class="c3col_right">0.2106</span></td></tr>
 </tbody>
 </table>
 
@@ -537,55 +521,35 @@ c.) <span class="math notranslate nohighlight">\(\theta=1\)</span>?</p>
 <p>is the following a calibrated matrix?</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.25); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
+
 <thead class="head_cell">
-<th></th>
-<th>T</th>
-<th>C</th>
-<th>A</th>
-<th>G</th>
+<th></th><th>T</th><th>C</th><th>A</th><th>G</th>
 </thead>
 <tbody>
-<tr>
-<td class="index">T</td>
-<td>-0.850162</td>
-<td>0.530527</td>
-<td>0.204648</td>
-<td>0.114986</td>
-</tr>
-<tr>
-<td class="index">C</td>
-<td>0.730639</td>
-<td>-1.050273</td>
-<td>0.204648</td>
-<td>0.114986</td>
-</tr>
-<tr>
-<td class="index">A</td>
-<td>0.131183</td>
-<td>0.095254</td>
-<td>-0.866865</td>
-<td>0.640428</td>
-</tr>
-<tr>
-<td class="index">G</td>
-<td>0.131183</td>
-<td>0.095254</td>
-<td>1.139811</td>
-<td>-1.366248</td>
-</tr>
+<tr><td class="index"><span class="c3col_left">T</span></td><td><span class="c3col_right">-0.850162</span></td><td><span class="c3col_right">0.530527</span></td><td><span class="c3col_right">0.204648</span></td><td><span class="c3col_right">0.114986</span></td></tr>
+<tr><td class="index"><span class="c3col_left">C</span></td><td><span class="c3col_right">0.730639</span></td><td><span class="c3col_right">-1.050273</span></td><td><span class="c3col_right">0.204648</span></td><td><span class="c3col_right">0.114986</span></td></tr>
+<tr><td class="index"><span class="c3col_left">A</span></td><td><span class="c3col_right">0.131183</span></td><td><span class="c3col_right">0.095254</span></td><td><span class="c3col_right">-0.866865</span></td><td><span class="c3col_right">0.640428</span></td></tr>
+<tr><td class="index"><span class="c3col_left">G</span></td><td><span class="c3col_right">0.131183</span></td><td><span class="c3col_right">0.095254</span></td><td><span class="c3col_right">1.139811</span></td><td><span class="c3col_right">-1.366248</span></td></tr>
 </tbody>
 </table>
 

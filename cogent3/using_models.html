@@ -241,76 +241,44 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Specify a model using 'Abbreviation' (case sensitive).</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Specify a model using 'Abbreviation' (case sensitive).</span></br>
+</caption>
 <thead class="head_cell">
-<th>Model Type</th>
-<th>Abbreviation</th>
-<th>Description</th>
+<th>Model Type</th><th>Abbreviation</th><th>Description</th>
 </thead>
 <tbody>
-<tr>
-<td>nucleotide</td>
-<td>JC69</td>
-<td>Jukes and Cantor's 1969 model</td>
-</tr>
-<tr>
-<td>nucleotide</td>
-<td>K80</td>
-<td>Kimura 1980</td>
-</tr>
-<tr>
-<td>nucleotide</td>
-<td>F81</td>
-<td>Felsenstein's 1981 model</td>
-</tr>
-<tr>
-<td>nucleotide</td>
-<td>HKY85</td>
-<td>Hasegawa, Kishino and Yano 1985 model</td>
-</tr>
-<tr>
-<td>nucleotide</td>
-<td>TN93</td>
-<td>Tamura and Nei 1993 model</td>
-</tr>
-<tr>
-<td>nucleotide</td>
-<td>GTR</td>
-<td>General Time Reversible nucleotide substitution model.</td>
-</tr>
-<tr>
-<td>nucleotide</td>
-<td>ssGN</td>
-<td>strand-symmetric general Markov nucleotide (non-stationary, non-reversible). Kaehler, 2017, Journal of Theoretical Biology 420: 144–51</td>
-</tr>
-<tr>
-<td>nucleotide</td>
-<td>GN</td>
-<td>General Markov Nucleotide (non-stationary, non-reversible). Kaehler, Yap, Zhang, Huttley, 2015, Sys Biol 64 (2): 281–93</td>
-</tr>
-<tr>
-<td>nucleotide</td>
-<td>BH</td>
-<td>Barry and Hartigan Discrete Time substitution model Barry and Hartigan 1987. Biometrics 43: 261–76.</td>
-</tr>
-<tr>
-<td>nucleotide</td>
-<td>DT</td>
-<td>Discrete Time substitution model (non-stationary, non-reversible). motif_length=2 makes this a dinucleotide model, motif_length=3 a trinucleotide model.</td>
-</tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">JC69</span></td><td><span class="c3col_left">Jukes and Cantor's 1969 model</span></td></tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">K80</span></td><td><span class="c3col_left">Kimura 1980</span></td></tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">F81</span></td><td><span class="c3col_left">Felsenstein's 1981 model</span></td></tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">HKY85</span></td><td><span class="c3col_left">Hasegawa, Kishino and Yano 1985 model</span></td></tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">TN93</span></td><td><span class="c3col_left">Tamura and Nei 1993 model</span></td></tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">GTR</span></td><td><span class="c3col_left">General Time Reversible nucleotide substitution model.</span></td></tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">ssGN</span></td><td><span class="c3col_left">strand-symmetric general Markov nucleotide (non-stationary, non-reversible). Kaehler, 2017, Journal of Theoretical Biology 420: 144–51</span></td></tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">GN</span></td><td><span class="c3col_left">General Markov Nucleotide (non-stationary, non-reversible). Kaehler, Yap, Zhang, Huttley, 2015, Sys Biol 64 (2): 281–93</span></td></tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">BH</span></td><td><span class="c3col_left">Barry and Hartigan Discrete Time substitution model Barry and Hartigan 1987. Biometrics 43: 261–76.</span></td></tr>
+<tr><td><span class="c3col_left">nucleotide</span></td><td><span class="c3col_left">DT</span></td><td><span class="c3col_left">Discrete Time substitution model (non-stationary, non-reversible). motif_length=2 makes this a dinucleotide model, motif_length=3 a trinucleotide model.</span></td></tr>
 </tbody>
 </table>
 <p>
@@ -366,35 +334,35 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">F81</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">F81</span></br>
+</caption>
 <thead class="head_cell">
-<th>key</th>
-<th>lnL</th>
-<th>nfp</th>
-<th>DLC</th>
-<th>unique_Q</th>
+<th>key</th><th>lnL</th><th>nfp</th><th>DLC</th><th>unique_Q</th>
 </thead>
 <tbody>
-<tr>
-<td>'F81'</td>
-<td>-7175.7756</td>
-<td>11</td>
-<td>True</td>
-<td>True</td>
-</tr>
+<tr><td><span class="c3col_left">'F81'</span></td><td><span class="c3col_right">-7175.7756</span></td><td><span class="c3col_right">11</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">True</span></td></tr>
 </tbody>
 </table>
 
@@ -403,44 +371,36 @@
 <p>The column titles in that summary display have the following meaning</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.25); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
+
 <thead class="head_cell">
-<th>Column Heading</th>
-<th></th>
+<th>Column Heading</th><th></th>
 </thead>
 <tbody>
-<tr>
-<td class="index">key</td>
-<td>The dictionary key for accessing this model</td>
-</tr>
-<tr>
-<td class="index">lnL</td>
-<td>The log-likelihood value</td>
-</tr>
-<tr>
-<td class="index">nfp</td>
-<td>The number of free parameters in the model</td>
-</tr>
-<tr>
-<td class="index">DLC</td>
-<td>Diagonal largest in column in all P matrices.</td>
-</tr>
-<tr>
-<td class="index">unique_Q</td>
-<td>Whether the Q uniquely map to P</td>
-</tr>
+<tr><td class="index"><span class="c3col_left">key</span></td><td><span class="c3col_left">The dictionary key for accessing this model</span></td></tr>
+<tr><td class="index"><span class="c3col_left">lnL</span></td><td><span class="c3col_left">The log-likelihood value</span></td></tr>
+<tr><td class="index"><span class="c3col_left">nfp</span></td><td><span class="c3col_left">The number of free parameters in the model</span></td></tr>
+<tr><td class="index"><span class="c3col_left">DLC</span></td><td><span class="c3col_left">Diagonal largest in column in all P matrices.</span></td></tr>
+<tr><td class="index"><span class="c3col_left">unique_Q</span></td><td><span class="c3col_left">Whether the Q uniquely map to P</span></td></tr>
 </tbody>
 </table>
 
@@ -463,112 +423,78 @@
 <div class="output text_html"><h4>F81</h4>
 <p>log-likelihood = -7175.7756</p>
 <p>number of free parameters = 11</p>
+
+<div class="c3table">
+
 <style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Edge params</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Edge params</span></br>
+</caption>
 <thead class="head_cell">
-<th>edge</th>
-<th>parent</th>
-<th>length</th>
+<th>edge</th><th>parent</th><th>length</th>
 </thead>
 <tbody>
-<tr>
-<td>Galago</td>
-<td>root</td>
-<td>0.1666</td>
-</tr>
-<tr>
-<td>HowlerMon</td>
-<td>root</td>
-<td>0.0438</td>
-</tr>
-<tr>
-<td>Rhesus</td>
-<td>edge.3</td>
-<td>0.0215</td>
-</tr>
-<tr>
-<td>Orangutan</td>
-<td>edge.2</td>
-<td>0.0077</td>
-</tr>
-<tr>
-<td>Gorilla</td>
-<td>edge.1</td>
-<td>0.0025</td>
-</tr>
-<tr>
-<td>Human</td>
-<td>edge.0</td>
-<td>0.0061</td>
-</tr>
-<tr>
-<td>Chimpanzee</td>
-<td>edge.0</td>
-<td>0.0028</td>
-</tr>
-<tr>
-<td>edge.0</td>
-<td>edge.1</td>
-<td>0.0000</td>
-</tr>
-<tr>
-<td>edge.1</td>
-<td>edge.2</td>
-<td>0.0035</td>
-</tr>
-<tr>
-<td>edge.2</td>
-<td>edge.3</td>
-<td>0.0117</td>
-</tr>
-<tr>
-<td>edge.3</td>
-<td>root</td>
-<td>0.0085</td>
-</tr>
+<tr><td><span class="c3col_left">Galago</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.1666</span></td></tr>
+<tr><td><span class="c3col_left">HowlerMon</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.0438</span></td></tr>
+<tr><td><span class="c3col_left">Rhesus</span></td><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_right">0.0215</span></td></tr>
+<tr><td><span class="c3col_left">Orangutan</span></td><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_right">0.0077</span></td></tr>
+<tr><td><span class="c3col_left">Gorilla</span></td><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_right">0.0025</span></td></tr>
+<tr><td><span class="c3col_left">Human</span></td><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_right">0.0061</span></td></tr>
+<tr><td><span class="c3col_left">Chimpanzee</span></td><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_right">0.0028</span></td></tr>
+<tr><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_right">0.0000</span></td></tr>
+<tr><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_right">0.0035</span></td></tr>
+<tr><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_right">0.0117</span></td></tr>
+<tr><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.0085</span></td></tr>
 </tbody>
 </table>
 
 </div>
+
+<div class="c3table">
+
 <style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Motif params</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Motif params</span></br>
+</caption>
 <thead class="head_cell">
-<th>A</th>
-<th>C</th>
-<th>G</th>
-<th>T</th>
+<th>A</th><th>C</th><th>G</th><th>T</th>
 </thead>
 <tbody>
-<tr>
-<td>0.3757</td>
-<td>0.1742</td>
-<td>0.2095</td>
-<td>0.2406</td>
-</tr>
+<tr><td><span class="c3col_right">0.3757</span></td><td><span class="c3col_right">0.1742</span></td><td><span class="c3col_right">0.2095</span></td><td><span class="c3col_right">0.2406</span></td></tr>
 </tbody>
 </table>
 
@@ -604,9 +530,9 @@ require(['plotly'], function(Plotly) {
 });
 }
 </script>
-</div><div class="output text_html"><div>                            <div id="70ce5ef0-582c-417e-b45e-a72f74e127ae" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("70ce5ef0-582c-417e-b45e-a72f74e127ae")) {                    Plotly.newPlot(                        "70ce5ef0-582c-417e-b45e-a72f74e127ae",                        [{"line": {"color": "black", "shape": "spline", "smoothing": 1.3, "width": 1.25}, "mode": "lines", "showlegend": false, "type": "scatter", "x": [null, null, 0, 0, null, 0, 0.0085240599642644, null, 0.0085240599642644, 0.0085240599642644, null, 0.0085240599642644, 0.020266721911693243, null, 0.020266721911693243, 0.020266721911693243, null, 0.020266721911693243, 0.023764397166769112, null, 0.023764397166769112, 0.023764397166769112, null, 0.023764397166769112, 0.023764397168156474, null, 0.023764397168156474, 0.023764397168156474, null, 0.023764397168156474, 0.026611288838483245, null, 0.023764397168156474, 0.023764397168156474, null, 0.023764397168156474, 0.029828007688294213, null, 0.023764397166769112, 0.023764397166769112, null, 0.023764397166769112, 0.026254204041868717, null, 0.020266721911693243, 0.020266721911693243, null, 0.020266721911693243, 0.027968759841012082, null, 0.0085240599642644, 0.0085240599642644, null, 0.0085240599642644, 0.0300084806745518, null, 0, 0, null, 0, 0.04378667869801167, null, 0, 0, null, 0, 0.16659907537342, null], "y": [null, null, -2.6, -0.08125000000000004, null, -0.08125000000000004, -0.08125000000000004, null, -0.08125000000000004, 1.1375, null, 1.1375, 1.1375, null, 1.1375, 2.275, null, 2.275, 2.275, null, 2.275, 3.25, null, 3.25, 3.25, null, 3.25, 3.9000000000000004, null, 3.9000000000000004, 3.9000000000000004, null, 3.25, 2.6, null, 2.6, 2.6, null, 2.275, 1.3, null, 1.3, 1.3, null, 1.1375, 0.0, null, 0.0, 0.0, null, -0.08125000000000004, -1.3, null, -1.3, -1.3, null, -2.6, -2.6, null, -2.6, -2.6, null, -2.6, -3.9000000000000004, null, -3.9000000000000004, -3.9000000000000004, null]}, {"hoverinfo": "text", "marker": {"color": "black", "size": 3, "symbol": "circle"}, "mode": "markers", "showlegend": false, "text": ["root", "edge.3", "edge.2", "edge.1", "edge.0", "Chimpanzee", "Human", "Gorilla", "Orangutan", "Rhesus", "HowlerMon", "Galago"], "type": "scatter", "x": [0, 0.0085240599642644, 0.020266721911693243, 0.023764397166769112, 0.023764397168156474, 0.026611288838483245, 0.029828007688294213, 0.026254204041868717, 0.027968759841012082, 0.0300084806745518, 0.04378667869801167, 0.16659907537342], "y": [-2.6, -0.08125000000000004, 1.1375, 2.275, 3.25, 3.9000000000000004, 2.6, 1.3, 0.0, -1.3, -2.6, -3.9000000000000004]}],                        {"annotations": [{"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Chimpanzee", "textangle": 0, "x": 0.030776265722818746, "xanchor": "left", "xref": "x", "y": 3.9000000000000004, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Human", "textangle": 0, "x": 0.03399298457262971, "xanchor": "left", "xref": "x", "y": 2.6, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Gorilla", "textangle": 0, "x": 0.030419180926204218, "xanchor": "left", "xref": "x", "y": 1.3, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Orangutan", "textangle": 0, "x": 0.032133736725347584, "xanchor": "left", "xref": "x", "y": 0.0, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Rhesus", "textangle": 0, "x": 0.0341734575588873, "xanchor": "left", "xref": "x", "y": -1.3, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "HowlerMon", "textangle": 0, "x": 0.04795165558234717, "xanchor": "left", "xref": "x", "y": -2.6, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Galago", "textangle": 0, "x": 0.1707640522577555, "xanchor": "left", "xref": "x", "y": -3.9000000000000004, "yref": "y"}, {"ax": 0, "ay": 0, "showarrow": false, "text": "0.02", "x": 0.008329953768671001, "xref": "x", "y": 3.9000000000000004, "yref": "y", "yshift": 10}], "autosize": true, "font": {"family": "Balto", "size": 14}, "hovermode": "closest", "margin": {"b": 50, "l": 50, "pad": 4, "r": 50, "t": 50}, "shapes": [{"line": {"color": "black", "width": 1.25}, "type": "line", "x0": 0, "x1": 0.016659907537342002, "y0": 3.9000000000000004, "y1": 3.9000000000000004}], "showlegend": false, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"visible": false}, "yaxis": {"visible": false}},                        {"responsive": true}                    ).then(function(){
+</div><div class="output text_html"><div>                            <div id="0ffff63b-77d8-4bea-8a07-bed7050957cf" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("0ffff63b-77d8-4bea-8a07-bed7050957cf")) {                    Plotly.newPlot(                        "0ffff63b-77d8-4bea-8a07-bed7050957cf",                        [{"line": {"color": "black", "shape": "spline", "smoothing": 1.3, "width": 1.25}, "mode": "lines", "showlegend": false, "type": "scatter", "x": [null, null, 0, 0, null, 0, 0.0085240599642644, null, 0.0085240599642644, 0.0085240599642644, null, 0.0085240599642644, 0.020266721911693243, null, 0.020266721911693243, 0.020266721911693243, null, 0.020266721911693243, 0.023764397166769112, null, 0.023764397166769112, 0.023764397166769112, null, 0.023764397166769112, 0.023764397168156474, null, 0.023764397168156474, 0.023764397168156474, null, 0.023764397168156474, 0.026611288838483245, null, 0.023764397168156474, 0.023764397168156474, null, 0.023764397168156474, 0.029828007688294213, null, 0.023764397166769112, 0.023764397166769112, null, 0.023764397166769112, 0.026254204041868717, null, 0.020266721911693243, 0.020266721911693243, null, 0.020266721911693243, 0.027968759841012082, null, 0.0085240599642644, 0.0085240599642644, null, 0.0085240599642644, 0.0300084806745518, null, 0, 0, null, 0, 0.04378667869801167, null, 0, 0, null, 0, 0.16659907537342, null], "y": [null, null, -2.6, -0.08125000000000004, null, -0.08125000000000004, -0.08125000000000004, null, -0.08125000000000004, 1.1375, null, 1.1375, 1.1375, null, 1.1375, 2.275, null, 2.275, 2.275, null, 2.275, 3.25, null, 3.25, 3.25, null, 3.25, 3.9000000000000004, null, 3.9000000000000004, 3.9000000000000004, null, 3.25, 2.6, null, 2.6, 2.6, null, 2.275, 1.3, null, 1.3, 1.3, null, 1.1375, 0.0, null, 0.0, 0.0, null, -0.08125000000000004, -1.3, null, -1.3, -1.3, null, -2.6, -2.6, null, -2.6, -2.6, null, -2.6, -3.9000000000000004, null, -3.9000000000000004, -3.9000000000000004, null]}, {"hoverinfo": "text", "marker": {"color": "black", "size": 3, "symbol": "circle"}, "mode": "markers", "showlegend": false, "text": ["root", "edge.3", "edge.2", "edge.1", "edge.0", "Chimpanzee", "Human", "Gorilla", "Orangutan", "Rhesus", "HowlerMon", "Galago"], "type": "scatter", "x": [0, 0.0085240599642644, 0.020266721911693243, 0.023764397166769112, 0.023764397168156474, 0.026611288838483245, 0.029828007688294213, 0.026254204041868717, 0.027968759841012082, 0.0300084806745518, 0.04378667869801167, 0.16659907537342], "y": [-2.6, -0.08125000000000004, 1.1375, 2.275, 3.25, 3.9000000000000004, 2.6, 1.3, 0.0, -1.3, -2.6, -3.9000000000000004]}],                        {"annotations": [{"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Chimpanzee", "textangle": 0, "x": 0.030776265722818746, "xanchor": "left", "xref": "x", "y": 3.9000000000000004, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Human", "textangle": 0, "x": 0.03399298457262971, "xanchor": "left", "xref": "x", "y": 2.6, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Gorilla", "textangle": 0, "x": 0.030419180926204218, "xanchor": "left", "xref": "x", "y": 1.3, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Orangutan", "textangle": 0, "x": 0.032133736725347584, "xanchor": "left", "xref": "x", "y": 0.0, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Rhesus", "textangle": 0, "x": 0.0341734575588873, "xanchor": "left", "xref": "x", "y": -1.3, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "HowlerMon", "textangle": 0, "x": 0.04795165558234717, "xanchor": "left", "xref": "x", "y": -2.6, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 12}, "showarrow": false, "text": "Galago", "textangle": 0, "x": 0.1707640522577555, "xanchor": "left", "xref": "x", "y": -3.9000000000000004, "yref": "y"}, {"ax": 0, "ay": 0, "showarrow": false, "text": "0.02", "x": 0.008329953768671001, "xref": "x", "y": 3.9000000000000004, "yref": "y", "yshift": 10}], "autosize": true, "font": {"family": "Balto", "size": 14}, "hovermode": "closest", "margin": {"b": 50, "l": 50, "pad": 4, "r": 50, "t": 50}, "shapes": [{"line": {"color": "black", "width": 1.25}, "type": "line", "x0": 0, "x1": 0.016659907537342002, "y0": 3.9000000000000004, "y1": 3.9000000000000004}], "showlegend": false, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"visible": false}, "yaxis": {"visible": false}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('70ce5ef0-582c-417e-b45e-a72f74e127ae');
+var gd = document.getElementById('0ffff63b-77d8-4bea-8a07-bed7050957cf');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -653,81 +579,45 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">edge params</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">edge params</span></br>
+</caption>
 <thead class="head_cell">
-<th>edge</th>
-<th>parent</th>
-<th>length</th>
+<th>edge</th><th>parent</th><th>length</th>
 </thead>
 <tbody>
-<tr>
-<td>Galago</td>
-<td>root</td>
-<td>0.1666</td>
-</tr>
-<tr>
-<td>HowlerMon</td>
-<td>root</td>
-<td>0.0438</td>
-</tr>
-<tr>
-<td>Rhesus</td>
-<td>edge.3</td>
-<td>0.0215</td>
-</tr>
-<tr>
-<td>Orangutan</td>
-<td>edge.2</td>
-<td>0.0077</td>
-</tr>
-<tr>
-<td>Gorilla</td>
-<td>edge.1</td>
-<td>0.0025</td>
-</tr>
-<tr>
-<td>Human</td>
-<td>edge.0</td>
-<td>0.0061</td>
-</tr>
-<tr>
-<td>Chimpanzee</td>
-<td>edge.0</td>
-<td>0.0028</td>
-</tr>
-<tr>
-<td>edge.0</td>
-<td>edge.1</td>
-<td>0.0000</td>
-</tr>
-<tr>
-<td>edge.1</td>
-<td>edge.2</td>
-<td>0.0035</td>
-</tr>
-<tr>
-<td>edge.2</td>
-<td>edge.3</td>
-<td>0.0117</td>
-</tr>
-<tr>
-<td>edge.3</td>
-<td>root</td>
-<td>0.0085</td>
-</tr>
+<tr><td><span class="c3col_left">Galago</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.1666</span></td></tr>
+<tr><td><span class="c3col_left">HowlerMon</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.0438</span></td></tr>
+<tr><td><span class="c3col_left">Rhesus</span></td><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_right">0.0215</span></td></tr>
+<tr><td><span class="c3col_left">Orangutan</span></td><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_right">0.0077</span></td></tr>
+<tr><td><span class="c3col_left">Gorilla</span></td><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_right">0.0025</span></td></tr>
+<tr><td><span class="c3col_left">Human</span></td><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_right">0.0061</span></td></tr>
+<tr><td><span class="c3col_left">Chimpanzee</span></td><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_right">0.0028</span></td></tr>
+<tr><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_right">0.0000</span></td></tr>
+<tr><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_right">0.0035</span></td></tr>
+<tr><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_right">0.0117</span></td></tr>
+<tr><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.0085</span></td></tr>
 </tbody>
 </table>
 <p>
@@ -766,33 +656,35 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">motif params</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">motif params</span></br>
+</caption>
 <thead class="head_cell">
-<th>A</th>
-<th>C</th>
-<th>G</th>
-<th>T</th>
+<th>A</th><th>C</th><th>G</th><th>T</th>
 </thead>
 <tbody>
-<tr>
-<td>0.3757</td>
-<td>0.1742</td>
-<td>0.2095</td>
-<td>0.2406</td>
-</tr>
+<tr><td><span class="c3col_right">0.3757</span></td><td><span class="c3col_right">0.1742</span></td><td><span class="c3col_right">0.2095</span></td><td><span class="c3col_right">0.2406</span></td></tr>
 </tbody>
 </table>
 <p>
@@ -829,35 +721,35 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">F81-mprobs free</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">F81-mprobs free</span></br>
+</caption>
 <thead class="head_cell">
-<th>key</th>
-<th>lnL</th>
-<th>nfp</th>
-<th>DLC</th>
-<th>unique_Q</th>
+<th>key</th><th>lnL</th><th>nfp</th><th>DLC</th><th>unique_Q</th>
 </thead>
 <tbody>
-<tr>
-<td>'F81-mprobs free'</td>
-<td>-7174.8445</td>
-<td>14</td>
-<td>True</td>
-<td>True</td>
-</tr>
+<tr><td><span class="c3col_left">'F81-mprobs free'</span></td><td><span class="c3col_right">-7174.8445</span></td><td><span class="c3col_right">14</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">True</span></td></tr>
 </tbody>
 </table>
 
@@ -874,112 +766,78 @@ if (outputEl) {{
 <div class="output text_html"><h4>F81-mprobs free</h4>
 <p>log-likelihood = -7174.8445</p>
 <p>number of free parameters = 14</p>
+
+<div class="c3table">
+
 <style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Edge params</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Edge params</span></br>
+</caption>
 <thead class="head_cell">
-<th>edge</th>
-<th>parent</th>
-<th>length</th>
+<th>edge</th><th>parent</th><th>length</th>
 </thead>
 <tbody>
-<tr>
-<td>Galago</td>
-<td>root</td>
-<td>0.1666</td>
-</tr>
-<tr>
-<td>HowlerMon</td>
-<td>root</td>
-<td>0.0438</td>
-</tr>
-<tr>
-<td>Rhesus</td>
-<td>edge.3</td>
-<td>0.0215</td>
-</tr>
-<tr>
-<td>Orangutan</td>
-<td>edge.2</td>
-<td>0.0077</td>
-</tr>
-<tr>
-<td>Gorilla</td>
-<td>edge.1</td>
-<td>0.0025</td>
-</tr>
-<tr>
-<td>Human</td>
-<td>edge.0</td>
-<td>0.0061</td>
-</tr>
-<tr>
-<td>Chimpanzee</td>
-<td>edge.0</td>
-<td>0.0028</td>
-</tr>
-<tr>
-<td>edge.0</td>
-<td>edge.1</td>
-<td>0.0000</td>
-</tr>
-<tr>
-<td>edge.1</td>
-<td>edge.2</td>
-<td>0.0035</td>
-</tr>
-<tr>
-<td>edge.2</td>
-<td>edge.3</td>
-<td>0.0117</td>
-</tr>
-<tr>
-<td>edge.3</td>
-<td>root</td>
-<td>0.0085</td>
-</tr>
+<tr><td><span class="c3col_left">Galago</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.1666</span></td></tr>
+<tr><td><span class="c3col_left">HowlerMon</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.0438</span></td></tr>
+<tr><td><span class="c3col_left">Rhesus</span></td><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_right">0.0215</span></td></tr>
+<tr><td><span class="c3col_left">Orangutan</span></td><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_right">0.0077</span></td></tr>
+<tr><td><span class="c3col_left">Gorilla</span></td><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_right">0.0025</span></td></tr>
+<tr><td><span class="c3col_left">Human</span></td><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_right">0.0061</span></td></tr>
+<tr><td><span class="c3col_left">Chimpanzee</span></td><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_right">0.0028</span></td></tr>
+<tr><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_right">0.0000</span></td></tr>
+<tr><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_right">0.0035</span></td></tr>
+<tr><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_right">0.0117</span></td></tr>
+<tr><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.0085</span></td></tr>
 </tbody>
 </table>
 
 </div>
+
+<div class="c3table">
+
 <style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Motif params</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Motif params</span></br>
+</caption>
 <thead class="head_cell">
-<th>A</th>
-<th>C</th>
-<th>G</th>
-<th>T</th>
+<th>A</th><th>C</th><th>G</th><th>T</th>
 </thead>
 <tbody>
-<tr>
-<td>0.3744</td>
-<td>0.1755</td>
-<td>0.2170</td>
-<td>0.2331</td>
-</tr>
+<tr><td><span class="c3col_right">0.3744</span></td><td><span class="c3col_right">0.1755</span></td><td><span class="c3col_right">0.2170</span></td><td><span class="c3col_right">0.2331</span></td></tr>
 </tbody>
 </table>
 
@@ -1005,35 +863,35 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">HKY85 with κ=1</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">HKY85 with κ=1</span></br>
+</caption>
 <thead class="head_cell">
-<th>key</th>
-<th>lnL</th>
-<th>nfp</th>
-<th>DLC</th>
-<th>unique_Q</th>
+<th>key</th><th>lnL</th><th>nfp</th><th>DLC</th><th>unique_Q</th>
 </thead>
 <tbody>
-<tr>
-<td>'HKY85 with κ=1'</td>
-<td>-7175.7756</td>
-<td>11</td>
-<td>True</td>
-<td>True</td>
-</tr>
+<tr><td><span class="c3col_left">'HKY85 with κ=1'</span></td><td><span class="c3col_right">-7175.7756</span></td><td><span class="c3col_right">11</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">True</span></td></tr>
 </tbody>
 </table>
 
@@ -1050,137 +908,111 @@ if (outputEl) {{
 <div class="output text_html"><h4>HKY85 with κ=1</h4>
 <p>log-likelihood = -7175.7756</p>
 <p>number of free parameters = 11</p>
+
+<div class="c3table">
+
 <style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Global params</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Global params</span></br>
+</caption>
 <thead class="head_cell">
 <th>kappa</th>
 </thead>
 <tbody>
-<tr>
-<td>1</td>
-</tr>
+<tr><td><span class="c3col_right">1</span></td></tr>
 </tbody>
 </table>
 
 </div>
+
+<div class="c3table">
+
 <style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Edge params</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Edge params</span></br>
+</caption>
 <thead class="head_cell">
-<th>edge</th>
-<th>parent</th>
-<th>length</th>
+<th>edge</th><th>parent</th><th>length</th>
 </thead>
 <tbody>
-<tr>
-<td>Galago</td>
-<td>root</td>
-<td>0.1666</td>
-</tr>
-<tr>
-<td>HowlerMon</td>
-<td>root</td>
-<td>0.0438</td>
-</tr>
-<tr>
-<td>Rhesus</td>
-<td>edge.3</td>
-<td>0.0215</td>
-</tr>
-<tr>
-<td>Orangutan</td>
-<td>edge.2</td>
-<td>0.0077</td>
-</tr>
-<tr>
-<td>Gorilla</td>
-<td>edge.1</td>
-<td>0.0025</td>
-</tr>
-<tr>
-<td>Human</td>
-<td>edge.0</td>
-<td>0.0061</td>
-</tr>
-<tr>
-<td>Chimpanzee</td>
-<td>edge.0</td>
-<td>0.0028</td>
-</tr>
-<tr>
-<td>edge.0</td>
-<td>edge.1</td>
-<td>0.0000</td>
-</tr>
-<tr>
-<td>edge.1</td>
-<td>edge.2</td>
-<td>0.0035</td>
-</tr>
-<tr>
-<td>edge.2</td>
-<td>edge.3</td>
-<td>0.0117</td>
-</tr>
-<tr>
-<td>edge.3</td>
-<td>root</td>
-<td>0.0085</td>
-</tr>
+<tr><td><span class="c3col_left">Galago</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.1666</span></td></tr>
+<tr><td><span class="c3col_left">HowlerMon</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.0438</span></td></tr>
+<tr><td><span class="c3col_left">Rhesus</span></td><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_right">0.0215</span></td></tr>
+<tr><td><span class="c3col_left">Orangutan</span></td><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_right">0.0077</span></td></tr>
+<tr><td><span class="c3col_left">Gorilla</span></td><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_right">0.0025</span></td></tr>
+<tr><td><span class="c3col_left">Human</span></td><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_right">0.0061</span></td></tr>
+<tr><td><span class="c3col_left">Chimpanzee</span></td><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_right">0.0028</span></td></tr>
+<tr><td><span class="c3col_left">edge.0</span></td><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_right">0.0000</span></td></tr>
+<tr><td><span class="c3col_left">edge.1</span></td><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_right">0.0035</span></td></tr>
+<tr><td><span class="c3col_left">edge.2</span></td><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_right">0.0117</span></td></tr>
+<tr><td><span class="c3col_left">edge.3</span></td><td><span class="c3col_left">root</span></td><td><span class="c3col_right">0.0085</span></td></tr>
 </tbody>
 </table>
 
 </div>
+
+<div class="c3table">
+
 <style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Motif params</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Motif params</span></br>
+</caption>
 <thead class="head_cell">
-<th>A</th>
-<th>C</th>
-<th>G</th>
-<th>T</th>
+<th>A</th><th>C</th><th>G</th><th>T</th>
 </thead>
 <tbody>
-<tr>
-<td>0.3757</td>
-<td>0.1742</td>
-<td>0.2095</td>
-<td>0.2406</td>
-</tr>
+<tr><td><span class="c3col_right">0.3757</span></td><td><span class="c3col_right">0.1742</span></td><td><span class="c3col_right">0.2095</span></td><td><span class="c3col_right">0.2406</span></td></tr>
 </tbody>
 </table>
 
@@ -1234,73 +1066,66 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">Statistics</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">Statistics</span></br>
+</caption>
 <thead class="head_cell">
-<th>LR</th>
-<th>df</th>
-<th>pvalue</th>
+<th>LR</th><th>df</th><th>pvalue</th>
 </thead>
 <tbody>
-<tr>
-<td>341.8375</td>
-<td>1</td>
-<td>0.0000</td>
-</tr>
+<tr><td><span class="c3col_right">341.8375</span></td><td><span class="c3col_right">1</span></td><td><span class="c3col_right">0.0000</span></td></tr>
 </tbody>
 </table>
 
 </div>
+
+<div class="c3table">
+
 <style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
+
 <thead class="head_cell">
-<th>hypothesis</th>
-<th>key</th>
-<th>lnL</th>
-<th>nfp</th>
-<th>DLC</th>
-<th>unique_Q</th>
+<th>hypothesis</th><th>key</th><th>lnL</th><th>nfp</th><th>DLC</th><th>unique_Q</th>
 </thead>
 <tbody>
-<tr>
-<td>null</td>
-<td>'F81'</td>
-<td>-7175.7756</td>
-<td>11</td>
-<td>True</td>
-<td>True</td>
-</tr>
-<tr>
-<td>alt</td>
-<td>'HKY85'</td>
-<td>-7004.8569</td>
-<td>12</td>
-<td>True</td>
-<td>True</td>
-</tr>
+<tr><td><span class="c3col_left">null</span></td><td><span class="c3col_left">'F81'</span></td><td><span class="c3col_right">-7175.7756</span></td><td><span class="c3col_right">11</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">True</span></td></tr>
+<tr><td><span class="c3col_left">alt</span></td><td><span class="c3col_left">'HKY85'</span></td><td><span class="c3col_right">-7004.8569</span></td><td><span class="c3col_right">12</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">True</span></td></tr>
 </tbody>
 </table>
 
@@ -1309,40 +1134,35 @@ if (outputEl) {{
 <p>The column titles in that summary display have the following meaning</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.25); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
+
 <thead class="head_cell">
-<th>Column Heading</th>
-<th></th>
+<th>Column Heading</th><th></th>
 </thead>
 <tbody>
-<tr>
-<td class="index">LR</td>
-<td>Likelihood ratio statistic</td>
-</tr>
-<tr>
-<td class="index">df</td>
-<td>degrees of freedom</td>
-</tr>
-<tr>
-<td class="index">pvalue</td>
-<td>p-value</td>
-</tr>
-<tr>
-<td class="index">hypothesis</td>
-<td>null or alternate</td>
-</tr>
+<tr><td class="index"><span class="c3col_left">LR</span></td><td><span class="c3col_left">Likelihood ratio statistic</span></td></tr>
+<tr><td class="index"><span class="c3col_left">df</span></td><td><span class="c3col_left">degrees of freedom</span></td></tr>
+<tr><td class="index"><span class="c3col_left">pvalue</span></td><td><span class="c3col_left">p-value</span></td></tr>
+<tr><td class="index"><span class="c3col_left">hypothesis</span></td><td><span class="c3col_left">null or alternate</span></td></tr>
 </tbody>
 </table>
 
@@ -1357,35 +1177,35 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">HKY85</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">HKY85</span></br>
+</caption>
 <thead class="head_cell">
-<th>key</th>
-<th>lnL</th>
-<th>nfp</th>
-<th>DLC</th>
-<th>unique_Q</th>
+<th>key</th><th>lnL</th><th>nfp</th><th>DLC</th><th>unique_Q</th>
 </thead>
 <tbody>
-<tr>
-<td>'HKY85'</td>
-<td>-7004.8569</td>
-<td>12</td>
-<td>True</td>
-<td>True</td>
-</tr>
+<tr><td><span class="c3col_left">'HKY85'</span></td><td><span class="c3col_right">-7004.8569</span></td><td><span class="c3col_right">12</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">True</span></td></tr>
 </tbody>
 </table>
 
@@ -1399,35 +1219,35 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">HKY85</span><br><span class="cell_legend"></span></caption>
+
+<caption>
+<br><span class="cell_title">HKY85</span></br>
+</caption>
 <thead class="head_cell">
-<th>key</th>
-<th>lnL</th>
-<th>nfp</th>
-<th>DLC</th>
-<th>unique_Q</th>
+<th>key</th><th>lnL</th><th>nfp</th><th>DLC</th><th>unique_Q</th>
 </thead>
 <tbody>
-<tr>
-<td>'HKY85'</td>
-<td>-7004.8569</td>
-<td>12</td>
-<td>True</td>
-<td>True</td>
-</tr>
+<tr><td><span class="c3col_left">'HKY85'</span></td><td><span class="c3col_right">-7004.8569</span></td><td><span class="c3col_right">12</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">True</span></td></tr>
 </tbody>
 </table>
 

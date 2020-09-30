@@ -229,7 +229,7 @@ Using the Kolmogorov-Smirnov test to assess the distribution
 .. index::
     triple: quantiles; statistical test; cogent3
 
-We evaluate whether the data from ``x`` are distributed normally. To do this, we obtain the theoretical quantiles from the normal distribution.
+We evaluate whether the data from ``x`` are distributed normally. To do this, we obtain the theoretical quantiles from the normal distribution. (These are from the standard normal distribution, with mean of 0 and standard deviation of 1.)
 
 .. jupyter-execute::
 
@@ -240,15 +240,20 @@ We evaluate whether the data from ``x`` are distributed normally. To do this, we
     norm_quants = theoretical_quantiles(len(x), "normal")
     norm_quants
 
-We then centre ``x`` on zero (by subtracting the mean of ``x``) and perform the KS test.
+So we need to transform ``x`` into standard z-scores before we perform the KS test.
 
 .. jupyter-execute::
 
     n_x = numpy.array(x, dtype=float)
-    n_x -= n_x.mean()
+    mean = n_x.mean()
+    # we specify ddof=1 to ensure the standard deviation is mathematically unbiased
+    std = n_x.std(ddof=1)
+    
+    zscores = (n_x - mean) / std
 
-    ks_stat, pval = ks_test(n_x, norm_quants)
-    pval
+    ks_stat, pval = ks_test(zscores, norm_quants)
+    
+    print(f"D={ks_stat:.4f}  p-value={pval:.4f}")
 
 Quantile-quantile plots
 -----------------------

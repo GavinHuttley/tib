@@ -331,71 +331,38 @@ TYHBM &lt;-- the IUPAC consensus
 <p id="index-2">This is converted to a table of nucleotide counts per aligned column, resulting in a Position specific Weights Matrix (or PWM).</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.25); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">PWM</span><br><span class="cell_legend">position specific weights matrix</span></caption>
+
+<caption>
+<br><span class="cell_title">PWM</span></br> <span class="cell_legend">position specific weights matrix</span>
+</caption>
 <thead class="head_cell">
-<th>Base \ Position</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
+<th>Base \ Position</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
 </thead>
 <tbody>
-<tr>
-<td class="index">T</td>
-<td>2</td>
-<td>10</td>
-<td>1</td>
-<td>6</td>
-<td>1</td>
-<td>5</td>
-<td>0</td>
-</tr>
-<tr>
-<td class="index">C</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr>
-<td class="index">A</td>
-<td>8</td>
-<td>0</td>
-<td>9</td>
-<td>4</td>
-<td>9</td>
-<td>4</td>
-<td>4</td>
-</tr>
-<tr>
-<td class="index">G</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>5</td>
-</tr>
+<tr><td class="index"><span class="c3col_left">T</span></td><td><span class="c3col_right">2</span></td><td><span class="c3col_right">10</span></td><td><span class="c3col_right">1</span></td><td><span class="c3col_right">6</span></td><td><span class="c3col_right">1</span></td><td><span class="c3col_right">5</span></td><td><span class="c3col_right">0</span></td></tr>
+<tr><td class="index"><span class="c3col_left">C</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">1</span></td></tr>
+<tr><td class="index"><span class="c3col_left">A</span></td><td><span class="c3col_right">8</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">9</span></td><td><span class="c3col_right">4</span></td><td><span class="c3col_right">9</span></td><td><span class="c3col_right">4</span></td><td><span class="c3col_right">4</span></td></tr>
+<tr><td class="index"><span class="c3col_left">G</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">0</span></td><td><span class="c3col_right">1</span></td><td><span class="c3col_right">5</span></td></tr>
 </tbody>
 </table>
 <p>

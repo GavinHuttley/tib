@@ -1,6 +1,8 @@
 Refresher on statistical inference
 ==================================
 
+.. todo:: the null has fewer parameters than the alt
+
 .. sidebar:: Distribution of plant heights
     :name: plant_heights
 

@@ -235,51 +235,38 @@
 <p>We convert the PWM into a PPM, but I’m restricting the examples to just 4 positions.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">PPM --</span><br><span class="cell_legend">Position specific probability matrix</span></caption>
+
+<caption>
+<br><span class="cell_title">PPM --</span></br> <span class="cell_legend">Position specific probability matrix</span>
+</caption>
 <thead class="head_cell">
-<th>Base \ Position</th>
-<th>0</th>
-<th>1</th>
-<th>3</th>
+<th>Base \ Position</th><th>0</th><th>1</th><th>3</th>
 </thead>
 <tbody>
-<tr>
-<td>T</td>
-<td>0.2</td>
-<td>1.0</td>
-<td>0.6</td>
-</tr>
-<tr>
-<td>C</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr>
-<td>A</td>
-<td>0.8</td>
-<td>0.0</td>
-<td>0.4</td>
-</tr>
-<tr>
-<td>G</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
+<tr><td><span class="c3col_left">T</span></td><td><span class="c3col_right">0.2</span></td><td><span class="c3col_right">1.0</span></td><td><span class="c3col_right">0.6</span></td></tr>
+<tr><td><span class="c3col_left">C</span></td><td><span class="c3col_right">0.0</span></td><td><span class="c3col_right">0.0</span></td><td><span class="c3col_right">0.0</span></td></tr>
+<tr><td><span class="c3col_left">A</span></td><td><span class="c3col_right">0.8</span></td><td><span class="c3col_right">0.0</span></td><td><span class="c3col_right">0.4</span></td></tr>
+<tr><td><span class="c3col_left">G</span></td><td><span class="c3col_right">0.0</span></td><td><span class="c3col_right">0.0</span></td><td><span class="c3col_right">0.0</span></td></tr>
 </tbody>
 </table>
 <p>
@@ -343,56 +330,38 @@ for seq_index in sequence
 <p>We add a pseudocount of 0.5 to the PWM and then convert to a PPM as before, producing</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
-<caption><span class="cell_title">PPM</span><br><span class="cell_legend">Position specific probability matrix after adding 0.5 to the PWM cells</span></caption>
+
+<caption>
+<br><span class="cell_title">PPM</span></br> <span class="cell_legend">Position specific probability matrix after adding 0.5 to the PWM cells</span>
+</caption>
 <thead class="head_cell">
-<th>Base \ Position</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
+<th>Base \ Position</th><th>0</th><th>1</th><th>2</th><th>3</th>
 </thead>
 <tbody>
-<tr>
-<td>T</td>
-<td>0.208</td>
-<td>0.875</td>
-<td>0.125</td>
-<td>0.542</td>
-</tr>
-<tr>
-<td>C</td>
-<td>0.042</td>
-<td>0.042</td>
-<td>0.042</td>
-<td>0.042</td>
-</tr>
-<tr>
-<td>A</td>
-<td>0.708</td>
-<td>0.042</td>
-<td>0.792</td>
-<td>0.375</td>
-</tr>
-<tr>
-<td>G</td>
-<td>0.042</td>
-<td>0.042</td>
-<td>0.042</td>
-<td>0.042</td>
-</tr>
+<tr><td><span class="c3col_left">T</span></td><td><span class="c3col_left">0.208</span></td><td><span class="c3col_left">0.875</span></td><td><span class="c3col_left">0.125</span></td><td><span class="c3col_left">0.542</span></td></tr>
+<tr><td><span class="c3col_left">C</span></td><td><span class="c3col_left">0.042</span></td><td><span class="c3col_left">0.042</span></td><td><span class="c3col_left">0.042</span></td><td><span class="c3col_left">0.042</span></td></tr>
+<tr><td><span class="c3col_left">A</span></td><td><span class="c3col_left">0.708</span></td><td><span class="c3col_left">0.042</span></td><td><span class="c3col_left">0.792</span></td><td><span class="c3col_left">0.375</span></td></tr>
+<tr><td><span class="c3col_left">G</span></td><td><span class="c3col_left">0.042</span></td><td><span class="c3col_left">0.042</span></td><td><span class="c3col_left">0.042</span></td><td><span class="c3col_left">0.042</span></td></tr>
 </tbody>
 </table>
 <p>
@@ -422,55 +391,35 @@ for seq_index in sequence
 </div>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
+<div class="output text_html">
+<div class="c3table">
+
+<style>
 .c3table table {margin: 10px 0;}
 .c3table tr:last-child {border-bottom: 1px solid #000;} 
-.c3table tr > th {text-align: center !important; padding: 0 5px;}
-.c3table tr > td {text-align: right !important; padding: 5px;}
-.c3table tr:nth-child(even) {background: #f7f7f7;}
-.c3table .index {background: rgba(161, 195, 209, 0.25); font-weight: 600;}
+.c3table tr > th {text-align: left; padding: 0 5px;}
+.c3table tr > td {text-align: left; padding: 5px;}
+.c3table tr:nth-child(even) {background: #f7f7f7 !important;}
+.c3table .ellipsis {background: rgba(0, 0, 0, .01);}
+.c3table .index {background: rgba(161, 195, 209, 0.0); margin: 10px; font-weight: 600;}
 .c3table .head_cell {background: rgba(161, 195, 209, 0.75); font-weight: bold; text-align: center;}
 .c3table caption {color: rgb(250, 250, 250); background: rgba(30, 140, 200, 1); padding: 3px; white-space: nowrap; caption-side: top;}
 .c3table .cell_title {font-weight: bold;}
+.c3col_left { text-align: left !important; display: block;}
+.c3col_right { text-align: right !important; display: block;}
+.c3col_center { text-align: center !important; display: block;}
 </style>
-<div class="c3table">
+
 <table>
+
 <thead class="head_cell">
-<th>Base \ Position</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
+<th>Base \ Position</th><th>0</th><th>1</th><th>2</th><th>3</th>
 </thead>
 <tbody>
-<tr>
-<td>T</td>
-<td>-0.263</td>
-<td>1.807</td>
-<td>-1.000</td>
-<td>1.115</td>
-</tr>
-<tr>
-<td>C</td>
-<td>-2.585</td>
-<td>-2.585</td>
-<td>-2.585</td>
-<td>-2.585</td>
-</tr>
-<tr>
-<td>A</td>
-<td>1.503</td>
-<td>-2.585</td>
-<td>1.663</td>
-<td>0.585</td>
-</tr>
-<tr>
-<td>G</td>
-<td>-2.585</td>
-<td>-2.585</td>
-<td>-2.585</td>
-<td>-2.585</td>
-</tr>
+<tr><td><span class="c3col_left">T</span></td><td><span class="c3col_left">-0.263</span></td><td><span class="c3col_left">1.807</span></td><td><span class="c3col_left">-1.000</span></td><td><span class="c3col_left">1.115</span></td></tr>
+<tr><td><span class="c3col_left">C</span></td><td><span class="c3col_left">-2.585</span></td><td><span class="c3col_left">-2.585</span></td><td><span class="c3col_left">-2.585</span></td><td><span class="c3col_left">-2.585</span></td></tr>
+<tr><td><span class="c3col_left">A</span></td><td><span class="c3col_left">1.503</span></td><td><span class="c3col_left">-2.585</span></td><td><span class="c3col_left">1.663</span></td><td><span class="c3col_left">0.585</span></td></tr>
+<tr><td><span class="c3col_left">G</span></td><td><span class="c3col_left">-2.585</span></td><td><span class="c3col_left">-2.585</span></td><td><span class="c3col_left">-2.585</span></td><td><span class="c3col_left">-2.585</span></td></tr>
 </tbody>
 </table>
 <p>
