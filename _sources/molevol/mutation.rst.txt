@@ -103,7 +103,7 @@ Let's consider a though experiment in where we run a mutagenesis experiment for 
 
 These divide the difference in the counts of the Watson-Crick pairs by their total. If sequences are mutation has predominantly operated in a strand-symmetric manner throughout time, the expected value of both :math:`S_{AT}` and :math:`S_{GA}` is 0 [5]_.
 
-We present two figures from published work that prove strikingly informative. The :ref:`first <dna_rep>` concerns the influence of putative initiating DNA replication from a fixed location. It is conjectured, that the distinct nature of DNA synthesis on leading versus lagging strands drives the appearance of striking asymmetries in some bacterial genomes :cite:`Mrazek:1998aa`.
+We present two figures from published work that prove strikingly informative. The :ref:`first <dna_rep>` concerns the putative influence of initiating DNA replication from a fixed location. It is conjectured that the distinct nature of DNA synthesis on leading versus lagging strands drives the appearance of striking asymmetries in some bacterial genomes :cite:`Mrazek:1998aa`.
 
 .. [3] Except in specific experimental contexts.
 .. [4] Because of the Watson-Crick base-pairing rules, the other strand can be deduced and thus presenting it is redundant.
