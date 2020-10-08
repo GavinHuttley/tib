@@ -200,7 +200,7 @@ We then address the boundary conditions. Since boundary cells can have only one 
         path_choices[r, 0] = (r - 1, 0)
 
     for c in range(1, dim_c):
-        path_choices[0, c] = (c - 1, 0)
+        path_choices[0, c] = (0, c - 1)
 
     path_choices
 
