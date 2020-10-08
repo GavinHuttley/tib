@@ -10,6 +10,7 @@ Acknowledgements
 - Amber Condell for reporting dead links.
 - Amber Condell, Sean Broderick and Brendan Beaton for identifying issues that needed better explanations.
 - Jesse Wallace for suggesting assorted improvements and fixes.
+- Hulson Zhang identified a bug (and the correction) for incorrect initialisation of the Needleman-Wunsch traceback matrix.
 
 I also wish to thank WingIDE_, who have donated licenses to their professional python IDE for well over a decade. Their sustained support for open source projects is greatly appreciated!
 
