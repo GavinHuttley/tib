@@ -44,6 +44,10 @@
 
 .. common URLs and replacements
 
+.. _`replication crisis`: https://en.wikipedia.org/wiki/Replication_crisis
+.. _Python: https://python.org
+.. _R: https://www.r-project.org/
+
 .. |python_bytes| replace:: Python Bytes
 .. _python_bytes: https://pythonbytes.fm
 .. |test_n_code| replace:: Test & Code

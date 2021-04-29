@@ -59,7 +59,7 @@ Tests of independence
     
         from cogent3 import make_table
         
-        table = make_table(["", "+", "-"], data=rows, index="")
+        table = make_table(["", "+", "-"], data=rows, index_name="")
         table
 
     The ``Table.to_categorical()`` method returns a ``CategoryCounts`` instance.
@@ -141,6 +141,8 @@ Say you have paired data -- observations that are coupled in some way, such as f
 
 The paired :math:`t`-test is used to test the null hypothesis that mean (:math:`\bar\mu_d`) of the differences (:math:`d`) between two samples equals 0. There can be different alternate hypotheses (which you pre-specify), e.g. :math:`\bar\mu_d>0` (a one-tailed test). The test has numerous assumptions, including that :math:`d` is normally distributed.
 
+.. todo:: list the assumptions, regarding distribution (of the difference in this case, not the individual values) being normal
+
 .. jupyter-execute::
 
     from cogent3.maths.stats.test import t_paired
@@ -175,6 +177,8 @@ We can compare continuously distributed variables using standard statistical pro
 
 Two sample t-test
 """""""""""""""""
+
+.. todo:: list the assumptions, regarding distribution being normal, standard deviations being the same (?)
 
 .. jupyter-execute::
 

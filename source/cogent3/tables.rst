@@ -198,7 +198,7 @@ which supports statistical testing of categorical data. For instance
 Generating categorical counts from a Table
 ------------------------------------------
 
-We can also get a ``CategoryCount`` object via ``Table.to_categorical()``. In this case, the counts must be fully specified prior to constructing the table. (Meaning you've already done the counting part.) In addition, we also need to specify a column whose values are the row categories. The latter is achieved setting ``make_table(index=<column name>)``. In this case, I specify the column name of the index is an empty string.
+We can also get a ``CategoryCount`` object via ``Table.to_categorical()``. In this case, the counts must be fully specified prior to constructing the table. (Meaning you've already done the counting part.) In addition, we also need to specify a column whose values are the row categories. The latter is achieved setting ``make_table(index_name=<column name>)``. In this case, I specify the column name of the index is an empty string.
 
 .. jupyter-execute::
 
@@ -210,7 +210,7 @@ We can also get a ``CategoryCount`` object via ``Table.to_categorical()``. In th
         "": ["A", "C", "G", "T"],
     }
 
-    table = make_table(data=data, index="")
+    table = make_table(data=data, index_name="")
     table
 
 .. jupyter-execute::
