@@ -59,7 +59,7 @@ Tests of independence
     
         from cogent3 import make_table
         
-        table = make_table(["", "+", "-"], data=rows, index="")
+        table = make_table(["", "+", "-"], data=rows, index_name="")
         table
 
     The ``Table.to_categorical()`` method returns a ``CategoryCounts`` instance.

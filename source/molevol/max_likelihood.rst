@@ -177,7 +177,7 @@ We have |P| matrices, one for each edge (branch) on the tree. These represent th
                       0.0017898520599075826,
                       0.0017898520599076214,
                       0.9932898056088316]},
-                    digits=3, index="", title="P<sub>Human</sub>")
+                    digits=3, index_name="", title="P<sub>Human</sub>")
     P.set_repr_policy(show_shape=False)
 
 .. jupyter-execute::

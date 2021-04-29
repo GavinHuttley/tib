@@ -103,7 +103,7 @@ This is converted to a table of nucleotide counts per aligned column, resulting 
 
     c = aln.counts_per_pos()
     c = c.to_table()
-    tr = c.transposed(r"Base \ Position", select_as_header="", index=r"Base \ Position",
+    tr = c.transposed(r"Base \ Position", select_as_header="", index_name=r"Base \ Position",
                       title="PWM", legend="position specific weights matrix")
     tr
 
