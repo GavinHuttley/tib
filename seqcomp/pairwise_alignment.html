@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>6.16. Global Pairwise Alignment Using Dynamic Programming &mdash; Topics in Bioinformatics 2020 documentation</title>
   
@@ -16,14 +16,17 @@
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -36,10 +39,9 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
@@ -64,7 +66,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
           
 
           
@@ -182,6 +184,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -195,7 +199,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/pairwise_alignment.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -265,7 +269,7 @@ seq2  AT</p>
 <span class="n">seq2</span>  <span class="o">--</span><span class="n">A</span><span class="o">-</span><span class="n">T</span>
 </pre></div>
 </div>
-<p>Making inferences regarding historical relatedness underpins much of how we utilise biological sequence data. So how can we decide which positions in two (or more) sequences are related? There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of <em>global alignment</em> <a class="footnote-reference brackets" href="#id3" id="id1">1</a> <a class="bibtex reference internal" href="#needleman-1970aa" id="id2">[NW70]</a>.</p>
+<p>Making inferences regarding historical relatedness underpins much of how we utilise biological sequence data. So how can we decide which positions in two (or more) sequences are related? There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of <em>global alignment</em> <a class="footnote-reference brackets" href="#id3" id="id1">1</a> <span id="id2">[<a class="reference internal" href="#id37">NW70</a>]</span>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Global here means aligning the entire sequences. This contrasts with a “local” alignment, which computes the best aligned segment for a pair of sequences. That is solved using another dynamic programming algorithm referred to as Smith-Waterman, which we don’t address.</p>
@@ -291,9 +295,9 @@ require(['plotly'], function(Plotly) {
 });
 }
 </script>
-</div><div class="output text_html"><div>                            <div id="ee3fae06-67a6-4e3a-ab72-92d0fec34d94" class="plotly-graph-div" style="height:527.7777777777778px; width:500px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("ee3fae06-67a6-4e3a-ab72-92d0fec34d94")) {                    Plotly.newPlot(                        "ee3fae06-67a6-4e3a-ab72-92d0fec34d94",                        [{"line": {"color": "blue"}, "mode": "lines", "name": "+ strand", "type": "scatter", "x": [0, 12, null, 33, 54, null, 11, 33], "xaxis": "x", "y": [0, 12, null, 36, 57, null, 17, 39], "yaxis": "y"}],                        {"autosize": false, "font": {"family": "Balto", "size": 14}, "height": 527.7777777777778, "hovermode": "closest", "margin": {"b": 50, "l": 50, "pad": 4, "r": 50, "t": 50}, "showlegend": false, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": ""}, "width": 500, "xaxis": {"mirror": true, "range": [0, 54], "showgrid": false, "showline": true, "title": {"text": "A"}, "visible": true}, "yaxis": {"mirror": true, "range": [0, 57], "showgrid": false, "showline": true, "title": {"text": "B"}, "visible": true}},                        {"responsive": true}                    ).then(function(){
+</div><div class="output text_html"><div>                            <div id="979ab0f1-3933-46f2-bf3e-072884b695e2" class="plotly-graph-div" style="height:527.7777777777778px; width:500px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("979ab0f1-3933-46f2-bf3e-072884b695e2")) {                    Plotly.newPlot(                        "979ab0f1-3933-46f2-bf3e-072884b695e2",                        [{"line": {"color": "blue"}, "mode": "lines", "name": "+ strand", "type": "scatter", "x": [0, 12, null, 33, 54, null, 11, 33], "xaxis": "x", "y": [0, 12, null, 36, 57, null, 17, 39], "yaxis": "y"}],                        {"autosize": false, "font": {"family": "Balto", "size": 14}, "height": 527.7777777777778, "hovermode": "closest", "margin": {"b": 50, "l": 50, "pad": 4, "r": 50, "t": 50}, "showlegend": false, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "autotypenumbers": "strict", "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": ""}, "width": 500, "xaxis": {"mirror": true, "range": [0, 54], "showgrid": false, "showline": true, "title": {"text": "A"}, "visible": true}, "yaxis": {"mirror": true, "range": [0, 57], "showgrid": false, "showline": true, "title": {"text": "B"}, "visible": true}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('ee3fae06-67a6-4e3a-ab72-92d0fec34d94');
+var gd = document.getElementById('979ab0f1-3933-46f2-bf3e-072884b695e2');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -340,7 +344,7 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 <p>We need 4 things for the NW algorithm  <a class="footnote-reference brackets" href="#id7" id="id6">3</a>:</p>
 <dl class="footnote brackets">
 <dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id6">3</a></span></dt>
-<dd><p>I’m presenting the algorithm of <a class="bibtex reference internal" href="#gotoh-1982aa" id="id8">[Got82]</a>.</p>
+<dd><p>I’m presenting the algorithm of <span id="id8">[<a class="reference internal" href="#id35">Got82</a>]</span>.</p>
 </dd>
 </dl>
 <ul class="simple">
@@ -355,7 +359,7 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 <p class="admonition-title">Note</p>
 <p>To simplify the following discussion, I will only refer to DNA states for my examples but emphasise that the same reasoning applies to protein sequences.</p>
 </div>
-<p>For any pair of sequence states <a class="footnote-reference brackets" href="#id12" id="id9">4</a> (nucleotides) we define a score function <span class="math notranslate nohighlight">\(s(i, j)\)</span>, where <span class="math notranslate nohighlight">\(i, j\)</span> are the nucleotides being compared from sequences <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>. This function <span class="math notranslate nohighlight">\(s()\)</span> returns a score that the two nucleotides are a “match”. Typically there are distinct values for when the two states are the same (<span class="math notranslate nohighlight">\(i=j\)</span>), compared to when the states are different (<span class="math notranslate nohighlight">\(i\neq j\)</span>). For our purpose, we start by using the exact same scoring function as NW <a class="bibtex reference internal" href="#needleman-1970aa" id="id10">[NW70]</a>. I their case <span class="math notranslate nohighlight">\(s(i, j)\)</span> returns 1 when <span class="math notranslate nohighlight">\(i=j\)</span> and -1 otherwise. We also define a gap introduction score, <span class="math notranslate nohighlight">\(\delta=-1\)</span> <a class="footnote-reference brackets" href="#id13" id="id11">5</a>.</p>
+<p>For any pair of sequence states <a class="footnote-reference brackets" href="#id12" id="id9">4</a> (nucleotides) we define a score function <span class="math notranslate nohighlight">\(s(i, j)\)</span>, where <span class="math notranslate nohighlight">\(i, j\)</span> are the nucleotides being compared from sequences <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>. This function <span class="math notranslate nohighlight">\(s()\)</span> returns a score that the two nucleotides are a “match”. Typically there are distinct values for when the two states are the same (<span class="math notranslate nohighlight">\(i=j\)</span>), compared to when the states are different (<span class="math notranslate nohighlight">\(i\neq j\)</span>). For our purpose, we start by using the exact same scoring function as NW <span id="id10">[<a class="reference internal" href="#id37">NW70</a>]</span>. I their case <span class="math notranslate nohighlight">\(s(i, j)\)</span> returns 1 when <span class="math notranslate nohighlight">\(i=j\)</span> and -1 otherwise. We also define a gap introduction score, <span class="math notranslate nohighlight">\(\delta=-1\)</span> <a class="footnote-reference brackets" href="#id13" id="id11">5</a>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id9">4</a></span></dt>
 <dd><p>The word “state” refers to a single character in the corresponding biological alphabet. For instance, for DNA, the valid states are A, C, G and T.</p>
@@ -615,8 +619,8 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </div>
 </div>
 <p>The following table uses bold font to emphasise the path choices that are made to produce the alignment and provides the indices to make it clearer how the path is interpreted.</p>
-<table class="docutils align-default" id="id14">
-<caption><span class="caption-text">The completed score matrix</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id45">
+<caption><span class="caption-text">The completed score matrix</span><a class="headerlink" href="#id45" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 13%" />
@@ -797,11 +801,11 @@ B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA - --GGTGGCGCACATAGATTT
 </ol>
 <hr class="docutils" />
 <p class="rubric">Citations</p>
-<p id="bibtex-bibliography-seqcomp/pairwise_alignment-0"><dl class="citation">
-<dt class="bibtex label" id="gotoh-1982aa"><span class="brackets"><a class="fn-backref" href="#id8">Got82</a></span></dt>
+<p id="id14"><dl class="citation">
+<dt class="label" id="id35"><span class="brackets"><a class="fn-backref" href="#id8">Got82</a></span></dt>
 <dd><p>Osamu Gotoh. An improved algorithm for matching biological sequences. <em>Journal of Molecular Biology</em>, 162:705 – 708, 1982. URL: <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/0022283682903989">http://www.sciencedirect.com/science/article/pii/0022283682903989</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/0022-2836(82)90398-9">doi:https://doi.org/10.1016/0022-2836(82)90398-9</a>.</p>
 </dd>
-<dt class="bibtex label" id="needleman-1970aa"><span class="brackets">NW70</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id10">2</a>)</span></dt>
+<dt class="label" id="id37"><span class="brackets">NW70</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id10">2</a>)</span></dt>
 <dd><p>Saul B. Needleman and Christian D. Wunsch. A general method applicable to the search for similarities in the amino acid sequence of two proteins. <em>Journal of Molecular Biology</em>, 48:443–453, 1970. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/0022283670900574">http://linkinghub.elsevier.com/retrieve/pii/0022283670900574</a>, <a class="reference external" href="https://doi.org/10.1016/0022-2836(70)90057-4">doi:10.1016/0022-2836(70)90057-4</a>.</p>
 </dd>
 </dl>
@@ -813,37 +817,29 @@ B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA - --GGTGGCGCACATAGATTT
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../molevol/index.html" class="btn btn-neutral float-right" title="7. Molecular Evolution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="dotplot.html" class="btn btn-neutral float-left" title="6.14. Dotplot – Alignment of sequences related by descent from a common ancestor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../molevol/index.html" class="btn btn-neutral float-right" title="7. Molecular Evolution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dotplot.html" class="btn btn-neutral float-left" title="6.14. Dotplot – Alignment of sequences related by descent from a common ancestor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, Gavin Huttley
+        &#169; Copyright 2020, Gavin Huttley.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

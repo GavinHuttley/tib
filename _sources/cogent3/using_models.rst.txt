@@ -71,7 +71,7 @@ The column titles in that summary display have the following meaning
                 "Whether the Q uniquely map to P",
             ],
         },
-        index="Column Heading",
+        index_name="Column Heading",
     )
     t.set_repr_policy(show_shape=False)
     t
@@ -236,7 +236,7 @@ The column titles in that summary display have the following meaning
                 "null or alternate",
             ],
         },
-        index="Column Heading",
+        index_name="Column Heading",
     )
     t.set_repr_policy(show_shape=False)
     t

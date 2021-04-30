@@ -78,7 +78,7 @@ The following is an example of such a matrix. The constraint that rows sum to 0 
         ],
     }
 
-    Q = make_table(data=data, index="", title="Q")
+    Q = make_table(data=data, index_name="", title="Q")
     Q.set_repr_policy(show_shape=False)
     Q
 
@@ -342,7 +342,7 @@ Advanced exercises
                     -1.3662478496722275,
                 ],
             },
-            index="",
+            index_name="",
             digits=6,
         )
         Q.set_repr_policy(show_shape=False)

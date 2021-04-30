@@ -18,6 +18,8 @@
 Statistical methods for molecular evolutionary analyses
 =======================================================
 
+.. todo:: **This is important!** Define process, model etc.. How the two terms can be cofused. Refer to likelihood calculation..
+
 The most widely used phylogenetic methods are maximum likelihood or Bayesian. The Bayesian methods incorporate the likelihood calculations and thus inherit many of the assumptions.
 
 Both these approaches are considered "probabilistic", meaning they involve probability calculations under a specific model of evolution. Their popularity in phylogenetics stems from their well developed theoretical foundations. Those foundations facilitate objective inference into the evolution of biological sequences.
@@ -175,7 +177,7 @@ We have |P| matrices, one for each edge (branch) on the tree. These represent th
                       0.0017898520599075826,
                       0.0017898520599076214,
                       0.9932898056088316]},
-                    digits=3, index="", title="P<sub>Human</sub>")
+                    digits=3, index_name="", title="P<sub>Human</sub>")
     P.set_repr_policy(show_shape=False)
 
 .. jupyter-execute::
@@ -317,6 +319,8 @@ The peak of these data points (when :math:`t \approx 0.015`) is the maximum like
 .. [#] Maximum likelihood estimators are typically denoted the caret character as :math:`\hat t`.
 
 When you have a really complex function, a probability model with lots of parameters, you don't have one line search, you have a line search for every parameter. Numerical optimisation algorithms handle that. It's a bit of magic, and it's definitely beyond the scope of this course.
+
+.. todo:: Add a section on global, local optimisation and failure to optimisers, outliers etc..
 
 What are we actually measuring?
 -------------------------------

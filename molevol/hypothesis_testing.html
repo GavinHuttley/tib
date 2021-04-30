@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>7.9. Hypothesis Testing &mdash; Topics in Bioinformatics 2020 documentation</title>
   
@@ -16,14 +16,17 @@
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -36,10 +39,9 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
@@ -64,7 +66,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Topics in Bioinformatics
+            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
           
 
           
@@ -172,6 +174,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -185,7 +189,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/molevol/hypothesis_testing.rst" class="fa fa-github"> Edit on GitHub</a>
             
@@ -289,9 +293,9 @@ require(['plotly'], function(Plotly) {
 });
 }
 </script>
-</div><div class="output text_html"><div>                            <div id="14321b2d-06c8-4ab8-9ee6-9af5fa30af88" class="plotly-graph-div" style="height:400px; width:500px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("14321b2d-06c8-4ab8-9ee6-9af5fa30af88")) {                    Plotly.newPlot(                        "14321b2d-06c8-4ab8-9ee6-9af5fa30af88",                        [{"line": {"color": "black", "shape": "spline", "smoothing": 1.3, "width": 3}, "mode": "lines", "showlegend": false, "type": "scatter", "x": [null, null, 0, 0, null, 0, 0.02, null, 0, 0, null, 0, 0.03, null], "y": [null, null, -0.325, -0.325, null, -0.325, 0.65, null, -0.325, -0.325, null, -0.325, -1.3, null]}, {"line": {"color": "orange", "width": 3}, "mode": "lines", "type": "scatter", "x": [0.02, 0.02, null, 0.02, 0.03, null], "y": [0.65, 0.65, null, 0.65, 1.3, null]}, {"line": {"color": "blue", "width": 3}, "mode": "lines", "type": "scatter", "x": [0.02, 0.02, null, 0.02, 0.03, null], "y": [0.65, 0.65, null, 0.65, 0.0, null]}, {"hoverinfo": "text", "marker": {"color": "black", "size": 3, "symbol": "circle"}, "mode": "markers", "showlegend": false, "text": ["root", "edge.0", "Chimpanzee", "Human", "Macaque"], "type": "scatter", "x": [0, 0.02, 0.03, 0.03, 0.03], "y": [-0.325, 0.65, 1.3, 0.0, -1.3]}],                        {"annotations": [{"font": {"family": "Inconsolata, monospace", "size": 16}, "showarrow": false, "text": "Chimpanzee", "textangle": 0, "x": 0.03075, "xanchor": "left", "xref": "x", "y": 1.3, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 16}, "showarrow": false, "text": "Human", "textangle": 0, "x": 0.03075, "xanchor": "left", "xref": "x", "y": 0.0, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 16}, "showarrow": false, "text": "Macaque", "textangle": 0, "x": 0.03075, "xanchor": "left", "xref": "x", "y": -1.3, "yref": "y"}], "autosize": true, "font": {"family": "Balto", "size": 14}, "height": 400, "hovermode": "closest", "margin": {"b": 50, "l": 50, "pad": 4, "r": 50, "t": 50}, "showlegend": false, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "width": 500, "xaxis": {"visible": false}, "yaxis": {"visible": false}},                        {"responsive": true}                    ).then(function(){
+</div><div class="output text_html"><div>                            <div id="f48f5b67-19a1-4589-8249-43fe18d7614d" class="plotly-graph-div" style="height:400px; width:500px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("f48f5b67-19a1-4589-8249-43fe18d7614d")) {                    Plotly.newPlot(                        "f48f5b67-19a1-4589-8249-43fe18d7614d",                        [{"line": {"color": "black", "shape": "spline", "smoothing": 1.3, "width": 3}, "mode": "lines", "showlegend": false, "type": "scatter", "x": [null, null, 0, 0, null, 0, 0.02, null, 0, 0, null, 0, 0.03, null], "y": [null, null, -0.325, -0.325, null, -0.325, 0.65, null, -0.325, -0.325, null, -0.325, -1.3, null]}, {"line": {"color": "orange", "width": 3}, "mode": "lines", "type": "scatter", "x": [0.02, 0.02, null, 0.02, 0.03, null], "y": [0.65, 0.65, null, 0.65, 1.3, null]}, {"line": {"color": "blue", "width": 3}, "mode": "lines", "type": "scatter", "x": [0.02, 0.02, null, 0.02, 0.03, null], "y": [0.65, 0.65, null, 0.65, 0.0, null]}, {"hoverinfo": "text", "marker": {"color": "black", "size": 3, "symbol": "circle"}, "mode": "markers", "showlegend": false, "text": ["root", "edge.0", "Chimpanzee", "Human", "Macaque"], "type": "scatter", "x": [0, 0.02, 0.03, 0.03, 0.03], "y": [-0.325, 0.65, 1.3, 0.0, -1.3]}],                        {"annotations": [{"font": {"family": "Inconsolata, monospace", "size": 16}, "showarrow": false, "text": "Chimpanzee", "textangle": 0, "x": 0.03075, "xanchor": "left", "xref": "x", "y": 1.3, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 16}, "showarrow": false, "text": "Human", "textangle": 0, "x": 0.03075, "xanchor": "left", "xref": "x", "y": 0.0, "yref": "y"}, {"font": {"family": "Inconsolata, monospace", "size": 16}, "showarrow": false, "text": "Macaque", "textangle": 0, "x": 0.03075, "xanchor": "left", "xref": "x", "y": -1.3, "yref": "y"}], "autosize": true, "font": {"family": "Balto", "size": 14}, "height": 400, "hovermode": "closest", "margin": {"b": 50, "l": 50, "pad": 4, "r": 50, "t": 50}, "showlegend": false, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "autotypenumbers": "strict", "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "width": 500, "xaxis": {"visible": false}, "yaxis": {"visible": false}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('14321b2d-06c8-4ab8-9ee6-9af5fa30af88');
+var gd = document.getElementById('f48f5b67-19a1-4589-8249-43fe18d7614d');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -330,7 +334,7 @@ if (outputEl) {{
 <h3><span class="section-number">7.9.1.3. </span>Rate heterogeneity models<a class="headerlink" href="#rate-heterogeneity-models" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="independent-sites">
 <h4>Independent sites<a class="headerlink" href="#independent-sites" title="Permalink to this headline">¶</a></h4>
-<p>It has been known for a very long time <a class="bibtex reference internal" href="neutral_theory.html#king-1969aa" id="id11">[KJ69]</a> that some sequence positions evolve at different rates. The standard assumption of the likelihood analyses thus far is that all alignment columns are treated as evolving under precisely the same substitution process and thus at the same rate. This is a rate-homogeneous model. Rate heterogeneity models seek to account for observed differences in rate.</p>
+<p>It has been known for a very long time <span id="id11">[<a class="reference internal" href="neutral_theory.html#id31">KJ69</a>]</span> that some sequence positions evolve at different rates. The standard assumption of the likelihood analyses thus far is that all alignment columns are treated as evolving under precisely the same substitution process and thus at the same rate. This is a rate-homogeneous model. Rate heterogeneity models seek to account for observed differences in rate.</p>
 <p>In a nutshell, the typical rate-heterogeneity models are a “mixture model”. I illustrate this with the widely used <span class="math notranslate nohighlight">\(\Gamma\)</span> <a class="footnote-reference brackets" href="#id15" id="id12">6</a> distributed rate heterogeneity model. The <span class="math notranslate nohighlight">\(\Gamma\)</span> distribution shape is controlled by parameters that are included <a class="footnote-reference brackets" href="#id16" id="id13">7</a> as free parameters in the model. The distribution represents a scalar on branch length and is defined so its mean is 1. Typically, the <span class="math notranslate nohighlight">\(\Gamma\)</span> distribution is split into four bins <a class="footnote-reference brackets" href="#id17" id="id14">8</a> and the likelihood is computed for each bin separately. The mean value of each bin is used as a multiplier for <em>all</em> the branch lengths on a tree. The full likelihood is computed by summing the likelihoods computed for each bin.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id12">6</a></span></dt>
@@ -351,7 +355,7 @@ if (outputEl) {{
 <div class="section" id="dependency-amongst-sites-phylo-hmms">
 <h4>Dependency amongst sites – phylo-HMMs<a class="headerlink" href="#dependency-amongst-sites-phylo-hmms" title="Permalink to this headline">¶</a></h4>
 <p>In this form of rate heterogeneity, the rate categories of adjacent sites are correlated. So if one site is evolving slowly, the adjacent site is likely to belong to the same category. This form can be combined with the <span class="math notranslate nohighlight">\(\Gamma\)</span> models described above by addition of a switching parameter that controls whether to stay in the previous sites rate category or pick a new one.</p>
-<p>This class of model are termed phylogenetic Hidden Markov Models (or phylo-HMM). (See the <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/gb-2007-8-8-r171/figures/5">example application in the PyCogent publication</a> <a class="bibtex reference internal" href="#knight-2007aa" id="id18">[KMB+07]</a>.)</p>
+<p>This class of model are termed phylogenetic Hidden Markov Models (or phylo-HMM). (See the <a class="reference external" href="https://genomebiology.biomedcentral.com/articles/10.1186/gb-2007-8-8-r171/figures/5">example application in the PyCogent publication</a> <span id="id18">[<a class="reference internal" href="#id24">KMB+07</a>]</span>.)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These models also do not readily nest the rate-homogeneous models, so more complex methods are required for hypothesis testing.</p>
@@ -475,11 +479,11 @@ if (outputEl) {{
 </ol>
 <hr class="docutils" />
 <p class="rubric">Citations</p>
-<p id="bibtex-bibliography-molevol/hypothesis_testing-0"><dl class="citation">
-<dt class="bibtex label" id="king-1969aa"><span class="brackets"><a class="fn-backref" href="#id11">KJ69</a></span></dt>
+<p id="id23"><dl class="citation">
+<dt class="label" id="id42"><span class="brackets"><a class="fn-backref" href="#id11">KJ69</a></span></dt>
 <dd><p>J L King and T H Jukes. Non-Darwinian evolution. <em>Science</em>, 164:788–798, 1969.</p>
 </dd>
-<dt class="bibtex label" id="knight-2007aa"><span class="brackets"><a class="fn-backref" href="#id18">KMB+07</a></span></dt>
+<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id18">KMB+07</a></span></dt>
 <dd><p>Rob Knight, Peter Maxwell, Amanda Birmingham, Jason Carnes, J Gregory Caporaso, Brett C Easton, Michael Eaton, Micah Hamady, Helen Lindsay, Zongzhi Liu, Catherine Lozupone, Daniel McDonald, Michael Robeson, Raymond Sammut, Sandra Smit, Matthew J Wakefield, Jeremy Widmann, Shandy Wikman, Stephanie Wilson, Hua Ying, and Gavin A Huttley. PyCogent: a toolkit for making sense from sequence. <em>Genome Biol</em>, 8(8):R171, 2007. <a class="reference external" href="https://doi.org/10.1186/gb-2007-8-8-r171">doi:10.1186/gb-2007-8-8-r171</a>.</p>
 </dd>
 </dl>
@@ -491,37 +495,29 @@ if (outputEl) {{
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="glossary.html" class="btn btn-neutral float-right" title="7.11. Glossary of terms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="substitution_models.html" class="btn btn-neutral float-left" title="7.7. Substitution models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="glossary.html" class="btn btn-neutral float-right" title="7.11. Glossary of terms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="substitution_models.html" class="btn btn-neutral float-left" title="7.7. Substitution models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, Gavin Huttley
+        &#169; Copyright 2020, Gavin Huttley.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

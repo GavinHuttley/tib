@@ -22,7 +22,10 @@ A striking scientific trend in the last few years is demonstration of a `replica
 
 .. todo:: the benefits, a different way of seeing, logical improvements in work, super power
 
-At this stage, I'm sure you have many questions. Like, *What is "bioinformatics"?* *I've heard the phrase "Data Science", is that what bioinformatics is?* *Why are you teaching Python_ for part of the course and R_ for the rest?*
+At this stage, I'm sure you have many questions. Like, *What is "bioinformatics"?* *I've heard the phrase "Data Science", is that what bioinformatics is?* *Why are you teaching* |Python|_ *for part of the course and* |R|_ *for the rest?*
+
+.. |Python| replace:: *Python*
+.. |R| replace:: *R*
 
 Let's go backwards. We teach Python_ and R_ because these are the languages that we use in our own research. We use these languages because they have capabilities that allow us to leverage very sophisticated capabilities for our science. It also turns out that these two languages are the dominant languages employed in Data Science. Both of these languages are also `Open Source <https://en.wikipedia.org/wiki/Open_source>`_ languages, developed by a community of volunteers [2]_.
 
@@ -42,9 +45,5 @@ We can ask, "What is the role of computing in science?" First, I hope you accept
 
 Back to the replication crisis. When given the same input, computer programs are, by design, intended to produce the same output. Given computing is a central part of science, it should be written and applied with replication in mind.
 
-.. _`replication crisis`: https://en.wikipedia.org/wiki/Replication_crisis
-
 .. todo:: add section on how to contribute, "Edit on GitHub" etc..
 
-.. _Python: https://python.org
-.. _R: https://www.r-project.org/
