@@ -72,3 +72,4 @@ html_css_files = [
     'css/custom.css',
 ]
 
+bibtex_bibfiles = ["references.bib"]
