@@ -13,7 +13,7 @@ jobs:
            path: tib
 
       - name: Make conda environment
-        uses: goanpeca/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v2
         with:
            activate-environment: tib
            environment-file: tib/tib-env.yml
