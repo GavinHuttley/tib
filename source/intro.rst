@@ -4,6 +4,8 @@ Prologue
 
 .. sectionauthor:: Gavin Huttley
 
+.. todo:: include description of computational thinking, how that part is not about programming, per se, but shares similarities. Using abstraction; Decomposition; Separation of concerns; 
+
 .. todo:: add commentary on mechanics of programming being just part of the skill set, it's really the ability to transform a biological research question into a form that can be addressed using algorithm
 
 .. epigraph::
@@ -44,6 +46,3 @@ We can ask, "What is the role of computing in science?" First, I hope you accept
 .. [3] Sorry, it's bring your own cape.
 
 Back to the replication crisis. When given the same input, computer programs are, by design, intended to produce the same output. Given computing is a central part of science, it should be written and applied with replication in mind.
-
-.. todo:: add section on how to contribute, "Edit on GitHub" etc..
-
