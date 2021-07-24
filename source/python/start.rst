@@ -1,4 +1,5 @@
 .. sidebar:: Executing Python using a REPL
+    :name: REPL
 
     .. index::
         pair: Executing Python using a REPL; screencasts
@@ -41,6 +42,11 @@ The second approach is based on writing Python scripts. A script is just a plain
     </figure>
 
 But seriously, I strongly recommend using an IDE [2]_ as these incorporate tools to facilitate debugging, a very useful capability (you can see a demo of this in :ref:`debugging`). Writing scripts has two steps for running the program (illustrated in the executing python from a text file video): (1) write the script, (2) running the script in a terminal.
+
+Code and output in these notes is from Jupyter
+==============================================
+
+The blocks of computer code, and associated output, displayed in these notes are derived from running the code in a Jupyter notebook. Running the same code in the standard python interpreter inside a terminal will generate differnt looking output. The difference is most obvious on what is called the representation (or ``repr()``) of an object. In Jupyter, the output can be "styled" (e.g. bold font, coloured tables) whereas in a conventional interpreter the output will appear as plain text (see :ref:`Demonstration of using Jupter<REPL>`).
 
 Everyones first program in Python
 =================================

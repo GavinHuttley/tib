@@ -4,46 +4,47 @@ Prologue
 
 .. sectionauthor:: Gavin Huttley
 
-.. todo:: add commentary on mechanics of programming being just part of the skill set, it's really the ability to transform a biological research question into a form that can be addressed using algorithm
+How is life encoded in nucleic acids? What is the minimum number of nucleotides required to encode a virus? Do all genetic differences between individuals contribute to phenotypic differences between them? What genetic change(s) causes humans to have unique cognitive abilities compared to our nearest grate ape relatives? How many different types of microorganisms live in our gut and what role do they play in our biology? If you had :math:`\sim 10^{10}` 250bp long DNA sequences that were randomly sampled from a single Human, could you assemble that individuals genome from scratch? If you sequence DNA extracted from soil, can you identify what species the DNA comes from? If you have an assembled genome of a novel species, can you identify where the genes in the genome are?
 
-.. epigraph::
+We do not know the answer to many of these questions. Despite that, and despite the fact that some of them are strictly concerned with biological phenomena, I am confident that they all require computers to attain a solution. I will go even further and claim that any question in the biological sciences we can come up with will require the use of computers to tackle it. Based on this, I think it is reasonable to make the general claim that biologists have a near absolute reliance on computers for undertaking their research [1]_. But we can make that statement more specific: Biologists have a near absolute reliance on **software** to undertake their research [2]_.
 
-    “The more I learn about proprietary software, the more I worry that objective truth might perish from the earth”
-    
-    --- Professor Paul Romer, Awarded the 2018 Nobel Prize in Economics, and Python Programmer.
+Just about every part of a biology wet-lab has some type of digital device, from pipette's and scales to centrifuges. From confocal microscopes to scanning tunnelling electron microscopes. The more transformed data becomes from the natural system, the greater the involvement of software (and our reliance on it) to control those devices. But science is an enterprise whose objective is much more than simply the accumulation of data. Similarly, software can be much more than instructions for controlling the capture of data.
 
-A striking scientific trend in the last few years is demonstration of a `replication crisis`_. In short, this is the result of systematic examination of the extent to which published scientific studies are reproducible. It is termed a "crisis" because it turns out there is a significant fraction of studies that could not be reproduced. So what does this have to do with bioinformatics? Read on.
+Science is about producing general models of how the natural world works. Good scientific models are powerful because they allow us to make predictions about what we will observe in circumstances that have not yet been encountered. Computer programs are one way in which we represent those models. They provide us with the means to evaluate, on a large scale, how well our model matches actual data. In other words, software is integral to scientific practice.
+
+.. [1] I suspect this holds true for all the sciences.
+.. [2] Software is just another word for computer program. The computer is just a piece of hardware but the software is the specific set of instructions that dictate what that hardware does.
+
+The above is a big picture view of the role of software in science, but where does this course fit in? I can say with absolute certainty that we will not be answering most of the questions raised above (Doh!). What *you* will be doing is acquiring the skills necessary to understand what the analyses described above are, how to perform them and whether *you* should believe the results. *You* will the develop the skills to write custom software whose output you can trust. In your future career, that software may be as simple as handling data formats, or completely novel models of biological systems. In all cases, your software will be key to solving the scientific questions that you find interesting.
 
 .. sidebar:: What's the difference between using Python_ versus using R_?
 
-    The major difference between Python_ and R_ comes in how they are typically used [1]_. Many of the concepts you will learn in the Python_ topic -- conditionals, iteration, functions -- are not directly coded by most users of R_. They are implicitly being used, but are "hidden" from users.
+    The major difference between Python_ and R_ comes in how they are typically used [3]_. Many of the concepts you will learn in the Python_ topic -- conditionals, iteration, functions -- are not directly coded by most users of R_. They are implicitly being used, but are "hidden" from users.
     
     The way you will learn Python_ is as a more "conventional" programming approach.
-
-.. todo:: the benefits, a different way of seeing, logical improvements in work, super power
 
 At this stage, I'm sure you have many questions. Like, *What is "bioinformatics"?* *I've heard the phrase "Data Science", is that what bioinformatics is?* *Why are you teaching* |Python|_ *for part of the course and* |R|_ *for the rest?*
 
 .. |Python| replace:: *Python*
 .. |R| replace:: *R*
 
-Let's go backwards. We teach Python_ and R_ because these are the languages that we use in our own research. We use these languages because they have capabilities that allow us to leverage very sophisticated capabilities for our science. It also turns out that these two languages are the dominant languages employed in Data Science. Both of these languages are also `Open Source <https://en.wikipedia.org/wiki/Open_source>`_ languages, developed by a community of volunteers [2]_.
+Let's go backwards. We teach Python_ and R_ because these are the languages that we use in our own research. We use these languages because they have capabilities that allow us to leverage very sophisticated capabilities for our science. It also turns out that these two languages are the dominant languages employed in Data Science. Both of these languages are also `Open Source <https://en.wikipedia.org/wiki/Open_source>`_ languages, developed by a community of volunteers [4]_.
 
-.. [1] Ok, Ok, I get it. This is a gross oversimplification of the differences between the languages.
+.. [3] Ok, Ok, I get it. This is a gross oversimplification of the differences between the languages.
 
-.. [2] I could write a very extensive essay on how open source software has, and continues to be, critical to science. Instead I have used the quote above to illuminate the fact that true scientific reproducibility requires transparency. By definition, open source software satisfies this condition while proprietary software does not.
+.. [4] I could write a very extensive essay on how open source software has, and continues to be, critical to science. Instead I have used the quote above to illuminate the fact that true scientific reproducibility requires transparency. By definition, open source software satisfies this condition while proprietary software does not.
 
 :index:`Data Science` is the joint application of algorithm development and statistical modelling to extracting information from what is referred to as "big data". Bioinformatics, also referred to as computational biology, certainly fits within this rather loose definition of data science. In essence, Bioinformatics is the union of algorithms and statistics focussed on extracting information from big biological data sets to advance knowledge of biological systems.
 
 .. seriously, need to acknowledge that languages are different
 
-We can ask, "What is the role of computing in science?" First, I hope you accept that science is about producing general models of how the natural world works. Good scientific models are powerful because they allow us to make predictions about what we will observe in circumstances that we may never have encountered before. Computer programs are one way in which we represent those models. They provide us with the means to evaluate, on a large scale, how well our model matches actual data. In other words, computing is at the very centre of scientific practice.
+.. todo:: include description of computational thinking, how that part is not about programming, per se, but shares similarities. Using abstraction; Decomposition; Separation of concerns;
 
-*What will I get out of this course?* An understanding of how computer programs work. Improvements in your logical reasoning. An understanding of how to take advantage of computing to advance your own scientific interests. An appreciation of the pitfalls of software! All of this adds up to a superpower that will accelerate your work [3]_.
+.. todo:: add commentary on mechanics of programming being just part of the skill set, it's really the ability to transform a biological research question into a form that can be addressed using algorithm
 
-.. [3] Sorry, it's bring your own cape.
+.. todo:: the benefits, a different way of seeing, logical improvements in work, super power
 
-Back to the replication crisis. When given the same input, computer programs are, by design, intended to produce the same output. Given computing is a central part of science, it should be written and applied with replication in mind.
+*What will I get out of this course?* An understanding of how computer programs work. Improvements in your logical reasoning. An understanding of how to take advantage of computing to advance your own scientific interests. An appreciation of the pitfalls of software! All of this adds up to a superpower that will accelerate your work [5]_.
 
-.. todo:: add section on how to contribute, "Edit on GitHub" etc..
+.. [5] Sorry, it's bring your own cape.
 

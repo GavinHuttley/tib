@@ -1,16 +1,15 @@
 name: tib
 channels:
-  - plotly
   - conda-forge
 dependencies:
   - pandoc
-  - plotly
-  - python=3.8
-  - plotly-orca
+  - python=3.9
   - pip
   - graphviz
   - pip:
     - psutil
+    - plotly
+    - kaleido
     - pillow
     - ipython
     - ipykernel
@@ -26,5 +25,6 @@ dependencies:
     - nbconvert!=5.4
     - sphinxcontrib-bibtex
     - sphinx_rtd_theme
+    - pandas
     - git+https://github.com/cogent3/cogent3.git@develop#egg=cogent3[dev]
 
