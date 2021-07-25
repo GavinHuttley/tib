@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: Install graphviz
         run: |
-         apt-get update -y
-         apt-get install -y graphviz
+         sudo apt-get update -y
+         sudo apt-get install -y graphviz
 
       - uses: actions/checkout@v2
         with:
