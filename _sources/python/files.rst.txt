@@ -28,6 +28,8 @@
           Your browser does not support the video tag.
         </video>
 
+.. todo:: update reading text file screencast to use VS Code
+
 .. role:: python(code)
    :language: python
 

@@ -7,17 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>7.4. The neutral theory of molecular evolution &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>7.4. The neutral theory of molecular evolution &mdash; Topics in Bioinformatics 2021.07.25 documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
@@ -36,6 +38,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -43,8 +46,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -235,7 +238,7 @@
 <div class="sidebar" id="molecular-clock">
 <p class="sidebar-title">Variation in proteins seems to accumulate linearly with time</p>
 <a class="reference internal image-reference" href="../_images/molecular_clock.png"><img alt="../_images/molecular_clock.png" src="../_images/molecular_clock.png" style="width: 552.5px; height: 534.5px;" /></a>
-<p>Number of amino acid differences versus species divergence time. The former were estimated allowing for multiple changes, the latter derived from paleontological studies. Mean error in estimate of amino acid differences are indicated by the vertical bars <a class="footnote-reference brackets" href="#id3" id="id1">1</a>. Figure from <span id="id2">[<a class="reference internal" href="#id23">Dic71</a>]</span>.</p>
+<p>Number of amino acid differences versus species divergence time. The former were estimated allowing for multiple changes, the latter derived from paleontological studies. Mean error in estimate of amino acid differences are indicated by the vertical bars <a class="footnote-reference brackets" href="#id3" id="id1">1</a>. Figure from <span id="id2">[<a class="reference internal" href="#id23" title="R E Dickerson. The structures of cytochrome c and the rates of molecular evolution. J Mol Evol, 1:26–45, 1971.">Dic71</a>]</span>.</p>
 </div>
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -246,7 +249,7 @@
 </div>
 <div class="section" id="id4">
 <h2><span class="section-number">7.4.2. </span>The Neutral Theory of Molecular Evolution<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>This theory proposes that most genetic variation, both within and between species, has not been affected by natural selection, but instead reflects the influence of chance events on new mutations. The theory was dominantly developed by Motoo Kimura <span id="id5">[<a class="reference internal" href="#id30">Kim68</a>]</span> but independently proposed by King and Jukes <span id="id6">[<a class="reference internal" href="#id31">KJ69</a>]</span>.</p>
+<p>This theory proposes that most genetic variation, both within and between species, has not been affected by natural selection, but instead reflects the influence of chance events on new mutations. The theory was dominantly developed by Motoo Kimura <span id="id5">[<a class="reference internal" href="#id30" title="Motoo Kimura. Evolutionary Rate at the Molecular Level. Nature, 217:624–626, 1968. doi:10.1038/217624a0.">Kim68</a>]</span> but independently proposed by King and Jukes <span id="id6">[<a class="reference internal" href="#id31" title="J L King and T H Jukes. Non-Darwinian evolution. Science, 164:788–798, 1969.">KJ69</a>]</span>.</p>
 </div>
 <div class="section" id="a-simplified-example-of-neutral-evolution">
 <h2><span class="section-number">7.4.3. </span>A simplified example of neutral evolution<a class="headerlink" href="#a-simplified-example-of-neutral-evolution" title="Permalink to this headline">¶</a></h2>
@@ -312,7 +315,7 @@ For neutral variation, the evolutionary dynamics (changes in frequency) are dict
 <p>Finally, returning to our simplistic example of how variation can be neutral but natural selection can be operated, the following quite provides another key perspective on how this body of work applies to modern day genomics.</p>
 <blockquote class="epigraph">
 <div><p>“..functionally less important molecules or parts of a molecule evolve faster than more important ones..”</p>
-<p>King and Jukes <span id="id11">[<a class="reference internal" href="#id31">KJ69</a>]</span></p>
+<p>King and Jukes <span id="id11">[<a class="reference internal" href="#id31" title="J L King and T H Jukes. Non-Darwinian evolution. Science, 164:788–798, 1969.">KJ69</a>]</span></p>
 </div></blockquote>
 <div class="section" id="summary">
 <h3><span class="section-number">7.4.5.1. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
@@ -350,7 +353,7 @@ For neutral variation, the evolutionary dynamics (changes in frequency) are dict
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, Gavin Huttley.
+        &#169; Copyright 2020-2021, Gavin Huttley.
 
     </p>
   </div>

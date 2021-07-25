@@ -7,17 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5. Introduction to Python &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>5. Introduction to Python &mdash; Topics in Bioinformatics 2021.07.25 documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
@@ -36,6 +38,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -43,8 +46,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -106,46 +109,47 @@
 <li class="toctree-l2"><a class="reference internal" href="resources.html">5.1. Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">5.2. Introduction to programming using Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="start.html">5.3. Computing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#everyones-first-program-in-python">5.4. Everyones first program in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">5.5. Basic arithmetic operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#exercises">5.6. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variables.html">5.7. Variables and assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.8. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html">5.9. Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#bitwise-operators">5.10. Bitwise operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.11. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html">5.12. The basic data types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.13. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logic.html">5.14. Logical syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.15. Fixing errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.16. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">5.17. Functions and methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.18. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.19. Getting help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lists.html">5.20. Using lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.21. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.22. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">5.23. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.24. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.25. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.26. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.27. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.28. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.29. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.30. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.31. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.32. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.33. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.34. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.35. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.36. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.37. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.38. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.39. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.40. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.41. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.42. Dealing with dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">5.43. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#code-and-output-in-these-notes-is-from-jupyter">5.4. Code and output in these notes is from Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#everyones-first-program-in-python">5.5. Everyones first program in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">5.6. Basic arithmetic operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#exercises">5.7. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">5.8. Variables and assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.9. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">5.10. Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#bitwise-operators">5.11. Bitwise operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.12. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">5.13. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.14. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">5.15. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.16. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">5.18. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.19. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.20. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.21. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.22. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.23. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.24. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.26. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.30. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.31. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.32. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.33. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.34. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.35. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.36. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.37. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.38. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.39. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.40. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.41. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.42. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.43. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets.html">5.44. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
@@ -269,7 +273,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, Gavin Huttley.
+        &#169; Copyright 2020-2021, Gavin Huttley.
 
     </p>
   </div>

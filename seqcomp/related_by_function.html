@@ -7,17 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>6.6. Experimental procedures for detecting functionally related sequences &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>6.6. Experimental procedures for detecting functionally related sequences &mdash; Topics in Bioinformatics 2021.07.25 documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
@@ -36,6 +38,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -43,8 +46,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -231,7 +234,7 @@
 <span id="experimental-data"></span><h1><span class="section-number">6.6. </span>Experimental procedures for detecting functionally related sequences<a class="headerlink" href="#experimental-procedures-for-detecting-functionally-related-sequences" title="Permalink to this headline">¶</a></h1>
 <p>Since DNA sequences can encode function, it holds that different sequences demonstrated to encode a comparable property should be similar. For instance, different sequences that are able to bind a specific protein (e.g. TBP) will share sequence features in common. This perspective motivates development of experimental and statistical techniques to uncover how such functional information is encoded.</p>
 <p>What sort of experiments can be conducted that allow identifying whether there is a particular diagnostic DNA sequence motif to which a protein binds? Whatever the nature of the experiment, we need a means for isolating a collection of sequences that are enriched for those that bind to the protein of interest. The experiment also needs to be able to identify the sequence of DNA molecules that have bound. Once that data exists we enter the world of computation and statistical analysis.</p>
-<p>There are a variety of experimental procedures that can used for this purpose <span id="id1">[<a class="reference internal" href="#id38">GM10</a>]</span>. I will discuss just two of those here.</p>
+<p>There are a variety of experimental procedures that can used for this purpose <span id="id1">[<a class="reference internal" href="#id38" title="Marcel Geertz and Sebastian J Maerkl. Experimental strategies for studying transcription factor-dna binding specificities. Brief Funct Genomics, 9:362-73, 2010. doi:10.1093/bfgp/elq023.">GM10</a>]</span>. I will discuss just two of those here.</p>
 <div class="section" id="selex-systematic-evolution-of-ligands-by-exponential-enrichment">
 <span id="index-0"></span><h2><span class="section-number">6.6.1. </span>SELEX – Systematic evolution of ligands by exponential enrichment<a class="headerlink" href="#selex-systematic-evolution-of-ligands-by-exponential-enrichment" title="Permalink to this headline">¶</a></h2>
 <p>This procedure is entirely <em>in vitro</em>. The inputs are a substantial amount of enriched protein <a class="footnote-reference brackets" href="#id3" id="id2">1</a> which is bound to a bead. Also required is a library of synthetically produced double stranded DNA of a precise fragment size. These two substrate are then incubated together under conditions favourable to binding of the DNA and protein. By eluting the unbound DNA fragments, you wind up with beads that have bound DNA. Those DNA fragments are then dissociated from the beads and amplified using PCR. This new DNA pool is then reintroduced to bead-bound protein and the process is repeated. (Only a few a rounds are done.) At the end of these iterations, the bound DNA is isolated again and the collection of DNA fragments is sequenced.</p>
@@ -399,7 +402,7 @@ TYHBM &lt;-- the IUPAC consensus
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, Gavin Huttley.
+        &#169; Copyright 2020-2021, Gavin Huttley.
 
     </p>
   </div>

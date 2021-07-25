@@ -7,17 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.23. Working with files &mdash; Topics in Bioinformatics 2020 documentation</title>
+  <title>5.24. Working with files &mdash; Topics in Bioinformatics 2021.07.25 documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
@@ -36,6 +38,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -43,16 +46,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.25. Writing functions" href="writing_functions.html" />
-    <link rel="prev" title="5.21. Indexing and Slicing" href="indexing.html" /> 
+    <link rel="next" title="5.26. Writing functions" href="writing_functions.html" />
+    <link rel="prev" title="5.22. Indexing and Slicing" href="indexing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -106,51 +109,52 @@
 <li class="toctree-l2"><a class="reference internal" href="resources.html">5.1. Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">5.2. Introduction to programming using Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="start.html">5.3. Computing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#everyones-first-program-in-python">5.4. Everyones first program in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">5.5. Basic arithmetic operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#exercises">5.6. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variables.html">5.7. Variables and assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.8. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html">5.9. Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#bitwise-operators">5.10. Bitwise operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.11. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html">5.12. The basic data types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.13. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logic.html">5.14. Logical syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.15. Fixing errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.16. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">5.17. Functions and methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.18. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.19. Getting help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lists.html">5.20. Using lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.21. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.22. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.23. Working with files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#reading-contents-of-a-file">5.23.1. Reading contents of a file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#writing-data-to-a-file">5.23.2. Writing data to a file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#writing-delimited-output">5.23.3. Writing delimited output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#code-and-output-in-these-notes-is-from-jupyter">5.4. Code and output in these notes is from Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#everyones-first-program-in-python">5.5. Everyones first program in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">5.6. Basic arithmetic operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#exercises">5.7. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">5.8. Variables and assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.9. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">5.10. Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#bitwise-operators">5.11. Bitwise operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.12. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">5.13. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.14. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">5.15. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.16. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">5.18. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.19. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.20. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.21. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.22. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.23. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.24. Working with files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reading-contents-of-a-file">5.24.1. Reading contents of a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-data-to-a-file">5.24.2. Writing data to a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-delimited-output">5.24.3. Writing delimited output</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.24. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.25. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.26. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.27. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.28. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.29. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.30. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.31. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.32. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.33. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.34. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.35. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.36. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.37. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.38. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.39. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.40. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.41. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.42. Dealing with dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">5.43. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.26. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.30. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.31. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.32. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.33. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.34. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.35. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.36. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.37. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.38. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.39. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.40. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.41. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.42. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.43. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets.html">5.44. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
@@ -207,7 +211,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.23. </span>Working with files</li>
+      <li><span class="section-number">5.24. </span>Working with files</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -269,7 +273,7 @@
   Your browser does not support the video tag.
 </video></div>
 <div class="section" id="working-with-files">
-<span id="files"></span><h1><span class="section-number">5.23. </span>Working with files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
+<span id="files"></span><h1><span class="section-number">5.24. </span>Working with files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
 <p id="index-2">The location of a file (its file path) is specified as a string (see the screencast on Unix Paths). We use the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function to open files. Whether a file is opened for reading or writing is defined by the <em>mode</em> argument. For example <code class="docutils literal notranslate"><span class="pre">mode=&quot;w&quot;</span></code> means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.</p>
 <div class="sidebar">
 <p class="sidebar-title">File properties</p>
@@ -353,7 +357,7 @@
 </div>
 </div>
 <div class="section" id="reading-contents-of-a-file">
-<h2><span class="section-number">5.23.1. </span>Reading contents of a file<a class="headerlink" href="#reading-contents-of-a-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.24.1. </span>Reading contents of a file<a class="headerlink" href="#reading-contents-of-a-file" title="Permalink to this headline">¶</a></h2>
 <p>File objects are iterable and the “unit” of iteration is a line, i.e. the file object returns all data up until the next line-feed character.</p>
 <div class="jupyter_cell jupyter_container docutils container" id="index-4">
 <div class="cell_input code_cell docutils container">
@@ -387,7 +391,7 @@
 </div>
 </div>
 <div class="section" id="writing-data-to-a-file">
-<h2><span class="section-number">5.23.2. </span>Writing data to a file<a class="headerlink" href="#writing-data-to-a-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.24.2. </span>Writing data to a file<a class="headerlink" href="#writing-data-to-a-file" title="Permalink to this headline">¶</a></h2>
 <p>In order to write data to a file, we must specify the <code class="docutils literal notranslate"><span class="pre">mode=&quot;w&quot;</span></code>.</p>
 <p>The data also needs to be converted to strings. One way to do this is to use a string format conversion. For instance, consider the example of having a list of float’s. If we try to write this to a file, it will raise an exception.</p>
 <div class="jupyter_cell jupyter_container docutils container" id="index-5">
@@ -402,7 +406,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">8</span><span class="n">d6806604669</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3251</span><span class="o">/</span><span class="mf">2811752881.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;some-data.txt&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">outfile</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
@@ -430,7 +434,7 @@
 </div>
 </div>
 <div class="section" id="writing-delimited-output">
-<h2><span class="section-number">5.23.3. </span>Writing delimited output<a class="headerlink" href="#writing-delimited-output" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.24.3. </span>Writing delimited output<a class="headerlink" href="#writing-delimited-output" title="Permalink to this headline">¶</a></h2>
 <p>One of the most common data file formats are ones where multiple fields on line correspond to one record. The different fields are separated from each other by a common <em>delimiter</em>, a specific character. Such a format is very easy to parse.</p>
 <p>For instance, the <em>GFF</em> format (Generic File Format) is a file format commonly employed in genomics for storing genome annotation data, e.g. locations of genes or exons. GFF is a plain text file format with the following fields:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">seqname</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">source</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">feature</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">start</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">end</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">score</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">strand</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">frame</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">attributes</span><span class="p">]</span> <span class="p">[</span><span class="n">comments</span><span class="p">]</span>
@@ -444,7 +448,7 @@
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.24. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.25. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
 <li><p>Below I have two GFF records stored as a list of records, each record being a list. Write these data to a tab-delimited file.</p>
 <blockquote>
@@ -484,11 +488,11 @@
 </li>
 <li><p>On linux and MacOS, the <code class="docutils literal notranslate"><span class="pre">\n</span></code> character is used to denote line endings. Windows uses <code class="docutils literal notranslate"><span class="pre">\r\n</span></code>. Using <code class="docutils literal notranslate"><span class="pre">help(open)</span></code>. Figure out how you would specify a file is written using line endings that differ to your operating system. Then do that for the data above.</p></li>
 <li><p>How you can check the line-endings of a file using Python. Is their another tool for your operating system?</p></li>
-<li><p>The file <a class="footnote-reference brackets" href="#id3" id="id1">1</a> contains two columns: <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code>, <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code>. Parse this file to produce a list of <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code> whose <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code> equals <code class="docutils literal notranslate"><span class="pre">&quot;Skin-Melanoma&quot;</span></code>. Use plain python only (no 3rd party libraries).</p></li>
-<li><p>Read the lines from the file <a class="footnote-reference brackets" href="#id3" id="id2">1</a> and create a <code class="docutils literal notranslate"><span class="pre">dict</span></code> with keys corresponding to <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code> and values being the list of all corresponding <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code>, e.g. <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">{</span></span><span class="literal string single"><span class="pre">‘CNS-PiloAstro’</span></span><span class="punctuation"><span class="pre">:</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="literal string single"><span class="pre">‘DO36068’</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal string single"><span class="pre">‘DO35934’</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="operator"><span class="pre">…</span></span></code>. Use plain python only (no 3rd party libraries).</p></li>
+<li><p>The file <a class="footnote-reference brackets" href="#id4" id="id2">1</a> contains two columns: <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code>, <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code>. Parse this file to produce a list of <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code> whose <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code> equals <code class="docutils literal notranslate"><span class="pre">&quot;Skin-Melanoma&quot;</span></code>. Use plain python only (no 3rd party libraries).</p></li>
+<li><p>Read the lines from the file <a class="footnote-reference brackets" href="#id4" id="id3">1</a> and create a <code class="docutils literal notranslate"><span class="pre">dict</span></code> with keys corresponding to <code class="docutils literal notranslate"><span class="pre">Project_Code</span></code> and values being the list of all corresponding <code class="docutils literal notranslate"><span class="pre">Donor_ID</span></code>, e.g. <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">{</span></span><span class="literal string single"><span class="pre">‘CNS-PiloAstro’</span></span><span class="punctuation"><span class="pre">:</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="literal string single"><span class="pre">‘DO36068’</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal string single"><span class="pre">‘DO35934’</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="operator"><span class="pre">…</span></span></code>. Use plain python only (no 3rd party libraries).</p></li>
 </ol>
 <dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dt class="label" id="id4"><span class="brackets">1</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
 <dd><p>This <a class="reference download internal" download="" href="../_downloads/1be1cb1c5d49be9391d3c977adc4a557/donor_by_cancer_type.tsv"><code class="xref download docutils literal notranslate"><span class="pre">tab</span> <span class="pre">delimited</span> <span class="pre">text</span> <span class="pre">file</span></code></a> is derived from the <a class="reference external" href="https://dcc.icgc.org/pcawg">Pan-Cancer Analysis of Whole Genomes project</a>.</p>
 </dd>
 </dl>
@@ -500,15 +504,15 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="writing_functions.html" class="btn btn-neutral float-right" title="5.25. Writing functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="indexing.html" class="btn btn-neutral float-left" title="5.21. Indexing and Slicing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="writing_functions.html" class="btn btn-neutral float-right" title="5.26. Writing functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="indexing.html" class="btn btn-neutral float-left" title="5.22. Indexing and Slicing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020, Gavin Huttley.
+        &#169; Copyright 2020-2021, Gavin Huttley.
 
     </p>
   </div>
