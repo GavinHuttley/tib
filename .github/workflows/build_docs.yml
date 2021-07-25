@@ -26,8 +26,6 @@ jobs:
         run: |
           python3 -m venv ~/env-tib
           source ~/env-tib/bin/activate
-          echo `pwd`
-          echo `ls`
           python3 -m pip install -r requirements.txt
 
       - name: Build docs
