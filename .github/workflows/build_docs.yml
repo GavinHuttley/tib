@@ -4,40 +4,35 @@ on:
     - master
 
 jobs:
-  example-3:
+  doc-build:
     name: Doc Build
-    runs-on: 'macos-latest'
+    runs-on: 'ubuntu-latest'
     steps:
+      - name: Install graphviz
+        run: |
+         apt-get update -y
+         apt-get install -y graphviz
+
       - uses: actions/checkout@v2
         with:
            path: tib
 
-      - uses: actions/cache@v2
-        if: startsWith(runner.os, 'macOS')
+      - uses: "actions/setup-python@v2"
         with:
-          path: /Users/runner/conda_pkgs_dir
-          key: ${{ runner.os }}-conda-${{ hashFiles('tib/tib-env.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-conda-
+            python-version: 3.9
 
-      - name: Make conda environment
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-           activate-environment: tib
-           environment-file: tib/tib-env.yml
-           python-version: 3.8
-
-      - shell: bash -l {0}
+      - name: Create virtual env
+        working-directory: tib
         run: |
-          conda activate tib
-          conda info
-          conda list
+          python3 -m venv ~/env-tib
+          source ~/env-tib/bin/activate
+          python3 -m pip install -r requirements.txt
 
       - name: Build docs
         shell: bash -l {0}
         working-directory: tib
         run: |
-          conda activate tib
+          source ~/env-tib/bin/activate
           make github
 
       - name: Deploy
