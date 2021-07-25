@@ -42,6 +42,5 @@ Introduction to Python
     dictionaries
     sets
 
-.. todo:: have a section on setting up their own computer
 .. todo:: have a section on pip installing packages
 .. todo:: write a section on string maniupulation

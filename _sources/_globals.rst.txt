@@ -71,3 +71,5 @@
 .. _DnaSequence: https://cogent3.org/doc/api/sequence/classes/cogent3.core.sequence.DnaSequence.html#cogent3.core.sequence.DnaSequence
 .. _ProteinSequence: https://cogent3.org/doc/api/sequence/classes/cogent3.core.sequence.ProteinSequence.html#cogent3.core.sequence.ProteinSequence
 .. _Table: https://cogent3.org/doc/api/table/classes/cogent3.util.table.Table.html#cogent3.util.table.Table
+.. _conda: https://docs.conda.io/en/latest/miniconda.html
+.. _VS Code: https://code.visualstudio.com

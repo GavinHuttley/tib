@@ -108,7 +108,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">5. Introduction to Python</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. Resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#reading">5.1.1. Reading</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tools">5.1.2. Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-your-own-computer">5.1.2. Setting up your own computer </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-python3-9-on-macos">5.1.2.1. Install Python3.9 on macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-python3-9-on-windows">5.1.2.2. Install Python3.9 on Windows</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#podcasts">5.1.3. Podcasts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#do-you-know-any-more">5.1.4. Do you know any more?</a></li>
 </ul>
@@ -263,9 +267,48 @@
 <h2><span class="section-number">5.1.1. </span>Reading<a class="headerlink" href="#reading" title="Permalink to this headline">¶</a></h2>
 <p>Here’s an awesome <a class="reference external" href="http://greenteapress.com/wp/think-python-2e/">free open access text book on Python</a>, you can get it for free as a pdf, browse the web version or buy a hard copy. Be sure and read the preface about the history of this book!</p>
 </div>
-<div class="section" id="tools">
-<h2><span class="section-number">5.1.2. </span>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
-<p>I encourage you to download this <a class="reference external" href="https://wingware.com/downloads/wingide-personal">free Python IDE</a> for your personal computer. It is useful for understanding program flow and debugging.</p>
+<div class="section" id="setting-up-your-own-computer">
+<h2><span class="section-number">5.1.2. </span>Setting up your own computer <a class="footnote-reference brackets" href="#id3" id="id2">*</a><a class="headerlink" href="#setting-up-your-own-computer" title="Permalink to this headline">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">*</a></span></dt>
+<dd><p>In past years I have recommended installation of <a class="reference external" href="https://wingware.com">WingIDE</a>. While I personally still use this application a lot, its usage is not as widespread as that of VS Code and there are less resources available for it. Plus Microsoft is putting massive resources into making VS Code a top notch integrated development environment for Python and its feature set improves with every release.</p>
+</dd>
+</dl>
+<p>I encourage you to download <a class="reference external" href="https://code.visualstudio.com">VS Code</a>, a free programmers text editor <a class="footnote-reference brackets" href="#id5" id="id4">1</a> that has a sophisticated debugger. Debuggers are extremely useful for understanding program flow and fixing errors. Before you can use it you need to install Python3.9 on your computer (see below).</p>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>This is provided by Microsoft and is available for all operating systems.</p>
+</dd>
+</dl>
+<p>Once you have installed Python 3.9, open VS Code. Open the Extensions section and type in <code class="docutils literal notranslate"><span class="pre">Python</span></code>. Select the Python package distributed by Microsoft and click on the install button. That extension provides a bunch of super useful tools including the aforementioned debugger.</p>
+<div class="section" id="install-python3-9-on-macos">
+<h3><span class="section-number">5.1.2.1. </span>Install Python3.9 on macOS<a class="headerlink" href="#install-python3-9-on-macos" title="Permalink to this headline">¶</a></h3>
+<p>There are multiple ways to install Python on a mac, what I’m recommending will allow you to remove this installation of Python easily after the course has finished (if you should want to do that).</p>
+<p><strong>Step 1</strong> – open the Terminal.app.</p>
+<p>You can use Spotlight (typically invoked using command+&lt;space bar&gt;) to find it, or navigate to <code class="docutils literal notranslate"><span class="pre">/Applications/Utilities/Terminal.app</span></code>. Once it’s open, click anywhere in the Terminal window and you should see your cursor as a grey box following a “prompt” character <a class="footnote-reference brackets" href="#id8" id="id6">2</a>. Enter the following text and press the return key:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>and follow the prompts <a class="footnote-reference brackets" href="#id9" id="id7">3</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id6">2</a></span></dt>
+<dd><p>Typically this is a single <code class="docutils literal notranslate"><span class="pre">$</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> character.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id7">3</a></span></dt>
+<dd><p>It will ask for your password and install some essential command line tools.</p>
+</dd>
+</dl>
+<p><strong>Step 2</strong> – Install <a class="reference external" href="https://brew.sh">Homebrew</a></p>
+<p>Homebrew is a “package manager”, a command line tool to make installing other command line tools easy. Follow the install instructions. When completed, enter the following text and press the return key:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">python</span><span class="o">@</span><span class="mf">3.9</span>
+</pre></div>
+</div>
+<p>When that is completed, you have Python 3.9 installed.</p>
+</div>
+<div class="section" id="install-python3-9-on-windows">
+<h3><span class="section-number">5.1.2.2. </span>Install Python3.9 on Windows<a class="headerlink" href="#install-python3-9-on-windows" title="Permalink to this headline">¶</a></h3>
+<p>See the <a class="reference external" href="https://docs.python.org/3/using/windows.html#windows-store">information here</a>.</p>
+</div>
 </div>
 <div class="section" id="podcasts">
 <h2><span class="section-number">5.1.3. </span>Podcasts<a class="headerlink" href="#podcasts" title="Permalink to this headline">¶</a></h2>
