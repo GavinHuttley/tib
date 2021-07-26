@@ -7,14 +7,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.3. Computing environments &mdash; Topics in Bioinformatics 2021.07.25 documentation</title>
+  <title>5.3. Computing environments &mdash; Topics in Bioinformatics 2021.07.26 documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
@@ -38,7 +36,6 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -46,8 +43,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -288,11 +285,12 @@
 <figure style="padding: 4px;">
 <img src="https://imgs.xkcd.com/comics/real_programmers.png" style="height: auto; max-width=75%" alt="Editor Wars">
 <figcaption>From <a href="https://xkcd.com/378/">XKCD</a></figcaption>
-</figure><p>But seriously, I strongly recommend using an IDE <a class="footnote-reference brackets" href="#id3" id="id4">2</a> as these incorporate tools to facilitate debugging, a very useful capability (you can see a demo of this in <a class="reference internal" href="interpreting_errors.html#debugging"><span class="std std-ref">Fixing errors</span></a>). Writing scripts has two steps for running the program (illustrated in the executing python from a text file video): (1) write the script, (2) running the script in a terminal.</p>
+</figure><p>But seriously, I strongly recommend using an IDE <a class="footnote-reference brackets" href="#id3" id="id4">2</a> as these incorporate tools to facilitate debugging, a very useful capability (you can see a demo of this in <a class="reference internal" href="interpreting_errors.html#debugging"><span class="std std-ref">Fixing errors</span></a>). (See <a class="reference internal" href="resources.html#setup"><span class="std std-ref">Setting up your own computer</span></a> for installing one on your computer.)</p>
+<p>Writing scripts has two steps for running the program (illustrated in the executing python from a text file video): (1) write the script, (2) running the script in a terminal.</p>
 </div>
 <div class="section" id="code-and-output-in-these-notes-is-from-jupyter">
 <h1><span class="section-number">5.4. </span>Code and output in these notes is from Jupyter<a class="headerlink" href="#code-and-output-in-these-notes-is-from-jupyter" title="Permalink to this headline">¶</a></h1>
-<p>The blocks of computer code, and associated output, displayed in these notes are derived from running the code in a Jupyter notebook. Running the same code in the standard python interpreter inside a terminal will generate differnt looking output. The difference is most obvious on what is called the representation (or <code class="docutils literal notranslate"><span class="pre">repr()</span></code>) of an object. In Jupyter, the output can be “styled” (e.g. bold font, coloured tables) whereas in a conventional interpreter the output will appear as plain text (see <a class="reference internal" href="#repl"><span class="std std-ref">Demonstration of using Jupter</span></a>).</p>
+<p>The blocks of computer code, and associated output, displayed in these notes are derived from running the code in a Jupyter notebook. Running the same code in the standard python interpreter inside a terminal will generate different looking output. The difference is most obvious on what is called the representation (or <code class="docutils literal notranslate"><span class="pre">repr()</span></code>) of an object. In Jupyter, the output can be “styled” (e.g. bold font, coloured tables) whereas in a conventional interpreter the output will appear as plain text (see <a class="reference internal" href="#repl"><span class="std std-ref">Demonstration of using Jupyter</span></a>).</p>
 </div>
 <div class="section" id="everyones-first-program-in-python">
 <h1><span class="section-number">5.5. </span>Everyones first program in Python<a class="headerlink" href="#everyones-first-program-in-python" title="Permalink to this headline">¶</a></h1>

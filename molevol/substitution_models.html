@@ -7,14 +7,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>7.7. Substitution models &mdash; Topics in Bioinformatics 2021.07.25 documentation</title>
+  <title>7.7. Substitution models &mdash; Topics in Bioinformatics 2021.07.26 documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
@@ -38,7 +36,6 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -46,8 +43,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -356,7 +353,7 @@
 </div>
 <div class="section" id="the-jukes-cantor-substitution-model">
 <span id="jc69"></span><h3><span class="section-number">7.7.1.1. </span>The Jukes-Cantor substitution model<a class="headerlink" href="#the-jukes-cantor-substitution-model" title="Permalink to this headline">¶</a></h3>
-<p>The Jukes-Cantor 1969 model (abbreviated JC69) <span id="id2">[<a class="reference internal" href="#id28" title="T Jukes and C Cantor. Mammalian Protein Metabolism, pages 21–132. Academic Press, New York, 1969.">JC69</a>]</span> was the first published substitution model. It assumes all bases are equally frequent and that all substitutions occur at the same rate, irrespective of the identify of the bases being exchanged.</p>
+<p>The Jukes-Cantor 1969 model (abbreviated JC69) <span id="id2">[<a class="reference internal" href="#id29" title="T Jukes and C Cantor. Mammalian Protein Metabolism, pages 21–132. Academic Press, New York, 1969.">JC69</a>]</span> was the first published substitution model. It assumes all bases are equally frequent and that all substitutions occur at the same rate, irrespective of the identify of the bases being exchanged.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{matrix}
  &amp; \begin{matrix} {\bf A}\; &amp; {\bf C}\; &amp; {\bf G}\; &amp; {\bf T} \end{matrix} \\
@@ -371,7 +368,7 @@ Q = \begin{matrix} {\bf A} \\[1mm] {\bf C} \\[1mm] {\bf G} \\[1mm] {\bf T} \end{
 </div>
 <div class="section" id="f81">
 <span id="id3"></span><h3><span class="section-number">7.7.1.2. </span>F81<a class="headerlink" href="#f81" title="Permalink to this headline">¶</a></h3>
-<p>Described by Felsenstein in his seminal 1981 paper <span id="id4">[<a class="reference internal" href="#id32" title="J Felsenstein. Evolutionary trees from DNA sequences: a maximum likelihood approach. J. Mol. Evol., 17:368–376, 1981.">Fel81</a>]</span>. This matrix is time reversible and, therefore, stationary. The <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span> elements correspond to the stationary nucleotide frequencies. F81 allows nucleotide frequencies to differ (e.g. <span class="math notranslate nohighlight">\(\pi_A \neq \pi_C\)</span>) but assumes all exchanges otherwise occur at the same rate.</p>
+<p>Described by Felsenstein in his seminal 1981 paper <span id="id4">[<a class="reference internal" href="#id33" title="J Felsenstein. Evolutionary trees from DNA sequences: a maximum likelihood approach. J. Mol. Evol., 17:368–376, 1981.">Fel81</a>]</span>. This matrix is time reversible and, therefore, stationary. The <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span> elements correspond to the stationary nucleotide frequencies. F81 allows nucleotide frequencies to differ (e.g. <span class="math notranslate nohighlight">\(\pi_A \neq \pi_C\)</span>) but assumes all exchanges otherwise occur at the same rate.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the following definition, “<span class="math notranslate nohighlight">\(-\)</span>” is being used for diagonal elements to simplify the expression. Those elements are computed as the negative sum of the remaining elements on the row.</p>
@@ -390,7 +387,7 @@ Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
 </div>
 <div class="section" id="hky85">
 <span id="id5"></span><h3><span class="section-number">7.7.1.3. </span>HKY85<a class="headerlink" href="#hky85" title="Permalink to this headline">¶</a></h3>
-<p>Named after its authors <span id="id6">[<a class="reference internal" href="#id31" title="M Hasegawa, H Kishino, and T Yano. Dating of the human-ape splitting by a molecular clock of mitochondrial DNA. J Mol Evol, 22:160–174, 1985.">HKY85</a>]</span>, the Hasegawa-Kishino-Yano (HKY or HKY85) model includes an additional exchangeability parameter <a class="footnote-reference brackets" href="#id8" id="id7">1</a> <span class="math notranslate nohighlight">\(\kappa\)</span>. This parameter is within matrix cells that correspond to <span class="target" id="index-3"></span>transition substitutions. Because the parameter is applied multiplicatively in the matrix (discussed below), it is the ratio of transition / transversion substitution rates.</p>
+<p>Named after its authors <span id="id6">[<a class="reference internal" href="#id32" title="M Hasegawa, H Kishino, and T Yano. Dating of the human-ape splitting by a molecular clock of mitochondrial DNA. J Mol Evol, 22:160–174, 1985.">HKY85</a>]</span>, the Hasegawa-Kishino-Yano (HKY or HKY85) model includes an additional exchangeability parameter <a class="footnote-reference brackets" href="#id8" id="id7">1</a> <span class="math notranslate nohighlight">\(\kappa\)</span>. This parameter is within matrix cells that correspond to <span class="target" id="index-3"></span>transition substitutions. Because the parameter is applied multiplicatively in the matrix (discussed below), it is the ratio of transition / transversion substitution rates.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id7">1</a></span></dt>
 <dd><p>I use the term “exchangeability parameter” to refer to a parameter in a rate matrix that is not an element of <span class="math notranslate nohighlight">\({\mathbf \pi}\)</span>.</p>
@@ -411,7 +408,7 @@ Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
 </div>
 <div class="section" id="gtr">
 <span id="id9"></span><h3><span class="section-number">7.7.1.4. </span>GTR<a class="headerlink" href="#gtr" title="Permalink to this headline">¶</a></h3>
-<p>GTR stands for General Time Reversible <span id="id10">[<a class="reference internal" href="#id29" title="Cecilia Lanave and C Saccone. A New Method for Calculating Evolutionary Substitution Rates. J Molecular Evolution, 20:86-93, 1984.">LS84</a>]</span>. It is the most general nucleotide substitution model that is time-reversible. This model contains 6 additional parameters: <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(\delta\)</span>, <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\(\zeta\)</span>. This model is saying that all of the possible nucleotide exchanges have distinctive rates.</p>
+<p>GTR stands for General Time Reversible <span id="id10">[<a class="reference internal" href="#id30" title="Cecilia Lanave and C Saccone. A New Method for Calculating Evolutionary Substitution Rates. J Molecular Evolution, 20:86-93, 1984.">LS84</a>]</span>. It is the most general nucleotide substitution model that is time-reversible. This model contains 6 additional parameters: <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(\delta\)</span>, <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\(\zeta\)</span>. This model is saying that all of the possible nucleotide exchanges have distinctive rates.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{matrix}
  &amp; \begin{matrix} {\bf A}\quad &amp; {\bf C}\quad &amp; {\bf G}\quad &amp; {\bf T} \end{matrix} \\
@@ -461,7 +458,7 @@ Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
 <p>In molecular evolutionary analyses, we measure time (<span class="math notranslate nohighlight">\(t\)</span>) as the <em>expected number of substitutions</em> per position. This is a product of the amount of elapsed chronological time and the mutation rate. For a stationary Markov process, we obtain the expected number of substitutions by multiplying the base frequencies by the <em>flow</em> away from the base (the diagonal element of <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span>) <a class="footnote-reference brackets" href="#id16" id="id15">4</a>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id15">4</a></span></dt>
-<dd><p>For a non-stationary Markov process, the calculation is trickier <span id="id17">[<a class="reference internal" href="#id27" title="Benjamin D Kaehler, Von Bing Yap, Rongli Zhang, and Gavin A Huttley. Genetic distance for a general non-stationary Markov substitution process. Systematic Biology, 64:281–93, 2015. URL: http://www.ncbi.nlm.nih.gov/pubmed/25503772.">KYZH15</a>]</span>.</p>
+<dd><p>For a non-stationary Markov process, the calculation is trickier <span id="id17">[<a class="reference internal" href="#id28" title="Benjamin D Kaehler, Von Bing Yap, Rongli Zhang, and Gavin A Huttley. Genetic distance for a general non-stationary Markov substitution process. Systematic Biology, 64:281–93, 2015. URL: http://www.ncbi.nlm.nih.gov/pubmed/25503772.">KYZH15</a>]</span>.</p>
 </dd>
 </dl>
 <div class="math notranslate nohighlight">
@@ -472,7 +469,7 @@ Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
 <span id="calibration"></span><span id="index-5"></span><h2><span class="section-number">7.7.5. </span>Calibrating rate matrices to facilitate estimation of time on a tree<a class="headerlink" href="#calibrating-rate-matrices-to-facilitate-estimation-of-time-on-a-tree" title="Permalink to this headline">¶</a></h2>
 <p>In order to estimate the expected number of substitutions on all the branches on a tree, molecular evolutionary software often employs a trick. It uses a rate matrix that has been calibrated such that <span class="math notranslate nohighlight">\(t\)</span>=1.</p>
 <p>The calibration step involves calculating <span class="math notranslate nohighlight">\(t\)</span> for a given <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span> according to the equation above and dividing both sides by it.</p>
-<p>There is a major computational advantage of this approach. Specifically, the <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">eigendecomposition</a> algorithm for matrix exponentiation allows us to do the algorithmically “hard part” once for an entire tree and store the next to final step in the computation <span id="id18">[<a class="reference internal" href="#id26" title="Harold W Schranz, Von Bing Yap, Simon Easteal, Rob Knight, and Gavin A Huttley. Pathological rate matrices: from primates to pathogens. BMC Bioinformatics, 9:550, Dec 2008. doi:10.1186/1471-2105-9-550.">SYE+08</a>]</span>. That final step — producing the different substitution probability matrices for edges with different <span class="math notranslate nohighlight">\(t\)</span> (<span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span><span class="math notranslate nohighlight">\((t)\)</span>) — is very efficiently obtained by applying the corresponding branch length to this intermediate product.</p>
+<p>There is a major computational advantage of this approach. Specifically, the <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">eigendecomposition</a> algorithm for matrix exponentiation allows us to do the algorithmically “hard part” once for an entire tree and store the next to final step in the computation <span id="id18">[<a class="reference internal" href="#id27" title="Harold W Schranz, Von Bing Yap, Simon Easteal, Rob Knight, and Gavin A Huttley. Pathological rate matrices: from primates to pathogens. BMC Bioinformatics, 9:550, Dec 2008. doi:10.1186/1471-2105-9-550.">SYE+08</a>]</span>. That final step — producing the different substitution probability matrices for edges with different <span class="math notranslate nohighlight">\(t\)</span> (<span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span><span class="math notranslate nohighlight">\((t)\)</span>) — is very efficiently obtained by applying the corresponding branch length to this intermediate product.</p>
 <p>By specifying time as a parameter in our models, we must eliminate another parameter to avoid over specifying the model <a class="footnote-reference brackets" href="#id20" id="id19">5</a>. This is achieved by selecting a reference exchangeability parameter and setting it to 1.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id19">5</a></span></dt>
@@ -487,7 +484,7 @@ Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
 </dd>
 <dt>stationary</dt><dd><p>The sequence composition, or frequencies of the states, is the same across the data set. An assumption of all time-reversible models and some others too. This becomes less likely with increasing time since species shared a common ancestor.</p>
 </dd>
-<dt>time-homogeneous</dt><dd><p>The substitution process remains the same <em>along</em> each branch. Translated, this means the same intrinsic dynamics governing mutation, and therefore substitution, operate across the entire branch for every branch that we might be analysing. If the lineages aren’t too long then this seems a pretty reasonable assumption. If we assume a single rate matrix for the entire tree we are further assuming the mutation and substitution processes have not changed between the different edges. As you increase the time depth of your sample, this assumption can be more problematic since the potential for changes affecting mutation increase. Accordingly, in such circumstances this property should be checked for <span id="id21">[<a class="reference internal" href="#id25" title="Klara L Verbyla, Von Bing Yap, Anuj Pahwa, Yunli Shao, and Gavin A Huttley. The embedding problem for Markov models of nucleotide substitution. PLoS One, 8:e69187, 2013. doi:10.1371/journal.pone.0069187.">VYP+13</a>]</span>.</p>
+<dt>time-homogeneous</dt><dd><p>The substitution process remains the same <em>along</em> each branch. Translated, this means the same intrinsic dynamics governing mutation, and therefore substitution, operate across the entire branch for every branch that we might be analysing. If the lineages aren’t too long then this seems a pretty reasonable assumption. If we assume a single rate matrix for the entire tree we are further assuming the mutation and substitution processes have not changed between the different edges. As you increase the time depth of your sample, this assumption can be more problematic since the potential for changes affecting mutation increase. Accordingly, in such circumstances this property should be checked for <span id="id21">[<a class="reference internal" href="#id26" title="Klara L Verbyla, Von Bing Yap, Anuj Pahwa, Yunli Shao, and Gavin A Huttley. The embedding problem for Markov models of nucleotide substitution. PLoS One, 8:e69187, 2013. doi:10.1371/journal.pone.0069187.">VYP+13</a>]</span>.</p>
 </dd>
 </dl>
 </div>
@@ -602,25 +599,25 @@ c.) <span class="math notranslate nohighlight">\(\theta=1\)</span>?</p>
 <hr class="docutils" />
 <p class="rubric">Citations</p>
 <p id="id22"><dl class="citation">
-<dt class="label" id="id32"><span class="brackets"><a class="fn-backref" href="#id4">Fel81</a></span></dt>
+<dt class="label" id="id33"><span class="brackets"><a class="fn-backref" href="#id4">Fel81</a></span></dt>
 <dd><p>J Felsenstein. Evolutionary trees from DNA sequences: a maximum likelihood approach. <em>J. Mol. Evol.</em>, 17:368–376, 1981.</p>
 </dd>
-<dt class="label" id="id31"><span class="brackets"><a class="fn-backref" href="#id6">HKY85</a></span></dt>
+<dt class="label" id="id32"><span class="brackets"><a class="fn-backref" href="#id6">HKY85</a></span></dt>
 <dd><p>M Hasegawa, H Kishino, and T Yano. Dating of the human-ape splitting by a molecular clock of mitochondrial DNA. <em>J Mol Evol</em>, 22:160–174, 1985.</p>
 </dd>
-<dt class="label" id="id28"><span class="brackets"><a class="fn-backref" href="#id2">JC69</a></span></dt>
+<dt class="label" id="id29"><span class="brackets"><a class="fn-backref" href="#id2">JC69</a></span></dt>
 <dd><p>T Jukes and C Cantor. <em>Mammalian Protein Metabolism</em>, pages 21–132. Academic Press, New York, 1969.</p>
 </dd>
-<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id17">KYZH15</a></span></dt>
+<dt class="label" id="id28"><span class="brackets"><a class="fn-backref" href="#id17">KYZH15</a></span></dt>
 <dd><p>Benjamin D Kaehler, Von Bing Yap, Rongli Zhang, and Gavin A Huttley. Genetic distance for a general non-stationary Markov substitution process. <em>Systematic Biology</em>, 64:281–93, 2015. URL: <a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/25503772">http://www.ncbi.nlm.nih.gov/pubmed/25503772</a>.</p>
 </dd>
-<dt class="label" id="id29"><span class="brackets"><a class="fn-backref" href="#id10">LS84</a></span></dt>
+<dt class="label" id="id30"><span class="brackets"><a class="fn-backref" href="#id10">LS84</a></span></dt>
 <dd><p>Cecilia Lanave and C Saccone. A New Method for Calculating Evolutionary Substitution Rates. <em>J Molecular Evolution</em>, 20:86–93, 1984.</p>
 </dd>
-<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id18">SYE+08</a></span></dt>
+<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id18">SYE+08</a></span></dt>
 <dd><p>Harold W Schranz, Von Bing Yap, Simon Easteal, Rob Knight, and Gavin A Huttley. Pathological rate matrices: from primates to pathogens. <em>BMC Bioinformatics</em>, 9:550, Dec 2008. <a class="reference external" href="https://doi.org/10.1186/1471-2105-9-550">doi:10.1186/1471-2105-9-550</a>.</p>
 </dd>
-<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id21">VYP+13</a></span></dt>
+<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id21">VYP+13</a></span></dt>
 <dd><p>Klara L Verbyla, Von Bing Yap, Anuj Pahwa, Yunli Shao, and Gavin A Huttley. The embedding problem for Markov models of nucleotide substitution. <em>PLoS One</em>, 8:e69187, 2013. <a class="reference external" href="https://doi.org/10.1371/journal.pone.0069187">doi:10.1371/journal.pone.0069187</a>.</p>
 </dd>
 </dl>
