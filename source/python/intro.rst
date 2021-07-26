@@ -71,7 +71,7 @@ Dealing with errors is a standard, inevitable, part of programming. The process 
 
     Even if you could write an entire complex algorithm in one go, doing so is a bad idea.
 
-    A multitude of procedures are employed improve the reliability of software, some of which are quite elaborate. But one thing all such approaches have in common is to write a small amount of code and then run it, fixing any errors each time. If the program stops running, you know the responsible code is only what you just entered.
+    A multitude of procedures are employed improve the reliability of software, some of which are quite elaborate. But one thing all such approaches have in common is to **write a small amount of code and then run it**, fixing any errors each time. If the program stops running, you know the responsible code is only what you just entered.
 
 There are different classes of errors:
 
