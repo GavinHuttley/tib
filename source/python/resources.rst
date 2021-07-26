@@ -9,12 +9,14 @@ Reading
 
 Here's an awesome |text_book|_, you can get it for free as a pdf, browse the web version or buy a hard copy. Be sure and read the preface about the history of this book!
 
-Setting up your own computer [*]_
-=================================
+.. _setup:
+
+Setting up your own computer
+============================
+
+I encourage you to download `VS Code`_ [*]_, a free programmers text editor [1]_ that has a sophisticated debugger. Debuggers are extremely useful for understanding program flow and fixing errors. Before you can use it you need to install Python3.9 on your computer (see below).
 
 .. [*] In past years I have recommended installation of `WingIDE <https://wingware.com>`_. While I personally still use this application a lot, its usage is not as widespread as that of VS Code and there are less resources available for it. Plus Microsoft is putting massive resources into making VS Code a top notch integrated development environment for Python and its feature set improves with every release.
-
-I encourage you to download `VS Code`_, a free programmers text editor [1]_ that has a sophisticated debugger. Debuggers are extremely useful for understanding program flow and fixing errors. Before you can use it you need to install Python3.9 on your computer (see below).
 
 .. [1] This is provided by Microsoft and is available for all operating systems.
 
