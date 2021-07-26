@@ -9,7 +9,7 @@ ipytest
 jupyter-sphinx
 pytest
 tqdm>=4.47.0
-sphinx>=1.6
+sphinx==3.5.4
 nbsphinx
 sphinx_panels
 nbformat
