@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.24. Working with files &mdash; Topics in Bioinformatics 2021.07.26 documentation</title>
+  <title>5.25. Working with files &mdash; Topics in Bioinformatics 2021.08.01 documentation</title>
   
 
   
@@ -51,8 +51,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.26. Writing functions" href="writing_functions.html" />
-    <link rel="prev" title="5.22. Indexing and Slicing" href="indexing.html" /> 
+    <link rel="next" title="5.27. Writing functions" href="writing_functions.html" />
+    <link rel="prev" title="5.23. Indexing and Slicing" href="indexing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -122,34 +122,34 @@
 <li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.17. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions.html">5.18. Functions and methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.19. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.20. Getting help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lists.html">5.21. Using lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.22. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.23. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.24. Working with files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#reading-contents-of-a-file">5.24.1. Reading contents of a file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#writing-data-to-a-file">5.24.2. Writing data to a file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#writing-delimited-output">5.24.3. Writing delimited output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.20. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.21. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.22. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.23. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.24. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.25. Working with files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reading-contents-of-a-file">5.25.1. Reading contents of a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-data-to-a-file">5.25.2. Writing data to a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-delimited-output">5.25.3. Writing delimited output</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.25. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.26. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.27. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.29. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.30. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.31. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.32. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.33. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.34. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.35. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.36. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.37. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.38. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.39. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.40. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.41. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.42. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.26. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.27. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.28. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.29. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.30. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.31. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.32. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.33. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.34. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.35. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.36. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.37. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.38. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.39. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.40. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.41. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.42. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.43. Dealing with dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sets.html">5.44. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
 </ul>
@@ -208,7 +208,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.24. </span>Working with files</li>
+      <li><span class="section-number">5.25. </span>Working with files</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -270,7 +270,7 @@
   Your browser does not support the video tag.
 </video></div>
 <div class="section" id="working-with-files">
-<span id="files"></span><h1><span class="section-number">5.24. </span>Working with files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
+<span id="files"></span><h1><span class="section-number">5.25. </span>Working with files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
 <p id="index-2">The location of a file (its file path) is specified as a string (see the screencast on Unix Paths). We use the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function to open files. Whether a file is opened for reading or writing is defined by the <em>mode</em> argument. For example <code class="docutils literal notranslate"><span class="pre">mode=&quot;w&quot;</span></code> means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.</p>
 <div class="sidebar">
 <p class="sidebar-title">File properties</p>
@@ -354,7 +354,7 @@
 </div>
 </div>
 <div class="section" id="reading-contents-of-a-file">
-<h2><span class="section-number">5.24.1. </span>Reading contents of a file<a class="headerlink" href="#reading-contents-of-a-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.25.1. </span>Reading contents of a file<a class="headerlink" href="#reading-contents-of-a-file" title="Permalink to this headline">¶</a></h2>
 <p>File objects are iterable and the “unit” of iteration is a line, i.e. the file object returns all data up until the next line-feed character.</p>
 <div class="jupyter_cell jupyter_container docutils container" id="index-4">
 <div class="cell_input code_cell docutils container">
@@ -388,7 +388,7 @@
 </div>
 </div>
 <div class="section" id="writing-data-to-a-file">
-<h2><span class="section-number">5.24.2. </span>Writing data to a file<a class="headerlink" href="#writing-data-to-a-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.25.2. </span>Writing data to a file<a class="headerlink" href="#writing-data-to-a-file" title="Permalink to this headline">¶</a></h2>
 <p>In order to write data to a file, we must specify the <code class="docutils literal notranslate"><span class="pre">mode=&quot;w&quot;</span></code>.</p>
 <p>The data also needs to be converted to strings. One way to do this is to use a string format conversion. For instance, consider the example of having a list of float’s. If we try to write this to a file, it will raise an exception.</p>
 <div class="jupyter_cell jupyter_container docutils container" id="index-5">
@@ -403,7 +403,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3241</span><span class="o">/</span><span class="mf">2811752881.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3282</span><span class="o">/</span><span class="mf">2811752881.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;some-data.txt&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">outfile</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
@@ -431,7 +431,7 @@
 </div>
 </div>
 <div class="section" id="writing-delimited-output">
-<h2><span class="section-number">5.24.3. </span>Writing delimited output<a class="headerlink" href="#writing-delimited-output" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.25.3. </span>Writing delimited output<a class="headerlink" href="#writing-delimited-output" title="Permalink to this headline">¶</a></h2>
 <p>One of the most common data file formats are ones where multiple fields on line correspond to one record. The different fields are separated from each other by a common <em>delimiter</em>, a specific character. Such a format is very easy to parse.</p>
 <p>For instance, the <em>GFF</em> format (Generic File Format) is a file format commonly employed in genomics for storing genome annotation data, e.g. locations of genes or exons. GFF is a plain text file format with the following fields:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">seqname</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">source</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">feature</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">start</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">end</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">score</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">strand</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">frame</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">attributes</span><span class="p">]</span> <span class="p">[</span><span class="n">comments</span><span class="p">]</span>
@@ -445,7 +445,7 @@
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.25. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.26. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
 <li><p>Below I have two GFF records stored as a list of records, each record being a list. Write these data to a tab-delimited file.</p>
 <blockquote>
@@ -501,8 +501,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="writing_functions.html" class="btn btn-neutral float-right" title="5.26. Writing functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="indexing.html" class="btn btn-neutral float-left" title="5.22. Indexing and Slicing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="writing_functions.html" class="btn btn-neutral float-right" title="5.27. Writing functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="indexing.html" class="btn btn-neutral float-left" title="5.23. Indexing and Slicing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
