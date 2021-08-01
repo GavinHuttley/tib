@@ -25,6 +25,7 @@ Introduction to Python
     logic
     interpreting_errors
     functions
+    strings
     dir_help
     lists
     indexing
@@ -38,7 +39,6 @@ Introduction to Python
     misc
     how_to_write_a_program
     visualisation
-    strings
     dictionaries
     sets
 
