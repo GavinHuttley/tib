@@ -121,7 +121,7 @@ Writing and using functions that have optional arguments
 
     def get_diff(a, b, absolute=False):
         diff = a - b
-        if absolute and diff < 0: # both absolute AND (diff < 0) must be True
+        if absolute and diff < 0:  # both absolute AND (diff < 0) must be True
             diff = abs(diff)
         return diff
 
@@ -168,7 +168,7 @@ The following illustrates the form of a docstring with a simple function with no
 
     def myfunc():
         """a do nothing demo
-        
+
         multi-line docs
         """
         pass
@@ -176,6 +176,23 @@ The following illustrates the form of a docstring with a simple function with no
 .. jupyter-execute::
 
     help(myfunc)
+
+Functions that call other functions
+-----------------------------------
+
+There is no magic here. If you can use a Python built-in function, you can use a function you wrote. In the following, the function ``squared_diffs()`` takes two number series and returns the square of the element-wise difference while the function  ``diff_two()`` takes two number series and returns their element-wise difference.
+
+.. jupyter-execute::
+
+    def diff_two(a, b):
+        result = []
+        for i in range(len(a)):
+            result.append(a[i] - b[i])
+        return result
+
+    def squared_diffs(a, b):
+        diffs = diff_two(a, b)  # calling diff_two which is defined above
+        return [v ** 2 for v in diffs]
 
 Things not to do!
 -----------------
@@ -185,11 +202,11 @@ Things not to do!
 .. jupyter-execute::
 
     result = []
-    
+
     def myfunc1(arg):
         result.append(arg)
         return result
-    
+
     myfunc1(4)
     myfunc1(4)
     result
@@ -211,7 +228,7 @@ As I show in that code snippet, each call to ``myfunc1()`` modifies the module l
 Same behaviour as the previous example because that definition of ``result`` is actually happening at the module level, even if it's in a function signature! However many times you call ``myfunc2()`` is how many elements will be in the returned list. This effect holds for any mutable data type. Here's a better approach.
 
 .. code-block:: python
-    
+
     def myfunc3(arg, result=None):
         result = result or []
         result.append(arg)
@@ -225,7 +242,7 @@ Same behaviour as the previous example because that definition of ``result`` is 
     
     --- Ralph Waldo Emerson, Self-reliance, 1841
 
-That quote applies to the above remarks, make exceptions to those thoughtfully. Except for mutable data types as default values -- never do that unless you love hard to debug problems and mysery.
+That quote applies to the above remarks, make exceptions to those thoughtfully. Except for mutable data types as default values -- never do that unless you love hard to debug problems and misery.
 
 Exercises
 =========

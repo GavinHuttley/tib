@@ -85,7 +85,7 @@ Look for patterns
 
 Part of what we have just done is to look at the "problem" (execute an equation) and recognised patterns in it (based on mathematical order of operations). That approach also applies to more complicated challenges.
 
-Let's say we want to read in a plain text file which contains a header column followed by rows of numbers where fields are delimited by tabs. Here's the first few lines of just such a file.
+Let's say we want to read in a plain text file which contains a header column followed by rows of numbers where fields are delimited by the tab character. Here is the first few lines of just such a file.
 
 ::
 
@@ -93,7 +93,7 @@ Let's say we want to read in a plain text file which contains a header column fo
     0.017963959082536105	8.567983199899585
     0.036913880515213056	7.658395694530731
 
-Algorithmically, here are the top level problems:
+Algorithmically, the top level problems are:
 
 #. Open the file (see :ref:`files`)
 #. Read the file line by line  (see :ref:`files`)

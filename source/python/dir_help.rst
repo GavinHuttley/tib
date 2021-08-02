@@ -44,7 +44,7 @@ Type hints are useful!
 
 Python is known as a "duck-typing" language [#]_. That said, many python functions and methods have definitions that are annotated with :index:`type hints`. Think of these as the assumptions the function is making and an assumption that you can make regarding its output.
 
-In the following, I'm defining a function that has two arguments (``a``, ``b``) that are both "expected" to be type ``int``. This is communicated by the ``: int`` that follows the argument name. You can expect the function to return an ``int``, which is indicated by the ``-> int`` following the closing parenthesis.
+To illustrate this, I define a function below that has two arguments (``a``, ``b``) that are both "expected" to be type ``int``. This is communicated by the ``: int`` that follows the argument name. You can expect the function to return an ``int``, which is indicated by the ``-> int`` following the closing parenthesis.
 
 .. code-block:: python
     
@@ -53,4 +53,6 @@ In the following, I'm defining a function that has two arguments (``a``, ``b``) 
 
 .. [#] This phrase stems from the adage that "if it walks like a duck and talks like a duck, it is a duck." In essence, Python programs work so long as the variable has the necessary attributes. This differs from typed languages, such as ``C``, where you must define in advance exactly what type every variable will be.
 
-Those types are only considered hints because, as close inspection of the function will reveal, there is not type checking! So what good are type hints? Many modern programming editors also help guide your coding by alerting you when your program starts calling functions with types that don't match function (or method) signatures. So, if you only call a function with the indicated types, your program is less likely to have bugs.
+Those types are only considered hints because there is not actual type checking [#]_! That function would work just fine if either of the input arguments was a ``float`` too, so what good are type hints? Many modern programming editors also help guide your coding by alerting you when your program starts calling functions with types that don't match function (or method) signatures. So, if you only call a function with the indicated types, your program is less likely to have bugs.
+
+.. [#] Tools such as `mypy <http://mypy-lang.org>`_ can do static type checking.
