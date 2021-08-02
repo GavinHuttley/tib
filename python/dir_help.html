@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.21. Getting help &mdash; Topics in Bioinformatics 2021.08.01 documentation</title>
+  <title>5.21. Getting help &mdash; Topics in Bioinformatics 2021.08.02 documentation</title>
   
 
   
@@ -364,7 +364,7 @@ append(object, /) method of builtins.list instance
 <div class="section" id="type-hints-are-useful">
 <span id="index-2"></span><h2><span class="section-number">5.21.2. </span>Type hints are useful!<a class="headerlink" href="#type-hints-are-useful" title="Permalink to this headline">¶</a></h2>
 <p>Python is known as a “duck-typing” language <a class="footnote-reference brackets" href="#id4" id="id3">2</a>. That said, many python functions and methods have definitions that are annotated with <span class="target" id="index-3"></span>type hints. Think of these as the assumptions the function is making and an assumption that you can make regarding its output.</p>
-<p>In the following, I’m defining a function that has two arguments (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>) that are both “expected” to be type <code class="docutils literal notranslate"><span class="pre">int</span></code>. This is communicated by the <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">int</span></code> that follows the argument name. You can expect the function to return an <code class="docutils literal notranslate"><span class="pre">int</span></code>, which is indicated by the <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">int</span></code> following the closing parenthesis.</p>
+<p>To illustrate this, I define a function below that has two arguments (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>) that are both “expected” to be type <code class="docutils literal notranslate"><span class="pre">int</span></code>. This is communicated by the <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">int</span></code> that follows the argument name. You can expect the function to return an <code class="docutils literal notranslate"><span class="pre">int</span></code>, which is indicated by the <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">int</span></code> following the closing parenthesis.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_ints</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </pre></div>
@@ -374,7 +374,12 @@ append(object, /) method of builtins.list instance
 <dd><p>This phrase stems from the adage that “if it walks like a duck and talks like a duck, it is a duck.” In essence, Python programs work so long as the variable has the necessary attributes. This differs from typed languages, such as <code class="docutils literal notranslate"><span class="pre">C</span></code>, where you must define in advance exactly what type every variable will be.</p>
 </dd>
 </dl>
-<p>Those types are only considered hints because, as close inspection of the function will reveal, there is not type checking! So what good are type hints? Many modern programming editors also help guide your coding by alerting you when your program starts calling functions with types that don’t match function (or method) signatures. So, if you only call a function with the indicated types, your program is less likely to have bugs.</p>
+<p>Those types are only considered hints because there is not actual type checking <a class="footnote-reference brackets" href="#id6" id="id5">3</a>! That function would work just fine if either of the input arguments was a <code class="docutils literal notranslate"><span class="pre">float</span></code> too, so what good are type hints? Many modern programming editors also help guide your coding by alerting you when your program starts calling functions with types that don’t match function (or method) signatures. So, if you only call a function with the indicated types, your program is less likely to have bugs.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>Tools such as <a class="reference external" href="http://mypy-lang.org">mypy</a> can do static type checking.</p>
+</dd>
+</dl>
 </div>
 </div>
 

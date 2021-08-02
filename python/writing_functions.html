@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.27. Writing functions &mdash; Topics in Bioinformatics 2021.08.01 documentation</title>
+  <title>5.27. Writing functions &mdash; Topics in Bioinformatics 2021.08.02 documentation</title>
   
 
   
@@ -138,7 +138,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#writing-and-using-functions-that-have-optional-arguments">5.27.6. Writing and using functions that have optional arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ordering-arguments">5.27.7. Ordering arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#documenting-a-function-with-a-doctstring">5.27.8. Documenting a function with a doctstring</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#things-not-to-do">5.27.9. Things not to do!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions-that-call-other-functions">5.27.9. Functions that call other functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#things-not-to-do">5.27.10. Things not to do!</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#exercises">5.28. Exercises</a></li>
@@ -380,7 +381,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3655</span><span class="o">/</span><span class="mf">385267086.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3766</span><span class="o">/</span><span class="mf">385267086.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: get_diff() missing 1 required positional argument: &#39;b&#39;
@@ -409,7 +410,7 @@
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_diff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">diff</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
-    <span class="k">if</span> <span class="n">absolute</span> <span class="ow">and</span> <span class="n">diff</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># both absolute AND (diff &lt; 0) must be True</span>
+    <span class="k">if</span> <span class="n">absolute</span> <span class="ow">and</span> <span class="n">diff</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># both absolute AND (diff &lt; 0) must be True</span>
         <span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">diff</span>
 
@@ -448,7 +449,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_3655/1888635277.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_3766/1888635277.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">get_diff</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
                                      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
@@ -507,8 +508,29 @@ myfunc()
 </div>
 </div>
 </div>
+<div class="section" id="functions-that-call-other-functions">
+<h2><span class="section-number">5.27.9. </span>Functions that call other functions<a class="headerlink" href="#functions-that-call-other-functions" title="Permalink to this headline">¶</a></h2>
+<p>There is no magic here. If you can use a Python built-in function, you can use a function you wrote. In the following, the function <code class="docutils literal notranslate"><span class="pre">squared_diffs()</span></code> takes two number series and returns the square of the element-wise difference while the function  <code class="docutils literal notranslate"><span class="pre">diff_two()</span></code> takes two number series and returns their element-wise difference.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">diff_two</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">squared_diffs</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">diffs</span> <span class="o">=</span> <span class="n">diff_two</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># calling diff_two which is defined above</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">v</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">diffs</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
 <div class="section" id="things-not-to-do">
-<h2><span class="section-number">5.27.9. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.27.10. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline">¶</a></h2>
 <p><strong>DO NOT</strong> use global variables (see <a class="reference internal" href="namespace.html#namespaces"><span class="std std-ref">Namespaces</span></a>). Either pass the variable in as an argument or create it within the function. Adhere to the principle of making code “Easy To Change”. In the case of functions, this means making them depend only on the arguments you give them. The following is bad.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -562,7 +584,7 @@ myfunc()
 <div><p>A Foolish Consistency is the Hobgoblin of Little Minds</p>
 <p class="attribution">—Ralph Waldo Emerson, Self-reliance, 1841</p>
 </div></blockquote>
-<p>That quote applies to the above remarks, make exceptions to those thoughtfully. Except for mutable data types as default values – never do that unless you love hard to debug problems and mysery.</p>
+<p>That quote applies to the above remarks, make exceptions to those thoughtfully. Except for mutable data types as default values – never do that unless you love hard to debug problems and misery.</p>
 </div>
 </div>
 <div class="section" id="exercises">
