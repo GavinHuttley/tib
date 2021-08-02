@@ -51,6 +51,11 @@ Install Python3.9 on Windows
 
 See the `information here <https://docs.python.org/3/using/windows.html#windows-store>`_.
 
+Adding support for Jupyter notebooks
+------------------------------------
+
+As we use these heavily in the course, having the capacity to create and run them on your own machine may prove useful. I'm assuming you have already successfully installed Python, VS Code and the Python extension. Open the command palette (View > Command Palette, or ⌘+⇧+p on macOS, ⌃+⇧+p on Windows?), type "Jupyter" and select "Jupyter: Create New Blank Notebook" from the list of options. This should lead to a prompt to install ``ipykernel``. Follow the prompts to allow installation. (This may require entering your user password to authorise installation.) After this completes the ``print("hello world")`` example should execute in the notebook.
+
 Podcasts
 ========
 
