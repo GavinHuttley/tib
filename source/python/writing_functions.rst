@@ -177,6 +177,23 @@ The following illustrates the form of a docstring with a simple function with no
 
     help(myfunc)
 
+Functions that call other functions
+-----------------------------------
+
+There is no magic here. If you can use a Python built-in function, you can use a function you wrote. In the following, the function ``squared_diffs()`` takes two number series and returns the square of the element-wise difference while the function  ``diff_two()`` takes two number series and returns their element-wise difference.
+
+.. jupyter-execute::
+
+    def diff_two(a, b):
+        result = []
+        for i in range(len(a)):
+            result.append(a[i] - b[i])
+        return result
+
+    def squared_diffs(a, b):
+        diffs = diff_two(a, b)  # calling diff_two which is defined above
+        return [v ** 2 for v in diffs]
+
 Things not to do!
 -----------------
 
@@ -225,7 +242,7 @@ Same behaviour as the previous example because that definition of ``result`` is 
     
     --- Ralph Waldo Emerson, Self-reliance, 1841
 
-That quote applies to the above remarks, make exceptions to those thoughtfully. Except for mutable data types as default values -- never do that unless you love hard to debug problems and mysery.
+That quote applies to the above remarks, make exceptions to those thoughtfully. Except for mutable data types as default values -- never do that unless you love hard to debug problems and misery.
 
 Exercises
 =========
