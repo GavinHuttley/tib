@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>9. Introduction to version control &mdash; Topics in Bioinformatics 2021.08.04 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Index" href="../genindex.html" />
+    <link rel="prev" title="8.11. Modelling sequence evolution" href="../cogent3/using_models.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Introduction to version control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-set-up">9.1. Getting set up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-demo-project">9.2. A demo project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-demo-project-on-github">9.2.1. Create a demo project on GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloning-the-repository-to-your-development-computer">9.2.2. Cloning the repository to your development computer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-a-python-file-to-your-repository">9.2.3. Add a python file to your repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#look-at-the-history-of-your-repository">9.2.4. Look at the history of your repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#push-your-change-to-github">9.2.5. Push your change to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tips-for-effective-use-of-version-control">9.2.6. Tips for effective use of version control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#do-not">9.2.6.1. Do NOT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#do">9.2.6.2. Do</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#glossary-of-key-version-control-terms">9.3. Glossary of key version control terms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">10. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">9. </span>Introduction to version control</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/version_control/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="introduction-to-version-control">
+<span id="intro-to-version-control"></span><h1><span class="section-number">9. </span>Introduction to version control<a class="headerlink" href="#introduction-to-version-control" title="Permalink to this headline">¶</a></h1>
+<p><em>Section author: Gavin Huttley</em></p>
+<p>“Version control” refers to software tools that are designed to efficiently keep track of changes to your plain text files. As the phrase implies, the support relates to recording different versions of files. Here, the word version is not limited to a release version.</p>
+<p>While used predominantly for programming <a class="footnote-reference brackets" href="#id3" id="id1">1</a>, they can be applied to any application that uses plain text files <a class="footnote-reference brackets" href="#id4" id="id2">2</a>. Familiarity with version control is thus crucial for bioinformaticians. Here’s just a short list of what they can be used for:</p>
+<ul class="simple">
+<li><p>makes it easier to experiment with different solutions to a problem</p></li>
+<li><p>makes it easier to collaborate with other people</p></li>
+<li><p>makes moving your code between computers easier</p></li>
+<li><p>makes it easier to ensure the reproducibility of your work</p></li>
+</ul>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Plain text files are the medium for recording programs in nearly all programming languages.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Data files from genomics.</p>
+</dd>
+</dl>
+<p>As a budding professional computational scientist, writing code is your core business so anything that makes that job easier is a good thing!</p>
+<p>In this topic I provide a functional introduction <a class="footnote-reference brackets" href="#id7" id="id5">3</a> to the version control tool <span class="target" id="index-0"></span>git. <code class="docutils literal notranslate"><span class="pre">git</span></code> is a sophisticated (and very complex) command line tool with extensive capabilities. It is not the only such tool available <a class="footnote-reference brackets" href="#id8" id="id6">4</a>. You will become familiar with using it in a terminal. Note that some IDE’s expose a sophisticated graphical user interface to using <code class="docutils literal notranslate"><span class="pre">git</span></code> that make using this tool much easier.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>Only the bare minimum necessary to use basic capabilities.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id6">4</a></span></dt>
+<dd><p>I personally use mercurial, but <code class="docutils literal notranslate"><span class="pre">git</span></code> is way more popular.</p>
+</dd>
+</dl>
+<div class="section" id="getting-set-up">
+<h2><span class="section-number">9.1. </span>Getting set up<a class="headerlink" href="#getting-set-up" title="Permalink to this headline">¶</a></h2>
+<p>These instructions are focussed on having a repository (see <a class="reference internal" href="#version-glossary"><span class="std std-ref">Glossary of key version control terms</span></a> for definitions) that is hosted at GitHub and for which there will be a clone on a computer that you will use for writing your code. If you don’t already, get yourself a <a class="reference external" href="https://github.com">GitHub</a> account.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id10">5</a></span></dt>
+<dd><p>You will make life easier for yourself if you upload a SSH key to your GitHub account. This requires you create a SSH key. See <a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">instructions here</a> for doing both of these things.</p>
+</dd>
+</dl>
+<p>You also need <code class="docutils literal notranslate"><span class="pre">git</span></code> installed on the machine where you will be writing / running the code <a class="footnote-reference brackets" href="#id9" id="id10">5</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id12">6</a></span></dt>
+<dd><p>If you are doing my course, <code class="docutils literal notranslate"><span class="pre">git</span></code> has already been installed on the class server.</p>
+</dd>
+</dl>
+<p>On this developer machine you need to inform <code class="docutils literal notranslate"><span class="pre">git</span></code> what your user name and email address are. These details are used to “sign” every commit you make – this is your attribution and informs others who made what changes. On your developer machine, in the terminal</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
+$ git config --global user.email <span class="s2">&quot;YourEmail@example.com&quot;</span>
+</pre></div>
+</div>
+<p>I also strongly recommend to change the log message editor from the default (<code class="docutils literal notranslate"><span class="pre">vim</span></code>) to <code class="docutils literal notranslate"><span class="pre">nano</span></code> <a class="footnote-reference brackets" href="#id11" id="id12">6</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id14">7</a></span></dt>
+<dd><p>Which reminds me of a joke – “How do you generate a random string? Put a first year Computer Science student in <code class="docutils literal notranslate"><span class="pre">vim</span></code> and ask them to save and exit.”</p>
+</dd>
+</dl>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global core.editor nano
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-demo-project">
+<h2><span class="section-number">9.2. </span>A demo project<a class="headerlink" href="#a-demo-project" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-a-demo-project-on-github">
+<h3><span class="section-number">9.2.1. </span>Create a demo project on GitHub<a class="headerlink" href="#create-a-demo-project-on-github" title="Permalink to this headline">¶</a></h3>
+<p>Once your account is setup, create a new repository. For the purpose of demonstration, I’m going to assume you name it <code class="docutils literal notranslate"><span class="pre">demo</span></code>.</p>
+<div class="sidebar">
+<p class="sidebar-title">Creating a new repository</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/github-create-repo.png"><img alt="../_images/github-create-repo.png" src="../_images/github-create-repo.png" style="width: 427.0px; height: 223.0px;" /></a>
+</div>
+</div>
+<p>Check the “Add a README file” option. Check the “Add .gitignore” option and select python from the popup. Check the “Choose a license” option and pick whichever one you like.</p>
+</div>
+<div class="section" id="cloning-the-repository-to-your-development-computer">
+<h3><span class="section-number">9.2.2. </span>Cloning the repository to your development computer<a class="headerlink" href="#cloning-the-repository-to-your-development-computer" title="Permalink to this headline">¶</a></h3>
+<p>In this case, you will clone onto the machine where you will be developing your code. I assume you have gone through the process of creating an ssh key and followed GitHub’s instructions for adding that to your account (see above).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:YourUserName/YourRepo.git
+</pre></div>
+</div>
+<p>This creates a directory named <code class="docutils literal notranslate"><span class="pre">YourRepo</span></code> on the system.</p>
+</div>
+<div class="section" id="add-a-python-file-to-your-repository">
+<h3><span class="section-number">9.2.3. </span>Add a python file to your repository<a class="headerlink" href="#add-a-python-file-to-your-repository" title="Permalink to this headline">¶</a></h3>
+<p>You first need to change into the directory that contains your repository. In the terminal, this is</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> YourRepo
+</pre></div>
+</div>
+<p>When you list all <a class="footnote-reference brackets" href="#id13" id="id14">7</a> the contents of this directory you will see the <code class="docutils literal notranslate"><span class="pre">.hg</span></code> directory</p>
+<dl class="footnote brackets">
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id16">8</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>, which shows hidden files and folders too.</p>
+</dd>
+</dl>
+<p>Now create a python file that contains just a print statement</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">&#39;print(&quot;Hello World&quot;)&#39;</span> &gt; demo.py
+</pre></div>
+</div>
+<p>add it to your repository,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add demo.py
+</pre></div>
+</div>
+<p>and commit the change.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Added a demo python script&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="look-at-the-history-of-your-repository">
+<h3><span class="section-number">9.2.4. </span>Look at the history of your repository<a class="headerlink" href="#look-at-the-history-of-your-repository" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log
+</pre></div>
+</div>
+</div>
+<div class="section" id="push-your-change-to-github">
+<h3><span class="section-number">9.2.5. </span>Push your change to GitHub<a class="headerlink" href="#push-your-change-to-github" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push
+</pre></div>
+</div>
+</div>
+<div class="section" id="tips-for-effective-use-of-version-control">
+<h3><span class="section-number">9.2.6. </span>Tips for effective use of version control<a class="headerlink" href="#tips-for-effective-use-of-version-control" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="do-not">
+<h4><span class="section-number">9.2.6.1. </span>Do NOT<a class="headerlink" href="#do-not" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>add really big files to a repository</p></li>
+<li><p>add binary files to a repository</p></li>
+<li><p>add secrets <a class="footnote-reference brackets" href="#id15" id="id16">8</a> to a repository!</p></li>
+<li><p>include a massive number of changes in one commit</p></li>
+</ul>
+<dl class="footnote brackets">
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id18">9</a></span></dt>
+<dd><p>Any type of information that would allow someone to cause you trouble! For example, passwords, application tokens, account names.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="do">
+<h4><span class="section-number">9.2.6.2. </span>Do<a class="headerlink" href="#do" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Track text files</p></li>
+<li><p>commit changes that are logically related</p></li>
+<li><p>think of log messages as your lab notebook entries to help you (and others) to understand what you were thinking when changed the files</p></li>
+<li><p>write meaningful log messages</p></li>
+<li><p>commit often</p></li>
+<li><p>push to GitHub often <a class="footnote-reference brackets" href="#id17" id="id18">9</a></p></li>
+</ul>
+<dl class="footnote brackets">
+<dt class="label" id="id19"><span class="brackets">10</span></dt>
+<dd><p>It’s your backup!</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="glossary-of-key-version-control-terms">
+<span id="version-glossary"></span><h2><span class="section-number">9.3. </span>Glossary of key version control terms<a class="headerlink" href="#glossary-of-key-version-control-terms" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt><span class="target" id="index-1"></span>add</dt><dd><p>Adding a file to a your repository.</p>
+</dd>
+<dt><span class="target" id="index-2"></span>clone</dt><dd><p>An independent copy of a repository. It is not required to be identical to the original.</p>
+</dd>
+<dt><span class="target" id="index-3"></span>commit</dt><dd><p>The act of recording changes to a file by version control software.</p>
+</dd>
+<dt><span class="target" id="index-4"></span>config</dt><dd><p>Configure the version control software.</p>
+</dd>
+<dt><span class="target" id="index-5"></span>conflict</dt><dd><p>Where someone else has made a change to a repository affecting the same lines as your change.</p>
+</dd>
+<dt><span class="target" id="index-6"></span>diff</dt><dd><p>A comparison of contents of two files / directories that shows only the differences.</p>
+</dd>
+<dt><span class="target" id="index-7"></span>.gitignore</dt><dd><p>A file that contains patterns that match files you <strong>do not</strong> want to be included in the repository.</p>
+</dd>
+<dt><span class="target" id="index-8"></span>log</dt><dd><p>Command to show the history of commits.</p>
+</dd>
+<dt><span class="target" id="index-9"></span>log message</dt><dd><p>Text that describes the purpose of the changes being committed to a repository.</p>
+</dd>
+<dt><span class="target" id="index-10"></span>manifest</dt><dd><p>Listing of files that are being tracked in a repository.</p>
+</dd>
+<dt><span class="target" id="index-11"></span>merge</dt><dd><p>The step of resolving conflicting repository versions.</p>
+</dd>
+<dt><span class="target" id="index-12"></span>repository</dt><dd><p>Short for software repository. This is a directory of (typically plain text source code) files pertaining to a project.</p>
+</dd>
+<dt><span class="target" id="index-13"></span>repo</dt><dd><p>See repository.</p>
+</dd>
+<dt><span class="target" id="index-14"></span>tracked</dt><dd><p>Refers to files whose contents are being recorded by version control software.</p>
+</dd>
+<dt><span class="target" id="index-15"></span>pull</dt><dd><p>Updating a repository by pulling changes from another (possibly on another computer) repository.</p>
+</dd>
+<dt><span class="target" id="index-16"></span>push</dt><dd><p>Pushing changes recorded locally to another (possibly on another computer) repository.</p>
+</dd>
+<dt><span class="target" id="index-17"></span>reset</dt><dd><p>See revert.</p>
+</dd>
+<dt><span class="target" id="index-18"></span>revert</dt><dd><p>To remove all changes made to the working copy of a file.</p>
+</dd>
+<dt><span class="target" id="index-19"></span>stage</dt><dd><p>Staging a file means informing <code class="docutils literal notranslate"><span class="pre">git</span></code> that changes to that file are to be included on the next commit step.</p>
+</dd>
+<dt><span class="target" id="index-20"></span>working copy</dt><dd><p>The files in a repository that are visible (they are not under the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory).</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../genindex.html" class="btn btn-neutral float-right" title="10. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../cogent3/using_models.html" class="btn btn-neutral float-left" title="8.11. Modelling sequence evolution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gavin Huttley.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
