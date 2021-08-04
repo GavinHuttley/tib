@@ -73,3 +73,4 @@
 .. _Table: https://cogent3.org/doc/api/table/classes/cogent3.util.table.Table.html#cogent3.util.table.Table
 .. _conda: https://docs.conda.io/en/latest/miniconda.html
 .. _VS Code: https://code.visualstudio.com
+.. _GitHub: https://github.com
