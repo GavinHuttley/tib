@@ -18,6 +18,7 @@ Bioinformatics and its Applications
     seqcomp/index
     molevol/index
     cogent3/index
+    version_control/index
     genindex
     
 .. todo:: add an advanced python topic on testing
