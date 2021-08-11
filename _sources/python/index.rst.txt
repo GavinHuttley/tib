@@ -42,5 +42,9 @@ Introduction to Python
     dictionaries
     sets
 
+.. todo:: move iterators before writing functions
+.. todo:: move miscellaneous towards end
+.. todo:: move numpy, plotly to end of topic
+.. todo:: move dictionaries, sets up after lists
 .. todo:: have a section on pip installing packages
 .. todo:: write a section on string maniupulation

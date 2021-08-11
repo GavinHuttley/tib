@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.13. The basic data types &mdash; Topics in Bioinformatics 2021.08.04 documentation</title>
+  <title>5.12. The basic data types &mdash; Topics in Bioinformatics 2021.08.11 documentation</title>
   
 
   
@@ -44,14 +44,14 @@
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.15. Logical syntax" href="logic.html" />
+    <link rel="next" title="5.14. Logical syntax" href="logic.html" />
     <link rel="prev" title="5.10. Operators" href="operators.html" /> 
 </head>
 
@@ -113,16 +113,15 @@
 <li class="toctree-l2"><a class="reference internal" href="variables.html">5.8. Variables and assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.9. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html">5.10. Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#bitwise-operators">5.11. Bitwise operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.12. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.13. The basic data types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-tell-the-type-of-a-variable">5.13.1. How to tell the type of a variable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#type-casting">5.13.2. Type casting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#int-to-float">5.13.2.1. int to float</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#float-to-int">5.13.2.2. float to int</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#string-to-float">5.13.2.3. string to float</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#string-to-list-tuple">5.13.2.4. string to list, tuple</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#objects-to-strings">5.13.2.5. Objects to strings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.11. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.12. The basic data types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-tell-the-type-of-a-variable">5.12.1. How to tell the type of a variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#type-casting">5.12.2. Type casting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#int-to-float">5.12.2.1. int to float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#float-to-int">5.12.2.2. float to int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#string-to-float">5.12.2.3. string to float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#string-to-list-tuple">5.12.2.4. string to list, tuple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#objects-to-strings">5.12.2.5. Objects to strings</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#c-style-format-strings">“C-style” format strings</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#using-format-strings">Using “format” strings</a></li>
 </ul>
@@ -131,44 +130,45 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.14. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logic.html">5.15. Logical syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.16. Fixing errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.17. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">5.18. Functions and methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.19. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.20. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.21. Getting help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lists.html">5.22. Using lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.23. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.24. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">5.25. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.26. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.27. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.28. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.29. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.30. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.31. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.32. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.33. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.34. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.35. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.36. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.37. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.38. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.39. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.40. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.41. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.42. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.43. Dealing with dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">5.44. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.13. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">5.14. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.15. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">5.17. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.18. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.19. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.20. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.21. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.22. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.23. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.24. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.26. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.30. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.31. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.32. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.33. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.34. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.35. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.36. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.37. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.38. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.39. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.40. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.41. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.42. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets.html">5.43. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">9. Introduction to version control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">10. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">10. Introduction to Testing in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
             
@@ -219,7 +219,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.13. </span>The basic data types</li>
+      <li><span class="section-number">5.12. </span>The basic data types</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -265,7 +265,7 @@
 }
 </style>
 <div class="section" id="the-basic-data-types">
-<span id="types"></span><h1><span class="section-number">5.13. </span>The basic data types<a class="headerlink" href="#the-basic-data-types" title="Permalink to this headline">¶</a></h1>
+<span id="types"></span><h1><span class="section-number">5.12. </span>The basic data types<a class="headerlink" href="#the-basic-data-types" title="Permalink to this headline">¶</a></h1>
 <p>Think of how you interpret the following:</p>
 <blockquote>
 <div><p>“According to Pythagoras, with sides of a right angle triangle equal to 3 and 4, the hypotenuse is 5.”</p>
@@ -422,7 +422,7 @@
 </div>
 </div>
 <dl class="simple" id="index-7">
-<dt><strong>dict</strong></dt><dd><p>A dictionary. Like a conventional one, we look up entries in it using some “key” and get a “value” in return. Note the special parentheses used in the definition and also usage of <code class="docutils literal notranslate"><span class="pre">:</span></code> to separate the key and value. As with tuples and lists, they can contain different data types. The keys for a dictionary must always be of an immutable data type (so <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>) but the values can be of any data type. <code class="docutils literal notranslate"><span class="pre">dict</span></code>’s are mutable, you can add keys or remove keys. You can modify the values for a key as you want. For more detailed discussion of using dicts, see <a class="reference internal" href="dictionaries.html#dicts"><span class="std std-ref">Dealing with dictionaries</span></a>.</p>
+<dt><strong>dict</strong></dt><dd><p>A dictionary. Like a conventional one, we look up entries in it using some “key” and get a “value” in return. Note the special parentheses used in the definition and also usage of <code class="docutils literal notranslate"><span class="pre">:</span></code> to separate the key and value. Subsequent key value pairs are separated by <code class="docutils literal notranslate"><span class="pre">,</span></code>. As with tuples and lists, they can contain different data types. The keys for a dictionary must always be of an immutable data type (so <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>) but the values can be of any data type. <code class="docutils literal notranslate"><span class="pre">dict</span></code>’s are mutable, you can add keys or remove keys. You can modify the values for a key as you want. For more detailed discussion of using dicts, see <a class="reference internal" href="dictionaries.html#dicts"><span class="std std-ref">Dealing with dictionaries</span></a>.</p>
 </dd>
 </dl>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -453,7 +453,7 @@
 </div>
 </div>
 <div class="section" id="how-to-tell-the-type-of-a-variable">
-<h2><span class="section-number">5.13.1. </span>How to tell the type of a variable<a class="headerlink" href="#how-to-tell-the-type-of-a-variable" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.12.1. </span>How to tell the type of a variable<a class="headerlink" href="#how-to-tell-the-type-of-a-variable" title="Permalink to this headline">¶</a></h2>
 <p>Well that’s easy!</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -470,11 +470,11 @@
 </div>
 </div>
 <div class="section" id="type-casting">
-<span id="index-9"></span><h2><span class="section-number">5.13.2. </span>Type casting<a class="headerlink" href="#type-casting" title="Permalink to this headline">¶</a></h2>
+<span id="index-9"></span><h2><span class="section-number">5.12.2. </span>Type casting<a class="headerlink" href="#type-casting" title="Permalink to this headline">¶</a></h2>
 <p>In programming, this has the explicit meaning of converting one data type into another. Of course, this is not always possible. For instance, it makes no sense to try and convert a <code class="docutils literal notranslate"><span class="pre">dict</span></code> into a <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <p>Casting is done using functions with names matching the data type.</p>
 <div class="section" id="int-to-float">
-<h3><span class="section-number">5.13.2.1. </span>int to float<a class="headerlink" href="#int-to-float" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.1. </span>int to float<a class="headerlink" href="#int-to-float" title="Permalink to this headline">¶</a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">4</span>
@@ -491,7 +491,7 @@
 </div>
 </div>
 <div class="section" id="float-to-int">
-<h3><span class="section-number">5.13.2.2. </span>float to int<a class="headerlink" href="#float-to-int" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.2. </span>float to int<a class="headerlink" href="#float-to-int" title="Permalink to this headline">¶</a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="mf">4.8</span>
@@ -508,7 +508,7 @@
 </div>
 </div>
 <div class="section" id="string-to-float">
-<h3><span class="section-number">5.13.2.3. </span>string to float<a class="headerlink" href="#string-to-float" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.3. </span>string to float<a class="headerlink" href="#string-to-float" title="Permalink to this headline">¶</a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;  4.45&quot;</span>
@@ -533,7 +533,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3596</span><span class="o">/</span><span class="mf">1722283928.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3617</span><span class="o">/</span><span class="mf">1722283928.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;  4.45&#39;
@@ -543,7 +543,7 @@
 </div>
 </div>
 <div class="section" id="string-to-list-tuple">
-<h3><span class="section-number">5.13.2.4. </span>string to list, tuple<a class="headerlink" href="#string-to-list-tuple" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.4. </span>string to list, tuple<a class="headerlink" href="#string-to-list-tuple" title="Permalink to this headline">¶</a></h3>
 <p>Casting between the collection types is similar.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -563,7 +563,7 @@
 <p>Casting to a dict requires more work, as the original data type must have a shape that matches the required <code class="docutils literal notranslate"><span class="pre">key,</span> <span class="pre">value</span></code> pair pattern.</p>
 </div>
 <div class="section" id="objects-to-strings">
-<h3><span class="section-number">5.13.2.5. </span>Objects to strings<a class="headerlink" href="#objects-to-strings" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.5. </span>Objects to strings<a class="headerlink" href="#objects-to-strings" title="Permalink to this headline">¶</a></h3>
 <p>This is an extremely common task, not least because of the need to convert data to strings for writing to file. I will show two basic approaches.</p>
 <div class="section" id="c-style-format-strings">
 <span id="index-10"></span><h4>“C-style” format strings<a class="headerlink" href="#c-style-format-strings" title="Permalink to this headline">¶</a></h4>
@@ -657,7 +657,7 @@
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.14. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.13. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
 <li><p>What happens when you cast the following to a dict using the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> command.</p>
 <blockquote>
@@ -685,7 +685,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="logic.html" class="btn btn-neutral float-right" title="5.15. Logical syntax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="logic.html" class="btn btn-neutral float-right" title="5.14. Logical syntax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="operators.html" class="btn btn-neutral float-left" title="5.10. Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

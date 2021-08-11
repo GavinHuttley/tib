@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>10. Introduction to Testing in Python &mdash; Topics in Bioinformatics 2021.08.11 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11. Index" href="../genindex.html" />
+    <link rel="prev" title="9. Introduction to version control" href="../version_control/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">9. Introduction to version control</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. Introduction to Testing in Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-do-we-need-to-test-software">10.1. Why do we need to test software?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-structure-of-tests-of-software">10.2. The structure of tests of software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-tests-are-run">10.3. How tests are run</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-terminal">10.3.1. From the terminal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#in-a-jupyter-notebook">10.3.2. In a jupyter notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-coverage">10.4. Test coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-testing-to-your-ongoing-development">10.5. Adding testing to your ongoing development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Topics in Bioinformatics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">10. </span>Introduction to Testing in Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/testing/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="introduction-to-testing-in-python">
+<span id="intro-to-testing"></span><h1><span class="section-number">10. </span>Introduction to Testing in Python<a class="headerlink" href="#introduction-to-testing-in-python" title="Permalink to this headline">¶</a></h1>
+<p><em>Section author: Gavin Huttley</em></p>
+<div class="section" id="why-do-we-need-to-test-software">
+<h2><span class="section-number">10.1. </span>Why do we need to test software?<a class="headerlink" href="#why-do-we-need-to-test-software" title="Permalink to this headline">¶</a></h2>
+<p>When a scientist conducts an experiment in a lab, they generate results under some experimental condition which they then seek to interpret. Let us consider <a class="reference external" href="https://en.wikipedia.org/wiki/Polymerase_chain_reaction">PCR</a> as an example. A PCR experiment has 4 components (ignoring the hardware required to conduct the experiment):</p>
+<ol class="arabic simple">
+<li><p>A thermostable DNA polymerase enzyme</p></li>
+<li><p>A reaction mix (the reagent) <a class="footnote-reference brackets" href="#id4" id="id1">1</a></p></li>
+<li><p>DNA Primers <a class="footnote-reference brackets" href="#id5" id="id2">2</a></p></li>
+<li><p>The <strong>template</strong> <a class="footnote-reference brackets" href="#id6" id="id3">3</a></p></li>
+</ol>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This provides a suitable environment for the DNA polymerase enzyme, includes essential ions and the chemical building blocks (dNTPs) to make DNA</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Short DNA fragments that complement the boundaries of the fragment to be amplified.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>In one sense, this corresponds to the “unknown query”.</p>
+</dd>
+</dl>
+<p>Let us consider a PCR experiment that has been applied to a query sample only and which did not result in any detectable amplified DNA. How does the experimentalist know how to interpret the result? The only conclusion that can be drawn is the result is ambiguous because there are multiple possible explanations <a class="footnote-reference brackets" href="#id8" id="id7">4</a> due to too many potential sources of error in the experiment.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id7">4</a></span></dt>
+<dd><p>The query truly does not contain the target sequence. Alternately, the enzyme may have been defective, or the dNTPs were missing, etc…</p>
+</dd>
+</dl>
+<p>Now consider if we added a <strong>positive control</strong> to this experiment. This corresponds to including a replicate such that components 1-3 were identical but the template (component 4) is now DNA that is <em>known</em> to contain the target. For this replicate, we have eliminated one source of uncertainty (the template contains the target) on the basis of previous work. Accordingly, we reasonably expect a positive outcome (amplified DNA is certain). If, in this replicate, DNA <em>was</em> amplified we could eliminate defects in components 1-3 as a basis for the absence of amplified DNA from our query template.</p>
+<p>Now imagine we run another experiment with two replicates, one of which is a positive control, the other is a different query template. In this experiment, amplified DNA was found for both the positive control and the query. We have another ambiguous conclusion <a class="footnote-reference brackets" href="#id10" id="id9">5</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id9">5</a></span></dt>
+<dd><p>The query truly does contain the target sequence. Alternately, the enzyme mix (or reagent mix, or primers) was contaminated with a sequence containing a match etc…</p>
+</dd>
+</dl>
+<p>If we add a <strong>negative</strong> control to this experiment, we have much clearer capacity to interpret the outcome. A negative control would be another replicate with the same components 1-3, but no template. Again, there is a known outcome for this replicate (no amplified DNA). If, in our rerunning of the experiment, there was no amplified DNA in the negative control, then the interpretation is much clearer.</p>
+<p>Quite clearly, the inclusion of experimental controls affects the interpretability of the results.</p>
+<p>To extend this analogy further, this level of controls really reflects a common view of how “science” is undertaken. Any experimental test of an unknown is accompanied by testing replicates where the outcome is known <em>a priori</em>. It is the results of an assay on those knowns that guides our conclusion with regard the sample that had material whose properties were unknown.</p>
+<p>The success of experiments such as what I have described above relies on another level of checking. These are quality control checks of the integrity of the ingredients that go to make up each of the different components. Checks that the DNA polymerase enzyme is, in fact, a DNA polymerase and that its concentration is correct. Checks that all of the prescribed components of the reagent mix are present and in the correct concentration. Checks that these components do not contain any DNA contamination, etc… When these building blocks are rigorously verified we have confidence that we will not waste our time in conducting an experiment.</p>
+<p>I would hope, at this point, that you can start to see the parallels with writing software. The functions we write in a program become components of larger algorithms, just like the components in the PCR experiment. And just as quality control checks are required for producing the components of any empirical experimental system, so too are quality control checks required for our functions. These checks are tests of correctness of those functions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The interpretability of output from algorithms remains uncertain unless suitable controls are run.</p>
+</div>
+</div>
+<div class="section" id="the-structure-of-tests-of-software">
+<h2><span class="section-number">10.2. </span>The structure of tests of software<a class="headerlink" href="#the-structure-of-tests-of-software" title="Permalink to this headline">¶</a></h2>
+<blockquote class="epigraph">
+<div><p>“The more I learn about proprietary software, the more I worry that objective truth might perish from the earth.”</p>
+<p class="attribution">—Professor Paul Romer, Awarded the 2018 Nobel Prize in Economics, and Python Programmer.</p>
+</div></blockquote>
+<p>To test software function we must write additional code. This additional code uses our functions, providing an assortment of inputs and ensuring the resulting outputs match our prior expectation. In the same way that you should not trust results from an experiment that was performed without suitable controls, you should not trust the output of software that has not been adequately tested. Before I proceed to examples, I emphasise here that what we will begin to undertake corresponds to the quality checks described for the integrity of the ingredients used for the experimental system. Correctly designing experiments with controls must also be done when those experiments are computational and this is the much harder problem!</p>
+<p>Let us begin by defining a problem that we wish to solve. Say I need a function to process gene coordinates. The function will receive the start and end positions of a gene and return the DNA strand on which it is encoded <a class="footnote-reference brackets" href="#id12" id="id11">6</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id11">6</a></span></dt>
+<dd><p>For the non-biologist, DNA is a double helix whose individual strands are antiparallel. A gene is a directionally encoded block of information that is absolute and all genes are chemically oriented in the same way. With respect to a genes encoding, its start position is always less than its end position. The frame of reference by which we refer to DNA is arbitrary. The chosen reference DNA strand is referred to as the plus (“+”) strand and its complimentary partner as the minus strand. Accordingly, from a “+” strand frame of reference the coordinate for the end of a “-” strand gene occurs before its start.</p>
+</dd>
+</dl>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_strand</span><span class="p">(</span><span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">end</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;must be integers&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;gene start cannot equal end&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">min</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;gene cannot have a negative coordinate&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s2">&quot;+&quot;</span> <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span> <span class="k">else</span> <span class="s2">&quot;-&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>This function returns the <code class="docutils literal notranslate"><span class="pre">&quot;-&quot;</span></code> character if the start position is greater than the end, indicating the gene is on the minus strand, <code class="docutils literal notranslate"><span class="pre">&quot;+&quot;</span></code> otherwise. Note I’m also checking that the inputs are positive integers and that they are not equal to each other.</p>
+<p>How we test this is by writing functions that check different aspects of its performance. While the order in which you write tests does not matter, I’m going to start by checking it produces the output I expect for data for which an output is define.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_get_strand_output</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;given well formed input it should produce expected output&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">get_strand</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;+&quot;</span>
+    <span class="k">assert</span> <span class="n">get_strand</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20000</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;+&quot;</span>
+    <span class="k">assert</span> <span class="n">get_strand</span><span class="p">(</span><span class="mi">20000</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;-&quot;</span>
+    <span class="k">assert</span> <span class="n">get_strand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;-&quot;</span>
+
+<span class="n">test_get_strand_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>I also want to be sure that if I give it invalid data, that each of the cases I have attempted to catch are in fact caught. This is a good point at which to introduce you to the fact that software libraries exist that are designed to facilitate software testing. One of their features is they make it easier to check that specific types of assertions are raised. I will use the <a class="reference external" href="https://docs.pytest.org/">pytest</a> library.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="k">def</span> <span class="nf">test_just_ints</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;only integers are allowed&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">40.0</span><span class="p">)]:</span>
+        <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+            <span class="n">get_strand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">test_just_ints</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>I also need to check if I give it either equal start, end or a negative value. In this case, we have a different error type.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_no_negatives</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;only positive integers&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">23</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">)]:</span>
+        <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">get_strand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_no_equal</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;no equal values&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)]:</span>
+        <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">get_strand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">test_no_negatives</span><span class="p">()</span>
+<span class="n">test_no_equal</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All the test functions are named such that the function name begins with the word <code class="docutils literal notranslate"><span class="pre">test</span></code>. This is by design since testing tools use that information to find tests in a project.</p>
+</div>
+</div>
+<div class="section" id="how-tests-are-run">
+<h2><span class="section-number">10.3. </span>How tests are run<a class="headerlink" href="#how-tests-are-run" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="from-the-terminal">
+<h3><span class="section-number">10.3.1. </span>From the terminal<a class="headerlink" href="#from-the-terminal" title="Permalink to this headline">¶</a></h3>
+<p>While the functions written in this document illustrate the nature of testing some code, they do not reflect how tests are organised and run in practice.</p>
+<p>If you adhere to conventions used by testing libraries like <a class="reference external" href="https://docs.pytest.org/">pytest</a>, these tools are able to automatically detect test functions. As noted above, beginning the test functions with <code class="docutils literal notranslate"><span class="pre">test</span></code> makes the tests discoverable <a class="footnote-reference brackets" href="#id14" id="id13">7</a>. Testing software also calls these functions. This means it is not necessary to make the calls yourself. Just define the function and run the test tool against your code.</p>
+<p>As an example, I have a project called <a class="reference external" href="https://cogent3.org">cogent3</a> and in the main directory of the repository I have a directory called <code class="docutils literal notranslate"><span class="pre">tests</span></code>. I invoke all my tests by doing the following</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd path/to/cogent3/tests
+$ pytest
+</pre></div>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id13">7</a></span></dt>
+<dd><p>When <code class="docutils literal notranslate"><span class="pre">pytest</span></code> is run within a directory, it searches all files for class / function names that match this (or a related) pattern. These tests are thus <em>discovered</em> by pytest.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="in-a-jupyter-notebook">
+<h3><span class="section-number">10.3.2. </span>In a jupyter notebook<a class="headerlink" href="#in-a-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
+<p>Testing code within a notebook is more restricted than for standard python scripts. There is a third-party library, <code class="docutils literal notranslate"><span class="pre">ipytest</span></code> which provides mechanisms for using <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to run tests in notebooks. See <a class="reference external" href="ipytest">the documentation</a> for how to use it.</p>
+</div>
+</div>
+<div class="section" id="test-coverage">
+<h2><span class="section-number">10.4. </span>Test coverage<a class="headerlink" href="#test-coverage" title="Permalink to this headline">¶</a></h2>
+<p>Defining the quality of software is a difficult problem. From an individuals perspective, a useful benchmark for your own code is how many lines of your code are actually exercised by your tests? This is referred to as “code coverage”. Some IDEs, like PyCharm, build in tools to obtain such measures. There is also an extension to pytest, <a class="reference external" href="https://github.com/pytest-dev/pytest-cov">pytest-cov</a>, which can be easily invoked using command line flags when you run your tests. I can run this and have it generate a html file, which allows exploring the sections that are not covered by tests. For <code class="docutils literal notranslate"><span class="pre">cogent3</span></code>, I run the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pytest --cov-report html --cov=cogent3 ./ --ignore=test_app_mpi.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-testing-to-your-ongoing-development">
+<h2><span class="section-number">10.5. </span>Adding testing to your ongoing development<a class="headerlink" href="#adding-testing-to-your-ongoing-development" title="Permalink to this headline">¶</a></h2>
+<p>As projects become larger, adding tests along with new features becomes crucial. Automating the execution of tests is an important step that simplifies the process of developing your code. Tools for continuous integration (often referred to as CI) are now builtin to many of the standard code hosting platforms. On GitHub, they are termed <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>, on <a class="reference external" href="https://bitbucket.org/product/features/pipelines">Bitbucket they are termed pipelines</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../genindex.html" class="btn btn-neutral float-right" title="11. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../version_control/index.html" class="btn btn-neutral float-left" title="9. Introduction to version control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gavin Huttley.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

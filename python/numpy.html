@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.36. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2021.08.04 documentation</title>
+  <title>5.35. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2021.08.11 documentation</title>
   
 
   
@@ -44,15 +44,15 @@
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.38. Miscellaneous Python features" href="misc.html" />
-    <link rel="prev" title="5.35. Extending capabilities using import" href="import.html" /> 
+    <link rel="next" title="5.37. Miscellaneous Python features" href="misc.html" />
+    <link rel="prev" title="5.34. Extending capabilities using import" href="import.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -113,71 +113,71 @@
 <li class="toctree-l2"><a class="reference internal" href="variables.html">5.8. Variables and assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.9. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html">5.10. Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#bitwise-operators">5.11. Bitwise operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.12. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html">5.13. The basic data types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.14. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logic.html">5.15. Logical syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.16. Fixing errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.17. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">5.18. Functions and methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.19. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.20. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.21. Getting help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lists.html">5.22. Using lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.23. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.24. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">5.25. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.26. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.27. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.28. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.29. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.30. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.31. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.32. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.33. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.34. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.35. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.36. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#conversion-to-standard-python-data-types">5.36.1. Conversion to standard python data types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#constructing-matrices">5.36.2. Constructing matrices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scalar-operations-on-arrays">5.36.3. Scalar operations on arrays</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-laborious-and-slow-way">5.36.3.1. The laborious (and slow) way</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">5.12. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.13. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">5.14. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.15. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">5.17. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.18. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.19. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.20. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.21. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.22. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.23. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.24. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.26. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.30. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.31. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.32. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.33. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.34. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.35. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conversion-to-standard-python-data-types">5.35.1. Conversion to standard python data types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constructing-matrices">5.35.2. Constructing matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scalar-operations-on-arrays">5.35.3. Scalar operations on arrays</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-laborious-and-slow-way">5.35.3.1. The laborious (and slow) way</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#standard-mathematical-operations-on-arrays">5.36.4. Standard mathematical operations on arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#array-iteration">5.36.5. Array iteration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#indexing-and-slicing">5.36.6. Indexing and slicing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#array-assignment">5.36.7. Array assignment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#evaluation-operations">5.36.8. Evaluation operations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced-indexing">5.36.9. Advanced indexing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#boolean-indexing">5.36.9.1. Boolean indexing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#integer-indexing">5.36.9.2. Integer indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standard-mathematical-operations-on-arrays">5.35.4. Standard mathematical operations on arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#array-iteration">5.35.5. Array iteration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indexing-and-slicing">5.35.6. Indexing and slicing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#array-assignment">5.35.7. Array assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#evaluation-operations">5.35.8. Evaluation operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-indexing">5.35.9. Advanced indexing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#boolean-indexing">5.35.9.1. Boolean indexing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integer-indexing">5.35.9.2. Integer indexing</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#the-numpy-array-axis">5.36.10. The numpy array axis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-useful-quantities">5.36.11. Getting useful quantities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#linear-algebra-matrix-multiplication">5.36.12. Linear algebra – matrix multiplication</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conditionals-on-arrays">5.36.13. Conditionals on arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comparisons-of-multiple-arrays">5.36.14. Comparisons of multiple arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-the-result-of-array-comparisons-to-count">5.36.15. Using the result of array comparisons to count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-numpy-array-axis">5.35.10. The numpy array axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-useful-quantities">5.35.11. Getting useful quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linear-algebra-matrix-multiplication">5.35.12. Linear algebra – matrix multiplication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conditionals-on-arrays">5.35.13. Conditionals on arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparisons-of-multiple-arrays">5.35.14. Comparisons of multiple arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-result-of-array-comparisons-to-count">5.35.15. Using the result of array comparisons to count</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.37. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.38. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.39. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.40. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.41. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.42. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.43. Dealing with dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">5.44. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.36. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.37. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.38. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.39. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.40. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.41. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.42. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets.html">5.43. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">9. Introduction to version control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">10. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">10. Introduction to Testing in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
             
@@ -228,7 +228,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.36. </span><code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</li>
+      <li><span class="section-number">5.35. </span><code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -274,7 +274,7 @@
 }
 </style>
 <div class="section" id="numpy-numerical-routines-for-python">
-<span id="using-numpy"></span><span id="index-0"></span><h1><span class="section-number">5.36. </span><code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python<a class="headerlink" href="#numpy-numerical-routines-for-python" title="Permalink to this headline">¶</a></h1>
+<span id="using-numpy"></span><span id="index-0"></span><h1><span class="section-number">5.35. </span><code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python<a class="headerlink" href="#numpy-numerical-routines-for-python" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference external" href="https://numpy.org">numpy</a> library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> will deliver a 10x speedup. In fact, it can be much faster than that. But that’s not the focus of this extremely brief summary of <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Instead, we introduce you to the major usage patterns that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> enables. These patterns greatly simplify the algorithms you have to write. So it’s truly worthwhile becoming familiar with this library.</p>
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> is designed for numerical calculation and the primary object the library provides is an array. The <code class="docutils literal notranslate"><span class="pre">array</span></code> object has several key attributes, including:</p>
 <ul class="simple">
@@ -363,7 +363,7 @@
 </div>
 </div>
 <div class="section" id="conversion-to-standard-python-data-types">
-<h2><span class="section-number">5.36.1. </span>Conversion to standard python data types<a class="headerlink" href="#conversion-to-standard-python-data-types" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.35.1. </span>Conversion to standard python data types<a class="headerlink" href="#conversion-to-standard-python-data-types" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -379,7 +379,7 @@
 </div>
 </div>
 <div class="section" id="constructing-matrices">
-<span id="index-1"></span><h2><span class="section-number">5.36.2. </span>Constructing matrices<a class="headerlink" href="#constructing-matrices" title="Permalink to this headline">¶</a></h2>
+<span id="index-1"></span><h2><span class="section-number">5.35.2. </span>Constructing matrices<a class="headerlink" href="#constructing-matrices" title="Permalink to this headline">¶</a></h2>
 <p>Matrices can be specified on construction by providing, for example, lists of lists. In this example we use a list consisting of two lists, each with 4 elements. This results in a <span class="math notranslate nohighlight">\(2\times4\)</span> array.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -456,11 +456,11 @@
 </div>
 </div>
 <div class="section" id="scalar-operations-on-arrays">
-<span id="index-2"></span><h2><span class="section-number">5.36.3. </span>Scalar operations on arrays<a class="headerlink" href="#scalar-operations-on-arrays" title="Permalink to this headline">¶</a></h2>
+<span id="index-2"></span><h2><span class="section-number">5.35.3. </span>Scalar operations on arrays<a class="headerlink" href="#scalar-operations-on-arrays" title="Permalink to this headline">¶</a></h2>
 <p>A major convenience for arrays is the ability to express element-wise operations as a single statement, instead of having to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <p>Here’s an element-wise addition using a standard for loop on the <code class="docutils literal notranslate"><span class="pre">raw</span></code> nested list data structure.</p>
 <div class="section" id="the-laborious-and-slow-way">
-<h3><span class="section-number">5.36.3.1. </span>The laborious (and slow) way<a class="headerlink" href="#the-laborious-and-slow-way" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.35.3.1. </span>The laborious (and slow) way<a class="headerlink" href="#the-laborious-and-slow-way" title="Permalink to this headline">¶</a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">)):</span>
@@ -495,7 +495,7 @@
 </div>
 </div>
 <div class="section" id="standard-mathematical-operations-on-arrays">
-<h2><span class="section-number">5.36.4. </span>Standard mathematical operations on arrays<a class="headerlink" href="#standard-mathematical-operations-on-arrays" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.35.4. </span>Standard mathematical operations on arrays<a class="headerlink" href="#standard-mathematical-operations-on-arrays" title="Permalink to this headline">¶</a></h2>
 <p>If two or more arrays have the same shape, then element-wise operations between corresponding elements is also very simply expressed.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -526,7 +526,7 @@ After:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3501</span><span class="o">/</span><span class="mf">3772412408.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3524</span><span class="o">/</span><span class="mf">3772412408.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">a</span> <span class="o">*</span> <span class="n">d</span>
 
@@ -537,7 +537,7 @@ After:
 </div>
 </div>
 <div class="section" id="array-iteration">
-<h2><span class="section-number">5.36.5. </span>Array iteration<a class="headerlink" href="#array-iteration" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.35.5. </span>Array iteration<a class="headerlink" href="#array-iteration" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
@@ -554,7 +554,7 @@ After:
 </div>
 </div>
 <div class="section" id="indexing-and-slicing">
-<span id="index-3"></span><h2><span class="section-number">5.36.6. </span>Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">¶</a></h2>
+<span id="index-3"></span><h2><span class="section-number">5.35.6. </span>Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">¶</a></h2>
 <p>In the following, we are working on this array.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -618,7 +618,7 @@ After:
 </div>
 <span class="target" id="index-4"></span></div>
 <div class="section" id="array-assignment">
-<span id="index-5"></span><h2><span class="section-number">5.36.7. </span>Array assignment<a class="headerlink" href="#array-assignment" title="Permalink to this headline">¶</a></h2>
+<span id="index-5"></span><h2><span class="section-number">5.35.7. </span>Array assignment<a class="headerlink" href="#array-assignment" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">99</span>
@@ -635,7 +635,7 @@ After:
 </div>
 <span class="target" id="index-6"></span></div>
 <div class="section" id="evaluation-operations">
-<span id="index-7"></span><h2><span class="section-number">5.36.8. </span>Evaluation operations<a class="headerlink" href="#evaluation-operations" title="Permalink to this headline">¶</a></h2>
+<span id="index-7"></span><h2><span class="section-number">5.35.8. </span>Evaluation operations<a class="headerlink" href="#evaluation-operations" title="Permalink to this headline">¶</a></h2>
 <p>Using standard python evaluation operations on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays returns element wise <code class="docutils literal notranslate"><span class="pre">bool</span></code> arrays. We show uses for these below.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -653,10 +653,10 @@ After:
 </div>
 </div>
 <div class="section" id="advanced-indexing">
-<span id="index-8"></span><h2><span class="section-number">5.36.9. </span>Advanced indexing<a class="headerlink" href="#advanced-indexing" title="Permalink to this headline">¶</a></h2>
+<span id="index-8"></span><h2><span class="section-number">5.35.9. </span>Advanced indexing<a class="headerlink" href="#advanced-indexing" title="Permalink to this headline">¶</a></h2>
 <p>There are two types of advanced indexing, boolean and integer.</p>
 <div class="section" id="boolean-indexing">
-<h3><span class="section-number">5.36.9.1. </span>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.35.9.1. </span>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Permalink to this headline">¶</a></h3>
 <p>This applies when the object being used to slice the array is of type <code class="docutils literal notranslate"><span class="pre">bool</span></code>. These typically result from some array comparison operation.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -720,7 +720,7 @@ After:
 </div>
 </div>
 <div class="section" id="integer-indexing">
-<h3><span class="section-number">5.36.9.2. </span>Integer indexing<a class="headerlink" href="#integer-indexing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.35.9.2. </span>Integer indexing<a class="headerlink" href="#integer-indexing" title="Permalink to this headline">¶</a></h3>
 <p>This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of <code class="docutils literal notranslate"><span class="pre">m</span></code>).</p>
 <p>Before we start using actual integer series, I’ll start by using conventional indexing to get the value of a single item. Specifically, I select row <code class="docutils literal notranslate"><span class="pre">1</span></code>, column <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -756,7 +756,7 @@ After:
 </div>
 </div>
 <div class="section" id="the-numpy-array-axis">
-<span id="index-9"></span><h2><span class="section-number">5.36.10. </span>The numpy array axis<a class="headerlink" href="#the-numpy-array-axis" title="Permalink to this headline">¶</a></h2>
+<span id="index-9"></span><h2><span class="section-number">5.35.10. </span>The numpy array axis<a class="headerlink" href="#the-numpy-array-axis" title="Permalink to this headline">¶</a></h2>
 <p>This is akin to specifying whether a method / function operates on rows (<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>) or columns (<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>) <a class="footnote-reference brackets" href="#id7" id="id6">2</a>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id6">2</a></span></dt>
@@ -786,7 +786,7 @@ After:
 </div>
 </div>
 <div class="section" id="getting-useful-quantities">
-<span id="index-10"></span><h2><span class="section-number">5.36.11. </span>Getting useful quantities<a class="headerlink" href="#getting-useful-quantities" title="Permalink to this headline">¶</a></h2>
+<span id="index-10"></span><h2><span class="section-number">5.35.11. </span>Getting useful quantities<a class="headerlink" href="#getting-useful-quantities" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Overall mean, all elements</span>
@@ -841,7 +841,7 @@ After:
 </div>
 <span class="target" id="index-11"></span></div>
 <div class="section" id="linear-algebra-matrix-multiplication">
-<span id="index-12"></span><h2><span class="section-number">5.36.12. </span>Linear algebra – matrix multiplication<a class="headerlink" href="#linear-algebra-matrix-multiplication" title="Permalink to this headline">¶</a></h2>
+<span id="index-12"></span><h2><span class="section-number">5.35.12. </span>Linear algebra – matrix multiplication<a class="headerlink" href="#linear-algebra-matrix-multiplication" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -860,7 +860,7 @@ After:
 </div>
 </div>
 <div class="section" id="conditionals-on-arrays">
-<span id="index-13"></span><h2><span class="section-number">5.36.13. </span>Conditionals on arrays<a class="headerlink" href="#conditionals-on-arrays" title="Permalink to this headline">¶</a></h2>
+<span id="index-13"></span><h2><span class="section-number">5.35.13. </span>Conditionals on arrays<a class="headerlink" href="#conditionals-on-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Conditional operations on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays are important. We illustrate the utility of these operations with some simple examples.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -928,7 +928,7 @@ After:
 </div>
 </div>
 <div class="section" id="comparisons-of-multiple-arrays">
-<span id="index-15"></span><h2><span class="section-number">5.36.14. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Permalink to this headline">¶</a></h2>
+<span id="index-15"></span><h2><span class="section-number">5.35.14. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Permalink to this headline">¶</a></h2>
 <p><span class="incremental">numpy</span> provides tools for element-wise comparisons. This is more complicated than just using the standard python syntax.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -950,7 +950,7 @@ After:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3501</span><span class="o">/</span><span class="mf">2595779301.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3524</span><span class="o">/</span><span class="mf">2595779301.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">y</span>
 
 <span class="ne">ValueError</span>: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
@@ -985,7 +985,7 @@ After:
 </div>
 </div>
 <div class="section" id="using-the-result-of-array-comparisons-to-count">
-<span id="index-16"></span><h2><span class="section-number">5.36.15. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Permalink to this headline">¶</a></h2>
+<span id="index-16"></span><h2><span class="section-number">5.35.15. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Permalink to this headline">¶</a></h2>
 <p>Scenario, you want to count (from multiple arrays that consist of a continuously distributed random variable) the number of times a specific threshold is reached for each “position” on a reference coordinate system.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1043,7 +1043,7 @@ After:
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.37. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.36. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
 <li><p>Create a list of 10 positive integers and convert it into a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. Use <code class="docutils literal notranslate"><span class="pre">array</span></code> methods to compute the total. Divide the original array by the total to produce a normalised array, which you assign to a variable <code class="docutils literal notranslate"><span class="pre">freqs</span></code>. Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.</p></li>
 <li><p>Many methods on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays have an axis argument, one of which is sum. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.</p>
@@ -1108,11 +1108,11 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 0, 0, 0],
-       [1, 1, 1, 1, 0],
-       [1, 0, 1, 1, 1],
-       [0, 1, 1, 0, 0],
-       [0, 0, 1, 0, 1]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 0, 1, 1],
+       [1, 0, 0, 1, 1],
+       [0, 1, 1, 0, 1],
+       [1, 1, 0, 0, 1],
+       [1, 1, 0, 0, 0]])
 </pre></div>
 </div>
 </div>
@@ -1120,7 +1120,7 @@ After:
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4], [0, 1, 2, 3, 0, 2, 3, 4, 1, 2, 2, 4])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4], [3, 4, 0, 3, 4, 1, 2, 4, 0, 1, 4, 0, 1])
 </pre></div>
 </div>
 </div>
@@ -1133,7 +1133,7 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>15 µs ± 172 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>14.1 µs ± 163 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1151,8 +1151,8 @@ After:
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="misc.html" class="btn btn-neutral float-right" title="5.38. Miscellaneous Python features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="import.html" class="btn btn-neutral float-left" title="5.35. Extending capabilities using import" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="misc.html" class="btn btn-neutral float-right" title="5.37. Miscellaneous Python features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="import.html" class="btn btn-neutral float-left" title="5.34. Extending capabilities using import" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

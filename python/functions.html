@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.18. Functions and methods &mdash; Topics in Bioinformatics 2021.08.04 documentation</title>
+  <title>5.17. Functions and methods &mdash; Topics in Bioinformatics 2021.08.11 documentation</title>
   
 
   
@@ -44,15 +44,15 @@
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.20. Dealing with strings" href="strings.html" />
-    <link rel="prev" title="5.16. Fixing errors" href="interpreting_errors.html" /> 
+    <link rel="next" title="5.19. Dealing with strings" href="strings.html" />
+    <link rel="prev" title="5.15. Fixing errors" href="interpreting_errors.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -113,58 +113,58 @@
 <li class="toctree-l2"><a class="reference internal" href="variables.html">5.8. Variables and assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.9. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html">5.10. Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#bitwise-operators">5.11. Bitwise operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.12. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html">5.13. The basic data types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.14. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logic.html">5.15. Logical syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.16. Fixing errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.17. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.18. Functions and methods</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#builtin-functions">5.18.1. Builtin functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python-is-an-object-oriented-language">5.18.2. Python is an object oriented language</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#methods">5.18.3. Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#so-how-do-i-use-methods-and-functions">5.18.4. So how do I use methods and functions?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#functions">5.18.4.1. Functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">5.18.4.2. Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">5.12. The basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.13. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">5.14. Logical syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.15. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.16. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.17. Functions and methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#builtin-functions">5.17.1. Builtin functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-is-an-object-oriented-language">5.17.2. Python is an object oriented language</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">5.17.3. Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#so-how-do-i-use-methods-and-functions">5.17.4. So how do I use methods and functions?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#functions">5.17.4.1. Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">5.17.4.2. Methods</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#a-useful-trick-for-concatenating-strings">5.18.5. A useful trick for concatenating strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-useful-trick-for-concatenating-strings">5.17.5. A useful trick for concatenating strings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.19. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.20. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.21. Getting help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lists.html">5.22. Using lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.23. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.24. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">5.25. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.26. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.27. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.28. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.29. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.30. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.31. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.32. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.33. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.34. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.35. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.36. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.37. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.38. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.39. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.40. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.41. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.42. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.43. Dealing with dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">5.44. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.18. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.19. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.20. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.21. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.22. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.23. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.24. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.26. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.30. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.31. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.32. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.33. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.34. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.35. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.36. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.37. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.38. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.39. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.40. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.41. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.42. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets.html">5.43. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">9. Introduction to version control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">10. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">10. Introduction to Testing in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
             
@@ -215,7 +215,7 @@
         
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
         
-      <li><span class="section-number">5.18. </span>Functions and methods</li>
+      <li><span class="section-number">5.17. </span>Functions and methods</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -261,10 +261,10 @@
 }
 </style>
 <div class="section" id="functions-and-methods">
-<span id="index-0"></span><h1><span class="section-number">5.18. </span>Functions and methods<a class="headerlink" href="#functions-and-methods" title="Permalink to this headline">¶</a></h1>
+<span id="index-0"></span><h1><span class="section-number">5.17. </span>Functions and methods<a class="headerlink" href="#functions-and-methods" title="Permalink to this headline">¶</a></h1>
 <p>This is a central concept in programming. It provides a means of encapsulating several lines of code (that do something useful) and providing a reference such that this block can be called in multiple places in a larger program.</p>
 <div class="section" id="builtin-functions">
-<span id="index-1"></span><h2><span class="section-number">5.18.1. </span>Builtin functions<a class="headerlink" href="#builtin-functions" title="Permalink to this headline">¶</a></h2>
+<span id="index-1"></span><h2><span class="section-number">5.17.1. </span>Builtin functions<a class="headerlink" href="#builtin-functions" title="Permalink to this headline">¶</a></h2>
 <p>We have already been using some built-in functions. These are <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">type()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>, etc.</p>
 <p>Here are the key patterns to using functions that you need to remember.</p>
 <ol class="arabic simple">
@@ -321,7 +321,7 @@
 </div>
 </div>
 <div class="section" id="python-is-an-object-oriented-language">
-<h2><span class="section-number">5.18.2. </span>Python is an object oriented language<a class="headerlink" href="#python-is-an-object-oriented-language" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.17.2. </span>Python is an object oriented language<a class="headerlink" href="#python-is-an-object-oriented-language" title="Permalink to this headline">¶</a></h2>
 <p>A precursor to understanding methods is to understand what is meant by an “object”.</p>
 <p>As the title states, Python belongs to a class of programming languages called “object oriented”. The success of “object oriented” programming languages (there are many) arise (at least in part) from the fact they encourage modularisation of code. This modularisation reduces the number of lines of code and makes the resulting programs easier to write, to check for bugs, and thus to maintain.</p>
 <p>So what is an “object”? It’s an abstract concept, but in essence an object represents something. It can be a number, a string, a file, etc.. Thus “objects” are instances of a type of data.</p>
@@ -334,7 +334,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>139959507056512
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>139698115160384
 </pre></div>
 </div>
 </div>
@@ -347,7 +347,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>139959506736384
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>139698115066112
 </pre></div>
 </div>
 </div>
@@ -355,7 +355,7 @@
 <p>Although <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are equivalently defined – both lists of exactly the same integers – they are not the same instance.</p>
 </div>
 <div class="section" id="methods">
-<span id="index-3"></span><span id="id4"></span><h2><span class="section-number">5.18.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<span id="index-3"></span><span id="id4"></span><h2><span class="section-number">5.17.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>Which leads us to methods. A method is a function bound to a specific object that applies to the data encapsulated in that instance.</p>
 <p>This means that when you call a method on one object, it only operates on that object. I’ll demonstrate that by using a method on lists to sort the elements.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -393,7 +393,7 @@
 <p>Simple!</p>
 </div>
 <div class="section" id="so-how-do-i-use-methods-and-functions">
-<span id="index-4"></span><h2><span class="section-number">5.18.4. </span>So how do I use methods and functions?<a class="headerlink" href="#so-how-do-i-use-methods-and-functions" title="Permalink to this headline">¶</a></h2>
+<span id="index-4"></span><h2><span class="section-number">5.17.4. </span>So how do I use methods and functions?<a class="headerlink" href="#so-how-do-i-use-methods-and-functions" title="Permalink to this headline">¶</a></h2>
 <p>There are some general principles in how to use functions and methods. First, using <code class="docutils literal notranslate"><span class="pre">help()</span></code> will show you what arguments a function or method can take</p>
 <div class="sidebar" id="interpreting-help-for-a-function">
 <p class="sidebar-title">Interpreting help() for a function</p>
@@ -406,7 +406,7 @@
 </ol>
 </div>
 <div class="section" id="functions">
-<h3><span class="section-number">5.18.4.1. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.17.4.1. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <p>Focussing on functions first. If a function is what we call a void function then it operates only on the arguments you give it and returns nothing <a class="footnote-reference brackets" href="#id6" id="id5">2</a>. The obvious example of this is <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Fruitful functions actually return a value. You can establish what type that value will be by either reading help (see <a class="reference internal" href="#interpreting-help-for-a-function">Interpreting help() for a function</a>) or running an experiment (calling the function with some data).</p>
 <dl class="footnote brackets">
 <dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">2</a></span></dt>
@@ -415,7 +415,7 @@
 </dl>
 </div>
 <div class="section" id="id7">
-<h3><span class="section-number">5.18.4.2. </span>Methods<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.17.4.2. </span>Methods<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>It becomes a little bit trickier when we talk about methods. That said, the strategy suggested above of using <code class="docutils literal notranslate"><span class="pre">help()</span></code> or simple experiments applies here too.</p>
 <p>Recalling that methods are bound to the data they operate on, we can divide methods into those which:</p>
 <ul class="simple">
@@ -502,7 +502,7 @@
 </div>
 </div>
 <div class="section" id="a-useful-trick-for-concatenating-strings">
-<h2><span class="section-number">5.18.5. </span>A useful trick for concatenating strings<a class="headerlink" href="#a-useful-trick-for-concatenating-strings" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.17.5. </span>A useful trick for concatenating strings<a class="headerlink" href="#a-useful-trick-for-concatenating-strings" title="Permalink to this headline">¶</a></h2>
 <p>Getting help on a string method that can be used to concatenate.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -569,9 +569,9 @@ join(iterable, /) method of builtins.str instance
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.19. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.18. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic simple">
-<li><p>What comparison operators can you use to confirm my statements regarding same value and different instance?</p></li>
+<li><p>What comparison (relational) operators can you use to confirm my statements regarding same value and different instance?</p></li>
 <li><p>For the built-in <code class="docutils literal notranslate"><span class="pre">len</span></code>, is it a function or a method? Demonstrate its usage.</p></li>
 <li><p>Join the <code class="docutils literal notranslate"><span class="pre">data</span></code> variable from above with the new line character.</p></li>
 </ol>
@@ -583,8 +583,8 @@ join(iterable, /) method of builtins.str instance
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="strings.html" class="btn btn-neutral float-right" title="5.20. Dealing with strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="interpreting_errors.html" class="btn btn-neutral float-left" title="5.16. Fixing errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="strings.html" class="btn btn-neutral float-right" title="5.19. Dealing with strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="interpreting_errors.html" class="btn btn-neutral float-left" title="5.15. Fixing errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
