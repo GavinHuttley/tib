@@ -16,7 +16,7 @@ While used predominantly for programming [#]_, they can be applied to any applic
 - makes it easier to ensure the reproducibility of your work
 
 .. [#] Plain text files are the medium for recording programs in nearly all programming languages.
-.. [#] Data files from genomics.
+.. [#] For example, many data files from genomics are plain text files.
 
 As a budding professional computational scientist, writing code is your core business so anything that makes that job easier is a good thing!
 
@@ -38,7 +38,7 @@ You also need ``git`` installed on the machine where you will be writing / runni
 
 .. [#] If you are doing my course, ``git`` has already been installed on the class server.
 
-On this developer machine you need to inform ``git`` what your user name and email address are. These details are used to "sign" every commit you make -- this is your attribution and informs others who made what changes. On your developer machine, in the terminal
+On your developer machine you need to inform ``git`` what your user name and email address are. These details are used to "sign" every commit you make. This is your attribution and informs others who made what changes. On your developer machine, in the terminal
 
 .. code-block:: bash
     

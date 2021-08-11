@@ -74,3 +74,5 @@
 .. _conda: https://docs.conda.io/en/latest/miniconda.html
 .. _VS Code: https://code.visualstudio.com
 .. _GitHub: https://github.com
+.. _pytest: https://docs.pytest.org/
+.. _ipytest: https://github.com/chmp/ipytest
