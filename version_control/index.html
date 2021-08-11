@@ -115,8 +115,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#look-at-the-history-of-your-repository">9.2.4. Look at the history of your repository</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#push-your-change-to-github">9.2.5. Push your change to GitHub</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tips-for-effective-use-of-version-control">9.2.6. Tips for effective use of version control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#do-not">9.2.6.1. Do NOT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#do">9.2.6.2. Do</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#do">9.2.6.1. Do</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#do-not">9.2.6.2. Do NOT</a></li>
 </ul>
 </li>
 </ul>
@@ -222,8 +222,13 @@
 <div class="section" id="introduction-to-version-control">
 <span id="intro-to-version-control"></span><h1><span class="section-number">9. </span>Introduction to version control<a class="headerlink" href="#introduction-to-version-control" title="Permalink to this headline">¶</a></h1>
 <p><em>Section author: Gavin Huttley</em></p>
-<p>“Version control” refers to software tools that are designed to efficiently keep track of changes to your plain text files. As the phrase implies, the support relates to recording different versions of files. Here, the word version is not limited to a release version.</p>
-<p>While used predominantly for programming <a class="footnote-reference brackets" href="#id3" id="id1">1</a>, they can be applied to any application that uses plain text files <a class="footnote-reference brackets" href="#id4" id="id2">2</a>. Familiarity with version control is thus crucial for bioinformaticians. Here’s just a short list of what they can be used for:</p>
+<p>“Version control” refers to software tools that are designed to efficiently keep track of changes to your plain text files. As the phrase implies, the support relates to recording different versions of files. Here, the word version is not limited to a release version <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>For example, the <em>version</em> of your operating system is a release version.</p>
+</dd>
+</dl>
+<p>While used predominantly for programming <a class="footnote-reference brackets" href="#id5" id="id3">2</a>, they can be applied to any application that uses plain text files <a class="footnote-reference brackets" href="#id6" id="id4">3</a>. Familiarity with version control is thus crucial for bioinformaticians. Here’s just a short list of some advantages from using it:</p>
 <ul class="simple">
 <li><p>makes it easier to experiment with different solutions to a problem</p></li>
 <li><p>makes it easier to collaborate with other people</p></li>
@@ -231,34 +236,34 @@
 <li><p>makes it easier to ensure the reproducibility of your work</p></li>
 </ul>
 <dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
 <dd><p>Plain text files are the medium for recording programs in nearly all programming languages.</p>
 </dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
 <dd><p>For example, many data files from genomics are plain text files.</p>
 </dd>
 </dl>
 <p>As a budding professional computational scientist, writing code is your core business so anything that makes that job easier is a good thing!</p>
-<p>In this topic I provide a functional introduction <a class="footnote-reference brackets" href="#id7" id="id5">3</a> to the version control tool <span class="target" id="index-0"></span>git. <code class="docutils literal notranslate"><span class="pre">git</span></code> is a sophisticated (and very complex) command line tool with extensive capabilities. It is not the only such tool available <a class="footnote-reference brackets" href="#id8" id="id6">4</a>. You will become familiar with using it in a terminal. Note that some IDE’s expose a sophisticated graphical user interface to using <code class="docutils literal notranslate"><span class="pre">git</span></code> that make using this tool much easier.</p>
+<p>In this topic I provide a functional introduction <a class="footnote-reference brackets" href="#id9" id="id7">4</a> to the version control tool <span class="target" id="index-0"></span>git. <code class="docutils literal notranslate"><span class="pre">git</span></code> is a sophisticated (and very complex) command line tool with extensive capabilities. It is not the only such tool available <a class="footnote-reference brackets" href="#id10" id="id8">5</a>. You will become familiar with using it in a terminal. Note that some IDE’s expose a sophisticated graphical user interface to using <code class="docutils literal notranslate"><span class="pre">git</span></code> that make using it much easier.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
-<dd><p>Only the bare minimum necessary to use basic capabilities.</p>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id7">4</a></span></dt>
+<dd><p>Only the bare minimum necessary to use basic capabilities of git.</p>
 </dd>
-<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id6">4</a></span></dt>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id8">5</a></span></dt>
 <dd><p>I personally use mercurial, but <code class="docutils literal notranslate"><span class="pre">git</span></code> is way more popular.</p>
 </dd>
 </dl>
 <div class="section" id="getting-set-up">
 <h2><span class="section-number">9.1. </span>Getting set up<a class="headerlink" href="#getting-set-up" title="Permalink to this headline">¶</a></h2>
-<p>These instructions are focussed on having a repository (see <a class="reference internal" href="#version-glossary"><span class="std std-ref">Glossary of key version control terms</span></a> for definitions) that is hosted at GitHub and for which there will be a clone on a computer that you will use for writing your code. If you don’t already, get yourself a <a class="reference external" href="https://github.com">GitHub</a> account.</p>
+<p>These instructions are focussed on having a repository (see <a class="reference internal" href="#version-glossary"><span class="std std-ref">Glossary of key version control terms</span></a> for definitions) that is hosted at GitHub and for which there will be a clone on a computer that you will use for writing your code. If you don’t already have one, sign up for a <a class="reference external" href="https://github.com">GitHub</a> account.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id10">5</a></span></dt>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id12">6</a></span></dt>
 <dd><p>You will make life easier for yourself if you upload a SSH key to your GitHub account. This requires you create a SSH key. See <a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">instructions here</a> for doing both of these things.</p>
 </dd>
 </dl>
-<p>You also need <code class="docutils literal notranslate"><span class="pre">git</span></code> installed on the machine where you will be writing / running the code <a class="footnote-reference brackets" href="#id9" id="id10">5</a>.</p>
+<p>You also need <code class="docutils literal notranslate"><span class="pre">git</span></code> installed on the machine where you will be writing / running the code <a class="footnote-reference brackets" href="#id11" id="id12">6</a>.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id12">6</a></span></dt>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id14">7</a></span></dt>
 <dd><p>If you are doing my course, <code class="docutils literal notranslate"><span class="pre">git</span></code> has already been installed on the class server.</p>
 </dd>
 </dl>
@@ -267,9 +272,9 @@
 $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&quot;</span>
 </pre></div>
 </div>
-<p>I also strongly recommend to change the log message editor from the default (<code class="docutils literal notranslate"><span class="pre">vim</span></code>) to <code class="docutils literal notranslate"><span class="pre">nano</span></code> <a class="footnote-reference brackets" href="#id11" id="id12">6</a>.</p>
+<p>I also strongly recommend to change the log message editor from the default (<code class="docutils literal notranslate"><span class="pre">vim</span></code>) to <code class="docutils literal notranslate"><span class="pre">nano</span></code> <a class="footnote-reference brackets" href="#id13" id="id14">7</a>.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id14">7</a></span></dt>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id16">8</a></span></dt>
 <dd><p>Which reminds me of a joke – “How do you generate a random string? Put a first year Computer Science student in <code class="docutils literal notranslate"><span class="pre">vim</span></code> and ask them to save and exit.”</p>
 </dd>
 </dl>
@@ -304,9 +309,9 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> YourRepo
 </pre></div>
 </div>
-<p>When you list all <a class="footnote-reference brackets" href="#id13" id="id14">7</a> the contents of this directory you will see the <code class="docutils literal notranslate"><span class="pre">.hg</span></code> directory</p>
+<p>When you list all <a class="footnote-reference brackets" href="#id15" id="id16">8</a> the contents of this directory you will see the <code class="docutils literal notranslate"><span class="pre">.hg</span></code> directory</p>
 <dl class="footnote brackets">
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id16">8</a></span></dt>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id18">9</a></span></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>, which shows hidden files and folders too.</p>
 </dd>
 </dl>
@@ -337,24 +342,10 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 </div>
 <div class="section" id="tips-for-effective-use-of-version-control">
 <h3><span class="section-number">9.2.6. </span>Tips for effective use of version control<a class="headerlink" href="#tips-for-effective-use-of-version-control" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="do-not">
-<h4><span class="section-number">9.2.6.1. </span>Do NOT<a class="headerlink" href="#do-not" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>add really big files to a repository</p></li>
-<li><p>add binary files to a repository</p></li>
-<li><p>add secrets <a class="footnote-reference brackets" href="#id15" id="id16">8</a> to a repository!</p></li>
-<li><p>include a massive number of changes in one commit</p></li>
-</ul>
-<dl class="footnote brackets">
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id18">9</a></span></dt>
-<dd><p>Any type of information that would allow someone to cause you trouble! For example, passwords, application tokens, account names.</p>
-</dd>
-</dl>
-</div>
 <div class="section" id="do">
-<h4><span class="section-number">9.2.6.2. </span>Do<a class="headerlink" href="#do" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.6.1. </span>Do<a class="headerlink" href="#do" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><p>Track text files</p></li>
+<li><p>track text files</p></li>
 <li><p>commit changes that are logically related</p></li>
 <li><p>think of log messages as your lab notebook entries to help you (and others) to understand what you were thinking when changed the files</p></li>
 <li><p>write meaningful log messages</p></li>
@@ -362,8 +353,22 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 <li><p>push to GitHub often <a class="footnote-reference brackets" href="#id17" id="id18">9</a></p></li>
 </ul>
 <dl class="footnote brackets">
-<dt class="label" id="id19"><span class="brackets">10</span></dt>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id20">10</a></span></dt>
 <dd><p>It’s your backup!</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="do-not">
+<h4><span class="section-number">9.2.6.2. </span>Do NOT<a class="headerlink" href="#do-not" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>add really big files to a repository</p></li>
+<li><p>add binary files to a repository</p></li>
+<li><p>add secrets <a class="footnote-reference brackets" href="#id19" id="id20">10</a> to a repository!</p></li>
+<li><p>include a massive number of changes in one commit</p></li>
+</ul>
+<dl class="footnote brackets">
+<dt class="label" id="id21"><span class="brackets">11</span></dt>
+<dd><p>Any type of information that would allow someone to cause you trouble! For example, passwords, application tokens, account names.</p>
 </dd>
 </dl>
 </div>
