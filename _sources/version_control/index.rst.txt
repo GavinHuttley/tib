@@ -34,8 +34,6 @@ Getting set up
 
 These instructions are focussed on having a repository (see :ref:`version_glossary` for definitions) that is hosted at GitHub and for which there will be a clone on a computer that you will use for writing your code. If you don't already have one, sign up for a GitHub_ account.
 
-.. [#] You will make life easier for yourself if you upload a SSH key to your GitHub account. This requires you create a SSH key. See `instructions here <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_ for doing both of these things.
-
 You also need ``git`` installed on the machine where you will be writing / running the code [#]_.
 
 .. [#] If you are doing my course, ``git`` has already been installed on the class server.
@@ -73,7 +71,9 @@ Check the "Add a README file" option. Check the "Add .gitignore" option and sele
 Cloning the repository to your development computer
 ---------------------------------------------------
 
-In this case, you will clone onto the machine where you will be developing your code. I assume you have gone through the process of creating an ssh key and followed GitHub's instructions for adding that to your account (see above).
+In this case, you will clone onto the machine where you will be developing your code. I assume you have gone through the process of creating an ssh key and followed GitHub's instructions for adding that to your account [#]_.
+
+.. [#] You will make life easier for yourself if you upload a SSH key to your GitHub account. This requires you create a SSH key. See `instructions here <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_ for doing both of these things.
 
 .. code-block:: bash
 
@@ -90,7 +90,7 @@ You first need to change into the directory that contains your repository. In th
     
     $ cd YourRepo
 
-When you list all [#]_ the contents of this directory you will see the ``.hg`` directory
+When you list all [#]_ the contents of this directory you will see the ``.git`` directory
 
 .. [#] ``ls -a``, which shows hidden files and folders too.
 
