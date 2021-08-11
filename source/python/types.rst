@@ -114,7 +114,7 @@ In defining instances of collection types, different elements are delimited usin
     triple: dict; types; collection objects
 
 **dict**
-    A dictionary. Like a conventional one, we look up entries in it using some "key" and get a "value" in return. Note the special parentheses used in the definition and also usage of ``:`` to separate the key and value. As with tuples and lists, they can contain different data types. The keys for a dictionary must always be of an immutable data type (so ``str``, ``tuple``, ``int``, ``float``) but the values can be of any data type. ``dict``'s are mutable, you can add keys or remove keys. You can modify the values for a key as you want. For more detailed discussion of using dicts, see :ref:`dicts`.
+    A dictionary. Like a conventional one, we look up entries in it using some "key" and get a "value" in return. Note the special parentheses used in the definition and also usage of ``:`` to separate the key and value. Subsequent key value pairs are separated by ``,``. As with tuples and lists, they can contain different data types. The keys for a dictionary must always be of an immutable data type (so ``str``, ``tuple``, ``int``, ``float``) but the values can be of any data type. ``dict``'s are mutable, you can add keys or remove keys. You can modify the values for a key as you want. For more detailed discussion of using dicts, see :ref:`dicts`.
 
 .. jupyter-execute::
 
