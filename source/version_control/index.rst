@@ -6,9 +6,11 @@ Introduction to version control
 
 .. sectionauthor:: Gavin Huttley
 
-"Version control" refers to software tools that are designed to efficiently keep track of changes to your plain text files. As the phrase implies, the support relates to recording different versions of files. Here, the word version is not limited to a release version.
+"Version control" refers to software tools that are designed to efficiently keep track of changes to your plain text files. As the phrase implies, the support relates to recording different versions of files. Here, the word version is not limited to a release version [#]_.
 
-While used predominantly for programming [#]_, they can be applied to any application that uses plain text files [#]_. Familiarity with version control is thus crucial for bioinformaticians. Here's just a short list of what they can be used for:
+.. [#] For example, the *version* of your operating system is a release version.
+
+While used predominantly for programming [#]_, they can be applied to any application that uses plain text files [#]_. Familiarity with version control is thus crucial for bioinformaticians. Here's just a short list of some advantages from using it:
 
 - makes it easier to experiment with different solutions to a problem
 - makes it easier to collaborate with other people
@@ -20,9 +22,9 @@ While used predominantly for programming [#]_, they can be applied to any applic
 
 As a budding professional computational scientist, writing code is your core business so anything that makes that job easier is a good thing!
 
-In this topic I provide a functional introduction [#]_ to the version control tool :index:`git <pair: git; version control>`. ``git`` is a sophisticated (and very complex) command line tool with extensive capabilities. It is not the only such tool available [#]_. You will become familiar with using it in a terminal. Note that some IDE's expose a sophisticated graphical user interface to using ``git`` that make using this tool much easier.
+In this topic I provide a functional introduction [#]_ to the version control tool :index:`git <pair: git; version control>`. ``git`` is a sophisticated (and very complex) command line tool with extensive capabilities. It is not the only such tool available [#]_. You will become familiar with using it in a terminal. Note that some IDE's expose a sophisticated graphical user interface to using ``git`` that make using it much easier.
 
-.. [#] Only the bare minimum necessary to use basic capabilities.
+.. [#] Only the bare minimum necessary to use basic capabilities of git.
 .. [#] I personally use mercurial, but ``git`` is way more popular.
 
 .. how to revert a change (see https://github.com/sympy/sympy/wiki/Git-hg-rosetta-stone)
@@ -30,7 +32,7 @@ In this topic I provide a functional introduction [#]_ to the version control to
 Getting set up
 ==============
 
-These instructions are focussed on having a repository (see :ref:`version_glossary` for definitions) that is hosted at GitHub and for which there will be a clone on a computer that you will use for writing your code. If you don't already, get yourself a GitHub_ account.
+These instructions are focussed on having a repository (see :ref:`version_glossary` for definitions) that is hosted at GitHub and for which there will be a clone on a computer that you will use for writing your code. If you don't already have one, sign up for a GitHub_ account.
 
 .. [#] You will make life easier for yourself if you upload a SSH key to your GitHub account. This requires you create a SSH key. See `instructions here <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_ for doing both of these things.
 
@@ -127,6 +129,18 @@ Push your change to GitHub
 Tips for effective use of version control
 -----------------------------------------
 
+Do
+^^
+
+- track text files
+- commit changes that are logically related
+- think of log messages as your lab notebook entries to help you (and others) to understand what you were thinking when changed the files
+- write meaningful log messages
+- commit often
+- push to GitHub often [#]_
+
+.. [#] It's your backup!
+
 Do NOT
 ^^^^^^
 
@@ -136,18 +150,6 @@ Do NOT
 - include a massive number of changes in one commit
 
 .. [#] Any type of information that would allow someone to cause you trouble! For example, passwords, application tokens, account names.
-
-Do
-^^
-
-- Track text files
-- commit changes that are logically related
-- think of log messages as your lab notebook entries to help you (and others) to understand what you were thinking when changed the files
-- write meaningful log messages
-- commit often
-- push to GitHub often [#]_
-
-.. [#] It's your backup!
 
 .. _version_glossary:
 
