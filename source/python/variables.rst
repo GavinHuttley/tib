@@ -29,12 +29,12 @@ Often, this simply means before you use them (i.e. closer to the top of the file
 
 .. jupyter-execute::
 
-    a = 3
-    b = 4
-    h = (a ** 2 + b ** 2) ** (1 / 2)
+    x = 3
+    y = 4
+    h = (x ** 2 + y ** 2) ** (1 / 2)
     h
 
-It's noteworthy that this is not a general algorithm -- we have an explicit solution that works for just these values of ``a`` and ``b``. If we want to evaluate different values of these two variables. we have to edit the lines defining the variables ``a`` and ``b`` and rerun the program.
+It's noteworthy that this is not a general algorithm -- we have an explicit solution that works for just these values of ``x`` and ``y``. If we want to evaluate different values of these two variables. we have to edit the lines defining the variables ``x`` and ``y`` and rerun the program.
 
 Compare this expression to the original mathematical equation. Clearly, we have rewritten it so we have solved the equation already.
 
@@ -47,7 +47,7 @@ Sometimes, its useful to do multiple variable assignments in one go. Which value
 
 .. jupyter-execute::
 
-    a, b = 3, 4
+    x, y = 3, 4
 
 Exercises
 =========
