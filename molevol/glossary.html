@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>7.11. Glossary of terms &mdash; Topics in Bioinformatics 2021.08.11 documentation</title>
+  <title>7.11. Glossary of terms &mdash; Topics in Bioinformatics 2021.08.12 documentation</title>
   
 
   
@@ -222,25 +222,31 @@
 <dl class="simple">
 <dt>data</dt><dd><p>An alignment of sequences descended from a common ancestor.</p>
 </dd>
-<dt>fit a model</dt><dd><p>Numerical optimisation of parameters in a model. In the case of maximum likelihood, the model parameters are selected that produce the maximum likelihood of observing the data under the model.</p>
+<dt>estimate</dt><dd><p>The value of a parameter obtained from a population sample. Statisticians employ “hat” notation to identify a quantity as being an estimate of a parameter, e.g. <span class="math notranslate nohighlight">\(\hat \pi_A\)</span> is an estimate of the parameter <span class="math notranslate nohighlight">\(\pi_A\)</span></p>
+</dd>
+<dt>fit a model</dt><dd><p>Numerical optimisation of parameters in a model. In the case of maximum likelihood, the model parameters are selected that produce the maximum likelihood of observing the data under the model</p>
+</dd>
+<dt>free parameter</dt><dd><p>A model parameter whose value is not fixed during numerical optimisation, hence the parameter is free to vary</p>
 </dd>
 <dt>maximum likelihood</dt><dd><p>A method of parameter estimation</p>
 </dd>
-<dt>maximum likelihood estimators (MLEs)</dt><dd><p>the estimated values of model parameters after fitting</p>
+<dt>maximum likelihood estimators (MLEs)</dt><dd><p>The estimated values of model parameters after fitting</p>
+</dd>
+<dt>parameter</dt><dd><p>A parameter is a term in a model. More generally, it refers to the true value of a quantity from a population.</p>
 </dd>
 <dt>rate matrix (Q)</dt><dd><p>A square matrix with off-diagonal elements ≥ 0 and row sums of 0. Represents the instantaneous rate of change from the row label state (e.g. a nucleotide) to a column label state (e.g. another nucleotide)</p>
 </dd>
-<dt>substitution matrix (P)</dt><dd><p>A square matrix of probabilities, with row sums of 1. Represents the probability of substituting  the row label state with the column label state for a given time interval. Typically derived from Q by maxtrix exponentiation.</p>
+<dt>substitution matrix (P)</dt><dd><p>A square matrix of probabilities, with row sums of 1. Represents the probability of substituting  the row label state with the column label state for a given time interval. Typically derived from Q by matrix exponentiation.</p>
 </dd>
 <dt>rate parameter</dt><dd><p>A component of Q, specifying the instantaneous rate of change between row and column states</p>
 </dd>
-<dt>tree, phylogenetic tree</dt><dd><p>A graph displaying the relationship amongs sequences</p>
+<dt>tree, phylogenetic tree</dt><dd><p>A graph displaying the relationship among sequences</p>
 </dd>
 <dt>branch length</dt><dd><p>On a phylogenetic tree, the expected number of substitutions per site for a specific branch. This is a parameter estimated by maximum likelihood</p>
 </dd>
 <dt>site</dt><dd><p>A column in a multiple sequence alignment</p>
 </dd>
-<dt>Likelihood ratio (LR)</dt><dd><p>A test statistic that is distributed $chi^2$ with degrees of freedom equal to the difference in the number of free parameters between alternate and null models.</p>
+<dt>Likelihood ratio (LR)</dt><dd><p>A test statistic that is distributed <span class="math notranslate nohighlight">\(\chi^2\)</span> with degrees of freedom equal to the difference in the number of free parameters between alternate and null models.</p>
 </dd>
 <dt>number of free parameters (nfp)</dt><dd><p>Parameters in the likelihood function that are “free” – can be modified by the numerical optimiser – to modify the fit to data.</p>
 </dd>
