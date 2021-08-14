@@ -30,6 +30,9 @@ The second row, second column.
 
     It's worth pointing out a significant distinction between :index:`"cartesian coordinates"` and what I'll refer to as :index:`"array coordinates"`. The former is what you know and love from graphing data where coordinates are expressed as :math:`x, y` in that order, where the :math:`x`-value occurs first and represents a position on a horizontal axis -- increasing from left to right. The :math:`y`-value comes second and represents a position on the vertical axis -- increasing from bottom to top. Array coordinates are totally different -- they are expressed as in :math:`row, column` order. The value for column is analogous to the :math:`x` values (representing horizontal position and increases left to right). However, the value for ``row`` occurs first and it represents the vertical position. Row values also increases top to bottom! Hence, the ``two_d[1]`` refers to the second row which is at the bottom. This is exactly same numbering pattern as you see in spreadsheet programs. The distinction matters when you try and accumulate array based points for plotting.
 
+.. index::
+    pair: range; looping
+
 Knowing, in this case, that we have 2 rows and 5 columns we can generate all possible indices with nested for loops combined with the builtin ``range()`` function.
 
 .. jupyter-execute::
