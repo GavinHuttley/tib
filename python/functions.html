@@ -286,7 +286,11 @@
 </div>
 </div>
 <p>In the above, the argument is <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
-<p>The built in functions <code class="docutils literal notranslate"><span class="pre">range()</span></code> and <code class="docutils literal notranslate"><span class="pre">sum()</span></code> are widely used. The former for generating the range of indices required to loop over elements in a series. The latter is as the name implies. For more detailed information about their capabilities, use the builtin <code class="docutils literal notranslate"><span class="pre">help()</span></code> function!</p>
+<p id="index-2">The built in functions <code class="docutils literal notranslate"><span class="pre">range()</span></code> and <code class="docutils literal notranslate"><span class="pre">sum()</span></code> are widely used. The former for generating the range of indices required to loop over elements in a series. The latter is as the name implies.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">help()</span></code> for more detailed information about how to use <code class="docutils literal notranslate"><span class="pre">range()</span></code> and <code class="docutils literal notranslate"><span class="pre">sum()</span></code>.</p>
+</div>
 <p>Another useful builtin function is <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>. As the name implies, this takes a series and returns a copy with the elements ordered <a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
@@ -325,7 +329,7 @@
 <p>A precursor to understanding methods is to understand what is meant by an “object”.</p>
 <p>As the title states, Python belongs to a class of programming languages called “object oriented”. The success of “object oriented” programming languages (there are many) arise (at least in part) from the fact they encourage modularisation of code. This modularisation reduces the number of lines of code and makes the resulting programs easier to write, to check for bugs, and thus to maintain.</p>
 <p>So what is an “object”? It’s an abstract concept, but in essence an object represents something. It can be a number, a string, a file, etc.. Thus “objects” are instances of a type of data.</p>
-<p id="index-2">So what’s an instance? An instance is an occurrence of a type of data, which will have a location in memory that is different to other occurrences of the same type of data. I’ll use the built-in function <code class="docutils literal notranslate"><span class="pre">id()</span></code> (which returns a unique identifier, related to the address in memory):</p>
+<p id="index-3">So what’s an instance? An instance is an occurrence of a type of data, which will have a location in memory that is different to other occurrences of the same type of data. I’ll use the built-in function <code class="docutils literal notranslate"><span class="pre">id()</span></code> (which returns a unique identifier, related to the address in memory):</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -334,7 +338,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140105323347392
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140198486253440
 </pre></div>
 </div>
 </div>
@@ -347,7 +351,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140105323206720
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>140198485801600
 </pre></div>
 </div>
 </div>
@@ -355,7 +359,7 @@
 <p>Although <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are equivalently defined – both lists of exactly the same integers – they are not the same instance.</p>
 </div>
 <div class="section" id="methods">
-<span id="index-3"></span><span id="id4"></span><h2><span class="section-number">5.17.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<span id="index-4"></span><span id="id4"></span><h2><span class="section-number">5.17.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>Which leads us to methods. A method is a function bound to a specific object that applies to the data encapsulated in that instance.</p>
 <p>This means that when you call a method on one object, it only operates on that object. I’ll demonstrate that by using a method on lists to sort the elements.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -393,7 +397,7 @@
 <p>Simple!</p>
 </div>
 <div class="section" id="so-how-do-i-use-methods-and-functions">
-<span id="index-4"></span><h2><span class="section-number">5.17.4. </span>So how do I use methods and functions?<a class="headerlink" href="#so-how-do-i-use-methods-and-functions" title="Permalink to this headline">¶</a></h2>
+<span id="index-5"></span><h2><span class="section-number">5.17.4. </span>So how do I use methods and functions?<a class="headerlink" href="#so-how-do-i-use-methods-and-functions" title="Permalink to this headline">¶</a></h2>
 <p>There are some general principles in how to use functions and methods. First, using <code class="docutils literal notranslate"><span class="pre">help()</span></code> will show you what arguments a function or method can take</p>
 <div class="sidebar" id="interpreting-help-for-a-function">
 <p class="sidebar-title">Interpreting help() for a function</p>
@@ -479,7 +483,7 @@
 </div>
 </div>
 </div>
-<p id="index-5">If we were working on a <code class="docutils literal notranslate"><span class="pre">list</span></code> type, however, transforming methods <strong>do not</strong> return a value and in fact are void methods. Instead the data in the instance is modified itself.</p>
+<p id="index-6">If we were working on a <code class="docutils literal notranslate"><span class="pre">list</span></code> type, however, transforming methods <strong>do not</strong> return a value and in fact are void methods. Instead the data in the instance is modified itself.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HELLO&quot;</span><span class="p">,</span> <span class="s2">&quot;WORLD&quot;</span><span class="p">]</span>
@@ -574,7 +578,17 @@ join(iterable, /) method of builtins.str instance
 <li><p>What comparison (relational) operators can you use to confirm my statements regarding same value and different instance?</p></li>
 <li><p>For the built-in <code class="docutils literal notranslate"><span class="pre">len</span></code>, is it a function or a method? Demonstrate its usage.</p></li>
 <li><p>Join the <code class="docutils literal notranslate"><span class="pre">data</span></code> variable from above with the new line character.</p></li>
+<li><p>Construct an example that shows how to use <code class="docutils literal notranslate"><span class="pre">sum()</span></code></p></li>
+<li><p>The variable <code class="docutils literal notranslate"><span class="pre">data</span></code> is defined above as a list of two trinucleotides. Using <code class="docutils literal notranslate"><span class="pre">range()</span></code>, print each element of <code class="docutils literal notranslate"><span class="pre">data</span></code> and its index. Your output should look like</p></li>
 </ol>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>AAA 0
+CCC 1
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
