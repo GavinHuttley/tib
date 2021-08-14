@@ -28,7 +28,13 @@ Here are the key patterns to using functions that you need to remember.
 
 In the above, the argument is ``text``.
 
-The built in functions ``range()`` and ``sum()`` are widely used. The former for generating the range of indices required to loop over elements in a series. The latter is as the name implies. For more detailed information about their capabilities, use the builtin ``help()`` function!
+.. index::
+    pair: range; builtin
+    pair: sum; builtin
+
+The built in functions ``range()`` and ``sum()`` are widely used. The former for generating the range of indices required to loop over elements in a series. The latter is as the name implies. 
+
+.. note:: Use ``help()`` for more detailed information about how to use ``range()`` and ``sum()``.
 
 Another useful builtin function is ``sorted()``. As the name implies, this takes a series and returns a copy with the elements ordered [1]_.
 
@@ -222,3 +228,14 @@ Exercises
 #. For the built-in ``len``, is it a function or a method? Demonstrate its usage.
 
 #. Join the ``data`` variable from above with the new line character.
+
+#. Construct an example that shows how to use ``sum()``
+
+#. The variable ``data`` is defined above as a list of two trinucleotides. Using ``range()``, print each element of ``data`` and its index. Your output should look like
+
+.. jupyter-execute::
+    :hide-code:
+
+    for i in range(len(data)):
+        print(data[i], i)
+
