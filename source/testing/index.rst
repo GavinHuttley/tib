@@ -75,7 +75,13 @@ Let us begin by defining a problem that we wish to solve. Say I need a function 
 
 This function returns the ``"-"`` character if the start position is greater than the end, indicating the gene is on the minus strand, ``"+"`` otherwise. Note I'm also checking that the inputs are positive integers and that they are not equal to each other.
 
-How we test this is by writing functions that check different aspects of its performance. While the order in which you write tests does not matter, I'm going to start by checking it produces the output I expect for data for which an output is define.
+How we test this is by writing functions that check different aspects of its execution. The most crucial component of a test function is use of an ``assert`` statement. We assert will assert that ``get_strand()`` returns an expected value given specific inputs. While the order in which you write tests does not matter, I'm going to start by checking it produces the output I expect for data for which an output is define.
+
+.. index::
+    pair: fail; test
+    pair: pass; test
+
+.. note:: A test is considered to have **failed** if an ``AssertionError`` was raised. A test **passed** if there was no ``AssertionError``.
 
 .. jupyter-execute::
 
