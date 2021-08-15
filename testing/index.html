@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>10. Introduction to Testing in Python &mdash; Topics in Bioinformatics 2021.08.14 documentation</title>
+  <title>10. Introduction to Testing in Python &mdash; Topics in Bioinformatics 2021.08.15 documentation</title>
   
 
   
@@ -292,7 +292,11 @@
 </div>
 </div>
 <p>This function returns the <code class="docutils literal notranslate"><span class="pre">&quot;-&quot;</span></code> character if the start position is greater than the end, indicating the gene is on the minus strand, <code class="docutils literal notranslate"><span class="pre">&quot;+&quot;</span></code> otherwise. Note I’m also checking that the inputs are positive integers and that they are not equal to each other.</p>
-<p>How we test this is by writing functions that check different aspects of its performance. While the order in which you write tests does not matter, I’m going to start by checking it produces the output I expect for data for which an output is define.</p>
+<p>How we test this is by writing functions that check different aspects of its execution. The most crucial component of a test function is use of an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement. We assert will assert that <code class="docutils literal notranslate"><span class="pre">get_strand()</span></code> returns an expected value given specific inputs. While the order in which you write tests does not matter, I’m going to start by checking it produces the output I expect for data for which an output is define.</p>
+<div class="admonition note" id="index-0">
+<p class="admonition-title">Note</p>
+<p>A test is considered to have <strong>failed</strong> if an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code> was raised. A test <strong>passed</strong> if there was no <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>.</p>
+</div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_get_strand_output</span><span class="p">():</span>
