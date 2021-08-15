@@ -4,31 +4,35 @@
 More on looping
 ===============
 
-So far, all the looping has been quite simple -- iterating over a one dimensional series. This means we have used a single ``for`` statement. But it's not uncommon to have (at least) a 2-dimensional array of numbers (for example). How can we iterate over all elements in such a case?
+So far, all the looping has been quite simple -- iterating over a one dimensional series. This means we have used a single ``for`` statement. But it's not uncommon to have (at least) a 2-dimensional array (e.g. numbers). How can we iterate over all elements in such a case?
 
-Let's illustrate this problem with a constructed example.
+In the following example, ``two_d`` is a list of lists.
 
 .. jupyter-execute::
 
     two_d = [[0, 4, 1, 9, 5],
              [1, 4, 7, 1, 3]]
 
-``two_d`` is a list of lists. It has 2 "rows" and 5 "columns". So rows is the first dimension, columns the second. First let's recap some standard Python operations. First, we will index the first row.
+It has 2 "rows" and 5 "columns". So rows is the first dimension, columns the second. First let's recap some standard Python operations. We index the first row.
 
 .. jupyter-execute::
 
     two_d[0]
 
-The second row, second column.
+The second row, first column.
 
 .. jupyter-execute::
 
-    two_d[1][1]
+    two_d[1][0]
+
+.. note:: We can index (or slice) a multi-dimensional data by extending the square bracket notation with each pair of square brackets referencing additional dimensions.
 
 .. sidebar:: Differences between cartesian and array coordinates
     :name: array_coordinates
 
-    It's worth pointing out a significant distinction between :index:`"cartesian coordinates"` and what I'll refer to as :index:`"array coordinates"`. The former is what you know and love from graphing data where coordinates are expressed as :math:`x, y` in that order, where the :math:`x`-value occurs first and represents a position on a horizontal axis -- increasing from left to right. The :math:`y`-value comes second and represents a position on the vertical axis -- increasing from bottom to top. Array coordinates are totally different -- they are expressed as in :math:`row, column` order. The value for column is analogous to the :math:`x` values (representing horizontal position and increases left to right). However, the value for ``row`` occurs first and it represents the vertical position. Row values also increases top to bottom! Hence, the ``two_d[1]`` refers to the second row which is at the bottom. This is exactly same numbering pattern as you see in spreadsheet programs. The distinction matters when you try and accumulate array based points for plotting.
+    It's worth pointing out a significant distinction between :index:`"cartesian coordinates"` and what I'll refer to as :index:`"array coordinates"`. The former is what you know and love from graphing data where coordinates are expressed as :math:`x, y` in that order, where the :math:`x`-value occurs first and represents a position on a horizontal axis -- increasing from left to right. The :math:`y`-value comes second and represents a position on the vertical axis -- increasing from bottom to top.
+    
+    Array coordinates are totally different -- they are expressed as in :math:`row, column` order. The value for column is analogous to the :math:`x` values (representing horizontal position and increases left to right). However, the value for ``row`` occurs first and it represents the vertical position. Row values also increases top to bottom! Hence, the ``two_d[1]`` refers to the second row which is at the bottom. This is exactly same numbering pattern as you see in spreadsheet programs. The distinction matters when you try and accumulate array based points for plotting.
 
 .. index::
     pair: range; looping
