@@ -4,8 +4,8 @@
 .. |P| replace:: :math:`{\mathbf{\rm P}}`
 .. |Pt| replace:: :math:`{\mathbf{\rm P}}(t)`
 .. |Q| replace:: :math:`{\mathbf{\rm Q}}`
-.. |kmer| replace:: :sup:`k`-mer
-.. |kmers| replace:: :sup:`k`-mers
+.. |kmer| replace:: :math:`k`-mer
+.. |kmers| replace:: :math:`k`-mers
 .. |5mC| replace:: :sup:`5`\ mC
 .. |AtoC| replace:: A\ :math:`\rightarrow`\ C
 .. |AtoG| replace:: A\ :math:`\rightarrow`\ G
