@@ -51,7 +51,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.1. Introduction to Comparison of Biological Sequences" href="intro.html" />
+    <link rel="next" title="6.1. Outline" href="outline.html" />
     <link rel="prev" title="5.43. The set data type" href="../python/sets.html" /> 
 </head>
 
@@ -104,23 +104,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Sequence Comparison</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html">6.1. Introduction to Comparison of Biological Sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.2. The role of sequence in encoding life</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.4. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.5. Gene expression in a nutshell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.7. Finding motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html">6.8. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.9. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.10. Position Specific Scoring Matrices (PSSMs)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.11. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.12. Odds-ratio’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">6.13. Refresher on statistical inference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.16. Global Pairwise Alignment Using Dynamic Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outline.html">6.1. Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">6.2. Introduction to Comparison of Biological Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.3. The role of sequence in encoding life</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.4. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.6. Gene expression in a nutshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.7. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.8. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.9. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.10. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.11. Position Specific Scoring Matrices (PSSMs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.12. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.13. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">6.14. Refresher on statistical inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.15. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.17. Global Pairwise Alignment Using Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.18. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
@@ -223,9 +224,9 @@
 </style>
 <div class="section" id="sequence-comparison">
 <h1><span class="section-number">6. </span>Sequence Comparison<a class="headerlink" href="#sequence-comparison" title="Permalink to this headline">¶</a></h1>
+<p><em>Section author: Gavin Huttley</em></p>
 <p>For this topic, we frame problems in terms of biological questions and, where relevant, specific biological theory. Quantitative development is focussed on posing research questions statistically and or algorithmically. We will interpret their application on biological data.</p>
 <p>There are additional coding skills that you need to develop, but these skills are now targeted at specific properties of biological sequences.</p>
-<p><em>Section author: Gavin Huttley</em></p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -236,7 +237,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="intro.html" class="btn btn-neutral float-right" title="6.1. Introduction to Comparison of Biological Sequences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="outline.html" class="btn btn-neutral float-right" title="6.1. Outline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../python/sets.html" class="btn btn-neutral float-left" title="5.43. The set data type" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

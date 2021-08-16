@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>6.10. Position Specific Scoring Matrices (PSSMs) &mdash; Topics in Bioinformatics 2021.08.16 documentation</title>
+  <title>6.11. Position Specific Scoring Matrices (PSSMs) &mdash; Topics in Bioinformatics 2021.08.16 documentation</title>
   
 
   
@@ -51,8 +51,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.12. Odds-ratio’s" href="odds_ratios.html" />
-    <link rel="prev" title="6.8. Measuring information using Shannon’s entropy" href="information.html" /> 
+    <link rel="next" title="6.13. Odds-ratio’s" href="odds_ratios.html" />
+    <link rel="prev" title="6.9. Measuring information using Shannon’s entropy" href="information.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,34 +104,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Sequence Comparison</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="intro.html">6.1. Introduction to Comparison of Biological Sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.2. The role of sequence in encoding life</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.3. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.4. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.5. Gene expression in a nutshell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.6. Experimental procedures for detecting functionally related sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.7. Finding motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html">6.8. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.9. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.10. Position Specific Scoring Matrices (PSSMs)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#a-worked-example">6.10.1. A worked example</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#calculating-the-expected-under-the-background">6.10.1.1. Calculating the Expected Under the Background</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#calculating-the-expected-under-the-alternate">6.10.1.2. Calculating the Expected Under the Alternate</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#adjusting-the-pwm-with-a-pseudocount">6.10.1.3. Adjusting the PWM with a pseudocount</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-odds-ratio">6.10.1.4. The odds-ratio</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#computing-the-pssm">6.10.1.5. Computing the PSSM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#computing-the-pssm-score-for-the-sequence">6.10.1.6. Computing the PSSM score for the sequence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outline.html">6.1. Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">6.2. Introduction to Comparison of Biological Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.3. The role of sequence in encoding life</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.4. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.6. Gene expression in a nutshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.7. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.8. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.9. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.10. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.11. Position Specific Scoring Matrices (PSSMs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-worked-example">6.11.1. A worked example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#calculating-the-expected-under-the-background">6.11.1.1. Calculating the Expected Under the Background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calculating-the-expected-under-the-alternate">6.11.1.2. Calculating the Expected Under the Alternate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adjusting-the-pwm-with-a-pseudocount">6.11.1.3. Adjusting the PWM with a pseudocount</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-odds-ratio">6.11.1.4. The odds-ratio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computing-the-pssm">6.11.1.5. Computing the PSSM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computing-the-pssm-score-for-the-sequence">6.11.1.6. Computing the PSSM score for the sequence</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">6.11. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.12. Odds-ratio’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html">6.13. Refresher on statistical inference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.16. Global Pairwise Alignment Using Dynamic Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">6.12. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.13. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">6.14. Refresher on statistical inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.15. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.17. Global Pairwise Alignment Using Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.18. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
@@ -189,7 +190,7 @@
         
           <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
         
-      <li><span class="section-number">6.10. </span>Position Specific Scoring Matrices (PSSMs)</li>
+      <li><span class="section-number">6.11. </span>Position Specific Scoring Matrices (PSSMs)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -235,7 +236,7 @@
 }
 </style>
 <div class="section" id="position-specific-scoring-matrices-pssms">
-<span id="pssms"></span><h1><span class="section-number">6.10. </span>Position Specific Scoring Matrices (PSSMs)<a class="headerlink" href="#position-specific-scoring-matrices-pssms" title="Permalink to this headline">¶</a></h1>
+<span id="pssms"></span><h1><span class="section-number">6.11. </span>Position Specific Scoring Matrices (PSSMs)<a class="headerlink" href="#position-specific-scoring-matrices-pssms" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">A Position Specific Scoring Matrix, or PSSM, is a matrix of <span class="target" id="index-1"></span>log-odds ratios per position of a sequence motif. (PSSMs are also called <span class="target" id="index-2"></span>profiles.) They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but are also used to characterise protein domains.</p>
 <p>See <a class="reference internal" href="related_by_function.html#experimental-data"><span class="std std-ref">Experimental procedures for detecting functionally related sequences</span></a> for how the counts data are derived. To illustrate the transformation of those counts data into a PSSM, we will start with a simple worked example. First we take the counts table presented in <a class="reference internal" href="related_by_function.html#pssm-origins"><span class="std std-ref">Transformation of the data for analysis</span></a>.</p>
 <p>We convert the PWM into a PPM, but I’m restricting the examples to just 4 positions.</p>
@@ -280,9 +281,9 @@
 </div></div></div>
 </div>
 <div class="section" id="a-worked-example">
-<h2><span class="section-number">6.10.1. </span>A worked example<a class="headerlink" href="#a-worked-example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.11.1. </span>A worked example<a class="headerlink" href="#a-worked-example" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="calculating-the-expected-under-the-background">
-<h3><span class="section-number">6.10.1.1. </span>Calculating the Expected Under the Background<a class="headerlink" href="#calculating-the-expected-under-the-background" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.1.1. </span>Calculating the Expected Under the Background<a class="headerlink" href="#calculating-the-expected-under-the-background" title="Permalink to this headline">¶</a></h3>
 <p>Let’s use the sequence</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -310,7 +311,7 @@
 </div>
 </div>
 <div class="section" id="calculating-the-expected-under-the-alternate">
-<h3><span class="section-number">6.10.1.2. </span>Calculating the Expected Under the Alternate<a class="headerlink" href="#calculating-the-expected-under-the-alternate" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.1.2. </span>Calculating the Expected Under the Alternate<a class="headerlink" href="#calculating-the-expected-under-the-alternate" title="Permalink to this headline">¶</a></h3>
 <p>In this case, I’m just doing this “manually”. First, note the base order is T, C, A, G <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. Here’s a pseudo-code algorithm describing this calculation:</p>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -332,7 +333,7 @@ for seq_index in sequence
 <p>This raises the question of whether a <code class="docutils literal notranslate"><span class="pre">G</span></code> at index <code class="docutils literal notranslate"><span class="pre">[0]</span></code> is truly impossible? More likely, the 0 is due to the sample size of the experiment. One approach is to add a “small” number to all elements. (This is akin to imagining the next observation would have been of the unobserved type.) This number is referred to as a pseudocount and typically, a pseudocount ≤ 1 is chosen.</p>
 </div>
 <div class="section" id="adjusting-the-pwm-with-a-pseudocount">
-<h3><span class="section-number">6.10.1.3. </span>Adjusting the PWM with a pseudocount<a class="headerlink" href="#adjusting-the-pwm-with-a-pseudocount" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.1.3. </span>Adjusting the PWM with a pseudocount<a class="headerlink" href="#adjusting-the-pwm-with-a-pseudocount" title="Permalink to this headline">¶</a></h3>
 <p>We add a pseudocount of 0.5 to the PWM and then convert to a PPM as before, producing</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -379,14 +380,14 @@ for seq_index in sequence
 \[p(seq1|alternate)=0.042\times0.875\times0.792\times0.542\approx0.015775\]</div>
 </div>
 <div class="section" id="the-odds-ratio">
-<h3><span class="section-number">6.10.1.4. </span>The odds-ratio<a class="headerlink" href="#the-odds-ratio" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.1.4. </span>The odds-ratio<a class="headerlink" href="#the-odds-ratio" title="Permalink to this headline">¶</a></h3>
 <p>We can form an odds-ratio as</p>
 <div class="math notranslate nohighlight">
 \[OR = \frac{p(seq1|alternate)}{p(seq1|null)}\approx4.0384\]</div>
 <p>How should you interpret this? Look at the OR equation!</p>
 </div>
 <div class="section" id="computing-the-pssm">
-<h3><span class="section-number">6.10.1.5. </span>Computing the PSSM<a class="headerlink" href="#computing-the-pssm" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.1.5. </span>Computing the PSSM<a class="headerlink" href="#computing-the-pssm" title="Permalink to this headline">¶</a></h3>
 <p>The PSSM is a log-odds matrix, i.e. it’s the log of the odds ratio matrix. Because we assume a background distribution of 0.25, we can compute this very simply as <code class="docutils literal notranslate"><span class="pre">log2(ppm)-log2(0.25)</span></code>.</p>
 <div class="sidebar">
 <p class="sidebar-title">Maths with logarithms, recall that</p>
@@ -434,7 +435,7 @@ for seq_index in sequence
 </div>
 </div>
 <div class="section" id="computing-the-pssm-score-for-the-sequence">
-<h3><span class="section-number">6.10.1.6. </span>Computing the PSSM score for the sequence<a class="headerlink" href="#computing-the-pssm-score-for-the-sequence" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.1.6. </span>Computing the PSSM score for the sequence<a class="headerlink" href="#computing-the-pssm-score-for-the-sequence" title="Permalink to this headline">¶</a></h3>
 <p>We now select elements from the PSSM, just as we did above from the PPM – we use the sequence position number to specify the column of the PSSM, and the base at that position to specify the row. With that, for the sequence “GTAT”, we select the following log-odds scores: <code class="docutils literal notranslate"><span class="pre">-2.585,</span> <span class="pre">1.807,</span> <span class="pre">1.663,</span> <span class="pre">1.115</span></code>.</p>
 <p>From these, the log-odds of <code class="docutils literal notranslate"><span class="pre">seq1</span></code> being derived from the experimental sample instead of the bacgkround is:</p>
 <div class="math notranslate nohighlight">
@@ -444,7 +445,7 @@ for seq_index in sequence
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">6.11. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.12. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic simple">
 <li><p>What does an OR equal 1 mean? What about an OR &gt; 1? Or, an OR&lt;1?</p></li>
 <li><p>What does a log-odds ratio &gt; 1 mean? What about a log-odds ratio equal to 0?</p></li>
@@ -459,8 +460,8 @@ for seq_index in sequence
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="odds_ratios.html" class="btn btn-neutral float-right" title="6.12. Odds-ratio’s" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="information.html" class="btn btn-neutral float-left" title="6.8. Measuring information using Shannon’s entropy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="odds_ratios.html" class="btn btn-neutral float-right" title="6.13. Odds-ratio’s" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="information.html" class="btn btn-neutral float-left" title="6.9. Measuring information using Shannon’s entropy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
