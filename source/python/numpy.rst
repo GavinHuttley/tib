@@ -63,6 +63,19 @@ Conversion to standard python data types
 .. index::
     pair: matrix; numpy
 
+Conversion to a different ``dtype``
+-----------------------------------
+
+There is a method on arrays for converting an array of one type into an array of a different type. For instance
+
+.. jupyter-execute::
+
+    x = numpy.array(["0.12", "0.33"])
+    cast = x.astype(float)
+    cast.dtype, cast
+
+So ``numpy`` has converted an array of strings into an array of 64-bit precision floats, in one line. Sweet!
+
 Constructing matrices
 ---------------------
 
@@ -116,7 +129,8 @@ The laborious (and slow) way
             raw[i][j] += 20
     raw
 
-And here it is on the numpy array equivalent.
+The simple and fast ``numpy`` way
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. jupyter-execute::
 
@@ -147,6 +161,8 @@ If they do not have the same shape, an exception is raised.
 Array iteration
 ---------------
 
+Behaves the same as iterating over a standard Python list (or tuple) with the same dimensions.
+
 .. jupyter-execute::
 
     for e in data:
@@ -172,7 +188,7 @@ We can select an individual element using the standard looking slice notation.
 
     data[0][1]
 
-or using the numpy extended slicing notation, which allows combining the slice notation into one set of ``[]``.
+Note that each dimension requires successive ``[]`` pairs. The ``numpy`` extended slicing notation allows using one set of ``[]``.
 
 .. jupyter-execute::
 
@@ -199,6 +215,33 @@ or a single row across all columns. In both cases the ``:`` represents the compl
 
 Array assignment
 ----------------
+
+Consider the following data.
+
+.. jupyter-execute::
+
+    a = numpy.array([[38, 28, 93],
+       [96, 95, 70]])
+    l = a.tolist()
+
+Assignment to individual elements of an array is more flexible than the comparable standard python objects. For instance, to assign ``0`` to all values of ``a`` is simply
+
+.. jupyter-execute::
+
+    a[:] = 0
+    a
+
+Trying that on a list, however, raises an exception.
+
+.. jupyter-execute::
+    :linenos:
+    :raises:
+
+    l[:] = 0
+
+As the exception indicates, looping is required.
+
+We can assign to an individual element using the ``numpy`` notation.
 
 .. jupyter-execute::
 
@@ -288,8 +331,8 @@ This corresponds to the following array coordinates: (1, 1), (2, 0), (0, 1). Thu
 .. index::
     pair: axis; numpy
 
-The numpy array axis
---------------------
+The ``numpy`` array axis
+------------------------
 
 This is akin to specifying whether a method / function operates on rows (``axis=0``) or columns (``axis=1``) [2]_.
 
@@ -310,8 +353,8 @@ Working on this array.
     pair: mean; numpy
     pair: standard deviation; numpy
 
-Getting useful quantities
--------------------------
+Getting useful statistical quantities
+-------------------------------------
 
 .. jupyter-execute::
 
@@ -377,7 +420,7 @@ Conditional operations on ``numpy`` arrays are important. We illustrate the util
     matched = data > 3
     matched
 
-The above expression is evaluated element wise and returns a numpy array of type ``bool``.
+The above expression is evaluated element wise and returns a ``numpy`` array of type ``bool``.
 
 We use the standard Python ``in`` operator.
 
@@ -415,7 +458,7 @@ Using the ``all()`` method, which will return ``True`` only if **all** elements 
 Comparisons of multiple arrays
 ------------------------------
 
-`numpy` provides tools for element-wise comparisons. This is more complicated than just using the standard python syntax.
+``numpy`` provides tools for element-wise comparisons. This is more complicated than just using the standard python syntax.
 
 .. jupyter-execute::
 
@@ -515,7 +558,7 @@ Exercises
                      [9, 2, 8, 2, -3],
                      [3, -3, 9, 9, 5]])
 
-#. Comparing performance of pure Python and numpy implementations. Investigate usage of ``numpy.where()`` to obtain the row and column coordinates of a 2D array where the value equals ``1`` (that's a one). Write a function called ``np_where()`` that takes a matrix as an argument and returns the row coordinates and column coordinates.
+#. Comparing performance of pure Python and ``numpy`` implementations. Investigate usage of ``numpy.where()`` to obtain the row and column coordinates of a 2D array where the value equals ``1`` (that's a one). Write a function called ``np_where()`` that takes a matrix as an argument and returns the row coordinates and column coordinates.
 
     First, use the following code to generate a random square matrix.
 
