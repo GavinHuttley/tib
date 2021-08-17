@@ -48,11 +48,14 @@ You can also import a specific module function using the keyword ``from``
 
 or multiple functions by separating them with a ``,``.
 
+.. index::
+    pair: log2; maths
+
 .. jupyter-execute::
 
-    from math import sqrt, log10
+    from math import sqrt, log2
     
-    log10(4)
+    log2(4)
 
 Modules also serve to allow simplification of code. This enable putting logically related functions into a single file. They facilitate reuse of those functions in different programs, thus reducing redundancy and increasing the robustness of software.
 

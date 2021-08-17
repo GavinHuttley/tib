@@ -91,6 +91,21 @@ If we sample sequences that share this mutation in common, aligning them centred
 
 These results originated from the honours research project of Ms Yicheng Zhu :cite:`Zhu:2017aa`.
 
+.. index::
+    triple: log2; maths; numpy
+
+.. sidebar:: Math functions in python
+    :name: math_log2
+    
+    .. jupyter-execute::
+    
+        import math
+        import numpy
+        
+        math.log2(2), numpy.log2(2)
+    
+    In Python, mathematical functions are within the ``math`` module. These functions are typically also provided by the ``numpy`` library. The latter have the advantage of being able to operate on arrays.
+
 Exercises
 =========
 
@@ -108,7 +123,7 @@ Defining a short sequence for use below.
 
 #. Write a function that converts these counts into a frequencies.
 
-#. Converting the mathematical expression for entropy into a Python function. Apply it to the results from applying the functions you wrote for (1-3) to ``seq``.
+#. Converting the mathematical expression for entropy into a Python function. Apply it to the results from applying the functions you wrote for (1-3) to ``seq`` (:ref:`for taking log2 see the math functions sidebar<math_log2>`).
 
 #. Apply the functions you've written to the following randomly generated sequence.
 
