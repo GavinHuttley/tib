@@ -76,6 +76,24 @@ There is a method on arrays for converting an array of one type into an array of
 
 So ``numpy`` has converted an array of strings into an array of 64-bit precision floats, in one line. Sweet!
 
+Implicit type casting
+---------------------
+
+The ``dtype`` of an array instance dictates what assignment operations mean. For example, say we have an array of dtype int
+
+.. jupyter-execute::
+
+    data.dtype, data
+
+If we try to assign a ``float`` to the first element, it will not work because the value is implicitly cast to the ``dtype`` of the instance. In this example, only the integer component of the float 5.92132 is assigned.
+
+.. jupyter-execute::
+
+    data[0, 0] = 5.92132
+    data
+
+.. warning:: Implicit type casting is never what you want! Because ``numpy`` does not raise an exception for this case, it is up to the programmer (you) to ensure the array ``dtype`` is appropriate. For this example, if you want to be able to assign floats you should convert ``data`` to be a ``float`` using the ``astype()`` method.
+
 Constructing matrices
 ---------------------
 
@@ -220,8 +238,7 @@ Consider the following data.
 
 .. jupyter-execute::
 
-    a = numpy.array([[38, 28, 93],
-       [96, 95, 70]])
+    a = numpy.array([[38, 28, 93], [96, 95, 70]])
     l = a.tolist()
 
 Assignment to individual elements of an array is more flexible than the comparable standard python objects. For instance, to assign ``0`` to all values of ``a`` is simply
@@ -543,20 +560,18 @@ Exercises
                             [3, 1, 9, 9, 5]])
 
     The result should be
-    
+
     .. jupyter-execute::
         :hide-code:
 
-        numpy.array([9, 9, 9, 9, 9])
+    numpy.array([9, 9, 9, 9, 9])
 
 #. Use boolean array indexing to assign -3 to all values of ``data`` less than 2. The result should be
 
     .. jupyter-execute::
         :hide-code:
 
-        numpy.array([[-3, 9, -3, 3, 9],
-                     [9, 2, 8, 2, -3],
-                     [3, -3, 9, 9, 5]])
+    numpy.array([[-3, 9, -3, 3, 9], [9, 2, 8, 2, -3], [3, -3, 9, 9, 5]])
 
 #. Comparing performance of pure Python and ``numpy`` implementations. Investigate usage of ``numpy.where()`` to obtain the row and column coordinates of a 2D array where the value equals ``1`` (that's a one). Write a function called ``np_where()`` that takes a matrix as an argument and returns the row coordinates and column coordinates.
 
