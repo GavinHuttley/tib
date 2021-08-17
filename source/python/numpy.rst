@@ -342,6 +342,8 @@ Getting useful quantities
 Linear algebra -- matrix multiplication
 ---------------------------------------
 
+`Matrix multiplication <https://en.wikipedia.org/wiki/Matrix_multiplication>`_ is a fundamental operation in linear algebra and is central to many statistical procedures (e.g. fitting linear models, taking the exponential of a matrix, likelihood of a phylogeny).
+
 .. jupyter-execute::
 
     data1 = numpy.array([0, 1, 2, 3])
@@ -349,6 +351,15 @@ Linear algebra -- matrix multiplication
 
     ip = numpy.inner(data1, data2)
     ip
+
+The ``@`` symbol also serves as a special operator for matrix multiplication.
+
+.. index::
+    pair: @; operators
+
+.. jupyter-execute::
+
+    data1 @ data2
 
 .. index::
     pair: conditionals; numpy
