@@ -194,6 +194,10 @@ There is no magic here. If you can use a Python built-in function, you can use a
         diffs = diff_two(a, b)  # calling diff_two which is defined above
         return [v ** 2 for v in diffs]
 
+
+    squared_diffs([93, 14, 47, 82], [59, 0, 66, 82])
+
+
 Things not to do!
 -----------------
 
