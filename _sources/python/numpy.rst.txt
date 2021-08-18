@@ -11,15 +11,20 @@
 
 .. todo:: do a screencast on the fundamentals, how you don't need loops
 
-The numpy_ library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use ``numpy`` will deliver a 10x speedup. In fact, it can be much faster than that. But that's not the focus of this extremely brief summary of ``numpy``. Instead, we introduce you to the major usage patterns that ``numpy`` enables. These patterns greatly simplify the algorithms you have to write. So it's truly worthwhile becoming familiar with this library.
+The numpy_ library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use ``numpy`` will deliver a 10x speedup. In fact, it can be much faster than that. But that's not the focus of this extremely brief summary of ``numpy``. Instead, we introduce you to the major capabilities and usage patterns that ``numpy`` enables. In short, using ``numpy`` objects can often eliminated the need for loops entirely. As a consequence, this greatly simplify the algorithms you have to write. So it's truly worthwhile becoming familiar with this library.
 
 .. _numpy: https://numpy.org
 
-``numpy`` is designed for numerical calculation and the primary object the library provides is an array. The ``array`` object has several key attributes, including:
+``numpy`` is designed for numerical calculation and the primary object the library provides is an array. The ``array`` [#]_ object has several key attributes, including:
 
-- ``array.ndim`` attribute, which indicates how many dimensions an array has
-- ``array.shape`` attribute, which reflects indicates the number of elements on each. This can be derived from the input data.
+.. [#] Strictly speaking, ``numpy`` arrays have type ``ndarray`` but they are predominantly created using a top-level ``array`` function.
+
+- ``array.ndim`` attribute, which indicates how many dimensions the array has
+- ``array.shape`` attribute, which reflects indicates the number of elements on each dimension.
 - ``array.dtype`` attribute, which specifies the data type. This can also be determined by the input data, or by using the ``dtype`` argument.
+
+Creating an array from existing data
+------------------------------------
 
 .. jupyter-execute::
 
@@ -71,6 +76,10 @@ There is a method on arrays for converting an array of one type into an array of
 .. jupyter-execute::
 
     x = numpy.array(["0.12", "0.33"])
+    x.dtype, x
+
+.. jupyter-execute::
+
     cast = x.astype(float)
     cast.dtype, cast
 
@@ -538,20 +547,18 @@ Exercises
 
 #. Create a list of 10 positive integers and convert it into a ``numpy`` array. Use ``array`` methods to compute the total. Divide the original array by the total to produce a normalised array, which you assign to a variable ``freqs``. Using ``numpy`` logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.
 
-#. Many methods on ``numpy`` arrays have an axis argument, one of which is sum. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.
+#. Many methods on ``numpy`` arrays have an ``axis`` argument, one of which is ``sum()``. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.
 
     .. code-block:: text
 
         [[0, 0],
          [0, 0]]
 
-    is a 2D array. Assign values that make it easy to distinguish operations that operate across rows versus those which operate across columns. Demonstrate this matrix serves that purpose using ``sum()``.
+    is a 2D array. Assign values that make it easy to distinguish operations that operate across rows versus those which operate across columns [#]_. Demonstrate this matrix serves that purpose using ``sum()``.
 
-#. ``bool`` data types can be summed. Create a sample array with ``dtype=bool`` and show that when you sum that you get the expected answers (what you expect is the sum will equal the number of occurrences of ``True``).
+#. ``bool`` data types can be summed. Create a sample array with ``dtype=bool`` and show that the sum of this array equals the number of occurrences of ``True``.
 
-#. Look at the array ``data`` and identify the array coordinates where the values equal 9. Now use advanced array indexing to extract those coordinates in a single statement.
-
-    Use the following array to answer the next question.
+#. Look at the array ``data`` and identify the array coordinates where the values equal 9. Now use advanced array indexing to extract those coordinates in a single line statement.
 
     .. jupyter-execute::
 
@@ -564,14 +571,63 @@ Exercises
     .. jupyter-execute::
         :hide-code:
 
-    numpy.array([9, 9, 9, 9, 9])
+        data[data == 9]
+
+#. Same as the previous question except in a single line statement extract the values ≠9. The result should be
+
+    .. jupyter-execute::
+        :hide-code:
+
+        data[data != 9]
 
 #. Use boolean array indexing to assign -3 to all values of ``data`` less than 2. The result should be
 
     .. jupyter-execute::
         :hide-code:
 
-    numpy.array([[-3, 9, -3, 3, 9], [9, 2, 8, 2, -3], [3, -3, 9, 9, 5]])
+        numpy.array([[-3, 9, -3, 3, 9],
+                     [9, 2, 8, 2, -3],
+                     [3, -3, 9, 9, 5]])
+
+#. For the following boolean array ``indices``, what is the result of ``~indices``?
+
+    .. jupyter-execute::
+
+        indices = numpy.array([1, 1, 0, 1], dtype=bool)
+
+
+#. Convert the following code into using ``numpy`` -- without ``for`` loops. After converting ``counts`` to a ``numpy`` array, my solution is 3 lines long.
+
+    .. jupyter-execute::
+
+        from math import log10
+    
+        counts = [[-4, 3, 4, -3, 4],
+                  [4, -1, -2, -3, 4],
+                  [-4, -1, 2, 0, 3],
+                  [2, -2, -2, -4, -5]]
+        result = []
+        for i in range(4):
+            row = []
+            for j in range(4):
+                val = counts[i][j]
+                val = 0 if val <= 0 else log10(val)
+                row.append(val)
+            result.append(row)
+        
+        result
+    
+    The expect result from conversion is
+    
+    .. jupyter-execute::
+        :hide-code:
+
+        c = numpy.array(counts, dtype=float)
+        indices = c > 0
+        c[indices] = numpy.log10(c[indices])
+        c[~indices] = 0
+        c
+    
 
 #. Comparing performance of pure Python and ``numpy`` implementations. Investigate usage of ``numpy.where()`` to obtain the row and column coordinates of a 2D array where the value equals ``1`` (that's a one). Write a function called ``np_where()`` that takes a matrix as an argument and returns the row coordinates and column coordinates.
 
@@ -612,3 +668,5 @@ Exercises
     Then try setting ``dim=20`` and repeat. Which is faster, and by how much?
 
 #. Do some googling for testing ``numpy`` arrays using ``assert_allclose``. Then use this to check your array ``freqs`` created above sums to 1.
+
+.. [#] You want the sum of rows to be different to the sum of columns, that way you know when you have used ``axis`` correctly.
