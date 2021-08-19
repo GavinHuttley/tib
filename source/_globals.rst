@@ -76,3 +76,4 @@
 .. _GitHub: https://github.com
 .. _pytest: https://docs.pytest.org/
 .. _ipytest: https://github.com/chmp/ipytest
+.. _numpy: https://numpy.org
