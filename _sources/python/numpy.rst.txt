@@ -11,9 +11,9 @@
 
 .. todo:: do a screencast on the fundamentals, how you don't need loops
 
-The numpy_ library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use ``numpy`` will deliver a 10x speedup. In fact, it can be much faster than that. But that's not the focus of this extremely brief summary of ``numpy``. Instead, we introduce you to the major capabilities and usage patterns that ``numpy`` enables. In short, using ``numpy`` objects can often eliminated the need for loops entirely. As a consequence, this greatly simplify the algorithms you have to write. So it's truly worthwhile becoming familiar with this library.
+The numpy_ library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use ``numpy`` will deliver a 10x speedup. In fact, it can be much faster than that. But that's not the focus of this extremely brief summary of ``numpy``. Instead, we introduce you to the major capabilities and usage patterns that ``numpy`` enables. In short, using ``numpy`` objects can often eliminated the need for loops entirely. As a consequence, this greatly simplify the algorithms you have to write. So it's truly worthwhile becoming familiar with this library [#]_.
 
-.. _numpy: https://numpy.org
+.. [#] For a visual representation of how operations on arrays work, `see the excellent visual guide by Jay Alammar <http://jalammar.github.io/visual-numpy/>`_.
 
 ``numpy`` is designed for numerical calculation and the primary object the library provides is an array. The ``array`` [#]_ object has several key attributes, including:
 
@@ -101,7 +101,7 @@ If we try to assign a ``float`` to the first element, it will not work because t
     data[0, 0] = 5.92132
     data
 
-.. warning:: Implicit type casting is never what you want! Because ``numpy`` does not raise an exception for this case, it is up to the programmer (you) to ensure the array ``dtype`` is appropriate. For this example, if you want to be able to assign floats you should convert ``data`` to be a ``float`` using the ``astype()`` method.
+.. warning:: Implicit type casting is never what you want! Because ``numpy`` does not raise an exception for this case, it is up to the programmer (you) to ensure the array ``dtype`` is appropriate. For this example, if you want to be able to assign floats to ``data`` you should convert it to have a ``float`` ``dtype`` using the ``astype()`` method.
 
 Constructing matrices
 ---------------------
@@ -177,7 +177,7 @@ If two or more arrays have the same shape, then element-wise operations between 
     c = a * b
     print("After:", c, sep="\n")
 
-If they do not have the same shape, an exception is raised.
+If they do not have a compatible shape, a ``ValueError`` exception is raised and the text indicates "... operands could not be :index:`broadcast <pair: broadcast; numpy>` together with shapes...".
 
 .. jupyter-execute::
     :raises:
@@ -185,10 +185,71 @@ If they do not have the same shape, an exception is raised.
     d = numpy.arange(5)
     a * d
 
+.. index::
+    pair: broadcasting; numpy
+
+Ensuring array shapes are compatible for mathematical operations
+----------------------------------------------------------------
+
+There are rules that ``numpy`` uses to determine how arrays are broadcast together. The best resource to understanding this is `the official documentation on broadcasting <https://numpy.org/doc/stable/user/basics.broadcasting.html>`_. That said, here's a very condensed explanation.
+
+When the array shapes are not the same, ``numpy`` compares the shapes element wise **from right to left**. The dimensions of two arrays are considered compatible when they are same or one of them is 1. Consider the arrays ``x`` and ``y``
+
+.. jupyter-execute::
+
+    x = numpy.array([[0, 1], [2, 3], [4, 5], [6, 7]])
+    x
+
+.. jupyter-execute::
+    
+    x.shape
+
+.. jupyter-execute::
+
+    y = numpy.array([1, 5, 9, 13])
+    y
+    
+.. jupyter-execute::
+    
+    y.shape
+
+Applying the broadcast rule, these are incompatible.
+
+.. jupyter-execute::
+    :linenos:
+    :raises:
+
+    x * y
+
+This is because, the first value read from the right of ``x.shape`` is 2 and from the right of ``y.shape`` gives 4.
+
+One solution that ensures the result of the ``*`` operation has the same shape as ``x`` is to add a "new axis" to ``y``
+
+.. index::
+    pair: newaxis; numpy
+
+.. jupyter-execute::
+
+    x * y[:, numpy.newaxis]
+
+or, equivalently, reshape ``y``.
+
+.. jupyter-execute::
+
+    x * y.reshape((4,1))
+
+We could also solve this using the :index:`transpose <pair: transpose; numpy>` ``x`` (which flips the matrix, reversing it's dimensions)
+
+.. jupyter-execute::
+
+    x.T * y
+
+but this has the effect of meaning the result is also transposed with respect to the original orientation, which is typically inconvenient.
+
 Array iteration
 ---------------
 
-Behaves the same as iterating over a standard Python list (or tuple) with the same dimensions.
+Behaves the same as iterating over a standard Python list (or tuple) with the same dimensions. This corresponds to :ref:`iterating over axis=0 <numpy_axes>`.
 
 .. jupyter-execute::
 
@@ -209,7 +270,7 @@ In the following, we are working on this array.
 
     data
 
-We can select an individual element using the standard looking slice notation. 
+We can select an individual element using the standard looking slice notation.
 
 .. jupyter-execute::
 
@@ -225,13 +286,13 @@ The slicing capabilities of arrays is rich and very useful! We can slice a matri
 
 .. jupyter-execute::
 
-    data[:, 1]  # the [1] column
+    data[:, 1] # the [1] column
 
 or a single row across all columns. In both cases the ``:`` represents the complete set.
 
 .. jupyter-execute::
 
-    data[1, :]  # the [1] row
+    data[1, :] # the [1] row
 
 .. index::
     pair: advanced indexing; numpy
@@ -360,7 +421,15 @@ This corresponds to the following array coordinates: (1, 1), (2, 0), (0, 1). Thu
 The ``numpy`` array axis
 ------------------------
 
-This is akin to specifying whether a method / function operates on rows (``axis=0``) or columns (``axis=1``) [2]_.
+.. sidebar:: Numpy arrays and their axis.
+    :name: numpy_axes
+    
+    .. figure:: /_static/images/numpy-axes.png
+        :scale: 20%
+        
+    An array with ``shape=(3,2)``, ``ndim=2``. Elements and their array indices are shown as e\ :math:`_{i,j}`. Many array methods have an ``axis`` argument that applies to arrays with ``ndim>1``. In the illustrated example, setting ``axis=0`` would apply that method along the corresponding axis and generate a result with 2 elements. Setting ``axis=1`` would generate a result with 3 elements.
+
+:ref:`As illustrated <numpy_axes>`, the ``axis`` argument specifies whether a method / function operates on rows or columns [2]_.
 
 .. [2] You can many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of ``axis`` may be required.
 
@@ -617,7 +686,7 @@ Exercises
         
         result
     
-    The expect result from conversion is
+    The expected result from conversion is
     
     .. jupyter-execute::
         :hide-code:
@@ -628,6 +697,12 @@ Exercises
         c[~indices] = 0
         c
     
+
+#. What happens when you slice the following 1D array using ``newaxis`` on the first axis, or the second axis
+
+    .. jupyter-execute::
+    
+        x = numpy.array([1, 9, 0, 3, 9])
 
 #. Comparing performance of pure Python and ``numpy`` implementations. Investigate usage of ``numpy.where()`` to obtain the row and column coordinates of a 2D array where the value equals ``1`` (that's a one). Write a function called ``np_where()`` that takes a matrix as an argument and returns the row coordinates and column coordinates.
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.12. The basic data types &mdash; Topics in Bioinformatics 2021.08.18 documentation</title>
+  <title>5.12. The basic data types &mdash; Topics in Bioinformatics 2021.08.19 documentation</title>
   
 
   
@@ -509,21 +509,37 @@
 </div>
 <div class="section" id="string-to-float">
 <h3><span class="section-number">5.12.2.3. </span>string to float<a class="headerlink" href="#string-to-float" title="Permalink to this headline">¶</a></h3>
+<p>The builtin type functions can handle strings that contain appropriate content for the designated type (meaning the text contains a number), even if the text has flanking white space.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;  4.45&quot;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="n">f</span>
+<span class="n">f</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4.45
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(4.45, float)
 </pre></div>
 </div>
 </div>
 </div>
-<p>But if casting from a string may require multiple steps. For instance, you cannot directly cast <code class="docutils literal notranslate"><span class="pre">s</span></code> to an int.</p>
+<p>or</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">4.45</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">f</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(4.45, float)
+</pre></div>
+</div>
+</div>
+</div>
+<p>But casting from a string can require multiple steps. For instance, you cannot directly cast a string that contains a decimal number, like <code class="docutils literal notranslate"><span class="pre">s</span></code>, to an <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -533,10 +549,10 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3777</span><span class="o">/</span><span class="mf">1722283928.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3640</span><span class="o">/</span><span class="mf">1722283928.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
-<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;  4.45&#39;
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;\t4.45\n&#39;
 </pre></div>
 </div>
 </div>
@@ -555,7 +571,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39; &#39;, &#39; &#39;, &#39;4&#39;, &#39;.&#39;, &#39;4&#39;, &#39;5&#39;)
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39;\t&#39;, &#39;4&#39;, &#39;.&#39;, &#39;4&#39;, &#39;5&#39;, &#39;\n&#39;)
 </pre></div>
 </div>
 </div>

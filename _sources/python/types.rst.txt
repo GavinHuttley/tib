@@ -175,13 +175,23 @@ float to int
 string to float
 ^^^^^^^^^^^^^^^
 
+The builtin type functions can handle strings that contain appropriate content for the designated type (meaning the text contains a number), even if the text has flanking white space.
+
 .. jupyter-execute::
 
     s = "  4.45"
     f = float(s)
-    f
+    f, type(f)
 
-But if casting from a string may require multiple steps. For instance, you cannot directly cast ``s`` to an int.
+or
+
+.. jupyter-execute::
+
+    s = "\t4.45\n"
+    f = float(s)
+    f, type(f)
+
+But casting from a string can require multiple steps. For instance, you cannot directly cast a string that contains a decimal number, like ``s``, to an ``int``.
 
 .. jupyter-execute::
     :raises:
