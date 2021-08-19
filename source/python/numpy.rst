@@ -185,67 +185,6 @@ If they do not have a compatible shape, a ``ValueError`` exception is raised and
     d = numpy.arange(5)
     a * d
 
-.. index::
-    pair: broadcasting; numpy
-
-Ensuring array shapes are compatible for mathematical operations
-----------------------------------------------------------------
-
-There are rules that ``numpy`` uses to determine how arrays are broadcast together. The best resource to understanding this is `the official documentation on broadcasting <https://numpy.org/doc/stable/user/basics.broadcasting.html>`_. That said, here's a very condensed explanation.
-
-When the array shapes are not the same, ``numpy`` compares the shapes element wise **from right to left**. The dimensions of two arrays are considered compatible when they are same or one of them is 1. Consider the arrays ``x`` and ``y``
-
-.. jupyter-execute::
-
-    x = numpy.array([[0, 1], [2, 3], [4, 5], [6, 7]])
-    x
-
-.. jupyter-execute::
-    
-    x.shape
-
-.. jupyter-execute::
-
-    y = numpy.array([1, 5, 9, 13])
-    y
-    
-.. jupyter-execute::
-    
-    y.shape
-
-Applying the broadcast rule, these are incompatible.
-
-.. jupyter-execute::
-    :linenos:
-    :raises:
-
-    x * y
-
-This is because, the first value read from the right of ``x.shape`` is 2 and from the right of ``y.shape`` gives 4.
-
-One solution that ensures the result of the ``*`` operation has the same shape as ``x`` is to add a "new axis" to ``y``
-
-.. index::
-    pair: newaxis; numpy
-
-.. jupyter-execute::
-
-    x * y[:, numpy.newaxis]
-
-or, equivalently, reshape ``y``.
-
-.. jupyter-execute::
-
-    x * y.reshape((4,1))
-
-We could also solve this using the :index:`transpose <pair: transpose; numpy>` ``x`` (which flips the matrix, reversing it's dimensions)
-
-.. jupyter-execute::
-
-    x.T * y
-
-but this has the effect of meaning the result is also transposed with respect to the original orientation, which is typically inconvenient.
-
 Array iteration
 ---------------
 
@@ -297,6 +236,67 @@ or a single row across all columns. In both cases the ``:`` represents the compl
 .. index::
     pair: advanced indexing; numpy
     pair: bool indexing; numpy
+
+.. index::
+    pair: broadcasting; numpy
+
+Ensuring array shapes are compatible for mathematical operations
+----------------------------------------------------------------
+
+There are rules that ``numpy`` uses to determine how arrays are broadcast together. The best resource to understanding this is `the official documentation on broadcasting <https://numpy.org/doc/stable/user/basics.broadcasting.html>`_. That said, here's a very condensed explanation.
+
+When the array shapes are not the same, ``numpy`` compares the shapes element wise **from right to left**. The dimensions of two arrays are considered compatible when they are same or one of them is 1. Consider the arrays ``x`` and ``y``
+
+.. jupyter-execute::
+
+    x = numpy.array([[0, 1], [2, 3], [4, 5], [6, 7]])
+    x
+
+.. jupyter-execute::
+    
+    x.shape
+
+.. jupyter-execute::
+
+    y = numpy.array([1, 5, 9, 13])
+    y
+    
+.. jupyter-execute::
+    
+    y.shape
+
+Applying the broadcast rule, these are incompatible.
+
+.. jupyter-execute::
+    :linenos:
+    :raises:
+
+    x * y
+
+This is because, the first value read from the right of ``x.shape`` is 2 and from the right of ``y.shape`` is 4.
+
+For our example, one solution that ensures the result of the ``*`` operation has the same shape as ``x`` is to add a "new axis" to ``y``. This can be done via a combination of slicing and using ``numpy.newaxis``
+
+.. index::
+    pair: newaxis; numpy
+
+.. jupyter-execute::
+
+    x * y[:, numpy.newaxis]
+
+or, equivalently, by explicitly reshaping ``y``.
+
+.. jupyter-execute::
+
+    x * y.reshape((4,1))
+
+We could also solve this using the :index:`transpose <pair: transpose; numpy>` ``x`` (which flips the matrix, reversing it's dimensions)
+
+.. jupyter-execute::
+
+    x.T * y
+
+but this has the effect of meaning the result is also transposed with respect to the original orientation, which is typically inconvenient.
 
 .. index::
     pair: assignment; numpy
