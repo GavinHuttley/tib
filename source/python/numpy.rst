@@ -20,7 +20,7 @@ The numpy_ library is the foundation of the vast majority of scientific computin
 .. [#] Strictly speaking, ``numpy`` arrays have type ``ndarray`` but they are predominantly created using a top-level ``array`` function.
 
 - ``array.ndim`` attribute, which indicates how many dimensions the array has
-- ``array.shape`` attribute, which reflects indicates the number of elements on each dimension.
+- ``array.shape`` attribute, which indicates the number of elements on each dimension.
 - ``array.dtype`` attribute, which specifies the data type. This can also be determined by the input data, or by using the ``dtype`` argument.
 
 Creating an array from existing data
