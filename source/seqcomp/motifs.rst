@@ -79,9 +79,13 @@ As the start codon example illustrates, motifs represent a fundamental concept i
 Exercises
 =========
 
-#. Consider the sequence "ACG". How many different |kmers| are there for :math:`k=1,2,3`?
+#. Consider the sequence ``seq``. How many different |kmers| are there for :math:`k=1,2,3`?
 
-#. For a sequence of length 7, how many different |kmers| are there for :math:`k=1,2,3`?
+    .. jupyter-execute::
+    
+        seq = "ACG"
+
+#. For a sequence of length 7, how many |kmers| are there for :math:`k=1,2,3`?
 
 #. Write an equation for the number of |kmers| in a sequence of length :math:`n`. When you set :math:`n=3, 7` and :math:`k=1,2,3` you should get the same answers as above.
 
