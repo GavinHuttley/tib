@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.35. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2021.08.20 documentation</title>
+  <title>5.35. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2021.08.22 documentation</title>
   
 
   
@@ -295,8 +295,13 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">array.ndim</span></code> attribute, which indicates how many dimensions the array has</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">array.shape</span></code> attribute, which indicates the number of elements on each dimension.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">array.dtype</span></code> attribute, which specifies the data type. This can also be determined by the input data, or by using the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> argument.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">array.dtype</span></code> attribute, which indicates the numpy data type <a class="footnote-reference brackets" href="#id9" id="id8">5</a>. This can also be determined by the input data, or by using the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> argument.</p></li>
 </ul>
+<dl class="footnote brackets">
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id8">5</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> extends the range of possible data types, e.g. 8-bit integers, 64-bit floats. <a class="reference external" href="https://numpy.org/doc/stable/user/basics.types.html">See the numpy docs</a> for more details.</p>
+</dd>
+</dl>
 <div class="section" id="creating-an-array-from-existing-data">
 <h2><span class="section-number">5.35.1. </span>Creating an array from existing data<a class="headerlink" href="#creating-an-array-from-existing-data" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -429,7 +434,7 @@
 </div>
 <div class="section" id="implicit-type-casting">
 <h2><span class="section-number">5.35.4. </span>Implicit type casting<a class="headerlink" href="#implicit-type-casting" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of an array instance dictates what assignment operations mean. For example, say we have an array of dtype int</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of an array instance dictates what assignment operations mean. For example, say we have an integer array</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">data</span>
@@ -461,7 +466,7 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Implicit type casting is never what you want! Because <code class="docutils literal notranslate"><span class="pre">numpy</span></code> does not raise an exception for this case, it is up to the programmer (you) to ensure the array <code class="docutils literal notranslate"><span class="pre">dtype</span></code> is appropriate. For this example, if you want to be able to assign floats to <code class="docutils literal notranslate"><span class="pre">data</span></code> you should convert it to have a <code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="docutils literal notranslate"><span class="pre">dtype</span></code> using the <code class="docutils literal notranslate"><span class="pre">astype()</span></code> method.</p>
+<p>Implicit type casting is never what you want! Because <code class="docutils literal notranslate"><span class="pre">numpy</span></code> does not raise an exception for this case, it is up to the programmer (you) to ensure the array <code class="docutils literal notranslate"><span class="pre">dtype</span></code> is appropriate. For this example, if you want to be able to assign floats to <code class="docutils literal notranslate"><span class="pre">data</span></code> you should convert it with <code class="docutils literal notranslate"><span class="pre">astype(float)</span></code>.</p>
 </div>
 </div>
 <div class="section" id="constructing-matrices">
@@ -493,9 +498,9 @@
 </div>
 </div>
 </div>
-<p>Or, other arrays <a class="footnote-reference brackets" href="#id9" id="id8">1</a>.</p>
+<p>Or, by combining other arrays <a class="footnote-reference brackets" href="#id11" id="id10">1</a>.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id8">1</a></span></dt>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id10">1</a></span></dt>
 <dd><p>I’ve used the <code class="docutils literal notranslate"><span class="pre">numpy.arange()</span></code> function, which returns an <code class="docutils literal notranslate"><span class="pre">array</span></code> object.</p>
 </dd>
 </dl>
@@ -614,7 +619,7 @@ After:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3468</span><span class="o">/</span><span class="mf">3772412408.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3534</span><span class="o">/</span><span class="mf">3772412408.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">a</span> <span class="o">*</span> <span class="n">d</span>
 
@@ -705,9 +710,9 @@ After:
 </div>
 </div>
 </div>
-<span class="target" id="index-5"></span></div>
+</div>
 <div class="section" id="ensuring-array-shapes-are-compatible-for-mathematical-operations">
-<span id="index-6"></span><h2><span class="section-number">5.35.10. </span>Ensuring array shapes are compatible for mathematical operations<a class="headerlink" href="#ensuring-array-shapes-are-compatible-for-mathematical-operations" title="Permalink to this headline">¶</a></h2>
+<span id="index-5"></span><h2><span class="section-number">5.35.10. </span>Ensuring array shapes are compatible for mathematical operations<a class="headerlink" href="#ensuring-array-shapes-are-compatible-for-mathematical-operations" title="Permalink to this headline">¶</a></h2>
 <p>There are rules that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> uses to determine how arrays are broadcast together. The best resource to understanding this is <a class="reference external" href="https://numpy.org/doc/stable/user/basics.broadcasting.html">the official documentation on broadcasting</a>. That said, here’s a very condensed explanation.</p>
 <p>When the array shapes are not the same, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> compares the shapes element wise <strong>from right to left</strong>. The dimensions of two arrays are considered compatible when they are same or one of them is 1. Consider the arrays <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code></p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -773,7 +778,7 @@ After:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3468</span><span class="o">/</span><span class="mf">4205270810.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3534</span><span class="o">/</span><span class="mf">4205270810.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 
 <span class="ne">ValueError</span>: operands could not be broadcast together with shapes (4,2) (4,) 
@@ -783,7 +788,7 @@ After:
 </div>
 <p>This is because, the first value read from the right of <code class="docutils literal notranslate"><span class="pre">x.shape</span></code> is 2 and from the right of <code class="docutils literal notranslate"><span class="pre">y.shape</span></code> is 4.</p>
 <p>For our example, one solution that ensures the result of the <code class="docutils literal notranslate"><span class="pre">*</span></code> operation has the same shape as <code class="docutils literal notranslate"><span class="pre">x</span></code> is to add a “new axis” to <code class="docutils literal notranslate"><span class="pre">y</span></code>. This can be done via a combination of slicing and using <code class="docutils literal notranslate"><span class="pre">numpy.newaxis</span></code></p>
-<div class="jupyter_cell jupyter_container docutils container" id="index-7">
+<div class="jupyter_cell jupyter_container docutils container" id="index-6">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 </pre></div>
@@ -814,7 +819,7 @@ After:
 </div>
 </div>
 </div>
-<p>We could also solve this using the <span class="target" id="index-8"></span>transpose <code class="docutils literal notranslate"><span class="pre">x</span></code> (which flips the matrix, reversing it’s dimensions)</p>
+<p>We could also solve this using the <span class="target" id="index-7"></span>transpose <code class="docutils literal notranslate"><span class="pre">x</span></code> (which flips the matrix, reversing it’s dimensions)</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">y</span>
@@ -831,7 +836,7 @@ After:
 <p>but this has the effect of meaning the result is also transposed with respect to the original orientation, which is typically inconvenient.</p>
 </div>
 <div class="section" id="array-assignment">
-<span id="index-9"></span><h2><span class="section-number">5.35.11. </span>Array assignment<a class="headerlink" href="#array-assignment" title="Permalink to this headline">¶</a></h2>
+<span id="index-8"></span><h2><span class="section-number">5.35.11. </span>Array assignment<a class="headerlink" href="#array-assignment" title="Permalink to this headline">¶</a></h2>
 <p>Consider the following data.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -868,7 +873,7 @@ After:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3468</span><span class="o">/</span><span class="mf">2279759492.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3534</span><span class="o">/</span><span class="mf">2279759492.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">l</span><span class="p">[:]</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="ne">TypeError</span>: can only assign an iterable
@@ -892,9 +897,9 @@ After:
 </div>
 </div>
 </div>
-<span class="target" id="index-10"></span></div>
+</div>
 <div class="section" id="evaluation-operations">
-<span id="index-11"></span><h2><span class="section-number">5.35.12. </span>Evaluation operations<a class="headerlink" href="#evaluation-operations" title="Permalink to this headline">¶</a></h2>
+<span id="index-9"></span><h2><span class="section-number">5.35.12. </span>Evaluation operations<a class="headerlink" href="#evaluation-operations" title="Permalink to this headline">¶</a></h2>
 <p>Using standard python evaluation operations on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays returns element wise <code class="docutils literal notranslate"><span class="pre">bool</span></code> arrays. We show uses for these below.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -912,7 +917,7 @@ After:
 </div>
 </div>
 <div class="section" id="advanced-indexing">
-<span id="index-12"></span><h2><span class="section-number">5.35.13. </span>Advanced indexing<a class="headerlink" href="#advanced-indexing" title="Permalink to this headline">¶</a></h2>
+<span id="index-10"></span><h2><span class="section-number">5.35.13. </span>Advanced indexing<a class="headerlink" href="#advanced-indexing" title="Permalink to this headline">¶</a></h2>
 <p>There are two types of advanced indexing, boolean and integer.</p>
 <div class="section" id="boolean-indexing">
 <h3><span class="section-number">5.35.13.1. </span>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Permalink to this headline">¶</a></h3>
@@ -961,7 +966,7 @@ After:
 </div>
 </div>
 </div>
-<p>This can be used, for instance, to do specific operations on just those elements such as an assigning a distinct value.</p>
+<p>As this shows, using a <code class="docutils literal notranslate"><span class="pre">bool</span></code> array for indexing on the original returns just those elements as a flat array. If you want your operation to generate a result with the same shape you need to “index in place”. For instance, you can use the index to restrict specific operations to just those elements represented by the index such as this assignment statement.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">[</span><span class="n">negative</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1015,7 +1020,7 @@ After:
 </div>
 </div>
 <div class="section" id="the-numpy-array-axis">
-<span id="index-13"></span><h2><span class="section-number">5.35.14. </span>The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array axis<a class="headerlink" href="#the-numpy-array-axis" title="Permalink to this headline">¶</a></h2>
+<span id="index-11"></span><h2><span class="section-number">5.35.14. </span>The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array axis<a class="headerlink" href="#the-numpy-array-axis" title="Permalink to this headline">¶</a></h2>
 <div class="sidebar" id="numpy-axes">
 <p class="sidebar-title">Numpy arrays and their axis.</p>
 <div class="figure align-default">
@@ -1023,9 +1028,9 @@ After:
 </div>
 <p>An array with <code class="docutils literal notranslate"><span class="pre">shape=(3,2)</span></code>, <code class="docutils literal notranslate"><span class="pre">ndim=2</span></code>. Elements and their array indices are shown as e<span class="math notranslate nohighlight">\(_{i,j}\)</span>. Many array methods have an <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument that applies to arrays with <code class="docutils literal notranslate"><span class="pre">ndim&gt;1</span></code>. In the illustrated example, setting <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> would apply that method along the corresponding axis and generate a result with 2 elements. Setting <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> would generate a result with 3 elements.</p>
 </div>
-<p><a class="reference internal" href="#numpy-axes"><span class="std std-ref">As illustrated</span></a>, the <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument specifies whether a method / function operates on rows or columns <a class="footnote-reference brackets" href="#id11" id="id10">2</a>.</p>
+<p><a class="reference internal" href="#numpy-axes"><span class="std std-ref">As illustrated</span></a>, the <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument specifies whether a method / function operates on rows or columns <a class="footnote-reference brackets" href="#id13" id="id12">2</a>.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id10">2</a></span></dt>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id12">2</a></span></dt>
 <dd><p>You can many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of <code class="docutils literal notranslate"><span class="pre">axis</span></code> may be required.</p>
 </dd>
 </dl>
@@ -1052,7 +1057,7 @@ After:
 </div>
 </div>
 <div class="section" id="getting-useful-statistical-quantities">
-<span id="index-14"></span><h2><span class="section-number">5.35.15. </span>Getting useful statistical quantities<a class="headerlink" href="#getting-useful-statistical-quantities" title="Permalink to this headline">¶</a></h2>
+<span id="index-12"></span><h2><span class="section-number">5.35.15. </span>Getting useful statistical quantities<a class="headerlink" href="#getting-useful-statistical-quantities" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Overall mean, all elements</span>
@@ -1105,9 +1110,9 @@ After:
 </div>
 </div>
 </div>
-<span class="target" id="index-15"></span></div>
+<span class="target" id="index-13"></span></div>
 <div class="section" id="linear-algebra-matrix-multiplication">
-<span id="index-16"></span><h2><span class="section-number">5.35.16. </span>Linear algebra – matrix multiplication<a class="headerlink" href="#linear-algebra-matrix-multiplication" title="Permalink to this headline">¶</a></h2>
+<span id="index-14"></span><h2><span class="section-number">5.35.16. </span>Linear algebra – matrix multiplication<a class="headerlink" href="#linear-algebra-matrix-multiplication" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Matrix_multiplication">Matrix multiplication</a> is a fundamental operation in linear algebra and is central to many statistical procedures (e.g. fitting linear models, taking the exponential of a matrix, likelihood of a phylogeny).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1126,7 +1131,7 @@ After:
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol also serves as a special operator for matrix multiplication.</p>
-<div class="jupyter_cell jupyter_container docutils container" id="index-17">
+<div class="jupyter_cell jupyter_container docutils container" id="index-15">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span> <span class="o">@</span> <span class="n">data2</span>
 </pre></div>
@@ -1140,7 +1145,7 @@ After:
 </div>
 </div>
 <div class="section" id="conditionals-on-arrays">
-<span id="index-18"></span><h2><span class="section-number">5.35.17. </span>Conditionals on arrays<a class="headerlink" href="#conditionals-on-arrays" title="Permalink to this headline">¶</a></h2>
+<span id="index-16"></span><h2><span class="section-number">5.35.17. </span>Conditionals on arrays<a class="headerlink" href="#conditionals-on-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Conditional operations on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays are important. We illustrate the utility of these operations with some simple examples.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1175,7 +1180,7 @@ After:
 </div>
 </div>
 <p>We apply a conditional to an array and use the <code class="docutils literal notranslate"><span class="pre">any()</span></code> method, which will return <code class="docutils literal notranslate"><span class="pre">True</span></code> if any single element satisfied this condition.</p>
-<div class="jupyter_cell jupyter_container docutils container" id="index-19">
+<div class="jupyter_cell jupyter_container docutils container" id="index-17">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes&quot;</span><span class="p">)</span>
@@ -1208,7 +1213,7 @@ After:
 </div>
 </div>
 <div class="section" id="comparisons-of-multiple-arrays">
-<span id="index-20"></span><h2><span class="section-number">5.35.18. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Permalink to this headline">¶</a></h2>
+<span id="index-18"></span><h2><span class="section-number">5.35.18. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> provides tools for element-wise comparisons. This is more complicated than just using the standard python syntax.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1230,7 +1235,7 @@ After:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3468</span><span class="o">/</span><span class="mf">2595779301.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3534</span><span class="o">/</span><span class="mf">2595779301.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">y</span>
 
 <span class="ne">ValueError</span>: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
@@ -1265,7 +1270,7 @@ After:
 </div>
 </div>
 <div class="section" id="using-the-result-of-array-comparisons-to-count">
-<span id="index-21"></span><h2><span class="section-number">5.35.19. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Permalink to this headline">¶</a></h2>
+<span id="index-19"></span><h2><span class="section-number">5.35.19. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Permalink to this headline">¶</a></h2>
 <p>Scenario, you want to count (from multiple arrays that consist of a continuously distributed random variable) the number of times a specific threshold is reached for each “position” on a reference coordinate system.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1332,7 +1337,7 @@ After:
  [0, 0]]
 </pre></div>
 </div>
-<p>is a 2D array. Assign values that make it easy to distinguish operations that operate across rows versus those which operate across columns <a class="footnote-reference brackets" href="#id13" id="id12">5</a>. Demonstrate this matrix serves that purpose using <code class="docutils literal notranslate"><span class="pre">sum()</span></code>.</p>
+<p>is a 2D array. Assign values that make it easy to distinguish operations that operate across rows versus those which operate across columns <a class="footnote-reference brackets" href="#id15" id="id14">6</a>. Demonstrate this matrix serves that purpose using <code class="docutils literal notranslate"><span class="pre">sum()</span></code>.</p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> data types can be summed. Create a sample array with <code class="docutils literal notranslate"><span class="pre">dtype=bool</span></code> and show that the sum of this array equals the number of occurrences of <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
@@ -1469,11 +1474,11 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 0, 0, 0, 1],
-       [1, 0, 0, 0, 0],
-       [1, 1, 0, 1, 1],
-       [1, 1, 1, 1, 1],
-       [0, 1, 1, 0, 0]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 1, 1, 1],
+       [0, 0, 1, 0, 0],
+       [1, 0, 1, 0, 0],
+       [1, 1, 1, 1, 0],
+       [1, 1, 1, 0, 0]])
 </pre></div>
 </div>
 </div>
@@ -1481,7 +1486,7 @@ After:
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4], [0, 4, 0, 0, 1, 3, 4, 0, 1, 2, 3, 4, 1, 2])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 0, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4], [1, 2, 3, 4, 2, 0, 2, 0, 1, 2, 3, 0, 1, 2])
 </pre></div>
 </div>
 </div>
@@ -1494,7 +1499,7 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>15.8 µs ± 389 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>15.5 µs ± 336 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1505,7 +1510,7 @@ After:
 <li><p>Do some googling for testing <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays using <code class="docutils literal notranslate"><span class="pre">assert_allclose</span></code>. Then use this to check your array <code class="docutils literal notranslate"><span class="pre">freqs</span></code> created above sums to 1.</p></li>
 </ol>
 <dl class="footnote brackets">
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id12">5</a></span></dt>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id14">6</a></span></dt>
 <dd><p>You want the sum of rows to be different to the sum of columns, that way you know when you have used <code class="docutils literal notranslate"><span class="pre">axis</span></code> correctly.</p>
 </dd>
 </dl>

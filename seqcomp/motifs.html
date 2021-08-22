@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>6.4. \(k\)-mers and Motifs &mdash; Topics in Bioinformatics 2021.08.20 documentation</title>
+  <title>6.4. \(k\)-mers and Motifs &mdash; Topics in Bioinformatics 2021.08.22 documentation</title>
   
 
   
@@ -278,9 +278,9 @@
 <span class="n">Index</span> <span class="mi">1</span>     <span class="n">CG</span>
 </pre></div>
 </div>
-<p>To identify all dinucleotides, we iterate over all indices, slice the sequence from the current index to be length 2. Clearly, we need to make sure to get the last <span class="math notranslate nohighlight">\(k\)</span>-mer correct, i.e. it must also be of length 2.</p>
+<p>To identify all dinucleotides (<span class="math notranslate nohighlight">\(k=2\)</span>), we iterate over all indices, slice the sequence from the current index to be length 2. Clearly, we need to make sure to get the last <span class="math notranslate nohighlight">\(k\)</span>-mer correct, i.e. it must also be of length 2.</p>
 </div>
-<p>So how do <span class="math notranslate nohighlight">\(k\)</span>-mers get used? They are used as a measure of evolutionary relatedness. The “distance” between <span class="math notranslate nohighlight">\(k\)</span>-mer distributions of species that are closely related to each other is typically smaller than the distance between more distantly related species. The genomic signature statistics of <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/9294192/">Karlin and colleagues</a> are related to these measures. Moreover, they are <a class="reference external" href="https://www.genetics.org/content/215/1/25">employed in machine learning algorithms</a> such as that of Zhu et al (from my own lab).</p>
+<p>So how do <span class="math notranslate nohighlight">\(k\)</span>-mers get used? They are used as a measure of evolutionary relatedness. The “distance” between <span class="math notranslate nohighlight">\(k\)</span>-mer distributions of closely related species is typically smaller than the distance between distantly related species. The genomic signature statistics of <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/9294192/">Karlin and colleagues</a> are related to these measures. Moreover, <span class="math notranslate nohighlight">\(k\)</span>-mers are <a class="reference external" href="https://www.genetics.org/content/215/1/25">employed in machine learning algorithms</a> such as that of Zhu et al (from my own lab).</p>
 </div>
 <div class="section" id="motifs">
 <span id="index-1"></span><h2><span class="section-number">6.4.2. </span>Motifs<a class="headerlink" href="#motifs" title="Permalink to this headline">¶</a></h2>
@@ -305,10 +305,10 @@
 </div></blockquote>
 </li>
 <li><p>For a sequence of length 7, how many <span class="math notranslate nohighlight">\(k\)</span>-mers are there for <span class="math notranslate nohighlight">\(k=1,2,3\)</span>?</p></li>
-<li><p>Write an equation for the number of <span class="math notranslate nohighlight">\(k\)</span>-mers in a sequence of length <span class="math notranslate nohighlight">\(n\)</span>. When you set <span class="math notranslate nohighlight">\(n=3, 7\)</span> and <span class="math notranslate nohighlight">\(k=1,2,3\)</span> you should get the same answers as above.</p></li>
-<li><p>Write an algorithm that produces all possible dinucleotides for <code class="docutils literal notranslate"><span class="pre">seq</span></code>.</p></li>
-<li><p>Then do it for all possible trinucleotides in <code class="docutils literal notranslate"><span class="pre">seq</span></code>.</p></li>
-<li><p>The Python standard library has lots of very useful goodies. Investigate the <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class from <code class="docutils literal notranslate"><span class="pre">collections</span></code> and apply it to your result from (5) and (6) to determine the <span class="math notranslate nohighlight">\(k\)</span>-mer distribution. (Use google!)</p></li>
+<li><p>Write an equation for the number of <span class="math notranslate nohighlight">\(k\)</span>-mers in a sequence of length <span class="math notranslate nohighlight">\(n\)</span>. When you set <span class="math notranslate nohighlight">\(n=3, 7\)</span> and <span class="math notranslate nohighlight">\(k=1, 2, 3\)</span> you should get the same answers as above.</p></li>
+<li><p>Write an algorithm that produces all the dinucleotides for <code class="docutils literal notranslate"><span class="pre">seq</span></code>.</p></li>
+<li><p>Then do it for all the trinucleotides in <code class="docutils literal notranslate"><span class="pre">seq</span></code>.</p></li>
+<li><p>The Python standard library has lots of very useful goodies. Investigate the <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class from <code class="docutils literal notranslate"><span class="pre">collections</span></code> and apply it to your result from (5) and (6) to determine the <span class="math notranslate nohighlight">\(k\)</span>-mer counts. (Use google!)</p></li>
 </ol>
 </div>
 
