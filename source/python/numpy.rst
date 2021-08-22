@@ -381,7 +381,7 @@ The result is an array with boolean elements indicating whether the correspondin
 
     m[negative]
 
-This can be used, for instance, to do specific operations on just those elements such as an assigning a distinct value.
+As this shows, using a ``bool`` array for indexing on the original returns just those elements as a flat array. If you want your operation to generate a result with the same shape you need to "index in place". For instance, you can use the index to restrict specific operations to just those elements represented by the index such as this assignment statement.
 
 .. jupyter-execute::
 
