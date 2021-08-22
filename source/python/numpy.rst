@@ -21,7 +21,9 @@ The numpy_ library is the foundation of the vast majority of scientific computin
 
 - ``array.ndim`` attribute, which indicates how many dimensions the array has
 - ``array.shape`` attribute, which indicates the number of elements on each dimension.
-- ``array.dtype`` attribute, which specifies the data type. This can also be determined by the input data, or by using the ``dtype`` argument.
+- ``array.dtype`` attribute, which indicates the numpy data type [#]_. This can also be determined by the input data, or by using the ``dtype`` argument.
+
+.. [#] ``numpy`` extends the range of possible data types, e.g. 8-bit integers, 64-bit floats. `See the numpy docs <https://numpy.org/doc/stable/user/basics.types.html>`_ for more details.
 
 Creating an array from existing data
 ------------------------------------
@@ -88,7 +90,7 @@ So ``numpy`` has converted an array of strings into an array of 64-bit precision
 Implicit type casting
 ---------------------
 
-The ``dtype`` of an array instance dictates what assignment operations mean. For example, say we have an array of dtype int
+The ``dtype`` of an array instance dictates what assignment operations mean. For example, say we have an integer array
 
 .. jupyter-execute::
 
@@ -101,7 +103,7 @@ If we try to assign a ``float`` to the first element, it will not work because t
     data[0, 0] = 5.92132
     data
 
-.. warning:: Implicit type casting is never what you want! Because ``numpy`` does not raise an exception for this case, it is up to the programmer (you) to ensure the array ``dtype`` is appropriate. For this example, if you want to be able to assign floats to ``data`` you should convert it to have a ``float`` ``dtype`` using the ``astype()`` method.
+.. warning:: Implicit type casting is never what you want! Because ``numpy`` does not raise an exception for this case, it is up to the programmer (you) to ensure the array ``dtype`` is appropriate. For this example, if you want to be able to assign floats to ``data`` you should convert it with ``astype(float)``.
 
 Constructing matrices
 ---------------------
@@ -117,7 +119,7 @@ Matrices can be specified on construction by providing, for example, lists of li
 
     data
 
-Or, other arrays [1]_.
+Or, by combining other arrays [1]_.
 
 .. [1] I've used the ``numpy.arange()`` function, which returns an ``array`` object.
 
@@ -234,10 +236,6 @@ or a single row across all columns. In both cases the ``:`` represents the compl
     data[1, :] # the [1] row
 
 .. index::
-    pair: advanced indexing; numpy
-    pair: bool indexing; numpy
-
-.. index::
     pair: broadcasting; numpy
 
 Ensuring array shapes are compatible for mathematical operations
@@ -337,8 +335,6 @@ We can assign to an individual element using the ``numpy`` notation.
 
 .. index::
     pair: evaluation; numpy
-
-.. index::
     pair: bool array; numpy
 
 Evaluation operations
