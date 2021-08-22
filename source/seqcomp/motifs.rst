@@ -63,9 +63,9 @@ We derive a |kmer| distribution by considering **all possible words** of length 
         Index 0    AC
         Index 1     CG
     
-    To identify all dinucleotides, we iterate over all indices, slice the sequence from the current index to be length 2. Clearly, we need to make sure to get the last |kmer| correct, i.e. it must also be of length 2.
+    To identify all dinucleotides (:math:`k=2`), we iterate over all indices, slice the sequence from the current index to be length 2. Clearly, we need to make sure to get the last |kmer| correct, i.e. it must also be of length 2.
 
-So how do |kmers| get used? They are used as a measure of evolutionary relatedness. The "distance" between |kmer| distributions of species that are closely related to each other is typically smaller than the distance between more distantly related species. The genomic signature statistics of `Karlin and colleagues <https://pubmed.ncbi.nlm.nih.gov/9294192/>`_ are related to these measures. Moreover, they are `employed in machine learning algorithms <https://www.genetics.org/content/215/1/25>`_ such as that of Zhu et al (from my own lab).
+So how do |kmers| get used? They are used as a measure of evolutionary relatedness. The "distance" between |kmer| distributions of closely related species is typically smaller than the distance between distantly related species. The genomic signature statistics of `Karlin and colleagues <https://pubmed.ncbi.nlm.nih.gov/9294192/>`_ are related to these measures. Moreover, |kmers| are `employed in machine learning algorithms <https://www.genetics.org/content/215/1/25>`_ such as that of Zhu et al (from my own lab).
 
 .. index:: motif
 
@@ -87,10 +87,10 @@ Exercises
 
 #. For a sequence of length 7, how many |kmers| are there for :math:`k=1,2,3`?
 
-#. Write an equation for the number of |kmers| in a sequence of length :math:`n`. When you set :math:`n=3, 7` and :math:`k=1,2,3` you should get the same answers as above.
+#. Write an equation for the number of |kmers| in a sequence of length :math:`n`. When you set :math:`n=3, 7` and :math:`k=1, 2, 3` you should get the same answers as above.
 
-#. Write an algorithm that produces all possible dinucleotides for ``seq``.
+#. Write an algorithm that produces all the dinucleotides for ``seq``.
 
-#. Then do it for all possible trinucleotides in ``seq``.
+#. Then do it for all the trinucleotides in ``seq``.
 
-#. The Python standard library has lots of very useful goodies. Investigate the ``Counter`` class from ``collections`` and apply it to your result from (5) and (6) to determine the |kmer| distribution. (Use google!)
+#. The Python standard library has lots of very useful goodies. Investigate the ``Counter`` class from ``collections`` and apply it to your result from (5) and (6) to determine the |kmer| counts. (Use google!)
