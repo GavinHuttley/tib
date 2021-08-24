@@ -1,3 +1,18 @@
+.. index::
+    pair: install; numpy
+
+.. sidebar:: Installing ``numpy`` on your computer
+    :name: numpy_install
+
+    If you want to use ``numpy`` on your own computer you will need to install it. How to do so will depend very much on how you have setup Python. If you are not using ``conda``, then the following is the safest approach.
+    
+    In the terminal (either macOS terminal, or the one included with `VS Code`_)
+    
+    .. code-block::
+        
+        $ python3 -m pip install --user numpy
+
+
 .. index:: numpy, maths, array
 
 .. _using_numpy:
