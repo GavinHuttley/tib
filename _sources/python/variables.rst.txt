@@ -3,9 +3,9 @@
 Variables and assignment
 ========================
 
-Consider the equation :math:`h^2=a^2+b^2`. This mathematical expression is familiar (Pythagoras, of course!) and exactly the sort of thing we'd like to use computers to calculate. But expressing this as an algorithm requires defining variables and breaking the problem into smaller steps. But before we can even do this, we need to define what a variable is.
+Consider the equation :math:`h^2=a^2+b^2`. This mathematical expression is familiar (Pythagoras, of course!) and exactly the sort of thing we'd like to use computers to calculate. But expressing this as an algorithm requires defining variables and breaking the problem into smaller steps. But before we can even do this, we need to define both what a variable is and what is meant by assignment.
 
-In the above equation *h*, *a*, *b* are *pro-numerals*, symbols that represent a numeral (number). In programming, we call these *variables*. We create variables "on the fly" in Python and, in doing so, we need to obey some simple rules.
+In the above equation *h*, *a*, *b* are *pro-numerals*, symbols that represent a numeral (number). In programming, we call these *variables*. We create variables "on the fly" in Python by the process of "assignment" and, in doing so, we need to obey some simple rules.
 
 .. index::
     pair: naming; variable
@@ -39,6 +39,15 @@ It's noteworthy that this is not a general algorithm -- we have an explicit solu
 Compare this expression to the original mathematical equation. Clearly, we have rewritten it so we have solved the equation already.
 
 .. index:: assignment, assignment unpacking, unpacking
+
+The assignment statement
+------------------------
+
+As illustrated above, an assignment statement is creation of a named reference (the variable) to some data. They are characterised by 3 components:
+
+1. the variable name
+2. a **single** ``=``
+3. the value (or data)
 
 Assignment unpacking
 --------------------

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.8. Variables and assignment &mdash; Topics in Bioinformatics 2021.08.22 documentation</title>
+  <title>5.8. Variables and assignment &mdash; Topics in Bioinformatics 2021.08.24 documentation</title>
   
 
   
@@ -113,7 +113,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5.8. Variables and assignment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#naming-variables">5.8.1. Naming variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#define-them-before-you-use-them">5.8.2. Define them before you use them</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#assignment-unpacking">5.8.3. Assignment unpacking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-assignment-statement">5.8.3. The assignment statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assignment-unpacking">5.8.4. Assignment unpacking</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#exercises">5.9. Exercises</a></li>
@@ -256,8 +257,8 @@
 </style>
 <div class="section" id="variables-and-assignment">
 <span id="assignment"></span><h1><span class="section-number">5.8. </span>Variables and assignment<a class="headerlink" href="#variables-and-assignment" title="Permalink to this headline">¶</a></h1>
-<p>Consider the equation <span class="math notranslate nohighlight">\(h^2=a^2+b^2\)</span>. This mathematical expression is familiar (Pythagoras, of course!) and exactly the sort of thing we’d like to use computers to calculate. But expressing this as an algorithm requires defining variables and breaking the problem into smaller steps. But before we can even do this, we need to define what a variable is.</p>
-<p>In the above equation <em>h</em>, <em>a</em>, <em>b</em> are <em>pro-numerals</em>, symbols that represent a numeral (number). In programming, we call these <em>variables</em>. We create variables “on the fly” in Python and, in doing so, we need to obey some simple rules.</p>
+<p>Consider the equation <span class="math notranslate nohighlight">\(h^2=a^2+b^2\)</span>. This mathematical expression is familiar (Pythagoras, of course!) and exactly the sort of thing we’d like to use computers to calculate. But expressing this as an algorithm requires defining variables and breaking the problem into smaller steps. But before we can even do this, we need to define both what a variable is and what is meant by assignment.</p>
+<p>In the above equation <em>h</em>, <em>a</em>, <em>b</em> are <em>pro-numerals</em>, symbols that represent a numeral (number). In programming, we call these <em>variables</em>. We create variables “on the fly” in Python by the process of “assignment” and, in doing so, we need to obey some simple rules.</p>
 <div class="section" id="naming-variables">
 <span id="index-0"></span><h2><span class="section-number">5.8.1. </span>Naming variables<a class="headerlink" href="#naming-variables" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
@@ -292,8 +293,17 @@
 <p>It’s noteworthy that this is not a general algorithm – we have an explicit solution that works for just these values of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. If we want to evaluate different values of these two variables. we have to edit the lines defining the variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> and rerun the program.</p>
 <p>Compare this expression to the original mathematical equation. Clearly, we have rewritten it so we have solved the equation already.</p>
 </div>
+<div class="section" id="the-assignment-statement">
+<span id="index-1"></span><h2><span class="section-number">5.8.3. </span>The assignment statement<a class="headerlink" href="#the-assignment-statement" title="Permalink to this headline">¶</a></h2>
+<p>As illustrated above, an assignment statement is creation of a named reference (the variable) to some data. They are characterised by 3 components:</p>
+<ol class="arabic simple">
+<li><p>the variable name</p></li>
+<li><p>a <strong>single</strong> <code class="docutils literal notranslate"><span class="pre">=</span></code></p></li>
+<li><p>the value (or data)</p></li>
+</ol>
+</div>
 <div class="section" id="assignment-unpacking">
-<span id="index-1"></span><h2><span class="section-number">5.8.3. </span>Assignment unpacking<a class="headerlink" href="#assignment-unpacking" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.4. </span>Assignment unpacking<a class="headerlink" href="#assignment-unpacking" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes, its useful to do multiple variable assignments in one go. Which value maps to which variable? (You can answer that definitively by trying it.)</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
