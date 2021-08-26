@@ -673,8 +673,7 @@ Exercises
 
     .. jupyter-execute::
 
-        indices = numpy.array([1, 1, 0, 1], dtype=bool)
-
+        indices = numpy.array([True, True, False, True], dtype=bool)
 
 #. Convert the following code into using ``numpy`` -- without ``for`` loops. After converting ``counts`` to a ``numpy`` array, my solution is 3 lines long.
 
