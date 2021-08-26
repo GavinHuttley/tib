@@ -94,7 +94,7 @@ An even greater appeal of Python is the availability of highly sophisticated mod
 
 Of particular note is numpy_ (numerical Python). This library is arguably the main reason Python is so popular in science. Numpy provides critical routines in numerical mathematics, particularly linear algebra. But it's very broadly useful, being ~10x faster than straight Python implementations. It also allows succinct expressions for arrays and provides very useful methods on arrays.
 
-Other invaluable libraries for science are Scipy, Pandas, Matplotlib, IPython and biology specific libraries (such as Cogent3_).
+Other invaluable libraries for science are Scipy, Pandas, Matplotlib, IPython and biology specific libraries (such as cogent3_).
 
 We will cover ``numpy`` in a separate section.
 
@@ -105,7 +105,7 @@ Why use libraries written by others?
 - Typically better performance
 - May provide algorithms that are simply too difficult to write yourself!
 
-There are an increasing number of Biology specific libraries. My own lab produces a number of open sourced library for genomic biology (e.g. Cogent3_, which we will use later in the course).
+There are an increasing number of Biology specific libraries. My own lab produces a number of open sourced library for genomic biology (e.g. cogent3_, which we will use later in the course).
 
 Writing your own modules
 ------------------------
@@ -113,6 +113,3 @@ Writing your own modules
 Since a Python script is a module, then all you have to do is write your code in a python script. If that script os on what is called the *python path*, then it can be imported and any functions within can be used.
 
 The python path refers to the places on your computer that Python will look for modules. The first is the directory from which the Python executable was started. The second is the "installed packages" location, typically a directory called ``site-packages`` which is "within" Python itself. The third is a custom location which you have to tell Python about, for instance using a special `PYTHONPATH <https://docs.python.org/3/using/cmdline.html?highlight=pythonpath#envvar-PYTHONPATH>`_ environment variable.
-
-.. _numpy: https://www.numpy.org
-.. _Cogent3: https://cogent3.org
