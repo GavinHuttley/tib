@@ -25,7 +25,9 @@ Where do we get |pvalues| from? What is a distribution? Where do we get distribu
 
 .. index:: statistical distribution
 
-Let's start by defining a distribution. In statistics, we use the term distribution to describe the occurrence of a random variable. Say we were measuring plant height for a particular species. Plant height will be a "continuously distributed" random variable -- meaning heights can assume an infinite number of values. If we were to plot those heights along an x-axis, then as we continue to obtain new data points we would wind up with having to place points on top of each other. If we continued to do this sampling and plotting we would see a shape emerge (e.g. :ref:`Distribution of plant heights <plant_heights>`). This shape can be thought of as the distribution of the *plant height random variable*. In this hypothetical example, we have obtained our distribution from the data itself.
+Let's start by defining a distribution. In statistics, we use the term distribution to describe the occurrence of a random variable. Say we were measuring plant height for a particular species. Plant height will be a "continuously distributed" random variable -- meaning heights can assume an infinite number of values [#]_. If we were to plot those heights along an |xaxis|, then as we continue to obtain new data points we would wind up with having to place points on top of each other. If we continued to do this sampling and plotting we would see a shape emerge (e.g. :ref:`Distribution of plant heights <plant_heights>`). This shape can be thought of as the distribution of the *plant height random variable*. In this hypothetical example, we have obtained our distribution from the data itself.
+
+.. [#] The values will obviously be bounded, i.e. cannot be negative.
 
 In bioinformatics, if we're lucky, the random variable of interest belongs to a known distribution that is described by a mathematical function. That function specifies the probability of observing any specific value. Examples include the Normal (or Gaussian) distribution, Gamma distribution and, of particular use to the task of understanding |pvalues|, the uniform distribution.
 
@@ -86,9 +88,9 @@ Consider a random variable that can obtain any value in [0, 1] (including the bo
 Quantiles as distribution descriptors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Quantiles are rank order statistics. They are locations in a sorted collection of values. One example of a quantile you are likely familiar with is the median, which cuts a distribution such that 1/2 of all values are less than it. Following this example, then, a quantile=0.05 is the point that is greater the 1/20th of all values. We can think of a values quantile, then, as its relative rank with a data set which can be computed as :math:`\frac{r}{n}` where :math:`r` is the rank in :math:`n` values.
+Quantiles are rank order statistics. They are locations in a sorted collection of values. One example of a quantile you are likely familiar with is the median, which cuts a distribution such that 1/2 of all values are less than it. Following this example, then, a quantile=0.05 is the point that is greater than 1/20th of all values. We can think of a values quantile, then, as its relative rank with a data set which can be computed as :math:`\frac{r}{n}` where :math:`r` is the rank in :math:`n` values.
 
-Let's play with the quantiles from the uniform distribution that I generated above. We use the ``numpy.quantile`` function for this purpose. Since we're using a uniform distribution, and following from the definition of this distribution, we can expect that 5% of all uniform random values will be :math:`\le 0.05`. Does our data support this?
+Let's play with the quantiles from the uniform distribution that :ref:`I generated <uniform_dist>`. We use the ``numpy.quantile`` function for this purpose. Since we're using a uniform distribution, and following from the definition of this distribution, we can expect that 5% of all uniform random values will be :math:`\le 0.05`. Does our data support this?
 
 .. jupyter-execute::
 
@@ -102,7 +104,7 @@ Conversely, we expect that 5% of all uniform random values will be :math:`\ge 0.
 
     1 - quantile(x_uniform, 0.95)
 
-We generated these data using a sample size of 50,000. As we increase that sample size, you will find the estimates of the quantiles from the uniform distribution converge on their expected values. We can generalise this statement further, as you increase the sample size the quantile becomes an increasingly good approximation of its |pvalue|.
+We generated these data using a sample size of 50,000. As we increase that sample size, you will find the estimates of the quantiles from the uniform distribution converge on their expected values. We can this statement more general -- as you increase the sample size the quantile becomes an increasingly good approximation of its |pvalue|.
 
 Quantiles have advantages over the |pvalues| in exploratory data analysis. Not least of which they are derived from the actual data, rather than idealised (theoretical) description. Numerous data exploratory techniques are based upon this quantity (for example Quantile-Quantile plots to compare the distributions of two data sets).
 
@@ -111,61 +113,68 @@ Quantiles have advantages over the |pvalues| in exploratory data analysis. Not l
 Resampling statistics -- brute-force generation of null distributions
 ---------------------------------------------------------------------
 
-A challenge often encountered in bioinformatics is that a random variable of interest does not follow a known distribution. In these case, a popular statistical approach is to use so called resampling approaches.
+A challenge often encountered in bioinformatics is that a random variable of interest does not follow a known distribution. In such cases, a popular statistical approach is to use so called resampling approaches.
 
 If they derive from some type of permutation of observed data (as we will do below) then they are often referred to as "non-parametric" methods. Such techniques have value for estimating the confidence interval for a parameter (e.g. jackknife) or estimating a p-value (e.g. permutation tests).
 
 Computational approaches -- resampling with replacement
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------------------
 
 We now consider a specific problem which we will solve using random sampling with replacement [2]_.
 
 .. [2] To illustrate "with replacement". We randomly draw an observation from the observed data set and add it to our "resampled" set. We then return the observation back to the observed data. This means the probability of observing that specific state never changes. In the alternate approach of resampling without replacement, the probability of drawing a specific state decreases with each subsequent draw of it.
 
 A worked example for estimating a p-value using a resampling statistic
-----------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We have a DNA sequence and we want to evaluate whether nucleotides occur randomly in the sequence. We will tackle that question by using non-overlapping dinucleotides and assessing whether their frequency is consistent with the frequencies of their constituent nucleotides.
 
-Here's the sequence we will use.
+Here's the sequence we will use [#]_.
+
+.. [#] The syntax for the definition of ``seq`` may look strange. Basically, I have strings on multiple lines. By wrapping those in a single set of ``()`` without any commas, I've declared to the interpreter that "this is one line". They are thus considered as a single string. Try it!
 
 .. jupyter-execute::
 
-    seq = [
-        "ATGAAATCCAACCAAGAGCGGAGCAACGAATGCCTGCCTCCCAAGAAGCG",
-        "CGAGATCCCCGCCACCAGCCGGTCCTCCGAGGAGAAGGCCCCTACCCTGC",
-        "CCAGCGACAACCACCGGGTGGAGGGCACAGCATGGCTCCCGGGCAACCCT",
-        "GGTGGCCGGGGCCACGGGGGCGGGAGGCATGGGCCGGCAGGGACCTCGGT",
-        "GGAGCTTGGTTTACAACAGGGAATAGGTTTACACAAAGCATTGTCCACAG",
-        "GGCTGGACTACTCCCCGCCCAGCGCTCCCAGGTCTGTCCCCGTGGCCACC",
-        "ACGCTGCCTGCCGCGTACGCCACCCCGCAGCCAGGGACCCCGGTGTCCCC",
-        "CGTGCAGTACGCTCACCTGCCGCACACCTTCCAGTTCATTGGGTCCTCCC",
-        "AATACAGTGGAACCTATGCCAGCTTCATCCCATCACAGCTGATCCCCCCA",
-        "ACCGCCAACCCCGTCACCAGTGCAGTGGCCTCGGCCGCAGGGGCCACCAC",
-        "TCCATCCCAGCGCTCCCAGCTGGAGGCCTATTCCACTCTGCTGGCCAACA",
-        "TGGGCAGTCTGAGCCAGACGCCGGGACACAAGGCTGAGCAGCAGCAGCAG",
-    ]
-    seq = "".join(seq)
+    seq = (
+        "ATGAAATCCAACCAAGAGCGGAGCAACGAATGCCTGCCTCCCAAGAAGCG"
+        "CGAGATCCCCGCCACCAGCCGGTCCTCCGAGGAGAAGGCCCCTACCCTGC"
+        "CCAGCGACAACCACCGGGTGGAGGGCACAGCATGGCTCCCGGGCAACCCT"
+        "GGTGGCCGGGGCCACGGGGGCGGGAGGCATGGGCCGGCAGGGACCTCGGT"
+        "GGAGCTTGGTTTACAACAGGGAATAGGTTTACACAAAGCATTGTCCACAG"
+        "GGCTGGACTACTCCCCGCCCAGCGCTCCCAGGTCTGTCCCCGTGGCCACC"
+        "ACGCTGCCTGCCGCGTACGCCACCCCGCAGCCAGGGACCCCGGTGTCCCC"
+        "CGTGCAGTACGCTCACCTGCCGCACACCTTCCAGTTCATTGGGTCCTCCC"
+        "AATACAGTGGAACCTATGCCAGCTTCATCCCATCACAGCTGATCCCCCCA"
+        "ACCGCCAACCCCGTCACCAGTGCAGTGGCCTCGGCCGCAGGGGCCACCAC"
+        "TCCATCCCAGCGCTCCCAGCTGGAGGCCTATTCCACTCTGCTGGCCAACA"
+        "TGGGCAGTCTGAGCCAGACGCCGGGACACAAGGCTGAGCAGCAGCAGCAG"
+    )
 
-Before we do anything, we need to consider first what our null hypothesis will "look" like and to use that perspective in deciding how we will approach this problem algorithmically. If nucleotides occur randomly within a DNA sequence, we expect that the dinucleotides will consist of randomly drawn nucleotides. Stated another way, we construct a dinucleotide by randomly drawing the first nucleotide from the pool of nucleotides and then drawing the second nucleotide from the same pool of nucleotides. In terms of a probability calculation, we expect the probability of dinucleotide :math:`i, j` to be specified as
+Before we do anything, we need to consider first what our null hypothesis will "look" like and to use that perspective in deciding how we will approach this problem algorithmically. If nucleotides occur randomly within a DNA sequence, we expect that the dinucleotides will consist of randomly drawn nucleotides. Stated another way, we construct a dinucleotide by randomly drawing the first nucleotide from the pool of nucleotides and then drawing the second nucleotide from the same pool of nucleotides. In terms of a probability calculation, we expect the probability of dinucleotide consisting of bases :math:`i, j` [#]_ to be specified as
+
+.. [#] To simplify the language, I'll just call this dinucleotide :math:`i, j`
 
 .. math::
 
     p(i,j) = p(i)\times p(j)
 
-where :math:`p(i,j)` is the probability of dinucleotide :math:`i,j`, and :math:`p(i)`, :math:`p(i)` the probabilities of nucleotides :math:`i` and :math:`j` respectively.
+where :math:`p(i,j)` is the probability of dinucleotide :math:`i,j`, and :math:`p(i)`, :math:`p(i)` the probabilities of nucleotides :math:`i` and :math:`j` respectively. The expected counts (:math:`e`) for a sequence of length :math:`l` dinucleotides is then
 
-This is actually the calculation made when we perform a chi-square test for independence, so we will do that here. Let's use this simple DNA sequence -- ``"AACCCCGT"`` -- to illustrate the steps we need to take in order to be able to compute a chi-square statistic.
+.. math::
+
+    e(i, j) = p(i, j)\times l
+
+This is actually the calculation made when we perform a chi-square (or |chisq|) test for independence, so we will do that here. Let's use this simple DNA sequence -- ``"AACCCCGT"`` -- to illustrate the steps we need to take in order to be able to compute a chi-square statistic.
 
 #. **Split the sequence into dinucleotides**: From our sample sequence, we need to produce the series of dinucleotides ``["AA", "CC", "CC", "GT"]``.
 
     .. jupyter-execute::
 
         def seq_to_dinucs(seq):
-            seq = "".join(seq)
+            seq = "".join(seq)  # for the case when we get seq as a list
             dinucs = [seq[i: i + 2] for i in range(0, len(seq) - 1, 2)]
             return dinucs
-    
+
         dinucs = seq_to_dinucs("AACCCCGT")
 
 #. **Define a nucleotide order**: We need this in order to be able to convert the dinucleotide string into array coordinates. We define nucleotides to be in alphabetical order. This means that the dinucleotide ``"AA"`` corresponds to indices ``(0, 0)`` while ``GT`` corresponds to indices ``(2, 3)``.
@@ -184,7 +193,7 @@ This is actually the calculation made when we perform a chi-square test for inde
         coords = [dinuc_to_indices(dinuc) for dinuc in dinucs]
         coords
 
-#. **Use dinucleotide indices to increment counts in a matrix**: We will use a numpy array for the counts. Think of the row and column labels for this as array corresponding to the nucleotides present at the first and second position of a dinucleotide. For our example, we get the following
+#. **Use dinucleotide indices to increment counts in a matrix**: We will use a numpy array for the counts. Think of the row and column labels for this array as corresponding to the nucleotides present at the first and second position of a dinucleotide. For our example, we get the following
 
     .. jupyter-execute::
 
