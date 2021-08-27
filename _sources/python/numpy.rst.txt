@@ -118,7 +118,7 @@ If we try to assign a ``float`` to the first element, it will not work because t
     data[0, 0] = 5.92132
     data
 
-.. warning:: Implicit type casting is never what you want! Because ``numpy`` does not raise an exception for this case, it is up to the programmer (you) to ensure the array ``dtype`` is appropriate. For this example, if you want to be able to assign floats to ``data`` you should convert it with ``astype(float)``.
+.. warning:: Implicit type casting is never what you want! Because ``numpy`` does not raise an exception for this case, it is up to the programmer (you) to ensure the array ``dtype`` is appropriate. For this example, if you want to be able to assign floats to ``data`` you have to convert it to be floats firste, e.g. ``data.astype(float)``.
 
 Constructing matrices
 ---------------------
