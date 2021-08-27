@@ -45,8 +45,8 @@ Consider two sequences, `X` and `Y` with lengths `n` and `m` respectively. We es
     :name: dotplot_matrix
 
     #           A  G  C  G  T
-    matches = [[0, 1, 1, 1, 1],
-               [1, 1, 1, 1, 0]]  #  A  #  T
+    matches = [[0, 1, 1, 1, 1],  #  A
+               [1, 1, 1, 1, 0]]  #  T
 
 .. jupyter-execute::
     :hide-code:
