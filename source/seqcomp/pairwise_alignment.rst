@@ -19,6 +19,7 @@ Comparisons of related DNA sequences that have been subjected to such processes 
 What we typically observe, as in this case, is the outcomes of the process.
 
 ::
+
     seq1  ACAGT
     seq2  AT
 
