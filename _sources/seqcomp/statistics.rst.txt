@@ -34,9 +34,11 @@ Let's start by defining a distribution. In statistics, we use the term distribut
 In bioinformatics, if we're lucky, the random variable of interest belongs to a known distribution that is described by a mathematical function. That function specifies the probability of observing any specific value. Examples include the Normal (or Gaussian) distribution, Gamma distribution and, of particular use to the task of understanding |pvalues|, the uniform distribution.
 
 .. index::
-    pair: uniform; statistical distribution
+    pair: uniform; statistical distributions
+    pair: |Ho|; hypothesis testing
+    pair: |pvalue|; hypothesis testing
 
-.. index:: hypothesis testing, |Ho|
+.. _pvalues:
 
 Hypothesis testing and the |pvalue|
 -----------------------------------
@@ -120,14 +122,14 @@ A challenge often encountered in bioinformatics is that a random variable of int
 If they derive from some type of permutation of observed data (as we will do below) then they are often referred to as "non-parametric" methods. Such techniques have value for estimating the confidence interval for a parameter (e.g. jackknife) or estimating a p-value (e.g. permutation tests).
 
 Computational approaches -- resampling with replacement
--------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We now consider a specific problem which we will solve using random sampling with replacement [2]_.
 
 .. [2] To illustrate "with replacement". We randomly draw an observation from the observed data set and add it to our "resampled" set. We then return the observation back to the observed data. This means the probability of observing that specific state never changes. In the alternate approach of resampling without replacement, the probability of drawing a specific state decreases with each subsequent draw of it.
 
 A worked example for estimating a p-value using a resampling statistic
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 We have a DNA sequence and we want to evaluate whether nucleotides occur randomly in the sequence. We will tackle that question by using non-overlapping dinucleotides and assessing whether their frequency is consistent with the frequencies of their constituent nucleotides.
 

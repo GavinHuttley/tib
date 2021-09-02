@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>9. Introduction to version control &mdash; Topics in Bioinformatics 2021.09.01 documentation</title>
+  <title>9. Introduction to version control &mdash; Topics in Bioinformatics 2021.09.02 documentation</title>
   
 
   
@@ -111,7 +111,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#a-demo-project">9.2. A demo project</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#create-a-demo-project-on-github">9.2.1. Create a demo project on GitHub</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cloning-the-repository-to-your-development-computer">9.2.2. Cloning the repository to your development computer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-a-python-file-to-your-repository">9.2.3. Add a python file to your repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-a-python-file-to-your-repository">9.2.3. Add a python file to your repository</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-file-to-add">9.2.3.1. Create a file to add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-a-file">9.2.3.2. Add a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#commit-the-file">9.2.3.3. Commit the file!</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#look-at-the-history-of-your-repository">9.2.4. Look at the history of your repository</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#push-your-change-to-github">9.2.5. Push your change to GitHub</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tips-for-effective-use-of-version-control">9.2.6. Tips for effective use of version control</a><ul>
@@ -315,17 +320,31 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 <dd><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>, which shows hidden files and folders too.</p>
 </dd>
 </dl>
+<div class="section" id="create-a-file-to-add">
+<h4><span class="section-number">9.2.3.1. </span>Create a file to add<a class="headerlink" href="#create-a-file-to-add" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Skip this step if you already have a file you want to add!</p>
+</div>
 <p>Now create a python file that contains just a print statement</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">&#39;print(&quot;Hello World&quot;)&#39;</span> &gt; demo.py
 </pre></div>
 </div>
-<p>add it to your repository,</p>
+</div>
+<div class="section" id="add-a-file">
+<h4><span class="section-number">9.2.3.2. </span>Add a file<a class="headerlink" href="#add-a-file" title="Permalink to this headline">¶</a></h4>
+<p>We tell <code class="docutils literal notranslate"><span class="pre">git</span></code> we want to add a file to your repository using,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add demo.py
 </pre></div>
 </div>
-<p>and commit the change.</p>
+<p>This command just “stages” the file, meaning you have told <code class="docutils literal notranslate"><span class="pre">git</span></code> to include this change when you make the next commit.</p>
+</div>
+<div class="section" id="commit-the-file">
+<h4><span class="section-number">9.2.3.3. </span>Commit the file!<a class="headerlink" href="#commit-the-file" title="Permalink to this headline">¶</a></h4>
+<p>You have not finished this until you commit the staged change!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Added a demo python script&quot;</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="look-at-the-history-of-your-repository">
