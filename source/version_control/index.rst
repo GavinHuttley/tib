@@ -94,13 +94,21 @@ When you list all [#]_ the contents of this directory you will see the ``.git`` 
 
 .. [#] ``ls -a``, which shows hidden files and folders too.
 
+Create a file to add
+^^^^^^^^^^^^^^^^^^^^
+
+.. note:: Skip this step if you already have a file you want to add!
+
 Now create a python file that contains just a print statement
 
 .. code-block:: bash
     
     $ echo 'print("Hello World")' > demo.py
 
-add it to your repository,
+Add a file
+^^^^^^^^^^
+
+We tell git we want to add the file to your repository using,
 
 .. code-block:: bash
     
