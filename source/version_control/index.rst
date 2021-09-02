@@ -108,13 +108,18 @@ Now create a python file that contains just a print statement
 Add a file
 ^^^^^^^^^^
 
-We tell git we want to add the file to your repository using,
+We tell ``git`` we want to add a file to your repository using,
 
 .. code-block:: bash
     
     $ git add demo.py
 
-and commit the change.
+This command just "stages" the file, meaning you have told ``git`` to include this change when you make the next commit.
+
+Commit the file!
+^^^^^^^^^^^^^^^^
+
+You have not finished this until you commit the staged change!
 
 .. code-block:: bash
     
