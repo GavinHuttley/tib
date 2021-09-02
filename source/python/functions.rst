@@ -223,8 +223,6 @@ Getting help on a string method that can be used to concatenate.
 Exercises
 =========
 
-#. What comparison (relational) operators can you use to confirm my statements regarding same value and different instance?
-
 #. For the built-in ``len``, is it a function or a method? Demonstrate its usage.
 
 #. Join the ``data`` variable from above with the new line character.
