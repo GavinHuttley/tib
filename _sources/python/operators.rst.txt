@@ -80,7 +80,7 @@ These are used to extend logical statements, joining clauses.
 Exercises
 =========
 
-#. Try these operators on different data types, e.g.
+#. Try the relational operators on different data types, e.g.
 
     .. jupyter-execute::
 
@@ -88,3 +88,14 @@ Exercises
 
 #. What happens if you try them on different data types?
  
+.. todo:: make the following question more explicit, and is this the best place for it?
+
+#. For the data below, write a single statement to evaluate whether ``a`` and ``b`` have same value but are different instances.
+
+    .. jupyter-execute::
+    
+        a = {0: "text"}
+        b = {0: "text"}
+        c = b
+        
+#. For the data above, write a single statement to evaluate whether ``b`` and ``c`` have same value but are different instances.
