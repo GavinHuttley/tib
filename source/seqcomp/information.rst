@@ -53,23 +53,23 @@ Information at a position
 -------------------------
 
 .. math::
-    R_i=\log(n) - H_i
+    R_i=\log_2(n) - H_i
 
-where :math:`R_i` is the information at position *i*, *n* is the number of possible states (4 for DNA), :math:`\log(n)` is the maximum possible entropy, and :math:`H_i` is the Shannon entropy for position *i*.
+where :math:`R_i` is the information at position *i*, *n* is the number of possible states (4 for DNA), :math:`\log_2(n)` is the maximum possible entropy, and :math:`H_i` is the Shannon entropy for position *i*.
 
 In this display, the letter height at a position is :math:`p_{i,l} R_i`.
 
 Problems with sequence logo
 ---------------------------
 
-The background genomic distribution is assumed to be equally frequent nucleotides. Replacing :math:`\log(n)` with the entropy of the genome can lead to :math:`R<0`.
+The background genomic distribution is assumed to be equally frequent nucleotides. Replacing :math:`\log_2(n)` with the entropy of the genome can lead to :math:`R<0`.
 
 Using relative entropy as an alternate
 --------------------------------------
 
 Relative entropy (`RE`) is defined as
 
-:math:`RE_i = \sum_{i=0}^n p_i \log(p_i / q_i)`
+:math:`RE_i = \sum_{i=0}^n p_i \log_2(p_i / q_i)`
 
 where :math:`q_i` is the background (e.g. genome) frequency of *i*.
 
