@@ -44,18 +44,18 @@ Visual display of information per aligned position
 Sequence logo's to represent information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You've seen how sequence logos are used to visualise PSSMs. They can also be used to visualise the amount of information at specific positions. The alignment objects have a ``seqlogo()`` method that computes the information (see :ref:`information`) at a position. The resulting display has the letter stack height equalling the information.
+You've seen how :index:`sequence logos` :cite:`Schneider:1990aa` are used to visualise PSSMs. They can also be used to visualise the amount of information at specific positions. The alignment objects have a ``seqlogo()`` method that computes the :ref:`information`. The resulting display has the letter stack height equalling the information.
 
 .. jupyter-execute::
 
     logo = aln.seqlogo(width=700, height=300, wrap=60, vspace=0.07)
     logo.show()
 
-.. note:: ``cogent3`` uses plotly for visualisation. Methods that return a drawable return a custom ``cogent3`` object that behaves "like" a plotly object, but is not one.
-
 The ``wrap`` argument indicates how many alignment columns to include on a row. The ``vspace`` argument how much vertical space between rows. Typically, it takes a bit of tweaking to get the plot width / height right to make the display sensible.
 
 .. warning:: This is a compute intensive type of display! Start with a short stretch of alignment first and gradually increase the length.
+
+.. note:: ``cogent3`` uses plotly for visualisation. Methods that return a drawable return a custom ``cogent3`` object that behaves "like" a plotly object, but is not one.
 
 Information plots
 ^^^^^^^^^^^^^^^^^
@@ -145,7 +145,9 @@ This can be useful for examining the existence of inversions, repeated sequence 
 Exercises
 =========
 
-Download the :download:`large alignment of BRCA1 sequences </data/brca1.fasta>`.
+Download the :download:`large alignment of BRCA1 sequences </data/brca1.fasta>`, or :ref:`using Python <download_data>`.
+
+#. How does interpretation of a sequence logo from an alignment of sequences descended from a common ancestor differ from that described in :ref:`encoding_info`?
 
 #. Look at the ArrayAlignment_ documentation and identify methods that can be used to select the positions that are variable.
 
@@ -154,4 +156,3 @@ Download the :download:`large alignment of BRCA1 sequences </data/brca1.fasta>`.
 #. Select a smallish segment from the one of the sequences within the downloaded data set (say < 50 bases). Manually edit that so that contains an inversion. Use ``make_unaligned_seqs()`` to create a sequence collection and dotplot this synthetic sequence to itself using ``rc=True``.
 
 #. Modify your synthetic sequence to have some repeats and see what the effect of changing ``window`` and ``threshold`` are on the detection of those.
-

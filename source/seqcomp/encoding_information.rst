@@ -15,6 +15,8 @@
         
         Logo `from Jaspar <http://jaspar.genereg.net/matrix/MA0108.2/>`_.
 
+.. _encoding_info:
+
 The role of sequence in encoding life
 =====================================
 
@@ -36,7 +38,7 @@ It is long been appreciated that regulatory control of genes underpins cell-type
     
     From `Wasserman, & Sandelin <http://doi.org/10.1038/nrg1315>`_
 
-Mechanistically, how do these interactions with DNA work? Some short stretches of DNA sequence (referred to as motifs) are central to regulation of gene expression. One instance of this is illustrated in `Binding to DNA`_. The crystal structure of the transcription factor protein TBP and it's target DNA sequence shows how the former slots into the minor groove of the associated DNA sequence. The lower panel shows a visualisation (referred to as a sequence logo) that summarises the affinity of TBP to specific bases in a DNA sequence. I point out here, not all DNA interacting molecules demonstrate such clear target sequence specificity. Of particular note is evidence that histone octamers do not have such specificity.
+Mechanistically, how do these interactions with DNA work? Some short stretches of DNA sequence (referred to as motifs) are central to regulation of gene expression. One instance of this is illustrated in `Binding to DNA`_. The crystal structure of the transcription factor protein TBP and it's target DNA sequence shows how the former slots into the minor groove of the associated DNA sequence. The lower panel shows a visualisation (referred to as a :index:`sequence logo` :cite:`Schneider:1990aa`) that summarises the affinity of TBP to specific bases in a DNA sequence. I point out here, not all DNA interacting molecules demonstrate such clear target sequence specificity. Of particular note is evidence that histone octamers do not have such specificity.
 
 .. sidebar:: Encoded in DNA
     :name: Encoded in DNA
