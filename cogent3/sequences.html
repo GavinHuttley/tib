@@ -1,41 +1,21 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>8.2. Alignments, Sequence Collections and Sequences &mdash; Topics in Bioinformatics 2021.09.13 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>8.2. Alignments, Sequence Collections and Sequences &mdash; Topics in Bioinformatics 2021.09.20 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -45,39 +25,20 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="8.4. Exploring genetic variation using Alignments" href="explore_variation.html" />
     <link rel="prev" title="8.1. Biological Data Formats" href="data_formats.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +46,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
@@ -153,75 +103,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Topics in Bioinformatics</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a> &raquo;</li>
-        
       <li><span class="section-number">8.2. </span>Alignments, Sequence Collections and Sequences</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/sequences.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -251,12 +157,12 @@
 </div>
 </div>
 <div class="section" id="alignments-sequence-collections-and-sequences">
-<h1><span class="section-number">8.2. </span>Alignments, Sequence Collections and Sequences<a class="headerlink" href="#alignments-sequence-collections-and-sequences" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">8.2. </span>Alignments, Sequence Collections and Sequences<a class="headerlink" href="#alignments-sequence-collections-and-sequences" title="Permalink to this headline"></a></h1>
 <p>Biological sequences are represented by several objects in <code class="docutils literal notranslate"><span class="pre">cogent3</span></code>. Typically, these are created by loading from file or by making them directly from standard python types. There is no more fundamental type than that of sequences. So let’s just get cracking and actually load some data from a file. Along the way, I’ll point out different aspects of the process of creating objects that you need to pay attention to.</p>
 <div class="section" id="alignments">
-<h2><span class="section-number">8.2.1. </span>Alignments<a class="headerlink" href="#alignments" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2.1. </span>Alignments<a class="headerlink" href="#alignments" title="Permalink to this headline"></a></h2>
 <div class="section" id="loading-aligned-sequences-from-a-file">
-<h3><span class="section-number">8.2.1.1. </span>Loading aligned sequences from a file<a class="headerlink" href="#loading-aligned-sequences-from-a-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.1. </span>Loading aligned sequences from a file<a class="headerlink" href="#loading-aligned-sequences-from-a-file" title="Permalink to this headline"></a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">load_aligned_seqs</span>
@@ -315,7 +221,7 @@
 <p>When we talk about an alignment with <code class="docutils literal notranslate"><span class="pre">cogent3</span></code>, this is what we mean.</p>
 </div>
 <div class="section" id="getting-the-length-of-an-alignment">
-<h3><span class="section-number">8.2.1.2. </span>Getting the length of an alignment<a class="headerlink" href="#getting-the-length-of-an-alignment" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.2. </span>Getting the length of an alignment<a class="headerlink" href="#getting-the-length-of-an-alignment" title="Permalink to this headline"></a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">aln</span><span class="p">)</span>
@@ -330,7 +236,7 @@
 </div>
 </div>
 <div class="section" id="getting-the-lengths-of-individual-sequences">
-<h3><span class="section-number">8.2.1.3. </span>Getting the lengths of individual sequences<a class="headerlink" href="#getting-the-lengths-of-individual-sequences" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.3. </span>Getting the lengths of individual sequences<a class="headerlink" href="#getting-the-lengths-of-individual-sequences" title="Permalink to this headline"></a></h3>
 <p>Wait! Aren’t all sequences in a alignment exactly the same length? Yes, but only because the include gaps. It’s often the case that you want to know how much actual sequence data there is for each sequence. In this case, we use the <code class="docutils literal notranslate"><span class="pre">get_lengths()</span></code> method.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -372,7 +278,7 @@
 </div>
 </div>
 <div class="section" id="getting-the-number-of-sequences">
-<h3><span class="section-number">8.2.1.4. </span>Getting the number of sequences<a class="headerlink" href="#getting-the-number-of-sequences" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.4. </span>Getting the number of sequences<a class="headerlink" href="#getting-the-number-of-sequences" title="Permalink to this headline"></a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aln</span><span class="o">.</span><span class="n">num_seqs</span>
@@ -387,7 +293,7 @@
 </div>
 </div>
 <div class="section" id="getting-the-sequence-names">
-<h3><span class="section-number">8.2.1.5. </span>Getting the sequence names<a class="headerlink" href="#getting-the-sequence-names" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.5. </span>Getting the sequence names<a class="headerlink" href="#getting-the-sequence-names" title="Permalink to this headline"></a></h3>
 <p>These are available as the <code class="docutils literal notranslate"><span class="pre">names</span></code> attribute.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -403,7 +309,7 @@
 </div>
 </div>
 <div class="section" id="getting-the-individual-sequences">
-<h3><span class="section-number">8.2.1.6. </span>Getting the individual sequences<a class="headerlink" href="#getting-the-individual-sequences" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.6. </span>Getting the individual sequences<a class="headerlink" href="#getting-the-individual-sequences" title="Permalink to this headline"></a></h3>
 <p>Alignments have many useful attributes, including the individual sequences. These can be accessed either by the <code class="docutils literal notranslate"><span class="pre">seqs</span></code> attribute of the instance (this is just a list of sequence objects).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -493,7 +399,7 @@
 </div>
 </div>
 <div class="section" id="alignments-are-aligned-column-based">
-<span id="index-0"></span><h3><span class="section-number">8.2.1.7. </span>Alignments are aligned column based<a class="headerlink" href="#alignments-are-aligned-column-based" title="Permalink to this headline">¶</a></h3>
+<span id="index-0"></span><h3><span class="section-number">8.2.1.7. </span>Alignments are aligned column based<a class="headerlink" href="#alignments-are-aligned-column-based" title="Permalink to this headline"></a></h3>
 <p>This means when you slice them, you are slicing alignment columns.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -566,11 +472,11 @@
 </div>
 </div>
 <div class="section" id="cogent3-alignment-types-are-immutable">
-<h3><span class="section-number">8.2.1.8. </span><code class="docutils literal notranslate"><span class="pre">cogent3</span></code> <code class="docutils literal notranslate"><span class="pre">Alignment</span></code> types are immutable!<a class="headerlink" href="#cogent3-alignment-types-are-immutable" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.8. </span><code class="docutils literal notranslate"><span class="pre">cogent3</span></code> <code class="docutils literal notranslate"><span class="pre">Alignment</span></code> types are immutable!<a class="headerlink" href="#cogent3-alignment-types-are-immutable" title="Permalink to this headline"></a></h3>
 <p>So any method that modifies their data returns a new instance.</p>
 </div>
 <div class="section" id="getting-a-subset-of-sequences">
-<h3><span class="section-number">8.2.1.9. </span>Getting a subset of sequences<a class="headerlink" href="#getting-a-subset-of-sequences" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.9. </span>Getting a subset of sequences<a class="headerlink" href="#getting-a-subset-of-sequences" title="Permalink to this headline"></a></h3>
 <p>This is done via a method.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -604,7 +510,7 @@
 </div>
 </div>
 <div class="section" id="converting-sequences-into-a-standard-python-dict">
-<h3><span class="section-number">8.2.1.10. </span>Converting sequences into a standard Python <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#converting-sequences-into-a-standard-python-dict" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.10. </span>Converting sequences into a standard Python <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#converting-sequences-into-a-standard-python-dict" title="Permalink to this headline"></a></h3>
 <p>This is useful if you want to directly manipulate the strings, for instance <a class="footnote-reference brackets" href="#id4" id="id3">2</a></p>
 <dl class="footnote brackets">
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
@@ -626,7 +532,7 @@
 </div>
 </div>
 <div class="section" id="creating-an-alignment-from-a-python-dict">
-<h3><span class="section-number">8.2.1.11. </span>Creating an alignment from a Python <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#creating-an-alignment-from-a-python-dict" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.11. </span>Creating an alignment from a Python <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#creating-an-alignment-from-a-python-dict" title="Permalink to this headline"></a></h3>
 <p>We use a different function for building an alignment from standard Python types. The function has a very similar interface to <code class="docutils literal notranslate"><span class="pre">load_unaligned_seqs()</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -662,7 +568,7 @@
 </div>
 </div>
 <div class="section" id="writing-sequences-to-file">
-<span id="index-1"></span><h3><span class="section-number">8.2.1.12. </span>Writing sequences to file<a class="headerlink" href="#writing-sequences-to-file" title="Permalink to this headline">¶</a></h3>
+<span id="index-1"></span><h3><span class="section-number">8.2.1.12. </span>Writing sequences to file<a class="headerlink" href="#writing-sequences-to-file" title="Permalink to this headline"></a></h3>
 <p>The various alignment and sequence collection objects have a <code class="docutils literal notranslate"><span class="pre">write()</span></code> method. Providing a file path with a known suffix generates a text file with that format. For example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subset2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;some_dir/subset2.fasta&quot;</span><span class="p">)</span>
 </pre></div>
@@ -670,12 +576,12 @@
 <p>will produce a fasta formatted sequence file.</p>
 </div>
 <div class="section" id="interpreting-the-display-of-alignments-in-jupyter-notebooks">
-<h3><span class="section-number">8.2.1.13. </span>Interpreting the display of alignments in Jupyter notebooks<a class="headerlink" href="#interpreting-the-display-of-alignments-in-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.13. </span>Interpreting the display of alignments in Jupyter notebooks<a class="headerlink" href="#interpreting-the-display-of-alignments-in-jupyter-notebooks" title="Permalink to this headline"></a></h3>
 <p>The visualisation you see is a style known as a pretty print. The <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code> character indicates a match to the character in the first sequence in that column. We refer to this first sequence as the reference.</p>
 <p>Colouring is provided for alignments with RNA, DNA or PROTEIN moltypes. If you do not specify a moltype on loading / creating an alignment, the display will not be coloured.</p>
 </div>
 <div class="section" id="controlling-the-display-in-jupyter-notebooks">
-<h3><span class="section-number">8.2.1.14. </span>Controlling the display in Jupyter notebooks<a class="headerlink" href="#controlling-the-display-in-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.14. </span>Controlling the display in Jupyter notebooks<a class="headerlink" href="#controlling-the-display-in-jupyter-notebooks" title="Permalink to this headline"></a></h3>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 </div>
@@ -770,7 +676,7 @@
 </div>
 </div>
 <div class="section" id="translating-nucleic-acids-to-protein">
-<h3><span class="section-number">8.2.1.15. </span>Translating nucleic acids to protein<a class="headerlink" href="#translating-nucleic-acids-to-protein" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.15. </span>Translating nucleic acids to protein<a class="headerlink" href="#translating-nucleic-acids-to-protein" title="Permalink to this headline"></a></h3>
 <p>There are a few factors to consider here. First, some sequences may be incomplete – meaning the actual sequence does not cover the entire gene and may end with an incomplete codon. Second, the sequence may be complete but terminate with a stop codon. Both of those will cause the translation method to fail. In this case, the data has an incomplete codon (it contains a gap character), which we address as follows</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -835,7 +741,7 @@
 </div>
 </div>
 <div class="section" id="getting-the-reverse-complement-of-nucleic-acid-sequences">
-<h3><span class="section-number">8.2.1.16. </span>Getting the reverse complement of nucleic acid sequences<a class="headerlink" href="#getting-the-reverse-complement-of-nucleic-acid-sequences" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.16. </span>Getting the reverse complement of nucleic acid sequences<a class="headerlink" href="#getting-the-reverse-complement-of-nucleic-acid-sequences" title="Permalink to this headline"></a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">rc()</span></code> method!</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -870,10 +776,10 @@
 </div>
 </div>
 <div class="section" id="sequencecollection-for-unaligned-collections-of-sequences">
-<h2><span class="section-number">8.2.2. </span><code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> – for unaligned collections of sequences<a class="headerlink" href="#sequencecollection-for-unaligned-collections-of-sequences" title="Permalink to this headline">¶</a></h2>
-<p>If you sequences are not aligned, your sequences will likely not be of the same length. To load such sequence data from file, or create from Python objects, you use the functions <code class="docutils literal notranslate"><span class="pre">load_unaligned_seqs()</span></code> and <code class="docutils literal notranslate"><span class="pre">make_unaligned_seqs()</span></code>. The signatures of these functions match those of their counterparts for aligned sequences. Likewise, many of the methods on <code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> are the same as for the alignment data types (see <a class="reference external" href="https://cogent3.org/doc/api/alignment/classes/cogent3.core.alignment.SequenceCollection.html#cogent3.core.alignment.SequenceCollection">SequenceCollection</a> for documentation). However, the <code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> type cannot be sliced.</p>
+<h2><span class="section-number">8.2.2. </span><code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> – for unaligned collections of sequences<a class="headerlink" href="#sequencecollection-for-unaligned-collections-of-sequences" title="Permalink to this headline"></a></h2>
+<p>If your sequences are not aligned, they may not be of the same length. To load such sequence data from file, or create from Python objects, you use the functions <code class="docutils literal notranslate"><span class="pre">load_unaligned_seqs()</span></code> and <code class="docutils literal notranslate"><span class="pre">make_unaligned_seqs()</span></code>. The signatures of these functions match those of their counterparts for aligned sequences. Likewise, many of the methods on <code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> are the same as for the alignment data types (see <a class="reference external" href="https://cogent3.org/doc/api/alignment/classes/cogent3.core.alignment.SequenceCollection.html#cogent3.core.alignment.SequenceCollection">SequenceCollection</a> for documentation). But note that a <code class="docutils literal notranslate"><span class="pre">SequenceCollection</span></code> cannot be sliced.</p>
 <div class="section" id="making-from-a-collection-of-unaligned-sequences-from-dict">
-<h3><span class="section-number">8.2.2.1. </span>Making from a collection of unaligned sequences from dict<a class="headerlink" href="#making-from-a-collection-of-unaligned-sequences-from-dict" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.2.1. </span>Making from a collection of unaligned sequences from dict<a class="headerlink" href="#making-from-a-collection-of-unaligned-sequences-from-dict" title="Permalink to this headline"></a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_unaligned_seqs</span>
@@ -885,7 +791,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7f4f0e560340&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7ff2dc356a30&gt;
 </pre></div>
 </div>
 </div>
@@ -921,7 +827,7 @@
 </div>
 </div>
 <div class="section" id="making-from-a-collection-of-unaligned-sequences-an-alignment">
-<h3><span class="section-number">8.2.2.2. </span>Making from a collection of unaligned sequences an Alignment<a class="headerlink" href="#making-from-a-collection-of-unaligned-sequences-an-alignment" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.2.2. </span>Making from a collection of unaligned sequences an Alignment<a class="headerlink" href="#making-from-a-collection-of-unaligned-sequences-an-alignment" title="Permalink to this headline"></a></h3>
 <p>Just use the <code class="docutils literal notranslate"><span class="pre">degap()</span></code> method. This strips all gap characters (<span class="incremental">“-“</span>) from the sequences.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -931,14 +837,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7f4f0e560be0&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7ff2dc341d90&gt;
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="reverse-complement-and-many-other-methods-are-available-as-for-alignment-data-types">
-<h3><span class="section-number">8.2.2.3. </span>Reverse complement and many other methods are available as for alignment data types<a class="headerlink" href="#reverse-complement-and-many-other-methods-are-available-as-for-alignment-data-types" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.2.3. </span>Reverse complement and many other methods are available as for alignment data types<a class="headerlink" href="#reverse-complement-and-many-other-methods-are-available-as-for-alignment-data-types" title="Permalink to this headline"></a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rc_ed</span> <span class="o">=</span> <span class="n">coll</span><span class="o">.</span><span class="n">rc</span><span class="p">()</span>
@@ -971,9 +877,9 @@
 </div>
 </div>
 <div class="section" id="sequences">
-<h2><span class="section-number">8.2.3. </span>Sequences<a class="headerlink" href="#sequences" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2.3. </span>Sequences<a class="headerlink" href="#sequences" title="Permalink to this headline"></a></h2>
 <p>Collections and alignments give you an organised interface to manipulate groups of sequences. There is also a specific set of sequence data types. These consist of classes that are specific to the different <a class="reference internal" href="moltype.html#moltypes"><span class="std std-ref">molecular types</span></a>. (See <a class="reference external" href="https://cogent3.org/doc/api/sequence/classes/cogent3.core.sequence.DnaSequence.html#cogent3.core.sequence.DnaSequence">DnaSequence</a> and <a class="reference external" href="https://cogent3.org/doc/api/sequence/classes/cogent3.core.sequence.ProteinSequence.html#cogent3.core.sequence.ProteinSequence">ProteinSequence</a> for the documentation.)</p>
-<p>We can make a sequence from a Python data types.</p>
+<p>We can make a sequence from Python data types.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_seq</span>
@@ -1005,67 +911,55 @@
 <p><i>9 DnaSequence</i></p>
 </div></div></div>
 </div>
-<p>Sequences are loaded from file using the load functions for collections, or alignments.</p>
+<p>Sequences are loaded from file using the <a class="reference external" href="https://cogent3.org/doc/api/index.html">load data</a> functions for collections (<code class="docutils literal notranslate"><span class="pre">load_unaligned_seqs</span></code>), or alignments (<code class="docutils literal notranslate"><span class="pre">load_aligned_seqs</span></code>).</p>
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">8.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<p>Download the <a class="reference download internal" download="" href="../_downloads/b772b1a069dd1c0925b4e5a7f3ceb4f9/brca1-bats.fasta"><code class="xref download docutils literal notranslate"><span class="pre">alignment</span> <span class="pre">of</span> <span class="pre">bat</span> <span class="pre">BRCA1</span> <span class="pre">sequences</span></code></a>.</p>
+<h1><span class="section-number">8.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+<p>Download the <a class="reference download internal" download="" href="../_downloads/b772b1a069dd1c0925b4e5a7f3ceb4f9/brca1-bats.fasta"><code class="xref download docutils literal notranslate"><span class="pre">alignment</span> <span class="pre">of</span> <span class="pre">bat</span> <span class="pre">BRCA1</span> <span class="pre">sequences</span></code></a>, or <a class="reference internal" href="index.html#download-data"><span class="std std-ref">using Python</span></a>.</p>
 <ol class="arabic simple">
-<li><p>Try removing the <code class="docutils literal notranslate"><span class="pre">incomplete_ok</span></code> argument from the <code class="docutils literal notranslate"><span class="pre">get_translation()</span></code> method.</p></li>
-<li><p>Create an alignment from a dict with sequences that you make up. Slice the alignment to remove the last 3 aligned columns.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">incomplete_ok</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">get_translation()</span></code> method to <code class="docutils literal notranslate"><span class="pre">False</span></code>. What happens and why?</p></li>
+<li><p>Create an alignment from a dict with sequences that you make up <a class="footnote-reference brackets" href="#id6" id="id5">3</a>. Slice the alignment to remove the last 3 aligned columns.</p></li>
 <li><p>Create an alignment from a dict with sequences that you make up. Slice the alignment to get every second codon position.</p></li>
 <li><p>Using the downloaded alignment, count the number of second codon positions that have variation.</p></li>
-<li><p>Load a data set without specifying the <code class="docutils literal notranslate"><span class="pre">moltype</span></code>. Use a method on the object to convert it to DNA.</p></li>
+<li><p>Load the downloaded alignment without specifying the <code class="docutils literal notranslate"><span class="pre">moltype</span></code>. Use a method on the object to convert it to the DNA moltype.</p></li>
 </ol>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>Sequences in alignments must be exactly the same length.</p>
+</dd>
+</dl>
 </div>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="explore_variation.html" class="btn btn-neutral float-right" title="8.4. Exploring genetic variation using Alignments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="data_formats.html" class="btn btn-neutral float-left" title="8.1. Biological Data Formats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="explore_variation.html" class="btn btn-neutral float-right" title="8.4. Exploring genetic variation using Alignments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gavin Huttley.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

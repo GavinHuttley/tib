@@ -1,41 +1,21 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>7.5. Mutation – the origin of genetic variation &mdash; Topics in Bioinformatics 2021.09.13 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>7.5. Mutation – the origin of genetic variation &mdash; Topics in Bioinformatics 2021.09.20 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -45,39 +25,20 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7.6. Statistical methods for molecular evolutionary analyses" href="max_likelihood.html" />
     <link rel="prev" title="7.4. The neutral theory of molecular evolution" href="neutral_theory.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +46,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
@@ -129,75 +79,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Topics in Bioinformatics</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">7. </span>Molecular Evolution</a> &raquo;</li>
-        
       <li><span class="section-number">7.5. </span>Mutation – the origin of genetic variation</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/molevol/mutation.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -223,7 +129,7 @@
 }
 </style>
 <div class="section" id="mutation-the-origin-of-genetic-variation">
-<h1><span class="section-number">7.5. </span>Mutation – the origin of genetic variation<a class="headerlink" href="#mutation-the-origin-of-genetic-variation" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7.5. </span>Mutation – the origin of genetic variation<a class="headerlink" href="#mutation-the-origin-of-genetic-variation" title="Permalink to this headline"></a></h1>
 <p>Mutation manifests as a change in the primary DNA <a class="footnote-reference brackets" href="#id3" id="id1">1</a> sequence of an organism. Only mutations that occur within the cell lineage that produce sex cells, the germline, can have an influence on future generations. We refer to these as germline mutations.</p>
 <div class="sidebar" id="mutant-fate">
 <p class="sidebar-title">What happens to a mutation?</p>
@@ -241,7 +147,7 @@
 </dl>
 <p>Any process that influences the different stages in a characteristic manner will contribute to the characteristics of the distribution of genetic variation.</p>
 <div class="section" id="types-of-mutation">
-<span id="index-0"></span><h2><span class="section-number">7.5.1. </span>Types of mutation<a class="headerlink" href="#types-of-mutation" title="Permalink to this headline">¶</a></h2>
+<span id="index-0"></span><h2><span class="section-number">7.5.1. </span>Types of mutation<a class="headerlink" href="#types-of-mutation" title="Permalink to this headline"></a></h2>
 <p>There are a 3 main mutation types.</p>
 <dl class="simple">
 <dt>Point mutations</dt><dd><p>The state of a single nucleotide changes between parent and daughter DNA sequence. The daughter DNA molecule is the same length as the parent.</p>
@@ -254,7 +160,7 @@
 <p>Within each of these, there are substantial sub-categories. We are interested in insertion / deletion events (indels) insomuch as they motivate the need for sequence alignment algorithms. Our principal focus, however, is on point mutation processes since those are the dominant type of genetic variation data.</p>
 </div>
 <div class="section" id="point-mutations">
-<h2><span class="section-number">7.5.2. </span>Point mutations<a class="headerlink" href="#point-mutations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.5.2. </span>Point mutations<a class="headerlink" href="#point-mutations" title="Permalink to this headline"></a></h2>
 <p id="index-1">There are 12 distinct point mutation events since each nucleotide can mutate to 3 possible alternates (e.g. A<span class="math notranslate nohighlight">\(\rightarrow\)</span>C, A<span class="math notranslate nohighlight">\(\rightarrow\)</span>G, A<span class="math notranslate nohighlight">\(\rightarrow\)</span>T). These are often categorised by the chemical classes of the bases involved. Specifically, transitions and transversions. Point mutations that start and end in bases belonging to the same chemical class are referred to as transitions, i.e. changes involving A<span class="math notranslate nohighlight">\(\rightarrow\)</span>G, G<span class="math notranslate nohighlight">\(\rightarrow\)</span>A, C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T, T<span class="math notranslate nohighlight">\(\rightarrow\)</span>C (blue lines in the <a class="reference internal" href="#directions"><span class="std std-ref">figure</span></a>). The remaining changes are assigned to the transversion category. As it turns out, there are differences in the rate at which mutations of these categories are observed and it has been argued that the excess of transitions reflects the chemical properties of DNA <span id="id5">[<a class="reference internal" href="#id37" title="M D Topal and J R Fresco. Complementary base pairing and the origin of substitution mutations. Nature, 263:285–289, 1976.">TF76</a>]</span>.</p>
 <div class="sidebar" id="directions">
 <p class="sidebar-title">Mutation directions</p>
@@ -278,7 +184,7 @@ G -&gt; T [dir=both];
 <div class="sidebar" id="ctot-motif">
 <p class="sidebar-title">Context dependence of C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutations</p>
 <div class="figure align-default" id="id51">
-<img alt="../_images/CtoT-human-intergenic.svg" src="../_images/CtoT-human-intergenic.svg" /><p class="caption"><span class="caption-text">Information analysis of human intergenic SNPs resulting from a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutation <span id="id7">[<a class="reference internal" href="../seqcomp/information.html#id31" title="Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. Genetics, 205:843-856, 2017. doi:10.1534/genetics.116.195677.">ZNYH17</a>]</span>.</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
+<img alt="../_images/CtoT-human-intergenic.svg" src="../_images/CtoT-human-intergenic.svg" /><p class="caption"><span class="caption-text">Information analysis of human intergenic SNPs resulting from a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutation <span id="id7">[<a class="reference internal" href="../seqcomp/information.html#id31" title="Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. Genetics, 205:843-856, 2017. doi:10.1534/genetics.116.195677.">ZNYH17</a>]</span>.</span><a class="headerlink" href="#id51" title="Permalink to this image"></a></p>
 <div class="legend">
 <p>RE is relative entropy. Position is relative to the point mutation (at 0). The normal letter orientation in the plot indicates that base was over-represented in mutant sequences compared to the reference distribution. The rotated orientation indicates that base was under-represented in mutant sequences.</p>
 </div>
@@ -286,7 +192,7 @@ G -&gt; T [dir=both];
 </div>
 </div>
 <div class="section" id="statistical-measures-of-sequence-composition-that-relate-to-mutation">
-<h2><span class="section-number">7.5.3. </span>Statistical measures of sequence composition that relate to mutation<a class="headerlink" href="#statistical-measures-of-sequence-composition-that-relate-to-mutation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.5.3. </span>Statistical measures of sequence composition that relate to mutation<a class="headerlink" href="#statistical-measures-of-sequence-composition-that-relate-to-mutation" title="Permalink to this headline"></a></h2>
 <p>As the C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T case illustrates, chemical and metabolic processes affect how mutation occurs. To further illustrate this, we consider an additional property of DNA sequences – strand.</p>
 <p>When we discuss processes via which lesions form in DNA, we are predominantly referencing chemical reactions affecting the base part of a nucleotide. Thymidine dimers arise from UV light induced covalent bonds between Thymine bases that are physically adjacent <em>on the same DNA strand</em>. This strand orientation leads to a simple question: Does mutation occur in a strand symmetric way?</p>
 <p>To address this, let’s think back to what we actually observe. We do not observe the mutation process, we observe the outcome <a class="footnote-reference brackets" href="#id12" id="id8">3</a>. Let’s assume we detect a G<span class="math notranslate nohighlight">\(\rightarrow\)</span>A difference between the parent DNA sequence and its immediate descendant. We represent DNA sequences by picking one strand and displaying that information only <a class="footnote-reference brackets" href="#id13" id="id9">4</a>, often an entirely arbitrary choice. Accordingly, the designation of mutation direction is also arbitrary and, for our example, its possible this mutation was in fact a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T on the other strand. If the mutation was of CpG→CpA, it’s likely the actual mutation involved the <sup>5</sup>mC on the opposite strand since CpG is a strand symmetric dinucleotide (the reverse complement is also CpG).</p>
@@ -310,11 +216,11 @@ G -&gt; T [dir=both];
 <p class="sidebar-title">The influence of DNA replication</p>
 <div class="figure align-default" id="id52">
 <img alt="../_images/bsubtilits_symmetry.png" src="../_images/bsubtilits_symmetry.png" />
-<p class="caption"><span class="caption-text"><em>Bacillus subtilis</em> genome.</span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><em>Bacillus subtilis</em> genome.</span><a class="headerlink" href="#id52" title="Permalink to this image"></a></p>
 </div>
 <div class="figure align-default" id="id53">
 <img alt="../_images/synechocystis_symmetry.png" src="../_images/synechocystis_symmetry.png" />
-<p class="caption"><span class="caption-text"><em>Synechocystis</em> PCC6803 genome.</span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><em>Synechocystis</em> PCC6803 genome.</span><a class="headerlink" href="#id53" title="Permalink to this image"></a></p>
 </div>
 <p>Panels copied from Figure 1 of <span id="id15">[<a class="reference internal" href="#id35" title="Jan Mràzek and Samuel Karlin. Strand compositional asymmetry in bacterial and large viral genomes. Proceedings of the National Academy of Sciences of the United States of America, 95:3720–3725, 1998. URL: www.pnas.org., doi:10.1073/pnas.95.7.3720.">MrazekK98</a>]</span>. The <span class="math notranslate nohighlight">\(y\)</span>-axis is <span class="math notranslate nohighlight">\(-S_{GC}\)</span> computed from a 50kb sliding window across the corresponding genome. The statistic is assigned to the middle base of thew window. The arrow indicates the origin of replication.</p>
 </div>
@@ -355,50 +261,33 @@ G -&gt; T [dir=both];
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="max_likelihood.html" class="btn btn-neutral float-right" title="7.6. Statistical methods for molecular evolutionary analyses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="neutral_theory.html" class="btn btn-neutral float-left" title="7.4. The neutral theory of molecular evolution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="max_likelihood.html" class="btn btn-neutral float-right" title="7.6. Statistical methods for molecular evolutionary analyses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gavin Huttley.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

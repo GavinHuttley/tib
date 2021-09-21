@@ -1,41 +1,21 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>5.17. Functions and methods &mdash; Topics in Bioinformatics 2021.09.13 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>5.17. Functions and methods &mdash; Topics in Bioinformatics 2021.09.20 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -45,39 +25,20 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5.19. Dealing with strings" href="strings.html" />
     <link rel="prev" title="5.15. Fixing errors" href="interpreting_errors.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +46,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
@@ -167,75 +117,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Topics in Bioinformatics</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-        
       <li><span class="section-number">5.17. </span>Functions and methods</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/functions.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -261,10 +167,10 @@
 }
 </style>
 <div class="section" id="functions-and-methods">
-<span id="index-0"></span><h1><span class="section-number">5.17. </span>Functions and methods<a class="headerlink" href="#functions-and-methods" title="Permalink to this headline">¶</a></h1>
+<span id="index-0"></span><h1><span class="section-number">5.17. </span>Functions and methods<a class="headerlink" href="#functions-and-methods" title="Permalink to this headline"></a></h1>
 <p>This is a central concept in programming. It provides a means of encapsulating several lines of code (that do something useful) and providing a reference such that this block can be called in multiple places in a larger program.</p>
 <div class="section" id="builtin-functions">
-<span id="index-1"></span><h2><span class="section-number">5.17.1. </span>Builtin functions<a class="headerlink" href="#builtin-functions" title="Permalink to this headline">¶</a></h2>
+<span id="index-1"></span><h2><span class="section-number">5.17.1. </span>Builtin functions<a class="headerlink" href="#builtin-functions" title="Permalink to this headline"></a></h2>
 <p>We have already been using some built-in functions. These are <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">type()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>, etc.</p>
 <p>Here are the key patterns to using functions that you need to remember.</p>
 <ol class="arabic simple">
@@ -325,7 +231,7 @@
 </div>
 </div>
 <div class="section" id="python-is-an-object-oriented-language">
-<h2><span class="section-number">5.17.2. </span>Python is an object oriented language<a class="headerlink" href="#python-is-an-object-oriented-language" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.17.2. </span>Python is an object oriented language<a class="headerlink" href="#python-is-an-object-oriented-language" title="Permalink to this headline"></a></h2>
 <p>A precursor to understanding methods is to understand what is meant by an “object”.</p>
 <p>As the title states, Python belongs to a class of programming languages called “object oriented”. The success of “object oriented” programming languages (there are many) arise (at least in part) from the fact they encourage modularisation of code. This modularisation reduces the number of lines of code and makes the resulting programs easier to write, to check for bugs, and thus to maintain.</p>
 <p>So what is an “object”? It’s an abstract concept, but in essence an object represents something. It can be a number, a string, a file, etc.. Thus “objects” are instances of a type of data.</p>
@@ -338,7 +244,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>139816154846912
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>139663290034496
 </pre></div>
 </div>
 </div>
@@ -351,7 +257,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>139816154461504
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>139663290086784
 </pre></div>
 </div>
 </div>
@@ -359,7 +265,7 @@
 <p>Although <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are equivalently defined – both lists of exactly the same integers – they are not the same instance.</p>
 </div>
 <div class="section" id="methods">
-<span id="index-4"></span><span id="id4"></span><h2><span class="section-number">5.17.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<span id="index-4"></span><span id="id4"></span><h2><span class="section-number">5.17.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline"></a></h2>
 <p>Which leads us to methods. A method is a function bound to a specific object that applies to the data encapsulated in that instance.</p>
 <p>This means that when you call a method on one object, it only operates on that object. I’ll demonstrate that by using a method on lists to sort the elements.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -397,7 +303,7 @@
 <p>Simple!</p>
 </div>
 <div class="section" id="so-how-do-i-use-methods-and-functions">
-<span id="index-5"></span><h2><span class="section-number">5.17.4. </span>So how do I use methods and functions?<a class="headerlink" href="#so-how-do-i-use-methods-and-functions" title="Permalink to this headline">¶</a></h2>
+<span id="index-5"></span><h2><span class="section-number">5.17.4. </span>So how do I use methods and functions?<a class="headerlink" href="#so-how-do-i-use-methods-and-functions" title="Permalink to this headline"></a></h2>
 <p>There are some general principles in how to use functions and methods. First, using <code class="docutils literal notranslate"><span class="pre">help()</span></code> will show you what arguments a function or method can take</p>
 <div class="sidebar" id="interpreting-help-for-a-function">
 <p class="sidebar-title">Interpreting help() for a function</p>
@@ -410,7 +316,7 @@
 </ol>
 </div>
 <div class="section" id="functions">
-<h3><span class="section-number">5.17.4.1. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.17.4.1. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
 <p>Focussing on functions first. If a function is what we call a void function then it operates only on the arguments you give it and returns nothing <a class="footnote-reference brackets" href="#id6" id="id5">2</a>. The obvious example of this is <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Fruitful functions actually return a value. You can establish what type that value will be by either reading help (see <a class="reference internal" href="#interpreting-help-for-a-function">Interpreting help() for a function</a>) or running an experiment (calling the function with some data).</p>
 <dl class="footnote brackets">
 <dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id5">2</a></span></dt>
@@ -419,7 +325,7 @@
 </dl>
 </div>
 <div class="section" id="id7">
-<h3><span class="section-number">5.17.4.2. </span>Methods<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.17.4.2. </span>Methods<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
 <p>It becomes a little bit trickier when we talk about methods. That said, the strategy suggested above of using <code class="docutils literal notranslate"><span class="pre">help()</span></code> or simple experiments applies here too.</p>
 <p>Recalling that methods are bound to the data they operate on, we can divide methods into those which:</p>
 <ul class="simple">
@@ -506,7 +412,7 @@
 </div>
 </div>
 <div class="section" id="a-useful-trick-for-concatenating-strings">
-<h2><span class="section-number">5.17.5. </span>A useful trick for concatenating strings<a class="headerlink" href="#a-useful-trick-for-concatenating-strings" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.17.5. </span>A useful trick for concatenating strings<a class="headerlink" href="#a-useful-trick-for-concatenating-strings" title="Permalink to this headline"></a></h2>
 <p>Getting help on a string method that can be used to concatenate.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -573,7 +479,7 @@ join(iterable, /) method of builtins.str instance
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.18. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.18. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
 <ol class="arabic simple">
 <li><p>For the built-in <code class="docutils literal notranslate"><span class="pre">len</span></code>, is it a function or a method? Demonstrate its usage.</p></li>
 <li><p>Join the <code class="docutils literal notranslate"><span class="pre">data</span></code> variable from above with the new line character.</p></li>
@@ -592,50 +498,33 @@ CCC 1
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="strings.html" class="btn btn-neutral float-right" title="5.19. Dealing with strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="interpreting_errors.html" class="btn btn-neutral float-left" title="5.15. Fixing errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="strings.html" class="btn btn-neutral float-right" title="5.19. Dealing with strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gavin Huttley.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

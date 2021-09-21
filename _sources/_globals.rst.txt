@@ -66,6 +66,8 @@
 .. _GenBank: https://www.ncbi.nlm.nih.gov/genbank/
 .. _gff3: https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md
 .. _cogent3: https://cogent3.org
+.. |load_data| replace:: load data
+.. _load_data: https://cogent3.org/doc/api/index.html
 .. _ArrayAlignment: https://cogent3.org/doc/api/alignment/classes/cogent3.core.alignment.ArrayAlignment.html#cogent3.core.alignment.ArrayAlignment
 .. _SequenceCollection: https://cogent3.org/doc/api/alignment/classes/cogent3.core.alignment.SequenceCollection.html#cogent3.core.alignment.SequenceCollection
 .. _DnaSequence: https://cogent3.org/doc/api/sequence/classes/cogent3.core.sequence.DnaSequence.html#cogent3.core.sequence.DnaSequence

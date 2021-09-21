@@ -235,7 +235,7 @@ Use the ``rc()`` method!
 ``SequenceCollection`` -- for unaligned collections of sequences
 ----------------------------------------------------------------
 
-If you sequences are not aligned, your sequences will likely not be of the same length. To load such sequence data from file, or create from Python objects, you use the functions ``load_unaligned_seqs()`` and ``make_unaligned_seqs()``. The signatures of these functions match those of their counterparts for aligned sequences. Likewise, many of the methods on ``SequenceCollection`` are the same as for the alignment data types (see SequenceCollection_ for documentation). However, the ``SequenceCollection`` type cannot be sliced.
+If your sequences are not aligned, they may not be of the same length. To load such sequence data from file, or create from Python objects, you use the functions ``load_unaligned_seqs()`` and ``make_unaligned_seqs()``. The signatures of these functions match those of their counterparts for aligned sequences. Likewise, many of the methods on ``SequenceCollection`` are the same as for the alignment data types (see SequenceCollection_ for documentation). But note that a ``SequenceCollection`` cannot be sliced.
 
 Making from a collection of unaligned sequences from dict
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -276,7 +276,7 @@ Sequences
 
 Collections and alignments give you an organised interface to manipulate groups of sequences. There is also a specific set of sequence data types. These consist of classes that are specific to the different :ref:`molecular types <moltypes>`. (See DnaSequence_ and ProteinSequence_ for the documentation.)
 
-We can make a sequence from a Python data types.
+We can make a sequence from Python data types.
 
 .. jupyter-execute::
 
@@ -285,19 +285,21 @@ We can make a sequence from a Python data types.
     seq = make_seq("ACGTTTAAA", name="seq-0", moltype="dna")
     seq
 
-Sequences are loaded from file using the load functions for collections, or alignments.
+Sequences are loaded from file using the |load_data|_ functions for collections (``load_unaligned_seqs``), or alignments (``load_aligned_seqs``).
 
 Exercises
 =========
 
-Download the :download:`alignment of bat BRCA1 sequences </data/brca1-bats.fasta>`.
+Download the :download:`alignment of bat BRCA1 sequences </data/brca1-bats.fasta>`, or :ref:`using Python <download_data>`.
 
-#. Try removing the ``incomplete_ok`` argument from the ``get_translation()`` method.
+#. Set the ``incomplete_ok`` argument in the ``get_translation()`` method to ``False``. What happens and why?
 
-#. Create an alignment from a dict with sequences that you make up. Slice the alignment to remove the last 3 aligned columns.
+#. Create an alignment from a dict with sequences that you make up [#]_. Slice the alignment to remove the last 3 aligned columns.
 
 #. Create an alignment from a dict with sequences that you make up. Slice the alignment to get every second codon position.
 
 #. Using the downloaded alignment, count the number of second codon positions that have variation.
 
-#. Load a data set without specifying the ``moltype``. Use a method on the object to convert it to DNA.
+#. Load the downloaded alignment without specifying the ``moltype``. Use a method on the object to convert it to the DNA moltype.
+
+.. [#] Sequences in alignments must be exactly the same length.

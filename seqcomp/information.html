@@ -1,41 +1,21 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>6.9. Measuring information using Shannon’s entropy &mdash; Topics in Bioinformatics 2021.09.13 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>6.9. Measuring information using Shannon’s entropy &mdash; Topics in Bioinformatics 2021.09.20 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -45,39 +25,20 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6.11. Position Specific Scoring Matrices (PSSMs)" href="pssm.html" />
     <link rel="prev" title="6.8. Finding motifs" href="motif_finding.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +46,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
@@ -138,75 +88,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Topics in Bioinformatics</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
-        
       <li><span class="section-number">6.9. </span>Measuring information using Shannon’s entropy</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/information.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -232,7 +138,7 @@
 }
 </style>
 <div class="section" id="measuring-information-using-shannon-s-entropy">
-<span id="shannon-entropy"></span><h1><span class="section-number">6.9. </span>Measuring information using Shannon’s entropy<a class="headerlink" href="#measuring-information-using-shannon-s-entropy" title="Permalink to this headline">¶</a></h1>
+<span id="shannon-entropy"></span><h1><span class="section-number">6.9. </span>Measuring information using Shannon’s entropy<a class="headerlink" href="#measuring-information-using-shannon-s-entropy" title="Permalink to this headline"></a></h1>
 <p>We can measure the information content of “something” using a measurement called “entropy” (like a scale for information). The core unit is the “bit”, called a measure of surprise, which is the answer to a yes/no question.</p>
 <p>Consider a state space containing only the letter <code class="docutils literal notranslate"><span class="pre">A</span></code>. We can never be “surprised” by the outcome of drawing a new letter from this space as it can only be of one type. So our entropy, in this case is 0. Add another letter and we have a chance to be “surprised”. So in general, as predictability goes up, entropy goes down.</p>
 <p>As it turns out, entropy is a very fundamental quantity. You will see numerous expressions in statistics that relate to this. Given that the very purpose of genetical systems is to contain all the information sufficient to specify a living thing, application of statistical techniques built around the notion of “information” as a fundamental quantity seems quite natural.</p>
@@ -245,7 +151,7 @@
 <p><span class="math notranslate nohighlight">\(\sum_{i=0}^n\)</span> means take the sum of the series starting at index 0 and ending at index <span class="incremental">n</span>.</p>
 </div>
 <div class="section" id="measuring-entropy-for-a-simple-alignment">
-<h2><span class="section-number">6.9.1. </span>Measuring entropy for a simple alignment<a class="headerlink" href="#measuring-entropy-for-a-simple-alignment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.9.1. </span>Measuring entropy for a simple alignment<a class="headerlink" href="#measuring-entropy-for-a-simple-alignment" title="Permalink to this headline"></a></h2>
 <p>Here’s the simple alignment from the previous section.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>TCAGA
 TTCCA
@@ -267,24 +173,24 @@ Ent.   0    0.72  1.52  1.52  0.97
 <p>In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo <span id="id1">[<a class="reference internal" href="#id32" title="T D Schneider and R M Stephens. Sequence logos: a new way to display consensus sequences. Nucleic Acids Res, 18:6097-100, 1990. doi:10.1093/nar/18.20.6097.">SS90</a>]</span>. That representation is computed using position-wise entropy.</p>
 </div>
 <div class="section" id="information-at-a-position">
-<span id="information"></span><h2><span class="section-number">6.9.2. </span>Information at a position<a class="headerlink" href="#information-at-a-position" title="Permalink to this headline">¶</a></h2>
+<span id="information"></span><h2><span class="section-number">6.9.2. </span>Information at a position<a class="headerlink" href="#information-at-a-position" title="Permalink to this headline"></a></h2>
 <div class="math notranslate nohighlight">
 \[R_i=\log_2(n) - H_i\]</div>
 <p>where <span class="math notranslate nohighlight">\(R_i\)</span> is the information at position <em>i</em>, <em>n</em> is the number of possible states (4 for DNA), <span class="math notranslate nohighlight">\(\log_2(n)\)</span> is the maximum possible entropy, and <span class="math notranslate nohighlight">\(H_i\)</span> is the Shannon entropy for position <em>i</em>.</p>
 <p>In this display, the letter height at a position is <span class="math notranslate nohighlight">\(p_{i,l} R_i\)</span>.</p>
 </div>
 <div class="section" id="problems-with-sequence-logo">
-<h2><span class="section-number">6.9.3. </span>Problems with sequence logo<a class="headerlink" href="#problems-with-sequence-logo" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.9.3. </span>Problems with sequence logo<a class="headerlink" href="#problems-with-sequence-logo" title="Permalink to this headline"></a></h2>
 <p>The background genomic distribution is assumed to be equally frequent nucleotides. Replacing <span class="math notranslate nohighlight">\(\log_2(n)\)</span> with the entropy of the genome can lead to <span class="math notranslate nohighlight">\(R&lt;0\)</span>.</p>
 </div>
 <div class="section" id="using-relative-entropy-as-an-alternate">
-<h2><span class="section-number">6.9.4. </span>Using relative entropy as an alternate<a class="headerlink" href="#using-relative-entropy-as-an-alternate" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.9.4. </span>Using relative entropy as an alternate<a class="headerlink" href="#using-relative-entropy-as-an-alternate" title="Permalink to this headline"></a></h2>
 <p>Relative entropy (<span class="incremental">RE</span>) is defined as</p>
 <p><span class="math notranslate nohighlight">\(RE_i = \sum_{i=0}^n p_i \log_2(p_i / q_i)\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(q_i\)</span> is the background (e.g. genome) frequency of <em>i</em>.</p>
 </div>
 <div class="section" id="an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation">
-<h2><span class="section-number">6.9.5. </span>An illustration of the difference – identifying neighbouring base effects on mutation<a class="headerlink" href="#an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.9.5. </span>An illustration of the difference – identifying neighbouring base effects on mutation<a class="headerlink" href="#an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation" title="Permalink to this headline"></a></h2>
 <p><span class="math notranslate nohighlight">\(C\rightarrow T\)</span> mutations in vertebrates typically arise from deamination of 5-methyl-cytosine. The latter modification is typically applied to <span class="incremental">5’-CpG-3’</span>. Hence, there is a striking association of <span class="incremental">3’G</span> and this point mutation direction.</p>
 <p>If we sample sequences that share this mutation in common, aligning them centred on the mutated position, we can assess which statistic better captures the neighbouring base association. What we <em>should</em> see is that the 3’ position should have high information which arises from the base <span class="incremental">G</span>.</p>
 <table class="docutils align-default">
@@ -323,7 +229,7 @@ Ent.   0    0.72  1.52  1.52  0.97
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">6.10. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.10. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
 <p>Defining a short sequence for use below.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -347,7 +253,7 @@ Ent.   0    0.72  1.52  1.52  0.97
 <blockquote>
 <div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AGGAGACCCCCACACGACGCGCCGGAAGGGACAGAAAAGAGAGCAAAACA&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GAGACGAGGGAGGCGACAGGCGACGAGGGAAGGACAGAGCAAACGCAGAA&#39;
 </pre></div>
 </div>
 </div>
@@ -377,50 +283,33 @@ Ent.   0    0.72  1.52  1.52  0.97
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="pssm.html" class="btn btn-neutral float-right" title="6.11. Position Specific Scoring Matrices (PSSMs)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="motif_finding.html" class="btn btn-neutral float-left" title="6.8. Finding motifs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pssm.html" class="btn btn-neutral float-right" title="6.11. Position Specific Scoring Matrices (PSSMs)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gavin Huttley.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

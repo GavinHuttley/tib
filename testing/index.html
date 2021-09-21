@@ -1,41 +1,21 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>10. Introduction to Testing in Python &mdash; Topics in Bioinformatics 2021.09.13 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>10. Introduction to Testing in Python &mdash; Topics in Bioinformatics 2021.09.20 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -45,39 +25,20 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="11. Index" href="../genindex.html" />
     <link rel="prev" title="9. Introduction to version control" href="../version_control/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +46,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
@@ -122,73 +72,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Topics in Bioinformatics</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li><span class="section-number">10. </span>Introduction to Testing in Python</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/testing/index.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -214,10 +121,10 @@
 }
 </style>
 <div class="section" id="introduction-to-testing-in-python">
-<span id="intro-to-testing"></span><h1><span class="section-number">10. </span>Introduction to Testing in Python<a class="headerlink" href="#introduction-to-testing-in-python" title="Permalink to this headline">¶</a></h1>
+<span id="intro-to-testing"></span><h1><span class="section-number">10. </span>Introduction to Testing in Python<a class="headerlink" href="#introduction-to-testing-in-python" title="Permalink to this headline"></a></h1>
 <p><em>Section author: Gavin Huttley</em></p>
 <div class="section" id="why-do-we-need-to-test-software">
-<h2><span class="section-number">10.1. </span>Why do we need to test software?<a class="headerlink" href="#why-do-we-need-to-test-software" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.1. </span>Why do we need to test software?<a class="headerlink" href="#why-do-we-need-to-test-software" title="Permalink to this headline"></a></h2>
 <p>When a scientist conducts an experiment in a lab, they generate results under some experimental condition which they then seek to interpret. Let us consider <a class="reference external" href="https://en.wikipedia.org/wiki/Polymerase_chain_reaction">PCR</a> as an example. A PCR experiment has 4 components (ignoring the hardware required to conduct the experiment):</p>
 <ol class="arabic simple">
 <li><p>A thermostable DNA polymerase enzyme</p></li>
@@ -260,7 +167,7 @@
 </div>
 </div>
 <div class="section" id="the-structure-of-tests-of-software">
-<h2><span class="section-number">10.2. </span>The structure of tests of software<a class="headerlink" href="#the-structure-of-tests-of-software" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.2. </span>The structure of tests of software<a class="headerlink" href="#the-structure-of-tests-of-software" title="Permalink to this headline"></a></h2>
 <blockquote class="epigraph">
 <div><p>“The more I learn about proprietary software, the more I worry that objective truth might perish from the earth.”</p>
 <p class="attribution">—Professor Paul Romer, Awarded the 2018 Nobel Prize in Economics, and Python Programmer.</p>
@@ -360,9 +267,9 @@
 </div>
 </div>
 <div class="section" id="how-tests-are-run">
-<h2><span class="section-number">10.3. </span>How tests are run<a class="headerlink" href="#how-tests-are-run" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3. </span>How tests are run<a class="headerlink" href="#how-tests-are-run" title="Permalink to this headline"></a></h2>
 <div class="section" id="from-the-terminal">
-<h3><span class="section-number">10.3.1. </span>From the terminal<a class="headerlink" href="#from-the-terminal" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.3.1. </span>From the terminal<a class="headerlink" href="#from-the-terminal" title="Permalink to this headline"></a></h3>
 <p>While the functions written in this document illustrate the nature of testing some code, they do not reflect how tests are organised and run in practice.</p>
 <p>If you adhere to conventions used by testing libraries like <a class="reference external" href="https://docs.pytest.org/">pytest</a>, these tools are able to automatically detect test functions. As noted above, beginning the test functions with <code class="docutils literal notranslate"><span class="pre">test</span></code> makes the tests discoverable <a class="footnote-reference brackets" href="#id14" id="id13">7</a>. Testing software also calls these functions. This means it is not necessary to make the calls yourself. Just define the function and run the test tool against your code.</p>
 <p>As an example, I have a project called <a class="reference external" href="https://cogent3.org">cogent3</a> and in the main directory of the repository I have a directory called <code class="docutils literal notranslate"><span class="pre">tests</span></code>. I invoke all my tests by doing the following</p>
@@ -377,69 +284,52 @@ $ pytest
 </dl>
 </div>
 <div class="section" id="in-a-jupyter-notebook">
-<h3><span class="section-number">10.3.2. </span>In a jupyter notebook<a class="headerlink" href="#in-a-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.3.2. </span>In a jupyter notebook<a class="headerlink" href="#in-a-jupyter-notebook" title="Permalink to this headline"></a></h3>
 <p>Testing code within a notebook is more restricted than for standard python scripts. There is a third-party library, <code class="docutils literal notranslate"><span class="pre">ipytest</span></code> which provides mechanisms for using <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to run tests in notebooks. See <a class="reference external" href="ipytest">the documentation</a> for how to use it.</p>
 </div>
 </div>
 <div class="section" id="test-coverage">
-<h2><span class="section-number">10.4. </span>Test coverage<a class="headerlink" href="#test-coverage" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.4. </span>Test coverage<a class="headerlink" href="#test-coverage" title="Permalink to this headline"></a></h2>
 <p>Defining the quality of software is a difficult problem. From an individuals perspective, a useful benchmark for your own code is how many lines of your code are actually exercised by your tests? This is referred to as “code coverage”. Some IDEs, like PyCharm, build in tools to obtain such measures. There is also an extension to pytest, <a class="reference external" href="https://github.com/pytest-dev/pytest-cov">pytest-cov</a>, which can be easily invoked using command line flags when you run your tests. I can run this and have it generate a html file, which allows exploring the sections that are not covered by tests. For <code class="docutils literal notranslate"><span class="pre">cogent3</span></code>, I run the following.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pytest --cov-report html --cov=cogent3 ./ --ignore=test_app_mpi.py
 </pre></div>
 </div>
 </div>
 <div class="section" id="adding-testing-to-your-ongoing-development">
-<h2><span class="section-number">10.5. </span>Adding testing to your ongoing development<a class="headerlink" href="#adding-testing-to-your-ongoing-development" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.5. </span>Adding testing to your ongoing development<a class="headerlink" href="#adding-testing-to-your-ongoing-development" title="Permalink to this headline"></a></h2>
 <p>As projects become larger, adding tests along with new features becomes crucial. Automating the execution of tests is an important step that simplifies the process of developing your code. Tools for continuous integration (often referred to as CI) are now builtin to many of the standard code hosting platforms. On GitHub, they are termed <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>, on <a class="reference external" href="https://bitbucket.org/product/features/pipelines">Bitbucket they are termed pipelines</a>.</p>
 </div>
 </div>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../genindex.html" class="btn btn-neutral float-right" title="11. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../version_control/index.html" class="btn btn-neutral float-left" title="9. Introduction to version control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../genindex.html" class="btn btn-neutral float-right" title="11. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gavin Huttley.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

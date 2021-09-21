@@ -1,41 +1,21 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>5.26. Writing functions &mdash; Topics in Bioinformatics 2021.09.13 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>5.26. Writing functions &mdash; Topics in Bioinformatics 2021.09.20 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -45,39 +25,20 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5.28. Namespaces" href="namespace.html" />
     <link rel="prev" title="5.24. Working with files" href="files.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +46,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
@@ -168,75 +118,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Topics in Bioinformatics</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-        
       <li><span class="section-number">5.26. </span>Writing functions</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/writing_functions.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -262,7 +168,7 @@
 }
 </style>
 <div class="section" id="writing-functions">
-<h1><span class="section-number">5.26. </span>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.26. </span>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this headline"></a></h1>
 <p>Now we cover writing your own <a class="reference external" href="http://greenteapress.com/thinkpython2/html/thinkpython2004.html#sec30">functions</a>.</p>
 <p>A function represents a named grouping of statements. They form a critical aspect of modular design to algorithms. By allowing referencing of a related block of code, one can substantially reduce redundancy in your code. This confers a number of major advantages:</p>
 <ol class="arabic simple">
@@ -273,7 +179,7 @@
 </ol>
 <p>So using functions will improve the reliability of your programs.</p>
 <div class="section" id="the-critical-syntax-elements">
-<span id="index-0"></span><h2><span class="section-number">5.26.1. </span>The critical syntax elements<a class="headerlink" href="#the-critical-syntax-elements" title="Permalink to this headline">¶</a></h2>
+<span id="index-0"></span><h2><span class="section-number">5.26.1. </span>The critical syntax elements<a class="headerlink" href="#the-critical-syntax-elements" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">def</span></code>, the critical keyword telling Python you are defining a function</p></li>
 <li><p>a valid Python name, which is used to reference the function</p></li>
@@ -303,11 +209,11 @@
 </div>
 </div>
 <div class="section" id="void-functions">
-<span id="index-1"></span><h2><span class="section-number">5.26.2. </span>Void functions<a class="headerlink" href="#void-functions" title="Permalink to this headline">¶</a></h2>
+<span id="index-1"></span><h2><span class="section-number">5.26.2. </span>Void functions<a class="headerlink" href="#void-functions" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">echo_hello</span></code> function is called a <code class="docutils literal notranslate"><span class="pre">void</span></code> function – functions whose purpose does not require returning a value. That said, even if they don’t use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, they return the value <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 <div class="section" id="fruitful-functions">
-<h2><span class="section-number">5.26.3. </span>Fruitful functions<a class="headerlink" href="#fruitful-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.26.3. </span>Fruitful functions<a class="headerlink" href="#fruitful-functions" title="Permalink to this headline"></a></h2>
 <p>These are functions that return something from their execution. We have encountered several examples of fruitful builtin functions like <code class="docutils literal notranslate"><span class="pre">dir()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>. These functions took an argument, operated on it, and returned something. The following is a simple fruitful function.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -332,7 +238,7 @@
 </div>
 </div>
 <div class="section" id="required-arguments">
-<span id="index-2"></span><h2><span class="section-number">5.26.4. </span>Required arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
+<span id="index-2"></span><h2><span class="section-number">5.26.4. </span>Required arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline"></a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_diff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -382,7 +288,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3680</span><span class="o">/</span><span class="mf">385267086.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3657</span><span class="o">/</span><span class="mf">385267086.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: get_diff() missing 1 required positional argument: &#39;b&#39;
@@ -402,11 +308,11 @@
 </ul>
 </div>
 <div class="section" id="optional-arguments">
-<span id="index-3"></span><h2><span class="section-number">5.26.5. </span>Optional arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
+<span id="index-3"></span><h2><span class="section-number">5.26.5. </span>Optional arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline"></a></h2>
 <p>These are function arguments that have default values. You’ve seen this with the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function. The <code class="docutils literal notranslate"><span class="pre">mode</span></code> argument defaults to read (<code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>). In fact, the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function has both required and optional arguments.</p>
 </div>
 <div class="section" id="writing-and-using-functions-that-have-optional-arguments">
-<h2><span class="section-number">5.26.6. </span>Writing and using functions that have optional arguments<a class="headerlink" href="#writing-and-using-functions-that-have-optional-arguments" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.26.6. </span>Writing and using functions that have optional arguments<a class="headerlink" href="#writing-and-using-functions-that-have-optional-arguments" title="Permalink to this headline"></a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_diff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -441,7 +347,7 @@
 </div>
 </div>
 <div class="section" id="ordering-arguments">
-<h2><span class="section-number">5.26.7. </span>Ordering arguments<a class="headerlink" href="#ordering-arguments" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.26.7. </span>Ordering arguments<a class="headerlink" href="#ordering-arguments" title="Permalink to this headline"></a></h2>
 <p>Required arguments MUST occur before optional arguments. This constraint holds for both writing your own functions and for using functions.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -450,7 +356,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_3680/1888635277.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_3657/1888635277.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">get_diff</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
                                      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
@@ -464,7 +370,7 @@
 </div>
 </div>
 <div class="section" id="documenting-a-function-with-a-doctstring">
-<span id="index-4"></span><h2><span class="section-number">5.26.8. </span>Documenting a function with a doctstring<a class="headerlink" href="#documenting-a-function-with-a-doctstring" title="Permalink to this headline">¶</a></h2>
+<span id="index-4"></span><h2><span class="section-number">5.26.8. </span>Documenting a function with a doctstring<a class="headerlink" href="#documenting-a-function-with-a-doctstring" title="Permalink to this headline"></a></h2>
 <p>We can document how to use a function we write by writing a docstring. When you use <code class="docutils literal notranslate"><span class="pre">help()</span></code> on a built in function, it’s the docstring of that function which is being displayed. The syntactic definition of a docstring is:</p>
 <ul class="simple">
 <li><p>They are a string literal. By convention, they are defined using triple quotes surrounding the text. They can span multiple lines.</p></li>
@@ -510,7 +416,7 @@ myfunc()
 </div>
 </div>
 <div class="section" id="functions-that-call-other-functions">
-<h2><span class="section-number">5.26.9. </span>Functions that call other functions<a class="headerlink" href="#functions-that-call-other-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.26.9. </span>Functions that call other functions<a class="headerlink" href="#functions-that-call-other-functions" title="Permalink to this headline"></a></h2>
 <p>There is no magic here. If you can use a Python built-in function, you can use a function you wrote. In the following, the function <code class="docutils literal notranslate"><span class="pre">squared_diffs()</span></code> takes two number series and returns the square of the element-wise difference while the function  <code class="docutils literal notranslate"><span class="pre">diff_two()</span></code> takes two number series and returns their element-wise difference.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -537,7 +443,7 @@ myfunc()
 </div>
 </div>
 <div class="section" id="things-not-to-do">
-<h2><span class="section-number">5.26.10. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.26.10. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline"></a></h2>
 <p><strong>DO NOT</strong> use global variables (see <a class="reference internal" href="namespace.html#namespaces"><span class="std std-ref">Namespaces</span></a>). Either pass the variable in as an argument or create it within the function. Adhere to the principle of making code “Easy To Change”. In the case of functions, this means making them depend only on the arguments you give them. The following is bad.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -595,7 +501,7 @@ myfunc()
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.27. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.27. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
 <p>Using the following data</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -649,50 +555,33 @@ myfunc()
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="namespace.html" class="btn btn-neutral float-right" title="5.28. Namespaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="files.html" class="btn btn-neutral float-left" title="5.24. Working with files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="namespace.html" class="btn btn-neutral float-right" title="5.28. Namespaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gavin Huttley.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

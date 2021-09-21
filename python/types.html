@@ -1,41 +1,21 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>5.12. The basic data types &mdash; Topics in Bioinformatics 2021.09.13 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>5.12. The basic data types &mdash; Topics in Bioinformatics 2021.09.20 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -45,39 +25,20 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5.14. Logical syntax" href="logic.html" />
     <link rel="prev" title="5.10. Operators" href="operators.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +46,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
@@ -171,75 +121,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Topics in Bioinformatics</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-        
       <li><span class="section-number">5.12. </span>The basic data types</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/types.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -265,7 +171,7 @@
 }
 </style>
 <div class="section" id="the-basic-data-types">
-<span id="types"></span><h1><span class="section-number">5.12. </span>The basic data types<a class="headerlink" href="#the-basic-data-types" title="Permalink to this headline">¶</a></h1>
+<span id="types"></span><h1><span class="section-number">5.12. </span>The basic data types<a class="headerlink" href="#the-basic-data-types" title="Permalink to this headline"></a></h1>
 <p>Think of how you interpret the following:</p>
 <blockquote>
 <div><p>“According to Pythagoras, with sides of a right angle triangle equal to 3 and 4, the hypotenuse is 5.”</p>
@@ -453,7 +359,7 @@
 </div>
 </div>
 <div class="section" id="how-to-tell-the-type-of-a-variable">
-<h2><span class="section-number">5.12.1. </span>How to tell the type of a variable<a class="headerlink" href="#how-to-tell-the-type-of-a-variable" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.12.1. </span>How to tell the type of a variable<a class="headerlink" href="#how-to-tell-the-type-of-a-variable" title="Permalink to this headline"></a></h2>
 <p>Well that’s easy!</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -470,11 +376,11 @@
 </div>
 </div>
 <div class="section" id="type-casting">
-<span id="index-9"></span><h2><span class="section-number">5.12.2. </span>Type casting<a class="headerlink" href="#type-casting" title="Permalink to this headline">¶</a></h2>
+<span id="index-9"></span><h2><span class="section-number">5.12.2. </span>Type casting<a class="headerlink" href="#type-casting" title="Permalink to this headline"></a></h2>
 <p>In programming, this has the explicit meaning of converting one data type into another. Of course, this is not always possible. For instance, it makes no sense to try and convert a <code class="docutils literal notranslate"><span class="pre">dict</span></code> into a <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <p>Casting is done using functions with names matching the data type.</p>
 <div class="section" id="int-to-float">
-<h3><span class="section-number">5.12.2.1. </span>int to float<a class="headerlink" href="#int-to-float" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.1. </span>int to float<a class="headerlink" href="#int-to-float" title="Permalink to this headline"></a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">4</span>
@@ -491,7 +397,7 @@
 </div>
 </div>
 <div class="section" id="float-to-int">
-<h3><span class="section-number">5.12.2.2. </span>float to int<a class="headerlink" href="#float-to-int" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.2. </span>float to int<a class="headerlink" href="#float-to-int" title="Permalink to this headline"></a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="mf">4.8</span>
@@ -508,7 +414,7 @@
 </div>
 </div>
 <div class="section" id="string-to-float">
-<h3><span class="section-number">5.12.2.3. </span>string to float<a class="headerlink" href="#string-to-float" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.3. </span>string to float<a class="headerlink" href="#string-to-float" title="Permalink to this headline"></a></h3>
 <p>The builtin type functions can handle strings that contain appropriate content for the designated type (meaning the text contains a number), even if the text has flanking white space.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -549,7 +455,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3620</span><span class="o">/</span><span class="mf">1722283928.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3596</span><span class="o">/</span><span class="mf">1722283928.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;\t4.45\n&#39;
@@ -559,7 +465,7 @@
 </div>
 </div>
 <div class="section" id="string-to-list-tuple">
-<h3><span class="section-number">5.12.2.4. </span>string to list, tuple<a class="headerlink" href="#string-to-list-tuple" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.4. </span>string to list, tuple<a class="headerlink" href="#string-to-list-tuple" title="Permalink to this headline"></a></h3>
 <p>Casting between the collection types is similar.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -579,10 +485,10 @@
 <p>Casting to a dict requires more work, as the original data type must have a shape that matches the required <code class="docutils literal notranslate"><span class="pre">key,</span> <span class="pre">value</span></code> pair pattern.</p>
 </div>
 <div class="section" id="objects-to-strings">
-<h3><span class="section-number">5.12.2.5. </span>Objects to strings<a class="headerlink" href="#objects-to-strings" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.12.2.5. </span>Objects to strings<a class="headerlink" href="#objects-to-strings" title="Permalink to this headline"></a></h3>
 <p>This is an extremely common task, not least because of the need to convert data to strings for writing to file. I will show two basic approaches.</p>
 <div class="section" id="c-style-format-strings">
-<span id="index-10"></span><h4>“C-style” format strings<a class="headerlink" href="#c-style-format-strings" title="Permalink to this headline">¶</a></h4>
+<span id="index-10"></span><h4>“C-style” format strings<a class="headerlink" href="#c-style-format-strings" title="Permalink to this headline"></a></h4>
 <p>So-called because this is the approach used in the C programming language. In this instance, we use the <code class="docutils literal notranslate"><span class="pre">%</span></code> sign in a couple of different ways. Firstly, we essentially define a template string with placeholders for whichever data we need to convert. These place-holders are also indicated by a <code class="docutils literal notranslate"><span class="pre">%&lt;c&gt;</span></code> where a following character (which I’ve indicated by <code class="docutils literal notranslate"><span class="pre">&lt;c&gt;</span></code>) indicates the type of data that will be put there. After the closing quote, we then have another <code class="docutils literal notranslate"><span class="pre">%</span></code> which precedes the actual variables to be cast.</p>
 <p>In the following I convert to a string: an int (using <code class="docutils literal notranslate"><span class="pre">%d</span></code>); a float to two places (using <code class="docutils literal notranslate"><span class="pre">%f</span></code>); a dict (using the generic <code class="docutils literal notranslate"><span class="pre">%s</span></code>, which can be applied to any object).</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -647,7 +553,7 @@
 </div>
 </div>
 <div class="section" id="using-format-strings">
-<span id="index-11"></span><h4>Using “format” strings<a class="headerlink" href="#using-format-strings" title="Permalink to this headline">¶</a></h4>
+<span id="index-11"></span><h4>Using “format” strings<a class="headerlink" href="#using-format-strings" title="Permalink to this headline"></a></h4>
 <p>These are new to Python, since version 3.6. I’ll bundle the int and float into a single statement.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -673,7 +579,7 @@
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.13. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.13. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
 <ol class="arabic">
 <li><p>What happens when you cast the following to a dict using the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> command.</p>
 <blockquote>
@@ -697,50 +603,33 @@
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="logic.html" class="btn btn-neutral float-right" title="5.14. Logical syntax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="operators.html" class="btn btn-neutral float-left" title="5.10. Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="logic.html" class="btn btn-neutral float-right" title="5.14. Logical syntax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gavin Huttley.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

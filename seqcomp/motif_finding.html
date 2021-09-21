@@ -1,41 +1,21 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>6.8. Finding motifs &mdash; Topics in Bioinformatics 2021.09.13 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>6.8. Finding motifs &mdash; Topics in Bioinformatics 2021.09.20 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -45,39 +25,20 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6.9. Measuring information using Shannon’s entropy" href="information.html" />
     <link rel="prev" title="6.7. Experimental procedures for detecting functionally related sequences" href="related_by_function.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,18 +46,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
@@ -141,75 +91,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Topics in Bioinformatics</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
-        
       <li><span class="section-number">6.8. </span>Finding motifs</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/motif_finding.rst" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -235,7 +141,7 @@
 }
 </style>
 <div class="section" id="finding-motifs">
-<h1><span class="section-number">6.8. </span>Finding motifs<a class="headerlink" href="#finding-motifs" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.8. </span>Finding motifs<a class="headerlink" href="#finding-motifs" title="Permalink to this headline"></a></h1>
 <p>So how do we find occurrences of a motif that is “noisy”? If we use the consensus approach, it’s trivial –  exact string match. For the IUPAC ambiguity case, it’s also quite trivial – we could use a regular expression <a class="footnote-reference brackets" href="#id2" id="id1">1</a>, e.g.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -263,7 +169,7 @@
 </dd>
 </dl>
 <div class="section" id="simple-probability-model-for-generating-sequences">
-<h2><span class="section-number">6.8.1. </span>Simple probability model for generating sequences<a class="headerlink" href="#simple-probability-model-for-generating-sequences" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.8.1. </span>Simple probability model for generating sequences<a class="headerlink" href="#simple-probability-model-for-generating-sequences" title="Permalink to this headline"></a></h2>
 <p>Assume the probabilities of nucleotides are <span class="math notranslate nohighlight">\(p_A=0.1\)</span>, <span class="math notranslate nohighlight">\(p_C=0.2\)</span>, <span class="math notranslate nohighlight">\(p_G=0.3\)</span>  and <span class="math notranslate nohighlight">\(p_T=0.4\)</span>. We can calculate the probability of observing the following sequence as</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -286,7 +192,7 @@
 <p>When we consider modelling a sequence motif, however, we use position specific probabilities, i.e. there would be a distinct <code class="docutils literal notranslate"><span class="pre">probs</span></code> for each position of a motif. This is the foundation of PSSMs.</p>
 </div>
 <div class="section" id="pssms-position-specific-scoring-matrices">
-<h2><span class="section-number">6.8.2. </span>PSSMs: Position Specific Scoring Matrices<a class="headerlink" href="#pssms-position-specific-scoring-matrices" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.8.2. </span>PSSMs: Position Specific Scoring Matrices<a class="headerlink" href="#pssms-position-specific-scoring-matrices" title="Permalink to this headline"></a></h2>
 <p>Among the simplest probabilistic approaches are PSSMs. A PSSM is a matrix of log-odds ratios per position of a sequence motif. They are also referred to as profiles. They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but also used to characterise protein domains.</p>
 <p>Great, where can I get one? Well … recall JASPAR (the open access database of TFBS profiles) <a class="footnote-reference brackets" href="#id6" id="id5">3</a>.</p>
 <dl class="footnote brackets">
@@ -304,7 +210,7 @@
 <p>In this case, the PSSM has length 15. This motif is on display at <a class="reference external" href="http://jaspar.genereg.net/cgi-bin/jaspar_db.pl?ID=MA0108.2&amp;rm=present&amp;collection=CORE">JASPAR</a> (but note their web server can be quite slow).</p>
 </div>
 <div class="section" id="formal-definition-of-the-probability-model">
-<h2><span class="section-number">6.8.3. </span>Formal definition of the probability model<a class="headerlink" href="#formal-definition-of-the-probability-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.8.3. </span>Formal definition of the probability model<a class="headerlink" href="#formal-definition-of-the-probability-model" title="Permalink to this headline"></a></h2>
 <p>We now layout the equations for computing the probability of a sequence. To start, we make some simplifying assumptions. Namely, we assume a counts matrix reflects the true underlying probabilities of bases per position of a motif; that each base in a motif occurs independently of the other bases. We can compute the probability under the PPM (position probability matrix) model <span class="incremental">M</span> of a sequence <span class="incremental">x</span> with length <span class="incremental">L</span> as:</p>
 <div class="math notranslate nohighlight">
 \[P(x|M)=\Pi_{i=0}^L p_i(x_i)\]</div>
@@ -314,7 +220,7 @@
 <p>the <span class="math notranslate nohighlight">\(\Pi\)</span> symbol means “take the product of the series”. So what <span class="math notranslate nohighlight">\(\sum\)</span> is to addition, <span class="math notranslate nohighlight">\(\Pi\)</span> is for multiplication.</p>
 </div>
 <div class="section" id="a-worked-example">
-<h3><span class="section-number">6.8.3.1. </span>A worked example<a class="headerlink" href="#a-worked-example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.8.3.1. </span>A worked example<a class="headerlink" href="#a-worked-example" title="Permalink to this headline"></a></h3>
 <p>Consider the following hypothetical matrix</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>  <span class="p">[</span> <span class="mi">61</span>  <span class="mi">16</span> <span class="mi">389</span>   <span class="mi">3</span> <span class="p">]</span>
 <span class="n">C</span>  <span class="p">[</span><span class="mi">145</span>  <span class="mi">46</span>   <span class="mi">0</span>  <span class="mi">10</span> <span class="p">]</span>
@@ -335,7 +241,7 @@
 <p>The latter case is potentially real – binding only happens with A at the 3rd position – but most likely due to a finite sized training data set. In other words, if the training set had been much larger we may have observed the other bases at that position.</p>
 </div>
 <div class="section" id="pseudo-counts-handling-missing-data">
-<h3><span class="section-number">6.8.3.2. </span>Pseudo-counts – handling missing data<a class="headerlink" href="#pseudo-counts-handling-missing-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.8.3.2. </span>Pseudo-counts – handling missing data<a class="headerlink" href="#pseudo-counts-handling-missing-data" title="Permalink to this headline"></a></h3>
 <p>Handling small sample sizes is a substantial problem <a class="footnote-reference brackets" href="#id8" id="id7">4</a>. The easiest way to tackle it, which we will use here, is to employ a pseudo-count. A pseudo-count is a “synthetic observation” that is added to all the elements in the counts matrix. It eliminates 0 counts and thus precludes cases such as (2) above, where a sequence is otherwise considered impossible. I’ll illustrate that using the above example.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id7">4</a></span></dt>
@@ -419,7 +325,7 @@
 </ul>
 </div>
 <div class="section" id="pssm-limitations">
-<h3><span class="section-number">6.8.3.3. </span>PSSM limitations<a class="headerlink" href="#pssm-limitations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.8.3.3. </span>PSSM limitations<a class="headerlink" href="#pssm-limitations" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>if the training data is limited, we need to handle zero counts which may introduce bias</p></li>
 <li><p>we assume bases in a sequence are independent of each other</p></li>
@@ -430,50 +336,33 @@
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="information.html" class="btn btn-neutral float-right" title="6.9. Measuring information using Shannon’s entropy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="related_by_function.html" class="btn btn-neutral float-left" title="6.7. Experimental procedures for detecting functionally related sequences" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="information.html" class="btn btn-neutral float-right" title="6.9. Measuring information using Shannon’s entropy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gavin Huttley.
-
-    </p>
+    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
