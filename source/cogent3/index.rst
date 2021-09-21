@@ -8,12 +8,14 @@
         
         import requests
 
-        url = "replace with the full url to the file"
-        response = requests.get(path)
-        with open("<path to write file on your machine>", mode="w") as outfile:
+        url = "https://replace with the full url to the file"
+        response = requests.get(url)
+        with open("path to write file on your machine", mode="w") as outfile:
             outfile.write(response.content.decode("utf8"))
         
     Several sections have sample data files for you to work on. To download these files using Python, copy the above code into a Jupyter notebook or script. Right click the download link for the data file, copy the link and assign it (as a string) to the variable ``url`` above. Specify a path where you want the file to be saved on your computer and execute the code.
+    
+    .. note:: Since the filename suffix is used to identify the file format, make sure the local filename has the same suffix as the original.
 
 .. _cogent3_topic:
 
