@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8. Molecular Evolutionary Analyses Using cogent3 &mdash; Topics in Bioinformatics 2021.09.20 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>8. Molecular Evolutionary Analyses Using cogent3 &mdash; Topics in Bioinformatics 2021.09.21 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -127,13 +127,17 @@
 <span id="index-0"></span><p class="sidebar-title">Downloading data files to your computer</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;replace with the full url to the file&quot;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;&lt;path to write file on your machine&gt;&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://replace with the full url to the file&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;path to write file on your machine&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
     <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Several sections have sample data files for you to work on. To download these files using Python, copy the above code into a Jupyter notebook or script. Right click the download link for the data file, copy the link and assign it (as a string) to the variable <code class="docutils literal notranslate"><span class="pre">url</span></code> above. Specify a path where you want the file to be saved on your computer and execute the code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the filename suffix is used to identify the file format, make sure the local filename has the same suffix as the original.</p>
+</div>
 </div>
 <div class="section" id="molecular-evolutionary-analyses-using-cogent3">
 <span id="cogent3-topic"></span><h1><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code><a class="headerlink" href="#molecular-evolutionary-analyses-using-cogent3" title="Permalink to this headline"></a></h1>
