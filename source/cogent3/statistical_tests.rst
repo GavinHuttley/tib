@@ -22,13 +22,13 @@ This type of test compares counts against expected values specified via a prior 
     counts = CategoryCounts({"A": 887, "C": 547, "G": 623, "T": 535})
     counts
 
-You can see that the object displays the observed (what we provided), expected values computed as equally frequency values, and the standardised residuals [1]_. Residuals help you interpret where the observed data depart most strongly from the expected values. In this case, the largest absolute value is for the base ``A``. That the residual is positive indicates the observed data has an excess of this base compared to expected (a negative residual indicates a deficit).
+You can see that the object displays the observed (what we provided), expected values computed as equally frequency values, and the standardised residuals [#]_. Residuals help you interpret where the observed data depart most strongly from the expected values. In this case, the largest absolute value is for the base ``A``. That the residual is positive indicates the observed data has an excess of this base compared to expected (a negative residual indicates a deficit).
 
-.. [1] These are calculated as :math:`\frac{(o-e)}{\sqrt e}` where :math:`o, e` are the corresponding observed and expected values.
+.. [#] These are calculated as :math:`\frac{(o-e)}{\sqrt e}` where :math:`o, e` are the corresponding observed and expected values.
 
-``CategoryCounts`` provides several different methods for analysis of categorical data. In this case, we could use either the ``G_fit()`` [2]_ or ``chisq_test()``.
+``CategoryCounts`` provides several different methods for analysis of categorical data. In this case, we could use either the ``G_fit()`` [#]_ or ``chisq_test()``.
 
-.. [2] G-tests are a likelihood ratio tests and the G statistic is sometimes referred to as G\ :math:`^2`.
+.. [#] G-tests are a likelihood ratio tests and the G statistic is sometimes referred to as G\ :math:`^2`.
 
 .. jupyter-execute::
 
@@ -262,11 +262,11 @@ So we need to transform ``x`` into standard z-scores before we perform the KS te
 Quantile-quantile plots
 -----------------------
 
-A graphical way for comparing whether two data sets come from the same statistical distribution. In this case, we compare ``x`` with the theoretical quantiles from the normal distribution. If the data do come from the same distribution, then their points will form a line on the diagonal [3]_. In this case, the data seem very close to that -- consistent with the KS test results.
+A graphical way for comparing whether two data sets come from the same statistical distribution. In this case, we compare ``x`` with the theoretical quantiles from the normal distribution. If the data do come from the same distribution, then their points will form a line on the diagonal [#]_. In this case, the data seem very close to that -- consistent with the KS test results.
 
 In order to do the plot, the sample data must be sorted. I also add a diagonal line between the minimum and maximum points. If the data are truly on a diagonal, the data points will be scattered very close to this line.
 
-.. [3] You do not need the quantiles from a theoretical distribution. You can just compare the quantiles from two empirical data sets.
+.. [#] You do not need the quantiles from a theoretical distribution. You can just compare the quantiles from two empirical data sets.
 
 .. jupyter-execute::
 
