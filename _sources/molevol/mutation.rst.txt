@@ -40,6 +40,8 @@ Insertions
 
 Within each of these, there are substantial sub-categories. We are interested in insertion / deletion events (indels) insomuch as they motivate the need for sequence alignment algorithms. Our principal focus, however, is on point mutation processes since those are the dominant type of genetic variation data.
 
+.. _point_mutations:
+
 Point mutations
 ---------------
 

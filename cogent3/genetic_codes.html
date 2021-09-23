@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.6. Genetic Codes &mdash; Topics in Bioinformatics 2021.09.21 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>8.6. Genetic Codes &mdash; Topics in Bioinformatics 2021.09.23 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -277,7 +277,7 @@
 </div>
 </div>
 </div>
-<p>The mapping from codon to amino acid is provided by a <code class="docutils literal notranslate"><span class="pre">sense_codons</span></code> attribute of genetic code instance. So taking the list of that dict returns just the sense codons <a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
+<p>The mapping from codon to amino acid is provided by a <code class="docutils literal notranslate"><span class="pre">sense_codons</span></code> attribute of the genetic code instance. So calling <code class="docutils literal notranslate"><span class="pre">list()</span></code> on that dict returns just the sense codons <a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>I’m truncating that list to just 4 elements to simplify the display.</p>
@@ -427,11 +427,16 @@
 <p>See the <a class="reference external" href="https://cogent3.org">cogent3</a> cookbook documentation for more on using genetic codes.</p>
 <div class="section" id="exercises">
 <h2><span class="section-number">8.6.1. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h2>
-<p>Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position. The following questions refer to these groupings.</p>
+<p>Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position <a class="footnote-reference brackets" href="#id5" id="id4">2</a>. The following questions refer to these groupings.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>1st, 2nd and 3rd codon position.</p>
+</dd>
+</dl>
 <ol class="arabic">
 <li><p>Pick a genetic code and, for each such codon position group, count the number of changes that are synonymous. Is there a difference between the codon position and the proportion of synonymous changes?</p></li>
-<li><p>Does the property measured in 2.) vary between the genetic codes?</p></li>
-<li><p>Now categorise the codon differences by whether they are a transition or transversion change. Assess whether the fraction of synonymous changes differs between transition and transversion changes.</p></li>
+<li><p>Does the property measured in the previous question differ between the genetic codes?</p></li>
+<li><p>Categorise the codon differences by whether they are a transition or transversion change (see <a class="reference internal" href="../molevol/mutation.html#point-mutations"><span class="std std-ref">Point mutations</span></a>). Assess whether the fraction of synonymous changes differs between transition and transversion changes.</p></li>
 <li><p>Is there variation (between the genetic codes) in the number of stop codons? Assess this programmatically.</p>
 <blockquote>
 <div><p><em>Hint: look at the attributes on the genetic code instance.</em></p>
