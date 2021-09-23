@@ -6,7 +6,7 @@
 Exploring genetic variation using Alignments
 ============================================
 
-Alignments and sequence collections contain methods to facilitate exploring genetic variation.
+Alignments and sequence collections have methods to facilitate exploring genetic variation.
 
 Find the variable positions
 ---------------------------
@@ -19,7 +19,6 @@ Find the variable positions
     aln = aln[:30]
     var_pos = aln.variable_positions(include_gap_motif=False)
     var_pos
-
 
 Entropy per aligned position
 ----------------------------
@@ -94,7 +93,7 @@ Dotplot between random sequences
     dp = subaln.dotplot()
     dp.show(width=500, height=500)
 
-.. note:: The ``alignment`` item in the legend shows the path the alignment algorithm found. Hopefully, that sits precisely on top of a diagonal!
+.. note:: The ``alignment`` item in the legend shows the path the alignment algorithm found. Hopefully, that sits precisely on top of the main displayed diagonal!
 
 Include the reverse complement in the dotplot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,7 +106,7 @@ Include the reverse complement in the dotplot
 Change the match criteria
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Two key arguments to the ``dotplot()`` method that affect the definition match are ``window`` and ``threshold``. The former is the same as specifying the size of the |kmer| being compared. The latter controls how many characters within the |kmer| must be identical for it to be a match.
+Two key arguments to the ``dotplot()`` method that affect the definition of a match are ``window`` and ``threshold``. The former corresponds to specifying the size of the |kmer| being compared. The latter controls how many characters within the |kmer| must be identical for it to be considered a match.
 
 .. jupyter-execute::
 
@@ -153,6 +152,8 @@ Download the :download:`large alignment of BRCA1 sequences </data/brca1.fasta>`,
 
 #. Google the definition of a moving average. Then experiment with changeing the ``window`` argument to ``information_plot()``. How do you interpret the impact of increasing the value of ``window``?
     
-#. Select a smallish segment from the one of the sequences within the downloaded data set (say < 50 bases). Manually edit that so that contains an inversion. Use ``make_unaligned_seqs()`` to create a sequence collection and dotplot this synthetic sequence to itself using ``rc=True``.
+#. Select a smallish segment from the one of the sequences within the downloaded data set (say < 50 bases). Manually edit that so it contains an inversion [#]_. Use ``make_unaligned_seqs()`` to create a sequence collection and dotplot this synthetic sequence to itself using ``rc=True``.
 
 #. Modify your synthetic sequence to have some repeats and see what the effect of changing ``window`` and ``threshold`` are on the detection of those.
+
+.. [#] Use a ``cogent3`` sequence object to do reverse complement.

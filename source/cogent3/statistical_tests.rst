@@ -22,13 +22,13 @@ This type of test compares counts against expected values specified via a prior 
     counts = CategoryCounts({"A": 887, "C": 547, "G": 623, "T": 535})
     counts
 
-You can see that the object displays the observed (what we provided), expected values computed as equally frequency values, and the standardised residuals [1]_. Residuals help you interpret where the observed data depart most strongly from the expected values. In this case, the largest absolute value is for the base ``A``. That the residual is positive indicates the observed data has an excess of this base compared to expected (a negative residual indicates a deficit).
+You can see that the object displays the observed (what we provided), expected values (all categories equally frequent), and the :index:`standardised residuals` [#]_. Residuals help you interpret where the observed data depart most strongly from the expected values. In this case, the largest absolute value is for the base ``A``. That the residual is positive indicates the observed data has an excess of this base compared to expected (a negative residual indicates a deficit).
 
-.. [1] These are calculated as :math:`\frac{(o-e)}{\sqrt e}` where :math:`o, e` are the corresponding observed and expected values.
+.. [#] These are calculated as :math:`\frac{(o-e)}{\sqrt e}` where :math:`o, e` are the corresponding observed and expected values.
 
-``CategoryCounts`` provides several different methods for analysis of categorical data. In this case, we could use either the ``G_fit()`` [2]_ or ``chisq_test()``.
+``CategoryCounts`` provides several different methods for analysis of categorical data. In this case, we could use either the ``G_fit()`` [#]_ or ``chisq_test()``.
 
-.. [2] G-tests are a likelihood ratio tests and the G statistic is sometimes referred to as G\ :math:`^2`.
+.. [#] G-tests are a likelihood ratio tests and the G statistic is sometimes referred to as G\ :math:`^2`.
 
 .. jupyter-execute::
 
@@ -62,7 +62,7 @@ Tests of independence
         table = make_table(["", "+", "-"], data=rows, index_name="")
         table
 
-    The ``Table.to_categorical()`` method returns a ``CategoryCounts`` instance.
+    The ``table.to_categorical()`` method returns a ``CategoryCounts`` instance.
     
     .. jupyter-execute::
     
@@ -71,7 +71,7 @@ Tests of independence
 
 In this type of test, our null hypothesis is that our counts occur independently of specific combinations of categories. Let's assess whether the DNA sequence from which those counts were derived was strand symmetric. The null hypothesis (|Ho|) is that base counts satisfy the following: A=T, G=C. The alternate hypothesis (|Ha|) is they don't, i.e. A≠T, G≠C.
 
-In this case, we need a 2D structure with strand on one axis and base on the other. I pick the purines as my bases on the plus strand, these will be the top-level keys in my 2D dict. The value for each base is a dict with the counts of that base on the plus and minus strands. To reiterate, the keys in the top level dict will become the row labels. The nested dict's must all have the same keys and those keys become the column labels.
+In this case, we need a 2x2 table with strand on one axis and base on the other. I pick the purines as my bases on the plus strand, these will be the top-level keys in my 2D dict. The value for each base is a dict with the counts of that base on the plus and minus strands. To reiterate, the keys in the top level dict will become the row labels. The nested dict's must all have the same keys and those keys become the column labels.
 
 .. jupyter-execute::
 
@@ -113,7 +113,7 @@ We will evaluate these data.
     x = (44.4, 45.9, 41.9, 53.3, 44.4, 44.1, 50.7, 45.2, 60.1)
     y = (2.6, 3.1, 2.5, 5.0, 3.6, 4.0, 5.2, 2.8, 3.8)
 
-Compute the Pearson product-moment correlation coefficient and it's |pvalue| (taken from the :math:`t`-distribution assuming the degrees of freedom equals n-2).
+Compute the Pearson product-moment correlation coefficient and its |pvalue| (taken from the :math:`t`-distribution assuming the degrees of freedom equals n-2).
 
 .. jupyter-execute::
 
@@ -217,7 +217,7 @@ Like the t-test, the Mann-Whitney (MW) test compares distributions by comparing 
 Kolmogorov-Smirnov test
 """""""""""""""""""""""
 
-The Kolmogorov-Smirnov (or KS) test is extremely useful. It is also a non-parametric statistical procedure but, unlike the Mann-Whitney test, it compares the cumulative distributions (both location and shape).
+The Kolmogorov-Smirnov (or KS) test is also a non-parametric statistical procedure but, unlike the Mann-Whitney test, it compares the cumulative distributions (both location and shape).
 
 .. jupyter-execute::
 
@@ -262,11 +262,11 @@ So we need to transform ``x`` into standard z-scores before we perform the KS te
 Quantile-quantile plots
 -----------------------
 
-A graphical way for comparing whether two data sets come from the same statistical distribution. In this case, we compare ``x`` with the theoretical quantiles from the normal distribution. If the data do come from the same distribution, then their points will form a line on the diagonal [3]_. In this case, the data seem very close to that -- consistent with the KS test results.
+A graphical way for comparing whether two data sets come from the same statistical distribution. In this case, we compare ``x`` with the theoretical quantiles from the normal distribution. If the data do come from the same distribution, then their points will form a line on the diagonal [#]_. In this case, the data seem very close to that -- consistent with the KS test results.
 
 In order to do the plot, the sample data must be sorted. I also add a diagonal line between the minimum and maximum points. If the data are truly on a diagonal, the data points will be scattered very close to this line.
 
-.. [3] You do not need the quantiles from a theoretical distribution. You can just compare the quantiles from two empirical data sets.
+.. [#] You do not need the quantiles from a theoretical distribution. You can just compare the quantiles from two empirical data sets.
 
 .. jupyter-execute::
 

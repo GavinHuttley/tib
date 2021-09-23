@@ -27,11 +27,11 @@ The ``moltype`` argument specifies the molecular type of the sequence. See :ref:
 
     type(aln)
 
-The ``ArrayAlignment`` is one of the two different ``cogent3`` types for handling sequence alignments and is built using ``numpy.arrays`` [1]_. So, under the hood, sequences are represented as arrays of integers with the integer values corresponding to the index of the character in the alphabet. The class handles conversions to / from the standard text representation.
+The ``ArrayAlignment`` is one of the two different ``cogent3`` types for handling sequence alignments and is built using ``numpy.arrays`` [#]_. So, under the hood, sequences are represented as arrays of integers with the integer values corresponding to the index of the character in the alphabet. The class handles conversions to / from the standard text representation.
 
 For all the methods, see ArrayAlignment_.
 
-.. [1] Unless you want to be manipulating sequences via their sequence annotations, this is what you want. See the cogent3_ documentation for the other class.
+.. [#] Unless you want to be manipulating sequences via their sequence annotations, this is what you want. See the cogent3_ documentation for the other class.
 
 When we talk about an alignment with ``cogent3``, this is what we mean.
 
@@ -127,9 +127,9 @@ This is done via a method.
 Converting sequences into a standard Python ``dict``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is useful if you want to directly manipulate the strings, for instance [2]_
+This is useful if you want to directly manipulate the strings, for instance [#]_
 
-.. [2] I'm slicing the alignment only because I want the dict to be sensibly displayed in this documentation.
+.. [#] I'm slicing the alignment only because I want the dict to be sensibly displayed in this documentation.
 
 .. jupyter-execute::
 

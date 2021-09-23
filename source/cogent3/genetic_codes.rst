@@ -37,14 +37,13 @@ or DNA triplet.
     aa = gc["TAC"]
     aa
 
-The mapping from codon to amino acid is provided by a ``sense_codons`` attribute of genetic code instance. So taking the list of that dict returns just the sense codons [#]_.
+The mapping from codon to amino acid is provided by a ``sense_codons`` attribute of the genetic code instance. So calling ``list()`` on that dict returns just the sense codons [#]_.
 
 .. [#] I'm truncating that list to just 4 elements to simplify the display.
 
 .. jupyter-execute::
 
     list(gc.sense_codons)[:4]
-
 
 You can get all the codons that encode an amino acid.
 
@@ -87,13 +86,15 @@ See the cogent3_ cookbook documentation for more on using genetic codes.
 Exercises
 ---------
 
-Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position. The following questions refer to these groupings.
+Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position [#]_. The following questions refer to these groupings.
+
+.. [#] 1st, 2nd and 3rd codon position.
 
 #. Pick a genetic code and, for each such codon position group, count the number of changes that are synonymous. Is there a difference between the codon position and the proportion of synonymous changes?
 
-#. Does the property measured in 2.) vary between the genetic codes?
+#. Does the property measured in the previous question differ between the genetic codes?
 
-#. Now categorise the codon differences by whether they are a transition or transversion change. Assess whether the fraction of synonymous changes differs between transition and transversion changes.
+#. Categorise the codon differences by whether they are a transition or transversion change (see :ref:`point_mutations`). Assess whether the fraction of synonymous changes differs between transition and transversion changes.
 
 #. Is there variation (between the genetic codes) in the number of stop codons? Assess this programmatically.
 
