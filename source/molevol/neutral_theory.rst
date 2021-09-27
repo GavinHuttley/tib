@@ -92,10 +92,9 @@ Another striking result is that the neutral substitution rate :math:`k` **is** t
 
 Perhaps the most crucial corollary from this body of theory is the theoretical foundations establish how what goes on within a species shapes what we see between species.
 
-Finally, returning to our simplistic example of how variation can be neutral but natural selection can be operated, the following quite provides another key perspective on how this body of work applies to modern day genomics.
+Finally, returning to our simplistic example of how variation can be neutral but natural selection can be operated, the following conjecture by King and Jukes provides another key perspective on how this body of work applies to modern day genomics.
 
 .. epigraph::
-    :name: king_jukes
 
     “..functionally less important molecules or parts of a molecule evolve faster than more important ones..”
 
@@ -111,9 +110,9 @@ While that seems all beautiful, be aware that, as with many other difficult prob
 Exercises
 ---------
 
-#. Use the :ref:`thought experiment <neutral_variation>` to explain the :ref:`King and Jukes conjecture <king_jukes>'.
+#. Use the :ref:`thought experiment <neutral_variation>` to explain the King and Jukes conjecture.
 
-#. Construct an example alignment that illustrates how the :ref:`King and Jukes conjecture <king_jukes>' will manifest on real data. Explain what features of your synthetic alignment relate to the King and Jukes conjecture and why.
+#. Construct an example alignment that illustrates how the King and Jukes conjecture will manifest on real data. Explain what features of your synthetic alignment relate to the King and Jukes conjecture and why.
 
 ------
 
