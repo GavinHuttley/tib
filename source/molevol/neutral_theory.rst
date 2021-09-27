@@ -35,14 +35,14 @@ Let us begin by making the simplistic assumption that the actual probability of 
 
 .. [2] There are 19 amino acids that can be changed into.
 
-Now let us consider an extreme scenario of a specific position in a hypothetical human protein sequence that only tolerates hydrophilic amino acids and any other type is recessive lethal before birth. I have illustrated this hypothetical sequence as having an arginine (``R``, see :ref:`Neutral variation <neutral>`). If we watch that sequence through time, we can never see any changes other than those which generate another hydrophilic amino acid because of natural selection. For this position, the actual total probability of mutation is the same as above. But if viewed from a longer time depth, after natural selection has operated, there can only be 5 hydrophilic amino acids. Thus, the probability of a mutation that is not lethal is :math:`4\epsilon`.
+Now let us consider an extreme scenario of a specific position in a hypothetical human protein sequence that only tolerates hydrophilic amino acids and any other type is recessive lethal before birth. I have illustrated this hypothetical sequence as having an arginine (``R``, see :ref:`Neutral variation <neutral_variation>`). If we watch that sequence through time, we can never see any changes other than those which generate another hydrophilic amino acid because of natural selection. For this position, the actual total probability of mutation is the same as above. But if viewed from a longer time depth, after natural selection has operated, there can only be 5 hydrophilic amino acids. Thus, the probability of a mutation that is not lethal is :math:`4\epsilon`.
 
 Now imagine we view variation in this protein at the population level. At our strictly hydrophilic position, only other hydrophilic amino acids can exist because they exhibit no difference with respect to natural selection. In this sense, we say they are "neutral" with respect to natural selection (not to be confused with chemically neutral). Now let us examine a different position in our hypothetical protein where, for instance, all amino acids are equivalent. We will see many more distinct variants and, as for the hydrophilic position, all such variants are neutral with respect to natural selection.
 
 .. the fixation probability will be less and ditto for the substitution rate.
 
 .. sidebar:: Neutral variation
-    :name: neutral
+    :name: neutral_variation
 
     .. digraph:: neutrality
 
@@ -79,7 +79,7 @@ What does "neutral" mean?
 A genetic variant is considered selectively neutral, or just neutral, if it is "invisible" to natural selection.
 For neutral variation, the evolutionary dynamics (changes in frequency) are dictated by random genetic drift and mutation only (these are the "neutral processes"). But, as Kimura showed, the designation of neutral is a moving target.
 
-.. note:: Random genetic drift is the fluctuation in allele frequencies between generations that occurs due to random sampling of individuals.
+.. note:: Random genetic drift is the fluctuation in allele frequencies between generations that occurs due to random sampling of gametes.
 
 Some important results from Kimura
 ==================================
@@ -95,6 +95,7 @@ Perhaps the most crucial corollary from this body of theory is the theoretical f
 Finally, returning to our simplistic example of how variation can be neutral but natural selection can be operated, the following quite provides another key perspective on how this body of work applies to modern day genomics.
 
 .. epigraph::
+    :name: king_jukes
 
     “..functionally less important molecules or parts of a molecule evolve faster than more important ones..”
 
@@ -106,6 +107,13 @@ Summary
 The great value of the neutral theory is as a null hypothesis. Models have been developed for explicitly testing for departure from neutrality for both population genetic and molecular evolutionary analyses. When we can reject the null convincingly, we are able to state that a specific genomic location encodes critical information for the organism. 
 
 While that seems all beautiful, be aware that, as with many other difficult problems, Kimura's theory rests on a number of very restrictive assumptions about biology that are known to be incorrect. Understanding how important those are remains a highly active area of research by many, including myself.
+
+Exercises
+---------
+
+#. Use the :ref:`thought experiment <neutral_variation>` to explain the :ref:`King and Jukes conjecture <king_jukes>'.
+
+#. Construct an example alignment that illustrates how the :ref:`King and Jukes conjecture <king_jukes>' will manifest on real data. Explain what features of your synthetic alignment relate to the King and Jukes conjecture and why.
 
 ------
 
