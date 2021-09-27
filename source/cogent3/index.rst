@@ -39,10 +39,10 @@ We have focussed, thus far, on developing an understanding of programming logic 
     explore_variation
     genetic_codes
     moltype
-    tables
-    statistical_tests
     apps
     using_models
+    tables
+    statistical_tests
 
 .. todo:: json
     serialisation
