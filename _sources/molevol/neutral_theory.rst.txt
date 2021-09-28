@@ -1,3 +1,13 @@
+.. sidebar:: Variation in proteins seems to accumulate linearly with time
+    :name: molecular_clock
+
+    .. image:: /_static/images/molevol/molecular_clock.png
+        :scale: 50%
+    
+    Number of amino acid differences versus species divergence time. The former were estimated allowing for multiple changes, the latter derived from paleontological studies. Mean error in estimate of amino acid differences are indicated by the vertical bars [1]_. Figure from :cite:`Dickerson:1971aa`.
+
+.. [1] Amusingly, there is no such uncertainty portrayed for the paleontological estimates.
+
 *****************************************
 The neutral theory of molecular evolution
 *****************************************
@@ -11,35 +21,12 @@ Examination of genetic divergence
 
 We start our exploration of this idea by looking at early results from comparisons of molecular sequences. As displayed in :ref:`the figure <molecular_clock>`, there appeared to be a linear relationship between chronological time and the accumulation of differences in amino acid sequences between species.
 
-.. sidebar:: Variation in proteins seems to accumulate linearly with time
-    :name: molecular_clock
-
-    .. image:: /_static/images/molevol/molecular_clock.png
-        :scale: 50%
-    
-    Number of amino acid differences versus species divergence time. The former were estimated allowing for multiple changes, the latter derived from paleontological studies. Mean error in estimate of amino acid differences are indicated by the vertical bars [1]_. Figure from :cite:`Dickerson:1971aa`.
-
-.. [1] Amusingly, there is no such uncertainty portrayed for the paleontological estimates.
-
 This result was difficult to reconcile under a model in which most genetic variation was under the scrutiny of natural selection. In 1968, 2 seminal papers provided an elegant mathematical and conceptual basis for understanding these clock-like behaviours. They also provide the critical framework from within which to examine and understand the forces affecting the distribution of genetic variation, both within and between species.
 
 The Neutral Theory of Molecular Evolution
 =========================================
 
 This theory proposes that most genetic variation, both within and between species, has not been affected by natural selection, but instead reflects the influence of chance events on new mutations. The theory was dominantly developed by Motoo Kimura :cite:`Kimura:1968aa` but independently proposed by King and Jukes :cite:`King:1969aa`.
-
-A simplified example of neutral evolution
-=========================================
-
-Let us begin by making the simplistic assumption that the actual probability of a mutation (in a single generation) to any of the amino acids is equal. We denote this :math:`p(a, b)=\epsilon` where :math:`a, b` are two different amino acids. For a sequence position where any amino acid is allowed, the total probability an existing amino acid changes is :math:`19\epsilon` [2]_.
-
-.. [2] There are 19 amino acids that can be changed into.
-
-Now let us consider an extreme scenario of a specific position in a hypothetical human protein sequence that only tolerates hydrophilic amino acids and any other type is recessive lethal before birth. I have illustrated this hypothetical sequence as having an arginine (``R``, see :ref:`Neutral variation <neutral_variation>`). If we watch that sequence through time, we can never see any changes other than those which generate another hydrophilic amino acid because of natural selection. For this position, the actual total probability of mutation is the same as above. But if viewed from a longer time depth, after natural selection has operated, there can only be 5 hydrophilic amino acids. Thus, the probability of a mutation that is not lethal is :math:`4\epsilon`.
-
-Now imagine we view variation in this protein at the population level. At our strictly hydrophilic position, only other hydrophilic amino acids can exist because they exhibit no difference with respect to natural selection. In this sense, we say they are "neutral" with respect to natural selection (not to be confused with chemically neutral). Now let us examine a different position in our hypothetical protein where, for instance, all amino acids are equivalent. We will see many more distinct variants and, as for the hydrophilic position, all such variants are neutral with respect to natural selection.
-
-.. the fixation probability will be less and ditto for the substitution rate.
 
 .. sidebar:: Neutral variation
     :name: neutral_variation
@@ -72,6 +59,19 @@ Now imagine we view variation in this protein at the population level. At our st
         R -> ellipsis [style=dotted arrowhead=none];
 
     Each node represents an amino acid (not all amino acids are shown). Hydrophilic amino acids are shown in :blue:`blue`.
+
+A simplified example of neutral evolution
+=========================================
+
+Let us begin by making the simplistic assumption that the actual probability of a mutation (in a single generation) to any of the amino acids is equal. We denote this :math:`p(a, b)=\epsilon` where :math:`a, b` are two different amino acids. For a sequence position where any amino acid is allowed, the total probability an existing amino acid changes is :math:`19\epsilon` [2]_.
+
+.. [2] There are 19 amino acids that can be changed into.
+
+Now let us consider an extreme scenario of a specific position in a hypothetical human protein sequence that only tolerates hydrophilic amino acids and any other type is recessive lethal before birth. I have illustrated this hypothetical sequence as having an arginine (``R``, see :ref:`Neutral variation <neutral_variation>`). If we watch that sequence through time, we can never see any changes other than those which generate another hydrophilic amino acid because of natural selection. For this position, the actual total probability of mutation is the same as above. But if viewed from a longer time depth, after natural selection has operated, there can only be 5 hydrophilic amino acids. Thus, the probability of a mutation that is not lethal is :math:`4\epsilon`.
+
+Now imagine we view variation in this protein at the population level. At our strictly hydrophilic position, only other hydrophilic amino acids can exist because they exhibit no difference with respect to natural selection. In this sense, we say they are "neutral" with respect to natural selection (not to be confused with chemically neutral). Now let us examine a different position in our hypothetical protein where, for instance, all amino acids are equivalent. We will see many more distinct variants and, as for the hydrophilic position, all such variants are neutral with respect to natural selection.
+
+.. the fixation probability will be less and ditto for the substitution rate.
 
 What does "neutral" mean?
 =========================
