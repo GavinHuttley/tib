@@ -1,5 +1,5 @@
-Statistical tests using ``cogent3``
-===================================
+General purpose statistical tests using ``cogent3``
+===================================================
 
 The following are a subset statistical tests available within ``cogent3`` organised by analysis problem.
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.9. Statistical tests using cogent3 &mdash; Topics in Bioinformatics 2021.09.27 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>8.12. General purpose statistical tests using cogent3 &mdash; Topics in Bioinformatics 2021.09.28 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -28,8 +28,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.10. Overview of cogent3 apps" href="apps.html" />
-    <link rel="prev" title="8.8. Tabular data" href="tables.html" /> 
+    <link rel="next" title="9. Introduction to version control" href="../version_control/index.html" />
+    <link rel="prev" title="8.11. Tabular data" href="tables.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -63,31 +63,31 @@
 <li class="toctree-l2"><a class="reference internal" href="explore_variation.html#exercises">8.5. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="genetic_codes.html">8.6. Genetic Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moltype.html">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tables.html">8.8. Tabular data</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.9. Statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#analyses-of-categorical-data">8.9.1. Analyses of categorical data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#goodness-of-fit-tests">8.9.1.1. Goodness-of-fit tests</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tests-of-independence">8.9.1.2. Tests of independence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html">8.8. Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_models.html">8.9. Modelling sequence evolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_models.html#exercises">8.10. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">8.11. Tabular data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.12. General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#analyses-of-categorical-data">8.12.1. Analyses of categorical data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#goodness-of-fit-tests">8.12.1.1. Goodness-of-fit tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests-of-independence">8.12.1.2. Tests of independence</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#analyses-of-correlations">8.9.2. Analyses of correlations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#analyses-of-distributions">8.9.3. Analyses of distributions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#paired-distributions">8.9.3.1. Paired distributions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#distribution-properties">8.9.3.2. Distribution properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#analyses-of-correlations">8.12.2. Analyses of correlations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analyses-of-distributions">8.12.3. Analyses of distributions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#paired-distributions">8.12.3.1. Paired distributions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distribution-properties">8.12.3.2. Distribution properties</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#two-sample-t-test">Two sample t-test</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#mann-whitney-u-test">Mann-Whitney U-test</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#kolmogorov-smirnov-test">Kolmogorov-Smirnov test</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#using-the-kolmogorov-smirnov-test-to-assess-the-distribution">8.9.3.3. Using the Kolmogorov-Smirnov test to assess the distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-kolmogorov-smirnov-test-to-assess-the-distribution">8.12.3.3. Using the Kolmogorov-Smirnov test to assess the distribution</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#quantile-quantile-plots">8.9.4. Quantile-quantile plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quantile-quantile-plots">8.12.4. Quantile-quantile plots</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html">8.10. Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_models.html">8.11. Modelling sequence evolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_models.html#exercises">8.12. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">9. Introduction to version control</a></li>
@@ -110,7 +110,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a> &raquo;</li>
-      <li><span class="section-number">8.9. </span>Statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></li>
+      <li><span class="section-number">8.12. </span>General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/statistical_tests.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -144,18 +144,18 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="statistical-tests-using-cogent3">
-<h1><span class="section-number">8.9. </span>Statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code><a class="headerlink" href="#statistical-tests-using-cogent3" title="Permalink to this headline"></a></h1>
+<div class="section" id="general-purpose-statistical-tests-using-cogent3">
+<h1><span class="section-number">8.12. </span>General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code><a class="headerlink" href="#general-purpose-statistical-tests-using-cogent3" title="Permalink to this headline"></a></h1>
 <p>The following are a subset statistical tests available within <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> organised by analysis problem.</p>
 <div class="section" id="analyses-of-categorical-data">
-<h2><span class="section-number">8.9.1. </span>Analyses of categorical data<a class="headerlink" href="#analyses-of-categorical-data" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">8.12.1. </span>Analyses of categorical data<a class="headerlink" href="#analyses-of-categorical-data" title="Permalink to this headline"></a></h2>
 <p>This involves contrasting counts data against the expectation defined either by another data set or by a prior null hypothesis. The analysis of categorical data is provided by the <code class="docutils literal notranslate"><span class="pre">CategoryCounts</span></code> object.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The methods on <code class="docutils literal notranslate"><span class="pre">CategoryCounts</span></code> also support estimating the <span class="math notranslate nohighlight">\(p\)</span>-value using a resampling statistic.</p>
 </div>
 <div class="section" id="goodness-of-fit-tests">
-<h3><span class="section-number">8.9.1.1. </span>Goodness-of-fit tests<a class="headerlink" href="#goodness-of-fit-tests" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">8.12.1.1. </span>Goodness-of-fit tests<a class="headerlink" href="#goodness-of-fit-tests" title="Permalink to this headline"></a></h3>
 <p>This type of test compares counts against expected values specified via a prior hypothesis. Here I’ll analyse nucleotide counts data, testing the null hypothesis that all bases occur with equal frequency.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -301,7 +301,7 @@
 </div>
 </div>
 <div class="section" id="tests-of-independence">
-<h3><span class="section-number">8.9.1.2. </span>Tests of independence<a class="headerlink" href="#tests-of-independence" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">8.12.1.2. </span>Tests of independence<a class="headerlink" href="#tests-of-independence" title="Permalink to this headline"></a></h3>
 <div class="sidebar">
 <p class="sidebar-title">Constructing <code class="docutils literal notranslate"><span class="pre">CategoryCounts</span></code> from a <code class="docutils literal notranslate"><span class="pre">Table</span></code></p>
 <p>We can also get to this result via specifying the rows as a list of lists. In doing this, we must add the row label to each row.</p>
@@ -738,7 +738,7 @@
 </div>
 </div>
 <div class="section" id="analyses-of-correlations">
-<h2><span class="section-number">8.9.2. </span>Analyses of correlations<a class="headerlink" href="#analyses-of-correlations" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">8.12.2. </span>Analyses of correlations<a class="headerlink" href="#analyses-of-correlations" title="Permalink to this headline"></a></h2>
 <p>In cases where we have bivariate data we may be interested in whether the two values are correlated. Of course, it would be remiss of me not to remind you of the limits to drawing inferences from correlations.</p>
 <div class="sidebar">
 <p class="sidebar-title">Correlation does not imply causation</p>
@@ -793,9 +793,9 @@
 </div>
 </div>
 <div class="section" id="analyses-of-distributions">
-<h2><span class="section-number">8.9.3. </span>Analyses of distributions<a class="headerlink" href="#analyses-of-distributions" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">8.12.3. </span>Analyses of distributions<a class="headerlink" href="#analyses-of-distributions" title="Permalink to this headline"></a></h2>
 <div class="section" id="paired-distributions">
-<h3><span class="section-number">8.9.3.1. </span>Paired distributions<a class="headerlink" href="#paired-distributions" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">8.12.3.1. </span>Paired distributions<a class="headerlink" href="#paired-distributions" title="Permalink to this headline"></a></h3>
 <p>Say you have paired data – observations that are coupled in some way, such as from the same individual at different time-points. Specific statistical procedures for this case include the paired <span class="math notranslate nohighlight">\(t\)</span>-test and the sign test. The former is a parametric statistical procedure, the latter non-parametric.</p>
 <p>The paired <span class="math notranslate nohighlight">\(t\)</span>-test is used to test the null hypothesis that mean (<span class="math notranslate nohighlight">\(\bar\mu_d\)</span>) of the differences (<span class="math notranslate nohighlight">\(d\)</span>) between two samples equals 0. There can be different alternate hypotheses (which you pre-specify), e.g. <span class="math notranslate nohighlight">\(\bar\mu_d&gt;0\)</span> (a one-tailed test). The test has numerous assumptions, including that <span class="math notranslate nohighlight">\(d\)</span> is normally distributed.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -842,7 +842,7 @@
 </div>
 </div>
 <div class="section" id="distribution-properties">
-<h3><span class="section-number">8.9.3.2. </span>Distribution properties<a class="headerlink" href="#distribution-properties" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">8.12.3.2. </span>Distribution properties<a class="headerlink" href="#distribution-properties" title="Permalink to this headline"></a></h3>
 <p>We can compare continuously distributed variables using standard statistical procedures, such as the two sample t-test. We can also employ non-parametric approaches to these.</p>
 <div class="section" id="two-sample-t-test">
 <h4>Two sample t-test<a class="headerlink" href="#two-sample-t-test" title="Permalink to this headline"></a></h4>
@@ -914,7 +914,7 @@
 </div>
 </div>
 <div class="section" id="using-the-kolmogorov-smirnov-test-to-assess-the-distribution">
-<h3><span class="section-number">8.9.3.3. </span>Using the Kolmogorov-Smirnov test to assess the distribution<a class="headerlink" href="#using-the-kolmogorov-smirnov-test-to-assess-the-distribution" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">8.12.3.3. </span>Using the Kolmogorov-Smirnov test to assess the distribution<a class="headerlink" href="#using-the-kolmogorov-smirnov-test-to-assess-the-distribution" title="Permalink to this headline"></a></h3>
 <p id="index-3">We evaluate whether the data from <code class="docutils literal notranslate"><span class="pre">x</span></code> are distributed normally. To do this, we obtain the theoretical quantiles from the normal distribution. (These are from the standard normal distribution, with mean of 0 and standard deviation of 1.)</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -960,7 +960,7 @@
 </div>
 </div>
 <div class="section" id="quantile-quantile-plots">
-<h2><span class="section-number">8.9.4. </span>Quantile-quantile plots<a class="headerlink" href="#quantile-quantile-plots" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">8.12.4. </span>Quantile-quantile plots<a class="headerlink" href="#quantile-quantile-plots" title="Permalink to this headline"></a></h2>
 <p>A graphical way for comparing whether two data sets come from the same statistical distribution. In this case, we compare <code class="docutils literal notranslate"><span class="pre">x</span></code> with the theoretical quantiles from the normal distribution. If the data do come from the same distribution, then their points will form a line on the diagonal <a class="footnote-reference brackets" href="#id8" id="id7">3</a>. In this case, the data seem very close to that – consistent with the KS test results.</p>
 <p>In order to do the plot, the sample data must be sorted. I also add a diagonal line between the minimum and maximum points. If the data are truly on a diagonal, the data points will be scattered very close to this line.</p>
 <dl class="footnote brackets">
@@ -1064,9 +1064,9 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
         });
         }
         </script>
-</div><div class="output text_html"><div>                            <div id="ac8e56a3-2aea-4a45-b2c9-37314874c597" class="plotly-graph-div" style="height:400px; width:400px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("ac8e56a3-2aea-4a45-b2c9-37314874c597")) {                    Plotly.newPlot(                        "ac8e56a3-2aea-4a45-b2c9-37314874c597",                        [{"hovertemplate":"Theoretical Quantiles=%{x}<br>Sample Quantiles=%{y}<extra></extra>","legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"type":"scatter","x":[-1.731664396122245,-1.1503493803760079,-0.8122178014999129,-0.5485222826980979,-0.31863936396437514,-0.1046334556140754,0.10463345561407526,0.31863936396437514,0.5485222826980981,0.8122178014999129,1.1503493803760079,1.7316643961222453],"xaxis":"x","y":[83.0,97.0,104.0,107.0,113.0,119.0,123.0,124.0,129.0,134.0,146.0,161.0],"yaxis":"y"},{"mode":"lines","showlegend":false,"type":"scatter","x":[-1.731664396122245,1.7316643961222453],"y":[83.0,161.0]}],                        {"height":400,"legend":{"tracegroupgap":0},"margin":{"t":60},"template":{"data":{"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"width":400,"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Theoretical Quantiles"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Sample Quantiles"}}},                        {"responsive": true}                    ).then(function(){
+</div><div class="output text_html"><div>                            <div id="870c96cb-ac6d-40e1-b031-6077e08c9ad5" class="plotly-graph-div" style="height:400px; width:400px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("870c96cb-ac6d-40e1-b031-6077e08c9ad5")) {                    Plotly.newPlot(                        "870c96cb-ac6d-40e1-b031-6077e08c9ad5",                        [{"hovertemplate":"Theoretical Quantiles=%{x}<br>Sample Quantiles=%{y}<extra></extra>","legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"type":"scatter","x":[-1.731664396122245,-1.1503493803760079,-0.8122178014999129,-0.5485222826980979,-0.31863936396437514,-0.1046334556140754,0.10463345561407526,0.31863936396437514,0.5485222826980981,0.8122178014999129,1.1503493803760079,1.7316643961222453],"xaxis":"x","y":[83.0,97.0,104.0,107.0,113.0,119.0,123.0,124.0,129.0,134.0,146.0,161.0],"yaxis":"y"},{"mode":"lines","showlegend":false,"type":"scatter","x":[-1.731664396122245,1.7316643961222453],"y":[83.0,161.0]}],                        {"height":400,"legend":{"tracegroupgap":0},"margin":{"t":60},"template":{"data":{"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"width":400,"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Theoretical Quantiles"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Sample Quantiles"}}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('ac8e56a3-2aea-4a45-b2c9-37314874c597');
+var gd = document.getElementById('870c96cb-ac6d-40e1-b031-6077e08c9ad5');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1097,8 +1097,8 @@ if (outputEl) {{
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="tables.html" class="btn btn-neutral float-left" title="8.8. Tabular data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="apps.html" class="btn btn-neutral float-right" title="8.10. Overview of cogent3 apps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tables.html" class="btn btn-neutral float-left" title="8.11. Tabular data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../version_control/index.html" class="btn btn-neutral float-right" title="9. Introduction to version control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
