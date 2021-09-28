@@ -112,7 +112,9 @@ Exercises
 
 #. Use the :ref:`thought experiment <neutral_variation>` to explain the King and Jukes conjecture.
 
-#. Construct an example alignment that illustrates how the King and Jukes conjecture will manifest on real data. Explain what features of your synthetic alignment relate to the King and Jukes conjecture and why.
+#. Construct an example alignment that illustrates how the King and Jukes conjecture will manifest on real data (don't limit yourself to protein coding DNA sequences). Explain what features of your synthetic alignment relate to the King and Jukes conjecture and why.
+
+#. The characteristic influence of natural selection thus far has been to consider it as a "negative" or "purifying" force. These terms refer to the elimination of a subset of genetic variants due to their deleterious influence on phenotype. What other type of natural selection is there and provide an example showing how that would manifest in real data.
 
 ------
 
