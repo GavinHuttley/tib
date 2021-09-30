@@ -28,23 +28,19 @@ Introduction to Python
     strings
     dir_help
     lists
-    indexing
-    files
-    writing_functions
-    namespace
-    iterators
-    more_looping
-    import
-    numpy
-    misc
-    how_to_write_a_program
-    visualisation
     dictionaries
     sets
+    indexing
+    files
+    iterators
+    writing_functions
+    namespace
+    more_looping
+    import
+    how_to_write_a_program
+    misc
+    numpy
+    visualisation
 
-.. todo:: move iterators before writing functions
-.. todo:: move miscellaneous towards end
-.. todo:: move numpy, plotly to end of topic
-.. todo:: move dictionaries, sets up after lists
 .. todo:: have a section on pip installing packages
 .. todo:: write a section on string maniupulation
