@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.22. Indexing and Slicing &mdash; Topics in Bioinformatics 2021.09.28 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.24. Indexing and Slicing &mdash; Topics in Bioinformatics 2021.09.30 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -28,8 +28,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.24. Working with files" href="files.html" />
-    <link rel="prev" title="5.21. Using lists" href="lists.html" /> 
+    <link rel="next" title="5.26. Working with files" href="files.html" />
+    <link rel="prev" title="5.23. The set data type" href="sets.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -74,33 +74,33 @@
 <li class="toctree-l2"><a class="reference internal" href="strings.html">5.19. Dealing with strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.20. Getting help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">5.21. Using lists</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.22. Indexing and Slicing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#indexing">5.22.1. Indexing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#indexing-in-multiple-dimensions">5.22.2. Indexing in multiple-dimensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slicing">5.22.3. Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.22. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets.html">5.23. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.24. Indexing and Slicing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#indexing">5.24.1. Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indexing-in-multiple-dimensions">5.24.2. Indexing in multiple-dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slicing">5.24.3. Slicing</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.23. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">5.24. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.25. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.26. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.27. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.29. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.30. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.31. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.32. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.33. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.34. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.35. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.36. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.37. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.38. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.39. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.40. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.41. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.42. Dealing with dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">5.43. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.26. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.28. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.30. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.31. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.32. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.33. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.34. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.35. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.36. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.37. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.38. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.39. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.40. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.41. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.42. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.43. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
@@ -126,7 +126,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-      <li><span class="section-number">5.22. </span>Indexing and Slicing</li>
+      <li><span class="section-number">5.24. </span>Indexing and Slicing</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/indexing.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -161,9 +161,9 @@
 }
 </style>
 <div class="section" id="indexing-and-slicing">
-<h1><span class="section-number">5.22. </span>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">5.24. </span>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline"></a></h1>
 <div class="section" id="indexing">
-<span id="index-0"></span><h2><span class="section-number">5.22.1. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline"></a></h2>
+<span id="index-0"></span><h2><span class="section-number">5.24.1. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline"></a></h2>
 <p>This works equivalently for python strings, tuples and lists. There are similarities to indexing other data types, and differences.</p>
 <p>An index refers to the order number of an element in a series. Elements from instances of a series data type (e.g. <span class="incremental">str</span> and <span class="incremental">list</span>) can be referenced by their index number.</p>
 <p>For all data types, the <span class="incremental">[]</span> are used to specify the indices.</p>
@@ -210,7 +210,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4047</span><span class="o">/</span><span class="mf">1892827994.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4004</span><span class="o">/</span><span class="mf">1892827994.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span>
 
 <span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
@@ -228,7 +228,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4047</span><span class="o">/</span><span class="mf">3444256072.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4004</span><span class="o">/</span><span class="mf">3444256072.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">more_data</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 
 <span class="ne">IndexError</span>: list index out of range
@@ -238,7 +238,7 @@
 </div>
 </div>
 <div class="section" id="indexing-in-multiple-dimensions">
-<h2><span class="section-number">5.22.2. </span>Indexing in multiple-dimensions<a class="headerlink" href="#indexing-in-multiple-dimensions" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.24.2. </span>Indexing in multiple-dimensions<a class="headerlink" href="#indexing-in-multiple-dimensions" title="Permalink to this headline"></a></h2>
 <p>Using the list of lists I created earlier.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -279,7 +279,7 @@
 </div>
 </div>
 <div class="section" id="slicing">
-<span id="index-1"></span><h2><span class="section-number">5.22.3. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline"></a></h2>
+<span id="index-1"></span><h2><span class="section-number">5.24.3. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline"></a></h2>
 <p id="index-2">Slicing is just an indexing operation that refers to a range of elements. A slice operation allows you to select a sequential ordering of elements. The syntax for a slice is <code class="docutils literal notranslate"><span class="pre">[start:end:stride]</span></code>, but some of these terms are optional.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> refers to the first index from which elements will be sampled. Defaults to 0.</p></li>
@@ -346,7 +346,7 @@
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.23. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">5.25. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
 <ol class="arabic">
 <li><p>Consider the <code class="docutils literal notranslate"><span class="pre">dict</span></code> defined below</p>
 <blockquote>
@@ -384,8 +384,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="lists.html" class="btn btn-neutral float-left" title="5.21. Using lists" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="files.html" class="btn btn-neutral float-right" title="5.24. Working with files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sets.html" class="btn btn-neutral float-left" title="5.23. The set data type" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="files.html" class="btn btn-neutral float-right" title="5.26. Working with files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

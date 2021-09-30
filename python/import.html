@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.34. Extending capabilities using import &mdash; Topics in Bioinformatics 2021.09.28 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.36. Extending capabilities using import &mdash; Topics in Bioinformatics 2021.09.30 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -28,8 +28,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.35. numpy – numerical routines for python" href="numpy.html" />
-    <link rel="prev" title="5.32. More on looping" href="more_looping.html" /> 
+    <link rel="next" title="5.37. Pulling it together – writing your own programs" href="how_to_write_a_program.html" />
+    <link rel="prev" title="5.34. More on looping" href="more_looping.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -74,33 +74,33 @@
 <li class="toctree-l2"><a class="reference internal" href="strings.html">5.19. Dealing with strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.20. Getting help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">5.21. Using lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.22. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.23. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">5.24. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.25. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.26. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.27. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.28. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.29. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.30. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.31. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.32. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.33. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.34. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#third-party-libraries">5.34.1. “third party” libraries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#why-use-libraries-written-by-others">5.34.2. Why use libraries written by others?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#writing-your-own-modules">5.34.3. Writing your own modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.22. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets.html">5.23. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.24. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.26. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.28. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.30. Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.31. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.32. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.33. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.34. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.35. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.36. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#third-party-libraries">5.36.1. “third party” libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-use-libraries-written-by-others">5.36.2. Why use libraries written by others?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-your-own-modules">5.36.3. Writing your own modules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.35. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.36. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.37. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.38. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.39. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.40. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.41. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.42. Dealing with dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">5.43. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.37. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.38. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.39. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.40. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.41. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.42. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.43. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
@@ -126,7 +126,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-      <li><span class="section-number">5.34. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></li>
+      <li><span class="section-number">5.36. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/import.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -161,7 +161,7 @@
 }
 </style>
 <div class="section" id="extending-capabilities-using-import">
-<span id="import-module"></span><span id="index-0"></span><h1><span class="section-number">5.34. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#extending-capabilities-using-import" title="Permalink to this headline"></a></h1>
+<span id="import-module"></span><span id="index-0"></span><h1><span class="section-number">5.36. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#extending-capabilities-using-import" title="Permalink to this headline"></a></h1>
 <p>In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, the <code class="docutils literal notranslate"><span class="pre">math</span></code> module is part of what is referred to as the Python <em>standard library</em>, i.e. it comes standard with all Python installations. How we gain access to these is through the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. <code class="docutils literal notranslate"><span class="pre">math</span></code> contains many basic mathematical operations, e.g. <code class="docutils literal notranslate"><span class="pre">log()</span></code> or <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>, as functions. We get access to those using the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -323,14 +323,14 @@
 </dd>
 </dl>
 <div class="section" id="third-party-libraries">
-<h2><span class="section-number">5.34.1. </span>“third party” libraries<a class="headerlink" href="#third-party-libraries" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.36.1. </span>“third party” libraries<a class="headerlink" href="#third-party-libraries" title="Permalink to this headline"></a></h2>
 <p id="index-4">An even greater appeal of Python is the availability of highly sophisticated modules written by others.</p>
 <p>Of particular note is <a class="reference external" href="https://numpy.org">numpy</a> (numerical Python). This library is arguably the main reason Python is so popular in science. Numpy provides critical routines in numerical mathematics, particularly linear algebra. But it’s very broadly useful, being ~10x faster than straight Python implementations. It also allows succinct expressions for arrays and provides very useful methods on arrays.</p>
 <p>Other invaluable libraries for science are Scipy, Pandas, Matplotlib, IPython and biology specific libraries (such as <a class="reference external" href="https://cogent3.org">cogent3</a>).</p>
 <p>We will cover <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in a separate section.</p>
 </div>
 <div class="section" id="why-use-libraries-written-by-others">
-<h2><span class="section-number">5.34.2. </span>Why use libraries written by others?<a class="headerlink" href="#why-use-libraries-written-by-others" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.36.2. </span>Why use libraries written by others?<a class="headerlink" href="#why-use-libraries-written-by-others" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Widely scrutinised, so less chance of code errors</p></li>
 <li><p>Typically better performance</p></li>
@@ -339,7 +339,7 @@
 <p>There are an increasing number of Biology specific libraries. My own lab produces a number of open sourced library for genomic biology (e.g. <a class="reference external" href="https://cogent3.org">cogent3</a>, which we will use later in the course).</p>
 </div>
 <div class="section" id="writing-your-own-modules">
-<h2><span class="section-number">5.34.3. </span>Writing your own modules<a class="headerlink" href="#writing-your-own-modules" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.36.3. </span>Writing your own modules<a class="headerlink" href="#writing-your-own-modules" title="Permalink to this headline"></a></h2>
 <p>Since a Python script is a module, then all you have to do is write your code in a python script. If that script os on what is called the <em>python path</em>, then it can be imported and any functions within can be used.</p>
 <p>The python path refers to the places on your computer that Python will look for modules. The first is the directory from which the Python executable was started. The second is the “installed packages” location, typically a directory called <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> which is “within” Python itself. The third is a custom location which you have to tell Python about, for instance using a special <a class="reference external" href="https://docs.python.org/3/using/cmdline.html?highlight=pythonpath#envvar-PYTHONPATH">PYTHONPATH</a> environment variable.</p>
 </div>
@@ -349,8 +349,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="more_looping.html" class="btn btn-neutral float-left" title="5.32. More on looping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="numpy.html" class="btn btn-neutral float-right" title="5.35. numpy – numerical routines for python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="more_looping.html" class="btn btn-neutral float-left" title="5.34. More on looping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_write_a_program.html" class="btn btn-neutral float-right" title="5.37. Pulling it together – writing your own programs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

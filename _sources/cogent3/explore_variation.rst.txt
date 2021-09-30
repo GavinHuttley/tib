@@ -66,8 +66,8 @@ This is a line plot that smoothes the information scores and also displays them 
     aln = load_aligned_seqs("data/brca1.fasta", moltype="dna")
     aln = aln[:1500]
 
-    info_plot = aln.information_plot()
-    info_plot.show(width=600, height=250, window=30)
+    info_plot = aln.information_plot(window=30)
+    info_plot.show(width=600, height=250)
 
 You can remove one of the traces by clicking on it's member in the figures legend. You can also zoom in on parts of the plot by click and drag to include the portion you want. Double click the plot to revert back.
 
