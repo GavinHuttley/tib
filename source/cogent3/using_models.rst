@@ -241,7 +241,7 @@ The column titles in that summary display have the following meaning
     t.set_repr_policy(show_shape=False)
     t
 
-The LR statistic (computed :ref:`using this equation <likelihood_ratio>`) and df are computed from the ``lnL`` and ``nfp`` values, respectively, of the different models under "hypothesis". The p-value is the probability that LR ≤ a statistic from the theoretical |chisq| distribution with df degrees of freedom.
+The LR statistic (computed :ref:`using this equation <likelihood_ratio>`) and df are computed from the ``lnL`` and ``nfp`` values, respectively, of the different models under "hypothesis". The p-value is the probability of a LR ≥ the observed statistic from the theoretical |chisq| distribution with df degrees of freedom.
 
 The ``model_result`` for each of the models is available as ``.null`` and ``.alt`` attributes.
 
@@ -263,6 +263,14 @@ If your analysis returns one of these, it means there was an error or the algori
 Exercises
 =========
 
-#. Repeat the hypothesis test, but configure both models so that the motif probabilities are optimised.
+The following require you to repeat the above hypothesis test.
+
+#. From the test result, which model do you choose and why?
+
+#. Displaying the MLE's for the null hypothesis and the alternate hypothesis in separate cells. Which specific parameter values is responsible for the difference in likelihoods?
+
+#. Give a biological interpretation of the result.
+
+#. What are the assumptions of these models?
 
 .. todo:: add an exercise demonstrating why the average motif probs should not be used
