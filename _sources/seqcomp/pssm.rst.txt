@@ -16,16 +16,20 @@ We convert the PWM into a PPM, but I'm restricting the examples to just 4 positi
     :hide-code:
 
     from cogent3 import make_table
-    
-    table = make_table(header=[r"Base \ Position", "0", "1", "3"],
-                        data={r"Base \ Position": list("TCAG"),
-                             "0": [0.2, 0, 0.8, 0],
-                             "1": [1.0, 0., 0., 0.],
-                             "2": [0.1, 0., 0.9, 0.],
-                             "3": [.6, 0., 0.4, 0.]},
-                             title="PPM --",
-                             legend="Position specific probability matrix",
-                             digits=1)
+
+    table = make_table(
+        header=[r"Base \ Position", "0", "1", "3"],
+        data={
+            r"Base \ Position": list("TCAG"),
+            "0": [0.2, 0, 0.8, 0],
+            "1": [1.0, 0.0, 0.0, 0.0],
+            "2": [0.1, 0.0, 0.9, 0.0],
+            "3": [0.6, 0.0, 0.4, 0.0],
+        },
+        title="PPM --",
+        legend="Position specific probability matrix",
+        digits=1,
+    )
     table
 
 A worked example
@@ -79,17 +83,24 @@ We add a pseudocount of 0.5 to the PWM and then convert to a PPM as before, prod
 .. jupyter-execute::
     :hide-code:
 
-    from numpy import array
     from cogent3 import make_table
+    from numpy import array
 
-    header = ['Base \\ Position', '0', '1', '2', '3']
-    data = {'Base \\ Position': array(['T', 'C', 'A', 'G'], dtype='<U1'), 
-    '0': array(['0.208', '0.042', '0.708', '0.042'], dtype='<U5'), 
-    '1': array(['0.875', '0.042', '0.042', '0.042'], dtype='<U5'), 
-    '2': array(['0.125', '0.042', '0.792', '0.042'], dtype='<U5'), 
-    '3': array(['0.542', '0.042', '0.375', '0.042'], dtype='<U5')}
-    data = {k: array(data[k], dtype='U') for k in data}
-    table = make_table(header, data=data, title="PPM", legend="Position specific probability matrix after adding 0.5 to the PWM cells")
+    header = ["Base \\ Position", "0", "1", "2", "3"]
+    data = {
+        "Base \\ Position": array(["T", "C", "A", "G"], dtype="<U1"),
+        "0": array(["0.208", "0.042", "0.708", "0.042"], dtype="<U5"),
+        "1": array(["0.875", "0.042", "0.042", "0.042"], dtype="<U5"),
+        "2": array(["0.125", "0.042", "0.792", "0.042"], dtype="<U5"),
+        "3": array(["0.542", "0.042", "0.375", "0.042"], dtype="<U5"),
+    }
+    data = {k: array(data[k], dtype="U") for k in data}
+    table = make_table(
+        header,
+        data=data,
+        title="PPM",
+        legend="Position specific probability matrix after adding 0.5 to the PWM cells",
+    )
     table
 
 This now leads to the following elements being taken from the table ``0.042, 0.875, 0.792, 0.542``, leading to
@@ -127,13 +138,19 @@ The PSSM is a log-odds matrix, i.e. it's the log of the odds ratio matrix. Becau
 .. jupyter-execute::
     :hide-code:
 
-    from numpy import array
     from cogent3 import make_table
+    from numpy import array
 
-    header = ['Base \\ Position', '0', '1', '2', '3']
-    data = {'Base \\ Position': array(['T', 'C', 'A', 'G'], dtype='<U1'), '0': array(['-0.263', '-2.585', '1.503', '-2.585'], dtype='<U6'), '1': array(['1.807', '-2.585', '-2.585', '-2.585'], dtype='<U6'), '2': array(['-1.000', '-2.585', '1.663', '-2.585'], dtype='<U6'), '3': array(['1.115', '-2.585', '0.585', '-2.585'], dtype='<U6')}
-    data = {k: array(data[k], dtype='U') for k in data}
-    table = make_table(header, data=data)
+    header = ["Base \\ Position", "0", "1", "2", "3"]
+    data = {
+        "Base \\ Position": array(["T", "C", "A", "G"], dtype="<U1"),
+        "0": array([-0.263, -2.585, 1.503, -2.585]),
+        "1": array([1.807, -2.585, -2.585, -2.585]),
+        "2": array([-1.000, -2.585, 1.663, -2.585]),
+        "3": array([1.115, -2.585, 0.585, -2.585]),
+    }
+    data = {k: array(data[k]) for k in data}
+    table = make_table(header, data=data, digits=3)
     table
 
 Computing the PSSM score for the sequence

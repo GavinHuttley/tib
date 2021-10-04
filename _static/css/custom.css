@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
 .wy-nav-content {
 	max-width: 100%;
@@ -18,7 +21,6 @@ div.section > hr,
 div.section > dl:not(.footnote),
 div.section > ol,
 div.section > ul,
-div.section > table,
 div.section > blockquote, 
 div.section > div:not(.section):not(.sidebar)
 	{
@@ -27,6 +29,7 @@ div.section > div:not(.section):not(.sidebar)
 		display: inline-block;
 		font-family: 'Atkinson Hyperlegible', sans-serif;
 	}
+
 
 div.wy-nav-content, div.container.sphinx-bs {
 	margin-left:  0;
@@ -105,6 +108,16 @@ blockquote.epigraph p.attribution {
 	font-weight: bold;
 	position: absolute;
 }
+
+div.section > table
+{
+	/* Constrain width for direct descendants of a div */
+	width: 55%;
+	display: inline-block;
+	font-family: 'Roboto Mono' !important, monospace;
+}
+
+.c3table table {margin: 10px 0; font-family: monospace !important;}
 
 /* Colors and text decoration.
  For example, :black:`text in black` or :blink:`text blinking` in rST. */
