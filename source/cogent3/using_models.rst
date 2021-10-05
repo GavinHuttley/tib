@@ -241,7 +241,7 @@ The column titles in that summary display have the following meaning
     t.set_repr_policy(show_shape=False)
     t
 
-The LR statistic (computed :ref:`using this equation <likelihood_ratio>`) and df are computed from the ``lnL`` and ``nfp`` values, respectively, of the different models under "hypothesis". The p-value is the probability of a LR ≥ the observed statistic from the theoretical |chisq| distribution with df degrees of freedom.
+The LR statistic (computed :ref:`using this equation <likelihood_ratio>`) and df are computed from the ``lnL`` and ``nfp`` values, respectively, of the different models under "hypothesis". The |pvalue| is the probability of a LR ≥ the observed statistic from the theoretical |chisq| distribution with df degrees of freedom.
 
 The ``model_result`` for each of the models is available as ``.null`` and ``.alt`` attributes.
 
