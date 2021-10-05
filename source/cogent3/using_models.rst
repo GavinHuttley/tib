@@ -263,7 +263,7 @@ If your analysis returns one of these, it means there was an error or the algori
 Exercises
 =========
 
-The following require you to repeat the above hypothesis test.
+The following require you to repeat the above hypothesis test. Download the :download:`alignment of primate BRCA1 sequences </data/brca1_primate.fasta>`, or :ref:`using Python <download_data>`.
 
 #. From the test result, which model do you choose and why?
 
