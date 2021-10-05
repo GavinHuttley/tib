@@ -267,7 +267,7 @@ The following require you to repeat the above hypothesis test. Download the :dow
 
 #. From the test result, which model do you choose and why?
 
-#. Displaying the MLE's for the null hypothesis and the alternate hypothesis in separate cells. Which specific parameter values is responsible for the difference in likelihoods?
+#. Displaying the MLE's for the null hypothesis and the alternate hypothesis in separate cells. Which specific parameter value(s) is responsible for the difference in likelihoods?
 
 #. Give a biological interpretation of the result.
 
