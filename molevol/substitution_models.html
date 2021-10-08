@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>7.7. Substitution models &mdash; Topics in Bioinformatics 2021.10.05 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>7.7. Substitution models &mdash; Topics in Bioinformatics 2021.10.08 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -363,7 +363,7 @@ Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
 <div class="section" id="time-in-molecular-evolution">
 <h2><span class="section-number">7.7.4. </span><em>Time</em> in molecular evolution<a class="headerlink" href="#time-in-molecular-evolution" title="Permalink to this headline"></a></h2>
 <p>What we call “time” in molecular evolution is not chronological time as we know it in our daily lives, but a measure of sequence change. Recall that Kimura showed the rate of substitution is equal to the neutral mutation rate for neutrally evolving genetic variants. Time comes into this via the neutral mutation rate as this quantity is measured as the probability of mutation <em>per generation</em>.</p>
-<p>In molecular evolutionary analyses, we measure time (<span class="math notranslate nohighlight">\(t\)</span>) as the <em>expected number of substitutions</em> per position. This is a product of the amount of elapsed chronological time and the mutation rate. For a stationary Markov process, we obtain the expected number of substitutions by multiplying the base frequencies by the <em>flow</em> away from the base (the diagonal element of <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span>) <a class="footnote-reference brackets" href="#id16" id="id15">4</a>.</p>
+<p id="index-5">In molecular evolutionary analyses, we measure time (<span class="math notranslate nohighlight">\(t\)</span>) as the <em>expected number of substitutions</em> per position. This is a product of the amount of elapsed chronological time and the mutation rate. For a stationary Markov process, we obtain the expected number of substitutions by multiplying the base frequencies by the <em>flow</em> away from the base (the diagonal element of <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span>) <a class="footnote-reference brackets" href="#id16" id="id15">4</a>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id15">4</a></span></dt>
 <dd><p>For a non-stationary Markov process, the calculation is trickier <span id="id17">[<a class="reference internal" href="#id28" title="Benjamin D Kaehler, Von Bing Yap, Rongli Zhang, and Gavin A Huttley. Genetic distance for a general non-stationary Markov substitution process. Systematic Biology, 64:281–93, 2015. URL: http://www.ncbi.nlm.nih.gov/pubmed/25503772.">KYZH15</a>]</span>.</p>
@@ -374,7 +374,7 @@ Q = \begin{matrix} {\bf A} \\ {\bf C} \\ {\bf G} \\ {\bf T} \end{matrix} &amp;
 <p>Although it is not possible to extract chronological time from just sequence divergence data alone, methods exist that use datings from the fossil record to facilitate estimation of chronological times.</p>
 </div>
 <div class="section" id="calibrating-rate-matrices-to-facilitate-estimation-of-time-on-a-tree">
-<span id="calibration"></span><span id="index-5"></span><h2><span class="section-number">7.7.5. </span>Calibrating rate matrices to facilitate estimation of time on a tree<a class="headerlink" href="#calibrating-rate-matrices-to-facilitate-estimation-of-time-on-a-tree" title="Permalink to this headline"></a></h2>
+<span id="calibration"></span><span id="index-6"></span><h2><span class="section-number">7.7.5. </span>Calibrating rate matrices to facilitate estimation of time on a tree<a class="headerlink" href="#calibrating-rate-matrices-to-facilitate-estimation-of-time-on-a-tree" title="Permalink to this headline"></a></h2>
 <p>In order to estimate the expected number of substitutions on all the branches on a tree, molecular evolutionary software often employs a trick. It uses a rate matrix that has been calibrated such that <span class="math notranslate nohighlight">\(t\)</span>=1.</p>
 <p>The calibration step involves calculating <span class="math notranslate nohighlight">\(t\)</span> for a given <span class="math notranslate nohighlight">\({\mathbf{\rm Q}}\)</span> according to the equation above and dividing both sides by it.</p>
 <p>There is a major computational advantage of this approach. Specifically, the <a class="reference external" href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">eigendecomposition</a> algorithm for matrix exponentiation allows us to do the algorithmically “hard part” once for an entire tree and store the next to final step in the computation <span id="id18">[<a class="reference internal" href="#id27" title="Harold W Schranz, Von Bing Yap, Simon Easteal, Rob Knight, and Gavin A Huttley. Pathological rate matrices: from primates to pathogens. BMC Bioinformatics, 9:550, Dec 2008. doi:10.1186/1471-2105-9-550.">SYE+08</a>]</span>. That final step — producing the different substitution probability matrices for edges with different <span class="math notranslate nohighlight">\(t\)</span> (<span class="math notranslate nohighlight">\({\mathbf{\rm P}}\)</span><span class="math notranslate nohighlight">\((t)\)</span>) — is very efficiently obtained by applying the corresponding branch length to this intermediate product.</p>

@@ -197,15 +197,15 @@ We calculate this for the first alignment column in my little example, which has
 
     pi[0, "C"]
 
-Conditioned on having a C, we then extract the probabilities from |P| that correspond to C staying the same on the :teal:`green edge`, changing into T on the :orange:`orange edge` and staying the same on the :blue:`blue edge`. This corresponds to the following equation for the likelihood of a C at alignment column 1 [4]_.
+Conditioned on having a C, we then extract the probabilities from |P| that correspond to C being observed on the :teal:`green` and :blue:`blue` edges, and changing into T on the :orange:`orange` edge. The likelihood of a C at alignment column 1 [4]_ is specified by this equation 
 
-.. [4] I have retained the edge
+.. [4] The edge from which P is derived is indicated in as a subscript in the table title.
 
 .. math::
 
     \mathcal{L}_1(\text{C})=\pi_\text{C} \times P_1(C,C) \times P_2(C,T) \times P_3(C,C)
 
-and code (for our example)
+and this code
 
 .. jupyter-execute::
 
@@ -217,13 +217,13 @@ This is simply the probability conditioned on whatever the values are in our mat
 
     \mathcal{L}_1(\text{T})=\pi_\text{T} \times P_1(T,C) \times P_2(T,T) \times P_3(T,C)
 
-and code (for our example)
+and
 
 .. jupyter-execute::
 
     pi[0, "T"] * P["T", "C"] * P["T", "T"] * P["T", "C"]
 
-and so on for A as the ancestral base and G as the ancestral base. So the likelihood under our model for the first position is simply the sum of these individual likelihoods.
+for A as the ancestral base and then G as the ancestral base. The likelihood under our model for the first position is simply the sum of these individual likelihoods.
 
 .. math::
 
@@ -265,6 +265,9 @@ We typically do not specify our models in terms of |P| matrices – the substitu
 .. math::
 
     P(t) = \exp^{Qt}
+
+.. index::
+    pair: branch length; expected number of substitutions
 
 where |Q| is the instantaneous rate matrix, :math:`\exp` the matrix exponential and :math:`t` is the expected number of substitutions per site.
 

@@ -45,7 +45,7 @@ Hypothesis testing and the |pvalue|
 
 I'm going to present this principally by focussing on the null hypothesis (denoted |Ho|). This corresponds most closely with the approach for data analysis advocated by Fisher (see :cite:`Perezgonzalez:2015aa`).
 
-In this instance, our null corresponds to some notion of how we think the data may be distributed. Let's imagine we have the complete genome sequences of two different species. We could pose the null hypothesis that the abundance of the different nucleotides in the sequence will be the same. To quantify this, we select a statistical procedure for comparing counts data (e.g. a chi-square test) and decide, *a priori*, on our significance threshold (we will choose 0.05 for now, but more on this later). We compute our test-statistic (a :math:`\chi^2` in this hypothetical case) and "look up" the corresponding |pvalue|. Say our hypothetical analysis of nucleotide counts returned a :math:`\chi^2=7.9`. Then, given 3 degrees of freedom, our p-value is :math:`\approx 0.048<0.05`.
+In this instance, our null corresponds to some notion of how we think the data may be distributed. Let's imagine we have the complete genome sequences of two different species. We could pose the null hypothesis that the abundance of the different nucleotides in the sequence will be the same. To quantify this, we select a statistical procedure for comparing counts data (e.g. a chi-square test) and decide, *a priori*, on our significance threshold (we will choose 0.05 for now, but more on this later). We compute our test-statistic (a :math:`\chi^2` in this hypothetical case) and "look up" the corresponding |pvalue|. Say our hypothetical analysis of nucleotide counts returned a :math:`\chi^2=7.9`. Then, given 3 degrees of freedom, our |pvalue| is :math:`\approx 0.048<0.05`.
 
 So what does this |pvalue| correspond to? First, it's actually a cumulative probability attained by summing the tail of the :math:`\chi^2_3` distribution for all values :math:`\ge 7.9`. So a |pvalue| **is not** a point probability (that would be the probability of observing a value of precisely :math:`7.9`). Another point worth making here is that the |pvalue| is that expected under the idealised theoretical (mathematical) distribution [1]_.
 
@@ -119,7 +119,7 @@ Resampling statistics -- brute-force generation of null distributions
 
 A challenge often encountered in bioinformatics is that a random variable of interest does not follow a known distribution. In such cases, a popular statistical approach is to use so called resampling approaches.
 
-If they derive from some type of permutation of observed data (as we will do below) then they are often referred to as "non-parametric" methods. Such techniques have value for estimating the confidence interval for a parameter (e.g. jackknife) or estimating a p-value (e.g. permutation tests).
+If they derive from some type of permutation of observed data (as we will do below) then they are often referred to as "non-parametric" methods. Such techniques have value for estimating the confidence interval for a parameter (e.g. jackknife) or estimating a |pvalue| (e.g. permutation tests).
 
 Computational approaches -- resampling with replacement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -128,8 +128,8 @@ We now consider a specific problem which we will solve using random sampling wit
 
 .. [2] To illustrate "with replacement". We randomly draw an observation from the observed data set and add it to our "resampled" set. We then return the observation back to the observed data. This means the probability of observing that specific state never changes. In the alternate approach of resampling without replacement, the probability of drawing a specific state decreases with each subsequent draw of it.
 
-A worked example for estimating a p-value using a resampling statistic
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+A worked example for estimating a |pvalue| using a resampling statistic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 We have a DNA sequence and we want to evaluate whether nucleotides occur randomly in the sequence. We will tackle that question by using non-overlapping dinucleotides and assessing whether their frequency is consistent with the frequencies of their constituent nucleotides.
 
