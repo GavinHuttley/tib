@@ -266,6 +266,9 @@ We typically do not specify our models in terms of |P| matrices – the substitu
 
     P(t) = \exp^{Qt}
 
+.. index::
+    pair: branch length; expected number of substitutions
+
 where |Q| is the instantaneous rate matrix, :math:`\exp` the matrix exponential and :math:`t` is the expected number of substitutions per site.
 
 So now we have slightly revised components of the model. Because we were just dealing with a substitution probability matrix, time was embedded as a part of the matrix. It was not a separate parameter. Now, we have all of those things but we have swapped |Q| **plus** branch lengths for |P|.

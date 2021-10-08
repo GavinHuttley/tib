@@ -86,7 +86,10 @@ To see the parameter MLEs, we access the ``lf`` attribute [#]_
 
     result.lf 
 
-There are 2 tables always present in this display – "edge params" and "motif params". The former will always show the branch lengths. The following displays the tree, with the branch length defined by the values in the "edge params" table. The columns "edge" and "parent" denote which branch the "length" column value corresponds to [#]_. That value is the MLE for the expected number of substitutions (our measure of evolutionary time).
+.. index::
+    pair: branch length; expected number of substitutions
+
+There are 2 tables always present in this display – "edge params" and "motif params". The former will always show the branch lengths. The following displays the tree, with the branch length defined by the values in the "edge params" table. The columns "edge" and "parent" denote which branch the "length" column value corresponds to [#]_. That value is the MLE for the expected number of substitutions per site (our measure of evolutionary time).
 
 .. [#] If you hover your mouse over the internal nodes on the tree, the name of the node will appear.
 

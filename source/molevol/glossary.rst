@@ -34,7 +34,7 @@ rate parameter
 tree, phylogenetic tree
     A graph displaying the relationship among sequences
 
-branch length
+:index:`branch length`
     On a phylogenetic tree, the expected number of substitutions per site for a specific branch. This is a parameter estimated by maximum likelihood
 
 site
