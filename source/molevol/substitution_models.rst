@@ -239,6 +239,9 @@ As you will see below, we typically define one exchangeability parameter as the 
 
 What we call "time" in molecular evolution is not chronological time as we know it in our daily lives, but a measure of sequence change. Recall that Kimura showed the rate of substitution is equal to the neutral mutation rate for neutrally evolving genetic variants. Time comes into this via the neutral mutation rate as this quantity is measured as the probability of mutation *per generation*.
 
+.. index::
+    pair: branch length; expected number of substitutions
+
 In molecular evolutionary analyses, we measure time (|t|) as the *expected number of substitutions* per position. This is a product of the amount of elapsed chronological time and the mutation rate. For a stationary Markov process, we obtain the expected number of substitutions by multiplying the base frequencies by the *flow* away from the base (the diagonal element of |Q|) [#]_.
 
 .. [#] For a non-stationary Markov process, the calculation is trickier :cite:`Kaehler:2015aa`.

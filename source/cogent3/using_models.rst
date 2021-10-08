@@ -86,7 +86,10 @@ To see the parameter MLEs, we access the ``lf`` attribute [#]_
 
     result.lf 
 
-There are 2 tables always present in this display – "edge params" and "motif params". The former will always show the branch lengths. The following displays the tree, with the branch length defined by the values in the "edge params" table. The columns "edge" and "parent" denote which branch the "length" column value corresponds to [#]_. That value is the MLE for the expected number of substitutions (our measure of evolutionary time).
+.. index::
+    pair: branch length; expected number of substitutions
+
+There are 2 tables always present in this display – "edge params" and "motif params". The former will always show the branch lengths. The following displays the tree, with the branch length defined by the values in the "edge params" table. The columns "edge" and "parent" denote which branch the "length" column value corresponds to [#]_. That value is the MLE for the expected number of substitutions per site (our measure of evolutionary time).
 
 .. [#] If you hover your mouse over the internal nodes on the tree, the name of the node will appear.
 
@@ -241,7 +244,7 @@ The column titles in that summary display have the following meaning
     t.set_repr_policy(show_shape=False)
     t
 
-The LR statistic (computed :ref:`using this equation <likelihood_ratio>`) and df are computed from the ``lnL`` and ``nfp`` values, respectively, of the different models under "hypothesis". The p-value is the probability of a LR ≥ the observed statistic from the theoretical |chisq| distribution with df degrees of freedom.
+The LR statistic (computed :ref:`using this equation <likelihood_ratio>`) and df are computed from the ``lnL`` and ``nfp`` values, respectively, of the different models under "hypothesis". The |pvalue| is the probability of a LR ≥ the observed statistic from the theoretical |chisq| distribution with df degrees of freedom.
 
 The ``model_result`` for each of the models is available as ``.null`` and ``.alt`` attributes.
 
@@ -267,7 +270,7 @@ The following require you to repeat the above hypothesis test. Download the :dow
 
 #. From the test result, which model do you choose and why?
 
-#. Displaying the MLE's for the null hypothesis and the alternate hypothesis in separate cells. Which specific parameter values is responsible for the difference in likelihoods?
+#. Displaying the MLE's for the null hypothesis and the alternate hypothesis in separate cells. Which specific parameter value(s) is responsible for the difference in likelihoods?
 
 #. Give a biological interpretation of the result.
 
