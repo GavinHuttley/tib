@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.11. Tabular data &mdash; Topics in Bioinformatics 2021.10.15 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>8.11. Tabular data &mdash; Topics in Bioinformatics 2022.07.15 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
@@ -180,7 +180,7 @@
 <p id="index-1">We split into the separate positions using the builtin <code class="docutils literal notranslate"><span class="pre">zip()</span></code> <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dinucs</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">get_in_motif_size</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">log_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dinucs</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">get_in_motif_size</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">log_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">base1</span><span class="p">,</span> <span class="n">base2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">dinucs</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -199,7 +199,7 @@
 <p>We convert dinucleotide data into a column based <code class="docutils literal notranslate"><span class="pre">dict</span></code> – the keys will become the column names and the values will be the column.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;base1&quot;</span><span class="p">:</span> <span class="n">base1</span><span class="p">,</span> <span class="s2">&quot;base2&quot;</span><span class="p">:</span> <span class="n">base2</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;base1&quot;</span><span class="p">:</span> <span class="n">base1</span><span class="p">,</span> <span class="s2">&quot;base2&quot;</span><span class="p">:</span> <span class="n">base2</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -209,7 +209,7 @@
 <p>We make a <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> table using a utility function.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_table</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_table</span>
 
 <span class="n">table</span> <span class="o">=</span> <span class="n">make_table</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 <span class="n">table</span>
@@ -265,7 +265,7 @@
 <p>I’m going to make a list of lists from <code class="docutils literal notranslate"><span class="pre">dinucs</span></code> by just convert each dinucleotide into a list.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">dinuc</span><span class="p">)</span> <span class="k">for</span> <span class="n">dinuc</span> <span class="ow">in</span> <span class="n">dinucs</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">dinuc</span><span class="p">)</span> <span class="k">for</span> <span class="n">dinuc</span> <span class="ow">in</span> <span class="n">dinucs</span><span class="p">]</span>
 <span class="n">rows</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -279,7 +279,7 @@
 <p>In this instance, I need to specify the column names using the argument <code class="docutils literal notranslate"><span class="pre">header</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">make_table</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;base1&quot;</span><span class="p">,</span> <span class="s2">&quot;base2&quot;</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">rows</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">make_table</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;base1&quot;</span><span class="p">,</span> <span class="s2">&quot;base2&quot;</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">rows</span><span class="p">)</span>
 <span class="n">table</span>
 </pre></div>
 </div>
@@ -334,7 +334,7 @@
 <p>We load a tab separated data file using the <code class="docutils literal notranslate"><span class="pre">load_table()</span></code> function. The format is inferred from the filename suffix.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">load_table</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">load_table</span>
 
 <span class="n">stats</span> <span class="o">=</span> <span class="n">load_table</span><span class="p">(</span><span class="s2">&quot;data/edge_stats.tsv&quot;</span><span class="p">)</span>
 <span class="n">stats</span>
@@ -389,7 +389,7 @@
 <p>These display the top or bottom of a table.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -432,7 +432,7 @@
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -479,7 +479,7 @@
 <p>Tables are “row oriented”, so the first index concerns rows, the column.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -525,7 +525,7 @@
 <p>Tables have a <code class="docutils literal notranslate"><span class="pre">column</span></code> attribute.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
@@ -538,7 +538,7 @@
 <p>This has <code class="docutils literal notranslate"><span class="pre">dict</span></code> like properties and supports you getting a column using the column header,</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="s2">&quot;kappa&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="s2">&quot;kappa&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -552,7 +552,7 @@
 <p>or, using an <code class="docutils literal notranslate"><span class="pre">int</span></code> like it’s a series – in this case indexes are defined by the <code class="docutils literal notranslate"><span class="pre">column.order</span></code> attribute.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">order</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">order</span>
 </pre></div>
 </div>
 </div>
@@ -564,7 +564,7 @@
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -581,7 +581,7 @@
 <p>You write a function that takes the rows from the columns ytou want and returns the result of some operation. I’ll just take the square root of kappa.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 
 <span class="n">k_rt</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">with_new_column</span><span class="p">(</span><span class="s2">&quot;sqrt(kappa)&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;kappa&quot;</span><span class="p">])</span>
 <span class="n">k_rt</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -631,7 +631,7 @@
 <p>In our dinucleotide table, we only want rows where both bases are in the canonical set <code class="docutils literal notranslate"><span class="pre">{A,</span> <span class="pre">C,</span> <span class="pre">G,</span> <span class="pre">T}</span></code>. We do this via a filter step using a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function and a <code class="docutils literal notranslate"><span class="pre">set</span></code> object consisting of these bases. The <code class="docutils literal notranslate"><span class="pre">filtered()</span></code> method calls the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> with each row. Only if the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> will the row be included in the new <code class="docutils literal notranslate"><span class="pre">Table</span></code>. In our case, our <code class="docutils literal notranslate"><span class="pre">lambda</span></code> will return true if the set of elements in the row is a subset of all the basses.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">})</span>
 <span class="n">table</span>
 </pre></div>
 </div>
@@ -689,7 +689,7 @@
 <p>This method returns counts of the unique combinations of values from the specified columns. The result is a <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> type, a <code class="docutils literal notranslate"><span class="pre">CategoryCounter</span></code> instance, which has some useful properties. Principal being that it behaves like a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unique</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">count_unique</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">count_unique</span><span class="p">()</span>
 <span class="n">unique</span>
 </pre></div>
 </div>
@@ -705,7 +705,7 @@
 <p>Another being that it can produce <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat_counts</span> <span class="o">=</span> <span class="n">unique</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat_counts</span> <span class="o">=</span> <span class="n">unique</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">()</span>
 <span class="n">cat_counts</span>
 </pre></div>
 </div>
@@ -821,7 +821,7 @@
 <p>which supports statistical testing of categorical data. For instance</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat_counts</span><span class="o">.</span><span class="n">chisq_test</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat_counts</span><span class="o">.</span><span class="n">chisq_test</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -973,7 +973,7 @@
 <p>We can also get a <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object via <code class="docutils literal notranslate"><span class="pre">Table.to_categorical()</span></code>. In this case, the counts must be fully specified prior to constructing the table. (Meaning you’ve already done the counting part.) In addition, we also need to specify a column whose values are the row categories. The latter is achieved setting <code class="docutils literal notranslate"><span class="pre">make_table(index_name=&lt;column</span> <span class="pre">name&gt;)</span></code>. In this case, I specify the column name of the index is an empty string.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">158</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">113</span><span class="p">,</span> <span class="mi">59</span><span class="p">),</span>
     <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">57</span><span class="p">),</span>
     <span class="s2">&quot;G&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">142</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">87</span><span class="p">),</span>
@@ -1024,7 +1024,7 @@
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat_counts</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat_counts</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">()</span>
 <span class="n">cat_counts</span>
 </pre></div>
 </div>
@@ -1151,7 +1151,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.23. The set data type &mdash; Topics in Bioinformatics 2021.10.15 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.23. The set data type &mdash; Topics in Bioinformatics 2022.07.15 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
@@ -161,7 +161,7 @@
 <p>Sets are defined either explicitly using <code class="docutils literal notranslate"><span class="pre">{}</span></code> with different members separated by commas.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -175,7 +175,7 @@
 <p>or by calling the builtin function <code class="docutils literal notranslate"><span class="pre">set()</span></code> passing the data in as a series.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -189,7 +189,7 @@
 <p>As the latter expression indicates, the input to <code class="docutils literal notranslate"><span class="pre">set()</span></code> must be an iterable. This matters! The latter two <strong>are not</strong> equivalent.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ABC&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ABC&quot;</span><span class="p">}</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -204,7 +204,7 @@
 <p>But using the builtin function states the items in “ABC” are set members.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">)</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -218,7 +218,7 @@
 <p>To have the latter correspond with the former requires placing the string inside another iterable.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;ABC&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;ABC&quot;</span><span class="p">])</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -232,15 +232,15 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">set</span></code> type is iterable.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dinucs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;AA&quot;</span><span class="p">,</span> <span class="s2">&quot;CG&quot;</span><span class="p">,</span> <span class="s2">&quot;GA&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dinucs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;AA&quot;</span><span class="p">,</span> <span class="s2">&quot;CG&quot;</span><span class="p">,</span> <span class="s2">&quot;GA&quot;</span><span class="p">}</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">dinucs</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>GA
-AA
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>AA
+GA
 CG
 </pre></div>
 </div>
@@ -249,14 +249,14 @@ CG
 <p>Only immutable data types can be members of sets (so not lists etc..)</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span> <span class="p">[]}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span> <span class="p">[]}</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4198</span><span class="o">/</span><span class="mf">818910911.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">{</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span> <span class="p">[]}</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
@@ -267,7 +267,7 @@ CG
 <p>The great power of this data type is the ability to do very succinct comparisons. These use <a class="reference internal" href="operators.html#bitwise-operators"><span class="std std-ref">bitwise operators</span></a>. For instance, we identify the overlap between two sets using the bitwise <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> character (bitwise AND).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;ACGGCCT&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;ACGGCCT&quot;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;ACGGAAA&quot;</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span>
 </pre></div>
@@ -282,7 +282,7 @@ CG
 <p>We can establish that one set is a subset of another using the <code class="docutils literal notranslate"><span class="pre">in</span></code> logical operator</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">}</span>
 <span class="n">a</span> <span class="ow">in</span> <span class="n">bases</span>
 </pre></div>
 </div>
@@ -296,7 +296,7 @@ CG
 <p>We can compute the difference (what nucleotides is <code class="docutils literal notranslate"><span class="pre">b</span></code> missing) using the standard <code class="docutils literal notranslate"><span class="pre">-</span></code> operator</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">-</span> <span class="n">b</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">-</span> <span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -309,7 +309,7 @@ CG
 <p>Or a “symmetric” difference using the <code class="docutils literal notranslate"><span class="pre">^</span></code> character (bitwise exclusive OR, analogous to NOT)</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">^</span> <span class="n">b</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">^</span> <span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -322,7 +322,7 @@ CG
 <p>We can take the union of two sets using the <code class="docutils literal notranslate"><span class="pre">|</span></code> character (bitwise inclusive OR).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 <span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
 
 <span class="n">a</span> <span class="o">|</span> <span class="n">b</span>
@@ -339,7 +339,7 @@ CG
 <p>Having created a set, you can add new elements using the <code class="docutils literal notranslate"><span class="pre">add()</span></code> method.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -353,7 +353,7 @@ CG
 <p>Or remove elements using the <code class="docutils literal notranslate"><span class="pre">remove()</span></code> method.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -367,7 +367,7 @@ CG
 <p>Given that a <code class="docutils literal notranslate"><span class="pre">set</span></code> is mutable, you cannot have sets as part of sets. Python provides an <code class="docutils literal notranslate"><span class="pre">immutable</span></code> set type, <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> that can be. This is defined using the builtin function of that name.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="s2">&quot;ABCD&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="s2">&quot;ABCD&quot;</span><span class="p">)</span>
 <span class="n">f</span>
 </pre></div>
 </div>
@@ -380,7 +380,7 @@ CG
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -408,7 +408,7 @@ CG
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

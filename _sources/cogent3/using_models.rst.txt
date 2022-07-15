@@ -143,7 +143,7 @@ For continuous-time substitution models, the default ``model`` settings are that
     f81_mprobs = evo.model(
         "F81",
         name="F81-mprobs free",
-        sm_args=dict(optimise_motif_probs=True),
+        optimise_motif_probs=True,
         tree="data/brca1_primate.tree",
     )
 

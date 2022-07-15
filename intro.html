@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. Prologue &mdash; Topics in Bioinformatics 2021.10.15 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>2. Prologue &mdash; Topics in Bioinformatics 2022.07.15 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
@@ -127,23 +127,23 @@
 <p>The above is a big picture view of the role of software in science, but where does this course fit in? I can say with absolute certainty that we will not be answering most of the questions raised above (Doh!). What <em>you</em> will be doing is acquiring the skills necessary to understand what the analyses described above are, how to perform them and whether <em>you</em> should believe the results. <em>You</em> will the develop the skills to write custom software whose output you can trust. In your future career, that software may be as simple as handling data formats, or completely novel models of biological systems. In all cases, your software will be key to solving the scientific questions that you find interesting.</p>
 <div class="sidebar">
 <p class="sidebar-title">What’s the difference between using <a class="reference external" href="https://python.org">Python</a> versus using <a class="reference external" href="https://www.r-project.org/">R</a>?</p>
-<p>The major difference between <a class="reference external" href="https://python.org">Python</a> and <a class="reference external" href="https://www.r-project.org/">R</a> comes in how they are typically used <a class="footnote-reference brackets" href="#id7" id="id5">3</a>. Many of the concepts you will learn in the <a class="reference external" href="https://python.org">Python</a> topic – conditionals, iteration, functions – are not directly coded by most users of <a class="reference external" href="https://www.r-project.org/">R</a>. They are implicitly being used, but are “hidden” from users.</p>
+<p>Both languages provide very sophisticated capabilities for scientists, hence they are the dominant languages employed in Data Science. Both of these languages are also <a class="reference external" href="https://en.wikipedia.org/wiki/Open_source">Open Source</a> languages, developed by a community of volunteers <a class="footnote-reference brackets" href="#id7" id="id5">3</a>.</p>
+<p>The major difference between <a class="reference external" href="https://python.org">Python</a> and <a class="reference external" href="https://www.r-project.org/">R</a> comes in how they are typically used <a class="footnote-reference brackets" href="#id8" id="id6">4</a>. Many of the concepts you will learn in the <a class="reference external" href="https://python.org">Python</a> topic – conditionals, iteration, functions – are not directly coded by most users of <a class="reference external" href="https://www.r-project.org/">R</a>. They are implicitly being used, but are “hidden” from users.</p>
 <p>The way you will learn <a class="reference external" href="https://python.org">Python</a> is as a more “conventional” programming approach.</p>
 </div>
-<p>At this stage, I’m sure you have many questions. Like, <em>What is “bioinformatics”?</em> <em>I’ve heard the phrase “Data Science”, is that what bioinformatics is?</em> <em>Why are you teaching</em> <a class="reference external" href="https://python.org"><em>Python</em></a> <em>for part of the course and</em> <a class="reference external" href="https://www.r-project.org/"><em>R</em></a> <em>for the rest?</em></p>
-<p>Let’s go backwards. We teach <a class="reference external" href="https://python.org">Python</a> and <a class="reference external" href="https://www.r-project.org/">R</a> because these are the languages that we use in our own research. We use these languages because they have capabilities that allow us to leverage very sophisticated capabilities for our science. It also turns out that these two languages are the dominant languages employed in Data Science. Both of these languages are also <a class="reference external" href="https://en.wikipedia.org/wiki/Open_source">Open Source</a> languages, developed by a community of volunteers <a class="footnote-reference brackets" href="#id8" id="id6">4</a>.</p>
+<p>At this stage, I’m sure you have many questions. Like, <em>What is “bioinformatics”?</em> <em>I’ve heard the phrase “Data Science”, is that what bioinformatics is?</em></p>
 <dl class="footnote brackets">
 <dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
-<dd><p>Ok, Ok, I get it. This is a gross oversimplification of the differences between the languages.</p>
+<dd><p>I could write a very extensive essay on how open source software has, and continues to be, critical to science. Instead I have used the quote from Paul Romer to illuminate the fact that true scientific reproducibility requires transparency. By definition, open source software satisfies this condition while proprietary software does not.</p>
 </dd>
 <dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id6">4</a></span></dt>
-<dd><p>I could write a very extensive essay on how open source software has, and continues to be, critical to science. Instead I have used the quote above to illuminate the fact that true scientific reproducibility requires transparency. By definition, open source software satisfies this condition while proprietary software does not.</p>
+<dd><p>Ok, Ok, I get it. This is a gross oversimplification of the differences between the languages.</p>
 </dd>
 </dl>
-<p><span class="target" id="index-0"></span>Data Science is the joint application of algorithm development and statistical modelling to extracting information from what is referred to as “big data”. Bioinformatics, also referred to as computational biology, certainly fits within this rather loose definition of data science. In essence, Bioinformatics is the union of algorithms and statistics focussed on extracting information from big biological data sets to advance knowledge of biological systems.</p>
-<p><em>What will I get out of this course?</em> An understanding of how computer programs work. Improvements in your logical reasoning. An understanding of how to take advantage of computing to advance your own scientific interests. An appreciation of the pitfalls of software! All of this adds up to a superpower that will accelerate your work <a class="footnote-reference brackets" href="#id13" id="id12">5</a>.</p>
+<p><span class="target" id="index-0"></span>Data Science is the joint application of algorithm development and statistical modelling to extracting information from what is referred to as “big data”. Bioinformatics, also referred to as computational biology, certainly fits within this rather loose definition. In essence, Bioinformatics is the union of algorithms and statistics focussed on extracting information from big biological data sets to advance knowledge of biological systems.</p>
+<p><em>What will I get out of this course?</em> An understanding of how computer programs work. Improvements in your logical reasoning. An understanding of how to take advantage of computing to advance your own scientific interests. An appreciation of the pitfalls of software! All of this adds up to a superpower that will accelerate your work <a class="footnote-reference brackets" href="#id12" id="id11">5</a>.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id12">5</a></span></dt>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id11">5</a></span></dt>
 <dd><p>Sorry, it’s bring your own cape.</p>
 </dd>
 </dl>
@@ -160,7 +160,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2021, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
