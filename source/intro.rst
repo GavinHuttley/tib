@@ -19,30 +19,28 @@ The above is a big picture view of the role of software in science, but where do
 
 .. sidebar:: What's the difference between using Python_ versus using R_?
 
-    The major difference between Python_ and R_ comes in how they are typically used [3]_. Many of the concepts you will learn in the Python_ topic -- conditionals, iteration, functions -- are not directly coded by most users of R_. They are implicitly being used, but are "hidden" from users.
+    Both languages provide very sophisticated capabilities for scientists, hence they are the dominant languages employed in Data Science. Both of these languages are also `Open Source <https://en.wikipedia.org/wiki/Open_source>`_ languages, developed by a community of volunteers [3]_.
+    
+    The major difference between Python_ and R_ comes in how they are typically used [4]_. Many of the concepts you will learn in the Python_ topic -- conditionals, iteration, functions -- are not directly coded by most users of R_. They are implicitly being used, but are "hidden" from users.
     
     The way you will learn Python_ is as a more "conventional" programming approach.
 
-At this stage, I'm sure you have many questions. Like, *What is "bioinformatics"?* *I've heard the phrase "Data Science", is that what bioinformatics is?* *Why are you teaching* |Python|_ *for part of the course and* |R|_ *for the rest?*
+At this stage, I'm sure you have many questions. Like, *What is "bioinformatics"?* *I've heard the phrase "Data Science", is that what bioinformatics is?*
 
 .. |Python| replace:: *Python*
 .. |R| replace:: *R*
 
-Let's go backwards. We teach Python_ and R_ because these are the languages that we use in our own research. We use these languages because they have capabilities that allow us to leverage very sophisticated capabilities for our science. It also turns out that these two languages are the dominant languages employed in Data Science. Both of these languages are also `Open Source <https://en.wikipedia.org/wiki/Open_source>`_ languages, developed by a community of volunteers [4]_.
+.. [3] I could write a very extensive essay on how open source software has, and continues to be, critical to science. Instead I have used the quote from Paul Romer to illuminate the fact that true scientific reproducibility requires transparency. By definition, open source software satisfies this condition while proprietary software does not.
 
-.. [3] Ok, Ok, I get it. This is a gross oversimplification of the differences between the languages.
+.. [4] Ok, Ok, I get it. This is a gross oversimplification of the differences between the languages.
 
-.. [4] I could write a very extensive essay on how open source software has, and continues to be, critical to science. Instead I have used the quote above to illuminate the fact that true scientific reproducibility requires transparency. By definition, open source software satisfies this condition while proprietary software does not.
-
-:index:`Data Science` is the joint application of algorithm development and statistical modelling to extracting information from what is referred to as "big data". Bioinformatics, also referred to as computational biology, certainly fits within this rather loose definition of data science. In essence, Bioinformatics is the union of algorithms and statistics focussed on extracting information from big biological data sets to advance knowledge of biological systems.
+:index:`Data Science` is the joint application of algorithm development and statistical modelling to extracting information from what is referred to as "big data". Bioinformatics, also referred to as computational biology, certainly fits within this rather loose definition. In essence, Bioinformatics is the union of algorithms and statistics focussed on extracting information from big biological data sets to advance knowledge of biological systems.
 
 .. seriously, need to acknowledge that languages are different
 
 .. todo:: include description of computational thinking, how that part is not about programming, per se, but shares similarities. Using abstraction; Decomposition; Separation of concerns;
 
 .. todo:: add commentary on mechanics of programming being just part of the skill set, it's really the ability to transform a biological research question into a form that can be addressed using algorithm
-
-.. todo:: the benefits, a different way of seeing, logical improvements in work, super power
 
 *What will I get out of this course?* An understanding of how computer programs work. Improvements in your logical reasoning. An understanding of how to take advantage of computing to advance your own scientific interests. An appreciation of the pitfalls of software! All of this adds up to a superpower that will accelerate your work [5]_.
 
