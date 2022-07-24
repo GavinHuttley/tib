@@ -87,15 +87,16 @@ Exercises
         "abcd" < "ABCD"
 
 #. What happens if you try them on different data types?
- 
-.. todo:: make the following question more explicit, and is this the best place for it?
 
-#. For the data below, write a single statement to evaluate whether ``a`` and ``b`` have same value but are different instances.
+#. For the data below, write a single statement to evaluate whether ``a`` and ``b`` have the same value but are different instances.
 
     .. jupyter-execute::
     
         a = {0: "text"}
         b = {0: "text"}
         c = b
+
+    *Tip:* Different instances will have a location in memory.
         
 #. For the data above, write a single statement to evaluate whether ``b`` and ``c`` have same value but are different instances.
+
