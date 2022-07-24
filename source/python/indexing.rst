@@ -129,7 +129,7 @@ Exercises
 
 #. For the same sequence, use a slice operation to obtain the first nucleotide of each codon, i.e. you should produce ``["A", "A", "A"]``. Do this for the second codon position (producing ``["T", "T", "T"]``) and then the third codon position.
 
-#.  Split the sequence ``ATGAAATAA`` into codons (non-overlapping letter triples). (The most succinct solution uses a list comprehension.)
+#. Split the sequence ``ATGAAATAA`` into codons (non-overlapping letter triples). (The most succinct solution uses a list comprehension.)
 
 .. [1] This is actually not indexing, because elements in a dict are not ordered. But the notation for "getting" an item from a ``dict`` is the same as for other data types (i.e. you use ``[]``). The difference is the "index" does not need to be an integer.
 .. [2] In the standard genetic code, this corresponds to 3 repeats of the methionine codon
