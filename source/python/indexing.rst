@@ -20,6 +20,8 @@ For all data types, the `[]` are used to specify the indices.
     data = "ACGTACGTACGT"
     print(data[1])
 
+.. todo:: indexing, modifying elements of a list Emphasize this and add it to index
+
 Indexing is also used for assignment.
 
 .. jupyter-execute::
