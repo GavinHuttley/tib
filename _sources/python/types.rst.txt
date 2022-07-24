@@ -15,9 +15,9 @@ This leads directly to the notion of *data types*. Python comes with a number of
     pair: string; types
 
 **string**
-    specified either using ``''`` or ``""`` around the content of interest. This is just a series of characters. It can be empty (has length 0) or much greater than that [1]_.  For more detailed discussion of using strings, see :ref:`strings`.
+    specified either using ``''`` or ``""`` around the content of interest. This is just a series of characters. It can be empty (has length 0) or much greater than that.  For more detailed discussion of using strings, see :ref:`strings`. (An immutable data type [1]_.)
 
-.. [1] Immutable means once the variable has been defined, it's value cannot be modified.
+.. [1] :index:`Immutable` means once the variable has been defined, it's value cannot be modified.
 
 .. jupyter-execute::
 
@@ -103,7 +103,7 @@ In defining instances of collection types, different elements are delimited usin
     triple: tuple; types; collection objects
 
 **tuple**
-    Almost the same as a list, but defined using different parentheses and [1]_.
+    Almost the same as a list, but immutable [1]_ and defined using different parentheses
 
 .. jupyter-execute::
 
@@ -114,7 +114,7 @@ In defining instances of collection types, different elements are delimited usin
     triple: dict; types; collection objects
 
 **dict**
-    A dictionary. Like a conventional one, we look up entries in it using some "key" and get a "value" in return. Note the special parentheses used in the definition and also usage of ``:`` to separate the key and value. Subsequent key value pairs are separated by ``,``. As with tuples and lists, they can contain different data types. The keys for a dictionary must always be of an immutable data type (so ``str``, ``tuple``, ``int``, ``float``) but the values can be of any data type. ``dict``'s are mutable, you can add keys or remove keys. You can modify the values for a key as you want. For more detailed discussion of using dicts, see :ref:`dicts`.
+    A dictionary. Like a conventional one, we look up entries in it using some "key" and get a "value" in return. Note the special parentheses used in the definition and also usage of ``:`` to separate the key and value. Subsequent key value pairs are separated by ``,``. As with tuples and lists, they can contain different data types. The keys for a dictionary must always be of an :index:`immutable` [1]_ data type (so ``str``, ``tuple``, ``int``, ``float``) but the values can be of any data type. ``dict``'s are mutable, you can add keys or remove keys. You can modify the values for a key as you want. For more detailed discussion of using dicts, see :ref:`dicts`.
 
 .. jupyter-execute::
 
@@ -128,11 +128,8 @@ Add another key
     d["new key"] = "some text"
     d
 
-
 .. index::
     pair: type(); types
-
-.. todo:: keys must be immutable, define a hash
 
 How to tell the type of a variable
 ----------------------------------

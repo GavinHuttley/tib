@@ -6,6 +6,8 @@ Introduction to Testing in Python
 
 .. sectionauthor:: Gavin Huttley
 
+.. todo:: add a continuous integration topic
+
 ********************************
 Why do we need to test software?
 ********************************

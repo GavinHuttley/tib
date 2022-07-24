@@ -1,8 +1,6 @@
 Data Visualisation using Plotly
 ===============================
 
-.. todo:: add links to plotly express and a section describing
-
 .. [1] The foundation data structure of all ``Plotly`` plotting is a dict which has two components, a "trace" and a "layout". We will use the ``express``  module, which simplifies the interface to plotting.
 
 Plotly_ is a javascript based plotting library that has interfaces for Python and multiple other programming languages [1]_. This javascript foundation enables its ability to display interactive plots within web browsers. Below I introduce the `Plotly Express`_ [2]_.
