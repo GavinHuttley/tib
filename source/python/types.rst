@@ -132,8 +132,6 @@ Add another key
 .. index::
     pair: type(); types
 
-.. todo:: keys must be immutable, define a hash
-
 How to tell the type of a variable
 ----------------------------------
 

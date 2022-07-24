@@ -43,4 +43,3 @@ Introduction to Python
     visualisation
 
 .. todo:: have a section on pip installing packages
-.. todo:: write a section on string maniupulation
