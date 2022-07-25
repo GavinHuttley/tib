@@ -278,4 +278,55 @@ In Python, a comment is all text occurring after the  ``#`` symbol line. All cha
 
     a = 2 ** 16 # and this is another comment
 
-.. todo:: add some exercises regarding conditionals and iteration; write a conditional for when a number is in a specific range and when it is not; write a conditional for when a value is "Truthy / Falsey" and demonstrate if for list, tuple, number; create a value series and get them to iterate over data displaying output when it's an empty line
+Exercises
+=========
+
+#. Show whether the number ``11`` is Truthy or Falsy?
+
+#. Show whether ``{}``is Truthy or Falsy?
+
+#. Iterate over ``text`` and, if a character is a vowel ("aeiou"), print the character and its index in ``text``.
+
+.. tabbed:: Data
+
+    .. jupyter-execute::
+
+        text = "Some random text"
+
+.. tabbed:: Expected Output
+    
+    Fancy formatting not required.
+    
+    .. jupyter-execute::
+        :hide-code:
+        
+        print("Index :  Vowel")
+        for i, c in enumerate(text):
+            if c in "aeiou":
+                print(f"{i:5} : {c!r}")
+
+#. Write a ``for`` loop that prints whether the elements of ``values`` are Truthy, Falsey or actually the booleans True/False.
+
+.. tabbed:: Data
+
+    .. jupyter-execute::
+
+        values = [0, 11, {}, False, True]
+
+.. tabbed:: Expected Output
+
+    .. jupyter-execute::
+        :hide-code:
+    
+        for e in values:
+            if type(e) == bool:
+                val = "is a bool"
+            elif e:
+                val = "is Truthy"
+            else:
+                val = "is Falsy"
+
+            print(f"{e!r} {val}")
+
+        
+    
