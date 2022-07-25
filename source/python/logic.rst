@@ -19,7 +19,23 @@ Indentation can be done using ``\t`` or spaces. In general, it's best to uses sp
 Indentation levels in a file
 ----------------------------
 
-.. todo:: define what you mean by indentation
+.. sidebar:: Indentation defines logical structure
+    :name: Indentation defines logical structure
+    
+    .. code:: text
+    
+        Initial text at the left-most position (level 1)
+            Indented text using 4-spaces (level 2)
+            Text with the same indentation is (level 2)
+            part of the same logical group (level 2)
+                Nested logic gets additional (level 3)
+                indentation (level 3)
+        
+        Returning back to the original level (level 1)
+    
+    Indentation, expressed as a number of spaces (`' '` from the left-most side of a page) defines logical grouping of commands in Python. (By convention, 4-spaces are used for each level.)
+
+    
 
 When you are writing scripts, your file **must** have some lines that have no indentation.
 
@@ -243,4 +259,4 @@ In Python, a comment is all text occurring after the  ``#`` symbol line. All cha
 
     a = 2 ** 16 # and this is another comment
 
-.. todo:: add some exercises regarding conditionals and iteration
+.. todo:: add some exercises regarding conditionals and iteration; write a conditional for when a number is in a specific range and when it is not; write a conditional for when a value is "Truthy / Falsey" and demonstrate if for list, tuple, number; create a value series and get them to iterate over data displaying output when it's an empty line
