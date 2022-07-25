@@ -327,6 +327,3 @@ Exercises
                 val = "is Falsy"
 
             print(f"{e!r} {val}")
-
-        
-    
