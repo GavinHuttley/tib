@@ -125,4 +125,45 @@ Given that a ``set`` is mutable, you cannot have sets as part of sets. Python pr
 
 .. note:: Once created, a ``frozenset`` instance cannot be changed.
 
-.. todo:: add some exercises
+Exercises
+=========
+
+#. For the following data, create a set using either ``set()`` or a set comprehension.
+
+    .. jupyter-execute::
+
+        data = ['GC', 'CA', 'AA', 'AG', 'GG', 'GA', 'AG',
+                'GC', 'CC', 'CA', 'AA', 'AC', 'CA', 'AT',
+                'TA', 'AA', 'AC', 'CA', 'AG']
+
+#. How many unique dinucleotides are there in ``data``?
+
+#. Create a set from the following and compare it to the set you created from ``data``. How big is the intersection of the two sets? How big is the set of symmetric differences?
+
+    .. jupyter-execute::
+    
+        data2 = ['GC', 'CA', 'AA', 'AG', 'GG', 'GC', 'CG',
+                 'GC', 'CC', 'CA', 'AA', 'AC', 'CA', 'AG',
+                 'GA', 'AG', 'GC', 'CA', 'AG']
+    
+#. Provide an example that a ``frozenset()`` can be applied to but a ``set()`` cannot. In showing this, include any errors and explain why they occur.
+
+#. For the following data, you want to create a set that excludes dinucleotides containing a non-canonical DNA character (see Expected Output). Solve this problem in two different ways. (a) by creating the set of unique dinucleotides and creating the correct set from that. (b) by creating an empty set, iterating over dinucleotides in ``data`` and adding them only if they consist of canonical nucleotides. Which algorithm is faster and why?
+
+    .. tabbed:: Data
+
+        .. jupyter-execute::
+
+            data = ['GC', 'CA', 'AA', 'NG', 'GG', 'GA', 'AG',
+                    'GC', 'CC', 'CR', 'AA', 'AC', 'CA', 'NN',
+                    'TA', 'AA', 'AY', 'CA', 'AG']
+
+    .. tabbed:: Expected Output
+    
+        .. jupyter-execute::
+            :hide-code:
+        
+            data = set(data)
+            nucs = set("ACGT")
+            data = {d for d in data if set(d) <= nucs}
+            print(data)
