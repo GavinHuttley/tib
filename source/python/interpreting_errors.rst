@@ -12,61 +12,61 @@
 
 .. todo:: update debugger screencast to use VS Code
 
+.. index::
+    pair: errors; Exceptions
+
 .. _debugging:
 
 Fixing errors
 =============
 
-.. todo:: define an error as an exception
-
-Every programmer makes errors, it's normal. The most important step towards fixing errors is interpreting the error messages produced by Python. Error messages produced by Python are referred to as "tracebacks" [1]_.
+Every programmer makes errors, it's normal. The most important step towards fixing errors is interpreting the error messages produced by Python. In Python, error messages come in the form of "exceptions" which produce a "traceback" [1]_ that declares the type of exception and which piece of code triggered it.
 
 .. [1] See this article_ for a more complete description.
 
 Here's some broken code:
 
-.. jupyter-execute::
-    :raises:
+.. tabbed:: Invalid Code
 
-    a = 42
-    k += a
+    .. jupyter-execute::
+        :raises:
 
-First, in the traceback, the last line indicates the type of the exception (``NameError`` in this simple case) and the statement triggering it (``k +=``). The offending line is indicated by ``---->``.
+        a = 42
+        k += a
 
-.. panels::
-    :column: col-lg-12 p-2
+    First, in the traceback, the last line indicates the type of the exception (``NameError`` in this simple case) and the statement triggering it (``k +=``). The offending line is indicated by ``---->``.
 
-    .. dropdown:: :fa:`eye,mr-1` Click to see the fixed code
-            
-        Variables must be defined before they're used
+.. tabbed:: Fixed Code
 
-        .. jupyter-execute::
-        
-            a = 42
-            k = 0
-            k += a
+    Variables must be defined before they're used
+
+    .. jupyter-execute::
+    
+        a = 42
+        k = 0
+        k += a
 
 And a slightly more complicated case
 
-.. jupyter-execute::
-    :raises:
+.. tabbed:: Invalid Code
 
-    def echo(name):
-        print(name
+    .. jupyter-execute::
+        :raises:
 
-This is a ``SyntaxError`` -- imbalanced ``()``. Note the ``^`` in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.
+        def echo(name):
+            print(name
 
-.. panels::
-    :column: col-lg-12 p-2
+    This is a ``SyntaxError`` -- imbalanced ``()``. Note the ``^`` in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.
 
-    .. dropdown:: :fa:`eye,mr-1` Click to see the fixed code
-            
-        Balance the parentheses.
+.. tabbed:: Fixed Code
 
-        .. jupyter-execute::
-        
-            def echo(name):
-                print(name)
+    Balance the parentheses.
+
+    .. jupyter-execute::
+    
+        def echo(name):
+            print(name)
+
 
 Exercises
 =========
@@ -82,7 +82,7 @@ Exercises
         else:
             greet = "Hi"
 
-#. Consider the following function, which is meant to compute the square of a number, i.e. :math:`x^2`
+#. Consider the following function, which is meant to compute the square of a number, i.e. :math:`x^2`. Define the type of error and then fix it.
 
     .. jupyter-execute::
         :raises:

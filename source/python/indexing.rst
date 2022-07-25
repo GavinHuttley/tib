@@ -8,9 +8,9 @@ Indexing
 
 This works equivalently for python strings, tuples and lists. There are similarities to indexing other data types, and differences.
 
-An index refers to the order number of an element in a series. Elements from instances of a series data type (e.g. `str` and `list`) can be referenced by their index number.
+An index refers to the order number of an element in a series. Elements from instances of a series data type (e.g. ``str`` and ``list``) can be referenced by their index number.
 
-For all data types, the `[]` are used to specify the indices.
+For all data types, the ``[]`` are used to specify the indices.
 
 .. note:: Python indexes start at `0`.
 
@@ -20,9 +20,10 @@ For all data types, the `[]` are used to specify the indices.
     data = "ACGTACGTACGT"
     print(data[1])
 
-.. todo:: indexing, modifying elements of a list Emphasize this and add it to index
+Indexing is also used for assignment. In the following we assign the value ``-2`` to the ``0``-th index of the list ``more_data``.
 
-Indexing is also used for assignment.
+.. index::
+    triple: list; assignment; indexing
 
 .. jupyter-execute::
 
@@ -30,7 +31,10 @@ Indexing is also used for assignment.
     more_data[0] = -2
     print(more_data)
 
-But assignment is not possible with an immutable data type like a string.
+.. index::
+    pair: assignment; immutable
+
+Assignment is not possible with an immutable data type like a string.
 
 .. jupyter-execute::
     :raises:

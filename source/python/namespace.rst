@@ -6,6 +6,8 @@
     
     1. Global Namespace: is at the current module level name space
     2. Local Namespace: is in the ``display`` name space level
+    
+    Variables ``a`` and ``b`` are local to the ``display()`` namespace and cannot be accessed at the module level. The variables ``greet`` and ``name`` are module level and can be accessed within both the global and local namespaces.
 
 .. index:: namespace, scope
 
@@ -14,11 +16,9 @@
 Namespaces
 ==========
 
-.. todo:: write an explanation
-
 A fundamental concept in programming, most easily explained with reference to the `Variable scope`_.
 
-In brief, variables defined within the local scope are only "available" within that scope. Variables defined within the global scope can be accessed within a local scope.
+In brief, variables defined within the local scope (or local namespace) are only "available" within that scope. Variables defined within the global scope can be accessed within both the global and local scope.
 
 .. jupyter-execute::
 

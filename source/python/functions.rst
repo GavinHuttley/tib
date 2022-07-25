@@ -3,7 +3,19 @@
 Functions and methods
 =====================
 
-.. todo:: make sure you emphasise that all variables operate on by a function should either be passed in as arguments OR created internally -- need to avoid people defining a module level variable that's a mutable data structure
+.. sidebar:: Tips for writing functions and staying sane
+
+    Here are two ways to write functions that are guaranteed to create headaches.
+    
+    1. Pass in function parameters that are mutable data types AND modify them within the function.
+    2. Use variables that are defined outside the function.
+    
+    What are the alternatives?
+    
+    1. Either do not modify input parameters or copy them within the function.
+    2. Pass all the variables your function needs into the function.
+
+    Of course, if you love errors and hard to debug problems go ahead and ignore this advice.
 
 This is a central concept in programming. It provides a means of encapsulating several lines of code (that do something useful) and providing a reference such that this block can be called in multiple places in a larger program.
 
@@ -119,7 +131,7 @@ There are some general principles in how to use functions and methods. First, us
     :name: Interpreting help() for a function
 
     .. image::  /_static/images/func_help.png
-        :scale: 50
+        :scale: 10
     
     The function signature lists the required and optional arguments.
     
@@ -133,6 +145,24 @@ Functions
 Focussing on functions first. If a function is what we call a void function then it operates only on the arguments you give it and returns nothing [2]_. The obvious example of this is ``print()``. Fruitful functions actually return a value. You can establish what type that value will be by either reading help (see `Interpreting help() for a function`_) or running an experiment (calling the function with some data).
 
 .. [2] Actually, in Python every function and method returns something. Void functions and methods return `None` (try it on `print()`.
+
+.. sidebar:: Functions versus Methods
+    :name: Functions versus Methods
+
+    While functions and methods are very similar they have a very important difference. Functions nearly always require the data they will operate on be provided as an argument. (In the following, the ``reversed()`` function returns a generator. Wrapping it in a call to ``list()`` is necessary to complete the statement.)
+
+    .. jupyter-execute::
+    
+        data = [0, 1, 2, 3]
+        list(reversed(data))
+
+    Methods, on the other hand, are already bound to the data they operate on.
+
+    .. jupyter-execute::
+    
+        data = [0, 1, 2, 3]
+        data.reverse()
+        data
 
 Methods
 ^^^^^^^
@@ -217,9 +247,6 @@ Getting help on a string method that can be used to concatenate.
 
     "\t".join(data)
 
-
-.. todo:: define difference between function and method, former nearly always MUST be given an argument, e.g. reversed(), reverse()
-
 Exercises
 =========
 
@@ -231,9 +258,13 @@ Exercises
 
 #. The variable ``data`` is defined above as a list of two trinucleotides. Using ``range()``, print each element of ``data`` and its index. Your output should look like
 
-.. jupyter-execute::
-    :hide-code:
+    .. jupyter-execute::
+        :hide-code:
 
-    for i in range(len(data)):
-        print(data[i], i)
+        for i in range(len(data)):
+            print(data[i], i)
 
+#. The code snippets in `Functions versus Methods`_ both result in a reversed ordering of their input. What are all the other differences between the two?
+
+..
+    method operates in place because list is mutable, returns None. Function returns an iterator, requiring iteration, and the original data remains unchanged.
