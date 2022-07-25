@@ -33,7 +33,7 @@ Indentation levels in a file
         
         Returning back to the original level (level 1)
     
-    Indentation, expressed as a number of spaces (`' '` from the left-most side of a page) defines logical grouping of commands in Python. (By convention, 4-spaces are used for each level.)
+    Indentation, expressed as a number of spaces (``" "`` from the left-most side of a page) defines logical grouping of commands in Python. (By convention, 4-spaces are used for each level.)
 
 When you are writing scripts, your file **must** have some lines that have no indentation.
 
@@ -283,7 +283,7 @@ Exercises
 
 #. Show whether the number ``11`` is Truthy or Falsy?
 
-#. Show whether ``{}``is Truthy or Falsy?
+#. Show whether ``{}`` is Truthy or Falsy?
 
 #. Iterate over ``text`` and, if a character is a vowel ("aeiou"), print the character and its index in ``text``.
 
