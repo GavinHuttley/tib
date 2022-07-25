@@ -1390,11 +1390,11 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 0, 1, 0, 1],
-       [0, 0, 1, 1, 0],
-       [0, 0, 0, 0, 0],
-       [1, 0, 0, 1, 1],
-       [1, 0, 0, 0, 1]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 0, 1, 1],
+       [1, 1, 0, 0, 1],
+       [1, 1, 0, 1, 0],
+       [1, 0, 1, 0, 1],
+       [0, 1, 1, 1, 0]])
 </pre></div>
 </div>
 </div>
@@ -1402,7 +1402,7 @@ After:
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 1, 1, 3, 3, 3, 4, 4], [0, 2, 4, 2, 3, 0, 3, 4, 0, 4])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4], [3, 4, 0, 1, 4, 0, 1, 3, 0, 2, 4, 1, 2, 3])
 </pre></div>
 </div>
 </div>
@@ -1415,7 +1415,7 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>12.7 µs ± 116 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>18 µs ± 240 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>

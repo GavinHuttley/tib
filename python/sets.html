@@ -241,8 +241,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CG
-AA
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>AA
+CG
 GA
 </pre></div>
 </div>
@@ -281,16 +281,29 @@ GA
 </div>
 </div>
 </div>
-<p>We can establish that one set is a subset of another using the <code class="docutils literal notranslate"><span class="pre">in</span></code> logical operator</p>
+<p>We can establish whether an object is a member of a set using the <code class="docutils literal notranslate"><span class="pre">in</span></code> logical operator</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">}</span>
-<span class="n">a</span> <span class="ow">in</span> <span class="n">bases</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;X&quot;</span> <span class="ow">in</span> <span class="n">a</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>or whether one set is a subset of another using the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> logical operator</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bases</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">}</span>
+<span class="n">b</span> <span class="o">&lt;</span> <span class="n">bases</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -436,8 +449,8 @@ GA
 <li><p>For the following data, you want to create a set that excludes dinucleotides containing a non-canonical DNA character (see Expected Output). Solve this problem in two different ways. (a) by creating the set of unique dinucleotides and creating the correct set from that. (b) by creating an empty set, iterating over dinucleotides in <code class="docutils literal notranslate"><span class="pre">data</span></code> and adding them only if they consist of canonical nucleotides. Which algorithm is faster and why?</p>
 <blockquote>
 <div><div class="tabbed-set docutils">
-<input checked="checked" id="6d7d113f-857f-4817-ad0c-9ff885068660" name="da3be5b9-9be8-445d-a3c0-b4c448a73be0" type="radio">
-</input><label class="tabbed-label" for="6d7d113f-857f-4817-ad0c-9ff885068660">
+<input checked="checked" id="99bc47ef-776a-4e74-8141-9ece5a088f43" name="6edfde1f-fc8b-4745-a0c7-7fcd89fca401" type="radio">
+</input><label class="tabbed-label" for="99bc47ef-776a-4e74-8141-9ece5a088f43">
 Data</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -451,12 +464,12 @@ Data</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="1b2fa800-e44f-460c-b19b-accf641e591a" name="da3be5b9-9be8-445d-a3c0-b4c448a73be0" type="radio">
-</input><label class="tabbed-label" for="1b2fa800-e44f-460c-b19b-accf641e591a">
+<input id="3dc84b34-b06c-46f3-bd43-05d63ad83b5a" name="6edfde1f-fc8b-4745-a0c7-7fcd89fca401" type="radio">
+</input><label class="tabbed-label" for="3dc84b34-b06c-46f3-bd43-05d63ad83b5a">
 Expected Output</label><div class="tabbed-content docutils">
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;CA&#39;, &#39;AG&#39;, &#39;GG&#39;, &#39;GC&#39;, &#39;AA&#39;, &#39;CC&#39;, &#39;TA&#39;, &#39;AC&#39;, &#39;GA&#39;}
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;AA&#39;, &#39;AC&#39;, &#39;GC&#39;, &#39;CC&#39;, &#39;TA&#39;, &#39;CA&#39;, &#39;AG&#39;, &#39;GG&#39;, &#39;GA&#39;}
 </pre></div>
 </div>
 </div>
