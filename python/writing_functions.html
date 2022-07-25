@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.30. Writing functions &mdash; Topics in Bioinformatics 2022.07.24 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.32. Writing functions &mdash; Topics in Bioinformatics 2022.07.25 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -28,8 +28,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.32. Namespaces" href="namespace.html" />
-    <link rel="prev" title="5.28. Iterators" href="iterators.html" /> 
+    <link rel="next" title="5.34. Namespaces" href="namespace.html" />
+    <link rel="prev" title="5.30. Iterators" href="iterators.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -67,47 +67,49 @@
 <li class="toctree-l2"><a class="reference internal" href="types.html">5.12. The basic data types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.13. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logic.html">5.14. Logical syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.15. Fixing errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.16. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">5.17. Functions and methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.18. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">5.19. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.20. Getting help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lists.html">5.21. Using lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.22. Dealing with dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">5.23. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.24. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.25. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">5.26. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.27. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.28. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.29. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.30. Writing functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-critical-syntax-elements">5.30.1. The critical syntax elements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#void-functions">5.30.2. Void functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fruitful-functions">5.30.3. Fruitful functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#required-arguments">5.30.4. Required arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#optional-arguments">5.30.5. Optional arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#writing-and-using-functions-that-have-optional-arguments">5.30.6. Writing and using functions that have optional arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ordering-arguments">5.30.7. Ordering arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#documenting-a-function-with-a-doctstring">5.30.8. Documenting a function with a doctstring</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#functions-that-call-other-functions">5.30.9. Functions that call other functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#things-not-to-do">5.30.10. Things not to do!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html#exercises">5.15. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.16. Fixing errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">5.18. Functions and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.19. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">5.20. Dealing with strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.21. Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">5.22. Using lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.23. Dealing with dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets.html">5.24. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sets.html#exercises">5.25. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html">5.26. Indexing and Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.27. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">5.28. Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.29. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html">5.30. Iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.31. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.32. Writing functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-critical-syntax-elements">5.32.1. The critical syntax elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#void-functions">5.32.2. Void functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fruitful-functions">5.32.3. Fruitful functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-arguments">5.32.4. Required arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-arguments">5.32.5. Optional arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-and-using-functions-that-have-optional-arguments">5.32.6. Writing and using functions that have optional arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ordering-arguments">5.32.7. Ordering arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documenting-a-function-with-a-doctstring">5.32.8. Documenting a function with a doctstring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions-that-call-other-functions">5.32.9. Functions that call other functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#things-not-to-do">5.32.10. Things not to do!</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.31. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.32. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.33. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.34. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.35. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="import.html">5.36. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.37. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.38. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">5.39. Miscellaneous Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.40. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.41. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.42. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.43. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">5.33. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html">5.34. Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.35. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.36. More on looping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.37. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">5.38. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.39. Pulling it together – writing your own programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.40. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">5.41. Miscellaneous Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">5.42. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.43. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.44. Data Visualisation using Plotly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.45. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
@@ -133,7 +135,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-      <li><span class="section-number">5.30. </span>Writing functions</li>
+      <li><span class="section-number">5.32. </span>Writing functions</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/writing_functions.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -168,7 +170,7 @@
 }
 </style>
 <div class="section" id="writing-functions">
-<h1><span class="section-number">5.30. </span>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">5.32. </span>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this headline"></a></h1>
 <p>Now we cover writing your own <a class="reference external" href="http://greenteapress.com/thinkpython2/html/thinkpython2004.html#sec30">functions</a>.</p>
 <p>A function represents a named grouping of statements. They form a critical aspect of modular design to algorithms. By allowing referencing of a related block of code, one can substantially reduce redundancy in your code. This confers a number of major advantages:</p>
 <ol class="arabic simple">
@@ -179,7 +181,7 @@
 </ol>
 <p>So using functions will improve the reliability of your programs.</p>
 <div class="section" id="the-critical-syntax-elements">
-<span id="index-0"></span><h2><span class="section-number">5.30.1. </span>The critical syntax elements<a class="headerlink" href="#the-critical-syntax-elements" title="Permalink to this headline"></a></h2>
+<span id="index-0"></span><h2><span class="section-number">5.32.1. </span>The critical syntax elements<a class="headerlink" href="#the-critical-syntax-elements" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">def</span></code>, the critical keyword telling Python you are defining a function</p></li>
 <li><p>a valid Python name, which is used to reference the function</p></li>
@@ -209,11 +211,11 @@
 </div>
 </div>
 <div class="section" id="void-functions">
-<span id="index-1"></span><h2><span class="section-number">5.30.2. </span>Void functions<a class="headerlink" href="#void-functions" title="Permalink to this headline"></a></h2>
+<span id="index-1"></span><h2><span class="section-number">5.32.2. </span>Void functions<a class="headerlink" href="#void-functions" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">echo_hello</span></code> function is called a <code class="docutils literal notranslate"><span class="pre">void</span></code> function – functions whose purpose does not require returning a value. That said, even if they don’t use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, they return the value <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 <div class="section" id="fruitful-functions">
-<h2><span class="section-number">5.30.3. </span>Fruitful functions<a class="headerlink" href="#fruitful-functions" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.32.3. </span>Fruitful functions<a class="headerlink" href="#fruitful-functions" title="Permalink to this headline"></a></h2>
 <p>These are functions that return something from their execution. We have encountered several examples of fruitful builtin functions like <code class="docutils literal notranslate"><span class="pre">dir()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>. These functions took an argument, operated on it, and returned something. The following is a simple fruitful function.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -238,7 +240,7 @@
 </div>
 </div>
 <div class="section" id="required-arguments">
-<span id="index-2"></span><h2><span class="section-number">5.30.4. </span>Required arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline"></a></h2>
+<span id="index-2"></span><h2><span class="section-number">5.32.4. </span>Required arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline"></a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_diff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -308,11 +310,11 @@
 </ul>
 </div>
 <div class="section" id="optional-arguments">
-<span id="index-3"></span><h2><span class="section-number">5.30.5. </span>Optional arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline"></a></h2>
+<span id="index-3"></span><h2><span class="section-number">5.32.5. </span>Optional arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline"></a></h2>
 <p>These are function arguments that have default values. You’ve seen this with the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function. The <code class="docutils literal notranslate"><span class="pre">mode</span></code> argument defaults to read (<code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>). In fact, the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function has both required and optional arguments.</p>
 </div>
 <div class="section" id="writing-and-using-functions-that-have-optional-arguments">
-<h2><span class="section-number">5.30.6. </span>Writing and using functions that have optional arguments<a class="headerlink" href="#writing-and-using-functions-that-have-optional-arguments" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.32.6. </span>Writing and using functions that have optional arguments<a class="headerlink" href="#writing-and-using-functions-that-have-optional-arguments" title="Permalink to this headline"></a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_diff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -347,7 +349,7 @@
 </div>
 </div>
 <div class="section" id="ordering-arguments">
-<h2><span class="section-number">5.30.7. </span>Ordering arguments<a class="headerlink" href="#ordering-arguments" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.32.7. </span>Ordering arguments<a class="headerlink" href="#ordering-arguments" title="Permalink to this headline"></a></h2>
 <p>Required arguments MUST occur before optional arguments. This constraint holds for both writing your own functions and for using functions.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -370,7 +372,7 @@
 </div>
 </div>
 <div class="section" id="documenting-a-function-with-a-doctstring">
-<span id="index-4"></span><h2><span class="section-number">5.30.8. </span>Documenting a function with a doctstring<a class="headerlink" href="#documenting-a-function-with-a-doctstring" title="Permalink to this headline"></a></h2>
+<span id="index-4"></span><h2><span class="section-number">5.32.8. </span>Documenting a function with a doctstring<a class="headerlink" href="#documenting-a-function-with-a-doctstring" title="Permalink to this headline"></a></h2>
 <p>We can document how to use a function we write by writing a docstring. When you use <code class="docutils literal notranslate"><span class="pre">help()</span></code> on a built in function, it’s the docstring of that function which is being displayed. The syntactic definition of a docstring is:</p>
 <ul class="simple">
 <li><p>They are a string literal. By convention, they are defined using triple quotes surrounding the text. They can span multiple lines.</p></li>
@@ -416,7 +418,7 @@ myfunc()
 </div>
 </div>
 <div class="section" id="functions-that-call-other-functions">
-<h2><span class="section-number">5.30.9. </span>Functions that call other functions<a class="headerlink" href="#functions-that-call-other-functions" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.32.9. </span>Functions that call other functions<a class="headerlink" href="#functions-that-call-other-functions" title="Permalink to this headline"></a></h2>
 <p>There is no magic here. If you can use a Python built-in function, you can use a function you wrote. In the following, the function <code class="docutils literal notranslate"><span class="pre">squared_diffs()</span></code> takes two number series and returns the square of the element-wise difference while the function  <code class="docutils literal notranslate"><span class="pre">diff_two()</span></code> takes two number series and returns their element-wise difference.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -443,7 +445,7 @@ myfunc()
 </div>
 </div>
 <div class="section" id="things-not-to-do">
-<h2><span class="section-number">5.30.10. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.32.10. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline"></a></h2>
 <p><strong>DO NOT</strong> use global variables (see <a class="reference internal" href="namespace.html#namespaces"><span class="std std-ref">Namespaces</span></a>). Either pass the variable in as an argument or create it within the function. Adhere to the principle of making code “Easy To Change”. In the case of functions, this means making them depend only on the arguments you give them. The following is bad.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -501,7 +503,7 @@ myfunc()
 </div>
 </div>
 <div class="section" id="exercises">
-<h1><span class="section-number">5.31. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">5.33. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
 <p>Using the following data</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -557,8 +559,8 @@ myfunc()
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="iterators.html" class="btn btn-neutral float-left" title="5.28. Iterators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="namespace.html" class="btn btn-neutral float-right" title="5.32. Namespaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="iterators.html" class="btn btn-neutral float-left" title="5.30. Iterators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="namespace.html" class="btn btn-neutral float-right" title="5.34. Namespaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

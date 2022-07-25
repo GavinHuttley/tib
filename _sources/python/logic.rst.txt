@@ -19,7 +19,21 @@ Indentation can be done using ``\t`` or spaces. In general, it's best to uses sp
 Indentation levels in a file
 ----------------------------
 
-.. todo:: define what you mean by indentation
+.. sidebar:: Indentation defines logical structure
+    :name: Indentation defines logical structure
+    
+    .. code:: text
+    
+        Initial text at the left-most position (level 1)
+            Indented text using 4-spaces (level 2)
+            Text with the same indentation is (level 2)
+            part of the same logical group (level 2)
+                Nested logic gets additional (level 3)
+                indentation (level 3)
+        
+        Returning back to the original level (level 1)
+    
+    Indentation, expressed as a number of spaces (``" "`` from the left-most side of a page) defines logical grouping of commands in Python. (By convention, 4-spaces are used for each level.)
 
 When you are writing scripts, your file **must** have some lines that have no indentation.
 
@@ -41,15 +55,36 @@ When you are writing scripts, your file **must** have some lines that have no in
 Conditionals
 ------------
 
-.. todo:: define what you mean by conditional
+.. index::
+    pair: Truthy; bool
+    pair: Falsy; bool
 
-Python conditionals require using the ``:`` (colon) character to complete a statement.
+.. sidebar:: Truthy and Falsy
+    :name: Truthy and Falsy
+    
+    .. jupyter-execute::
+    
+        bool("")
+    
+    Data values that evaluate (i.e. ``bool(value)``) to ``False`` are termed *Falsy*.
+    
+    .. jupyter-execute::
+    
+        bool([3, 2])
+    
+    Data values that evaluate to ``True`` are termed *Truthy*.
+    
+    This property allows simplifying conditional statements.
+
+A "conditional" is a statement whose execution depends on the value of a variable. Python conditionals require using the ``:`` (colon) character to complete a statement.
+
+I want to choose a ``greet`` based on the value of ``name``. This objective is expressed as a Python conditional.
 
 .. code-block:: python
 
     name = "Timbo"
     if name == "Gavin":
-         greet = "Hello Guru"
+        greet = "Hello Guru"
     else:
         greet = "What Up"
 
@@ -243,4 +278,52 @@ In Python, a comment is all text occurring after the  ``#`` symbol line. All cha
 
     a = 2 ** 16 # and this is another comment
 
-.. todo:: add some exercises regarding conditionals and iteration
+Exercises
+=========
+
+#. Show whether the number ``11`` is Truthy or Falsy?
+
+#. Show whether ``{}`` is Truthy or Falsy?
+
+#. Iterate over ``text`` and, if a character is a vowel ("aeiou"), print the character and its index in ``text``.
+
+.. tabbed:: Data
+
+    .. jupyter-execute::
+
+        text = "Some random text"
+
+.. tabbed:: Expected Output
+    
+    Fancy formatting not required.
+    
+    .. jupyter-execute::
+        :hide-code:
+        
+        print("Index :  Vowel")
+        for i, c in enumerate(text):
+            if c in "aeiou":
+                print(f"{i:5} : {c!r}")
+
+#. Write a ``for`` loop that prints whether the elements of ``values`` are Truthy, Falsey or actually the booleans True/False.
+
+.. tabbed:: Data
+
+    .. jupyter-execute::
+
+        values = [0, 11, {}, False, True]
+
+.. tabbed:: Expected Output
+
+    .. jupyter-execute::
+        :hide-code:
+    
+        for e in values:
+            if type(e) == bool:
+                val = "is a bool"
+            elif e:
+                val = "is Truthy"
+            else:
+                val = "is Falsy"
+
+            print(f"{e!r} {val}")
