@@ -10,8 +10,6 @@
           Your browser does not support the video tag.
         </video>
 
-.. todo:: update debugger screencast to use VS Code
-
 .. index::
     pair: errors; Exceptions
 
