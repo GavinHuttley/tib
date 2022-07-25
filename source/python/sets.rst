@@ -67,12 +67,18 @@ The great power of this data type is the ability to do very succinct comparisons
     b = set("ACGGAAA")
     a & b
 
-We can establish that one set is a subset of another using the ``in`` logical operator
+We can establish whether an object is a member of a set using the ``in`` logical operator
+
+.. jupyter-execute::
+
+    "X" in a
+
+or whether one set is a subset of another using the ``<`` logical operator
 
 .. jupyter-execute::
 
     bases = {"A", "C", "G", "T"}
-    a in bases
+    b < bases
 
 We can compute the difference (what nucleotides is ``b`` missing) using the standard ``-`` operator
 
