@@ -35,8 +35,6 @@ Indentation levels in a file
     
     Indentation, expressed as a number of spaces (`' '` from the left-most side of a page) defines logical grouping of commands in Python. (By convention, 4-spaces are used for each level.)
 
-    
-
 When you are writing scripts, your file **must** have some lines that have no indentation.
 
 .. code-block:: python
@@ -57,15 +55,36 @@ When you are writing scripts, your file **must** have some lines that have no in
 Conditionals
 ------------
 
-.. todo:: define what you mean by conditional
+.. index::
+    pair: Truthy; bool
+    pair: Falsy; bool
 
-Python conditionals require using the ``:`` (colon) character to complete a statement.
+.. sidebar:: Truthy and Falsy
+    :name: Truthy and Falsy
+    
+    .. jupyter-execute::
+    
+        bool("")
+    
+    Data values that evaluate (i.e. ``bool(value)``) to ``False`` are termed *Falsy*.
+    
+    .. jupyter-execute::
+    
+        bool([3, 2])
+    
+    Data values that evaluate to ``True`` are termed *Truthy*.
+    
+    This property allows simplifying conditional statements.
+
+A "conditional" is a statement whose execution depends on the value of a variable. Python conditionals require using the ``:`` (colon) character to complete a statement.
+
+I want to choose a ``greet`` based on the value of ``name``. This objective is expressed as a Python conditional.
 
 .. code-block:: python
 
     name = "Timbo"
     if name == "Gavin":
-         greet = "Hello Guru"
+        greet = "Hello Guru"
     else:
         greet = "What Up"
 
