@@ -98,7 +98,7 @@ Using ``mode="rb"`` opens a file in binary mode. The file contents are returned 
 Empty series evaluate to ``False``
 ----------------------------------
 
-One property of Python builtin series is that if they are empty, then they evaluate to ``False``.
+One property of Python builtin series is that if they are empty, then they evaluate to ``False``. This is referred to as :index:`Falsy` and the converse is :index:`Truthy`.
 
 .. jupyter-execute::
 
