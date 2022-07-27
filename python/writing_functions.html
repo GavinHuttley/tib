@@ -170,6 +170,25 @@
     text-align: unset;
 }
 </style>
+<div class="sidebar">
+<p class="sidebar-title">Tips for writing functions and staying sane</p>
+<p>This is such an important message, I’m saying it multiple times on this page.</p>
+<p>Here are two ways to write functions that are guaranteed to create headaches.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Pass in function parameters that are mutable data types AND modify them within the function.</p></li>
+<li><p>Use variables that are defined outside the function.</p></li>
+</ol>
+</div></blockquote>
+<p>What are the alternatives?</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Either do not modify input parameters or copy them within the function.</p></li>
+<li><p>Pass all the variables your function needs into the function.</p></li>
+</ol>
+</div></blockquote>
+<p>Of course, if you love errors and hard to debug problems go ahead and ignore this advice.</p>
+</div>
 <div class="section" id="writing-functions">
 <h1><span class="section-number">5.33. </span>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this headline"></a></h1>
 <p>Now we cover writing your own <a class="reference external" href="http://greenteapress.com/thinkpython2/html/thinkpython2004.html#sec30">functions</a>.</p>
@@ -193,13 +212,14 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">return</span></code>, optional, which is used to specify what the function returns</p></li>
 </ul>
 <p>The general form of a Python function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">valid_python_name</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">optional_argument</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="c1"># indented lines of code</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">valid_python_name</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">optional_argument</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># the function signature line</span>
+    <span class="c1"># indented lines of code that are only executed</span>
+    <span class="c1"># when this function is called</span>
     <span class="k">return</span>
 </pre></div>
 </div>
-<p>And, of course, they must be defined before they are used!</p>
-<p>The following is a valid, but not particularly useful, function. As the function definition does not include any arguments, the function is invoked by simply using it’s name and the standard call syntax <code class="docutils literal notranslate"><span class="pre">&quot;()&quot;</span></code>.</p>
+<p>And, of course, functions must be defined before they are used!</p>
+<p>The following is a valid, but not particularly useful, function. As the function definition does not include any arguments, the function is invoked by simply using its name and the standard call syntax <code class="docutils literal notranslate"><span class="pre">&quot;()&quot;</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">echo_hello</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello! Hello!&quot;</span><span class="p">)</span>
 
@@ -517,7 +537,7 @@ myfunc()
 </div>
 <ol class="arabic">
 <li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> that takes a single string (as per <code class="docutils literal notranslate"><span class="pre">data</span></code>) and converts it into a list of floats. Apply this function to <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></li>
-<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> that takes a series of frequencies (each value is 0 &lt; val &lt; 1 and the series sums to 1) and has an optional argument <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> (with a default value of 0). The function adds <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> <a class="footnote-reference brackets" href="#id4" id="id3">2</a> to every frequency.</p>
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> that takes a series of frequencies (each value is 0 &lt; val &lt; 1 and the series sums to 1) and has an optional argument <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> (with a default value of 0). The function adds <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> <a class="footnote-reference brackets" href="#id5" id="id3">2</a> to every frequency.</p>
 <blockquote>
 <div><p>Add some assert statements to your function to check input values are valid (e.g. all values are <code class="docutils literal notranslate"><span class="pre">0&lt;=freq&lt;1</span></code>).</p>
 <p>Use an assert to check the result satisfies the following, all numbers sum to 1.0 (within numerical precision) and all values satisfy <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">v</span> <span class="pre">&lt;</span> <span class="pre">1</span></code>.</p>
@@ -548,10 +568,48 @@ myfunc()
 </li>
 <li><p>Write another function, <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> that takes the same input of <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> and also has an optional argument for <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code>. This function should first call <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> to get the floats. Then call <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> with that result to get the final normalised series. <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> then returns this value.</p></li>
 <li><p>Implement the <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> variant from above. Then try using differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code>. Make those calls without providing a value to <code class="docutils literal notranslate"><span class="pre">result</span></code>. Show that the <code class="docutils literal notranslate"><span class="pre">myfunc3()</span></code> does not have this problem.</p></li>
+<li><p>For function <code class="docutils literal notranslate"><span class="pre">count_CGs()</span></code> defined below. Prove it is incorrect using an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement <a class="footnote-reference brackets" href="#id7" id="id4">3</a>. Rewrite the function so it is correct.</p>
+<blockquote>
+<div><div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_CGs</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;return the total number of C and G in a Seq&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">Seq</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">Seq</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;G&quot;</span><span class="p">)</span>
+
+<span class="n">Seq</span> <span class="o">=</span> <span class="s2">&quot;ACGCCAGTGCATTACG&quot;</span>
+<span class="n">count_CGs</span><span class="p">(</span><span class="n">Seq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_CGs</span><span class="p">(</span><span class="s2">&quot;ACGTTAATATTATTTTA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+</div></blockquote>
+</li>
 </ol>
 <dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
 <dd><p>This type of adjustment to avoid zeros is used to avoid numerical errors.</p>
+</dd>
+</dl>
+<dl class="footnote brackets">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dd><p>What this means is that you state an expected value for the function given your input. If the code is incorrect, the function returned value will not equal your expected value thus triggering your assertion statement, resulting in an error. In other words, if the code is wrong you WANT there to be an error.</p>
 </dd>
 </dl>
 </div>
