@@ -399,3 +399,31 @@ Other really useful methods on string objects
     ``upper()``, Convert the string to all upper case.
 
 These are all accessed using the ``<instance variable>.<method name>()`` approach.
+
+Exercises
+=========
+
+.. jupyter-execute::
+
+    text = "        Use this sample text\n\tfor the following\n        exercises.\n  "
+    print(text)
+
+Using ``text``:
+
+#. Remove leading / trailing white-space.
+
+#. Replace each tab character with 8 spaces.
+
+#. Split ``text`` into a list of the separate lines.
+
+#. Using the result of the last step, concatenate using a single space character.
+
+#. Write two successive python statements that transform ``text`` so that there are only single spaces between words and there are no line-breaks?
+
+    The expected output is.
+
+    .. jupyter-execute::
+        :hide-code:
+
+        print(repr(" ".join(text.split())))
+
