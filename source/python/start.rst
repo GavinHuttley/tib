@@ -165,7 +165,7 @@ More sophisticated mathematical routines are included in the `math` module. We w
 Exercises
 =========
 
-#. Do the hello world example yourself.
+#. Do the hello world example yourself: in a notebook; in a python script.
 
 #. Order of operations rules. Compute the following expressions
 
