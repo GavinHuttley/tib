@@ -1,3 +1,19 @@
+.. sidebar:: Tips for writing functions and staying sane
+
+    This is such an important message, I'm saying it multiple times on this page.
+    
+    Here are two ways to write functions that are guaranteed to create headaches.
+    
+        1. Pass in function parameters that are mutable data types AND modify them within the function.
+        2. Use variables that are defined outside the function.
+    
+    What are the alternatives?
+    
+        1. Either do not modify input parameters or copy them within the function.
+        2. Pass all the variables your function needs into the function.
+
+    Of course, if you love errors and hard to debug problems go ahead and ignore this advice.
+
 Writing functions
 =================
 
@@ -32,13 +48,14 @@ The general form of a Python function.
 
 .. code:: python
     
-    def valid_python_name(arguments, optional_argument=None):
-        # indented lines of code
+    def valid_python_name(arguments, optional_argument=None):  # the function signature line
+        # indented lines of code that are only executed
+        # when this function is called
         return
 
-And, of course, they must be defined before they are used!
+And, of course, functions must be defined before they are used!
 
-The following is a valid, but not particularly useful, function. As the function definition does not include any arguments, the function is invoked by simply using it's name and the standard call syntax ``"()"``.
+The following is a valid, but not particularly useful, function. As the function definition does not include any arguments, the function is invoked by simply using its name and the standard call syntax ``"()"``.
 
 .. code::
     
@@ -160,9 +177,9 @@ We can document how to use a function we write by writing a docstring. When you 
 .. index::
     pair: pass; statement
 
-The following illustrates the form of a docstring with a simple function with no contents other than the docstring [1]_.
+The following illustrates the form of a docstring with a simple function with no contents other than the docstring [#]_.
 
-.. [1] The Python ``pass`` statement is a null ("do-nothing") operation. It's used as a placeholder when the language requires a syntactic element.
+.. [#] The Python ``pass`` statement is a null ("do-nothing") operation. It's used as a placeholder when the language requires a syntactic element.
 
 .. jupyter-execute::
 
@@ -259,7 +276,7 @@ Using the following data
 
 #. Write a function called ``cast_to_floats()`` that takes a single string (as per ``data``) and converts it into a list of floats. Apply this function to ``data``.
 
-#. Write a function called ``normalised_freqs()`` that takes a series of frequencies (each value is 0 < val < 1 and the series sums to 1) and has an optional argument ``add_to_all`` (with a default value of 0). The function adds ``add_to_all`` [2]_ to every frequency.
+#. Write a function called ``normalised_freqs()`` that takes a series of frequencies (each value is 0 < val < 1 and the series sums to 1) and has an optional argument ``add_to_all`` (with a default value of 0). The function adds ``add_to_all`` [#]_ to every frequency.
 
     Add some assert statements to your function to check input values are valid (e.g. all values are ``0<=freq<1``).
 
@@ -287,4 +304,23 @@ Using the following data
 
 #. Implement the ``myfunc2()`` variant from above. Then try using differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to ``myfunc2()``. Make those calls without providing a value to ``result``. Show that the ``myfunc3()`` does not have this problem.
 
-.. [2] This type of adjustment to avoid zeros is used to avoid numerical errors.
+#. For function ``count_CGs()`` defined below. Prove it is incorrect using an ``assert`` statement [#]_. Rewrite the function so it is correct.
+
+    .. jupyter-execute::
+    
+        def count_CGs(seq):
+            """return the total number of C and G in a Seq"""
+            return Seq.count("C") + Seq.count("G")
+        
+        Seq = "ACGCCAGTGCATTACG"
+        count_CGs(Seq)
+    
+    .. jupyter-execute::
+    
+        count_CGs("ACGTTAATATTATTTTA")
+    
+.. [#] This type of adjustment to avoid zeros is used to avoid numerical errors.
+
+.. todo:: add a question getting them to expose fragility of uising a mutable data structure as input; create a case where there's a module level list with a member whose value is used by a function such that the second call raises an error, ask them to write the function so it's more robust
+
+.. [#] What this means is that you state an expected value for the function given your input. If the code is incorrect, the function returned value will not equal your expected value thus triggering your assertion statement, resulting in an error. In other words, if the code is wrong you WANT there to be an error.
