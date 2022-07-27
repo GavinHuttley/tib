@@ -8,7 +8,7 @@ Logical syntax
     pair: "\l"; white space
     pair: " "; white space
 
-White space characters are critical components of Python syntax. The ``" "``, ``\t`` and ``\n`` characters are employed.
+*White space* characters are critical components of Python syntax. The ``" "``, ``\t`` and ``\n`` characters are employed.
 
 As you will see, indentation of Python lines is used to delineate logical structure to a program. Lines that sequentially follow and are at the same indentation level are executed according to the same conditions.
 

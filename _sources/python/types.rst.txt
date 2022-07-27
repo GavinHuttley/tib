@@ -68,7 +68,6 @@ note that ``e`` is an empty string.
     a > 3
     b = True
 
-
 .. index::
     pair: None; types
 
@@ -168,6 +167,8 @@ float to int
     f = 4.8
     i = int(f)
     i
+
+.. _str2float:
 
 string to float
 ^^^^^^^^^^^^^^^
@@ -272,6 +273,8 @@ These are new to Python, since version 3.6. I'll bundle the int and float into a
 
 Exercises
 =========
+
+#. Rewrite the code from :ref:`str2float` so that you successfully convert the string into the integer.
 
 #. What happens when you cast the following to a dict using the ``dict()`` command.
 

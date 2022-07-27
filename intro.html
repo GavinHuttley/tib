@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. Prologue &mdash; Topics in Bioinformatics 2022.07.26 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>2. Prologue &mdash; Topics in Bioinformatics 2022.07.27 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
@@ -113,30 +113,30 @@
 <h1><span class="section-number">2. </span>Prologue<a class="headerlink" href="#prologue" title="Permalink to this headline"></a></h1>
 <p><em>Section author: Gavin Huttley</em></p>
 <p>How is life encoded in nucleic acids? What is the minimum number of nucleotides required to encode a virus? Do all genetic differences between individuals contribute to phenotypic differences between them? What genetic change(s) causes humans to have unique cognitive abilities compared to our nearest great ape relatives? How many different types of microorganisms live in our gut and what role do they play in our biology? If you had <span class="math notranslate nohighlight">\(\sim 10^{10}\)</span> 250bp long DNA sequences that were randomly sampled from a single Human, could you assemble that individuals genome from scratch? If you sequence DNA extracted from soil, can you identify what species the DNA comes from? If you have an assembled genome of a novel species, can you identify where the genes in the genome are?</p>
-<p>We do not know the answer to many of these questions. Despite that, and despite the fact that some of them are strictly concerned with biological phenomena, I am confident that they all require computers to attain a solution. I will go even further and claim that any question in the biological sciences we can come up with will require the use of computers to tackle it. Based on this, I think it is reasonable to make the general claim that biologists have a near absolute reliance on computers for undertaking their research <a class="footnote-reference brackets" href="#id3" id="id1">1</a>. But we can make that statement more specific: Biologists have a near absolute reliance on <strong>software</strong> to undertake their research <a class="footnote-reference brackets" href="#id4" id="id2">2</a>.</p>
+<div class="sidebar">
+<p class="sidebar-title">What’s the difference between using <a class="reference external" href="https://python.org">Python</a> versus using <a class="reference external" href="https://www.r-project.org/">R</a>?</p>
+<p>Both languages provide very sophisticated capabilities for scientists, hence they are the dominant languages employed in Data Science. Both of these languages are also <a class="reference external" href="https://en.wikipedia.org/wiki/Open_source">Open Source</a> languages, developed by a community of volunteers <a class="footnote-reference brackets" href="#id7" id="id1">3</a>.</p>
+<p>The major difference between <a class="reference external" href="https://python.org">Python</a> and <a class="reference external" href="https://www.r-project.org/">R</a> comes in how they are typically used <a class="footnote-reference brackets" href="#id8" id="id2">4</a>. Many of the concepts you will learn in the <a class="reference external" href="https://python.org">Python</a> topic – conditionals, iteration, functions – are not directly coded by most users of <a class="reference external" href="https://www.r-project.org/">R</a>. They are implicitly being used, but are “hidden” from users.</p>
+<p>The way you will learn <a class="reference external" href="https://python.org">Python</a> is as a more “conventional” programming approach.</p>
+</div>
+<p>We do not know the answer to many of these questions. Despite that, and despite the fact that some of them are strictly concerned with biological phenomena, I am confident that they all require computers to attain a solution. I will go even further and claim that any question in the biological sciences we can come up with will require the use of computers to tackle it. Based on this, I think it is reasonable to make the general claim that biologists have a near absolute reliance on computers for undertaking their research <a class="footnote-reference brackets" href="#id5" id="id3">1</a>. But we can make that statement more specific: Biologists have a near absolute reliance on <strong>software</strong> to undertake their research <a class="footnote-reference brackets" href="#id6" id="id4">2</a>.</p>
 <p>Just about every part of a biology wet-lab has some type of digital device, from pipette’s and scales to centrifuges. From confocal microscopes to scanning tunnelling electron microscopes. The more transformed data becomes from the natural system, the greater the involvement of software (and our reliance on it) to control those devices. But science is an enterprise whose objective is much more than simply the accumulation of data. Similarly, software can be much more than instructions for controlling the capture of data.</p>
 <p>Science is about producing general models of how the natural world works. Good scientific models are powerful because they allow us to make predictions about what we will observe in circumstances that have not yet been encountered. Computer programs are one way in which we represent those models. They provide us with the means to evaluate, on a large scale, how well our model matches actual data. In other words, software is integral to scientific practice.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
 <dd><p>I suspect this holds true for all the sciences.</p>
 </dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
 <dd><p>Software is just another word for computer program. The computer is just a piece of hardware but the software is the specific set of instructions that dictate what that hardware does.</p>
 </dd>
 </dl>
 <p>The above is a big picture view of the role of software in science, but where does this course fit in? I can say with absolute certainty that we will not be answering most of the questions raised above (Doh!). What <em>you</em> will be doing is acquiring the skills necessary to understand what the analyses described above are, how to perform them and whether <em>you</em> should believe the results. <em>You</em> will develop the skills to write custom software whose output you can trust. In your future career, that software may be as simple as handling data formats, or completely novel models of biological systems. In all cases, your software will be key to solving the scientific questions that you find interesting.</p>
-<div class="sidebar">
-<p class="sidebar-title">What’s the difference between using <a class="reference external" href="https://python.org">Python</a> versus using <a class="reference external" href="https://www.r-project.org/">R</a>?</p>
-<p>Both languages provide very sophisticated capabilities for scientists, hence they are the dominant languages employed in Data Science. Both of these languages are also <a class="reference external" href="https://en.wikipedia.org/wiki/Open_source">Open Source</a> languages, developed by a community of volunteers <a class="footnote-reference brackets" href="#id7" id="id5">3</a>.</p>
-<p>The major difference between <a class="reference external" href="https://python.org">Python</a> and <a class="reference external" href="https://www.r-project.org/">R</a> comes in how they are typically used <a class="footnote-reference brackets" href="#id8" id="id6">4</a>. Many of the concepts you will learn in the <a class="reference external" href="https://python.org">Python</a> topic – conditionals, iteration, functions – are not directly coded by most users of <a class="reference external" href="https://www.r-project.org/">R</a>. They are implicitly being used, but are “hidden” from users.</p>
-<p>The way you will learn <a class="reference external" href="https://python.org">Python</a> is as a more “conventional” programming approach.</p>
-</div>
 <p>At this stage, I’m sure you have many questions. Like, <em>What is “bioinformatics”?</em> <em>I’ve heard the phrase “Data Science”, is that what bioinformatics is?</em></p>
 <dl class="footnote brackets">
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">3</a></span></dt>
 <dd><p>I could write a very extensive essay on how open source software has, and continues to be, critical to science. Instead I have used the quote from Paul Romer to illuminate the fact that true scientific reproducibility requires transparency. By definition, open source software satisfies this condition while proprietary software does not.</p>
 </dd>
-<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id6">4</a></span></dt>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">4</a></span></dt>
 <dd><p>Ok, Ok, I get it. This is a gross oversimplification of the differences between the languages.</p>
 </dd>
 </dl>
