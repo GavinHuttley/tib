@@ -160,7 +160,7 @@ Roots
 The ``math`` module
 -------------------
 
-More sophisticated mathematical routines are included in the `math` module. We will discuss modules later.
+More sophisticated mathematical routines are included in the ``math`` module. We will discuss modules later.
 
 Exercises
 =========

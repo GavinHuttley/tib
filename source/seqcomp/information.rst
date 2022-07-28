@@ -14,7 +14,7 @@ There is a formal definition for entropy.
 .. math::
     H = -\sum_{i=0}^n p_i \log_2(p_i)
 
-where :math:`H` is Shannon entropy, `p` is a series of probabilities with `n` members and :math:`p_i` the probability of state `i`. In words, entropy is calculated as the sum of :math:`p_i\log_2(p_i)`. Further, in words the latter can be described as multiplying a probability by the log base 2 of itself.
+where :math:`H` is Shannon entropy, :math:`p` is a series of probabilities with :math:`n` members and :math:`p_i` the probability of state :math:`i`. In words, entropy is calculated as the sum of :math:`p_i\log_2(p_i)`. Further, in words the latter can be described as multiplying a probability by the log base 2 of itself.
 
 .. note:: :math:`\sum_{i=0}^n` means take the sum of the series starting at index 0 and ending at index `n`.
 

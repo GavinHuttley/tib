@@ -26,7 +26,7 @@ A quirk of Plotly is that cartesian coordinates (i.e. :math:`x`, :math:`y` coord
     fig = px.scatter(x=[1], y=[3])
     fig.show()
 
-To add another point at ``(3, 7)`` we append `3` to the `x` list and `7` to the `y` list.
+To add another point at ``(3, 7)`` we append ``3`` to the ``x`` list and ``7`` to the ``y`` list.
 
 .. jupyter-execute::
 

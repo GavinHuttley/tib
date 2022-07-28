@@ -26,7 +26,7 @@ Long stretches of identity form a diagonal. A break -- existence of multiple dia
 The original dotplot algorithm
 ------------------------------
 
-Consider two sequences, `X` and `Y` with lengths `n` and `m` respectively. We establish the matches between them using the following algorithm (written as `pseudocode <https://en.wikipedia.org/wiki/Pseudocode>`_) [1]_:
+Consider two sequences, ``X`` and ``Y`` with lengths ``n`` and ``m`` respectively. We establish the matches between them using the following algorithm (written as `pseudocode <https://en.wikipedia.org/wiki/Pseudocode>`_) [1]_:
 
 .. code-block:: text
     :name: dotplot_algorithm

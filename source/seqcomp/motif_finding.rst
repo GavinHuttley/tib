@@ -54,12 +54,12 @@ In this case, the PSSM has length 15. This motif is on display at `JASPAR <http:
 Formal definition of the probability model
 ------------------------------------------
 
-We now layout the equations for computing the probability of a sequence. To start, we make some simplifying assumptions. Namely, we assume a counts matrix reflects the true underlying probabilities of bases per position of a motif; that each base in a motif occurs independently of the other bases. We can compute the probability under the PPM (position probability matrix) model `M` of a sequence `x` with length `L` as:
+We now layout the equations for computing the probability of a sequence. To start, we make some simplifying assumptions. Namely, we assume a counts matrix reflects the true underlying probabilities of bases per position of a motif; that each base in a motif occurs independently of the other bases. We can compute the probability under the PPM (position probability matrix) model :math:`M` of a sequence :math:`x` with length :math:`L` as:
 
 .. math::
     P(x|M)=\Pi_{i=0}^L p_i(x_i)
 
-where :math:`x_i` is the base at position `i`. This probability can also be referred to as the *odds* of observing the sequence given the model `M`.
+where :math:`x_i` is the base at position :math:`i`. This probability can also be referred to as the *odds* of observing the sequence given the model :math:`M`.
 
 .. note::  the :math:`\Pi` symbol means "take the product of the series". So what :math:`\sum` is to addition, :math:`\Pi` is for multiplication.
 
@@ -86,7 +86,7 @@ The conditional probability of the sequence:
 
 *2.* ``GTCT``, is :math:`0.39 \times 0.79 \times 0.0 \times 0.96 = 0.0`
 
-The latter case is potentially real -- binding only happens with A at the 3rd position -- but most likely due to a finite sized training data set. In other words, if the training set had been much larger we may have observed the other bases at that position.
+The latter case is potentially real -- binding only happens with ``"A"`` at the 3rd position -- but most likely due to a finite sized training data set. In other words, if the training set had been much larger we may have observed the other bases at that position.
 
 Pseudo-counts -- handling missing data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -134,16 +134,16 @@ For convenience, define the background distribution of sequence states to be equ
 
     OR(x|M)=\Pi_{i=0}^L \frac{p_i(x_i)}{0.25}
 
-Which is expressed as a log-odds score `S`:
+Which is expressed as a log-odds score :math:`S`:
 
 .. math::
     S=\sum_{i=0}^L \log p_i(x_i) - \log 0.25
 
-We then interpret the values of `S` as
+We then interpret the values of :math:`S` as
 
-- if S=0, the sequence is equally likely in the PSSM and background
-- if S<0, the sequence is less likely under the PSSM than background
-- if S>0, the sequence is more likely under the PSSM than background
+- if :math:`S=0`, the sequence is equally likely in the PSSM and background
+- if :math:`S<0`, the sequence is less likely under the PSSM than background
+- if :math:`S>0`, the sequence is more likely under the PSSM than background
 
 PSSM limitations
 ^^^^^^^^^^^^^^^^
