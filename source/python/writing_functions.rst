@@ -105,22 +105,28 @@ Required arguments
 
     get_diff(4, 6)
 
-.. jupyter-execute::
+When calling a function, the order in which you provide arguments defines what variable they're assigned to. One exception to this is if you specify the arguments as ``argument=value`` (key-value arguments).
 
-    get_diff(6, 4)
+.. tabbed:: Correct Invocation
 
-.. jupyter-execute::
+    Both ``a`` and ``b`` are required. 
 
-    get_diff(b=6, a=4)
+    .. jupyter-execute::
 
-.. jupyter-execute::
-    :raises:
+        get_diff(6, 4)
 
-    get_diff(1)
+    .. jupyter-execute::
 
-- When calling a function, the order in which you provide arguments defines what variable they're assigned to
-    - UNLESS you specify them as argument=value
-- In the above, `a` and `b` are required. If you don't provide both of them, you will get an *exception*
+        get_diff(b=6, a=4)
+
+.. tabbed:: Incorrect Invocation
+
+    If you don't provide both arguments you will get an *exception*, in this case a ``TypeError``.
+
+    .. jupyter-execute::
+        :raises:
+
+        get_diff(1)
 
 .. index::
     pair: optional arguments; function
@@ -165,6 +171,24 @@ Required arguments MUST occur before optional arguments. This constraint holds f
 .. _functions: http://greenteapress.com/thinkpython2/html/thinkpython2004.html#sec30
 
 .. index:: docstring, string literal
+
+An advanced design pattern: Putting constraints on how your functions are used
+------------------------------------------------------------------------------
+
+You can force your users to employ the key-value invocation, as illustrated by the following.
+
+.. jupyter-execute::
+    :raises:
+
+    def get_diff(*, a, b):  # note the * character
+        diff = a - b
+        return diff
+
+    get_diff(a=4, b=6)  # users now must use argument=value, otherwise there's an error
+
+The reason for this is it forces your users to check the parameters of your function when they call it, increasing the chance they use it correctly! It also makes their code easier to read.
+
+.. note:: This is a "for your information" entry only.
 
 Documenting a function with a doctstring
 ----------------------------------------
