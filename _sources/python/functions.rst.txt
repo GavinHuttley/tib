@@ -3,20 +3,6 @@
 Functions and methods
 =====================
 
-.. sidebar:: Tips for writing functions and staying sane
-
-    Here are two ways to write functions that are guaranteed to create headaches.
-    
-    1. Pass in function parameters that are mutable data types AND modify them within the function.
-    2. Use variables that are defined outside the function.
-    
-    What are the alternatives?
-    
-    1. Either do not modify input parameters or copy them within the function.
-    2. Pass all the variables your function needs into the function.
-
-    Of course, if you love errors and hard to debug problems go ahead and ignore this advice.
-
 This is a central concept in programming. It provides a means of encapsulating several lines of code (that do something useful) and providing a reference such that this block can be called in multiple places in a larger program.
 
 .. index::

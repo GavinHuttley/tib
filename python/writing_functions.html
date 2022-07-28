@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.33. Writing functions &mdash; Topics in Bioinformatics 2022.07.27 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.33. Writing functions &mdash; Topics in Bioinformatics 2022.07.28 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -93,9 +93,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#optional-arguments">5.33.5. Optional arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#writing-and-using-functions-that-have-optional-arguments">5.33.6. Writing and using functions that have optional arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ordering-arguments">5.33.7. Ordering arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#documenting-a-function-with-a-doctstring">5.33.8. Documenting a function with a doctstring</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#functions-that-call-other-functions">5.33.9. Functions that call other functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#things-not-to-do">5.33.10. Things not to do!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#an-advanced-design-pattern-putting-constraints-on-how-your-functions-are-used">5.33.8. An advanced design pattern: Putting constraints on how your functions are used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documenting-a-function-with-a-doctstring">5.33.9. Documenting a function with a doctstring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions-that-call-other-functions">5.33.10. Functions that call other functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#things-not-to-do">5.33.11. Things not to do!</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#exercises">5.34. Exercises</a></li>
@@ -278,6 +279,12 @@
 </div>
 </div>
 </div>
+<p>When calling a function, the order in which you provide arguments defines what variable they’re assigned to. One exception to this is if you specify the arguments as <code class="docutils literal notranslate"><span class="pre">argument=value</span></code> (key-value arguments).</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="1aa96f96-9b29-49d0-8472-cb13c591b17c" name="fa4dd497-9852-41b9-9e06-628eb75c6268" type="radio">
+</input><label class="tabbed-label" for="1aa96f96-9b29-49d0-8472-cb13c591b17c">
+Correct Invocation</label><div class="tabbed-content docutils">
+<p>Both <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are required.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_diff</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -302,6 +309,11 @@
 </div>
 </div>
 </div>
+</div>
+<input id="ce923040-81fd-4a64-973b-3fb07e71f224" name="fa4dd497-9852-41b9-9e06-628eb75c6268" type="radio">
+</input><label class="tabbed-label" for="ce923040-81fd-4a64-973b-3fb07e71f224">
+Incorrect Invocation</label><div class="tabbed-content docutils">
+<p>If you don’t provide both arguments you will get an <em>exception</em>, in this case a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -319,16 +331,8 @@
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><dl class="simple">
-<dt>When calling a function, the order in which you provide arguments defines what variable they’re assigned to</dt><dd><ul>
-<li><p>UNLESS you specify them as argument=value</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>In the above, <span class="incremental">a</span> and <span class="incremental">b</span> are required. If you don’t provide both of them, you will get an <em>exception</em></p></li>
-</ul>
+</div>
+</div>
 </div>
 <div class="section" id="optional-arguments">
 <span id="index-3"></span><h2><span class="section-number">5.33.5. </span>Optional arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline"></a></h2>
@@ -392,8 +396,33 @@
 <p>There is an exception for calling a function. A function call where all arguments are expressly named will work even if optional arguments are not last, e.g. <code class="docutils literal notranslate"><span class="pre">get_diff(absolute=True,</span> <span class="pre">a=-4,</span> <span class="pre">b=6)</span></code>.</p>
 </div>
 </div>
+<div class="section" id="an-advanced-design-pattern-putting-constraints-on-how-your-functions-are-used">
+<span id="index-4"></span><h2><span class="section-number">5.33.8. </span>An advanced design pattern: Putting constraints on how your functions are used<a class="headerlink" href="#an-advanced-design-pattern-putting-constraints-on-how-your-functions-are-used" title="Permalink to this headline"></a></h2>
+<p>You can force your users to employ the key-value invocation, as illustrated by the following.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_diff</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>  <span class="c1"># note the * character</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">diff</span>
+
+<span class="n">get_diff</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>  <span class="c1"># users now must use argument=value, otherwise there&#39;s an error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-2
+</pre></div>
+</div>
+</div>
+</div>
+<p>The reason for this is it forces your users to check the parameters of your function when they call it, increasing the chance they use it correctly! It also makes their code easier to read.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a “for your information” entry only.</p>
+</div>
+</div>
 <div class="section" id="documenting-a-function-with-a-doctstring">
-<span id="index-4"></span><h2><span class="section-number">5.33.8. </span>Documenting a function with a doctstring<a class="headerlink" href="#documenting-a-function-with-a-doctstring" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.33.9. </span>Documenting a function with a doctstring<a class="headerlink" href="#documenting-a-function-with-a-doctstring" title="Permalink to this headline"></a></h2>
 <p>We can document how to use a function we write by writing a docstring. When you use <code class="docutils literal notranslate"><span class="pre">help()</span></code> on a built in function, it’s the docstring of that function which is being displayed. The syntactic definition of a docstring is:</p>
 <ul class="simple">
 <li><p>They are a string literal. By convention, they are defined using triple quotes surrounding the text. They can span multiple lines.</p></li>
@@ -439,7 +468,7 @@ myfunc()
 </div>
 </div>
 <div class="section" id="functions-that-call-other-functions">
-<h2><span class="section-number">5.33.9. </span>Functions that call other functions<a class="headerlink" href="#functions-that-call-other-functions" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.33.10. </span>Functions that call other functions<a class="headerlink" href="#functions-that-call-other-functions" title="Permalink to this headline"></a></h2>
 <p>There is no magic here. If you can use a Python built-in function, you can use a function you wrote. In the following, the function <code class="docutils literal notranslate"><span class="pre">squared_diffs()</span></code> takes two number series and returns the square of the element-wise difference while the function  <code class="docutils literal notranslate"><span class="pre">diff_two()</span></code> takes two number series and returns their element-wise difference.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -466,7 +495,7 @@ myfunc()
 </div>
 </div>
 <div class="section" id="things-not-to-do">
-<h2><span class="section-number">5.33.10. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">5.33.11. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline"></a></h2>
 <p><strong>DO NOT</strong> use global variables (see <a class="reference internal" href="namespace.html#namespaces"><span class="std std-ref">Namespaces</span></a>). Either pass the variable in as an argument or create it within the function. Adhere to the principle of making code “Easy To Change”. In the case of functions, this means making them depend only on the arguments you give them. The following is bad.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
