@@ -17,11 +17,11 @@ Here's a listing of the parts:
 
     2.1. :math:`b^2`, which is
     
-        - :math:`b\times b`
+        :math:`b\times b`
     
     2.2. :math:`4ac`, which is
     
-        - :math:`4\times a \times c`
+        :math:`4\times a \times c`
 
 To actually solve this problem requires we work from the inside (the most indented bullet points) towards the outside (the least indented bullet points). So let's do this thing!
 
@@ -30,9 +30,9 @@ I'm going to rewrite the bullet list, defining the names of python variables I w
 1. ``b`` (well that was easy!)
 2. ``sqrt_term``
 
-    2.1 ``b_sq``
+    2.1. ``b_sq``
 
-    2.2 ``four_ac``
+    2.2. ``four_ac``
 
 The first thing we have to do is define the variables we will use before we actually use them. We will just give them some starting numerical values (we know they have to be numbers because maths!) [1]_.
 
@@ -95,10 +95,11 @@ Let's say we want to read in a plain text file which contains a header column fo
 
 Algorithmically, the top level problems are:
 
-#. Open the file (see :ref:`files`)
-#. Read the file line by line  (see :ref:`files`)
+1. Open the file (see :ref:`files`)
+2. Read the file line by line  (see :ref:`files`)
+    
+    2.1. Transform each line into usable data
 
-    #. Transform each line into usable data
 
 That last point is the inner most, so we focus our attention on the challenge of transforming lines. We look at the sample of the file to we identify any patterns and notice 2 features. The first is that all lines have the same number of fields (separated by ``\t``). The second is that the header row is different in that the values are not numbers. We now modify the enumeration to give some more detail.
 
