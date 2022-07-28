@@ -184,7 +184,7 @@ Say you have two data series, of equal length, and you want them combined into a
     columns = list(zip(seq1, seq2))
     columns[:5]
 
-You can also unzip series. For example, consider the following list of lists. We can decompose that into 2 separate series using `zip` with the argument prefaced by ``*``.
+You can also unzip series. For example, consider the following list of lists. We can decompose that into 2 separate series using ``zip`` with the argument prefaced by ``*``.
 
 .. jupyter-execute::
 
