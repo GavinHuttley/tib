@@ -342,7 +342,7 @@ NO Empty string
 <p class="admonition-title">Note</p>
 <p>I iterated over elements of the list <code class="docutils literal notranslate"><span class="pre">sample_data</span></code>. I also used conditionals within the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 </div>
-<p>The values <code class="docutils literal notranslate"><span class="pre">0`</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">None</span></code> also evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>The values <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">None</span></code> also evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </div>
 <div class="section" id="checking-correctness-using-assert">
 <span id="index-5"></span><h2><span class="section-number">5.42.5. </span>Checking correctness using <code class="docutils literal notranslate"><span class="pre">assert</span></code><a class="headerlink" href="#checking-correctness-using-assert" title="Permalink to this headline"></a></h2>
@@ -350,7 +350,7 @@ NO Empty string
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Gav&quot;</span>
-<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;name [</span><span class="si">%s</span><span class="s2">] is not a string&quot;</span> <span class="o">%</span> <span class="n">name</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span>  <span class="sa">f</span><span class="s2">&quot;name </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is not a string&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sanity check passed!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -365,7 +365,7 @@ NO Empty string
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;name [</span><span class="si">%s</span><span class="s2">] is not a string&quot;</span> <span class="o">%</span> <span class="n">name</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;name </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is not a string&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -374,9 +374,9 @@ NO Empty string
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;name [</span><span class="si">%s</span><span class="s2">] is not a string&quot;</span> <span class="o">%</span> <span class="n">name</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;name </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is not a string&quot;</span>
 
-<span class="ne">AssertionError</span>: name [0] is not a string
+<span class="ne">AssertionError</span>: name 0 is not a string
 </pre></div>
 </div>
 </div>
