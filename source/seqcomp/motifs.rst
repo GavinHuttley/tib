@@ -93,4 +93,4 @@ Exercises
 
 #. Then do it for all the trinucleotides in ``seq``.
 
-#. The Python standard library has lots of very useful goodies. Investigate the ``Counter`` class from ``collections`` and apply it to your result from (5) and (6) to determine the |kmer| counts. (Use google!)
+#. The Python standard library has lots of very useful goodies. Investigate the ``Counter`` class from ``collections`` and apply it to your result from (4) and (5) to determine the |kmer| counts. (Use google!)
