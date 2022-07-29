@@ -111,7 +111,7 @@ One property of Python builtin series is that if they are empty, then they evalu
 
 .. note:: I iterated over elements of the list ``sample_data``. I also used conditionals within the ``for`` loop.
 
-The values ``0```, ``0.0`` and ``None`` also evaluate to ``False``.
+The values ``0``, ``0.0`` and ``None`` also evaluate to ``False``.
 
 .. index:: assert, testing, correctness
 
@@ -123,7 +123,7 @@ Checking correctness using ``assert``
 .. jupyter-execute::
 
     name = "Gav"
-    assert type(name) == str, "name [%s] is not a string" % name
+    assert type(name) == str,  f"name {name} is not a string"
     print("Sanity check passed!")
 
 This is what it looks like when it fails.
@@ -132,7 +132,7 @@ This is what it looks like when it fails.
     :raises:
 
     name = 0
-    assert type(name) == str, "name [%s] is not a string" % name
+    assert type(name) == str, f"name {name} is not a string"
 
 .. index::
     pair: list; comprehension
