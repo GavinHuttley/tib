@@ -202,7 +202,7 @@ One common string transformation operation involves removing specific characters
 2. Call the ``strip()`` method
 3. Assign the result of the call to a variable.
 
-In this example, I'm defining a ``line`` variable with leading and trailing white space and some internal white space of different types. To remove leading/trailing using strip.
+In this example, I'm defining a ``line`` variable with leading and trailing white space and some internal white space of different types. To remove leading/trailing using the ``strip()`` method.
 
 .. jupyter-execute::
 
