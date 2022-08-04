@@ -20,3 +20,15 @@ The notes for this topic are focussed principally on the biological and statisti
 
 
 .. todo:: add a resources doc
+
+..
+  
+      slide with one individual who is a heterozygote, get students to predict possible genotypes of a single progeny
+      - probability of single progeny each genotype
+      * consider successive generations
+      * imagine selection operating on adolescent phenotype, does that impact on genotype of progeny?
+      * so deleterious variation could make to birth
+      * what if phenotype is environmentally conditioned, die only if temperature > 40C
+      * rather elaborate thought experiment is to illustrate that
+      	* evolution without selection is possible
+      	* that mildly deleterious variants can become fixed
