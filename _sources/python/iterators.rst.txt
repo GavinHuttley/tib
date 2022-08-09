@@ -45,7 +45,7 @@ There are several benefits of generator functions. Just one of which is they pro
 The ``as`` keyword
 ------------------
 
-This keyword facilitates a type of assignment. They can be used in a number of different contents, such as part of a with statement.
+This keyword facilitates a type of assignment. They can be used in a number of different contexts, such as part of a with statement.
 
 .. code-block::
     
