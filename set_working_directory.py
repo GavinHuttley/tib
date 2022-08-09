@@ -15,7 +15,7 @@ def get_parent_data_dir():
     """returns path to doc data directory parent"""
     current = pathlib.Path(__file__).absolute().parent
     data_paths = []
-    for path in current.glob("**/*data*"):
+    for path in current.glob("**/source/data"):
         if any(part.startswith(".") for part in path.parts):
             continue
         if path.is_dir() and path.name == "data":
