@@ -26,13 +26,13 @@ Our understanding of encoding of functional molecules leads to the view that the
 
 All :math:`\sim 10^{13}` cells in our body contain the same genome. And yet somehow, these cells manage to attain distinct cellular phenotypes, such as cardiac cells, sperm cells, hair follicle cells, etc. How is a complex multicellular organism, like us, achieved when their cells have the same information content? The answer lies in their selective reading of that information.
 
-It is long been appreciated that regulatory control of genes underpins cell-type-specific differentiation. This is achieved by a layer of regulatory encoding -- referred to as epigenetics -- and associated molecular mechanisms. For instance, in eukaryotes DNA associated with an octamer of histone proteins forms a structure referred to as a nucleosome (see `Organisation of eukaryotic DNA`_). These provide the molecular foundation for changing the level of compaction of DNA. Highly compacted chromatin is inaccessible to the machinery responsible for transcribing DNA into RNA, thus preventing it from contributing to cellular phenotype [1]_. Cell type differences in which genomic regions are accessible thus leads to cell type differences in phenotype.
+It is long been appreciated that regulatory control of genes underpins cell-type-specific differentiation. This is achieved by a layer of regulatory encoding -- referred to as epigenetics -- and associated molecular mechanisms. For instance, in eukaryotes DNA associated with an octamer of histone proteins forms a structure referred to as a nucleosome (see :ref:`DNA organisation <organisation_dna>`). These provide the molecular foundation for changing the level of compaction of DNA. Highly compacted chromatin is inaccessible to the machinery responsible for transcribing DNA into RNA, thus preventing it from contributing to cellular phenotype [1]_. Cell type differences in which genomic regions are accessible thus leads to cell type differences in phenotype.
 
 .. [1] It's worth highlighting that there seems to be a threshold in the number of mRNA transcripts from a gene that are required before the encoded product is produced to a level sufficient to influence phenotype. Examination of the raw experimental data from RNAseq experiments (which quantify transcript abundance) reveals that some level of RNA appears evident for almost all genes. In other words, just because transcripts of a gene exist in a cell does not mean the gene is "functioning" in that cell.
 
 .. figure:: /_static/images/seqcomp/transcription.png
     :scale: 75 %
-    :name: Organisation of eukaryotic DNA
+    :name: organisation_dna
     
     Organisation of eukaryotic DNA
     

@@ -57,6 +57,50 @@ They can also be used in imports and when trapping exceptions.
 Exercises
 =========
 
+.. todo:: 
+
+    exercise with data like
+    
+    data = "\n".join("some text").replace (" \n", "\n")
+    write code that loops over data and reaassembles the independent words
+    this is a good preliminary example of having to store data and acting on it
+    after you have collected everything -- entree to processing a fasta file
+
+#. ``data`` is a list of the characters from words put onto separate lines. The space between words being indicated by a blank line. Write an algorithm that reconstructs the original words and spaces as a single string.
+
+    .. tabbed:: The data
+    
+        .. jupyter-execute::
+        
+            data = """s
+            o
+            m
+            e
+
+            t
+            e
+            x
+            t""".splitlines()
+        
+    .. tabbed:: Expected output
+    
+        .. jupyter-execute::
+            :hide-code:
+        
+            words = []
+            word = []
+            for c in data:
+                c = c.strip()
+                if c:
+                    word.append(c)
+                else:
+                    words.append("".join(word))
+                    word = []
+            
+            words.append("".join(word))
+            print(repr(" ".join(words)))
+    
+
 #. Write a function that takes a file path, opens the file and returns all the lines in that file.
 
 #. Convert the above function to a generator that yields one line at a time.
