@@ -174,7 +174,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x7f4ed4b36e20&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x7f5ed8518a00&gt;
 </pre></div>
 </div>
 </div>
@@ -228,7 +228,45 @@ e
 </div>
 <div class="section" id="exercises">
 <h1><span class="section-number">5.32. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
-<ol class="arabic simple">
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> is a list of the characters from words put onto separate lines. The space between words being indicated by a blank line. Write an algorithm that reconstructs the original words and spaces as a single string.</p>
+<blockquote>
+<div><div class="tabbed-set docutils">
+<input checked="checked" id="1bd30492-b713-4c70-b92f-e46405f284da" name="6f2157a1-2185-4b43-b6e4-f070d57f4a21" type="radio">
+</input><label class="tabbed-label" for="1bd30492-b713-4c70-b92f-e46405f284da">
+The data</label><div class="tabbed-content docutils">
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;s</span>
+<span class="s2">o</span>
+<span class="s2">m</span>
+<span class="s2">e</span>
+
+<span class="s2">t</span>
+<span class="s2">e</span>
+<span class="s2">x</span>
+<span class="s2">t&quot;&quot;&quot;</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<input id="1adc6833-9f60-40b3-8a5d-80ce6fa1fd33" name="6f2157a1-2185-4b43-b6e4-f070d57f4a21" type="radio">
+</input><label class="tabbed-label" for="1adc6833-9f60-40b3-8a5d-80ce6fa1fd33">
+Expected output</label><div class="tabbed-content docutils">
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;some text&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></blockquote>
+</li>
 <li><p>Write a function that takes a file path, opens the file and returns all the lines in that file.</p></li>
 <li><p>Convert the above function to a generator that yields one line at a time.</p></li>
 </ol>
