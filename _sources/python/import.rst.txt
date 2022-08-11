@@ -110,6 +110,6 @@ There are an increasing number of Biology specific libraries. My own lab produce
 Writing your own modules
 ------------------------
 
-Since a Python script is a module, then all you have to do is write your code in a python script. If that script os on what is called the *python path*, then it can be imported and any functions within can be used.
+Since a Python script is a module, then all you have to do is write your code in a python script. If that script is on what is called the *python path*, then it can be imported and any functions within can be used.
 
 The python path refers to the places on your computer that Python will look for modules. The first is the directory from which the Python executable was started. The second is the "installed packages" location, typically a directory called ``site-packages`` which is "within" Python itself. The third is a custom location which you have to tell Python about, for instance using a special `PYTHONPATH <https://docs.python.org/3/using/cmdline.html?highlight=pythonpath#envvar-PYTHONPATH>`_ environment variable.
