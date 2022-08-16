@@ -1,6 +1,10 @@
 Refresher on statistical inference
 ==================================
 
+.. warning:: This section is destined to be moved to a standalone topic. Stay tuned!
+
+.. todo:: migrate all this content to the statistical thinking section
+
 .. todo:: the null has fewer parameters than the alt
 
 .. todo:: better explanation of stats null distribution
