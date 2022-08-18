@@ -36,6 +36,7 @@
 .. |xaxis| replace:: :math:`x`\ -axis
 .. |pvalue| replace:: :math:`p`\ -value
 .. |pvalues| replace:: :math:`p`\ -values
+.. |df| replace:: :math:`df`
 .. |Ho| replace:: :math:`H_o`
 .. |Ha| replace:: :math:`H_a`
 .. |lnL_alt| replace:: :math:`\ln \mathcal{L}_{\text{alt}}`
