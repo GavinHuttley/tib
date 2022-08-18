@@ -21,7 +21,7 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
@@ -1320,7 +1320,11 @@ After:
 </li>
 <li><p>Convert the following code into using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – without <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. After converting <code class="docutils literal notranslate"><span class="pre">counts</span></code> to a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array, my solution is 3 lines long.</p>
 <blockquote>
-<div><div class="jupyter_cell jupyter_container docutils container">
+<div><div class="tabbed-set docutils">
+<input checked="checked" id="e6c7dea8-8bf7-4ddb-aad5-dc6adab566bc" name="83aa4c4c-9441-43b6-9cd8-585c99a7ac98" type="radio">
+</input><label class="tabbed-label" for="e6c7dea8-8bf7-4ddb-aad5-dc6adab566bc">
+Original Algorithm</label><div class="tabbed-content docutils">
+<div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log10</span>
 
@@ -1350,7 +1354,10 @@ After:
 </div>
 </div>
 </div>
-<p>The expected result from conversion is</p>
+</div>
+<input id="d8eabfa4-7d4e-4d9e-8b67-91b2b56a32d8" name="83aa4c4c-9441-43b6-9cd8-585c99a7ac98" type="radio">
+</input><label class="tabbed-label" for="d8eabfa4-7d4e-4d9e-8b67-91b2b56a32d8">
+Expected result from conversion</label><div class="tabbed-content docutils">
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.        , 0.47712125, 0.60205999, 0.        , 0.60205999],
@@ -1358,6 +1365,8 @@ After:
        [0.        , 0.        , 0.30103   , 0.        , 0.47712125],
        [0.30103   , 0.        , 0.        , 0.        , 0.        ]])
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1391,11 +1400,11 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 1, 1, 0],
-       [1, 1, 1, 0, 1],
-       [0, 1, 0, 1, 1],
-       [1, 1, 0, 1, 1],
-       [1, 0, 0, 0, 1]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 0, 1, 0],
+       [1, 1, 1, 1, 1],
+       [1, 1, 0, 0, 0],
+       [0, 0, 1, 1, 1],
+       [0, 1, 0, 1, 0]])
 </pre></div>
 </div>
 </div>
@@ -1403,7 +1412,7 @@ After:
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4], [0, 1, 2, 3, 0, 1, 2, 4, 1, 3, 4, 0, 1, 3, 4, 0, 4])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 1, 1, 1, 1, 1, 2, 2, 3, 3, 3, 4, 4], [1, 3, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 1, 3])
 </pre></div>
 </div>
 </div>
@@ -1416,7 +1425,7 @@ After:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>12.3 µs ± 61.1 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>12.5 µs ± 98.7 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>

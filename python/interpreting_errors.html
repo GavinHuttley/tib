@@ -21,7 +21,7 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
@@ -174,8 +174,8 @@
 </dl>
 <p>Here’s some broken code:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="1de11de5-6f80-47bc-a483-5f9390039910" name="8b680b94-1751-4186-8d27-32f52562fa3d" type="radio">
-</input><label class="tabbed-label" for="1de11de5-6f80-47bc-a483-5f9390039910">
+<input checked="checked" id="5ee8cc8c-2848-49d3-8adf-4ecdd2bd0b44" name="1955b4dd-e116-45a4-a692-c022fec5dcc7" type="radio">
+</input><label class="tabbed-label" for="5ee8cc8c-2848-49d3-8adf-4ecdd2bd0b44">
 Invalid Code</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -198,8 +198,8 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 <p>First, in the traceback, the last line indicates the type of the exception (<code class="docutils literal notranslate"><span class="pre">NameError</span></code> in this simple case) and the statement triggering it (<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">+=</span></code>). The offending line is indicated by <code class="docutils literal notranslate"><span class="pre">----&gt;</span></code>.</p>
 </div>
-<input id="9b0e52a1-ba1d-4971-9ec7-2b06c0e9a7a0" name="8b680b94-1751-4186-8d27-32f52562fa3d" type="radio">
-</input><label class="tabbed-label" for="9b0e52a1-ba1d-4971-9ec7-2b06c0e9a7a0">
+<input id="a87c998b-2179-49ac-b95a-ede57be80bf6" name="1955b4dd-e116-45a4-a692-c022fec5dcc7" type="radio">
+</input><label class="tabbed-label" for="a87c998b-2179-49ac-b95a-ede57be80bf6">
 Fixed Code</label><div class="tabbed-content docutils">
 <p>Variables must be defined before they’re used</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -217,8 +217,8 @@ Fixed Code</label><div class="tabbed-content docutils">
 </div>
 <p>And a slightly more complicated case</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="95ff6633-694c-4a7a-9468-68037e764da2" name="7504e386-6af1-435a-ab2f-ab58e67f4167" type="radio">
-</input><label class="tabbed-label" for="95ff6633-694c-4a7a-9468-68037e764da2">
+<input checked="checked" id="7ec7f9db-80a3-42ca-a867-dce4905fa961" name="7226088d-0ca9-46b4-919f-8110d87ed08d" type="radio">
+</input><label class="tabbed-label" for="7ec7f9db-80a3-42ca-a867-dce4905fa961">
 Invalid Code</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -238,8 +238,8 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 <p>This is a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> – imbalanced <code class="docutils literal notranslate"><span class="pre">()</span></code>. Note the <code class="docutils literal notranslate"><span class="pre">^</span></code> in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.</p>
 </div>
-<input id="bf1269e8-779d-444b-9326-11dfdb1b9af9" name="7504e386-6af1-435a-ab2f-ab58e67f4167" type="radio">
-</input><label class="tabbed-label" for="bf1269e8-779d-444b-9326-11dfdb1b9af9">
+<input id="8d4aa399-6232-443f-b83d-23c79736d357" name="7226088d-0ca9-46b4-919f-8110d87ed08d" type="radio">
+</input><label class="tabbed-label" for="8d4aa399-6232-443f-b83d-23c79736d357">
 Fixed Code</label><div class="tabbed-content docutils">
 <p>Balance the parentheses.</p>
 <div class="jupyter_cell jupyter_container docutils container">

@@ -21,7 +21,7 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
@@ -246,8 +246,8 @@ Ent.   0    0.72  1.52  1.52  0.97
 <blockquote>
 <div><p>You should consider it critical that your function always returns arrays where the counts for each nucleotide are always in the same position. For instance, if you define the state order as T, C, A, G then the counts for T are always at index 0 – even if a T was not observed.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="322a18da-e932-4331-9d97-b80394170f3b" name="88f4726e-f06c-4189-b0a9-bf9e643876f2" type="radio">
-</input><label class="tabbed-label" for="322a18da-e932-4331-9d97-b80394170f3b">
+<input checked="checked" id="722a288d-119f-4887-9afa-aa5f8f6f30e0" name="5cbfeb3b-c49e-4da5-95ce-0c1b14ea064d" type="radio">
+</input><label class="tabbed-label" for="722a288d-119f-4887-9afa-aa5f8f6f30e0">
 Expected output</label><div class="tabbed-content docutils">
 <p>If you select that nucleotide ordering, your function should return the nfollowing given the nucleotide counts <code class="docutils literal notranslate"><span class="pre">dict</span></code> from <code class="docutils literal notranslate"><span class="pre">seq</span></code> as input</p>
 <div class="jupyter_cell docutils container">
@@ -267,7 +267,7 @@ Expected output</label><div class="tabbed-content docutils">
 <blockquote>
 <div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AGACGGCACAAACGGCCGAGGGAGAACGGAGACCAGGAGACAGGAAGGGC&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;CGAGGGCCACAAGGAGGGGGAAACCAACGGGAACCGGAGAAGGGAGCAGC&#39;
 </pre></div>
 </div>
 </div>
