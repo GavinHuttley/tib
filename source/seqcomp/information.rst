@@ -120,6 +120,26 @@ Defining a short sequence for use below.
 #. Write a function that takes a dict like object (e.g. the counter you've just created from (1)) of counts and converts it to numpy array whose length is 4.
 
     You should consider it critical that your function always returns arrays where the counts for each nucleotide are always in the same position. For instance, if you define the state order as T, C, A, G then the counts for T are always at index 0 -- even if a T was not observed.
+    
+    .. tabbed:: Expected output
+    
+        If you select that nucleotide ordering, your function should return the nfollowing given the nucleotide counts ``dict`` from ``seq`` as input
+
+        .. jupyter-execute::
+            :hide-code:
+    
+            from collections import Counter
+            from numpy import zeros
+        
+            bases = "TCAG"
+        
+            def dict2arr(data):
+                arr = zeros(len(bases), dtype=int)
+                for i, b in enumerate(bases):
+                    arr[i] = data[b]
+                return arr
+        
+            dict2arr(Counter(seq))
 
 #. Write a function that converts these counts into a frequencies.
 
