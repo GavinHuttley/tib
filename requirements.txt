@@ -18,6 +18,6 @@ sphinxcontrib-bibtex
 sphinx_rtd_theme
 tqdm>=4.47.0
 nbformat
-nbconvert!=5.4
+nbconvert>=6.3
 pandas
 git+https://github.com/cogent3/cogent3.git@develop#egg=cogent3[develop]
