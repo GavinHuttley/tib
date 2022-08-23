@@ -23,7 +23,7 @@ I encourage you to download `VS Code`_ [*]_, a free programmers text editor [1]_
 Once you have installed Python 3.10, open VS Code. Open the Extensions section and type in ``Python``. Select the Python package distributed by Microsoft and click on the install button. That extension provides a bunch of super useful tools including the aforementioned debugger.
 
 Install Python3.10 on macOS
---------------------------
+---------------------------
 
 There are multiple ways to install Python on a mac, what I'm recommending will allow you to remove this installation of Python easily after the course has finished (if you should want to do that).
 
@@ -47,7 +47,7 @@ Homebrew is a "package manager", a command line tool to make installing other co
 When that is completed, you have Python 3.10 installed.
 
 Install Python3.10 on Windows
-----------------------------
+-----------------------------
 
 See the `information here <https://docs.python.org/3/using/windows.html#windows-store>`_.
 
