@@ -97,12 +97,37 @@ Exercises
 
 #. Implement the simple dotplot algorithm. Write a function that takes the following two sequences and returns an array with 1 where the sequences do not match and 0 where they do.
 
-    .. code-block:: python
+    .. jupyter-execute::
 
         seq1 = "CCTCTGAATAGGAGACAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT"
         seq2 = "CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATAGGTGGCGCACATAGATTT"
 
-#. Write a function that returns cartesian coordinates for the same sequences.
+#. Write a function that returns :ref:`cartesian coordinates <array_coordinates>` for the same sequences, but with the :math:`x` and :math:`y` components separated.
+
+    .. tabbed:: For this data
+    
+        Using a smaller data set like the below, you can check your algorithm performs correctly.
+    
+        .. jupyter-execute::
+    
+            seq1 = "CCAAA"
+            seq2 = "CCTCAG"
+
+    .. tabbed:: Expected Output
+
+        .. jupyter-execute::
+            :hide-code:
+    
+            def get_cartesian_coords(s1, s2):
+                coords = []
+                for x, b1 in enumerate(s1):
+                    for y, b2 in enumerate(s2):
+                        if b1 == b2:
+                            coords.append((x, y))
+                return list(zip(*coords))
+    
+            x, y = get_cartesian_coords(seq1, seq2)
+            print(f"x={x}\ny={y}")
 
 #. Plot the cartesian coordinates using a scatter plot, with axis labels representing the sequence names.
 
