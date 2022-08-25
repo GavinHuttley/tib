@@ -171,3 +171,8 @@ Exercises
 
 #. In the bar chart example above, the numbers were generated from 10-31. The midpoint of this range is 20 (there are 10 smaller numbers and 10 larger numbers). Modify the x-axis values so that instead of showing the x-axis values rangig from 10 to 30, centred on 20, they range from -10 to 10, centred on 0. The result should look identical to the above but any current x-axis values < 20 will be negative.
 
+#. The elements of ``coords`` are conventional cartesian coordinates, i.e. :math:`(x, y)`. Display them as a scatter plot.
+
+    .. jupyter-execute::
+    
+        coords = [(2, 7), (-2, -4), (1, 3)]

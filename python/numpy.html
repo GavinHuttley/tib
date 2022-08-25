@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.43. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2022.08.23 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.43. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2022.08.25 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -1321,8 +1321,8 @@ After:
 <li><p>Convert the following code into using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – without <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. After converting <code class="docutils literal notranslate"><span class="pre">counts</span></code> to a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array, my solution is 3 lines long.</p>
 <blockquote>
 <div><div class="tabbed-set docutils">
-<input checked="checked" id="d2e23488-9d40-42ce-931b-900e8d693db6" name="055578c8-1928-4556-aedb-8f3e35b4d7f4" type="radio">
-</input><label class="tabbed-label" for="d2e23488-9d40-42ce-931b-900e8d693db6">
+<input checked="checked" id="22a348c9-bdf8-4d99-a66d-843a24df68f1" name="7b436ee7-2f0d-4ad8-b698-4630d52da2ab" type="radio">
+</input><label class="tabbed-label" for="22a348c9-bdf8-4d99-a66d-843a24df68f1">
 Original Algorithm</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1355,8 +1355,8 @@ Original Algorithm</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="8146c674-162d-40f5-862c-6279254e001b" name="055578c8-1928-4556-aedb-8f3e35b4d7f4" type="radio">
-</input><label class="tabbed-label" for="8146c674-162d-40f5-862c-6279254e001b">
+<input id="88b012e1-a344-47b1-8e37-3d037f43c0e0" name="7b436ee7-2f0d-4ad8-b698-4630d52da2ab" type="radio">
+</input><label class="tabbed-label" for="88b012e1-a344-47b1-8e37-3d037f43c0e0">
 Expected result from conversion</label><div class="tabbed-content docutils">
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -1400,11 +1400,11 @@ Expected result from conversion</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 0, 1, 1],
-       [1, 1, 1, 1, 0],
-       [0, 1, 1, 1, 1],
-       [0, 1, 1, 0, 0],
-       [0, 1, 0, 1, 0]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 0, 1, 0],
+       [1, 0, 0, 1, 0],
+       [1, 0, 1, 0, 0],
+       [0, 1, 1, 0, 1],
+       [1, 0, 1, 0, 1]])
 </pre></div>
 </div>
 </div>
@@ -1412,7 +1412,7 @@ Expected result from conversion</label><div class="tabbed-content docutils">
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4], [0, 1, 3, 4, 0, 1, 2, 3, 1, 2, 3, 4, 1, 2, 1, 3])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4], [1, 3, 0, 3, 0, 2, 1, 2, 4, 0, 2, 4])
 </pre></div>
 </div>
 </div>
@@ -1425,7 +1425,7 @@ Expected result from conversion</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>12.2 µs ± 30.1 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>15 µs ± 535 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
