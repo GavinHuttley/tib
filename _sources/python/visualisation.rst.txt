@@ -127,13 +127,13 @@ When dealing with genomic data, we frequently deal with genomic coordinates. One
 
 This specific example is contrived as I'm using simulated data points, but the approach here will be useful.
 
-Generate some 100 random integers between 0 and 21.
+Generate 100 random integers between 0 and 21.
 
 .. jupyter-execute::
 
     from numpy.random import randint
 
-    nums = randint(low=10, high=31, size=100)
+    nums = randint(low=0, high=21, size=100)
 
 Use a builtin Python counter class to count the number of occurrences of the different integers [5]_.
 
