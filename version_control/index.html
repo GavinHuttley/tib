@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9. Introduction to version control &mdash; Topics in Bioinformatics 2022.08.26 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>10. Introduction to version control &mdash; Topics in Bioinformatics 2022.08.27 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -28,8 +28,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10. Introduction to Testing in Python" href="../testing/index.html" />
-    <link rel="prev" title="8.12. General purpose statistical tests using cogent3" href="../cogent3/statistical_tests.html" /> 
+    <link rel="next" title="11. Introduction to Testing in Python" href="../testing/index.html" />
+    <link rel="prev" title="9.7. Beyond hypothesis testing – exploratory data analysis for genomics" href="../statistics/uses_for_distributions.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -56,31 +56,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Introduction to version control</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#getting-set-up">9.1. Getting set up</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#a-demo-project">9.2. A demo project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#create-a-demo-project-on-github">9.2.1. Create a demo project on GitHub</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cloning-the-repository-to-your-development-computer">9.2.2. Cloning the repository to your development computer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-a-python-file-to-your-repository">9.2.3. Add a python file to your repository</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#create-a-file-to-add">9.2.3.1. Create a file to add</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#add-a-file">9.2.3.2. Add a file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#commit-the-file">9.2.3.3. Commit the file!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. Introduction to version control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-set-up">10.1. Getting set up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-demo-project">10.2. A demo project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-demo-project-on-github">10.2.1. Create a demo project on GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloning-the-repository-to-your-development-computer">10.2.2. Cloning the repository to your development computer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-a-python-file-to-your-repository">10.2.3. Add a python file to your repository</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-file-to-add">10.2.3.1. Create a file to add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-a-file">10.2.3.2. Add a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#commit-the-file">10.2.3.3. Commit the file!</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#look-at-the-history-of-your-repository">9.2.4. Look at the history of your repository</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#push-your-change-to-github">9.2.5. Push your change to GitHub</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tips-for-effective-use-of-version-control">9.2.6. Tips for effective use of version control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#do">9.2.6.1. Do</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#do-not">9.2.6.2. Do NOT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#look-at-the-history-of-your-repository">10.2.4. Look at the history of your repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#push-your-change-to-github">10.2.5. Push your change to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tips-for-effective-use-of-version-control">10.2.6. Tips for effective use of version control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#do">10.2.6.1. Do</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#do-not">10.2.6.2. Do NOT</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#glossary-of-key-version-control-terms">9.3. Glossary of key version control terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glossary-of-key-version-control-terms">10.3. Glossary of key version control terms</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">10. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
 </ul>
 
         </div>
@@ -97,7 +98,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">9. </span>Introduction to version control</li>
+      <li><span class="section-number">10. </span>Introduction to version control</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/version_control/index.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -132,7 +133,7 @@
 }
 </style>
 <div class="section" id="introduction-to-version-control">
-<span id="intro-to-version-control"></span><h1><span class="section-number">9. </span>Introduction to version control<a class="headerlink" href="#introduction-to-version-control" title="Permalink to this headline"></a></h1>
+<span id="intro-to-version-control"></span><h1><span class="section-number">10. </span>Introduction to version control<a class="headerlink" href="#introduction-to-version-control" title="Permalink to this headline"></a></h1>
 <p><em>Section author: Gavin Huttley</em></p>
 <p>“Version control” refers to software tools that are designed to efficiently keep track of changes to your plain text files. As the phrase implies, the support relates to recording different versions of files. Here, the word version is not limited to a release version <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <dl class="footnote brackets">
@@ -166,7 +167,7 @@
 </dd>
 </dl>
 <div class="section" id="getting-set-up">
-<h2><span class="section-number">9.1. </span>Getting set up<a class="headerlink" href="#getting-set-up" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">10.1. </span>Getting set up<a class="headerlink" href="#getting-set-up" title="Permalink to this headline"></a></h2>
 <p>These instructions are focussed on having a repository (see <a class="reference internal" href="#version-glossary"><span class="std std-ref">Glossary of key version control terms</span></a> for definitions) that is hosted at GitHub and for which there will be a clone on a computer that you will use for writing your code. If you don’t already have one, sign up for a <a class="reference external" href="https://github.com">GitHub</a> account.</p>
 <p>You also need <code class="docutils literal notranslate"><span class="pre">git</span></code> installed on the machine where you will be writing / running the code <a class="footnote-reference brackets" href="#id12" id="id11">6</a>.</p>
 <dl class="footnote brackets">
@@ -190,9 +191,9 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 </div>
 </div>
 <div class="section" id="a-demo-project">
-<h2><span class="section-number">9.2. </span>A demo project<a class="headerlink" href="#a-demo-project" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">10.2. </span>A demo project<a class="headerlink" href="#a-demo-project" title="Permalink to this headline"></a></h2>
 <div class="section" id="create-a-demo-project-on-github">
-<h3><span class="section-number">9.2.1. </span>Create a demo project on GitHub<a class="headerlink" href="#create-a-demo-project-on-github" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">10.2.1. </span>Create a demo project on GitHub<a class="headerlink" href="#create-a-demo-project-on-github" title="Permalink to this headline"></a></h3>
 <p>Once your account is setup, create a new repository. For the purpose of demonstration, I’m going to assume you name it <code class="docutils literal notranslate"><span class="pre">demo</span></code>.</p>
 <div class="sidebar">
 <p class="sidebar-title">Creating a new repository</p>
@@ -203,7 +204,7 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 <p>Check the “Add a README file” option. Check the “Add .gitignore” option and select python from the popup. Check the “Choose a license” option and pick whichever one you like.</p>
 </div>
 <div class="section" id="cloning-the-repository-to-your-development-computer">
-<h3><span class="section-number">9.2.2. </span>Cloning the repository to your development computer<a class="headerlink" href="#cloning-the-repository-to-your-development-computer" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">10.2.2. </span>Cloning the repository to your development computer<a class="headerlink" href="#cloning-the-repository-to-your-development-computer" title="Permalink to this headline"></a></h3>
 <p>In this case, you will clone onto the machine where you will be developing your code. I assume you have gone through the process of creating an ssh key and followed GitHub’s instructions for adding that to your account <a class="footnote-reference brackets" href="#id16" id="id15">8</a>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id15">8</a></span></dt>
@@ -216,7 +217,7 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 <p>This creates a directory named <code class="docutils literal notranslate"><span class="pre">YourRepo</span></code> on the system.</p>
 </div>
 <div class="section" id="add-a-python-file-to-your-repository">
-<h3><span class="section-number">9.2.3. </span>Add a python file to your repository<a class="headerlink" href="#add-a-python-file-to-your-repository" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">10.2.3. </span>Add a python file to your repository<a class="headerlink" href="#add-a-python-file-to-your-repository" title="Permalink to this headline"></a></h3>
 <p>You first need to change into the directory that contains your repository. In the terminal, this is</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> YourRepo
 </pre></div>
@@ -228,7 +229,7 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 </dd>
 </dl>
 <div class="section" id="create-a-file-to-add">
-<h4><span class="section-number">9.2.3.1. </span>Create a file to add<a class="headerlink" href="#create-a-file-to-add" title="Permalink to this headline"></a></h4>
+<h4><span class="section-number">10.2.3.1. </span>Create a file to add<a class="headerlink" href="#create-a-file-to-add" title="Permalink to this headline"></a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Skip this step if you already have a file you want to add!</p>
@@ -239,7 +240,7 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 </div>
 </div>
 <div class="section" id="add-a-file">
-<h4><span class="section-number">9.2.3.2. </span>Add a file<a class="headerlink" href="#add-a-file" title="Permalink to this headline"></a></h4>
+<h4><span class="section-number">10.2.3.2. </span>Add a file<a class="headerlink" href="#add-a-file" title="Permalink to this headline"></a></h4>
 <p>We tell <code class="docutils literal notranslate"><span class="pre">git</span></code> we want to add a file to your repository using,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add demo.py
 </pre></div>
@@ -247,7 +248,7 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 <p>This command just “stages” the file, meaning you have told <code class="docutils literal notranslate"><span class="pre">git</span></code> to include this change when you make the next commit.</p>
 </div>
 <div class="section" id="commit-the-file">
-<h4><span class="section-number">9.2.3.3. </span>Commit the file!<a class="headerlink" href="#commit-the-file" title="Permalink to this headline"></a></h4>
+<h4><span class="section-number">10.2.3.3. </span>Commit the file!<a class="headerlink" href="#commit-the-file" title="Permalink to this headline"></a></h4>
 <p>You have not finished this until you commit the staged change!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Added a demo python script&quot;</span>
 </pre></div>
@@ -255,21 +256,21 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 </div>
 </div>
 <div class="section" id="look-at-the-history-of-your-repository">
-<h3><span class="section-number">9.2.4. </span>Look at the history of your repository<a class="headerlink" href="#look-at-the-history-of-your-repository" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">10.2.4. </span>Look at the history of your repository<a class="headerlink" href="#look-at-the-history-of-your-repository" title="Permalink to this headline"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log
 </pre></div>
 </div>
 </div>
 <div class="section" id="push-your-change-to-github">
-<h3><span class="section-number">9.2.5. </span>Push your change to GitHub<a class="headerlink" href="#push-your-change-to-github" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">10.2.5. </span>Push your change to GitHub<a class="headerlink" href="#push-your-change-to-github" title="Permalink to this headline"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push
 </pre></div>
 </div>
 </div>
 <div class="section" id="tips-for-effective-use-of-version-control">
-<h3><span class="section-number">9.2.6. </span>Tips for effective use of version control<a class="headerlink" href="#tips-for-effective-use-of-version-control" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">10.2.6. </span>Tips for effective use of version control<a class="headerlink" href="#tips-for-effective-use-of-version-control" title="Permalink to this headline"></a></h3>
 <div class="section" id="do">
-<h4><span class="section-number">9.2.6.1. </span>Do<a class="headerlink" href="#do" title="Permalink to this headline"></a></h4>
+<h4><span class="section-number">10.2.6.1. </span>Do<a class="headerlink" href="#do" title="Permalink to this headline"></a></h4>
 <ul class="simple">
 <li><p>track text files</p></li>
 <li><p>commit changes that are logically related</p></li>
@@ -285,7 +286,7 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 </dl>
 </div>
 <div class="section" id="do-not">
-<h4><span class="section-number">9.2.6.2. </span>Do NOT<a class="headerlink" href="#do-not" title="Permalink to this headline"></a></h4>
+<h4><span class="section-number">10.2.6.2. </span>Do NOT<a class="headerlink" href="#do-not" title="Permalink to this headline"></a></h4>
 <ul class="simple">
 <li><p>add really big files to a repository</p></li>
 <li><p>add binary files to a repository</p></li>
@@ -301,7 +302,7 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
 </div>
 </div>
 <div class="section" id="glossary-of-key-version-control-terms">
-<span id="version-glossary"></span><h2><span class="section-number">9.3. </span>Glossary of key version control terms<a class="headerlink" href="#glossary-of-key-version-control-terms" title="Permalink to this headline"></a></h2>
+<span id="version-glossary"></span><h2><span class="section-number">10.3. </span>Glossary of key version control terms<a class="headerlink" href="#glossary-of-key-version-control-terms" title="Permalink to this headline"></a></h2>
 <dl class="simple">
 <dt><span class="target" id="index-1"></span>add</dt><dd><p>Adding a file to a your repository.</p>
 </dd>
@@ -351,8 +352,8 @@ $ git config --global user.email <span class="s2">&quot;YourEmail@example.com&qu
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../cogent3/statistical_tests.html" class="btn btn-neutral float-left" title="8.12. General purpose statistical tests using cogent3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../testing/index.html" class="btn btn-neutral float-right" title="10. Introduction to Testing in Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../statistics/uses_for_distributions.html" class="btn btn-neutral float-left" title="9.7. Beyond hypothesis testing – exploratory data analysis for genomics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../testing/index.html" class="btn btn-neutral float-right" title="11. Introduction to Testing in Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

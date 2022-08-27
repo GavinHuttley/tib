@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.25. The set data type &mdash; Topics in Bioinformatics 2022.08.26 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.25. The set data type &mdash; Topics in Bioinformatics 2022.08.27 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -104,9 +104,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">9. Introduction to version control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">10. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
 </ul>
 
         </div>
@@ -242,9 +243,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>AA
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>CG
+AA
 GA
-CG
 </pre></div>
 </div>
 </div>
@@ -450,8 +451,8 @@ CG
 <li><p>For the following data, you want to create a set that excludes dinucleotides containing a non-canonical DNA character (see Expected Output). Solve this problem in two different ways. (a) by creating the set of unique dinucleotides and creating the correct set from that. (b) by creating an empty set, iterating over dinucleotides in <code class="docutils literal notranslate"><span class="pre">data</span></code> and adding them only if they consist of canonical nucleotides. Which algorithm is faster and why?</p>
 <blockquote>
 <div><div class="tabbed-set docutils">
-<input checked="checked" id="3961de27-dbec-49f6-9aba-ae3c14cc76fc" name="824af089-1993-48ab-beae-f672afebd93e" type="radio">
-</input><label class="tabbed-label" for="3961de27-dbec-49f6-9aba-ae3c14cc76fc">
+<input checked="checked" id="2657903d-b38a-45fa-a16f-68f87ad81740" name="f39b698e-9840-4e52-be3a-0385cc2794e3" type="radio">
+</input><label class="tabbed-label" for="2657903d-b38a-45fa-a16f-68f87ad81740">
 Data</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -465,12 +466,12 @@ Data</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="293550ca-f4b1-40ce-b3dd-c1f630e8c57c" name="824af089-1993-48ab-beae-f672afebd93e" type="radio">
-</input><label class="tabbed-label" for="293550ca-f4b1-40ce-b3dd-c1f630e8c57c">
+<input id="3baba29b-6cfe-4675-bb5f-73878227d416" name="f39b698e-9840-4e52-be3a-0385cc2794e3" type="radio">
+</input><label class="tabbed-label" for="3baba29b-6cfe-4675-bb5f-73878227d416">
 Expected Output</label><div class="tabbed-content docutils">
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;GG&#39;, &#39;AC&#39;, &#39;CC&#39;, &#39;CA&#39;, &#39;AG&#39;, &#39;AA&#39;, &#39;GA&#39;, &#39;GC&#39;, &#39;TA&#39;}
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;AG&#39;, &#39;GC&#39;, &#39;CC&#39;, &#39;CA&#39;, &#39;AA&#39;, &#39;GA&#39;, &#39;AC&#39;, &#39;GG&#39;, &#39;TA&#39;}
 </pre></div>
 </div>
 </div>

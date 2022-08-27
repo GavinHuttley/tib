@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.16. Fixing errors &mdash; Topics in Bioinformatics 2022.08.26 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.16. Fixing errors &mdash; Topics in Bioinformatics 2022.08.27 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -104,9 +104,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">9. Introduction to version control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">10. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
 </ul>
 
         </div>
@@ -174,8 +175,8 @@
 </dl>
 <p>Here’s some broken code:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a6e8bb81-7b47-4dd4-978e-19ba9e4a6586" name="08d964c8-aa0e-4b30-aed4-cf6bd110d8cd" type="radio">
-</input><label class="tabbed-label" for="a6e8bb81-7b47-4dd4-978e-19ba9e4a6586">
+<input checked="checked" id="025b3420-362c-4aa9-80c2-161d95e17d66" name="2e14a739-5f4f-4ccc-83e4-0456e66e710d" type="radio">
+</input><label class="tabbed-label" for="025b3420-362c-4aa9-80c2-161d95e17d66">
 Invalid Code</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -198,8 +199,8 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 <p>First, in the traceback, the last line indicates the type of the exception (<code class="docutils literal notranslate"><span class="pre">NameError</span></code> in this simple case) and the statement triggering it (<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">+=</span></code>). The offending line is indicated by <code class="docutils literal notranslate"><span class="pre">----&gt;</span></code>.</p>
 </div>
-<input id="ef7d1481-fc2c-4817-bbe1-9ebd6ab91fa1" name="08d964c8-aa0e-4b30-aed4-cf6bd110d8cd" type="radio">
-</input><label class="tabbed-label" for="ef7d1481-fc2c-4817-bbe1-9ebd6ab91fa1">
+<input id="995f5720-c845-4542-9bad-36a55e827ca0" name="2e14a739-5f4f-4ccc-83e4-0456e66e710d" type="radio">
+</input><label class="tabbed-label" for="995f5720-c845-4542-9bad-36a55e827ca0">
 Fixed Code</label><div class="tabbed-content docutils">
 <p>Variables must be defined before they’re used</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -217,8 +218,8 @@ Fixed Code</label><div class="tabbed-content docutils">
 </div>
 <p>And a slightly more complicated case</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a200f781-175d-4d7c-ab6b-980de90f4a9b" name="d3a5af8b-a424-4319-85cf-491f712348e3" type="radio">
-</input><label class="tabbed-label" for="a200f781-175d-4d7c-ab6b-980de90f4a9b">
+<input checked="checked" id="8f88aeda-9121-440b-aa1f-70c5309692da" name="df4db81f-e106-4967-a7ec-a3df5205c154" type="radio">
+</input><label class="tabbed-label" for="8f88aeda-9121-440b-aa1f-70c5309692da">
 Invalid Code</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -238,8 +239,8 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 <p>This is a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> – imbalanced <code class="docutils literal notranslate"><span class="pre">()</span></code>. Note the <code class="docutils literal notranslate"><span class="pre">^</span></code> in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.</p>
 </div>
-<input id="f79ceb4b-a69a-4be4-ae81-43de23dd6a76" name="d3a5af8b-a424-4319-85cf-491f712348e3" type="radio">
-</input><label class="tabbed-label" for="f79ceb4b-a69a-4be4-ae81-43de23dd6a76">
+<input id="34f9316e-d83b-4dba-a369-deae2e008eac" name="df4db81f-e106-4967-a7ec-a3df5205c154" type="radio">
+</input><label class="tabbed-label" for="34f9316e-d83b-4dba-a369-deae2e008eac">
 Fixed Code</label><div class="tabbed-content docutils">
 <p>Balance the parentheses.</p>
 <div class="jupyter_cell jupyter_container docutils container">

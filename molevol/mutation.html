@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>7.5. Mutation – the origin of genetic variation &mdash; Topics in Bioinformatics 2022.08.26 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>7.5. Mutation – the origin of genetic variation &mdash; Topics in Bioinformatics 2022.08.27 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -74,9 +74,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">9. Introduction to version control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">10. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">11. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
 </ul>
 
         </div>
@@ -183,8 +184,8 @@ G -&gt; T [dir=both];
 <p id="index-2">Where <sup>5</sup>mC mutagenesis gets even more interesting is that this is an enzymatically induced modification and the recognition sequence for the DNA methylase is a C followed by a G, denote CpG (the p stands for the phosphodiester bond between adjacent nucleotides). This sequence “context dependence” of the introduction of the base modification therefore results in a context dependence of C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutations (see <a class="reference internal" href="#ctot-motif"><span class="std std-ref">Sidebar Figure</span></a>).</p>
 <div class="sidebar" id="ctot-motif">
 <p class="sidebar-title">Context dependence of C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutations</p>
-<div class="figure align-default" id="id55">
-<img alt="../_images/CtoT-human-intergenic.svg" src="../_images/CtoT-human-intergenic.svg" /><p class="caption"><span class="caption-text">Information analysis of human intergenic SNPs resulting from a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutation <span id="id8">[<a class="reference internal" href="../seqcomp/information.html#id31" title="Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. Genetics, 205:843-856, 2017. doi:10.1534/genetics.116.195677.">ZNYH17</a>]</span>.</span><a class="headerlink" href="#id55" title="Permalink to this image"></a></p>
+<div class="figure align-default" id="id56">
+<img alt="../_images/CtoT-human-intergenic.svg" src="../_images/CtoT-human-intergenic.svg" /><p class="caption"><span class="caption-text">Information analysis of human intergenic SNPs resulting from a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutation <span id="id8">[<a class="reference internal" href="../seqcomp/information.html#id31" title="Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. Genetics, 205:843-856, 2017. doi:10.1534/genetics.116.195677.">ZNYH17</a>]</span>.</span><a class="headerlink" href="#id56" title="Permalink to this image"></a></p>
 <div class="legend">
 <p>RE is relative entropy. Position is relative to the point mutation (at 0). The normal letter orientation in the plot indicates that base was over-represented in mutant sequences compared to the reference distribution. The rotated orientation indicates that base was under-represented in mutant sequences.</p>
 </div>
@@ -214,13 +215,13 @@ G -&gt; T [dir=both];
 </dl>
 <div class="sidebar" id="dna-rep">
 <p class="sidebar-title">The influence of DNA replication</p>
-<div class="figure align-default" id="id56">
-<img alt="../_images/bsubtilits_symmetry.png" src="../_images/bsubtilits_symmetry.png" />
-<p class="caption"><span class="caption-text"><em>Bacillus subtilis</em> genome.</span><a class="headerlink" href="#id56" title="Permalink to this image"></a></p>
-</div>
 <div class="figure align-default" id="id57">
+<img alt="../_images/bsubtilits_symmetry.png" src="../_images/bsubtilits_symmetry.png" />
+<p class="caption"><span class="caption-text"><em>Bacillus subtilis</em> genome.</span><a class="headerlink" href="#id57" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-default" id="id58">
 <img alt="../_images/synechocystis_symmetry.png" src="../_images/synechocystis_symmetry.png" />
-<p class="caption"><span class="caption-text"><em>Synechocystis</em> PCC6803 genome.</span><a class="headerlink" href="#id57" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-text"><em>Synechocystis</em> PCC6803 genome.</span><a class="headerlink" href="#id58" title="Permalink to this image"></a></p>
 </div>
 <p>Panels copied from Figure 1 of <span id="id16">[<a class="reference internal" href="#id36" title="Jan Mràzek and Samuel Karlin. Strand compositional asymmetry in bacterial and large viral genomes. Proceedings of the National Academy of Sciences of the United States of America, 95:3720–3725, 1998. URL: www.pnas.org., doi:10.1073/pnas.95.7.3720.">MrazekK98</a>]</span>. The <span class="math notranslate nohighlight">\(y\)</span>-axis is <span class="math notranslate nohighlight">\(-S_{GC}\)</span> computed from a 50kb sliding window across the corresponding genome. The statistic is assigned to the middle base of thew window. The arrow indicates the origin of replication.</p>
 </div>
