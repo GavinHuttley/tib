@@ -18,6 +18,7 @@ Bioinformatics and its Applications
     seqcomp/index
     molevol/index
     cogent3/index
+    statistics/index
     version_control/index
     testing/index
     genindex

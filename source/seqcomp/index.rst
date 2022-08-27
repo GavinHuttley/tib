@@ -23,4 +23,4 @@ There are additional coding skills that you need to develop, but these skills ar
     odds_ratios
     dotplot
     pairwise_alignment
-    statistics
+
