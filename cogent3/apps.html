@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.8. Overview of cogent3 apps &mdash; Topics in Bioinformatics 2022.08.27 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>8.8. Overview of cogent3 apps &mdash; Topics in Bioinformatics 2022.09.12 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -162,32 +162,18 @@
 <table>
 
 <thead class="head_cell">
-<th>module</th><th>name</th><th>composable</th><th>doc</th><th>inputs</th><th>outputs</th><th>data type</th>
+<th>module</th><th>name</th><th>composable</th><th>doc</th><th>input type</th><th>output type</th>
 </thead>
 <tbody>
-<tr><td><span class="c3col_left">cogent3.app.align</span></td><td><span class="c3col_left">align_to_ref</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Aligns sequences to a nominated reference in the unaligned collection.
-    This is much faster, and requires much less memory, than progressive_align
-    but the quality will likely be lower. Alignment quality will be strongly
-    affected by choice of reference.
-
-    Returns
-    -------
-    ArrayAlignment.
-    </span></td><td><span class="c3col_left">sequences</span></td><td><span class="c3col_left">aligned, serialisable</span></td><td><span class="c3col_left">SequenceCollection</span></td></tr>
-<tr><td><span class="c3col_left">cogent3.app.align</span></td><td><span class="c3col_left">progressive_align</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Progressive multiple sequence alignment via any cogent3 model.
-    Returns an Alignment object.</span></td><td><span class="c3col_left">sequences</span></td><td><span class="c3col_left">aligned, serialisable</span></td><td><span class="c3col_left">SequenceCollection</span></td></tr>
-<tr><td><span class="c3col_left">cogent3.app.dist</span></td><td><span class="c3col_left">fast_slow_dist</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Pairwise distance calculation for aligned sequences.
-
-    Uses fast (but less numerically robust) approach where possible, slow (robust)
-    approach when not. Returns a DistanceMatrix.
-    </span></td><td><span class="c3col_left">aligned</span></td><td><span class="c3col_left">pairwise_distances, tabular, serialisable</span></td><td><span class="c3col_left">ArrayAlignment, Alignment</span></td></tr>
-<tr><td><span class="c3col_left">cogent3.app.evo</span></td><td><span class="c3col_left">ancestral_states</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Computes ancestral state probabilities from a model result. Returns a dict
-    with a DictArray for each node.</span></td><td><span class="c3col_left">model_result</span></td><td><span class="c3col_left">result, tabular_result, serialisable</span></td><td><span class="c3col_left">model_result</span></td></tr>
-<tr><td><span class="c3col_left">cogent3.app.evo</span></td><td><span class="c3col_left">bootstrap</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Parametric bootstrap for a provided hypothesis. Returns a bootstrap_result.</span></td><td><span class="c3col_left">aligned, serialisable</span></td><td><span class="c3col_left">result, bootstrap_result, serialisable</span></td><td><span class="c3col_left">ArrayAlignment, Alignment</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.dist</span></td><td><span class="c3col_left">fast_slow_dist</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Pairwise distance calculation for aligned sequences.</span></td><td><span class="c3col_left">Alignment, ArrayAlignment</span></td><td><span class="c3col_left">DistanceMatrix, SerialisableType</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.tree</span></td><td><span class="c3col_left">scale_branches</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Transforms tree branch lengths from nucleotide to codon, or the converse.</span></td><td><span class="c3col_left">PhyloNode, TreeNode</span></td><td><span class="c3col_left">PhyloNode, SerialisableType, TreeNode</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.tree</span></td><td><span class="c3col_left">uniformize_tree</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Standardises the orientation of unrooted trees.</span></td><td><span class="c3col_left">PhyloNode, TreeNode</span></td><td><span class="c3col_left">PhyloNode, SerialisableType, TreeNode</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.tree</span></td><td><span class="c3col_left">quick_tree</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Neighbour Joining tree based on pairwise distances.</span></td><td><span class="c3col_left">DistanceMatrix</span></td><td><span class="c3col_left">PhyloNode, SerialisableType, TreeNode</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.align</span></td><td><span class="c3col_left">align_to_ref</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Aligns sequences to a nominated reference in the unaligned collection.</span></td><td><span class="c3col_left">SequenceCollection</span></td><td><span class="c3col_left">Alignment, ArrayAlignment, SerialisableType</span></td></tr>
 </tbody>
 </table>
 <p>Top 5 rows from
-40 rows x 7 columns</p>
+38 rows x 6 columns</p>
 </div></div></div>
 </div>
 <p>That function returns a cogent3 table, so I’m just displaying the first few rows.</p>

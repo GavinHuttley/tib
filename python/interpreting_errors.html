@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.16. Fixing errors &mdash; Topics in Bioinformatics 2022.08.27 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.16. Fixing errors &mdash; Topics in Bioinformatics 2022.09.12 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -175,8 +175,8 @@
 </dl>
 <p>Here’s some broken code:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="025b3420-362c-4aa9-80c2-161d95e17d66" name="2e14a739-5f4f-4ccc-83e4-0456e66e710d" type="radio">
-</input><label class="tabbed-label" for="025b3420-362c-4aa9-80c2-161d95e17d66">
+<input checked="checked" id="7e494742-3db7-45b9-a992-c2eeb2249c4b" name="764609b3-3cdf-42ad-beab-6dd63d8470b4" type="radio">
+</input><label class="tabbed-label" for="7e494742-3db7-45b9-a992-c2eeb2249c4b">
 Invalid Code</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -188,7 +188,7 @@ Invalid Code</label><div class="tabbed-content docutils">
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">k</span> <span class="o">+=</span> <span class="n">a</span>
 
@@ -199,8 +199,8 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 <p>First, in the traceback, the last line indicates the type of the exception (<code class="docutils literal notranslate"><span class="pre">NameError</span></code> in this simple case) and the statement triggering it (<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">+=</span></code>). The offending line is indicated by <code class="docutils literal notranslate"><span class="pre">----&gt;</span></code>.</p>
 </div>
-<input id="995f5720-c845-4542-9bad-36a55e827ca0" name="2e14a739-5f4f-4ccc-83e4-0456e66e710d" type="radio">
-</input><label class="tabbed-label" for="995f5720-c845-4542-9bad-36a55e827ca0">
+<input id="d97d1702-983e-493f-b21a-d15a535e1613" name="764609b3-3cdf-42ad-beab-6dd63d8470b4" type="radio">
+</input><label class="tabbed-label" for="d97d1702-983e-493f-b21a-d15a535e1613">
 Fixed Code</label><div class="tabbed-content docutils">
 <p>Variables must be defined before they’re used</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -218,8 +218,8 @@ Fixed Code</label><div class="tabbed-content docutils">
 </div>
 <p>And a slightly more complicated case</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="8f88aeda-9121-440b-aa1f-70c5309692da" name="df4db81f-e106-4967-a7ec-a3df5205c154" type="radio">
-</input><label class="tabbed-label" for="8f88aeda-9121-440b-aa1f-70c5309692da">
+<input checked="checked" id="fe8d98d9-b912-47ce-a07e-a343b471e00a" name="0291c726-f33a-48b4-910c-739a604c5ca7" type="radio">
+</input><label class="tabbed-label" for="fe8d98d9-b912-47ce-a07e-a343b471e00a">
 Invalid Code</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -229,7 +229,7 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">name</span>
               <span class="o">^</span>
 <span class="ne">SyntaxError</span>: unexpected EOF while parsing
@@ -239,8 +239,8 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 <p>This is a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> – imbalanced <code class="docutils literal notranslate"><span class="pre">()</span></code>. Note the <code class="docutils literal notranslate"><span class="pre">^</span></code> in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.</p>
 </div>
-<input id="34f9316e-d83b-4dba-a369-deae2e008eac" name="df4db81f-e106-4967-a7ec-a3df5205c154" type="radio">
-</input><label class="tabbed-label" for="34f9316e-d83b-4dba-a369-deae2e008eac">
+<input id="570e0ad9-dbe7-4b23-84d4-a96b367b97af" name="0291c726-f33a-48b4-910c-739a604c5ca7" type="radio">
+</input><label class="tabbed-label" for="570e0ad9-dbe7-4b23-84d4-a96b367b97af">
 Fixed Code</label><div class="tabbed-content docutils">
 <p>Balance the parentheses.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -272,7 +272,7 @@ Fixed Code</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="k">if</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Tim&quot;</span><span class="p">:</span>
             <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax

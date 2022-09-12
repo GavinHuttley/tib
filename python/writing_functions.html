@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.33. Writing functions &mdash; Topics in Bioinformatics 2022.08.27 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.33. Writing functions &mdash; Topics in Bioinformatics 2022.09.12 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -282,8 +282,8 @@
 </div>
 <p>When calling a function, the order in which you provide arguments defines what variable they’re assigned to. One exception to this is if you specify the arguments as <code class="docutils literal notranslate"><span class="pre">argument=value</span></code> (key-value arguments).</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="46c61af0-dda6-43d0-ad06-b4034e50bda5" name="da4f325f-fd09-4cd4-8fc2-4b0dccd69c0a" type="radio">
-</input><label class="tabbed-label" for="46c61af0-dda6-43d0-ad06-b4034e50bda5">
+<input checked="checked" id="2156973a-a824-4616-aefe-0fd26e0e149b" name="50661f8c-f4b9-479d-9d0e-4ee0c1f268ae" type="radio">
+</input><label class="tabbed-label" for="2156973a-a824-4616-aefe-0fd26e0e149b">
 Correct Invocation</label><div class="tabbed-content docutils">
 <p>Both <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are required.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -311,8 +311,8 @@ Correct Invocation</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="7e3de054-fa5c-47b2-a402-c24d6ec682f9" name="da4f325f-fd09-4cd4-8fc2-4b0dccd69c0a" type="radio">
-</input><label class="tabbed-label" for="7e3de054-fa5c-47b2-a402-c24d6ec682f9">
+<input id="4712ec0c-95f3-4900-8b88-34ae9fad1be3" name="50661f8c-f4b9-479d-9d0e-4ee0c1f268ae" type="radio">
+</input><label class="tabbed-label" for="4712ec0c-95f3-4900-8b88-34ae9fad1be3">
 Incorrect Invocation</label><div class="tabbed-content docutils">
 <p>If you don’t provide both arguments you will get an <em>exception</em>, in this case a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -324,7 +324,7 @@ Incorrect Invocation</label><div class="tabbed-content docutils">
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: get_diff() missing 1 required positional argument: &#39;b&#39;
@@ -384,7 +384,7 @@ Incorrect Invocation</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">get_diff</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
                                      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
