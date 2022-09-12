@@ -88,9 +88,9 @@ One important result from Kimura, often referred to as his "rule of thumb", is t
 
 .. [3] Fixation is the condition in which a genetic variant achieves a frequency of 1.0 (all population members have it). It becomes a substitution when that frequency applies to all members of the species.
 
-Another striking result is that the neutral substitution rate :math:`k` **is** the number of mutations per site per generation :math:`\mu` for strictly neutral variation. Irrespective of population size. This elegant result provides the foundation for why a molecular clock can exist.
+Another striking result is that the neutral substitution rate :math:`k` **is** the number of mutations per site per generation :math:`\mu` for strictly neutral variation. In other words, the neutral substitution rate is independent of population size. This elegant result provides the foundation for why a molecular clock can exist.
 
-Perhaps the most crucial corollary from this body of theory is the theoretical foundations establish how what goes on within a species shapes what we see between species.
+Perhaps the most crucial corollary from this body of theory is that it explicitly connects what goes on within a species with the divergence between species.
 
 Finally, returning to our simplistic example of how variation can be neutral but natural selection can be operated, the following conjecture by King and Jukes provides another key perspective on how this body of work applies to modern day genomics.
 

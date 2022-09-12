@@ -197,7 +197,7 @@ We calculate this for the first alignment column in my little example, which has
 
     pi[0, "C"]
 
-Conditioned on having a C, we then extract the probabilities from |P| that correspond to C being observed on the :teal:`green` and :blue:`blue` edges, and changing into T on the :orange:`orange` edge. The likelihood of a C at alignment column 1 [4]_ is specified by this equation 
+Conditioned on having a C, we then extract the probabilities from |P| that correspond to C being observed on the :teal:`green` and :blue:`blue` edges, and changing into T on the :orange:`orange` edge. The likelihood of a C at alignment column 1 [4]_ is specified by this equation
 
 .. [4] The edge from which P is derived is indicated in as a subscript in the table title.
 
@@ -243,7 +243,7 @@ or more simply
 
 For 3 taxa, the calculation is not particularly complicated. If you've got a big tree with many internal nodes, this calculation is solved using a dynamic programming algorithm :cite:`Felsenstein:1981aa`.
 
-So this representation is one of sequence evolution from a common ancestor to the tips. We have described, by specifying the substitution probability matrices, how nucleic acid sequences change in time. We have used the resulting substitution probability matrices to compute the likelihood of observing our data, given the model. 
+So this representation is one of sequence evolution from a common ancestor to the tips. We have described, by specifying the substitution probability matrices, how nucleic acid sequences change in time. We have used the resulting substitution probability matrices to compute the likelihood of observing our data, given the model.
 
 To avoid underflow errors this expression is converted into logs
 
@@ -260,7 +260,7 @@ Practical issues
 
 We typically do not specify our models in terms of |P| matrices – the substitution probability matrices. We typically work with a rate matrix |Q|. While |P| matrices have very good mathematical and statistical properties, they are too "parameter rich" [5]_. They make interrogating the dynamics of the process of divergence more complicated. We can obtain the substitution probability matrix from a rate matrix by the matrix exponential
 
-.. [5] This is a topic that's beyond the scope of this class.
+.. [5] Parameter richness refers to the total number of parameters. Whether a model is too parameter rich, or not, depends on the amount of data being analysed. In general, if we consider a model too parameter rich we mean that we are unlikely to be able to reliably estimate all the parameters. That's a bad thing.
 
 .. math::
 
