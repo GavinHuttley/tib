@@ -84,7 +84,7 @@ For neutral variation, the evolutionary dynamics (changes in frequency) are dict
 Some important results from Kimura
 ==================================
 
-One important result from Kimura, often referred to as his "rule of thumb", is that natural selection is only effective against random genetic drift when :math:`4N_e s >> 1` where :math:`N_e` is the effective population size and :math:`s` is the selection coefficient. What this means is that, as population size shrinks, the magnitude of natural selection must increase in order overcome the stochastic fluctuations of random genetic drift. Very bad news for endangered species, since deleterious genetic variants can become fixed [3]_
+One important result from Kimura, often referred to as his "rule of thumb", is that natural selection is only effective against random genetic drift when :math:`4N_e s >> 1` where :math:`N_e` is the effective population size and :math:`s` is the selection coefficient. What this means is that, as population size shrinks, the magnitude of natural selection must increase in order overcome the stochastic fluctuations of random genetic drift. Very bad news for endangered species, since deleterious genetic variants can become fixed [3]_.
 
 .. [3] Fixation is the condition in which a genetic variant achieves a frequency of 1.0 (all population members have it). It becomes a substitution when that frequency applies to all members of the species.
 
