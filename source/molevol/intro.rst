@@ -36,13 +36,6 @@ Since the nucleic acids are the information system of living things and can also
 
 At a practical level, using genetic variation as an indicator of biological importance is central to much of modern biology. Researchers who are engaged in molecular studies of specific proteins or genes rely on resources provided by a genome portal (like ucsc_ or ensembl_) to get insights into what a molecule of interest might actually be doing. One of the types of information that these portals present to facilitate understanding is a comparison of the biological sequences from different species. Why? We will answer that question in this topic.
 
-#. define biological problem and make testable predictions
-#. sample appropriate homologous sequences
-#. align the sequences
-#. select a single phylogenetic tree
-#. pick evolutionary model(s)
-#. fit model(s) and evaluate hypotheses
-
 **********************
 What is phylogenetics?
 **********************
@@ -113,12 +106,14 @@ Phylogenetics is concerned with the problem of inferring the relationships betwe
 
 In the :ref:`Phylogenetic Workflow <phylo_workflow>` figure I display the basic workflow for phylogenetic reconstruction. There is substantial overlap with molecular evolutionary analysis in general, but the emphasis here is on the problem of estimating a tree. The steps are:
 
-#. sample homologous sequences from tax of interest
-#. align the sequences
-#. choose method to build the phylogenetic tree.
-    
+* sample homologous sequences from tax of interest
+
+* align the sequences
+
+* choose method to build the phylogenetic tree.
+
     - pick a substitution model
-    
-#. Estimate the phylogenetic tree
+
+* Estimate the phylogenetic tree
 
     - we may include a technique for estimating the level of uncertainty in that tree

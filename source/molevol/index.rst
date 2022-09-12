@@ -22,7 +22,6 @@ The notes for this topic are focussed principally on the biological and statisti
 .. todo:: add a resources doc
 
 ..
-  
       slide with one individual who is a heterozygote, get students to predict possible genotypes of a single progeny
       - probability of single progeny each genotype
       * consider successive generations
