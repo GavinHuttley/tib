@@ -84,13 +84,13 @@ For neutral variation, the evolutionary dynamics (changes in frequency) are dict
 Some important results from Kimura
 ==================================
 
-One important result from Kimura, often referred to as his "rule of thumb", is that natural selection is only effective against random genetic drift when :math:`4N_e s >> 1` where :math:`N_e` is the effective population size and :math:`s` is the selection coefficient. What this means is that, as population size shrinks, the magnitude of natural selection must increase in order overcome the stochastic fluctuations of random genetic drift. Very bad news for endangered species, since deleterious genetic variants can become fixed [3]_
+One important result from Kimura, often referred to as his "rule of thumb", is that natural selection is only effective against random genetic drift when :math:`4N_e s >> 1` where :math:`N_e` is the effective population size and :math:`s` is the selection coefficient. What this means is that, as population size shrinks, the magnitude of natural selection must increase in order overcome the stochastic fluctuations of random genetic drift. Very bad news for endangered species, since deleterious genetic variants can become fixed [3]_.
 
 .. [3] Fixation is the condition in which a genetic variant achieves a frequency of 1.0 (all population members have it). It becomes a substitution when that frequency applies to all members of the species.
 
-Another striking result is that the neutral substitution rate :math:`k` **is** the number of mutations per site per generation :math:`\mu` for strictly neutral variation. Irrespective of population size. This elegant result provides the foundation for why a molecular clock can exist.
+Another striking result is that the neutral substitution rate :math:`k` **is** the number of mutations per site per generation :math:`\mu` for strictly neutral variation. In other words, the neutral substitution rate is independent of population size. This elegant result provides the foundation for why a molecular clock can exist.
 
-Perhaps the most crucial corollary from this body of theory is the theoretical foundations establish how what goes on within a species shapes what we see between species.
+Perhaps the most crucial corollary from this body of theory is that it explicitly connects what goes on within a species with the divergence between species.
 
 Finally, returning to our simplistic example of how variation can be neutral but natural selection can be operated, the following conjecture by King and Jukes provides another key perspective on how this body of work applies to modern day genomics.
 
