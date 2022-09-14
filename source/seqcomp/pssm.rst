@@ -10,7 +10,7 @@ A Position Specific Scoring Matrix, or PSSM, is a matrix of :index:`log-odds rat
 
 See :ref:`experimental_data` for how the counts data are derived. To illustrate the transformation of those counts data into a PSSM, we will start with a simple worked example. First we take the counts table presented in :ref:`pssm-origins`.
 
-We convert the PWM into a PPM, but I'm restricting the examples to just 4 positions.
+We convert the :ref:`PWM <pssm-origins>` into a PPM, but I'm restricting the examples to just 4 positions.
 
 .. jupyter-execute::
     :hide-code:
