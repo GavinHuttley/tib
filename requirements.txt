@@ -21,7 +21,7 @@ sphinxcontrib-bibtex
 sphinx_rtd_theme
 tqdm>=4.47.0
 nbformat
-nbconvert==5.6.1
+nbconvert==6.5.1
 pandas
 pandoc
 git+https://github.com/cogent3/cogent3.git@develop#egg=cogent3[develop]
