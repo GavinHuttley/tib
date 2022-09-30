@@ -276,4 +276,7 @@ The following require you to repeat the above hypothesis test. Download the :dow
 
 #. What are the assumptions of these models?
 
+#. Select 3 sequences from the alignment and apply the F81 model to it.
+
+.. todo:: mode last question to be the first
 .. todo:: add an exercise demonstrating why the average motif probs should not be used

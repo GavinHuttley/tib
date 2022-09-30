@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.16. Fixing errors &mdash; Topics in Bioinformatics 2022.09.14 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>5.16. Fixing errors &mdash; Topics in Bioinformatics 2022.09.30 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -175,8 +175,8 @@
 </dl>
 <p>Here’s some broken code:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="81897f25-d580-4488-9aa8-649a08b1af57" name="9495a31a-f6c1-46cd-acb1-5141ac3d41a9" type="radio">
-</input><label class="tabbed-label" for="81897f25-d580-4488-9aa8-649a08b1af57">
+<input checked="checked" id="365cdeff-3092-4e7b-ac6c-e9b8ad7a372a" name="2453e38b-d007-49ed-beba-0b82b96e7b8d" type="radio">
+</input><label class="tabbed-label" for="365cdeff-3092-4e7b-ac6c-e9b8ad7a372a">
 Invalid Code</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -199,8 +199,8 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 <p>First, in the traceback, the last line indicates the type of the exception (<code class="docutils literal notranslate"><span class="pre">NameError</span></code> in this simple case) and the statement triggering it (<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">+=</span></code>). The offending line is indicated by <code class="docutils literal notranslate"><span class="pre">----&gt;</span></code>.</p>
 </div>
-<input id="298d3a66-0f62-45d6-92d0-6e71db1cedf3" name="9495a31a-f6c1-46cd-acb1-5141ac3d41a9" type="radio">
-</input><label class="tabbed-label" for="298d3a66-0f62-45d6-92d0-6e71db1cedf3">
+<input id="b9c2c2a2-8b7b-4bc1-aeb4-cfd9ce7dba32" name="2453e38b-d007-49ed-beba-0b82b96e7b8d" type="radio">
+</input><label class="tabbed-label" for="b9c2c2a2-8b7b-4bc1-aeb4-cfd9ce7dba32">
 Fixed Code</label><div class="tabbed-content docutils">
 <p>Variables must be defined before they’re used</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -218,8 +218,8 @@ Fixed Code</label><div class="tabbed-content docutils">
 </div>
 <p>And a slightly more complicated case</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="fa49edee-fe78-4538-b32b-db4485b3a430" name="12a4c5c8-ca77-4a70-b099-ce98525d713b" type="radio">
-</input><label class="tabbed-label" for="fa49edee-fe78-4538-b32b-db4485b3a430">
+<input checked="checked" id="45028058-76b9-46d2-8c0b-0aabf222816e" name="dd039aef-77ed-4022-968e-b977995c13be" type="radio">
+</input><label class="tabbed-label" for="45028058-76b9-46d2-8c0b-0aabf222816e">
 Invalid Code</label><div class="tabbed-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -239,8 +239,8 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 <p>This is a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> – imbalanced <code class="docutils literal notranslate"><span class="pre">()</span></code>. Note the <code class="docutils literal notranslate"><span class="pre">^</span></code> in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.</p>
 </div>
-<input id="163b5296-3fd4-4bb9-8aa3-697dd3bae8fb" name="12a4c5c8-ca77-4a70-b099-ce98525d713b" type="radio">
-</input><label class="tabbed-label" for="163b5296-3fd4-4bb9-8aa3-697dd3bae8fb">
+<input id="1056e14a-91d5-4e4a-bb6e-cd21f98dacef" name="dd039aef-77ed-4022-968e-b977995c13be" type="radio">
+</input><label class="tabbed-label" for="1056e14a-91d5-4e4a-bb6e-cd21f98dacef">
 Fixed Code</label><div class="tabbed-content docutils">
 <p>Balance the parentheses.</p>
 <div class="jupyter_cell jupyter_container docutils container">
