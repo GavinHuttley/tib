@@ -21,6 +21,21 @@ Use the top level ``get_code()`` function to get a specific genetic code. Use a 
     gc = get_code(1)
     gc
 
+Useful ``GeneticCode`` attributes
+---------------------------------
+
+``sense_codons``
+    The codons that encode an amino acid. The trinucleotide string is the key, the single character IUPAC code for the amino acid is the value.
+
+``codons``
+    Maps all codon strings to corresponding amino acid IUPAC code.
+
+``synonyms``
+    Maps all amino acid IUPAC codes to their codons. (The reverse of ``codons``.)
+
+Using ``GeneticCode`` instances
+-------------------------------
+
 Genetic code objects act like dictionaries for trinucleotide strings or single letter strings. The former are interpreted as RNA or DNA, the latter as the single code amino acid.
 
 You can get the encoded amino acid from a RNA triplet
@@ -69,6 +84,12 @@ Stop codons are represented by ``"*"`` character.
 .. jupyter-execute::
 
     gc["TGA"]
+
+.. jupyter-execute::
+
+    gc["*"]
+
+You can translate a string.
 
 .. jupyter-execute::
 
