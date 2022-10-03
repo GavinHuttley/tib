@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.6. Genetic Codes &mdash; Topics in Bioinformatics 2022.09.30 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>8.6. Genetic Codes &mdash; Topics in Bioinformatics 2022.10.03 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
@@ -62,7 +62,9 @@
 <li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.4. Exploring genetic variation using Alignments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore_variation.html#exercises">8.5. Exercises</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">8.6. Genetic Codes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#exercises">8.6.1. Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#useful-geneticcode-attributes">8.6.1. Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-geneticcode-instances">8.6.2. Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">8.6.3. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="moltype.html">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
@@ -249,6 +251,19 @@
 
 </div></div></div>
 </div>
+<div class="section" id="useful-geneticcode-attributes">
+<h2><span class="section-number">8.6.1. </span>Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes<a class="headerlink" href="#useful-geneticcode-attributes" title="Permalink to this headline"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">sense_codons</span></code></dt><dd><p>The codons that encode an amino acid. The trinucleotide string is the key, the single character IUPAC code for the amino acid is the value.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">codons</span></code></dt><dd><p>Maps all codon strings to corresponding amino acid IUPAC code.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">synonyms</span></code></dt><dd><p>Maps all amino acid IUPAC codes to their codons. (The reverse of <code class="docutils literal notranslate"><span class="pre">codons</span></code>.)</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="using-geneticcode-instances">
+<h2><span class="section-number">8.6.2. </span>Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances<a class="headerlink" href="#using-geneticcode-instances" title="Permalink to this headline"></a></h2>
 <p>Genetic code objects act like dictionaries for trinucleotide strings or single letter strings. The former are interpreted as RNA or DNA, the latter as the single code amino acid.</p>
 <p>You can get the encoded amino acid from a RNA triplet</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -351,6 +366,19 @@
 </div>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;TAA&#39;, &#39;TAG&#39;, &#39;TGA&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can translate a string.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;TCGACCGTTTAAGCC&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -426,8 +454,9 @@
 </div></div></div>
 </div>
 <p>See the <a class="reference external" href="https://cogent3.org">cogent3</a> cookbook documentation for more on using genetic codes.</p>
+</div>
 <div class="section" id="exercises">
-<h2><span class="section-number">8.6.1. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">8.6.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h2>
 <p>Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position <a class="footnote-reference brackets" href="#id5" id="id4">2</a>. The following questions refer to these groupings.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
