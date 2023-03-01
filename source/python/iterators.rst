@@ -68,37 +68,39 @@ Exercises
 
 #. ``data`` is a list of the characters from words put onto separate lines. The space between words being indicated by a blank line. Write an algorithm that reconstructs the original words and spaces as a single string.
 
-    .. tabbed:: The data
+    .. tab-set::
     
-        .. jupyter-execute::
-        
-            data = """s
-            o
-            m
-            e
+        .. tab-item:: The data
 
-            t
-            e
-            x
-            t""".splitlines()
+            .. jupyter-execute::
         
-    .. tabbed:: Expected output
+                data = """s
+                o
+                m
+                e
+
+                t
+                e
+                x
+                t""".splitlines()
+        
+        .. tab-item:: Expected output
     
-        .. jupyter-execute::
-            :hide-code:
+            .. jupyter-execute::
+                :hide-code:
         
-            words = []
-            word = []
-            for c in data:
-                c = c.strip()
-                if c:
-                    word.append(c)
-                else:
-                    words.append("".join(word))
-                    word = []
+                words = []
+                word = []
+                for c in data:
+                    c = c.strip()
+                    if c:
+                        word.append(c)
+                    else:
+                        words.append("".join(word))
+                        word = []
             
-            words.append("".join(word))
-            print(repr(" ".join(words)))
+                words.append("".join(word))
+                print(repr(" ".join(words)))
     
 
 #. Write a function that takes a file path, opens the file and returns all the lines in that file.

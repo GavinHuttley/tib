@@ -19,33 +19,35 @@ The impact of model choice
 
 It's easy to claim all models are wrong and that we should be cautious, but nothing beats a demonstration of how a seemingly simple analysis can be prove remarkably misleading. In this spirit, I have generated :download:`synthetic sequences </data/wrong_model.fasta>` based on the reference *V. cholerae* genome.
 
-.. tabbed:: Comparing nucleotide frequencies
+.. tab-set::
+    
+    .. tab-item:: Comparing nucleotide frequencies
 
-    We use the |chisq| test for homogeneity on nucleotide counts on the two synthetic sequences. With a |pvalue|\ :math:`\approx`\ 0.69, we cannot reject the null.
+        We use the |chisq| test for homogeneity on nucleotide counts on the two synthetic sequences. With a |pvalue|\ :math:`\approx`\ 0.69, we cannot reject the null.
 
-    .. jupyter-execute::
-        :hide-code:
+        .. jupyter-execute::
+            :hide-code:
 
-        from cogent3 import load_unaligned_seqs
+            from cogent3 import load_unaligned_seqs
 
-        def get_test_result(seqs, motif_length=1):
-            c = seqs.counts_per_seq(motif_length=motif_length)
-            t = c.to_table().to_categorical()
-            return t.chisq_test()
+            def get_test_result(seqs, motif_length=1):
+                c = seqs.counts_per_seq(motif_length=motif_length)
+                t = c.to_table().to_categorical()
+                return t.chisq_test()
 
-        seqs = load_unaligned_seqs("data/wrong_model.fasta", moltype="dna")
-        nuc_result = get_test_result(seqs, motif_length=1)
-        nuc_result.statistics
+            seqs = load_unaligned_seqs("data/wrong_model.fasta", moltype="dna")
+            nuc_result = get_test_result(seqs, motif_length=1)
+            nuc_result.statistics
 
-.. tabbed:: But, using a different model!
+    .. tab-item:: But, using a different model!
 
-    We employ the same test, but we apply it to *dinucleotide* counts of the two synthetic sequences (rather than nucleotide counts). The resulting |pvalue| is so small, it is below the limits of my computers precision to compute it.
+        We employ the same test, but we apply it to *dinucleotide* counts of the two synthetic sequences (rather than nucleotide counts). The resulting |pvalue| is so small, it is below the limits of my computers precision to compute it.
 
-    .. jupyter-execute::
-        :hide-code:
+        .. jupyter-execute::
+            :hide-code:
 
-        dinuc_result = get_test_result(seqs, motif_length=2)
-        dinuc_result.statistics
+            dinuc_result = get_test_result(seqs, motif_length=2)
+            dinuc_result.statistics
 
 This example was deliberately constructed to demonstrate that applying different models to the same data can result in contradictory outcomes. In this case, because I generated the data I knew this problem existed. I can say that analogous situations do arise in the analysis of real data too.
 

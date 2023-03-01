@@ -104,30 +104,32 @@ Exercises
 
 #. Write a function that returns :ref:`cartesian coordinates <array_coordinates>` for the same sequences, but with the :math:`x` and :math:`y` components separated.
 
-    .. tabbed:: For this data
+    .. tab-set::
     
-        Using a smaller data set like the below, you can check your algorithm performs correctly.
+        .. tab-item:: For this data
     
-        .. jupyter-execute::
+            Using a smaller data set like the below, you can check your algorithm performs correctly.
     
-            seq1 = "CCAAA"
-            seq2 = "CCTCAG"
+            .. jupyter-execute::
+    
+                seq1 = "CCAAA"
+                seq2 = "CCTCAG"
 
-    .. tabbed:: Expected Output
+        .. tab-item:: Expected Output
 
-        .. jupyter-execute::
-            :hide-code:
+            .. jupyter-execute::
+                :hide-code:
     
-            def get_cartesian_coords(s1, s2):
-                coords = []
-                for x, b1 in enumerate(s1):
-                    for y, b2 in enumerate(s2):
-                        if b1 == b2:
-                            coords.append((x, y))
-                return list(zip(*coords))
+                def get_cartesian_coords(s1, s2):
+                    coords = []
+                    for x, b1 in enumerate(s1):
+                        for y, b2 in enumerate(s2):
+                            if b1 == b2:
+                                coords.append((x, y))
+                    return list(zip(*coords))
     
-            x, y = get_cartesian_coords(seq1, seq2)
-            print(f"x={x}\ny={y}")
+                x, y = get_cartesian_coords(seq1, seq2)
+                print(f"x={x}\ny={y}")
 
 #. Plot the cartesian coordinates using a scatter plot, with axis labels representing the sequence names.
 

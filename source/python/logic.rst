@@ -287,43 +287,47 @@ Exercises
 
 #. Iterate over ``text`` and, if a character is a vowel ("aeiou"), print the character and its index in ``text``.
 
-.. tabbed:: Data
-
-    .. jupyter-execute::
-
-        text = "Some random text"
-
-.. tabbed:: Expected Output
+.. tab-set:: 
     
-    Fancy formatting not required.
+    .. tab-item:: Data
+
+        .. jupyter-execute::
+
+            text = "Some random text"
     
-    .. jupyter-execute::
-        :hide-code:
+    .. tab-item:: Expected Output
+    
+        Fancy formatting not required.
+    
+        .. jupyter-execute::
+            :hide-code:
         
-        print("Index :  Vowel")
-        for i, c in enumerate(text):
-            if c in "aeiou":
-                print(f"{i:5} : {c!r}")
+            print("Index :  Vowel")
+            for i, c in enumerate(text):
+                if c in "aeiou":
+                    print(f"{i:5} : {c!r}")
 
 #. Write a ``for`` loop that prints whether the elements of ``values`` are Truthy, Falsey or actually the booleans True/False.
 
-.. tabbed:: Data
-
-    .. jupyter-execute::
-
-        values = [0, 11, {}, False, True]
-
-.. tabbed:: Expected Output
-
-    .. jupyter-execute::
-        :hide-code:
+.. tab-set::
     
-        for e in values:
-            if type(e) == bool:
-                val = "is a bool"
-            elif e:
-                val = "is Truthy"
-            else:
-                val = "is Falsy"
+    .. tab-item:: Data
 
-            print(f"{e!r} {val}")
+        .. jupyter-execute::
+
+            values = [0, 11, {}, False, True]
+
+    .. tab-item:: Expected Output
+
+        .. jupyter-execute::
+            :hide-code:
+    
+            for e in values:
+                if type(e) == bool:
+                    val = "is a bool"
+                elif e:
+                    val = "is Truthy"
+                else:
+                    val = "is Falsy"
+
+                print(f"{e!r} {val}")

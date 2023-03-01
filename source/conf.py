@@ -29,7 +29,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "nbsphinx",
     "jupyter_sphinx",
-    "sphinx_panels",
+    "sphinx_design",
     "sphinxcontrib.bibtex",
     "sphinx_rtd_theme",
 ]
@@ -76,3 +76,11 @@ html_css_files = [
 ]
 
 bibtex_bibfiles = ["references.bib"]
+
+
+nbsphinx_requirejs_path = "require.js"
+
+html_js_files = [
+    "require.min.js",  # Add to your _static
+    "custom.js",
+]

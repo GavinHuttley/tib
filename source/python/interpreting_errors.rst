@@ -24,46 +24,49 @@ Every programmer makes errors, it's normal. The most important step towards fixi
 
 Here's some broken code:
 
-.. tabbed:: Invalid Code
-
-    .. jupyter-execute::
-        :raises:
-
-        a = 42
-        k += a
-
-    First, in the traceback, the last line indicates the type of the exception (``NameError`` in this simple case) and the statement triggering it (``k +=``). The offending line is indicated by ``---->``.
-
-.. tabbed:: Fixed Code
-
-    Variables must be defined before they're used
-
-    .. jupyter-execute::
+.. tab-set::
     
-        a = 42
-        k = 0
-        k += a
+    .. tab-item:: Invalid Code
+
+        .. jupyter-execute::
+            :raises:
+
+            a = 42
+            k += a
+
+        First, in the traceback, the last line indicates the type of the exception (``NameError`` in this simple case) and the statement triggering it (``k +=``). The offending line is indicated by ``---->``.
+
+    .. tab-item:: Fixed Code
+
+        Variables must be defined before they're used
+
+        .. jupyter-execute::
+    
+            a = 42
+            k = 0
+            k += a
 
 And a slightly more complicated case
 
-.. tabbed:: Invalid Code
+.. tab-set:: 
 
-    .. jupyter-execute::
-        :raises:
+    .. tab-item:: Invalid Code
+        .. jupyter-execute::
+            :raises:
 
-        def echo(name):
-            print(name
+            def echo(name):
+                print(name
 
-    This is a ``SyntaxError`` -- imbalanced ``()``. Note the ``^`` in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.
+        This is a ``SyntaxError`` -- imbalanced ``()``. Note the ``^`` in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.
 
-.. tabbed:: Fixed Code
+    .. tab-item:: Fixed Code
 
-    Balance the parentheses.
+        Balance the parentheses.
 
-    .. jupyter-execute::
+        .. jupyter-execute::
     
-        def echo(name):
-            print(name)
+            def echo(name):
+                print(name)
 
 
 Exercises
