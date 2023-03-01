@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>7.1. What is molecular evolution? &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>7.1. What is molecular evolution? &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -72,7 +82,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -88,9 +98,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">7. </span>Molecular Evolution</a> &raquo;</li>
-      <li><span class="section-number">7.1. </span>What is molecular evolution?</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">7. </span>Molecular Evolution</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7.1. </span>What is molecular evolution?</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/molevol/intro.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -128,9 +138,9 @@
 <div class="cell_output docutils container">
 </div>
 </div>
-<div class="section" id="what-is-molecular-evolution">
-<h1><span class="section-number">7.1. </span>What is molecular evolution?<a class="headerlink" href="#what-is-molecular-evolution" title="Permalink to this headline"></a></h1>
-<div class="sidebar" id="variation-between-species">
+<section id="what-is-molecular-evolution">
+<h1><span class="section-number">7.1. </span>What is molecular evolution?<a class="headerlink" href="#what-is-molecular-evolution" title="Permalink to this heading"></a></h1>
+<aside class="sidebar" id="variation-between-species">
 <span id="index-0"></span><p class="sidebar-title">Variation between species</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -182,13 +192,13 @@
 </div></div></div>
 </div>
 <p>This is a “pretty print” display style in which only the first sequence is shown in full. All other sequences display a base only when it doesn’t match that reference sequence, otherwise a <code class="docutils literal notranslate"><span class="pre">.</span></code> is displayed.</p>
-</div>
+</aside>
 <p>Molecular Evolution is a domain of research that is concerned with why biological sequences look the way they do. Can we explain the distribution of genetic variation between biological sequences (RNA, DNA, and proteins) in terms of their evolutionary origins? Can we establish whether severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) is showing signs of adaptive evolution to its new host - us? These questions are within the domain of molecular evolution.</p>
 <p>Since the nucleic acids are the information system of living things and can also be, along with proteins, functional, molecular evolution draws on genetics, molecular and cell biology, biochemistry, and chemistry. At a conceptual level, molecular evolution is closely related to population genetics and, as such, is very much focussed on the process of evolution as it manifests in biological sequences.</p>
 <p>At a practical level, using genetic variation as an indicator of biological importance is central to much of modern biology. Researchers who are engaged in molecular studies of specific proteins or genes rely on resources provided by a genome portal (like <a class="reference external" href="https://genome.ucsc.edu">ucsc</a> or <a class="reference external" href="https://ensembl.org">ensembl</a>) to get insights into what a molecule of interest might actually be doing. One of the types of information that these portals present to facilitate understanding is a comparison of the biological sequences from different species. Why? We will answer that question in this topic.</p>
-</div>
-<div class="section" id="what-is-phylogenetics">
-<h1><span class="section-number">7.2. </span>What is phylogenetics?<a class="headerlink" href="#what-is-phylogenetics" title="Permalink to this headline"></a></h1>
+</section>
+<section id="what-is-phylogenetics">
+<h1><span class="section-number">7.2. </span>What is phylogenetics?<a class="headerlink" href="#what-is-phylogenetics" title="Permalink to this heading"></a></h1>
 <p>Phylogenetics is concerned with the problem of inferring the relationships between members of a collection of biological sequences. This relationship is displayed as a tree. As the methods employed to estimate relationships in phylogenetics are the same methods used to understand process in molecular evolution, phylogenetics is a sub-discipline (albeit highly specialised) of molecular evolution.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -199,7 +209,7 @@ if (typeof require !== 'undefined') {
 require.undef("plotly");
 requirejs.config({
     paths: {
-        'plotly': ['https://cdn.plot.ly/plotly-2.14.0.min']
+        'plotly': ['https://cdn.plot.ly/plotly-2.18.2.min']
     }
 });
 require(['plotly'], function(Plotly) {
@@ -207,9 +217,9 @@ require(['plotly'], function(Plotly) {
 });
 }
 </script>
-</div><div class="output text_html"><div>                            <div id="505f3dba-ebe1-4e66-8d03-0fab6e3f4249" class="plotly-graph-div" style="height:500px; width:500px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("505f3dba-ebe1-4e66-8d03-0fab6e3f4249")) {                    Plotly.newPlot(                        "505f3dba-ebe1-4e66-8d03-0fab6e3f4249",                        [{"line":{"color":"black","shape":"spline","smoothing":1.3,"width":1.25},"mode":"lines","showlegend":false,"x":[null,null,0,0,null,0,1,null,0,0,null,0,1,null,0,0,null,0,0.2,null,0.2,0.2,null,0.2,1.0,null,0.2,0.2,null,0.2,0.4,null,0.4,0.4,null,0.4,1.0,null,0.4,0.4,null,0.4,0.6000000000000001,null,0.6000000000000001,0.6000000000000001,null,0.6000000000000001,1.0,null,0.6000000000000001,0.6000000000000001,null,0.6000000000000001,0.8,null,0.8,0.8,null,0.8,1.0,null,0.8,0.8,null,0.8,1.0,null],"y":[null,null,2.6,3.9000000000000004,null,3.9000000000000004,3.9000000000000004,null,2.6,2.6,null,2.6,2.6,null,2.6,0.08125000000000004,null,0.08125000000000004,0.08125000000000004,null,0.08125000000000004,1.3,null,1.3,1.3,null,0.08125000000000004,-1.1375,null,-1.1375,-1.1375,null,-1.1375,0.0,null,0.0,0.0,null,-1.1375,-2.275,null,-2.275,-2.275,null,-2.275,-1.3,null,-1.3,-1.3,null,-2.275,-3.25,null,-3.25,-3.25,null,-3.25,-2.6,null,-2.6,-2.6,null,-3.25,-3.9000000000000004,null,-3.9000000000000004,-3.9000000000000004,null],"type":"scatter"},{"hoverinfo":"text","marker":{"color":"black","size":3,"symbol":"circle"},"mode":"markers","showlegend":false,"text":["root","Galago","Howler Monkey","edge.3","Rhesus","edge.2","Orangutan","edge.1","Gorilla","edge.0","Chimpanzee","Human"],"x":[0,1,1,0.2,1.0,0.4,1.0,0.6000000000000001,1.0,0.8,1.0,1.0],"y":[2.6,3.9000000000000004,2.6,0.08125000000000004,1.3,-1.1375,0.0,-2.275,-1.3,-3.25,-2.6,-3.9000000000000004],"type":"scatter"}],                        {"annotations":[{"font":{"color":"blue","size":18},"showarrow":false,"text":"Galago","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":3.9000000000000004,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Howler Monkey","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":2.6,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Rhesus","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":1.3,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Orangutan","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":0.0,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Gorilla","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":-1.3,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Chimpanzee","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":-2.6,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Human","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":-3.9000000000000004,"yref":"y"}],"autosize":true,"font":{"family":"Balto","size":14},"height":500,"hovermode":"closest","margin":{"b":50,"l":50,"pad":4,"r":50,"t":50},"showlegend":false,"width":500,"xaxis":{"visible":false},"yaxis":{"visible":false},"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}}},                        {"responsive": true}                    ).then(function(){
+</div><div class="output text_html"><div>                            <div id="a07657f0-d626-4921-8151-b32e6a5b9ecf" class="plotly-graph-div" style="height:500px; width:500px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("a07657f0-d626-4921-8151-b32e6a5b9ecf")) {                    Plotly.newPlot(                        "a07657f0-d626-4921-8151-b32e6a5b9ecf",                        [{"line":{"color":"black","shape":"spline","smoothing":1.3,"width":1.25},"mode":"lines","showlegend":false,"x":[null,null,0,0,null,0,1,null,0,0,null,0,1,null,0,0,null,0,0.2,null,0.2,0.2,null,0.2,1.0,null,0.2,0.2,null,0.2,0.4,null,0.4,0.4,null,0.4,1.0,null,0.4,0.4,null,0.4,0.6000000000000001,null,0.6000000000000001,0.6000000000000001,null,0.6000000000000001,1.0,null,0.6000000000000001,0.6000000000000001,null,0.6000000000000001,0.8,null,0.8,0.8,null,0.8,1.0,null,0.8,0.8,null,0.8,1.0,null],"y":[null,null,2.6,3.9000000000000004,null,3.9000000000000004,3.9000000000000004,null,2.6,2.6,null,2.6,2.6,null,2.6,0.08125000000000004,null,0.08125000000000004,0.08125000000000004,null,0.08125000000000004,1.3,null,1.3,1.3,null,0.08125000000000004,-1.1375,null,-1.1375,-1.1375,null,-1.1375,0.0,null,0.0,0.0,null,-1.1375,-2.275,null,-2.275,-2.275,null,-2.275,-1.3,null,-1.3,-1.3,null,-2.275,-3.25,null,-3.25,-3.25,null,-3.25,-2.6,null,-2.6,-2.6,null,-3.25,-3.9000000000000004,null,-3.9000000000000004,-3.9000000000000004,null],"type":"scatter"},{"hoverinfo":"text","marker":{"color":"black","size":3,"symbol":"circle"},"mode":"markers","showlegend":false,"text":["root","Galago","Howler Monkey","edge.3","Rhesus","edge.2","Orangutan","edge.1","Gorilla","edge.0","Chimpanzee","Human"],"x":[0,1,1,0.2,1.0,0.4,1.0,0.6000000000000001,1.0,0.8,1.0,1.0],"y":[2.6,3.9000000000000004,2.6,0.08125000000000004,1.3,-1.1375,0.0,-2.275,-1.3,-3.25,-2.6,-3.9000000000000004],"type":"scatter"}],                        {"annotations":[{"font":{"color":"blue","size":18},"showarrow":false,"text":"Galago","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":3.9000000000000004,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Howler Monkey","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":2.6,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Rhesus","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":1.3,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Orangutan","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":0.0,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Gorilla","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":-1.3,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Chimpanzee","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":-2.6,"yref":"y"},{"font":{"color":"blue","size":18},"showarrow":false,"text":"Human","textangle":0,"x":1.025,"xanchor":"left","xref":"x","y":-3.9000000000000004,"yref":"y"}],"autosize":true,"font":{"family":"Balto","size":14},"height":500,"hovermode":"closest","margin":{"b":50,"l":50,"pad":4,"r":50,"t":50},"showlegend":false,"width":500,"xaxis":{"visible":false},"yaxis":{"visible":false},"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('505f3dba-ebe1-4e66-8d03-0fab6e3f4249');
+var gd = document.getElementById('a07657f0-d626-4921-8151-b32e6a5b9ecf');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -233,7 +243,7 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-<div class="sidebar" id="phylo-workflow">
+<aside class="sidebar" id="phylo-workflow">
 <p class="sidebar-title">The phylogenetic workflow</p>
 <div class="graphviz"><object data="../_images/graphviz-bec1c664be129b4ebe7c8ee31a379fd7c25efb5f.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph phylo_workflow {
@@ -283,7 +293,7 @@ Db -&gt; Sft [style=invis];
 Sft -&gt;C;
 Sft -&gt;E [style=invis];
 }</p></object></div>
-</div>
+</aside>
 <p>In the <a class="reference internal" href="#phylo-workflow"><span class="std std-ref">Phylogenetic Workflow</span></a> figure I display the basic workflow for phylogenetic reconstruction. There is substantial overlap with molecular evolutionary analysis in general, but the emphasis here is on the problem of estimating a tree. The steps are:</p>
 <ul>
 <li><p>sample homologous sequences from tax of interest</p></li>
@@ -303,7 +313,7 @@ Sft -&gt;E [style=invis];
 </div></blockquote>
 </li>
 </ul>
-</div>
+</section>
 
 
            </div>
@@ -316,7 +326,7 @@ Sft -&gt;E [style=invis];
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

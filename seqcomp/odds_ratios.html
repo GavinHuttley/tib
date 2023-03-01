@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.13. Odds-ratio’s &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>6.13. Odds-ratio’s &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -81,7 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -97,9 +107,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
-      <li><span class="section-number">6.13. </span>Odds-ratio’s</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6.13. </span>Odds-ratio’s</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/odds_ratios.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -133,25 +143,27 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="odds-ratio-s">
-<span id="odds-ratios"></span><h1><span class="section-number">6.13. </span>Odds-ratio’s<a class="headerlink" href="#odds-ratio-s" title="Permalink to this headline"></a></h1>
+<section id="odds-ratio-s">
+<span id="odds-ratios"></span><h1><span class="section-number">6.13. </span>Odds-ratio’s<a class="headerlink" href="#odds-ratio-s" title="Permalink to this heading"></a></h1>
 <p>There are a multitude of statistical measures that are presented as odds-ratios (hereafter OR). They are often seen in terms of evaluating clinical studies. For instance, the odds-ratio of statin medication increasing life-span. We will be concerned with using the odds-ratio to distinguish between competing hypotheses.</p>
 <p>Consider an odds ratio that contrast the probability of a sequence under an alternate hypothesis (<span class="math notranslate nohighlight">\(p_{alt}\)</span>) against the probability of the sequence under a null hypothesis (<span class="math notranslate nohighlight">\(p_{null}\)</span>). In this instance, an OR equal to 1 if <span class="math notranslate nohighlight">\(p_{alt} = p_{null}\)</span>, i.e. the sequence is equally likely under both models. OR &gt; 1 indicates the sequence is more likely under the alternate, while a value less than 1 implies the converse.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
-<dd><p>Recalling that <span class="math notranslate nohighlight">\(\log(a/b)=\log(a) - \log(b)\)</span>, and <span class="math notranslate nohighlight">\(\log(a \times b) = \log(a) + \log(b)\)</span>.</p>
-</dd>
-</dl>
-<div class="section" id="log-odds-the-logarithm-variant">
-<h2><span class="section-number">6.13.1. </span>Log-odds – the logarithm variant<a class="headerlink" href="#log-odds-the-logarithm-variant" title="Permalink to this headline"></a></h2>
-<p>A log-odds ratio is simply the log-transformation of the odds ratio <a class="footnote-reference brackets" href="#id1" id="id2">1</a>. For example, for OR=1, the log-odds <span class="math notranslate nohighlight">\(log_{10}(OR)=0\)</span> <a class="footnote-reference brackets" href="#id4" id="id3">2</a>.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
-<dd><p>If you find a log-odds value hard to interpret, convert it back into a natural number by raising the logarithm base to the power of the log-odds. For example, if the log-odds value you have is <span class="math notranslate nohighlight">\(LOR\)</span>, and it was obtained as <span class="math notranslate nohighlight">\(LOR = \log_2(OR)\)</span>, then the reverse operation, <span class="math notranslate nohighlight">\(OR = 2^{LOR}\)</span>, gives you back the <span class="math notranslate nohighlight">\(OR\)</span>.</p>
-</dd>
-</dl>
-</div>
-</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Recalling that <span class="math notranslate nohighlight">\(\log(a/b)=\log(a) - \log(b)\)</span>, and <span class="math notranslate nohighlight">\(\log(a \times b) = \log(a) + \log(b)\)</span>.</p>
+</aside>
+</aside>
+<section id="log-odds-the-logarithm-variant">
+<h2><span class="section-number">6.13.1. </span>Log-odds – the logarithm variant<a class="headerlink" href="#log-odds-the-logarithm-variant" title="Permalink to this heading"></a></h2>
+<p>A log-odds ratio is simply the log-transformation of the odds ratio <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. For example, for OR=1, the log-odds <span class="math notranslate nohighlight">\(log_{10}(OR)=0\)</span> <a class="footnote-reference brackets" href="#id4" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>If you find a log-odds value hard to interpret, convert it back into a natural number by raising the logarithm base to the power of the log-odds. For example, if the log-odds value you have is <span class="math notranslate nohighlight">\(LOR\)</span>, and it was obtained as <span class="math notranslate nohighlight">\(LOR = \log_2(OR)\)</span>, then the reverse operation, <span class="math notranslate nohighlight">\(OR = 2^{LOR}\)</span>, gives you back the <span class="math notranslate nohighlight">\(OR\)</span>.</p>
+</aside>
+</aside>
+</section>
+</section>
 
 
            </div>
@@ -164,7 +176,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

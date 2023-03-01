@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.16. Fixing errors &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>5.16. Fixing errors &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -107,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -123,9 +133,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-      <li><span class="section-number">5.16. </span>Fixing errors</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.16. </span>Fixing errors</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/interpreting_errors.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -159,25 +169,26 @@
     text-align: unset;
 }
 </style>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">Debugging a simple Python script using an IDE</p>
 <video width="50%" height="50%" controls>
   <source src="https://cloudstor.aarnet.edu.au/plus/s/VTGRuCeFGERAqDr/download" type="video/mp4">
   Your browser does not support the video tag.
-</video></div>
-<div class="section" id="fixing-errors">
-<span id="debugging"></span><span id="index-1"></span><h1><span class="section-number">5.16. </span>Fixing errors<a class="headerlink" href="#fixing-errors" title="Permalink to this headline"></a></h1>
-<p>Every programmer makes errors, it’s normal. The most important step towards fixing errors is interpreting the error messages produced by Python. In Python, error messages come in the form of “exceptions” which produce a “traceback” <a class="footnote-reference brackets" href="#id2" id="id1">1</a> that declares the type of exception and which piece of code triggered it.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>See this <a class="reference external" href="https://realpython.com/python-traceback/">article</a> for a more complete description.</p>
-</dd>
-</dl>
+</video></aside>
+<section id="fixing-errors">
+<span id="debugging"></span><span id="index-1"></span><h1><span class="section-number">5.16. </span>Fixing errors<a class="headerlink" href="#fixing-errors" title="Permalink to this heading"></a></h1>
+<p>Every programmer makes errors, it’s normal. The most important step towards fixing errors is interpreting the error messages produced by Python. In Python, error messages come in the form of “exceptions” which produce a “traceback” <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> that declares the type of exception and which piece of code triggered it.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>See this <a class="reference external" href="https://realpython.com/python-traceback/">article</a> for a more complete description.</p>
+</aside>
+</aside>
 <p>Here’s some broken code:</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="d54bc372-50ad-4296-b8ce-31bd4460fc66" name="c6b66477-1b16-48ac-9559-733ee6a6cca9" type="radio">
-</input><label class="tabbed-label" for="d54bc372-50ad-4296-b8ce-31bd4460fc66">
-Invalid Code</label><div class="tabbed-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Invalid Code</label><div class="sd-tab-content docutils">
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">42</span>
@@ -188,7 +199,7 @@ Invalid Code</label><div class="tabbed-content docutils">
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">k</span> <span class="o">+=</span> <span class="n">a</span>
 
@@ -199,9 +210,9 @@ Invalid Code</label><div class="tabbed-content docutils">
 </div>
 <p>First, in the traceback, the last line indicates the type of the exception (<code class="docutils literal notranslate"><span class="pre">NameError</span></code> in this simple case) and the statement triggering it (<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">+=</span></code>). The offending line is indicated by <code class="docutils literal notranslate"><span class="pre">----&gt;</span></code>.</p>
 </div>
-<input id="378678a8-8502-43b7-b4ad-0e39b727fca5" name="c6b66477-1b16-48ac-9559-733ee6a6cca9" type="radio">
-</input><label class="tabbed-label" for="378678a8-8502-43b7-b4ad-0e39b727fca5">
-Fixed Code</label><div class="tabbed-content docutils">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Fixed Code</label><div class="sd-tab-content docutils">
 <p>Variables must be defined before they’re used</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -217,31 +228,23 @@ Fixed Code</label><div class="tabbed-content docutils">
 </div>
 </div>
 <p>And a slightly more complicated case</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="f9e8f672-5207-4ea8-986f-64b4bfc08aa5" name="a4084f0c-cfbb-4528-9e78-bed7aa0763e8" type="radio">
-</input><label class="tabbed-label" for="f9e8f672-5207-4ea8-986f-64b4bfc08aa5">
-Invalid Code</label><div class="tabbed-content docutils">
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">name</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">name</span>
-              <span class="o">^</span>
-<span class="ne">SyntaxError</span>: unexpected EOF while parsing
-</pre></div>
-</div>
-</div>
-</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Invalid Code
+.. jupyter-execute::
+    :raises:</label><div class="sd-tab-content docutils">
+<blockquote>
+<div><dl class="simple">
+<dt>def echo(name):</dt><dd><p>print(name</p>
+</dd>
+</dl>
+</div></blockquote>
 <p>This is a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> – imbalanced <code class="docutils literal notranslate"><span class="pre">()</span></code>. Note the <code class="docutils literal notranslate"><span class="pre">^</span></code> in the traceback, which indicates the first place where the syntax is erroneous. It also indicates the line number. In the Jupyter case, these line numbers are within the cell. In a standard Python script, they are within the entire file.</p>
 </div>
-<input id="1a25cb1b-cda2-4ad6-a2c7-a92e5462c502" name="a4084f0c-cfbb-4528-9e78-bed7aa0763e8" type="radio">
-</input><label class="tabbed-label" for="1a25cb1b-cda2-4ad6-a2c7-a92e5462c502">
-Fixed Code</label><div class="tabbed-content docutils">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Fixed Code</label><div class="sd-tab-content docutils">
 <p>Balance the parentheses.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -255,9 +258,9 @@ Fixed Code</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercises">
-<h1><span class="section-number">5.17. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+</section>
+<section id="exercises">
+<h1><span class="section-number">5.17. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
 <ol class="arabic">
 <li><p>Fix the errors in the following.</p>
 <blockquote>
@@ -272,7 +275,7 @@ Fixed Code</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="k">if</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Tim&quot;</span><span class="p">:</span>
             <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -297,7 +300,7 @@ Fixed Code</label><div class="tabbed-content docutils">
 </div></blockquote>
 </li>
 </ol>
-</div>
+</section>
 
 
            </div>
@@ -310,7 +313,7 @@ Fixed Code</label><div class="tabbed-content docutils">
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

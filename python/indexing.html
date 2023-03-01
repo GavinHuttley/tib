@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.27. Indexing and Slicing &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>5.27. Indexing and Slicing &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -112,7 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -128,9 +138,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-      <li><span class="section-number">5.27. </span>Indexing and Slicing</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.27. </span>Indexing and Slicing</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/indexing.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -164,10 +174,10 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="indexing-and-slicing">
-<h1><span class="section-number">5.27. </span>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline"></a></h1>
-<div class="section" id="indexing">
-<span id="index-0"></span><h2><span class="section-number">5.27.1. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline"></a></h2>
+<section id="indexing-and-slicing">
+<h1><span class="section-number">5.27. </span>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this heading"></a></h1>
+<section id="indexing">
+<span id="index-0"></span><h2><span class="section-number">5.27.1. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this heading"></a></h2>
 <p>This works equivalently for python strings, tuples and lists. There are similarities to indexing other data types, and differences.</p>
 <p>An index refers to the order number of an element in a series. Elements from instances of a series data type (e.g. <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">list</span></code>) can be referenced by their index number.</p>
 <p>For all data types, the <code class="docutils literal notranslate"><span class="pre">[]</span></code> are used to specify the indices.</p>
@@ -214,7 +224,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span>
 
 <span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
@@ -232,7 +242,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">more_data</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 
 <span class="ne">IndexError</span>: list index out of range
@@ -240,9 +250,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="indexing-in-multiple-dimensions">
-<h2><span class="section-number">5.27.2. </span>Indexing in multiple-dimensions<a class="headerlink" href="#indexing-in-multiple-dimensions" title="Permalink to this headline"></a></h2>
+</section>
+<section id="indexing-in-multiple-dimensions">
+<h2><span class="section-number">5.27.2. </span>Indexing in multiple-dimensions<a class="headerlink" href="#indexing-in-multiple-dimensions" title="Permalink to this heading"></a></h2>
 <p>Using the list of lists I created earlier.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -281,9 +291,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="slicing">
-<span id="index-3"></span><h2><span class="section-number">5.27.3. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline"></a></h2>
+</section>
+<section id="slicing">
+<span id="index-3"></span><h2><span class="section-number">5.27.3. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this heading"></a></h2>
 <p id="index-4">Slicing is just an indexing operation that refers to a range of elements. A slice operation allows you to select a sequential ordering of elements. The syntax for a slice is <code class="docutils literal notranslate"><span class="pre">[start:end:stride]</span></code>, but some of these terms are optional.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> refers to the first index from which elements will be sampled. Defaults to 0.</p></li>
@@ -347,17 +357,17 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<h1><span class="section-number">5.28. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+</section>
+</section>
+<section id="exercises">
+<h1><span class="section-number">5.28. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
 <ol class="arabic">
 <li><p>Consider the <code class="docutils literal notranslate"><span class="pre">dict</span></code> defined below</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;value for 0&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;a-key&quot;</span><span class="p">,):</span> <span class="s2">&quot;funky key&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Get each value of <code class="docutils literal notranslate"><span class="pre">d</span></code> using <code class="docutils literal notranslate"><span class="pre">index</span></code> notation <a class="footnote-reference brackets" href="#id4" id="id1">1</a>.</p>
+<p>Get each value of <code class="docutils literal notranslate"><span class="pre">d</span></code> using <code class="docutils literal notranslate"><span class="pre">index</span></code> notation <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 </div></blockquote>
 </li>
 <li><p>What does <code class="docutils literal notranslate"><span class="pre">nums[::-1]</span></code> do on the following?</p>
@@ -367,22 +377,25 @@
 </div>
 </div></blockquote>
 </li>
-<li><p>For the simple protein coding DNA sequence <code class="docutils literal notranslate"><span class="pre">ATGATGATG</span></code> <a class="footnote-reference brackets" href="#id5" id="id2">2</a>, use a slice to extract the first codon <a class="footnote-reference brackets" href="#id6" id="id3">3</a>. Do the same for the last codon.</p></li>
+<li><p>For the simple protein coding DNA sequence <code class="docutils literal notranslate"><span class="pre">ATGATGATG</span></code> <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, use a slice to extract the first codon <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. Do the same for the last codon.</p></li>
 <li><p>For the same sequence, use a slice operation to obtain the first nucleotide of each codon, i.e. you should produce <code class="docutils literal notranslate"><span class="pre">[&quot;A&quot;,</span> <span class="pre">&quot;A&quot;,</span> <span class="pre">&quot;A&quot;]</span></code>. Do this for the second codon position (producing <code class="docutils literal notranslate"><span class="pre">[&quot;T&quot;,</span> <span class="pre">&quot;T&quot;,</span> <span class="pre">&quot;T&quot;]</span></code>) and then the third codon position.</p></li>
 <li><p>Split the sequence <code class="docutils literal notranslate"><span class="pre">ATGAAATAA</span></code> into codons (non-overlapping letter triples). (The most succinct solution uses a list comprehension.)</p></li>
 </ol>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>This is actually not indexing, because elements in a dict are not ordered. But the notation for “getting” an item from a <code class="docutils literal notranslate"><span class="pre">dict</span></code> is the same as for other data types (i.e. you use <code class="docutils literal notranslate"><span class="pre">[]</span></code>). The difference is the “index” does not need to be an integer.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>In the standard genetic code, this corresponds to 3 repeats of the methionine codon</p>
-</dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>DNA encodes amino acid sequences using 3 consecutive bases. This unit is referred to as a <span class="target" id="index-6"></span>codon.</p>
-</dd>
-</dl>
-</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>This is actually not indexing, because elements in a dict are not ordered. But the notation for “getting” an item from a <code class="docutils literal notranslate"><span class="pre">dict</span></code> is the same as for other data types (i.e. you use <code class="docutils literal notranslate"><span class="pre">[]</span></code>). The difference is the “index” does not need to be an integer.</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>In the standard genetic code, this corresponds to 3 repeats of the methionine codon</p>
+</aside>
+<aside class="footnote brackets" id="id6" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>DNA encodes amino acid sequences using 3 consecutive bases. This unit is referred to as a <span class="target" id="index-6"></span>codon.</p>
+</aside>
+</aside>
+</section>
 
 
            </div>
@@ -395,7 +408,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.8. Variables and assignment &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>5.8. Variables and assignment &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -113,7 +123,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -129,9 +139,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-      <li><span class="section-number">5.8. </span>Variables and assignment</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.8. </span>Variables and assignment</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/variables.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -165,12 +175,12 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="variables-and-assignment">
-<span id="assignment"></span><h1><span class="section-number">5.8. </span>Variables and assignment<a class="headerlink" href="#variables-and-assignment" title="Permalink to this headline"></a></h1>
+<section id="variables-and-assignment">
+<span id="assignment"></span><h1><span class="section-number">5.8. </span>Variables and assignment<a class="headerlink" href="#variables-and-assignment" title="Permalink to this heading"></a></h1>
 <p>Consider the equation <span class="math notranslate nohighlight">\(h^2=a^2+b^2\)</span>. This mathematical expression is familiar (Pythagoras, of course!) and exactly the sort of thing we’d like to use computers to calculate. But expressing this as an algorithm requires defining variables and breaking the problem into smaller steps. But before we can even do this, we need to define both what a variable is and what is meant by assignment.</p>
 <p>In the above equation <em>h</em>, <em>a</em>, <em>b</em> are <em>pro-numerals</em>, symbols that represent a numeral (number). In programming, we call these <em>variables</em>. We create variables “on the fly” in Python by the process of “assignment” and, in doing so, we need to obey some simple rules.</p>
-<div class="section" id="naming-variables">
-<span id="index-0"></span><h2><span class="section-number">5.8.1. </span>Naming variables<a class="headerlink" href="#naming-variables" title="Permalink to this headline"></a></h2>
+<section id="naming-variables">
+<span id="index-0"></span><h2><span class="section-number">5.8.1. </span>Naming variables<a class="headerlink" href="#naming-variables" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Allowed characters are <code class="docutils literal notranslate"><span class="pre">_</span></code>, <code class="docutils literal notranslate"><span class="pre">0-9</span></code>, <code class="docutils literal notranslate"><span class="pre">a-z</span></code>, <code class="docutils literal notranslate"><span class="pre">A-Z</span></code>. Variable names MUST not start with a number.</p>
@@ -181,9 +191,9 @@
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">CaseMatters</span></code> is different to <code class="docutils literal notranslate"><span class="pre">casematters</span></code>!</p>
 </div>
-</div>
-<div class="section" id="define-them-before-you-use-them">
-<h2><span class="section-number">5.8.2. </span>Define them before you use them<a class="headerlink" href="#define-them-before-you-use-them" title="Permalink to this headline"></a></h2>
+</section>
+<section id="define-them-before-you-use-them">
+<h2><span class="section-number">5.8.2. </span>Define them before you use them<a class="headerlink" href="#define-them-before-you-use-them" title="Permalink to this heading"></a></h2>
 <p>Often, this simply means before you use them (i.e. closer to the top of the file). So, we can, for instance do the following:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -202,18 +212,18 @@
 </div>
 <p>It’s noteworthy that this is not a general algorithm – we have an explicit solution that works for just these values of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. If we want to evaluate different values of these two variables. we have to edit the lines defining the variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> and rerun the program.</p>
 <p>Compare this expression to the original mathematical equation. Clearly, we have rewritten it so we have solved the equation already.</p>
-</div>
-<div class="section" id="the-assignment-statement">
-<span id="index-1"></span><h2><span class="section-number">5.8.3. </span>The assignment statement<a class="headerlink" href="#the-assignment-statement" title="Permalink to this headline"></a></h2>
+</section>
+<section id="the-assignment-statement">
+<span id="index-1"></span><h2><span class="section-number">5.8.3. </span>The assignment statement<a class="headerlink" href="#the-assignment-statement" title="Permalink to this heading"></a></h2>
 <p>As illustrated above, an assignment statement is creation of a named reference (the variable) to some data. They are characterised by 3 components:</p>
 <ol class="arabic simple">
 <li><p>the variable name</p></li>
 <li><p>a <strong>single</strong> <code class="docutils literal notranslate"><span class="pre">=</span></code></p></li>
 <li><p>the value (or data)</p></li>
 </ol>
-</div>
-<div class="section" id="assignment-unpacking">
-<h2><span class="section-number">5.8.4. </span>Assignment unpacking<a class="headerlink" href="#assignment-unpacking" title="Permalink to this headline"></a></h2>
+</section>
+<section id="assignment-unpacking">
+<h2><span class="section-number">5.8.4. </span>Assignment unpacking<a class="headerlink" href="#assignment-unpacking" title="Permalink to this heading"></a></h2>
 <p>Sometimes, its useful to do multiple variable assignments in one go. Which value maps to which variable? (You can answer that definitively by trying it.)</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -224,10 +234,10 @@
 <div class="cell_output docutils container">
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<h1><span class="section-number">5.9. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+</section>
+</section>
+<section id="exercises">
+<h1><span class="section-number">5.9. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
 <ol class="arabic">
 <li><p>Enter the following. What happens? Why?</p>
 <blockquote>
@@ -260,7 +270,7 @@
 </li>
 <li><p>Define a variable using invalid syntax, i.e. your code should generate a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>.</p></li>
 </ol>
-</div>
+</section>
 
 
            </div>
@@ -273,7 +283,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

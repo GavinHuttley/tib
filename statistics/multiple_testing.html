@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9.6. Hypothesis testing on genomic data &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>9.6. Hypothesis testing on genomic data &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -71,7 +81,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -87,9 +97,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">9. </span>Statistical analysis</a> &raquo;</li>
-      <li><span class="section-number">9.6. </span>Hypothesis testing on genomic data</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">9. </span>Statistical analysis</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">9.6. </span>Hypothesis testing on genomic data</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/statistics/multiple_testing.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -123,17 +133,17 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="hypothesis-testing-on-genomic-data">
-<h1><span class="section-number">9.6. </span>Hypothesis testing on genomic data<a class="headerlink" href="#hypothesis-testing-on-genomic-data" title="Permalink to this headline"></a></h1>
+<section id="hypothesis-testing-on-genomic-data">
+<h1><span class="section-number">9.6. </span>Hypothesis testing on genomic data<a class="headerlink" href="#hypothesis-testing-on-genomic-data" title="Permalink to this heading"></a></h1>
 <p>For scientists dealing with genomic data, studies were only a single hypothesis test is performed are rare. Rather, the same hypothesis test may be employed thousands, or hundreds of thousands of times. For instance, Genome Wide Association Studies (or GWAS) evaluate for each Single Nucleotide Polymorphism (or SNP) whether allele counts differ between disease and non-disease samples. With each such test returning a <span class="math notranslate nohighlight">\(p\)</span>-value, the risk of incorrectly rejecting a null hypothesis is greatly amplified.</p>
 <p>Let’s define our significance threshold as per the convention, a <span class="math notranslate nohighlight">\(p\)</span>-value<span class="math notranslate nohighlight">\(\le 0.05\)</span>. Drawing on the definition of the <span class="math notranslate nohighlight">\(p\)</span>-value, we expected to obtain a significant result 5% of the time. This means that if we looked at GWAS results from 100 SNPs when there is no genetic basis for a phenotype (i.e. the null hypothesis is true), we expect 5 SNPs to be “significant”. If we looked at 100,000 SNPs, we expect 5000 to be significant.</p>
 <p>This is the critical issue confronting genomics studies with very significant practical implications. It not cost-effective to follow up on each such significant result as if it were an equally likely candidate. Instead, we need to employ statistical procedures that adjust for the number of tests that have been performed and increase our confidence that what we select are true positives.</p>
-<div class="section" id="the-bonferroni-correction">
-<h2><span class="section-number">9.6.1. </span>The Bonferroni correction<a class="headerlink" href="#the-bonferroni-correction" title="Permalink to this headline"></a></h2>
+<section id="the-bonferroni-correction">
+<h2><span class="section-number">9.6.1. </span>The Bonferroni correction<a class="headerlink" href="#the-bonferroni-correction" title="Permalink to this heading"></a></h2>
 <p>This approach to correcting for multiple tests attempts to control the “number” of errors (false discoveries), specifically the probability of seeing 1 or more such errors. This is a strict, very conservative, approach. In applying this, one is prone to accepting the null hypothesis when it’s actually False.</p>
 <p>If one conducts <span class="math notranslate nohighlight">\(k\)</span> statistical tests and the desired significance level is <span class="math notranslate nohighlight">\(\alpha\)</span>, then we compute a corrected significance threshold of <span class="math notranslate nohighlight">\(\frac{\alpha}{k}\)</span>. If we set <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 and <span class="math notranslate nohighlight">\(k\)</span>=100, then the corrected single test threshold is <span class="math notranslate nohighlight">\(\alpha^\prime\)</span>=0.0005.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -146,7 +156,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.37. More on looping &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>5.37. More on looping &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -107,7 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -123,9 +133,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-      <li><span class="section-number">5.37. </span>More on looping</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.37. </span>More on looping</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/more_looping.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -159,8 +169,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="more-on-looping">
-<span id="index-0"></span><h1><span class="section-number">5.37. </span>More on looping<a class="headerlink" href="#more-on-looping" title="Permalink to this headline"></a></h1>
+<section id="more-on-looping">
+<span id="index-0"></span><h1><span class="section-number">5.37. </span>More on looping<a class="headerlink" href="#more-on-looping" title="Permalink to this heading"></a></h1>
 <p>So far, all the looping has been quite simple – iterating over a one dimensional series. This means we have used a single <code class="docutils literal notranslate"><span class="pre">for</span></code> statement. But it’s not uncommon to have (at least) a 2-dimensional array (e.g. numbers). How can we iterate over all elements in such a case?</p>
 <p>In the following example, <code class="docutils literal notranslate"><span class="pre">two_d</span></code> is a list of lists.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -203,11 +213,11 @@
 <p class="admonition-title">Note</p>
 <p>We can index (or slice) a multi-dimensional data by extending the square bracket notation with each pair of square brackets referencing additional dimensions.</p>
 </div>
-<div class="sidebar" id="array-coordinates">
+<aside class="sidebar" id="array-coordinates">
 <p class="sidebar-title">Differences between cartesian and array coordinates</p>
 <p>It’s worth pointing out a significant distinction between <span class="target" id="index-1"></span>“cartesian coordinates” and what I’ll refer to as <span class="target" id="index-2"></span>“array coordinates”. The former is what you know and love from graphing data where coordinates are expressed as <span class="math notranslate nohighlight">\(x, y\)</span> in that order, where the <span class="math notranslate nohighlight">\(x\)</span>-value occurs first and represents a position on a horizontal axis – increasing from left to right. The <span class="math notranslate nohighlight">\(y\)</span>-value comes second and represents a position on the vertical axis – increasing from bottom to top.</p>
 <p>Array coordinates are totally different – they are expressed as in <span class="math notranslate nohighlight">\(row, column\)</span> order. The value for column is analogous to the <span class="math notranslate nohighlight">\(x\)</span> values (representing horizontal position and increases left to right). However, the value for <code class="docutils literal notranslate"><span class="pre">row</span></code> occurs first and it represents the vertical position. Row values also increases top to bottom! Hence, the <code class="docutils literal notranslate"><span class="pre">two_d[1]</span></code> refers to the second row which is at the bottom. This is exactly same numbering pattern as you see in spreadsheet programs. The distinction matters when you try and accumulate array based points for plotting.</p>
-</div>
+</aside>
 <p id="index-3">Knowing, in this case, that we have 2 rows and 5 columns we can generate all possible indices with nested for loops combined with the builtin <code class="docutils literal notranslate"><span class="pre">range()</span></code> function.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -285,9 +295,9 @@ i=1, j=1
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercises">
-<h1><span class="section-number">5.38. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+</section>
+<section id="exercises">
+<h1><span class="section-number">5.38. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
 <ol class="arabic">
 <li><p>Consider the following two-dimensional list</p>
 <blockquote>
@@ -306,7 +316,7 @@ row=0 col=1 val=4
 </li>
 <li><p>Construct a list of lists that contains different data types, some ints, some floats, some strings. Then using nested iteration, record the row and column coordinates (in separate lists) when the value is a string. For instance, if I used <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">&quot;data&quot;,</span> <span class="pre">3.1]]</span></code> and I would produce <code class="docutils literal notranslate"><span class="pre">[0],</span> <span class="pre">[1]</span></code>.</p></li>
 </ol>
-</div>
+</section>
 
 
            </div>
@@ -319,7 +329,7 @@ row=0 col=1 val=4
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

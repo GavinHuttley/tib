@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.6. Genetic Codes &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>8.6. Genetic Codes &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -78,7 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -94,9 +104,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a> &raquo;</li>
-      <li><span class="section-number">8.6. </span>Genetic Codes</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">8.6. </span>Genetic Codes</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/genetic_codes.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -130,8 +140,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="genetic-codes">
-<span id="id1"></span><h1><span class="section-number">8.6. </span>Genetic Codes<a class="headerlink" href="#genetic-codes" title="Permalink to this headline"></a></h1>
+<section id="genetic-codes">
+<span id="id1"></span><h1><span class="section-number">8.6. </span>Genetic Codes<a class="headerlink" href="#genetic-codes" title="Permalink to this heading"></a></h1>
 <p>Fundmental information encoding system and a fascinating subject of study. <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> provides a dedicated object for handling genetic code information. The genetic codes included with <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> are indicated in the following table indicates.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -163,27 +173,37 @@
 <th>Code ID</th><th>Name</th>
 </thead>
 <tbody>
-<tr><td class="index"><span class="c3col_right">1</span></td><td><span class="c3col_left">Standard Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">1</span></td><td><span class="c3col_left">Standard</span></td></tr>
 <tr><td class="index"><span class="c3col_right">2</span></td><td><span class="c3col_left">Vertebrate Mitochondrial</span></td></tr>
 <tr><td class="index"><span class="c3col_right">3</span></td><td><span class="c3col_left">Yeast Mitochondrial</span></td></tr>
-<tr><td class="index"><span class="c3col_right">4</span></td><td><span class="c3col_left">Mold, Protozoan, and Coelenterate Mitochondrial, and Mycoplasma/Spiroplasma Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">4</span></td><td><span class="c3col_left">Mold Mitochondrial; Protozoan Mitochondrial; Coelenterate Mitochondrial; Mycoplasma; Spiroplasma</span></td></tr>
 <tr><td class="index"><span class="c3col_right">5</span></td><td><span class="c3col_left">Invertebrate Mitochondrial</span></td></tr>
-<tr><td class="index"><span class="c3col_right">6</span></td><td><span class="c3col_left">Ciliate, Dasycladacean and Hexamita Nuclear</span></td></tr>
-<tr><td class="index"><span class="c3col_right">9</span></td><td><span class="c3col_left">Echinoderm and Flatworm Mitochondrial</span></td></tr>
+<tr><td class="index"><span class="c3col_right">6</span></td><td><span class="c3col_left">Ciliate Nuclear; Dasycladacean Nuclear; Hexamita Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">9</span></td><td><span class="c3col_left">Echinoderm Mitochondrial; Flatworm Mitochondrial</span></td></tr>
 <tr><td class="index"><span class="c3col_right">10</span></td><td><span class="c3col_left">Euplotid Nuclear</span></td></tr>
-<tr><td class="index"><span class="c3col_right">11</span></td><td><span class="c3col_left">Bacterial Nuclear and Plant Plastid</span></td></tr>
+<tr><td class="index"><span class="c3col_right">11</span></td><td><span class="c3col_left">Bacterial, Archaeal and Plant Plastid</span></td></tr>
 <tr><td class="index"><span class="c3col_right">12</span></td><td><span class="c3col_left">Alternative Yeast Nuclear</span></td></tr>
 <tr><td class="index"><span class="c3col_right">13</span></td><td><span class="c3col_left">Ascidian Mitochondrial</span></td></tr>
 <tr><td class="index"><span class="c3col_right">14</span></td><td><span class="c3col_left">Alternative Flatworm Mitochondrial</span></td></tr>
-<tr><td class="index"><span class="c3col_right">15</span></td><td><span class="c3col_left">Blepharisma Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">15</span></td><td><span class="c3col_left">Blepharisma Macronuclear</span></td></tr>
 <tr><td class="index"><span class="c3col_right">16</span></td><td><span class="c3col_left">Chlorophycean Mitochondrial</span></td></tr>
-<tr><td class="index"><span class="c3col_right">20</span></td><td><span class="c3col_left">Trematode Mitochondrial</span></td></tr>
+<tr><td class="index"><span class="c3col_right">21</span></td><td><span class="c3col_left">Trematode Mitochondrial</span></td></tr>
 <tr><td class="index"><span class="c3col_right">22</span></td><td><span class="c3col_left">Scenedesmus obliquus Mitochondrial</span></td></tr>
 <tr><td class="index"><span class="c3col_right">23</span></td><td><span class="c3col_left">Thraustochytrium Mitochondrial</span></td></tr>
+<tr><td class="index"><span class="c3col_right">24</span></td><td><span class="c3col_left">Rhabdopleuridae Mitochondrial</span></td></tr>
+<tr><td class="index"><span class="c3col_right">25</span></td><td><span class="c3col_left">Candidate Division SR1 and Gracilibacteria</span></td></tr>
+<tr><td class="index"><span class="c3col_right">26</span></td><td><span class="c3col_left">Pachysolen tannophilus Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">27</span></td><td><span class="c3col_left">Karyorelict Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">28</span></td><td><span class="c3col_left">Condylostoma Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">29</span></td><td><span class="c3col_left">Mesodinium Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">30</span></td><td><span class="c3col_left">Peritrich Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">31</span></td><td><span class="c3col_left">Blastocrithidia Nuclear</span></td></tr>
+<tr><td class="index"><span class="c3col_right">32</span></td><td><span class="c3col_left">Balanophoraceae Plastid</span></td></tr>
+<tr><td class="index"><span class="c3col_right">33</span></td><td><span class="c3col_left">Cephalodiscidae Mitochondrial</span></td></tr>
 </tbody>
 </table>
 <p>
-17 rows x 2 columns</p>
+27 rows x 2 columns</p>
 </div></div></div>
 </div>
 <p>Use the top level <code class="docutils literal notranslate"><span class="pre">get_code()</span></code> function to get a specific genetic code. Use a code ID from the above table.</p>
@@ -219,7 +239,7 @@
 <table>
 
 <caption>
-<span class="cell_title">Standard Nuclear</span>
+<span class="cell_title">Standard</span>
 </caption>
 <thead class="head_cell">
 <th>aa</th><th>IUPAC code</th><th>codons</th>
@@ -251,8 +271,8 @@
 
 </div></div></div>
 </div>
-<div class="section" id="useful-geneticcode-attributes">
-<h2><span class="section-number">8.6.1. </span>Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes<a class="headerlink" href="#useful-geneticcode-attributes" title="Permalink to this headline"></a></h2>
+<section id="useful-geneticcode-attributes">
+<h2><span class="section-number">8.6.1. </span>Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes<a class="headerlink" href="#useful-geneticcode-attributes" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">sense_codons</span></code></dt><dd><p>The codons that encode an amino acid. The trinucleotide string is the key, the single character IUPAC code for the amino acid is the value.</p>
 </dd>
@@ -261,9 +281,9 @@
 <dt><code class="docutils literal notranslate"><span class="pre">synonyms</span></code></dt><dd><p>Maps all amino acid IUPAC codes to their codons. (The reverse of <code class="docutils literal notranslate"><span class="pre">codons</span></code>.)</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="using-geneticcode-instances">
-<h2><span class="section-number">8.6.2. </span>Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances<a class="headerlink" href="#using-geneticcode-instances" title="Permalink to this headline"></a></h2>
+</section>
+<section id="using-geneticcode-instances">
+<h2><span class="section-number">8.6.2. </span>Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances<a class="headerlink" href="#using-geneticcode-instances" title="Permalink to this heading"></a></h2>
 <p>Genetic code objects act like dictionaries for trinucleotide strings or single letter strings. The former are interpreted as RNA or DNA, the latter as the single code amino acid.</p>
 <p>You can get the encoded amino acid from a RNA triplet</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -293,12 +313,13 @@
 </div>
 </div>
 </div>
-<p>The mapping from codon to amino acid is provided by a <code class="docutils literal notranslate"><span class="pre">sense_codons</span></code> attribute of the genetic code instance. So calling <code class="docutils literal notranslate"><span class="pre">list()</span></code> on that dict returns just the sense codons <a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
-<dd><p>I’m truncating that list to just 4 elements to simplify the display.</p>
-</dd>
-</dl>
+<p>The mapping from codon to amino acid is provided by a <code class="docutils literal notranslate"><span class="pre">sense_codons</span></code> attribute of the genetic code instance. So calling <code class="docutils literal notranslate"><span class="pre">list()</span></code> on that dict returns just the sense codons <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>I’m truncating that list to just 4 elements to simplify the display.</p>
+</aside>
+</aside>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">gc</span><span class="o">.</span><span class="n">sense_codons</span><span class="p">)[:</span><span class="mi">4</span><span class="p">]</span>
@@ -420,7 +441,7 @@
 <table>
 
 <caption>
-<span class="cell_title">Standard Nuclear</span>
+<span class="cell_title">Standard</span>
 </caption>
 <thead class="head_cell">
 <th>aa</th><th>IUPAC code</th><th>codons</th>
@@ -454,15 +475,16 @@
 </div></div></div>
 </div>
 <p>See the <a class="reference external" href="https://cogent3.org">cogent3</a> cookbook documentation for more on using genetic codes.</p>
-</div>
-<div class="section" id="exercises">
-<h2><span class="section-number">8.6.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h2>
-<p>Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position <a class="footnote-reference brackets" href="#id5" id="id4">2</a>. The following questions refer to these groupings.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
-<dd><p>1st, 2nd and 3rd codon position.</p>
-</dd>
-</dl>
+</section>
+<section id="exercises">
+<h2><span class="section-number">8.6.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h2>
+<p>Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position <a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. The following questions refer to these groupings.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p>1st, 2nd and 3rd codon position.</p>
+</aside>
+</aside>
 <ol class="arabic">
 <li><p>Pick a genetic code and, for each such codon position group, count the number of changes that are synonymous. Is there a difference between the codon position and the proportion of synonymous changes?</p></li>
 <li><p>Does the property measured in the previous question differ between the genetic codes?</p></li>
@@ -473,8 +495,8 @@
 </div></blockquote>
 </li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -487,7 +509,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

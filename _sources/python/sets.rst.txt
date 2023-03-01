@@ -156,20 +156,22 @@ Exercises
 
 #. For the following data, you want to create a set that excludes dinucleotides containing a non-canonical DNA character (see Expected Output). Solve this problem in two different ways. (a) by creating the set of unique dinucleotides and creating the correct set from that. (b) by creating an empty set, iterating over dinucleotides in ``data`` and adding them only if they consist of canonical nucleotides. Which algorithm is faster and why?
 
-    .. tabbed:: Data
-
-        .. jupyter-execute::
-
-            data = ['GC', 'CA', 'AA', 'NG', 'GG', 'GA', 'AG',
-                    'GC', 'CC', 'CR', 'AA', 'AC', 'CA', 'NN',
-                    'TA', 'AA', 'AY', 'CA', 'AG']
-
-    .. tabbed:: Expected Output
+    .. tab-set::
     
-        .. jupyter-execute::
-            :hide-code:
+        .. tab-item:: Data
+
+            .. jupyter-execute::
+
+                data = ['GC', 'CA', 'AA', 'NG', 'GG', 'GA', 'AG',
+                        'GC', 'CC', 'CR', 'AA', 'AC', 'CA', 'NN',
+                        'TA', 'AA', 'AY', 'CA', 'AG']
+
+        .. tab-item:: Expected Output
+    
+            .. jupyter-execute::
+                :hide-code:
         
-            data = set(data)
-            nucs = set("ACGT")
-            data = {d for d in data if set(d) <= nucs}
-            print(data)
+                data = set(data)
+                nucs = set("ACGT")
+                data = {d for d in data if set(d) <= nucs}
+                print(data)

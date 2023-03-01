@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.8. Overview of cogent3 apps &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>8.8. Overview of cogent3 apps &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -73,7 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -89,9 +99,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a> &raquo;</li>
-      <li><span class="section-number">8.8. </span>Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">8.8. </span>Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/apps.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -125,8 +135,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="overview-of-cogent3-apps">
-<span id="apps"></span><h1><span class="section-number">8.8. </span>Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps<a class="headerlink" href="#overview-of-cogent3-apps" title="Permalink to this headline"></a></h1>
+<section id="overview-of-cogent3-apps">
+<span id="apps"></span><h1><span class="section-number">8.8. </span>Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps<a class="headerlink" href="#overview-of-cogent3-apps" title="Permalink to this heading"></a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">cogent3.apps</span></code> can be though of as customised functions that have some special capabilities. The approach to using an existing app is to construct a configured instance, typically by calling the app with some argument values tuned for your particular case. You then apply it to input data by simply calling, without specifying any arguments.</p>
 <p>There are quite a few apps and you can see an overview of what’s available as follows</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -165,20 +175,20 @@
 <th>module</th><th>name</th><th>composable</th><th>doc</th><th>input type</th><th>output type</th>
 </thead>
 <tbody>
-<tr><td><span class="c3col_left">cogent3.app.dist</span></td><td><span class="c3col_left">fast_slow_dist</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Pairwise distance calculation for aligned sequences.</span></td><td><span class="c3col_left">Alignment, ArrayAlignment</span></td><td><span class="c3col_left">DistanceMatrix, SerialisableType</span></td></tr>
-<tr><td><span class="c3col_left">cogent3.app.tree</span></td><td><span class="c3col_left">scale_branches</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Transforms tree branch lengths from nucleotide to codon, or the converse.</span></td><td><span class="c3col_left">PhyloNode, TreeNode</span></td><td><span class="c3col_left">PhyloNode, SerialisableType, TreeNode</span></td></tr>
-<tr><td><span class="c3col_left">cogent3.app.tree</span></td><td><span class="c3col_left">uniformize_tree</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Standardises the orientation of unrooted trees.</span></td><td><span class="c3col_left">PhyloNode, TreeNode</span></td><td><span class="c3col_left">PhyloNode, SerialisableType, TreeNode</span></td></tr>
-<tr><td><span class="c3col_left">cogent3.app.tree</span></td><td><span class="c3col_left">quick_tree</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Neighbour Joining tree based on pairwise distances.</span></td><td><span class="c3col_left">DistanceMatrix</span></td><td><span class="c3col_left">PhyloNode, SerialisableType, TreeNode</span></td></tr>
-<tr><td><span class="c3col_left">cogent3.app.align</span></td><td><span class="c3col_left">align_to_ref</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Aligns sequences to a nominated reference in the unaligned collection.</span></td><td><span class="c3col_left">SequenceCollection</span></td><td><span class="c3col_left">Alignment, ArrayAlignment, SerialisableType</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.io_new</span></td><td><span class="c3col_left">pickle_it</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Serialises data using pickle.</span></td><td><span class="c3col_left">SerialisableType</span></td><td><span class="c3col_left">bytes</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.io_new</span></td><td><span class="c3col_left">unpickle_it</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Deserialises pickle data.</span></td><td><span class="c3col_left">bytes</span></td><td><span class="c3col_left">SerialisableType</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.io_new</span></td><td><span class="c3col_left">compress</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Compresses bytes data.</span></td><td><span class="c3col_left">bytes</span></td><td><span class="c3col_left">bytes</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.io_new</span></td><td><span class="c3col_left">decompress</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">Decompresses data.</span></td><td><span class="c3col_left">bytes</span></td><td><span class="c3col_left">bytes</span></td></tr>
+<tr><td><span class="c3col_left">cogent3.app.io_new</span></td><td><span class="c3col_left">to_primitive</span></td><td><span class="c3col_left">True</span></td><td><span class="c3col_left">convert an object to primitive python types suitable for serialisation</span></td><td><span class="c3col_left">SerialisableType</span></td><td><span class="c3col_left">SerialisableType</span></td></tr>
 </tbody>
 </table>
 <p>Top 5 rows from
-38 rows x 6 columns</p>
+46 rows x 6 columns</p>
 </div></div></div>
 </div>
 <p>That function returns a cogent3 table, so I’m just displaying the first few rows.</p>
 <p>See the <a class="reference external" href="https://cogent3.org/doc/app/index.html">cogent3 apps documentation</a> for more details.</p>
-</div>
+</section>
 
 
            </div>
@@ -191,7 +201,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

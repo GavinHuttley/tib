@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.7. Experimental procedures for detecting functionally related sequences &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>6.7. Experimental procedures for detecting functionally related sequences &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -84,7 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -100,9 +110,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
-      <li><span class="section-number">6.7. </span>Experimental procedures for detecting functionally related sequences</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6.7. </span>Experimental procedures for detecting functionally related sequences</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/related_by_function.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -136,44 +146,51 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="experimental-procedures-for-detecting-functionally-related-sequences">
-<span id="experimental-data"></span><h1><span class="section-number">6.7. </span>Experimental procedures for detecting functionally related sequences<a class="headerlink" href="#experimental-procedures-for-detecting-functionally-related-sequences" title="Permalink to this headline"></a></h1>
+<section id="experimental-procedures-for-detecting-functionally-related-sequences">
+<span id="experimental-data"></span><h1><span class="section-number">6.7. </span>Experimental procedures for detecting functionally related sequences<a class="headerlink" href="#experimental-procedures-for-detecting-functionally-related-sequences" title="Permalink to this heading"></a></h1>
 <p>Since DNA sequences can encode function, it holds that different sequences demonstrated to encode a comparable property should be similar. For instance, different sequences that are able to bind a specific protein (e.g. TBP) will share sequence features in common. This perspective motivates development of experimental and statistical techniques to uncover how such functional information is encoded.</p>
 <p>What sort of experiments can be conducted that allow identifying whether there is a particular diagnostic DNA sequence motif to which a protein binds? Whatever the nature of the experiment, we need a means for isolating a collection of sequences that are enriched for those that bind to the protein of interest. The experiment also needs to be able to identify the sequence of DNA molecules that have bound. Once that data exists we enter the world of computation and statistical analysis.</p>
 <p>There are a variety of experimental procedures that can used for this purpose <span id="id1">[<a class="reference internal" href="#id39" title="Marcel Geertz and Sebastian J Maerkl. Experimental strategies for studying transcription factor-dna binding specificities. Brief Funct Genomics, 9:362-73, 2010. doi:10.1093/bfgp/elq023.">GM10</a>]</span>. I will discuss just two of those here.</p>
-<div class="section" id="selex-systematic-evolution-of-ligands-by-exponential-enrichment">
-<span id="index-0"></span><h2><span class="section-number">6.7.1. </span>SELEX – Systematic evolution of ligands by exponential enrichment<a class="headerlink" href="#selex-systematic-evolution-of-ligands-by-exponential-enrichment" title="Permalink to this headline"></a></h2>
-<p>This procedure is entirely <em>in vitro</em>. The inputs are a substantial amount of enriched protein <a class="footnote-reference brackets" href="#id3" id="id2">1</a> which is bound to a bead. Also required is a library of synthetically produced double stranded DNA of a precise fragment size. These two substrate are then incubated together under conditions favourable to binding of the DNA and protein. By eluting the unbound DNA fragments, you wind up with beads that have bound DNA. Those DNA fragments are then dissociated from the beads and amplified using PCR. This new DNA pool is then reintroduced to bead-bound protein and the process is repeated. (Only a few a rounds are done.) At the end of these iterations, the bound DNA is isolated again and the collection of DNA fragments is sequenced.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
-<dd><p>The requirement for a lot of protein limits the utility of this technique.</p>
-</dd>
-</dl>
-<div class="figure align-default" id="id47">
+<section id="selex-systematic-evolution-of-ligands-by-exponential-enrichment">
+<span id="index-0"></span><h2><span class="section-number">6.7.1. </span>SELEX – Systematic evolution of ligands by exponential enrichment<a class="headerlink" href="#selex-systematic-evolution-of-ligands-by-exponential-enrichment" title="Permalink to this heading"></a></h2>
+<p>This procedure is entirely <em>in vitro</em>. The inputs are a substantial amount of enriched protein <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> which is bound to a bead. Also required is a library of synthetically produced double stranded DNA of a precise fragment size. These two substrate are then incubated together under conditions favourable to binding of the DNA and protein. By eluting the unbound DNA fragments, you wind up with beads that have bound DNA. Those DNA fragments are then dissociated from the beads and amplified using PCR. This new DNA pool is then reintroduced to bead-bound protein and the process is repeated. (Only a few a rounds are done.) At the end of these iterations, the bound DNA is isolated again and the collection of DNA fragments is sequenced.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>The requirement for a lot of protein limits the utility of this technique.</p>
+</aside>
+</aside>
+<figure class="align-default" id="id47">
 <a class="reference internal image-reference" href="../_images/selex.png"><img alt="../_images/selex.png" src="../_images/selex.png" style="width: 190.5px; height: 271.0px;" /></a>
-<p class="caption"><span class="caption-text">A synthetic sequence assessment procedure.</span><a class="headerlink" href="#id47" title="Permalink to this image"></a></p>
-</div>
-</div>
-<div class="section" id="chip-chromatin-immunoprecipitation">
-<span id="index-1"></span><h2><span class="section-number">6.7.2. </span>ChIP – chromatin immunoprecipitation<a class="headerlink" href="#chip-chromatin-immunoprecipitation" title="Permalink to this headline"></a></h2>
-<p>ChIP-seq is an <em>in vivo</em> process. A precursor for this technique is the availability of an antibody with high specificity for the protein of interest. With this in place, the cellular material of interest is exposed to formaldehyde which causes formation of cross linking (via covalent bonds) between DNA and whatever else is bound to it. The cells are then lysed and the DNA protein mix extracted and sheared <a class="footnote-reference brackets" href="#id5" id="id4">2</a> to a size suitable for the sequencing technology that will be used. You then expose the sheared DNA+protein mixture to the antibody and precipitate bound complexes. This step is followed by chemistry that reverses the cross linking, the protein is removed and the collection of DNA fragments are sequenced.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
-<dd><p>Sonication being one approach.</p>
-</dd>
-</dl>
-<div class="figure align-default" id="id48">
+<figcaption>
+<p><span class="caption-text">A synthetic sequence assessment procedure.</span><a class="headerlink" href="#id47" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="chip-chromatin-immunoprecipitation">
+<span id="index-1"></span><h2><span class="section-number">6.7.2. </span>ChIP – chromatin immunoprecipitation<a class="headerlink" href="#chip-chromatin-immunoprecipitation" title="Permalink to this heading"></a></h2>
+<p>ChIP-seq is an <em>in vivo</em> process. A precursor for this technique is the availability of an antibody with high specificity for the protein of interest. With this in place, the cellular material of interest is exposed to formaldehyde which causes formation of cross linking (via covalent bonds) between DNA and whatever else is bound to it. The cells are then lysed and the DNA protein mix extracted and sheared <a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> to a size suitable for the sequencing technology that will be used. You then expose the sheared DNA+protein mixture to the antibody and precipitate bound complexes. This step is followed by chemistry that reverses the cross linking, the protein is removed and the collection of DNA fragments are sequenced.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p>Sonication being one approach.</p>
+</aside>
+</aside>
+<figure class="align-default" id="id48">
 <a class="reference internal image-reference" href="../_images/chipseq.png"><img alt="../_images/chipseq.png" src="../_images/chipseq.png" style="width: 283.5px; height: 212.5px;" /></a>
-<p class="caption"><span class="caption-text">An empirical survey of naturally occurring DNA <a class="footnote-reference brackets" href="#id7" id="id6">3</a>.</span><a class="headerlink" href="#id48" title="Permalink to this image"></a></p>
-</div>
-<dl class="footnote brackets">
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id6">3</a></span></dt>
-<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/ChIP-sequencing">Wikipedia entry</a></p>
-</dd>
-</dl>
-</div>
-<div class="section" id="with-the-sequence-data-from-those-experimental-procedures">
-<h2><span class="section-number">6.7.3. </span>With the sequence data from those experimental procedures<a class="headerlink" href="#with-the-sequence-data-from-those-experimental-procedures" title="Permalink to this headline"></a></h2>
+<figcaption>
+<p><span class="caption-text">An empirical survey of naturally occurring DNA <a class="footnote-reference brackets" href="#id7" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.</span><a class="headerlink" href="#id48" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id7" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/ChIP-sequencing">Wikipedia entry</a></p>
+</aside>
+</aside>
+</section>
+<section id="with-the-sequence-data-from-those-experimental-procedures">
+<h2><span class="section-number">6.7.3. </span>With the sequence data from those experimental procedures<a class="headerlink" href="#with-the-sequence-data-from-those-experimental-procedures" title="Permalink to this heading"></a></h2>
 <p>Identifying a dominant motif requires a way of summarising features across a collection of sequences. For instance, we can “align” fragments and employ a majority rule consensus approach. This just picks the most frequent state in a column of <em>aligned</em> sequences.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>01234 &lt;-- the &quot;index&quot; or position
 TCAGA
@@ -200,15 +217,16 @@ TYHBM &lt;-- the IUPAC consensus
 <p class="admonition-title">Note</p>
 <p>In the above, <code class="docutils literal notranslate"><span class="pre">Y</span></code> is either <code class="docutils literal notranslate"><span class="pre">C</span></code> or <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p>
 </div>
-</div>
-<div class="section" id="transformation-of-the-data-for-analysis">
-<span id="pssm-origins"></span><h2><span class="section-number">6.7.4. </span>Transformation of the data for analysis<a class="headerlink" href="#transformation-of-the-data-for-analysis" title="Permalink to this headline"></a></h2>
-<p>From an experimental procedure, we ultimately seek to obtain a curated set of “aligned” sequences. I illustrate a hypothetical such case below <a class="footnote-reference brackets" href="#id9" id="id8">4</a>.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id8">4</a></span></dt>
-<dd><p>Positions displaying a <code class="docutils literal notranslate"><span class="pre">.</span></code> have the same nucleotide as <code class="docutils literal notranslate"><span class="pre">&quot;seq-0&quot;</span></code> for that column.</p>
-</dd>
-</dl>
+</section>
+<section id="transformation-of-the-data-for-analysis">
+<span id="pssm-origins"></span><h2><span class="section-number">6.7.4. </span>Transformation of the data for analysis<a class="headerlink" href="#transformation-of-the-data-for-analysis" title="Permalink to this heading"></a></h2>
+<p>From an experimental procedure, we ultimately seek to obtain a curated set of “aligned” sequences. I illustrate a hypothetical such case below <a class="footnote-reference brackets" href="#id9" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id9" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">4</a><span class="fn-bracket">]</span></span>
+<p>Positions displaying a <code class="docutils literal notranslate"><span class="pre">.</span></code> have the same nucleotide as <code class="docutils literal notranslate"><span class="pre">&quot;seq-0&quot;</span></code> for that column.</p>
+</aside>
+</aside>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><style>
@@ -286,14 +304,14 @@ TYHBM &lt;-- the IUPAC consensus
 <hr class="docutils" />
 <p class="rubric">Citations</p>
 <div class="docutils container" id="id11">
-<dl class="citation">
-<dt class="label" id="id39"><span class="brackets"><a class="fn-backref" href="#id1">GM10</a></span></dt>
-<dd><p>Marcel Geertz and Sebastian J Maerkl. Experimental strategies for studying transcription factor-dna binding specificities. <em>Brief Funct Genomics</em>, 9:362–73, 2010. <a class="reference external" href="https://doi.org/10.1093/bfgp/elq023">doi:10.1093/bfgp/elq023</a>.</p>
-</dd>
-</dl>
+<div class="citation" id="id39" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">GM10</a><span class="fn-bracket">]</span></span>
+<p>Marcel Geertz and Sebastian J Maerkl. Experimental strategies for studying transcription factor-dna binding specificities. <em>Brief Funct Genomics</em>, 9:362–73, 2010. <a class="reference external" href="https://doi.org/10.1093/bfgp/elq023">doi:10.1093/bfgp/elq023</a>.</p>
 </div>
 </div>
 </div>
+</section>
+</section>
 
 
            </div>
@@ -306,7 +324,7 @@ TYHBM &lt;-- the IUPAC consensus
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

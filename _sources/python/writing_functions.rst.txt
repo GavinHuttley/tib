@@ -107,26 +107,28 @@ Required arguments
 
 When calling a function, the order in which you provide arguments defines what variable they're assigned to. One exception to this is if you specify the arguments as ``argument=value`` (key-value arguments).
 
-.. tabbed:: Correct Invocation
+.. tab-set::
+    
+    .. tab-item:: Correct Invocation
 
-    Both ``a`` and ``b`` are required. 
+        Both ``a`` and ``b`` are required. 
 
-    .. jupyter-execute::
+        .. jupyter-execute::
 
-        get_diff(6, 4)
+            get_diff(6, 4)
 
-    .. jupyter-execute::
+        .. jupyter-execute::
 
-        get_diff(b=6, a=4)
+            get_diff(b=6, a=4)
 
-.. tabbed:: Incorrect Invocation
+    .. tab-item:: Incorrect Invocation
 
-    If you don't provide both arguments you will get an *exception*, in this case a ``TypeError``.
+        If you don't provide both arguments you will get an *exception*, in this case a ``TypeError``.
 
-    .. jupyter-execute::
-        :raises:
+        .. jupyter-execute::
+            :raises:
 
-        get_diff(1)
+            get_diff(1)
 
 .. index::
     pair: optional arguments; function

@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.39. Extending capabilities using import &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>5.39. Extending capabilities using import &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -112,7 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -128,9 +138,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-      <li><span class="section-number">5.39. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.39. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/import.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -164,8 +174,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="extending-capabilities-using-import">
-<span id="import-module"></span><span id="index-0"></span><h1><span class="section-number">5.39. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#extending-capabilities-using-import" title="Permalink to this headline"></a></h1>
+<section id="extending-capabilities-using-import">
+<span id="import-module"></span><span id="index-0"></span><h1><span class="section-number">5.39. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#extending-capabilities-using-import" title="Permalink to this heading"></a></h1>
 <p>In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, the <code class="docutils literal notranslate"><span class="pre">math</span></code> module is part of what is referred to as the Python <em>standard library</em>, i.e. it comes standard with all Python installations. How we gain access to these is through the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. <code class="docutils literal notranslate"><span class="pre">math</span></code> contains many basic mathematical operations, e.g. <code class="docutils literal notranslate"><span class="pre">log()</span></code> or <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>, as functions. We get access to those using the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -194,12 +204,13 @@
 </div>
 </div>
 </div>
-<p>Just like standard Python objects, you can see what capabilities a module has using <code class="docutils literal notranslate"><span class="pre">dir()</span></code> <a class="footnote-reference brackets" href="#id2" id="id1">1</a> and <code class="docutils literal notranslate"><span class="pre">help()</span></code> works too.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>The <code class="docutils literal notranslate"><span class="pre">dir()</span></code> command returns a list. I’m truncating that to just display a small listing of what’s in <code class="docutils literal notranslate"><span class="pre">math</span></code>.</p>
-</dd>
-</dl>
+<p>Just like standard Python objects, you can see what capabilities a module has using <code class="docutils literal notranslate"><span class="pre">dir()</span></code> <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> and <code class="docutils literal notranslate"><span class="pre">help()</span></code> works too.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The <code class="docutils literal notranslate"><span class="pre">dir()</span></code> command returns a list. I’m truncating that to just display a small listing of what’s in <code class="docutils literal notranslate"><span class="pre">math</span></code>.</p>
+</aside>
+</aside>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
@@ -276,7 +287,7 @@
 </div>
 </div>
 <p>Modules also serve to allow simplification of code. This enable putting logically related functions into a single file. They facilitate reuse of those functions in different programs, thus reducing redundancy and increasing the robustness of software.</p>
-<p>Modules can be organised hierarchically, meaning that some modules are nested within others. How Python achieves this is actually dead simple, the name of a directory containing some Python scripts becomes the import name <a class="footnote-reference brackets" href="#id4" id="id3">2</a>. For instance, the Python standard library includes (among a multitude of goodies) the <code class="docutils literal notranslate"><span class="pre">os</span></code> module which is used for handling operating system related calls. Inside this module is another one called <code class="docutils literal notranslate"><span class="pre">path</span></code> that contain useful functions, among which is the <code class="docutils literal notranslate"><span class="pre">dirname()</span></code> function. Using <code class="docutils literal notranslate"><span class="pre">.</span></code> notation, we full specify that function as <code class="docutils literal notranslate"><span class="pre">os.path.dirname</span></code>.</p>
+<p>Modules can be organised hierarchically, meaning that some modules are nested within others. How Python achieves this is actually dead simple, the name of a directory containing some Python scripts becomes the import name <a class="footnote-reference brackets" href="#id4" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. For instance, the Python standard library includes (among a multitude of goodies) the <code class="docutils literal notranslate"><span class="pre">os</span></code> module which is used for handling operating system related calls. Inside this module is another one called <code class="docutils literal notranslate"><span class="pre">path</span></code> that contain useful functions, among which is the <code class="docutils literal notranslate"><span class="pre">dirname()</span></code> function. Using <code class="docutils literal notranslate"><span class="pre">.</span></code> notation, we full specify that function as <code class="docutils literal notranslate"><span class="pre">os.path.dirname</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -321,33 +332,34 @@
 </div>
 </div>
 </div>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
-<dd><p>Since Python version 3.3, having a python file <code class="docutils literal notranslate"><span class="pre">bar.py</span></code> inside a directory <code class="docutils literal notranslate"><span class="pre">foo</span></code> means you can use the <span class="incremental">from foo import bar</span> statement. Prior to version 3.3, it was necessary to have a special file <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> inside <code class="docutils literal notranslate"><span class="pre">foo</span></code>.</p>
-</dd>
-</dl>
-<div class="section" id="third-party-libraries">
-<h2><span class="section-number">5.39.1. </span>“third party” libraries<a class="headerlink" href="#third-party-libraries" title="Permalink to this headline"></a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>Since Python version 3.3, having a python file <code class="docutils literal notranslate"><span class="pre">bar.py</span></code> inside a directory <code class="docutils literal notranslate"><span class="pre">foo</span></code> means you can use the <span class="incremental">from foo import bar</span> statement. Prior to version 3.3, it was necessary to have a special file <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> inside <code class="docutils literal notranslate"><span class="pre">foo</span></code>.</p>
+</aside>
+</aside>
+<section id="third-party-libraries">
+<h2><span class="section-number">5.39.1. </span>“third party” libraries<a class="headerlink" href="#third-party-libraries" title="Permalink to this heading"></a></h2>
 <p id="index-4">An even greater appeal of Python is the availability of highly sophisticated modules written by others.</p>
 <p>Of particular note is <a class="reference external" href="https://numpy.org">numpy</a> (numerical Python). This library is arguably the main reason Python is so popular in science. Numpy provides critical routines in numerical mathematics, particularly linear algebra. But it’s very broadly useful, being ~10x faster than straight Python implementations. It also allows succinct expressions for arrays and provides very useful methods on arrays.</p>
 <p>Other invaluable libraries for science are Scipy, Pandas, Matplotlib, IPython and biology specific libraries (such as <a class="reference external" href="https://cogent3.org">cogent3</a>).</p>
 <p>We will cover <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in a separate section.</p>
-</div>
-<div class="section" id="why-use-libraries-written-by-others">
-<h2><span class="section-number">5.39.2. </span>Why use libraries written by others?<a class="headerlink" href="#why-use-libraries-written-by-others" title="Permalink to this headline"></a></h2>
+</section>
+<section id="why-use-libraries-written-by-others">
+<h2><span class="section-number">5.39.2. </span>Why use libraries written by others?<a class="headerlink" href="#why-use-libraries-written-by-others" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Widely scrutinised, so less chance of code errors</p></li>
 <li><p>Typically better performance</p></li>
 <li><p>May provide algorithms that are simply too difficult to write yourself!</p></li>
 </ul>
 <p>There are an increasing number of Biology specific libraries. My own lab produces a number of open sourced library for genomic biology (e.g. <a class="reference external" href="https://cogent3.org">cogent3</a>, which we will use later in the course).</p>
-</div>
-<div class="section" id="writing-your-own-modules">
-<h2><span class="section-number">5.39.3. </span>Writing your own modules<a class="headerlink" href="#writing-your-own-modules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="writing-your-own-modules">
+<h2><span class="section-number">5.39.3. </span>Writing your own modules<a class="headerlink" href="#writing-your-own-modules" title="Permalink to this heading"></a></h2>
 <p>Since a Python script is a module, then all you have to do is write your code in a python script. If that script is on what is called the <em>python path</em>, then it can be imported and any functions within can be used.</p>
 <p>The python path refers to the places on your computer that Python will look for modules. The first is the directory from which the Python executable was started. The second is the “installed packages” location, typically a directory called <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> which is “within” Python itself. The third is a custom location which you have to tell Python about, for instance using a special <a class="reference external" href="https://docs.python.org/3/using/cmdline.html?highlight=pythonpath#envvar-PYTHONPATH">PYTHONPATH</a> environment variable.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -360,7 +372,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

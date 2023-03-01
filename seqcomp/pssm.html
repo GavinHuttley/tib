@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.11. Position Specific Scoring Matrices (PSSMs) &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>6.11. Position Specific Scoring Matrices (PSSMs) &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -89,7 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -105,9 +115,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
-      <li><span class="section-number">6.11. </span>Position Specific Scoring Matrices (PSSMs)</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6.11. </span>Position Specific Scoring Matrices (PSSMs)</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/pssm.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -141,8 +151,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="position-specific-scoring-matrices-pssms">
-<span id="pssms"></span><h1><span class="section-number">6.11. </span>Position Specific Scoring Matrices (PSSMs)<a class="headerlink" href="#position-specific-scoring-matrices-pssms" title="Permalink to this headline"></a></h1>
+<section id="position-specific-scoring-matrices-pssms">
+<span id="pssms"></span><h1><span class="section-number">6.11. </span>Position Specific Scoring Matrices (PSSMs)<a class="headerlink" href="#position-specific-scoring-matrices-pssms" title="Permalink to this heading"></a></h1>
 <p id="index-0">A Position Specific Scoring Matrix, or PSSM, is a matrix of <span class="target" id="index-1"></span>log-odds ratios per position of a sequence motif. (PSSMs are also called <span class="target" id="index-2"></span>profiles.) They provide a means for computing the match odds for any new sequence. They are typically applied to finding transcription factor binding sites (TFBS) but are also used to characterise protein domains.</p>
 <p>See <a class="reference internal" href="related_by_function.html#experimental-data"><span class="std std-ref">Experimental procedures for detecting functionally related sequences</span></a> for how the counts data are derived. To illustrate the transformation of those counts data into a PSSM, we will start with a simple worked example. First we take the counts table presented in <a class="reference internal" href="related_by_function.html#pssm-origins"><span class="std std-ref">Transformation of the data for analysis</span></a>.</p>
 <p>We convert the <a class="reference internal" href="related_by_function.html#pssm-origins"><span class="std std-ref">PWM</span></a> into a PPM, but I’m restricting the examples to just 4 positions.</p>
@@ -186,10 +196,10 @@
 4 rows x 4 columns</p>
 </div></div></div>
 </div>
-<div class="section" id="a-worked-example">
-<h2><span class="section-number">6.11.1. </span>A worked example<a class="headerlink" href="#a-worked-example" title="Permalink to this headline"></a></h2>
-<div class="section" id="calculating-the-expected-under-the-background">
-<h3><span class="section-number">6.11.1.1. </span>Calculating the Expected Under the Background<a class="headerlink" href="#calculating-the-expected-under-the-background" title="Permalink to this headline"></a></h3>
+<section id="a-worked-example">
+<h2><span class="section-number">6.11.1. </span>A worked example<a class="headerlink" href="#a-worked-example" title="Permalink to this heading"></a></h2>
+<section id="calculating-the-expected-under-the-background">
+<h3><span class="section-number">6.11.1.1. </span>Calculating the Expected Under the Background<a class="headerlink" href="#calculating-the-expected-under-the-background" title="Permalink to this heading"></a></h3>
 <p>Let’s use the sequence</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -215,15 +225,16 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="calculating-the-expected-under-the-alternate">
-<h3><span class="section-number">6.11.1.2. </span>Calculating the Expected Under the Alternate<a class="headerlink" href="#calculating-the-expected-under-the-alternate" title="Permalink to this headline"></a></h3>
-<p>In this case, I’m just doing this “manually”. First, note the base order is T, C, A, G <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. Here’s a pseudo-code algorithm describing this calculation:</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software.</p>
-</dd>
-</dl>
+</section>
+<section id="calculating-the-expected-under-the-alternate">
+<h3><span class="section-number">6.11.1.2. </span>Calculating the Expected Under the Alternate<a class="headerlink" href="#calculating-the-expected-under-the-alternate" title="Permalink to this heading"></a></h3>
+<p>In this case, I’m just doing this “manually”. First, note the base order is T, C, A, G <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Here’s a pseudo-code algorithm describing this calculation:</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software.</p>
+</aside>
+</aside>
 <div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>PPM is a 2D matrix with rows corresponding to bases, columns to positions
 define the index order of bases as T at index 0, C index 1, A index 2, G index 3
 prob_of_seq = 1.0
@@ -237,9 +248,9 @@ for seq_index in sequence
 </div>
 <p>At sequence position <code class="docutils literal notranslate"><span class="pre">0</span></code>, we have base <code class="docutils literal notranslate"><span class="pre">G</span></code>. This has the value of 0.0, so we stop.</p>
 <p>This raises the question of whether a <code class="docutils literal notranslate"><span class="pre">G</span></code> at index <code class="docutils literal notranslate"><span class="pre">[0]</span></code> is truly impossible? More likely, the 0 is due to the sample size of the experiment. One approach is to add a “small” number to all elements. (This is akin to imagining the next observation would have been of the unobserved type.) This number is referred to as a pseudocount and typically, a pseudocount ≤ 1 is chosen.</p>
-</div>
-<div class="section" id="adjusting-the-pwm-with-a-pseudocount">
-<h3><span class="section-number">6.11.1.3. </span>Adjusting the PWM with a pseudocount<a class="headerlink" href="#adjusting-the-pwm-with-a-pseudocount" title="Permalink to this headline"></a></h3>
+</section>
+<section id="adjusting-the-pwm-with-a-pseudocount">
+<h3><span class="section-number">6.11.1.3. </span>Adjusting the PWM with a pseudocount<a class="headerlink" href="#adjusting-the-pwm-with-a-pseudocount" title="Permalink to this heading"></a></h3>
 <p>We add a pseudocount of 0.5 to the PWM and then convert to a PPM as before, producing</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -284,24 +295,24 @@ for seq_index in sequence
 <p>This now leads to the following elements being taken from the table <code class="docutils literal notranslate"><span class="pre">0.042,</span> <span class="pre">0.875,</span> <span class="pre">0.792,</span> <span class="pre">0.542</span></code>, leading to</p>
 <div class="math notranslate nohighlight">
 \[p(seq1|alternate)=0.042\times0.875\times0.792\times0.542\approx0.015775\]</div>
-</div>
-<div class="section" id="the-odds-ratio">
-<h3><span class="section-number">6.11.1.4. </span>The odds-ratio<a class="headerlink" href="#the-odds-ratio" title="Permalink to this headline"></a></h3>
+</section>
+<section id="the-odds-ratio">
+<h3><span class="section-number">6.11.1.4. </span>The odds-ratio<a class="headerlink" href="#the-odds-ratio" title="Permalink to this heading"></a></h3>
 <p>We can form an odds-ratio as</p>
 <div class="math notranslate nohighlight">
 \[OR = \frac{p(seq1|alternate)}{p(seq1|null)}\approx4.0384\]</div>
 <p>How should you interpret this? Look at the OR equation!</p>
-</div>
-<div class="section" id="computing-the-pssm">
-<h3><span class="section-number">6.11.1.5. </span>Computing the PSSM<a class="headerlink" href="#computing-the-pssm" title="Permalink to this headline"></a></h3>
+</section>
+<section id="computing-the-pssm">
+<h3><span class="section-number">6.11.1.5. </span>Computing the PSSM<a class="headerlink" href="#computing-the-pssm" title="Permalink to this heading"></a></h3>
 <p>The PSSM is a log-odds matrix, i.e. it’s the log of the odds ratio matrix. Because we assume a background distribution of 0.25, we can compute this very simply as <code class="docutils literal notranslate"><span class="pre">log2(ppm)-log2(0.25)</span></code>.</p>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">Maths with logarithms, recall that</p>
 <p><span class="math notranslate nohighlight">\(\log(a/b)=\log(a) - \log(b)\)</span></p>
 <p>and</p>
 <p><span class="math notranslate nohighlight">\(\log(a \times b) = \log(a) + \log(b)\)</span></p>
 <p>Note that we use log base 2 (<span class="math notranslate nohighlight">\(\log_2\)</span>), by convention.</p>
-</div>
+</aside>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -339,26 +350,26 @@ for seq_index in sequence
 4 rows x 5 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="computing-the-pssm-score-for-the-sequence">
-<h3><span class="section-number">6.11.1.6. </span>Computing the PSSM score for the sequence<a class="headerlink" href="#computing-the-pssm-score-for-the-sequence" title="Permalink to this headline"></a></h3>
+</section>
+<section id="computing-the-pssm-score-for-the-sequence">
+<h3><span class="section-number">6.11.1.6. </span>Computing the PSSM score for the sequence<a class="headerlink" href="#computing-the-pssm-score-for-the-sequence" title="Permalink to this heading"></a></h3>
 <p>We now select elements from the PSSM, just as we did above from the PPM – we use the sequence position number to specify the column of the PSSM, and the base at that position to specify the row. With that, for the sequence “GTAT”, we select the following log-odds scores: <code class="docutils literal notranslate"><span class="pre">-2.585,</span> <span class="pre">1.807,</span> <span class="pre">1.663,</span> <span class="pre">1.115</span></code>.</p>
 <p>From these, the log-odds of <code class="docutils literal notranslate"><span class="pre">seq1</span></code> being derived from the experimental sample instead of the bacgkround is:</p>
 <div class="math notranslate nohighlight">
 \[score = -2.585 + 1.807 + 1.663 + 1.115 = 2\]</div>
 <p>For more on the interpretation of odds ratios, see <a class="reference internal" href="odds_ratios.html#odds-ratios"><span class="std std-ref">Odds-ratio’s</span></a>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="exercises">
-<h1><span class="section-number">6.12. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+</section>
+</section>
+</section>
+<section id="exercises">
+<h1><span class="section-number">6.12. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
 <ol class="arabic simple">
 <li><p>What does an OR equal 1 mean? What about an OR &gt; 1? Or, an OR&lt;1?</p></li>
 <li><p>What does a log-odds ratio &gt; 1 mean? What about a log-odds ratio equal to 0?</p></li>
 <li><p>Write a function that takes a numpy array of odds-ratios and returns their <span class="math notranslate nohighlight">\(\log_2\)</span>.</p></li>
 <li><p>Write a function that takes a numpy array of log odds-ratios (assume the base is 2, i.e. <span class="math notranslate nohighlight">\(log_2\)</span>) and returns their odds ratios.</p></li>
 </ol>
-</div>
+</section>
 
 
            </div>
@@ -371,7 +382,7 @@ for seq_index in sequence
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

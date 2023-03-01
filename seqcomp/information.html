@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.9. Measuring information using Shannon’s entropy &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>6.9. Measuring information using Shannon’s entropy &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -85,7 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -101,9 +111,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a> &raquo;</li>
-      <li><span class="section-number">6.9. </span>Measuring information using Shannon’s entropy</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6.9. </span>Measuring information using Shannon’s entropy</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/information.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -137,8 +147,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="measuring-information-using-shannon-s-entropy">
-<span id="shannon-entropy"></span><h1><span class="section-number">6.9. </span>Measuring information using Shannon’s entropy<a class="headerlink" href="#measuring-information-using-shannon-s-entropy" title="Permalink to this headline"></a></h1>
+<section id="measuring-information-using-shannon-s-entropy">
+<span id="shannon-entropy"></span><h1><span class="section-number">6.9. </span>Measuring information using Shannon’s entropy<a class="headerlink" href="#measuring-information-using-shannon-s-entropy" title="Permalink to this heading"></a></h1>
 <p>We can measure the information content of “something” using a measurement called “entropy” (like a scale for information). The core unit is the “bit”, called a measure of surprise, which is the answer to a yes/no question.</p>
 <p>Consider a state space containing only the letter <code class="docutils literal notranslate"><span class="pre">A</span></code>. We can never be “surprised” by the outcome of drawing a new letter from this space as it can only be of one type. So our entropy, in this case is 0. Add another letter and we have a chance to be “surprised”. So in general, as predictability goes up, entropy goes down.</p>
 <p>As it turns out, entropy is a very fundamental quantity. You will see numerous expressions in statistics that relate to this. Given that the very purpose of genetical systems is to contain all the information sufficient to specify a living thing, application of statistical techniques built around the notion of “information” as a fundamental quantity seems quite natural.</p>
@@ -150,8 +160,8 @@
 <p class="admonition-title">Note</p>
 <p><span class="math notranslate nohighlight">\(\sum_{i=0}^n\)</span> means take the sum of the series starting at index 0 and ending at index <span class="incremental">n</span>.</p>
 </div>
-<div class="section" id="measuring-entropy-for-a-simple-alignment">
-<h2><span class="section-number">6.9.1. </span>Measuring entropy for a simple alignment<a class="headerlink" href="#measuring-entropy-for-a-simple-alignment" title="Permalink to this headline"></a></h2>
+<section id="measuring-entropy-for-a-simple-alignment">
+<h2><span class="section-number">6.9.1. </span>Measuring entropy for a simple alignment<a class="headerlink" href="#measuring-entropy-for-a-simple-alignment" title="Permalink to this heading"></a></h2>
 <p>Here’s the simple alignment from the previous section.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>TCAGA
 TTCCA
@@ -171,33 +181,29 @@ Ent.   0    0.72  1.52  1.52  0.97
 </pre></div>
 </div>
 <p>In the previous section, the display of coloured letters describing sequences that bind to TBP is referred to as a sequence logo <span id="id1">[<a class="reference internal" href="#id32" title="T D Schneider and R M Stephens. Sequence logos: a new way to display consensus sequences. Nucleic Acids Res, 18:6097-100, 1990. doi:10.1093/nar/18.20.6097.">SS90</a>]</span>. That representation is computed using position-wise entropy.</p>
-</div>
-<div class="section" id="information-at-a-position">
-<span id="information"></span><h2><span class="section-number">6.9.2. </span>Information at a position<a class="headerlink" href="#information-at-a-position" title="Permalink to this headline"></a></h2>
+</section>
+<section id="information-at-a-position">
+<span id="information"></span><h2><span class="section-number">6.9.2. </span>Information at a position<a class="headerlink" href="#information-at-a-position" title="Permalink to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[R_i=\log_2(n) - H_i\]</div>
 <p>where <span class="math notranslate nohighlight">\(R_i\)</span> is the information at position <em>i</em>, <em>n</em> is the number of possible states (4 for DNA), <span class="math notranslate nohighlight">\(\log_2(n)\)</span> is the maximum possible entropy, and <span class="math notranslate nohighlight">\(H_i\)</span> is the Shannon entropy for position <em>i</em>.</p>
 <p>In this display, the letter height at a position is <span class="math notranslate nohighlight">\(p_{i,l} R_i\)</span>.</p>
-</div>
-<div class="section" id="problems-with-sequence-logo">
-<h2><span class="section-number">6.9.3. </span>Problems with sequence logo<a class="headerlink" href="#problems-with-sequence-logo" title="Permalink to this headline"></a></h2>
+</section>
+<section id="problems-with-sequence-logo">
+<h2><span class="section-number">6.9.3. </span>Problems with sequence logo<a class="headerlink" href="#problems-with-sequence-logo" title="Permalink to this heading"></a></h2>
 <p>The background genomic distribution is assumed to be equally frequent nucleotides. Replacing <span class="math notranslate nohighlight">\(\log_2(n)\)</span> with the entropy of the genome can lead to <span class="math notranslate nohighlight">\(R&lt;0\)</span>.</p>
-</div>
-<div class="section" id="using-relative-entropy-as-an-alternate">
-<h2><span class="section-number">6.9.4. </span>Using relative entropy as an alternate<a class="headerlink" href="#using-relative-entropy-as-an-alternate" title="Permalink to this headline"></a></h2>
+</section>
+<section id="using-relative-entropy-as-an-alternate">
+<h2><span class="section-number">6.9.4. </span>Using relative entropy as an alternate<a class="headerlink" href="#using-relative-entropy-as-an-alternate" title="Permalink to this heading"></a></h2>
 <p>Relative entropy (<span class="incremental">RE</span>) is defined as</p>
 <p><span class="math notranslate nohighlight">\(RE_i = \sum_{i=0}^n p_i \log_2(p_i / q_i)\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(q_i\)</span> is the background (e.g. genome) frequency of <em>i</em>.</p>
-</div>
-<div class="section" id="an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation">
-<h2><span class="section-number">6.9.5. </span>An illustration of the difference – identifying neighbouring base effects on mutation<a class="headerlink" href="#an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation" title="Permalink to this headline"></a></h2>
+</section>
+<section id="an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation">
+<h2><span class="section-number">6.9.5. </span>An illustration of the difference – identifying neighbouring base effects on mutation<a class="headerlink" href="#an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation" title="Permalink to this heading"></a></h2>
 <p><span class="math notranslate nohighlight">\(C\rightarrow T\)</span> mutations in vertebrates typically arise from deamination of 5-methyl-cytosine. The latter modification is typically applied to <span class="incremental">5’-CpG-3’</span>. Hence, there is a striking association of <span class="incremental">3’G</span> and this point mutation direction.</p>
 <p>If we sample sequences that share this mutation in common, aligning them centred on the mutated position, we can assess which statistic better captures the neighbouring base association. What we <em>should</em> see is that the 3’ position should have high information which arises from the base <span class="incremental">G</span>.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><a class="reference internal image-reference" href="../_images/CtoT_MI.png"><img alt="../_images/CtoT_MI.png" src="../_images/CtoT_MI.png" style="width: 295.5px; height: 288.5px;" /></a>
 </td>
@@ -207,7 +213,7 @@ Ent.   0    0.72  1.52  1.52  0.97
 </tbody>
 </table>
 <p>These results originated from the honours research project of Ms Yicheng Zhu <span id="id4">[<a class="reference internal" href="#id31" title="Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. Genetics, 205:843-856, 2017. doi:10.1534/genetics.116.195677.">ZNYH17</a>]</span>.</p>
-<div class="sidebar" id="math-log2">
+<aside class="sidebar" id="math-log2">
 <span id="index-0"></span><p class="sidebar-title">Math functions in python</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -225,11 +231,11 @@ Ent.   0    0.72  1.52  1.52  0.97
 </div>
 </div>
 <p>In Python, mathematical functions are within the <code class="docutils literal notranslate"><span class="pre">math</span></code> module. These functions are typically also provided by the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library. The latter have the advantage of being able to operate on arrays.</p>
-</div>
-</div>
-</div>
-<div class="section" id="exercises">
-<h1><span class="section-number">6.10. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+</aside>
+</section>
+</section>
+<section id="exercises">
+<h1><span class="section-number">6.10. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
 <p>Defining a short sequence for use below.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -245,11 +251,14 @@ Ent.   0    0.72  1.52  1.52  0.97
 <li><p>Write a function that takes a dict like object (e.g. the counter you’ve just created from (1)) of counts and converts it to numpy array whose length is 4.</p>
 <blockquote>
 <div><p>You should consider it critical that your function always returns arrays where the counts for each nucleotide are always in the same position. For instance, if you define the state order as T, C, A, G then the counts for T are always at index 0 – even if a T was not observed.</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="1da02db8-f2df-4eaf-87ba-fb0791bae2a4" name="bff659ee-6de2-4225-8453-852edc4041db" type="radio">
-</input><label class="tabbed-label" for="1da02db8-f2df-4eaf-87ba-fb0791bae2a4">
-Expected output</label><div class="tabbed-content docutils">
-<p>If you select that nucleotide ordering, your function should return the nfollowing given the nucleotide counts <code class="docutils literal notranslate"><span class="pre">dict</span></code> from <code class="docutils literal notranslate"><span class="pre">seq</span></code> as input</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Expected output<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If you select that nucleotide ordering, your function should return the nfollowing given the nucleotide counts <code class="docutils literal notranslate"><span class="pre">dict</span></code> from <code class="docutils literal notranslate"><span class="pre">seq</span></code> as input</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([2, 3, 5, 2])
@@ -258,8 +267,7 @@ Expected output</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-</div>
-</div></blockquote>
+</details></div></blockquote>
 </li>
 <li><p>Write a function that converts these counts into a frequencies.</p></li>
 <li><p>Converting the mathematical expression for entropy into a Python function. Apply it to the results from applying the functions you wrote for (1-3) to <code class="docutils literal notranslate"><span class="pre">seq</span></code> (<a class="reference internal" href="#math-log2"><span class="std std-ref">for taking log2 see the math functions sidebar</span></a>).</p></li>
@@ -267,7 +275,7 @@ Expected output</label><div class="tabbed-content docutils">
 <blockquote>
 <div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GGAGCAGGACAGGGGAACCGCACAAAGAGACAGGGGAGAACGGGGGCCCG&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GCGGGAGAGAGGAAGCGGAAAAAAACGCGAAGAAAGGAGGACCGGCCCGA&#39;
 </pre></div>
 </div>
 </div>
@@ -285,16 +293,17 @@ Expected output</label><div class="tabbed-content docutils">
 <hr class="docutils" />
 <p class="rubric">Citations</p>
 <div class="docutils container" id="id5">
-<dl class="citation">
-<dt class="label" id="id32"><span class="brackets"><a class="fn-backref" href="#id1">SS90</a></span></dt>
-<dd><p>T D Schneider and R M Stephens. Sequence logos: a new way to display consensus sequences. <em>Nucleic Acids Res</em>, 18:6097–100, 1990. <a class="reference external" href="https://doi.org/10.1093/nar/18.20.6097">doi:10.1093/nar/18.20.6097</a>.</p>
-</dd>
-<dt class="label" id="id31"><span class="brackets"><a class="fn-backref" href="#id4">ZNYH17</a></span></dt>
-<dd><p>Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. <em>Genetics</em>, 205:843–856, 2017. <a class="reference external" href="https://doi.org/10.1534/genetics.116.195677">doi:10.1534/genetics.116.195677</a>.</p>
-</dd>
-</dl>
+<div class="citation" id="id32" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">SS90</a><span class="fn-bracket">]</span></span>
+<p>T D Schneider and R M Stephens. Sequence logos: a new way to display consensus sequences. <em>Nucleic Acids Res</em>, 18:6097–100, 1990. <a class="reference external" href="https://doi.org/10.1093/nar/18.20.6097">doi:10.1093/nar/18.20.6097</a>.</p>
+</div>
+<div class="citation" id="id31" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">ZNYH17</a><span class="fn-bracket">]</span></span>
+<p>Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. <em>Genetics</em>, 205:843–856, 2017. <a class="reference external" href="https://doi.org/10.1534/genetics.116.195677">doi:10.1534/genetics.116.195677</a>.</p>
 </div>
 </div>
+</div>
+</section>
 
 
            </div>
@@ -307,7 +316,7 @@ Expected output</label><div class="tabbed-content docutils">
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

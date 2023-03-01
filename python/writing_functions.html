@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.33. Writing functions &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>5.33. Writing functions &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -120,7 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -136,9 +146,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a> &raquo;</li>
-      <li><span class="section-number">5.33. </span>Writing functions</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.33. </span>Writing functions</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/writing_functions.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -172,7 +182,7 @@
     text-align: unset;
 }
 </style>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">Tips for writing functions and staying sane</p>
 <p>This is such an important message, I’m saying it multiple times on this page.</p>
 <p>Here are two ways to write functions that are guaranteed to create headaches.</p>
@@ -190,9 +200,9 @@
 </ol>
 </div></blockquote>
 <p>Of course, if you love errors and hard to debug problems go ahead and ignore this advice.</p>
-</div>
-<div class="section" id="writing-functions">
-<h1><span class="section-number">5.33. </span>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this headline"></a></h1>
+</aside>
+<section id="writing-functions">
+<h1><span class="section-number">5.33. </span>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this heading"></a></h1>
 <p>Now we cover writing your own <a class="reference external" href="http://greenteapress.com/thinkpython2/html/thinkpython2004.html#sec30">functions</a>.</p>
 <p>A function represents a named grouping of statements. They form a critical aspect of modular design to algorithms. By allowing referencing of a related block of code, one can substantially reduce redundancy in your code. This confers a number of major advantages:</p>
 <ol class="arabic simple">
@@ -202,8 +212,8 @@
 <li><p>It allows building large, complicated programs from a small collection of tested sections.</p></li>
 </ol>
 <p>So using functions will improve the reliability of your programs.</p>
-<div class="section" id="the-critical-syntax-elements">
-<span id="index-0"></span><h2><span class="section-number">5.33.1. </span>The critical syntax elements<a class="headerlink" href="#the-critical-syntax-elements" title="Permalink to this headline"></a></h2>
+<section id="the-critical-syntax-elements">
+<span id="index-0"></span><h2><span class="section-number">5.33.1. </span>The critical syntax elements<a class="headerlink" href="#the-critical-syntax-elements" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">def</span></code>, the critical keyword telling Python you are defining a function</p></li>
 <li><p>a valid Python name, which is used to reference the function</p></li>
@@ -232,13 +242,13 @@
 <p class="admonition-title">Note</p>
 <p>By convention, functions are put at the top of script files. The convention is motivated by the desire to make the code easy to read.</p>
 </div>
-</div>
-<div class="section" id="void-functions">
-<span id="index-1"></span><h2><span class="section-number">5.33.2. </span>Void functions<a class="headerlink" href="#void-functions" title="Permalink to this headline"></a></h2>
+</section>
+<section id="void-functions">
+<span id="index-1"></span><h2><span class="section-number">5.33.2. </span>Void functions<a class="headerlink" href="#void-functions" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">echo_hello</span></code> function is called a <code class="docutils literal notranslate"><span class="pre">void</span></code> function – functions whose purpose does not require returning a value. That said, even if they don’t use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, they return the value <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</div>
-<div class="section" id="fruitful-functions">
-<h2><span class="section-number">5.33.3. </span>Fruitful functions<a class="headerlink" href="#fruitful-functions" title="Permalink to this headline"></a></h2>
+</section>
+<section id="fruitful-functions">
+<h2><span class="section-number">5.33.3. </span>Fruitful functions<a class="headerlink" href="#fruitful-functions" title="Permalink to this heading"></a></h2>
 <p>These are functions that return something from their execution. We have encountered several examples of fruitful builtin functions like <code class="docutils literal notranslate"><span class="pre">dir()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code>. These functions took an argument, operated on it, and returned something. The following is a simple fruitful function.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -261,9 +271,9 @@
 <p class="admonition-title">Note</p>
 <p>The function was defined before it was used. There were multiple arguments separated by a <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code>. We used the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword to deliver the result of this calculation to the calling code (line starting with <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=...</span></code>).</p>
 </div>
-</div>
-<div class="section" id="required-arguments">
-<span id="index-2"></span><h2><span class="section-number">5.33.4. </span>Required arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline"></a></h2>
+</section>
+<section id="required-arguments">
+<span id="index-2"></span><h2><span class="section-number">5.33.4. </span>Required arguments<a class="headerlink" href="#required-arguments" title="Permalink to this heading"></a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_diff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -281,10 +291,10 @@
 </div>
 </div>
 <p>When calling a function, the order in which you provide arguments defines what variable they’re assigned to. One exception to this is if you specify the arguments as <code class="docutils literal notranslate"><span class="pre">argument=value</span></code> (key-value arguments).</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="1520c33e-064f-4516-bfa2-16ea71d89a08" name="58cb11e6-7a17-458d-9e25-752c3c003974" type="radio">
-</input><label class="tabbed-label" for="1520c33e-064f-4516-bfa2-16ea71d89a08">
-Correct Invocation</label><div class="tabbed-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Correct Invocation</label><div class="sd-tab-content docutils">
 <p>Both <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are required.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -311,9 +321,9 @@ Correct Invocation</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="d0510115-584b-4e76-8d72-4db437516642" name="58cb11e6-7a17-458d-9e25-752c3c003974" type="radio">
-</input><label class="tabbed-label" for="d0510115-584b-4e76-8d72-4db437516642">
-Incorrect Invocation</label><div class="tabbed-content docutils">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Incorrect Invocation</label><div class="sd-tab-content docutils">
 <p>If you don’t provide both arguments you will get an <em>exception</em>, in this case a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -324,7 +334,7 @@ Incorrect Invocation</label><div class="tabbed-content docutils">
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: get_diff() missing 1 required positional argument: &#39;b&#39;
@@ -334,13 +344,13 @@ Incorrect Invocation</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="optional-arguments">
-<span id="index-3"></span><h2><span class="section-number">5.33.5. </span>Optional arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline"></a></h2>
+</section>
+<section id="optional-arguments">
+<span id="index-3"></span><h2><span class="section-number">5.33.5. </span>Optional arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this heading"></a></h2>
 <p>These are function arguments that have default values. You’ve seen this with the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function. The <code class="docutils literal notranslate"><span class="pre">mode</span></code> argument defaults to read (<code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>). In fact, the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function has both required and optional arguments.</p>
-</div>
-<div class="section" id="writing-and-using-functions-that-have-optional-arguments">
-<h2><span class="section-number">5.33.6. </span>Writing and using functions that have optional arguments<a class="headerlink" href="#writing-and-using-functions-that-have-optional-arguments" title="Permalink to this headline"></a></h2>
+</section>
+<section id="writing-and-using-functions-that-have-optional-arguments">
+<h2><span class="section-number">5.33.6. </span>Writing and using functions that have optional arguments<a class="headerlink" href="#writing-and-using-functions-that-have-optional-arguments" title="Permalink to this heading"></a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_diff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -373,9 +383,9 @@ Incorrect Invocation</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ordering-arguments">
-<h2><span class="section-number">5.33.7. </span>Ordering arguments<a class="headerlink" href="#ordering-arguments" title="Permalink to this headline"></a></h2>
+</section>
+<section id="ordering-arguments">
+<h2><span class="section-number">5.33.7. </span>Ordering arguments<a class="headerlink" href="#ordering-arguments" title="Permalink to this heading"></a></h2>
 <p>Required arguments MUST occur before optional arguments. This constraint holds for both writing your own functions and for using functions.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -384,7 +394,7 @@ Incorrect Invocation</label><div class="tabbed-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">get_diff</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
                                      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
@@ -396,9 +406,9 @@ Incorrect Invocation</label><div class="tabbed-content docutils">
 <p class="admonition-title">Note</p>
 <p>There is an exception for calling a function. A function call where all arguments are expressly named will work even if optional arguments are not last, e.g. <code class="docutils literal notranslate"><span class="pre">get_diff(absolute=True,</span> <span class="pre">a=-4,</span> <span class="pre">b=6)</span></code>.</p>
 </div>
-</div>
-<div class="section" id="an-advanced-design-pattern-putting-constraints-on-how-your-functions-are-used">
-<span id="index-4"></span><h2><span class="section-number">5.33.8. </span>An advanced design pattern: Putting constraints on how your functions are used<a class="headerlink" href="#an-advanced-design-pattern-putting-constraints-on-how-your-functions-are-used" title="Permalink to this headline"></a></h2>
+</section>
+<section id="an-advanced-design-pattern-putting-constraints-on-how-your-functions-are-used">
+<span id="index-4"></span><h2><span class="section-number">5.33.8. </span>An advanced design pattern: Putting constraints on how your functions are used<a class="headerlink" href="#an-advanced-design-pattern-putting-constraints-on-how-your-functions-are-used" title="Permalink to this heading"></a></h2>
 <p>You can force your users to employ the key-value invocation, as illustrated by the following.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -421,24 +431,25 @@ Incorrect Invocation</label><div class="tabbed-content docutils">
 <p class="admonition-title">Note</p>
 <p>This is a “for your information” entry only.</p>
 </div>
-</div>
-<div class="section" id="documenting-a-function-with-a-doctstring">
-<h2><span class="section-number">5.33.9. </span>Documenting a function with a doctstring<a class="headerlink" href="#documenting-a-function-with-a-doctstring" title="Permalink to this headline"></a></h2>
+</section>
+<section id="documenting-a-function-with-a-doctstring">
+<h2><span class="section-number">5.33.9. </span>Documenting a function with a doctstring<a class="headerlink" href="#documenting-a-function-with-a-doctstring" title="Permalink to this heading"></a></h2>
 <p>We can document how to use a function we write by writing a docstring. When you use <code class="docutils literal notranslate"><span class="pre">help()</span></code> on a built in function, it’s the docstring of that function which is being displayed. The syntactic definition of a docstring is:</p>
 <ul class="simple">
 <li><p>They are a string literal. By convention, they are defined using triple quotes surrounding the text. They can span multiple lines.</p></li>
 <li><p>They are the first statement after the function signature.</p></li>
 </ul>
-<p id="index-5">The following illustrates the form of a docstring with a simple function with no contents other than the docstring <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>The Python <code class="docutils literal notranslate"><span class="pre">pass</span></code> statement is a null (“do-nothing”) operation. It’s used as a placeholder when the language requires a syntactic element.</p>
-</dd>
-</dl>
+<p id="index-5">The following illustrates the form of a docstring with a simple function with no contents other than the docstring <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The Python <code class="docutils literal notranslate"><span class="pre">pass</span></code> statement is a null (“do-nothing”) operation. It’s used as a placeholder when the language requires a syntactic element.</p>
+</aside>
+</aside>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;a do nothing demo</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;a do nothing demo</span>
 
 <span class="sd">    multi-line docs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -467,9 +478,9 @@ myfunc()
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="functions-that-call-other-functions">
-<h2><span class="section-number">5.33.10. </span>Functions that call other functions<a class="headerlink" href="#functions-that-call-other-functions" title="Permalink to this headline"></a></h2>
+</section>
+<section id="functions-that-call-other-functions">
+<h2><span class="section-number">5.33.10. </span>Functions that call other functions<a class="headerlink" href="#functions-that-call-other-functions" title="Permalink to this heading"></a></h2>
 <p>There is no magic here. If you can use a Python built-in function, you can use a function you wrote. In the following, the function <code class="docutils literal notranslate"><span class="pre">squared_diffs()</span></code> takes two number series and returns the square of the element-wise difference while the function  <code class="docutils literal notranslate"><span class="pre">diff_two()</span></code> takes two number series and returns their element-wise difference.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -494,9 +505,9 @@ myfunc()
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="things-not-to-do">
-<h2><span class="section-number">5.33.11. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this headline"></a></h2>
+</section>
+<section id="things-not-to-do">
+<h2><span class="section-number">5.33.11. </span>Things not to do!<a class="headerlink" href="#things-not-to-do" title="Permalink to this heading"></a></h2>
 <p><strong>DO NOT</strong> use global variables (see <a class="reference internal" href="namespace.html#namespaces"><span class="std std-ref">Namespaces</span></a>). Either pass the variable in as an argument or create it within the function. Adhere to the principle of making code “Easy To Change”. In the case of functions, this means making them depend only on the arguments you give them. The following is bad.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -551,10 +562,10 @@ myfunc()
 <p class="attribution">—Ralph Waldo Emerson, Self-reliance, 1841</p>
 </div></blockquote>
 <p>That quote applies to the above remarks, make exceptions to those thoughtfully. Except for mutable data types as default values – never do that unless you love hard to debug problems and misery.</p>
-</div>
-</div>
-<div class="section" id="exercises">
-<h1><span class="section-number">5.34. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
+</section>
+</section>
+<section id="exercises">
+<h1><span class="section-number">5.34. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
 <p>Using the following data</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -567,7 +578,7 @@ myfunc()
 </div>
 <ol class="arabic">
 <li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> that takes a single string (as per <code class="docutils literal notranslate"><span class="pre">data</span></code>) and converts it into a list of floats. Apply this function to <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></li>
-<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> that takes a series of frequencies (each value is 0 &lt; val &lt; 1 and the series sums to 1) and has an optional argument <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> (with a default value of 0). The function adds <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> <a class="footnote-reference brackets" href="#id5" id="id3">2</a> to every frequency.</p>
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> that takes a series of frequencies (each value is 0 &lt; val &lt; 1 and the series sums to 1) and has an optional argument <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> (with a default value of 0). The function adds <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code> <a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> to every frequency.</p>
 <blockquote>
 <div><p>Add some assert statements to your function to check input values are valid (e.g. all values are <code class="docutils literal notranslate"><span class="pre">0&lt;=freq&lt;1</span></code>).</p>
 <p>Use an assert to check the result satisfies the following, all numbers sum to 1.0 (within numerical precision) and all values satisfy <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">v</span> <span class="pre">&lt;</span> <span class="pre">1</span></code>.</p>
@@ -598,12 +609,12 @@ myfunc()
 </li>
 <li><p>Write another function, <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> that takes the same input of <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> and also has an optional argument for <code class="docutils literal notranslate"><span class="pre">add_to_all</span></code>. This function should first call <code class="docutils literal notranslate"><span class="pre">cast_to_floats()</span></code> to get the floats. Then call <code class="docutils literal notranslate"><span class="pre">normalised_freqs()</span></code> with that result to get the final normalised series. <code class="docutils literal notranslate"><span class="pre">str_to_normalised()</span></code> then returns this value.</p></li>
 <li><p>Implement the <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code> variant from above. Then try using differemt mutable data type as the default value. Demonstrate the bad side effect of persistent state with subsequent calls to <code class="docutils literal notranslate"><span class="pre">myfunc2()</span></code>. Make those calls without providing a value to <code class="docutils literal notranslate"><span class="pre">result</span></code>. Show that the <code class="docutils literal notranslate"><span class="pre">myfunc3()</span></code> does not have this problem.</p></li>
-<li><p>For function <code class="docutils literal notranslate"><span class="pre">count_CGs()</span></code> defined below. Prove it is incorrect using an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement <a class="footnote-reference brackets" href="#id7" id="id4">3</a>. Rewrite the function so it is correct.</p>
+<li><p>For function <code class="docutils literal notranslate"><span class="pre">count_CGs()</span></code> defined below. Prove it is incorrect using an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement <a class="footnote-reference brackets" href="#id7" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. Rewrite the function so it is correct.</p>
 <blockquote>
 <div><div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_CGs</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;return the total number of C and G in a Seq&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;return the total number of C and G in a Seq&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">Seq</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">Seq</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;G&quot;</span><span class="p">)</span>
 
 <span class="n">Seq</span> <span class="o">=</span> <span class="s2">&quot;ACGCCAGTGCATTACG&quot;</span>
@@ -632,17 +643,19 @@ myfunc()
 </div></blockquote>
 </li>
 </ol>
-<dl class="footnote brackets">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
-<dd><p>This type of adjustment to avoid zeros is used to avoid numerical errors.</p>
-</dd>
-</dl>
-<dl class="footnote brackets">
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
-<dd><p>What this means is that you state an expected value for the function given your input. If the code is incorrect, the function returned value will not equal your expected value thus triggering your assertion statement, resulting in an error. In other words, if the code is wrong you WANT there to be an error.</p>
-</dd>
-</dl>
-</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>This type of adjustment to avoid zeros is used to avoid numerical errors.</p>
+</aside>
+</aside>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id7" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>What this means is that you state an expected value for the function given your input. If the code is incorrect, the function returned value will not equal your expected value thus triggering your assertion statement, resulting in an error. In other words, if the code is wrong you WANT there to be an error.</p>
+</aside>
+</aside>
+</section>
 
 
            </div>
@@ -655,7 +668,7 @@ myfunc()
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9.5. Acknowledging the limits of an analysis &mdash; Topics in Bioinformatics 2022.10.06 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <title>9.5. Acknowledging the limits of an analysis &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
       <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/require.min.js"></script>
+        <script src="../_static/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,11 +43,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Topics in Bioinformatics
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Topics in Bioinformatics
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -71,7 +81,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">12. Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
         </div>
@@ -87,9 +97,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">9. </span>Statistical analysis</a> &raquo;</li>
-      <li><span class="section-number">9.5. </span>Acknowledging the limits of an analysis</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">9. </span>Statistical analysis</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">9.5. </span>Acknowledging the limits of an analysis</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/statistics/wrong_models.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -127,19 +137,19 @@
 <div class="cell_output docutils container">
 </div>
 </div>
-<div class="section" id="acknowledging-the-limits-of-an-analysis">
-<h1><span class="section-number">9.5. </span>Acknowledging the limits of an analysis<a class="headerlink" href="#acknowledging-the-limits-of-an-analysis" title="Permalink to this headline"></a></h1>
+<section id="acknowledging-the-limits-of-an-analysis">
+<h1><span class="section-number">9.5. </span>Acknowledging the limits of an analysis<a class="headerlink" href="#acknowledging-the-limits-of-an-analysis" title="Permalink to this heading"></a></h1>
 <blockquote class="epigraph">
 <div><p>“Since all models are wrong the scientist must be alert to what is importantly wrong.”</p>
 <p class="attribution">—Professor George Box, <span id="id1">[<a class="reference internal" href="#id38" title="George E P Box. Science and Statistics. Journal of the American Statistical Association, 71(356):791–799, 1976. doi:10.2307/2286841.">Box76</a>]</span></p>
 </div></blockquote>
-<div class="section" id="the-impact-of-model-choice">
-<h2><span class="section-number">9.5.1. </span>The impact of model choice<a class="headerlink" href="#the-impact-of-model-choice" title="Permalink to this headline"></a></h2>
+<section id="the-impact-of-model-choice">
+<h2><span class="section-number">9.5.1. </span>The impact of model choice<a class="headerlink" href="#the-impact-of-model-choice" title="Permalink to this heading"></a></h2>
 <p>It’s easy to claim all models are wrong and that we should be cautious, but nothing beats a demonstration of how a seemingly simple analysis can be prove remarkably misleading. In this spirit, I have generated <a class="reference download internal" download="" href="../_downloads/38279283558e0b535926e94f858a9571/wrong_model.fasta"><code class="xref download docutils literal notranslate"><span class="pre">synthetic</span> <span class="pre">sequences</span></code></a> based on the reference <em>V. cholerae</em> genome.</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="60c900ec-5857-4a72-81fe-8cc6efc5d72a" name="f539fbf0-035b-4808-9d87-b726d86959d1" type="radio">
-</input><label class="tabbed-label" for="60c900ec-5857-4a72-81fe-8cc6efc5d72a">
-Comparing nucleotide frequencies</label><div class="tabbed-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Comparing nucleotide frequencies</label><div class="sd-tab-content docutils">
 <p>We use the <span class="math notranslate nohighlight">\(\chi^2\)</span> test for homogeneity on nucleotide counts on the two synthetic sequences. With a <span class="math notranslate nohighlight">\(p\)</span>-value<span class="math notranslate nohighlight">\(\approx\)</span>0.69, we cannot reject the null.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -178,9 +188,9 @@ Comparing nucleotide frequencies</label><div class="tabbed-content docutils">
 </div></div></div>
 </div>
 </div>
-<input id="f6666a1c-7fc8-404c-81a7-cdb72896fcfc" name="f539fbf0-035b-4808-9d87-b726d86959d1" type="radio">
-</input><label class="tabbed-label" for="f6666a1c-7fc8-404c-81a7-cdb72896fcfc">
-But, using a different model!</label><div class="tabbed-content docutils">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+But, using a different model!</label><div class="sd-tab-content docutils">
 <p>We employ the same test, but we apply it to <em>dinucleotide</em> counts of the two synthetic sequences (rather than nucleotide counts). The resulting <span class="math notranslate nohighlight">\(p\)</span>-value is so small, it is below the limits of my computers precision to compute it.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -221,27 +231,29 @@ But, using a different model!</label><div class="tabbed-content docutils">
 </div>
 </div>
 <p>This example was deliberately constructed to demonstrate that applying different models to the same data can result in contradictory outcomes. In this case, because I generated the data I knew this problem existed. I can say that analogous situations do arise in the analysis of real data too.</p>
-<p>So how do you address such a possibility when analysing real data? You must employ your expert knowledge of the scientific domain. Specifically, based on what you understand about the experimental procedures, biological and/or chemical properties of the system you are examining, is the model you have used reasonable? Has it been used by others <a class="footnote-reference brackets" href="#id4" id="id2">1</a>? In our first case study we demonstrated that nucleotides do not occur randomly, a property demonstrated as characteristic of our own genome and which has been argued to originate from mechanisms of mutagenesis <span id="id3">[<a class="reference internal" href="#id37" title="Helmut Simon and Gavin Huttley. Quantifying Influences on Intragenomic Mutation Rate. G3: Genes|Genomes|Genetics, 10(8):g3.401335.2020, jun 2020. doi:10.1534/g3.120.401335.">SH20</a>]</span>.</p>
+<p>So how do you address such a possibility when analysing real data? You must employ your expert knowledge of the scientific domain. Specifically, based on what you understand about the experimental procedures, biological and/or chemical properties of the system you are examining, is the model you have used reasonable? Has it been used by others <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>? In our first case study we demonstrated that nucleotides do not occur randomly, a property demonstrated as characteristic of our own genome and which has been argued to originate from mechanisms of mutagenesis <span id="id3">[<a class="reference internal" href="#id37" title="Helmut Simon and Gavin Huttley. Quantifying Influences on Intragenomic Mutation Rate. G3: Genes|Genomes|Genetics, 10(8):g3.401335.2020, jun 2020. doi:10.1534/g3.120.401335.">SH20</a>]</span>.</p>
 <p>The most critical step you can take is in acknowledging the uncertainty present in any analysis. Your conclusions are based on the assumptions required by the model and if those are incorrect, your conclusion may be also.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
-<dd><p>Presumably if a method has been used by other scientists, they have established its suitability. Unfortunately, that is not always correct.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Presumably if a method has been used by other scientists, they have established its suitability. Unfortunately, that is not always correct.</p>
+</aside>
+</aside>
 <hr class="docutils" />
 <p class="rubric">Citations</p>
 <div class="docutils container" id="id5">
-<dl class="citation">
-<dt class="label" id="id38"><span class="brackets"><a class="fn-backref" href="#id1">Box76</a></span></dt>
-<dd><p>George E P Box. Science and Statistics. <em>Journal of the American Statistical Association</em>, 71(356):791–799, 1976. <a class="reference external" href="https://doi.org/10.2307/2286841">doi:10.2307/2286841</a>.</p>
-</dd>
-<dt class="label" id="id37"><span class="brackets"><a class="fn-backref" href="#id3">SH20</a></span></dt>
-<dd><p>Helmut Simon and Gavin Huttley. Quantifying Influences on Intragenomic Mutation Rate. <em>G3: Genes|Genomes|Genetics</em>, 10(8):g3.401335.2020, jun 2020. <a class="reference external" href="https://doi.org/10.1534/g3.120.401335">doi:10.1534/g3.120.401335</a>.</p>
-</dd>
-</dl>
+<div class="citation" id="id38" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Box76</a><span class="fn-bracket">]</span></span>
+<p>George E P Box. Science and Statistics. <em>Journal of the American Statistical Association</em>, 71(356):791–799, 1976. <a class="reference external" href="https://doi.org/10.2307/2286841">doi:10.2307/2286841</a>.</p>
+</div>
+<div class="citation" id="id37" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">SH20</a><span class="fn-bracket">]</span></span>
+<p>Helmut Simon and Gavin Huttley. Quantifying Influences on Intragenomic Mutation Rate. <em>G3: Genes|Genomes|Genetics</em>, 10(8):g3.401335.2020, jun 2020. <a class="reference external" href="https://doi.org/10.1534/g3.120.401335">doi:10.1534/g3.120.401335</a>.</p>
 </div>
 </div>
 </div>
+</section>
+</section>
 
 
            </div>
@@ -254,7 +266,7 @@ But, using a different model!</label><div class="tabbed-content docutils">
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gavin Huttley.</p>
+    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
