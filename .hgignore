@@ -33,3 +33,4 @@ __pycache__
 # to remove later
 *.doctrees*
 docs/*
+.nox/*

@@ -121,7 +121,7 @@ Defining a short sequence for use below.
 
     You should consider it critical that your function always returns arrays where the counts for each nucleotide are always in the same position. For instance, if you define the state order as T, C, A, G then the counts for T are always at index 0 -- even if a T was not observed.
     
-    .. tabbed:: Expected output
+    .. dropdown:: Expected output
     
         If you select that nucleotide ordering, your function should return the nfollowing given the nucleotide counts ``dict`` from ``seq`` as input
 

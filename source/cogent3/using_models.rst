@@ -27,9 +27,9 @@ I'm creating an app to apply the :ref:`f81` substitution model to an alignment a
 
 .. jupyter-execute::
 
-    from cogent3.app import evo
+    from cogent3 import get_app
 
-    f81 = evo.model("F81", tree="data/brca1_primate.tree")
+    f81 = get_app("model", "F81", tree="data/brca1_primate.tree")
 
 .. warning:: If you are providing a tree, the tip names must exactly match the names in the alignments that will be analysed.
 
@@ -103,7 +103,7 @@ We can get all those statistics out as ``cogent3`` tables using the ``tabulate_s
 
 .. jupyter-execute::
 
-    tabulate = evo.tabulate_stats()
+    tabulate = get_app("tabulate_stats")
     tables = tabulate(result)
     tables
 
@@ -140,7 +140,7 @@ For continuous-time substitution models, the default ``model`` settings are that
 
 .. jupyter-execute::
 
-    f81_mprobs = evo.model(
+    f81_mprobs = get_app("model",
         "F81",
         name="F81-mprobs free",
         optimise_motif_probs=True,
@@ -170,7 +170,7 @@ Let's create a new instance of the HKY85 and constrain the likelihood function s
 
 .. jupyter-execute::
 
-    hky_as_f81 = evo.model(
+    hky_as_f81 = get_app("model",
         "HKY85",
         name="HKY85 with κ=1",
         tree="data/brca1_primate.tree",
@@ -197,13 +197,13 @@ To perform a hypothesis test, we need two models. I will create a :ref:`hky85` m
 
 .. jupyter-execute::
 
-    hky85 = evo.model("HKY85", tree="data/brca1_primate.tree")
+    hky85 = get_app("model","HKY85", tree="data/brca1_primate.tree")
 
 We construct the hypothesis app by providing the null and alternate models.
 
 .. jupyter-execute::
 
-    hyp = evo.hypothesis(f81, hky85)
+    hyp = get_app("hypothesis", f81, hky85)
 
 We apply it to our alignment.
 
@@ -268,6 +268,8 @@ Exercises
 
 The following require you to repeat the above hypothesis test. Download the :download:`alignment of primate BRCA1 sequences </data/brca1_primate.fasta>` and :download:`the tree </data/brca1_primate.tree>`, or :ref:`using Python <download_data>`.
 
+#. Select 3 sequences from the alignment and apply the F81 model to it.
+
 #. From the test result, which model do you choose and why?
 
 #. Displaying the MLE's for the null hypothesis and the alternate hypothesis in separate cells. Which specific parameter value(s) is responsible for the difference in likelihoods?
@@ -276,7 +278,5 @@ The following require you to repeat the above hypothesis test. Download the :dow
 
 #. What are the assumptions of these models?
 
-#. Select 3 sequences from the alignment and apply the F81 model to it.
 
-.. todo:: mode last question to be the first
 .. todo:: add an exercise demonstrating why the average motif probs should not be used

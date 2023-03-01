@@ -677,37 +677,39 @@ Exercises
 
 #. Convert the following code into using ``numpy`` -- without ``for`` loops. After converting ``counts`` to a ``numpy`` array, my solution is 3 lines long.
 
-    .. tabbed:: Original Algorithm
-
-        .. jupyter-execute::
-
-            from math import log10
-    
-            counts = [[-4, 3, 4, -3, 4],
-                      [4, -1, -2, -3, 4],
-                      [-4, -1, 2, 0, 3],
-                      [2, -2, -2, -4, -5]]
-            result = []
-            for i in range(4):
-                row = []
-                for j in range(4):
-                    val = counts[i][j]
-                    val = 0 if val <= 0 else log10(val)
-                    row.append(val)
-                result.append(row)
+    .. tab-set::
         
-            result
-    
-    .. tabbed:: Expected result from conversion
-    
-        .. jupyter-execute::
-            :hide-code:
+        .. tab-item:: Original Algorithm
 
-            c = numpy.array(counts, dtype=float)
-            indices = c > 0
-            c[indices] = numpy.log10(c[indices])
-            c[~indices] = 0
-            c
+            .. jupyter-execute::
+
+                from math import log10
+    
+                counts = [[-4, 3, 4, -3, 4],
+                          [4, -1, -2, -3, 4],
+                          [-4, -1, 2, 0, 3],
+                          [2, -2, -2, -4, -5]]
+                result = []
+                for i in range(4):
+                    row = []
+                    for j in range(4):
+                        val = counts[i][j]
+                        val = 0 if val <= 0 else log10(val)
+                        row.append(val)
+                    result.append(row)
+        
+                result
+    
+        .. tab-item:: Expected result from conversion
+    
+            .. jupyter-execute::
+                :hide-code:
+
+                c = numpy.array(counts, dtype=float)
+                indices = c > 0
+                c[indices] = numpy.log10(c[indices])
+                c[~indices] = 0
+                c
 
 #. What happens when you slice the following 1D array using ``newaxis`` on the first axis, or the second axis
 
