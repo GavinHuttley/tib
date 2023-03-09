@@ -106,3 +106,6 @@ Exercises
 #. Write a function that takes a file path, opens the file and returns all the lines in that file.
 
 #. Convert the above function to a generator that yields one line at a time.
+
+
+.. todo:: add a variant of first question where task is to assemble words into a list
