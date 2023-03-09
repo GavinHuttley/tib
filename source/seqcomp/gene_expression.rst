@@ -52,6 +52,13 @@ This is a grossly simplified representation of how gene regulation happens. Regu
 
 How can we, as data analysts, inform the understanding of this complex problem? All statistical, and / or computational, analyses should start simple. Start with simple hypotheses and evaluate it and define a new hypotheses. By iterating this process we can gradually build well founded, more complicated models. In this process there should also be, ideally, empirical experiments.
 
+Exercises
+=========
+
+#. Make a visual **model** of how information is transformed from its genomic encoding into molecular action. From the above, draw a "simple" schematic [2]_ that shows the essential components of a gene. Add to that drawing elements that illustrate the presumed causal relationship of TFs and TFBs to the transcription of the gene into RNA. A drawing on paper is fine! You want this model to be reflect the essential patterns of this process. Imagine trying to explain this process to a first year student using your schematic. (Your schematic should be :ref:`simpler than the one above <regulatory element organisation>`.)
+
+.. [2] By simple I mean do not add every possible configuration for how things might be organised. For instance, just focus on the gene and its immediately flanking sequence. Decide what the *essential* features are and just draw those.  Your model is wrong, but it is your starting point for beginning to reason about this essential biological process.
+
 ------
 
 .. rubric:: Citations
