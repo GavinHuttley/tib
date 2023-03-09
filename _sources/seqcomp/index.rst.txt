@@ -14,8 +14,8 @@ There are additional coding skills that you need to develop, but these skills ar
     outline
     intro
     encoding_information
-    motifs
     gene_expression
+    motifs
     related_by_function
     motif_finding
     information

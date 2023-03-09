@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.7. Experimental procedures for detecting functionally related sequences &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+  <title>6.8. Experimental procedures for detecting functionally related sequences &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -34,8 +34,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.8. Finding motifs" href="motif_finding.html" />
-    <link rel="prev" title="6.6. Gene expression in a nutshell" href="gene_expression.html" /> 
+    <link rel="next" title="6.9. Finding motifs" href="motif_finding.html" />
+    <link rel="prev" title="6.6. \(k\)-mers and Motifs" href="motifs.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -67,26 +67,27 @@
 <li class="toctree-l2"><a class="reference internal" href="outline.html">6.1. Outline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">6.2. Introduction to Comparison of Biological Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.3. The role of sequence in encoding life</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.4. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.5. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.6. Gene expression in a nutshell</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.7. Experimental procedures for detecting functionally related sequences</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#selex-systematic-evolution-of-ligands-by-exponential-enrichment">6.7.1. SELEX – Systematic evolution of ligands by exponential enrichment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#chip-chromatin-immunoprecipitation">6.7.2. ChIP – chromatin immunoprecipitation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#with-the-sequence-data-from-those-experimental-procedures">6.7.3. With the sequence data from those experimental procedures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#transformation-of-the-data-for-analysis">6.7.4. Transformation of the data for analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.4. Gene expression in a nutshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html#exercises">6.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.6. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.7. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.8. Experimental procedures for detecting functionally related sequences</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#selex-systematic-evolution-of-ligands-by-exponential-enrichment">6.8.1. SELEX – Systematic evolution of ligands by exponential enrichment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chip-chromatin-immunoprecipitation">6.8.2. ChIP – chromatin immunoprecipitation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#with-the-sequence-data-from-those-experimental-procedures">6.8.3. With the sequence data from those experimental procedures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformation-of-the-data-for-analysis">6.8.4. Transformation of the data for analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.8. Finding motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html">6.9. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.10. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.11. Position Specific Scoring Matrices (PSSMs)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.12. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.13. Odds-ratio’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.16. Global Pairwise Alignment Using Dynamic Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.9. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.10. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.12. Position Specific Scoring Matrices (PSSMs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.13. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.14. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.15. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.17. Global Pairwise Alignment Using Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.18. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
@@ -112,7 +113,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">6.7. </span>Experimental procedures for detecting functionally related sequences</li>
+      <li class="breadcrumb-item active"><span class="section-number">6.8. </span>Experimental procedures for detecting functionally related sequences</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/related_by_function.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -147,12 +148,12 @@
 }
 </style>
 <section id="experimental-procedures-for-detecting-functionally-related-sequences">
-<span id="experimental-data"></span><h1><span class="section-number">6.7. </span>Experimental procedures for detecting functionally related sequences<a class="headerlink" href="#experimental-procedures-for-detecting-functionally-related-sequences" title="Permalink to this heading"></a></h1>
+<span id="experimental-data"></span><h1><span class="section-number">6.8. </span>Experimental procedures for detecting functionally related sequences<a class="headerlink" href="#experimental-procedures-for-detecting-functionally-related-sequences" title="Permalink to this heading"></a></h1>
 <p>Since DNA sequences can encode function, it holds that different sequences demonstrated to encode a comparable property should be similar. For instance, different sequences that are able to bind a specific protein (e.g. TBP) will share sequence features in common. This perspective motivates development of experimental and statistical techniques to uncover how such functional information is encoded.</p>
 <p>What sort of experiments can be conducted that allow identifying whether there is a particular diagnostic DNA sequence motif to which a protein binds? Whatever the nature of the experiment, we need a means for isolating a collection of sequences that are enriched for those that bind to the protein of interest. The experiment also needs to be able to identify the sequence of DNA molecules that have bound. Once that data exists we enter the world of computation and statistical analysis.</p>
 <p>There are a variety of experimental procedures that can used for this purpose <span id="id1">[<a class="reference internal" href="#id39" title="Marcel Geertz and Sebastian J Maerkl. Experimental strategies for studying transcription factor-dna binding specificities. Brief Funct Genomics, 9:362-73, 2010. doi:10.1093/bfgp/elq023.">GM10</a>]</span>. I will discuss just two of those here.</p>
 <section id="selex-systematic-evolution-of-ligands-by-exponential-enrichment">
-<span id="index-0"></span><h2><span class="section-number">6.7.1. </span>SELEX – Systematic evolution of ligands by exponential enrichment<a class="headerlink" href="#selex-systematic-evolution-of-ligands-by-exponential-enrichment" title="Permalink to this heading"></a></h2>
+<span id="index-0"></span><h2><span class="section-number">6.8.1. </span>SELEX – Systematic evolution of ligands by exponential enrichment<a class="headerlink" href="#selex-systematic-evolution-of-ligands-by-exponential-enrichment" title="Permalink to this heading"></a></h2>
 <p>This procedure is entirely <em>in vitro</em>. The inputs are a substantial amount of enriched protein <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> which is bound to a bead. Also required is a library of synthetically produced double stranded DNA of a precise fragment size. These two substrate are then incubated together under conditions favourable to binding of the DNA and protein. By eluting the unbound DNA fragments, you wind up with beads that have bound DNA. Those DNA fragments are then dissociated from the beads and amplified using PCR. This new DNA pool is then reintroduced to bead-bound protein and the process is repeated. (Only a few a rounds are done.) At the end of these iterations, the bound DNA is isolated again and the collection of DNA fragments is sequenced.</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id3" role="note">
@@ -168,7 +169,7 @@
 </figure>
 </section>
 <section id="chip-chromatin-immunoprecipitation">
-<span id="index-1"></span><h2><span class="section-number">6.7.2. </span>ChIP – chromatin immunoprecipitation<a class="headerlink" href="#chip-chromatin-immunoprecipitation" title="Permalink to this heading"></a></h2>
+<span id="index-1"></span><h2><span class="section-number">6.8.2. </span>ChIP – chromatin immunoprecipitation<a class="headerlink" href="#chip-chromatin-immunoprecipitation" title="Permalink to this heading"></a></h2>
 <p>ChIP-seq is an <em>in vivo</em> process. A precursor for this technique is the availability of an antibody with high specificity for the protein of interest. With this in place, the cellular material of interest is exposed to formaldehyde which causes formation of cross linking (via covalent bonds) between DNA and whatever else is bound to it. The cells are then lysed and the DNA protein mix extracted and sheared <a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> to a size suitable for the sequencing technology that will be used. You then expose the sheared DNA+protein mixture to the antibody and precipitate bound complexes. This step is followed by chemistry that reverses the cross linking, the protein is removed and the collection of DNA fragments are sequenced.</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id5" role="note">
@@ -190,7 +191,7 @@
 </aside>
 </section>
 <section id="with-the-sequence-data-from-those-experimental-procedures">
-<h2><span class="section-number">6.7.3. </span>With the sequence data from those experimental procedures<a class="headerlink" href="#with-the-sequence-data-from-those-experimental-procedures" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">6.8.3. </span>With the sequence data from those experimental procedures<a class="headerlink" href="#with-the-sequence-data-from-those-experimental-procedures" title="Permalink to this heading"></a></h2>
 <p>Identifying a dominant motif requires a way of summarising features across a collection of sequences. For instance, we can “align” fragments and employ a majority rule consensus approach. This just picks the most frequent state in a column of <em>aligned</em> sequences.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>01234 &lt;-- the &quot;index&quot; or position
 TCAGA
@@ -219,7 +220,7 @@ TYHBM &lt;-- the IUPAC consensus
 </div>
 </section>
 <section id="transformation-of-the-data-for-analysis">
-<span id="pssm-origins"></span><h2><span class="section-number">6.7.4. </span>Transformation of the data for analysis<a class="headerlink" href="#transformation-of-the-data-for-analysis" title="Permalink to this heading"></a></h2>
+<span id="pssm-origins"></span><h2><span class="section-number">6.8.4. </span>Transformation of the data for analysis<a class="headerlink" href="#transformation-of-the-data-for-analysis" title="Permalink to this heading"></a></h2>
 <p>From an experimental procedure, we ultimately seek to obtain a curated set of “aligned” sequences. I illustrate a hypothetical such case below <a class="footnote-reference brackets" href="#id9" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id9" role="note">
@@ -317,8 +318,8 @@ TYHBM &lt;-- the IUPAC consensus
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="gene_expression.html" class="btn btn-neutral float-left" title="6.6. Gene expression in a nutshell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="motif_finding.html" class="btn btn-neutral float-right" title="6.8. Finding motifs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="motifs.html" class="btn btn-neutral float-left" title="6.6. \(k\)-mers and Motifs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="motif_finding.html" class="btn btn-neutral float-right" title="6.9. Finding motifs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

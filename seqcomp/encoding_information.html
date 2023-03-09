@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.3. The role of sequence in encoding life &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+  <title>6.3. The role of sequence in encoding life &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -34,7 +34,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.4. \(k\)-mers and Motifs" href="motifs.html" />
+    <link rel="next" title="6.4. Gene expression in a nutshell" href="gene_expression.html" />
     <link rel="prev" title="6.2. Introduction to Comparison of Biological Sequences" href="intro.html" /> 
 </head>
 
@@ -67,20 +67,21 @@
 <li class="toctree-l2"><a class="reference internal" href="outline.html">6.1. Outline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">6.2. Introduction to Comparison of Biological Sequences</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">6.3. The role of sequence in encoding life</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.4. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.5. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.6. Gene expression in a nutshell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.7. Experimental procedures for detecting functionally related sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.8. Finding motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html">6.9. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.10. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.11. Position Specific Scoring Matrices (PSSMs)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.12. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.13. Odds-ratio’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.16. Global Pairwise Alignment Using Dynamic Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.4. Gene expression in a nutshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html#exercises">6.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.6. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.7. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.8. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.9. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.10. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.12. Position Specific Scoring Matrices (PSSMs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.13. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.14. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.15. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.17. Global Pairwise Alignment Using Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.18. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
@@ -200,7 +201,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="intro.html" class="btn btn-neutral float-left" title="6.2. Introduction to Comparison of Biological Sequences" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="motifs.html" class="btn btn-neutral float-right" title="6.4. \(k\)-mers and Motifs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gene_expression.html" class="btn btn-neutral float-right" title="6.4. Gene expression in a nutshell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

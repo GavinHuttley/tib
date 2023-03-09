@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.13. Odds-ratio’s &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+  <title>6.14. Odds-ratio’s &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -34,8 +34,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.14. Dotplot – Alignment of sequences related by descent from a common ancestor" href="dotplot.html" />
-    <link rel="prev" title="6.11. Position Specific Scoring Matrices (PSSMs)" href="pssm.html" /> 
+    <link rel="next" title="6.15. Dotplot – Alignment of sequences related by descent from a common ancestor" href="dotplot.html" />
+    <link rel="prev" title="6.12. Position Specific Scoring Matrices (PSSMs)" href="pssm.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -67,23 +67,24 @@
 <li class="toctree-l2"><a class="reference internal" href="outline.html">6.1. Outline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">6.2. Introduction to Comparison of Biological Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.3. The role of sequence in encoding life</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.4. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.5. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.6. Gene expression in a nutshell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.7. Experimental procedures for detecting functionally related sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.8. Finding motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html">6.9. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.10. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.11. Position Specific Scoring Matrices (PSSMs)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.12. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.13. Odds-ratio’s</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#log-odds-the-logarithm-variant">6.13.1. Log-odds – the logarithm variant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.4. Gene expression in a nutshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html#exercises">6.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.6. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.7. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.8. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.9. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.10. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.12. Position Specific Scoring Matrices (PSSMs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.13. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.14. Odds-ratio’s</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#log-odds-the-logarithm-variant">6.14.1. Log-odds – the logarithm variant</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.16. Global Pairwise Alignment Using Dynamic Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.15. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.17. Global Pairwise Alignment Using Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.18. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
@@ -109,7 +110,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">6.13. </span>Odds-ratio’s</li>
+      <li class="breadcrumb-item active"><span class="section-number">6.14. </span>Odds-ratio’s</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/odds_ratios.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -144,7 +145,7 @@
 }
 </style>
 <section id="odds-ratio-s">
-<span id="odds-ratios"></span><h1><span class="section-number">6.13. </span>Odds-ratio’s<a class="headerlink" href="#odds-ratio-s" title="Permalink to this heading"></a></h1>
+<span id="odds-ratios"></span><h1><span class="section-number">6.14. </span>Odds-ratio’s<a class="headerlink" href="#odds-ratio-s" title="Permalink to this heading"></a></h1>
 <p>There are a multitude of statistical measures that are presented as odds-ratios (hereafter OR). They are often seen in terms of evaluating clinical studies. For instance, the odds-ratio of statin medication increasing life-span. We will be concerned with using the odds-ratio to distinguish between competing hypotheses.</p>
 <p>Consider an odds ratio that contrast the probability of a sequence under an alternate hypothesis (<span class="math notranslate nohighlight">\(p_{alt}\)</span>) against the probability of the sequence under a null hypothesis (<span class="math notranslate nohighlight">\(p_{null}\)</span>). In this instance, an OR equal to 1 if <span class="math notranslate nohighlight">\(p_{alt} = p_{null}\)</span>, i.e. the sequence is equally likely under both models. OR &gt; 1 indicates the sequence is more likely under the alternate, while a value less than 1 implies the converse.</p>
 <aside class="footnote-list brackets">
@@ -154,7 +155,7 @@
 </aside>
 </aside>
 <section id="log-odds-the-logarithm-variant">
-<h2><span class="section-number">6.13.1. </span>Log-odds – the logarithm variant<a class="headerlink" href="#log-odds-the-logarithm-variant" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">6.14.1. </span>Log-odds – the logarithm variant<a class="headerlink" href="#log-odds-the-logarithm-variant" title="Permalink to this heading"></a></h2>
 <p>A log-odds ratio is simply the log-transformation of the odds ratio <a class="footnote-reference brackets" href="#id1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. For example, for OR=1, the log-odds <span class="math notranslate nohighlight">\(log_{10}(OR)=0\)</span> <a class="footnote-reference brackets" href="#id4" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id4" role="note">
@@ -169,8 +170,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pssm.html" class="btn btn-neutral float-left" title="6.11. Position Specific Scoring Matrices (PSSMs)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="dotplot.html" class="btn btn-neutral float-right" title="6.14. Dotplot – Alignment of sequences related by descent from a common ancestor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pssm.html" class="btn btn-neutral float-left" title="6.12. Position Specific Scoring Matrices (PSSMs)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dotplot.html" class="btn btn-neutral float-right" title="6.15. Dotplot – Alignment of sequences related by descent from a common ancestor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

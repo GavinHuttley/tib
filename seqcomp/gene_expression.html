@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.6. Gene expression in a nutshell &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+  <title>6.4. Gene expression in a nutshell &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -34,8 +34,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.7. Experimental procedures for detecting functionally related sequences" href="related_by_function.html" />
-    <link rel="prev" title="6.4. \(k\)-mers and Motifs" href="motifs.html" /> 
+    <link rel="next" title="6.6. \(k\)-mers and Motifs" href="motifs.html" />
+    <link rel="prev" title="6.3. The role of sequence in encoding life" href="encoding_information.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -67,20 +67,21 @@
 <li class="toctree-l2"><a class="reference internal" href="outline.html">6.1. Outline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">6.2. Introduction to Comparison of Biological Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.3. The role of sequence in encoding life</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.4. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.5. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.6. Gene expression in a nutshell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.7. Experimental procedures for detecting functionally related sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.8. Finding motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html">6.9. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.10. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.11. Position Specific Scoring Matrices (PSSMs)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.12. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.13. Odds-ratio’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.16. Global Pairwise Alignment Using Dynamic Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.17. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.4. Gene expression in a nutshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">6.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html">6.6. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.7. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.8. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.9. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.10. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.12. Position Specific Scoring Matrices (PSSMs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.13. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.14. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.15. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.17. Global Pairwise Alignment Using Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.18. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
@@ -106,7 +107,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">6.6. </span>Gene expression in a nutshell</li>
+      <li class="breadcrumb-item active"><span class="section-number">6.4. </span>Gene expression in a nutshell</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/gene_expression.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -141,7 +142,7 @@
 }
 </style>
 <section id="gene-expression-in-a-nutshell">
-<span id="gene-expression"></span><h1><span class="section-number">6.6. </span>Gene expression in a nutshell<a class="headerlink" href="#gene-expression-in-a-nutshell" title="Permalink to this heading"></a></h1>
+<span id="gene-expression"></span><h1><span class="section-number">6.4. </span>Gene expression in a nutshell<a class="headerlink" href="#gene-expression-in-a-nutshell" title="Permalink to this heading"></a></h1>
 <p>The purpose of this section is not to present an authoritative synopsis of gene expression. Instead, the objective is to present a simplified overview of what we understand about the nature of information encoding in DNA which influences gene expression and how that information is organised.</p>
 <figure class="align-default" id="gene-regulation">
 <img alt="../_images/Gene_structure_eukaryote_2_annotated.svg" src="../_images/Gene_structure_eukaryote_2_annotated.svg" /><figcaption>
@@ -151,13 +152,13 @@
 </div>
 </figcaption>
 </figure>
-<p id="index-0">The <a class="reference internal" href="#gene-regulation"><span class="std std-ref">structural elements of eukaryotic genes</span></a> figure illustrates both the generalised information content associated with genes, and the stepwise processes via which a gene is transcribed and ultimately translated into a protein. I want to draw your attention to the annotated segments that are listed as regulatory sequence. Such segments exist at the 5’- and 3’- boundaries of a gene. Between these lies the gene body, consisting of exons and introns. Immediately flanking the gene are the UTR (untranslated region). Preceding the 5’-UTR is the promoter region which is further broken into “core” and “proximal”. The promoter region is the target for binding of molecules that facilitate and/or initiate transcription the downstream gene into RNA. The transcript includes the UTRs as well as the gene body. One important feature not explicitly represented in this figure is the actual site at which transcription starts. This is commonly referred to as the TSS (transcription start site). The TSS is largely defined by the core promoter <span id="id2">[<a class="reference internal" href="#id37" title="Tamar Juven-Gershon, Jer-Yuan Hsu, Joshua Wm Theisen, and James T Kadonaga. The rna polymerase ii core promoter - the gateway to transcription. Curr Opin Cell Biol, 20:253-9, 2008. doi:10.1016/j.ceb.2008.03.003.">JGHTK08</a>]</span>. As that citation argues, there can be variability in the TSS for an individual gene. We are primarily interested in how information is encoded in promoter regions.</p>
+<p id="index-0">The <a class="reference internal" href="#gene-regulation"><span class="std std-ref">structural elements of eukaryotic genes</span></a> figure illustrates both the generalised information content associated with genes, and the stepwise processes via which a gene is transcribed and ultimately translated into a protein. I want to draw your attention to the annotated segments that are listed as regulatory sequence. Such segments exist at the 5’- and 3’- boundaries of a gene. Between these lies the gene body, consisting of exons and introns. Immediately flanking the gene are the UTR (untranslated region). Preceding the 5’-UTR is the promoter region which is further broken into “core” and “proximal”. The promoter region is the target for binding of molecules that facilitate and/or initiate transcription the downstream gene into RNA. The transcript includes the UTRs as well as the gene body. One important feature not explicitly represented in this figure is the actual site at which transcription starts. This is commonly referred to as the TSS (transcription start site). The TSS is largely defined by the core promoter <span id="id2">[<a class="reference internal" href="#id39" title="Tamar Juven-Gershon, Jer-Yuan Hsu, Joshua Wm Theisen, and James T Kadonaga. The rna polymerase ii core promoter - the gateway to transcription. Curr Opin Cell Biol, 20:253-9, 2008. doi:10.1016/j.ceb.2008.03.003.">JGHTK08</a>]</span>. As that citation argues, there can be variability in the TSS for an individual gene. We are primarily interested in how information is encoded in promoter regions.</p>
 <aside class="sidebar" id="regulatory-element-organisation">
 <span id="index-1"></span><p class="sidebar-title">Cartoon of regulatory element organisation</p>
-<figure class="align-default" id="id42">
+<figure class="align-default" id="id44">
 <a class="reference internal image-reference" href="../_images/transcription.png"><img alt="../_images/transcription.png" src="../_images/transcription.png" style="width: 398.25px; height: 357.75px;" /></a>
 <figcaption>
-<p><span class="caption-text">Regulatory element organisation in eukaryotic DNA</span><a class="headerlink" href="#id42" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Regulatory element organisation in eukaryotic DNA</span><a class="headerlink" href="#id44" title="Permalink to this image"></a></p>
 <div class="legend">
 <p>From <a class="reference external" href="http://doi.org/10.1038/nrg1315">Wasserman, &amp; Sandelin</a></p>
 </div>
@@ -166,10 +167,10 @@
 </aside>
 <aside class="sidebar" id="binding-to-dna">
 <p class="sidebar-title">Binding to DNA</p>
-<figure class="align-default" id="id43">
+<figure class="align-default" id="id45">
 <a class="reference internal image-reference" href="../_images/tata_bp.png"><img alt="../_images/tata_bp.png" src="../_images/tata_bp.png" style="width: 255.0px; height: 193.5px;" /></a>
 <figcaption>
-<p><span class="caption-text">Crystal structure of TBP bound to a short segment of DNA</span><a class="headerlink" href="#id43" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Crystal structure of TBP bound to a short segment of DNA</span><a class="headerlink" href="#id45" title="Permalink to this image"></a></p>
 <div class="legend">
 <p>Structure <a class="reference external" href="http://bit.ly/2i0s4pk">from NCBI</a></p>
 </div>
@@ -180,23 +181,35 @@
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id4" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
-<p>Application of chromatin conformation capture experimental procedures have demonstrated  that, within the nucleus, primary sequence span is not always a reliable measure of physical proximity between regulatory elements and the genes regulate <span id="id5">[<a class="reference internal" href="#id36" title="Melissa J Fullwood, Mei Hui Liu, You Fu Pan, Jun Liu, Han Xu, Yusoff Bin Mohamed, Yuriy L Orlov, Stoyan Velkov, Andrea Ho, Poh Huay Mei, Elaine G Y Chew, Phillips Yao Hui Huang, Willem-Jan Welboren, Yuyuan Han, Hong Sain Ooi, Pramila N Ariyaratne, Vinsensius B Vega, Yanquan Luo, Peck Yean Tan, Pei Ye Choy, K D Senali Abayratna Wansa, Bing Zhao, Kar Sian Lim, Shi Chi Leow, Jit Sin Yow, Roy Joseph, Haixia Li, Kartiki V Desai, Jane S Thomsen, Yew Kok Lee, R Krishna Murthy Karuturi, Thoreau Herve, Guillaume Bourque, Hendrik G Stunnenberg, Xiaoan Ruan, Valere Cacheux-Rataboul, Wing-Kin Sung, Edison T Liu, Chia-Lin Wei, Edwin Cheung, and Yijun Ruan. An oestrogen-receptor-alpha-bound human chromatin interactome. Nature, 462:58-64, 2009. doi:10.1038/nature08497.">FLP+09</a>, <a class="reference internal" href="#id35" title="Erez Lieberman-Aiden, Nynke L van Berkum, Louise Williams, Maxim Imakaev, Tobias Ragoczy, Agnes Telling, Ido Amit, Bryan R Lajoie, Peter J Sabo, Michael O Dorschner, Richard Sandstrom, Bradley Bernstein, M A Bender, Mark Groudine, Andreas Gnirke, John Stamatoyannopoulos, Leonid A Mirny, Eric S Lander, and Job Dekker. Comprehensive mapping of long-range interactions reveals folding principles of the human genome. Science, 326:289-93, 2009. doi:10.1126/science.1181369.">LAvBW+09</a>]</span>.</p>
+<p>Application of chromatin conformation capture experimental procedures have demonstrated  that, within the nucleus, primary sequence span is not always a reliable measure of physical proximity between regulatory elements and the genes regulate <span id="id5">[<a class="reference internal" href="#id38" title="Melissa J Fullwood, Mei Hui Liu, You Fu Pan, Jun Liu, Han Xu, Yusoff Bin Mohamed, Yuriy L Orlov, Stoyan Velkov, Andrea Ho, Poh Huay Mei, Elaine G Y Chew, Phillips Yao Hui Huang, Willem-Jan Welboren, Yuyuan Han, Hong Sain Ooi, Pramila N Ariyaratne, Vinsensius B Vega, Yanquan Luo, Peck Yean Tan, Pei Ye Choy, K D Senali Abayratna Wansa, Bing Zhao, Kar Sian Lim, Shi Chi Leow, Jit Sin Yow, Roy Joseph, Haixia Li, Kartiki V Desai, Jane S Thomsen, Yew Kok Lee, R Krishna Murthy Karuturi, Thoreau Herve, Guillaume Bourque, Hendrik G Stunnenberg, Xiaoan Ruan, Valere Cacheux-Rataboul, Wing-Kin Sung, Edison T Liu, Chia-Lin Wei, Edwin Cheung, and Yijun Ruan. An oestrogen-receptor-alpha-bound human chromatin interactome. Nature, 462:58-64, 2009. doi:10.1038/nature08497.">FLP+09</a>, <a class="reference internal" href="#id37" title="Erez Lieberman-Aiden, Nynke L van Berkum, Louise Williams, Maxim Imakaev, Tobias Ragoczy, Agnes Telling, Ido Amit, Bryan R Lajoie, Peter J Sabo, Michael O Dorschner, Richard Sandstrom, Bradley Bernstein, M A Bender, Mark Groudine, Andreas Gnirke, John Stamatoyannopoulos, Leonid A Mirny, Eric S Lander, and Job Dekker. Comprehensive mapping of long-range interactions reveals folding principles of the human genome. Science, 326:289-93, 2009. doi:10.1126/science.1181369.">LAvBW+09</a>]</span>.</p>
 </aside>
 </aside>
 <p>This is a grossly simplified representation of how gene regulation happens. Regulatory control is a complicated process mediated by multiple elements.</p>
 <p>How can we, as data analysts, inform the understanding of this complex problem? All statistical, and / or computational, analyses should start simple. Start with simple hypotheses and evaluate it and define a new hypotheses. By iterating this process we can gradually build well founded, more complicated models. In this process there should also be, ideally, empirical experiments.</p>
+</section>
+<section id="exercises">
+<h1><span class="section-number">6.5. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
+<ol class="arabic simple">
+<li><p>Make a visual <strong>model</strong> of how information is transformed from its genomic encoding into molecular action. From the above, draw a “simple” schematic <a class="footnote-reference brackets" href="#id7" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> that shows the essential components of a gene. Add to that drawing elements that illustrate the presumed causal relationship of TFs and TFBs to the transcription of the gene into RNA. A drawing on paper is fine! You want this model to be reflect the essential patterns of this process. Imagine trying to explain this process to a first year student using your schematic. (Your schematic should be <a class="reference internal" href="#regulatory-element-organisation"><span class="std std-ref">simpler than the one above</span></a>.)</p></li>
+</ol>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id7" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">2</a><span class="fn-bracket">]</span></span>
+<p>By simple I mean do not add every possible configuration for how things might be organised. For instance, just focus on the gene and its immediately flanking sequence. Decide what the <em>essential</em> features are and just draw those.  Your model is wrong, but it is your starting point for beginning to reason about this essential biological process.</p>
+</aside>
+</aside>
 <hr class="docutils" />
 <p class="rubric">Citations</p>
-<div class="docutils container" id="id6">
-<div class="citation" id="id36" role="doc-biblioentry">
+<div class="docutils container" id="id8">
+<div class="citation" id="id38" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">FLP+09</a><span class="fn-bracket">]</span></span>
 <p>Melissa J Fullwood, Mei Hui Liu, You Fu Pan, Jun Liu, Han Xu, Yusoff Bin Mohamed, Yuriy L Orlov, Stoyan Velkov, Andrea Ho, Poh Huay Mei, Elaine G Y Chew, Phillips Yao Hui Huang, Willem-Jan Welboren, Yuyuan Han, Hong Sain Ooi, Pramila N Ariyaratne, Vinsensius B Vega, Yanquan Luo, Peck Yean Tan, Pei Ye Choy, K D Senali Abayratna Wansa, Bing Zhao, Kar Sian Lim, Shi Chi Leow, Jit Sin Yow, Roy Joseph, Haixia Li, Kartiki V Desai, Jane S Thomsen, Yew Kok Lee, R Krishna Murthy Karuturi, Thoreau Herve, Guillaume Bourque, Hendrik G Stunnenberg, Xiaoan Ruan, Valere Cacheux-Rataboul, Wing-Kin Sung, Edison T Liu, Chia-Lin Wei, Edwin Cheung, and Yijun Ruan. An oestrogen-receptor-alpha-bound human chromatin interactome. <em>Nature</em>, 462:58–64, 2009. <a class="reference external" href="https://doi.org/10.1038/nature08497">doi:10.1038/nature08497</a>.</p>
 </div>
-<div class="citation" id="id37" role="doc-biblioentry">
+<div class="citation" id="id39" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">JGHTK08</a><span class="fn-bracket">]</span></span>
 <p>Tamar Juven-Gershon, Jer-Yuan Hsu, Joshua Wm Theisen, and James T Kadonaga. The rna polymerase ii core promoter - the gateway to transcription. <em>Curr Opin Cell Biol</em>, 20:253–9, 2008. <a class="reference external" href="https://doi.org/10.1016/j.ceb.2008.03.003">doi:10.1016/j.ceb.2008.03.003</a>.</p>
 </div>
-<div class="citation" id="id35" role="doc-biblioentry">
+<div class="citation" id="id37" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">LAvBW+09</a><span class="fn-bracket">]</span></span>
 <p>Erez Lieberman-Aiden, Nynke L van Berkum, Louise Williams, Maxim Imakaev, Tobias Ragoczy, Agnes Telling, Ido Amit, Bryan R Lajoie, Peter J Sabo, Michael O Dorschner, Richard Sandstrom, Bradley Bernstein, M A Bender, Mark Groudine, Andreas Gnirke, John Stamatoyannopoulos, Leonid A Mirny, Eric S Lander, and Job Dekker. Comprehensive mapping of long-range interactions reveals folding principles of the human genome. <em>Science</em>, 326:289–93, 2009. <a class="reference external" href="https://doi.org/10.1126/science.1181369">doi:10.1126/science.1181369</a>.</p>
 </div>
@@ -208,8 +221,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="motifs.html" class="btn btn-neutral float-left" title="6.4. \(k\)-mers and Motifs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="related_by_function.html" class="btn btn-neutral float-right" title="6.7. Experimental procedures for detecting functionally related sequences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="encoding_information.html" class="btn btn-neutral float-left" title="6.3. The role of sequence in encoding life" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="motifs.html" class="btn btn-neutral float-right" title="6.6. \(k\)-mers and Motifs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

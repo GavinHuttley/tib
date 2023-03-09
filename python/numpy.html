@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.43. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+  <title>5.43. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -1416,11 +1416,11 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 1, 1, 1],
-       [1, 1, 1, 1, 0],
-       [0, 1, 1, 1, 0],
-       [0, 1, 0, 0, 0],
-       [1, 0, 1, 1, 0]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 1, 0, 0],
+       [1, 1, 1, 0, 1],
+       [0, 0, 1, 1, 1],
+       [0, 0, 1, 0, 1],
+       [1, 1, 1, 0, 1]])
 </pre></div>
 </div>
 </div>
@@ -1428,7 +1428,7 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 4], [0, 1, 2, 3, 4, 0, 1, 2, 3, 1, 2, 3, 1, 0, 2, 3])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4], [1, 2, 0, 1, 2, 4, 2, 3, 4, 2, 4, 0, 1, 2, 4])
 </pre></div>
 </div>
 </div>
@@ -1441,7 +1441,7 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>10.5 µs ± 19.1 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>11.4 µs ± 63.8 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>

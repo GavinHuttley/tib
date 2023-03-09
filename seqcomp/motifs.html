@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.4. \(k\)-mers and Motifs &mdash; Topics in Bioinformatics 2023.03.01 documentation</title>
+  <title>6.6. \(k\)-mers and Motifs &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -34,8 +34,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.6. Gene expression in a nutshell" href="gene_expression.html" />
-    <link rel="prev" title="6.3. The role of sequence in encoding life" href="encoding_information.html" /> 
+    <link rel="next" title="6.8. Experimental procedures for detecting functionally related sequences" href="related_by_function.html" />
+    <link rel="prev" title="6.4. Gene expression in a nutshell" href="gene_expression.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -67,24 +67,25 @@
 <li class="toctree-l2"><a class="reference internal" href="outline.html">6.1. Outline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">6.2. Introduction to Comparison of Biological Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.3. The role of sequence in encoding life</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.4. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#kmers">6.4.1. <span class="math notranslate nohighlight">\(k\)</span>-mers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#motifs">6.4.2. Motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.4. Gene expression in a nutshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene_expression.html#exercises">6.5. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.6. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kmers">6.6.1. <span class="math notranslate nohighlight">\(k\)</span>-mers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#motifs">6.6.2. Motifs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">6.5. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.6. Gene expression in a nutshell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.7. Experimental procedures for detecting functionally related sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.8. Finding motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html">6.9. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.10. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.11. Position Specific Scoring Matrices (PSSMs)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.12. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.13. Odds-ratio’s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.14. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.15. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.16. Global Pairwise Alignment Using Dynamic Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.17. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">6.7. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.8. Experimental procedures for detecting functionally related sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.9. Finding motifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html">6.10. Measuring information using Shannon’s entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html">6.12. Position Specific Scoring Matrices (PSSMs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.13. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.14. Odds-ratio’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.15. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.16. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html">6.17. Global Pairwise Alignment Using Dynamic Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pairwise_alignment.html#exercises">6.18. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
@@ -110,7 +111,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">6.4. </span><span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</li>
+      <li class="breadcrumb-item active"><span class="section-number">6.6. </span><span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/motifs.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -145,9 +146,9 @@
 }
 </style>
 <section id="kmers-and-motifs">
-<h1><span class="section-number">6.4. </span><span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs<a class="headerlink" href="#kmers-and-motifs" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">6.6. </span><span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs<a class="headerlink" href="#kmers-and-motifs" title="Permalink to this heading"></a></h1>
 <section id="kmers">
-<span id="index-0"></span><h2><span class="section-number">6.4.1. </span><span class="math notranslate nohighlight">\(k\)</span>-mers<a class="headerlink" href="#kmers" title="Permalink to this heading"></a></h2>
+<span id="index-0"></span><h2><span class="section-number">6.6.1. </span><span class="math notranslate nohighlight">\(k\)</span>-mers<a class="headerlink" href="#kmers" title="Permalink to this heading"></a></h2>
 <p>One way of describing DNA sequences is simply counting the occurrences of DNA words of a fixed size. Such words are often referred to as <span class="math notranslate nohighlight">\(k\)</span>-mers where <span class="math notranslate nohighlight">\(k\)</span> refers to the word length. If we set <span class="math notranslate nohighlight">\(k=1\)</span>, then the complete set of possible 1-mers is the listing of the nucleotides, i.e. <code class="docutils literal notranslate"><span class="pre">{A,</span> <span class="pre">C,</span> <span class="pre">G,</span> <span class="pre">T}</span></code>.</p>
 <p>But why do it? Why is knowing <span class="math notranslate nohighlight">\(k\)</span>-mers informative? There are a multitude of ways in which <span class="math notranslate nohighlight">\(k\)</span>-mer counting is used in bioinformatics. One concerns evolutionary relatedness, another concerns functional encoding. Before we tackle those, lets go ahead and define <span class="math notranslate nohighlight">\(k\)</span>-mers in more detail.</p>
 <p>We define the set of possible <span class="math notranslate nohighlight">\(k\)</span>-mers as the full enumeration of a characters in a state space. In English, since DNA has four letters there are <span class="math notranslate nohighlight">\(4^k\)</span> distinct <span class="math notranslate nohighlight">\(k\)</span>-mers. So for <span class="math notranslate nohighlight">\(k=2\)</span>, that’s <span class="math notranslate nohighlight">\(4^2=16\)</span>. These are all the possible dinucleotides.</p>
@@ -199,13 +200,13 @@
 <p>So how do <span class="math notranslate nohighlight">\(k\)</span>-mers get used? They are used as a measure of evolutionary relatedness. The “distance” between <span class="math notranslate nohighlight">\(k\)</span>-mer distributions of closely related species is typically smaller than the distance between distantly related species. The genomic signature statistics of <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/9294192/">Karlin and colleagues</a> are related to these measures. Moreover, <span class="math notranslate nohighlight">\(k\)</span>-mers are <a class="reference external" href="https://www.genetics.org/content/215/1/25">employed in machine learning algorithms</a> such as that of Zhu et al (from my own lab).</p>
 </section>
 <section id="motifs">
-<span id="index-1"></span><h2><span class="section-number">6.4.2. </span>Motifs<a class="headerlink" href="#motifs" title="Permalink to this heading"></a></h2>
+<span id="index-1"></span><h2><span class="section-number">6.6.2. </span>Motifs<a class="headerlink" href="#motifs" title="Permalink to this heading"></a></h2>
 <p>Another application of <span class="math notranslate nohighlight">\(k\)</span>-mers is in how they relate to the concept of motifs. A motif is a short sequence that occurs multiple times in a DNA, RNA or protein sequence. The phrase can also be applied quite generally. For instance, the <code class="docutils literal notranslate"><span class="pre">&quot;ATG&quot;</span></code> motif corresponds to the start codon of protein coding genes. The phrase is typically applied to sequences that have some functional association. Arguably, this notion is exemplified by sequence logos, a statistical method used for visualisation of motifs. The DNA binding motif of the TBP protein is visually represented by a <a class="reference internal" href="gene_expression.html#binding-to-dna"><span class="std std-ref">sequence logo</span></a>. A related visualisation technique was developed by Zhu et al (from my own lab) for identifying <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/27974498">sequence motifs associated with mutation processes</a>.</p>
 <p>As the start codon example illustrates, motifs represent a fundamental concept in the description of information encoding by DNA sequences.</p>
 </section>
 </section>
 <section id="exercises">
-<h1><span class="section-number">6.5. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">6.7. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
 <ol class="arabic">
 <li><p>Consider the sequence <code class="docutils literal notranslate"><span class="pre">seq</span></code>. How many different <span class="math notranslate nohighlight">\(k\)</span>-mers are there for <span class="math notranslate nohighlight">\(k=1,2,3\)</span>?</p>
 <blockquote>
@@ -232,8 +233,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="encoding_information.html" class="btn btn-neutral float-left" title="6.3. The role of sequence in encoding life" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="gene_expression.html" class="btn btn-neutral float-right" title="6.6. Gene expression in a nutshell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gene_expression.html" class="btn btn-neutral float-left" title="6.4. Gene expression in a nutshell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="related_by_function.html" class="btn btn-neutral float-right" title="6.8. Experimental procedures for detecting functionally related sequences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
