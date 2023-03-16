@@ -79,7 +79,7 @@ As the start codon example illustrates, motifs represent a fundamental concept i
 Exercises
 =========
 
-#. Consider the sequence ``seq``. How many different |kmers| are there for :math:`k=1,2,3`?
+#. Consider the sequence ``seq``. How many |kmers| are there for :math:`k=1,2,3`?
 
     .. jupyter-execute::
     
