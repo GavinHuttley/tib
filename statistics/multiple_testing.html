@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9.6. Hypothesis testing on genomic data &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
+  <title>9.6. Hypothesis testing on genomic data &mdash; Topics in Bioinformatics 2023.03.16 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -109,31 +109,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="hypothesis-testing-on-genomic-data">
+  <section id="hypothesis-testing-on-genomic-data">
 <h1><span class="section-number">9.6. </span>Hypothesis testing on genomic data<a class="headerlink" href="#hypothesis-testing-on-genomic-data" title="Permalink to this heading"></a></h1>
 <p>For scientists dealing with genomic data, studies were only a single hypothesis test is performed are rare. Rather, the same hypothesis test may be employed thousands, or hundreds of thousands of times. For instance, Genome Wide Association Studies (or GWAS) evaluate for each Single Nucleotide Polymorphism (or SNP) whether allele counts differ between disease and non-disease samples. With each such test returning a <span class="math notranslate nohighlight">\(p\)</span>-value, the risk of incorrectly rejecting a null hypothesis is greatly amplified.</p>
 <p>Let’s define our significance threshold as per the convention, a <span class="math notranslate nohighlight">\(p\)</span>-value<span class="math notranslate nohighlight">\(\le 0.05\)</span>. Drawing on the definition of the <span class="math notranslate nohighlight">\(p\)</span>-value, we expected to obtain a significant result 5% of the time. This means that if we looked at GWAS results from 100 SNPs when there is no genetic basis for a phenotype (i.e. the null hypothesis is true), we expect 5 SNPs to be “significant”. If we looked at 100,000 SNPs, we expect 5000 to be significant.</p>

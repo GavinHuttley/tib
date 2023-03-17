@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.10. Measuring information using Shannon’s entropy &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
+  <title>6.10. Measuring information using Shannon’s entropy &mdash; Topics in Bioinformatics 2023.03.16 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -124,31 +124,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="measuring-information-using-shannon-s-entropy">
+  <section id="measuring-information-using-shannon-s-entropy">
 <span id="shannon-entropy"></span><h1><span class="section-number">6.10. </span>Measuring information using Shannon’s entropy<a class="headerlink" href="#measuring-information-using-shannon-s-entropy" title="Permalink to this heading"></a></h1>
 <p>We can measure the information content of “something” using a measurement called “entropy” (like a scale for information). The core unit is the “bit”, called a measure of surprise, which is the answer to a yes/no question.</p>
 <p>Consider a state space containing only the letter <code class="docutils literal notranslate"><span class="pre">A</span></code>. We can never be “surprised” by the outcome of drawing a new letter from this space as it can only be of one type. So our entropy, in this case is 0. Add another letter and we have a chance to be “surprised”. So in general, as predictability goes up, entropy goes down.</p>
@@ -276,7 +252,7 @@ Expected output<div class="sd-summary-down docutils">
 <blockquote>
 <div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AAGCGGCGGGACGAAGGCGGGAAGAGGGAAACCGAAACGAGGACGCCCGA&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GGGCCGCAGGAACGCAGAAAGCGAGAGCCAGAGACAGGCGGGGGGAGGGA&#39;
 </pre></div>
 </div>
 </div>

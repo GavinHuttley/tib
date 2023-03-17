@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.7. MolType – specifying biological sequence type &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
+  <title>8.7. MolType – specifying biological sequence type &mdash; Topics in Bioinformatics 2023.03.16 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -111,31 +111,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="moltype-specifying-biological-sequence-type">
+  <section id="moltype-specifying-biological-sequence-type">
 <span id="moltypes"></span><h1><span class="section-number">8.7. </span><code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type<a class="headerlink" href="#moltype-specifying-biological-sequence-type" title="Permalink to this heading"></a></h1>
 <p>True biological sequences are polymers of monomeric units with distinct chemical properties. These are represented by specific alphabets of allowed characters, a collection of ambiguous characters <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and various operations that can be performed on them. In <code class="docutils literal notranslate"><span class="pre">cogent3</span></code>, we represent some of these using concepts with the an object type called a <code class="docutils literal notranslate"><span class="pre">MolType</span></code>. The available moltypes are displayed by calling a convenience function, <code class="docutils literal notranslate"><span class="pre">available_moltypes()</span></code>.</p>
 <aside class="footnote-list brackets">

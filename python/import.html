@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.39. Extending capabilities using import &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
+  <title>5.39. Extending capabilities using import &mdash; Topics in Bioinformatics 2023.03.16 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -150,31 +150,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="extending-capabilities-using-import">
+  <section id="extending-capabilities-using-import">
 <span id="import-module"></span><span id="index-0"></span><h1><span class="section-number">5.39. </span>Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#extending-capabilities-using-import" title="Permalink to this heading"></a></h1>
 <p>In Python, the capabilities of the core name space is relatively stripped down. Much of the power of the language comes from the availability of modules. For instance, the <code class="docutils literal notranslate"><span class="pre">math</span></code> module is part of what is referred to as the Python <em>standard library</em>, i.e. it comes standard with all Python installations. How we gain access to these is through the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. <code class="docutils literal notranslate"><span class="pre">math</span></code> contains many basic mathematical operations, e.g. <code class="docutils literal notranslate"><span class="pre">log()</span></code> or <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>, as functions. We get access to those using the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation.</p>
 <div class="jupyter_cell jupyter_container docutils container">

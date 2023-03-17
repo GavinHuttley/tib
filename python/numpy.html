@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.43. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2023.03.09 documentation</title>
+  <title>5.43. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2023.03.16 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -174,31 +174,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<aside class="sidebar" id="numpy-install">
+  <aside class="sidebar" id="numpy-install">
 <span id="index-0"></span><p class="sidebar-title">Installing <code class="docutils literal notranslate"><span class="pre">numpy</span></code> on your computer</p>
 <p>If you want to use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> on your own computer you will need to install it. How to do so will depend very much on how you have setup Python. If you are not using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, then the following is the safest approach.</p>
 <p>In the terminal (either macOS terminal, or the one included with <a class="reference external" href="https://code.visualstudio.com">VS Code</a>)</p>
@@ -1416,11 +1392,11 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 1, 1, 0],
-       [1, 1, 0, 0, 1],
-       [0, 0, 1, 1, 0],
-       [1, 0, 0, 1, 0],
-       [1, 1, 1, 1, 0]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 1, 0, 0],
+       [0, 0, 1, 0, 0],
+       [0, 1, 1, 0, 0],
+       [0, 1, 1, 0, 1],
+       [1, 1, 0, 0, 0]])
 </pre></div>
 </div>
 </div>
@@ -1428,7 +1404,7 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4], [1, 2, 3, 0, 1, 4, 2, 3, 0, 3, 0, 1, 2, 3])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 1, 2, 2, 3, 3, 3, 4, 4], [0, 1, 2, 2, 1, 2, 1, 2, 4, 0, 1])
 </pre></div>
 </div>
 </div>
@@ -1441,7 +1417,7 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>9.62 µs ± 15.5 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>11.8 µs ± 202 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
