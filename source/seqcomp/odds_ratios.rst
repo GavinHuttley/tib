@@ -12,6 +12,6 @@ Consider an odds ratio that contrast the probability of a sequence under an alte
 Log-odds -- the logarithm variant
 ---------------------------------
 
-A log-odds ratio is simply the log-transformation of the odds ratio [1]_. For example, for OR=1, the log-odds :math:`log_{10}(OR)=0` [2]_.
+A log-odds ratio is simply the log-transformation of the odds ratio [1]_. For example, for OR=1, the log-odds :math:`\log_{10}(OR)=0` [2]_.
 
-.. [2] If you find a log-odds value hard to interpret, convert it back into a natural number by raising the logarithm base to the power of the log-odds. For example, if the log-odds value you have is :math:`LOR`, and it was obtained as :math:`LOR = \log_2(OR)`, then the reverse operation, :math:`OR = 2^{LOR}`, gives you back the :math:`OR`.
+.. [2] If you find a log-odds value hard to interpret, convert it back into a natural number by raising the logarithm base to the power of the log-odds. For example, if the log-odds value you have is :math:`LOR`, and it was obtained as :math:`LOR = \log_2(OR)`, then the reverse operation is :math:`OR = 2^{LOR}`.
