@@ -334,8 +334,8 @@ So how well does our algorithm go in aligning the sequences we used for the dopl
 
 .. code-block:: text
 
-    A: CCTCTGAATAGG - -A - GA - --CAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT
-    B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA - --GGTGGCGCACATAGATTT
+    A: CCTCTGAATAGG--A-GA---CAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT
+    B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 
 This is not the same. The single large gap in ``A`` from the above has now been fragmented into multiple smaller gaps. This illustrates a limitation of the linear gap score. Examination of real biological sequences indicates that indels tend to affect multiple adjacent positions. For instance, in a protein coding gene indels sizes are products of 3. This has the effect of maintaining the reading frame. A more advanced indel (e.g. an affine gap) model is used to represent this property. We don't address that here aside from saying this is just one of the ways alignment algorithms have improved since the original NW publication.
 
