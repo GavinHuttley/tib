@@ -1,3 +1,8 @@
+.. jupyter-execute::
+    :hide-code:
+
+    import set_working_directory
+
 .. _experimental_data:
 
 Experimental procedures for detecting functionally related sequences
@@ -84,14 +89,9 @@ From an experimental procedure, we ultimately seek to obtain a curated set of "a
 .. jupyter-execute::
     :hide-code:
 
-    from cogent3 import make_aligned_seqs
+	from book_code import pssm_calc
 
-    seqs = {'seq-0': 'ATTTATG', 'seq-1': 'ATATAAA', 'seq-2': 'TTATAAA', 'seq-3': 'TTAAAAG', 
-            'seq-4': 'ATAAATG', 'seq-5': 'ATATATG', 'seq-6': 'ATATAGG', 'seq-7': 'ATAAAAA',
-            'seq-8': 'ATAAATC', 'seq-9': 'ATATTTA'}
-    aln = make_aligned_seqs(data=seqs, moltype="dna")
-    aln.set_repr_policy(ref_name="seq-0")
-    aln
+    pssm_calc.aln
 
 .. index::
     pair: PWM; Position Specific Weights Matrix
@@ -101,11 +101,9 @@ This is converted to a table of nucleotide counts per aligned column, resulting 
 .. jupyter-execute::
     :hide-code:
 
-    c = aln.counts_per_pos()
-    c = c.to_table()
-    tr = c.transposed(r"Base \ Position", select_as_header="", index_name=r"Base \ Position",
-                      title="PWM", legend="position specific weights matrix")
-    tr
+    from book_code import pssm_calc
+
+    pssm_calc.calc_pwm()
 
 This table becomes the primary source for defining :ref:`PSSMs <PSSMs>`.
 

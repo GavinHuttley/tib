@@ -53,11 +53,11 @@ Information at a position
 -------------------------
 
 .. math::
-    R_i=\log_2(n) - H_i
+    R_j=\log_2(n) - H_i
 
-where :math:`R_i` is the information at position *i*, *n* is the number of possible states (4 for DNA), :math:`\log_2(n)` is the maximum possible entropy, and :math:`H_i` is the Shannon entropy for position *i*.
+where :math:`R_j` is the information at position :math:`j`, :math:`n` is the number of possible states (4 for DNA), :math:`\log_2(n)` is the maximum possible entropy, and :math:`H_j` is the Shannon entropy for position :math:`j`.
 
-In this display, the letter height at a position is :math:`p_{i,l} R_i`.
+In this display, the letter height at a position is :math:`p_{j,l} R_j`.
 
 Problems with sequence logo
 ---------------------------
@@ -69,9 +69,9 @@ Using relative entropy as an alternate
 
 Relative entropy (`RE`) is defined as
 
-:math:`RE_i = \sum_{i=0}^n p_i \log_2(p_i / q_i)`
+:math:`RE_j = \sum_{i=0}^n p_i \log_2(p_i / q_i)`
 
-where :math:`q_i` is the background (e.g. genome) frequency of *i*.
+where :math:`q_i` is the background (e.g. genome) frequency of :math:`i`.
 
 An illustration of the difference -- identifying neighbouring base effects on mutation
 --------------------------------------------------------------------------------------

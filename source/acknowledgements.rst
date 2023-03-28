@@ -12,6 +12,7 @@ Acknowledgements
 - Jesse Wallace for suggesting assorted improvements and fixes.
 - Hulson Zhang identified a bug (and the correction) for incorrect initialisation of the Needleman-Wunsch traceback matrix.
 - Yapeng Lang fixed a mistake in plotting alignment information.
+- Puning Wang identified a typo in the equation for position-wise information.
 
 I also wish to thank WingIDE_, who have donated licenses to their professional python IDE for well over a decade. Their sustained support for open source projects is greatly appreciated!
 

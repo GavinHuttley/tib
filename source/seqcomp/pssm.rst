@@ -1,3 +1,9 @@
+.. jupyter-execute::
+    :hide-code:
+
+    import set_working_directory
+
+
 .. _PSSMs:
 
 Position Specific Scoring Matrices (PSSMs)
@@ -15,22 +21,10 @@ We convert the :ref:`PWM <pssm-origins>` into a PPM, but I'm restricting the exa
 .. jupyter-execute::
     :hide-code:
 
-    from cogent3 import make_table
+    from book_code import pssm_calc
 
-    table = make_table(
-        header=[r"Base \ Position", "0", "1", "3"],
-        data={
-            r"Base \ Position": list("TCAG"),
-            "0": [0.2, 0, 0.8, 0],
-            "1": [1.0, 0.0, 0.0, 0.0],
-            "2": [0.1, 0.0, 0.9, 0.0],
-            "3": [0.6, 0.0, 0.4, 0.0],
-        },
-        title="PPM --",
-        legend="Position specific probability matrix",
-        digits=1,
-    )
-    table
+    pssm_calc.calc_ppm()
+
 
 A worked example
 ----------------
