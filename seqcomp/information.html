@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.10. Measuring information using Shannon’s entropy &mdash; Topics in Bioinformatics 2023.03.23 documentation</title>
+  <title>6.10. Measuring information using Shannon’s entropy &mdash; Topics in Bioinformatics 2023.03.28 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -162,9 +162,9 @@ Ent.   0    0.72  1.52  1.52  0.97
 <section id="information-at-a-position">
 <span id="information"></span><h2><span class="section-number">6.10.2. </span>Information at a position<a class="headerlink" href="#information-at-a-position" title="Permalink to this heading"></a></h2>
 <div class="math notranslate nohighlight">
-\[R_i=\log_2(n) - H_i\]</div>
-<p>where <span class="math notranslate nohighlight">\(R_i\)</span> is the information at position <em>i</em>, <em>n</em> is the number of possible states (4 for DNA), <span class="math notranslate nohighlight">\(\log_2(n)\)</span> is the maximum possible entropy, and <span class="math notranslate nohighlight">\(H_i\)</span> is the Shannon entropy for position <em>i</em>.</p>
-<p>In this display, the letter height at a position is <span class="math notranslate nohighlight">\(p_{i,l} R_i\)</span>.</p>
+\[R_j=\log_2(n) - H_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(R_j\)</span> is the information at position <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(n\)</span> is the number of possible states (4 for DNA), <span class="math notranslate nohighlight">\(\log_2(n)\)</span> is the maximum possible entropy, and <span class="math notranslate nohighlight">\(H_j\)</span> is the Shannon entropy for position <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>In this display, the letter height at a position is <span class="math notranslate nohighlight">\(p_{j,l} R_j\)</span>.</p>
 </section>
 <section id="problems-with-sequence-logo">
 <h2><span class="section-number">6.10.3. </span>Problems with sequence logo<a class="headerlink" href="#problems-with-sequence-logo" title="Permalink to this heading"></a></h2>
@@ -173,8 +173,8 @@ Ent.   0    0.72  1.52  1.52  0.97
 <section id="using-relative-entropy-as-an-alternate">
 <h2><span class="section-number">6.10.4. </span>Using relative entropy as an alternate<a class="headerlink" href="#using-relative-entropy-as-an-alternate" title="Permalink to this heading"></a></h2>
 <p>Relative entropy (<span class="incremental">RE</span>) is defined as</p>
-<p><span class="math notranslate nohighlight">\(RE_i = \sum_{i=0}^n p_i \log_2(p_i / q_i)\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(q_i\)</span> is the background (e.g. genome) frequency of <em>i</em>.</p>
+<p><span class="math notranslate nohighlight">\(RE_j = \sum_{i=0}^n p_i \log_2(p_i / q_i)\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(q_i\)</span> is the background (e.g. genome) frequency of <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </section>
 <section id="an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation">
 <h2><span class="section-number">6.10.5. </span>An illustration of the difference – identifying neighbouring base effects on mutation<a class="headerlink" href="#an-illustration-of-the-difference-identifying-neighbouring-base-effects-on-mutation" title="Permalink to this heading"></a></h2>
@@ -252,7 +252,7 @@ Expected output<div class="sd-summary-down docutils">
 <blockquote>
 <div><div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ACCCAGAGACGGGGGGGACCAAGGGGGCGCGGGGAGAGCGCCCAAAGACG&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;AAGCAAGGGGGGAAGAGGCCGAACGAGCAAACAGAGGGAACAAACCCGAC&#39;
 </pre></div>
 </div>
 </div>
