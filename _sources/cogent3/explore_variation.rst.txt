@@ -82,8 +82,6 @@ Comparing sequences using dotplots
 
 ``cogent3`` implements an advanced dotplot algorithm with some very useful features for exploring the relationship between sequences, and the quality of your alignment. Note that this method also exists on the ``SequenceCollection`` class.
 
-.. warning:: The dotplot algorithm is slow! Start on a smaller slice of the alignment to begin with.
-
 Dotplot between random sequences
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
