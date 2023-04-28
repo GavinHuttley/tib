@@ -18,3 +18,17 @@ There are quite a few apps and you can see an overview of what's available as fo
 That function returns a cogent3 table, so I'm just displaying the first few rows.
 
 See the `cogent3 apps documentation <https://cogent3.org/doc/app/index.html>`_ for more details.
+
+.. index::
+    pair: app_help(); help()
+
+Getting help on an app
+======================
+
+To get information on a particular app, use the special ``app_help()`` function, passing the name of the app as a string.
+
+.. jupyter-execute::
+
+    from cogent3 import app_help
+	
+	app_help("model")

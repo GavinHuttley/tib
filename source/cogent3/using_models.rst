@@ -268,7 +268,7 @@ Exercises
 
 The following require you to repeat the above hypothesis test. Download the :download:`alignment of primate BRCA1 sequences </data/brca1_primate.fasta>` and :download:`the tree </data/brca1_primate.tree>`, or :ref:`using Python <download_data>`.
 
-#. Select 3 sequences from the alignment and apply the F81 model to it.
+#. Select 3 sequences from the alignment and perform a hypothesis test comparing F81 and HKY85.
 
 #. From the test result, which model do you choose and why?
 
