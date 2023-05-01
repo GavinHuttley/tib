@@ -30,5 +30,7 @@ To get information on a particular app, use the special ``app_help()`` function,
 .. jupyter-execute::
 
     from cogent3 import app_help
-	
-	app_help("model")
+    
+    app_help("model")
+
+
