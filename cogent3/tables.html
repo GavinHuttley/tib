@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.11. Tabular data &mdash; Topics in Bioinformatics 2023.04.21 documentation</title>
+  <title>8.12. Tabular data &mdash; Topics in Bioinformatics 2023.05.01 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -34,8 +34,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.12. General purpose statistical tests using cogent3" href="statistical_tests.html" />
-    <link rel="prev" title="8.9. Modelling sequence evolution" href="using_models.html" /> 
+    <link rel="next" title="8.13. General purpose statistical tests using cogent3" href="statistical_tests.html" />
+    <link rel="prev" title="8.10. Modelling sequence evolution" href="using_models.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -74,28 +74,29 @@
 <li class="toctree-l2"><a class="reference internal" href="genetic_codes.html">8.6. Genetic Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moltype.html">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps.html">8.8. Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_models.html">8.9. Modelling sequence evolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_models.html#exercises">8.10. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.11. Tabular data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#making-a-table-from-standard-python-objects">8.11.1. Making a Table from standard Python objects</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#from-a-column-oriented-dict">8.11.1.1. From a column-oriented dict</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#from-a-header-and-a-list-of-lists">8.11.1.2. From a header and a list of lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html#getting-help-on-an-app">8.9. Getting help on an app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_models.html">8.10. Modelling sequence evolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_models.html#exercises">8.11. Exercises</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.12. Tabular data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#making-a-table-from-standard-python-objects">8.12.1. Making a Table from standard Python objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-a-column-oriented-dict">8.12.1.1. From a column-oriented dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-a-header-and-a-list-of-lists">8.12.1.2. From a header and a list of lists</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#loading-a-table-from-a-file">8.11.2. Loading a table from a file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-summary-using-table-head-or-table-tail">8.11.3. Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slicing-a-table">8.11.4. Slicing a Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-a-column">8.11.5. Getting a column</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-column">8.11.6. Creating a new column</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#filtering-a-table-to-include-rows-by-value">8.11.7. Filtering a table to include rows by value</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#counting-unique-values">8.11.8. Counting unique values</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#to-categorical-count">8.11.8.1. To categorical count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-a-table-from-a-file">8.12.2. Loading a table from a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-summary-using-table-head-or-table-tail">8.12.3. Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slicing-a-table">8.12.4. Slicing a Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-a-column">8.12.5. Getting a column</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-column">8.12.6. Creating a new column</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-a-table-to-include-rows-by-value">8.12.7. Filtering a table to include rows by value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#counting-unique-values">8.12.8. Counting unique values</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#to-categorical-count">8.12.8.1. To categorical count</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#generating-categorical-counts-from-a-table">8.11.9. Generating categorical counts from a Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-categorical-counts-from-a-table">8.12.9. Generating categorical counts from a Table</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="statistical_tests.html">8.12. General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_tests.html">8.13. General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
@@ -119,7 +120,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">8. </span>Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">8.11. </span>Tabular data</li>
+      <li class="breadcrumb-item active"><span class="section-number">8.12. </span>Tabular data</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GavinHuttley/tib/blob/develop/source/cogent3/tables.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -134,10 +135,10 @@
 </div>
 </div>
 <section id="tabular-data">
-<span id="tables"></span><h1><span class="section-number">8.11. </span>Tabular data<a class="headerlink" href="#tabular-data" title="Permalink to this heading"></a></h1>
+<span id="tables"></span><h1><span class="section-number">8.12. </span>Tabular data<a class="headerlink" href="#tabular-data" title="Permalink to this heading"></a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> <code class="docutils literal notranslate"><span class="pre">Table</span></code> data type provides methods for manipulating tabular data. Here we summarise the basic capabilities. One important point to make is that tables are immutable, in that once a column has been created you cannot modify individual elements. But you can modify what columns a table has, their name and order. Table columns themselves are just numpy arrays. (See the <a class="reference external" href="https://cogent3.org/doc/cookbook/tables.html">cogent3 cookbook</a> for a more thorough description.)</p>
 <section id="making-a-table-from-standard-python-objects">
-<span id="index-0"></span><h2><span class="section-number">8.11.1. </span>Making a Table from standard Python objects<a class="headerlink" href="#making-a-table-from-standard-python-objects" title="Permalink to this heading"></a></h2>
+<span id="index-0"></span><h2><span class="section-number">8.12.1. </span>Making a Table from standard Python objects<a class="headerlink" href="#making-a-table-from-standard-python-objects" title="Permalink to this heading"></a></h2>
 <aside class="sidebar" id="making-dinucs">
 <p class="sidebar-title">Generating some data</p>
 <p>I will produce a table that has two columns corresponding to base <code class="docutils literal notranslate"><span class="pre">1</span></code> and base <code class="docutils literal notranslate"><span class="pre">2</span></code> of all non-overlapping dinucleotides in DNA sequence. We will construct this using the Wombat sequence from <em>BRCA1</em>.</p>
@@ -183,7 +184,7 @@
 </aside>
 </aside>
 <section id="from-a-column-oriented-dict">
-<h3><span class="section-number">8.11.1.1. </span>From a column-oriented dict<a class="headerlink" href="#from-a-column-oriented-dict" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">8.12.1.1. </span>From a column-oriented dict<a class="headerlink" href="#from-a-column-oriented-dict" title="Permalink to this heading"></a></h3>
 <p>We convert dinucleotide data into a column based <code class="docutils literal notranslate"><span class="pre">dict</span></code> – the keys will become the column names and the values will be the column.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -249,7 +250,7 @@
 </div>
 </section>
 <section id="from-a-header-and-a-list-of-lists">
-<h3><span class="section-number">8.11.1.2. </span>From a header and a list of lists<a class="headerlink" href="#from-a-header-and-a-list-of-lists" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">8.12.1.2. </span>From a header and a list of lists<a class="headerlink" href="#from-a-header-and-a-list-of-lists" title="Permalink to this heading"></a></h3>
 <p>I’m going to make a list of lists from <code class="docutils literal notranslate"><span class="pre">dinucs</span></code> by just convert each dinucleotide into a list.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -318,7 +319,7 @@
 </section>
 </section>
 <section id="loading-a-table-from-a-file">
-<span id="index-3"></span><h2><span class="section-number">8.11.2. </span>Loading a table from a file<a class="headerlink" href="#loading-a-table-from-a-file" title="Permalink to this heading"></a></h2>
+<span id="index-3"></span><h2><span class="section-number">8.12.2. </span>Loading a table from a file<a class="headerlink" href="#loading-a-table-from-a-file" title="Permalink to this heading"></a></h2>
 <p>We load a tab separated data file using the <code class="docutils literal notranslate"><span class="pre">load_table()</span></code> function. The format is inferred from the filename suffix.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -373,7 +374,7 @@
 </div>
 </section>
 <section id="getting-summary-using-table-head-or-table-tail">
-<h2><span class="section-number">8.11.3. </span>Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code><a class="headerlink" href="#getting-summary-using-table-head-or-table-tail" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.12.3. </span>Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code><a class="headerlink" href="#getting-summary-using-table-head-or-table-tail" title="Permalink to this heading"></a></h2>
 <p>These display the top or bottom of a table.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -463,7 +464,7 @@
 </div>
 </section>
 <section id="slicing-a-table">
-<h2><span class="section-number">8.11.4. </span>Slicing a Table<a class="headerlink" href="#slicing-a-table" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.12.4. </span>Slicing a Table<a class="headerlink" href="#slicing-a-table" title="Permalink to this heading"></a></h2>
 <p>Tables are “row oriented”, so the first index concerns rows, the column.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -509,7 +510,7 @@
 </div>
 </section>
 <section id="getting-a-column">
-<h2><span class="section-number">8.11.5. </span>Getting a column<a class="headerlink" href="#getting-a-column" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.12.5. </span>Getting a column<a class="headerlink" href="#getting-a-column" title="Permalink to this heading"></a></h2>
 <p>Tables have a <code class="docutils literal notranslate"><span class="pre">column</span></code> attribute.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -565,7 +566,7 @@
 </div>
 </section>
 <section id="creating-a-new-column">
-<span id="index-4"></span><h2><span class="section-number">8.11.6. </span>Creating a new column<a class="headerlink" href="#creating-a-new-column" title="Permalink to this heading"></a></h2>
+<span id="index-4"></span><h2><span class="section-number">8.12.6. </span>Creating a new column<a class="headerlink" href="#creating-a-new-column" title="Permalink to this heading"></a></h2>
 <p>You write a function that takes the rows from the columns ytou want and returns the result of some operation. I’ll just take the square root of kappa.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -615,7 +616,7 @@
 </div>
 </section>
 <section id="filtering-a-table-to-include-rows-by-value">
-<h2><span class="section-number">8.11.7. </span>Filtering a table to include rows by value<a class="headerlink" href="#filtering-a-table-to-include-rows-by-value" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.12.7. </span>Filtering a table to include rows by value<a class="headerlink" href="#filtering-a-table-to-include-rows-by-value" title="Permalink to this heading"></a></h2>
 <p>In our dinucleotide table, we only want rows where both bases are in the canonical set <code class="docutils literal notranslate"><span class="pre">{A,</span> <span class="pre">C,</span> <span class="pre">G,</span> <span class="pre">T}</span></code>. We do this via a filter step using a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function and a <code class="docutils literal notranslate"><span class="pre">set</span></code> object consisting of these bases. The <code class="docutils literal notranslate"><span class="pre">filtered()</span></code> method calls the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> with each row. Only if the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> will the row be included in the new <code class="docutils literal notranslate"><span class="pre">Table</span></code>. In our case, our <code class="docutils literal notranslate"><span class="pre">lambda</span></code> will return true if the set of elements in the row is a subset of all the basses.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -673,7 +674,7 @@
 </div>
 </section>
 <section id="counting-unique-values">
-<h2><span class="section-number">8.11.8. </span>Counting unique values<a class="headerlink" href="#counting-unique-values" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.12.8. </span>Counting unique values<a class="headerlink" href="#counting-unique-values" title="Permalink to this heading"></a></h2>
 <p>This method returns counts of the unique combinations of values from the specified columns. The result is a <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> type, a <code class="docutils literal notranslate"><span class="pre">CategoryCounter</span></code> instance, which has some useful properties. Principal being that it behaves like a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -689,7 +690,7 @@
 </div>
 </div>
 <section id="to-categorical-count">
-<h3><span class="section-number">8.11.8.1. </span>To categorical count<a class="headerlink" href="#to-categorical-count" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">8.12.8.1. </span>To categorical count<a class="headerlink" href="#to-categorical-count" title="Permalink to this heading"></a></h3>
 <p>Another being that it can produce <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -957,7 +958,7 @@
 </section>
 </section>
 <section id="generating-categorical-counts-from-a-table">
-<span id="index-5"></span><h2><span class="section-number">8.11.9. </span>Generating categorical counts from a Table<a class="headerlink" href="#generating-categorical-counts-from-a-table" title="Permalink to this heading"></a></h2>
+<span id="index-5"></span><h2><span class="section-number">8.12.9. </span>Generating categorical counts from a Table<a class="headerlink" href="#generating-categorical-counts-from-a-table" title="Permalink to this heading"></a></h2>
 <p>We can also get a <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object via <code class="docutils literal notranslate"><span class="pre">Table.to_categorical()</span></code>. In this case, the counts must be fully specified prior to constructing the table. (Meaning you’ve already done the counting part.) In addition, we also need to specify a column whose values are the row categories. The latter is achieved setting <code class="docutils literal notranslate"><span class="pre">make_table(index_name=&lt;column</span> <span class="pre">name&gt;)</span></code>. In this case, I specify the column name of the index is an empty string.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1132,8 +1133,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="using_models.html" class="btn btn-neutral float-left" title="8.9. Modelling sequence evolution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="statistical_tests.html" class="btn btn-neutral float-right" title="8.12. General purpose statistical tests using cogent3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="using_models.html" class="btn btn-neutral float-left" title="8.10. Modelling sequence evolution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="statistical_tests.html" class="btn btn-neutral float-right" title="8.13. General purpose statistical tests using cogent3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

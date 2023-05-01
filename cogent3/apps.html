@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8.8. Overview of cogent3 apps &mdash; Topics in Bioinformatics 2023.04.21 documentation</title>
+  <title>8.8. Overview of cogent3 apps &mdash; Topics in Bioinformatics 2023.05.01 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -34,7 +34,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.9. Modelling sequence evolution" href="using_models.html" />
+    <link rel="next" title="8.10. Modelling sequence evolution" href="using_models.html" />
     <link rel="prev" title="8.7. MolType – specifying biological sequence type" href="moltype.html" /> 
 </head>
 
@@ -74,10 +74,11 @@
 <li class="toctree-l2"><a class="reference internal" href="genetic_codes.html">8.6. Genetic Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moltype.html">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">8.8. Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_models.html">8.9. Modelling sequence evolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_models.html#exercises">8.10. Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tables.html">8.11. Tabular data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical_tests.html">8.12. General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-help-on-an-app">8.9. Getting help on an app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_models.html">8.10. Modelling sequence evolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_models.html#exercises">8.11. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables.html">8.12. Tabular data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_tests.html">8.13. General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
@@ -165,13 +166,111 @@
 <p>That function returns a cogent3 table, so I’m just displaying the first few rows.</p>
 <p>See the <a class="reference external" href="https://cogent3.org/doc/app/index.html">cogent3 apps documentation</a> for more details.</p>
 </section>
+<section id="getting-help-on-an-app">
+<span id="index-0"></span><h1><span class="section-number">8.9. </span>Getting help on an app<a class="headerlink" href="#getting-help-on-an-app" title="Permalink to this heading"></a></h1>
+<p>To get information on a particular app, use the special <code class="docutils literal notranslate"><span class="pre">app_help()</span></code> function, passing the name of the app as a string.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">app_help</span>
+
+<span class="n">app_help</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Overview
+--------
+Define a substitution model + tree for maximum likelihood evaluation.
+
+Options for making the app
+--------------------------
+model_app = get_app(
+    &quot;model&quot;,
+    sm,
+    tree=None,
+    unique_trees=False,
+    name=None,
+    optimise_motif_probs=False,
+    sm_args=None,
+    lf_args=None,
+    time_het=None,
+    param_rules=None,
+    opt_args=None,
+    upper=50,
+    split_codons=False,
+    show_progress=False,
+    verbose=False,
+)
+
+Parameters
+----------
+sm : str or instance
+    substitution model if string must be available via get_model()
+tree
+    if None, assumes a star phylogeny (only valid for 3 taxa). Can be a
+    newick formatted tree, a path to a file containing one, or a Tree
+    instance.
+unique_trees : bool
+    whether to specify a unique tree per alignment. Only applies if
+    number of sequences equals 3.
+name : str
+    name of the model
+optimise_motif_probs : bool
+    whether the motif probabilities are free parameters. If False,
+    takes the average of frequencies from the alignment. Overrides
+    the setting of a sub model instance, or any value provided in
+    sm_args.
+sm_args : dict
+    arguments to be passed to the substitution model constructor
+lf_args : dict
+    arguments to be passed to the likelihood function constructor
+time_het
+    &#39;max&#39; or a list of dicts corresponding to edge_sets, e.g.
+    [dict(edges=[&#39;Human&#39;, &#39;Chimp&#39;], is_independent=False, upper=10)].
+    Passed to the likelihood function .set_time_heterogeneity()
+    method.
+param_rules : list
+    other parameter rules, passed to the likelihood function
+    set_param_rule() method
+opt_args : dict
+    arguments for the numerical optimiser, e.g.
+    dict(max_restarts=5, tolerance=1e-6, max_evaluations=1000,
+    limit_action=&#39;ignore&#39;)
+upper
+    Upper bound for all rate and length parameters. Overrides
+    values defined in ``time_het`` or ``param_rules``.
+split_codons : bool
+    if True, incoming alignments are split into the 3 frames and each
+    frame is fit separately
+show_progress : bool
+    show progress bars during numerical optimisation
+verbose : bool
+    prints intermediate states to screen during fitting
+Returns
+-------
+Calling an instance with an alignment returns a model_result instance
+with the optimised likelihood function. In the case of split_codons,
+the result object has a separate entry for each codon position.
+
+Input type
+----------
+Alignment, ArrayAlignment
+
+Output type
+-----------
+model_result, SerialisableType
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="moltype.html" class="btn btn-neutral float-left" title="8.7. MolType – specifying biological sequence type" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="using_models.html" class="btn btn-neutral float-right" title="8.9. Modelling sequence evolution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="using_models.html" class="btn btn-neutral float-right" title="8.10. Modelling sequence evolution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
