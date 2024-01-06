@@ -20,7 +20,7 @@ sphinx_comments
 sphinx_design
 sphinxcontrib-bibtex
 sphinx_design
-sphinx_rtd_theme
+sphinx_book_theme
 tqdm>=4.47.0
 nbformat
 nbconvert
