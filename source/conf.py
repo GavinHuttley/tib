@@ -20,7 +20,6 @@ rst_prolog = """
 """
 
 extensions = [
-    "sphinx.ext.autodoc",
     "sphinx.ext.graphviz",
     "sphinx.ext.doctest",
     "sphinx.ext.intersphinx",
@@ -31,7 +30,7 @@ extensions = [
     "jupyter_sphinx",
     "sphinx_design",
     "sphinxcontrib.bibtex",
-    "sphinx_rtd_theme",
+    "sphinx_book_theme",
 ]
 
 # todo_include_todos = True
@@ -46,29 +45,21 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["*/sample_homologs.ipynb", "*/orig_nbks/*"]
 
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_book_theme"
 # -- Options for HTML output -------------------------------------------------
-
-html_context = {
-    "display_github": True,  # Integrate GitHub
-    "github_user": "GavinHuttley",  # Username
-    "github_repo": "tib",  # Repo name
-    "github_version": "develop",  # Version
-    "conf_py_path": "/source/",  # Path in the checkout to the docs root
-}
 
 html_static_path = ["_static"]
 
+html_title = project
+
 html_theme_options = {
-    "display_version": True,
     "prev_next_buttons_location": "bottom",
-    "style_external_links": False,
-    # Toc options
-    "collapse_navigation": True,
-    "sticky_navigation": True,
-    "navigation_depth": 6,
-    "includehidden": True,
-    "titles_only": False,
+     "collapse_navbar": True,
+     "use_edit_page_button": True,
+     "use_issues_button": True,
+    "show_navbar_depth": 1,
+    "repository_url": "https://github.com/GavinHuttley/tib",
+    "use_repository_button": True,
 }
 
 html_css_files = [
@@ -76,11 +67,3 @@ html_css_files = [
 ]
 
 bibtex_bibfiles = ["references.bib"]
-
-
-nbsphinx_requirejs_path = "require.js"
-
-html_js_files = [
-    "require.min.js",  # Add to your _static
-    "custom.js",
-]
