@@ -39,7 +39,9 @@ Consider two sequences, ``X`` and ``Y`` with lengths ``n`` and ``m`` respectivel
 
 .. note:: I am *not* using Python indexing here! This is, in effect, a :math:`k`-mer matching algorithm where :math:`k=1`.
 
-.. [1] Because of the Plotly colour scale, we use values of 0 to indicate a match which will display as black, 1 means a mismatch which will be white. For the two sample sequences ``"AGCGT"`` and ``"AT"`` we construct by hand the resulting.
+.. margin::
+  
+    .. [1] Because of the Plotly colour scale, we use values of 0 to indicate a match which will display as black, 1 means a mismatch which will be white. For the two sample sequences ``"AGCGT"`` and ``"AT"`` we construct by hand the resulting.
 
 .. code-block:: python
     :name: dotplot_matrix

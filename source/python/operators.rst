@@ -23,7 +23,9 @@ In addition to the mathematical operators we have covered, there are *relational
 - ``!=`` not equal to
 - ``is`` the same instance, has the same location in memory [1]_.
 
-.. [1] This is more stringent than ``==``.
+.. margin::
+  
+    .. [1] This is more stringent than ``==``.
 
 .. index::
     pair: &; bitwise operators

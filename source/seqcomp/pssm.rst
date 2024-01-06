@@ -51,7 +51,9 @@ Calculating the Expected Under the Alternate
 
 In this case, I'm just doing this "manually". First, note the base order is T, C, A, G [1]_. Here's a pseudo-code algorithm describing this calculation:
 
-.. [1] This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software.
+.. margin::
+  
+    .. [1] This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software.
 
 .. code-block:: rest
 

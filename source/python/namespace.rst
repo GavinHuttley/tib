@@ -53,7 +53,9 @@ In brief, variables defined within the local scope (or local namespace) are only
 
 But they cannot be modified within the local scope (unless you use the ``global`` keyword [1]_).
 
-.. [1] Using ``global`` is typically a bad idea in terms of algorithmic robustness.
+.. margin::
+  
+    .. [1] Using ``global`` is typically a bad idea in terms of algorithmic robustness.
 
 .. jupyter-execute::
     :raises:
@@ -102,4 +104,6 @@ Consider this broken code
 
 #. Fix, using the ``global`` keyword, so it works to return ``[8, 16, 46]`` given ``data``. What happens to the global variable ``CONSTANT`` [2]_?
 
-.. [2] A part of the coding style guidelines I use is to use ALL CAPS for variables that are meant to be treated as constants.
+.. margin::
+  
+    .. [2] A part of the coding style guidelines I use is to use ALL CAPS for variables that are meant to be treated as constants.

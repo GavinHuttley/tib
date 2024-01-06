@@ -136,7 +136,9 @@ Matrices can be specified on construction by providing, for example, lists of li
 
 Or, by combining other arrays [1]_.
 
-.. [1] I've used the ``numpy.arange()`` function, which returns an ``array`` object.
+.. margin::
+  
+    .. [1] I've used the ``numpy.arange()`` function, which returns an ``array`` object.
 
 .. jupyter-execute::
 
@@ -442,7 +444,9 @@ The ``numpy`` array axis
 
 :ref:`As illustrated <numpy_axes>`, the ``axis`` argument specifies whether a method / function operates on rows or columns [2]_.
 
-.. [2] You can many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of ``axis`` may be required.
+.. margin::
+  
+    .. [2] You can many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of ``axis`` may be required.
 
 Working on this array.
 

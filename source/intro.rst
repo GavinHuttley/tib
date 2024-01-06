@@ -20,8 +20,10 @@ Just about every part of a biology wet-lab has some type of digital device, from
 
 Science is about producing general models of how the natural world works. Good scientific models are powerful because they allow us to make predictions about what we will observe in circumstances that have not yet been encountered. Computer programs are one way in which we represent those models. They provide us with the means to evaluate, on a large scale, how well our model matches actual data. In other words, software is integral to scientific practice.
 
-.. [1] I suspect this holds true for all the sciences.
-.. [2] Software is just another word for computer program. The computer is just a piece of hardware but the software is the specific set of instructions that dictate what that hardware does.
+.. margin::
+    
+    .. [1] I suspect this holds true for all the sciences.
+    .. [2] Software is just another word for computer program. The computer is just a piece of hardware but the software is the specific set of instructions that dictate what that hardware does.
 
 The above is a big picture view of the role of software in science, but where does this course fit in? I can say with absolute certainty that we will not be answering most of the questions raised above (Doh!). What *you* will be doing is acquiring the skills necessary to understand what the analyses described above are, how to perform them and whether *you* should believe the results. *You* will develop the skills to write custom software whose output you can trust. In your future career, that software may be as simple as handling data formats, or completely novel models of biological systems. In all cases, your software will be key to solving the scientific questions that you find interesting.
 
@@ -30,9 +32,11 @@ At this stage, I'm sure you have many questions. Like, *What is "bioinformatics"
 .. |Python| replace:: *Python*
 .. |R| replace:: *R*
 
-.. [3] I could write a very extensive essay on how open source software has, and continues to be, critical to science. Instead I have used the quote from Paul Romer to illuminate the fact that true scientific reproducibility requires transparency. By definition, open source software satisfies this condition while proprietary software does not.
+.. margin:: 
 
-.. [4] Ok, Ok, I get it. This is a gross oversimplification of the differences between the languages.
+    .. [3] I could write a very extensive essay on how open source software has, and continues to be, critical to science.
+
+    .. [4] Ok, Ok, I get it. This is a gross oversimplification of the differences between the languages.
 
 :index:`Data Science` is the joint application of algorithm development and statistical modelling to extracting information from what is referred to as "big data". Bioinformatics, also referred to as computational biology, certainly fits within this rather loose definition. In essence, Bioinformatics is the union of algorithms and statistics focussed on extracting information from big biological data sets to advance knowledge of biological systems.
 
@@ -44,5 +48,6 @@ At this stage, I'm sure you have many questions. Like, *What is "bioinformatics"
 
 *What will I get out of this course?* An understanding of how computer programs work. Improvements in your logical reasoning. An understanding of how to take advantage of computing to advance your own scientific interests. An appreciation of the pitfalls of software! All of this adds up to a superpower that will accelerate your work [5]_.
 
-.. [5] Sorry, it's bring your own cape.
-
+.. margin::
+    
+    .. [5] Sorry, it's bring your own cape.

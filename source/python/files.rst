@@ -185,4 +185,6 @@ Exercises
 
 #. Read the lines from the file [1]_ and create a ``dict`` with keys corresponding to ``Project_Code`` and values being the list of all corresponding ``Donor_ID``, e.g. :python:`{'CNS-PiloAstro': ['DO36068', 'DO35934', ...`. Use plain python only (no 3rd party libraries).
 
-.. [1] This :download:`tab delimited text file <../data/donor_by_cancer_type.tsv>` is derived from the `Pan-Cancer Analysis of Whole Genomes project <https://dcc.icgc.org/pcawg>`_.
+.. margin::
+  
+    .. [1] This :download:`tab delimited text file <../data/donor_by_cancer_type.tsv>` is derived from the `Pan-Cancer Analysis of Whole Genomes project <https://dcc.icgc.org/pcawg>`_.

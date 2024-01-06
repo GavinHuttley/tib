@@ -46,7 +46,9 @@ The :ref:`structural elements of eukaryotic genes <gene regulation>` figure illu
 
 A somewhat more detailed cartoon presenting concepts of regulatory encoding is shown in the :ref:`Figure on regulatory element organisation <regulatory element organisation>`. One elementary encoding unit of regulatory information is the TFBS (transcription factor binding site). These are the target binding sequence of transcription factors (or TFs, see `Binding to DNA`_). As illustrated, some TFBS are localised proximal to the TSS while others are more distant. The exact distance (measured in terms of length of DNA sequence between the TFBS and the gene TSS) can be quite extensive [1]_. Also of interest here is the occurrence of cis-regulatory modules (CRMs) where multiple TFBS occur in a cluster, indicating binding by multiple TFs is involved in regulating a genes expression. This figure incorrectly implies that gene regulatory signals only exist outside the gene. Enhancer elements located within introns have been reported.
 
-.. [1] Application of chromatin conformation capture experimental procedures have demonstrated  that, within the nucleus, primary sequence span is not always a reliable measure of physical proximity between regulatory elements and the genes regulate :cite:`Fullwood:2009aa,Lieberman-Aiden:2009aa`.
+.. margin::
+  
+    .. [1] Application of chromatin conformation capture experimental procedures have demonstrated  that, within the nucleus, primary sequence span is not always a reliable measure of physical proximity between regulatory elements and the genes regulate :cite:`Fullwood:2009aa,Lieberman-Aiden:2009aa`.
 
 This is a grossly simplified representation of how gene regulation happens. Regulatory control is a complicated process mediated by multiple elements.
 
@@ -59,7 +61,9 @@ Exercises
 
 #. Use your model to explain the case of no gene expression.
 
-.. [2] By simple I mean do not add every possible configuration for how things might be organised. For instance, just focus on the gene and its immediately flanking sequence. Decide what the *essential* features are and just draw those.  Your model is wrong, but it is your starting point for beginning to reason about this essential biological process.
+.. margin::
+  
+    .. [2] By simple I mean do not add every possible configuration for how things might be organised. For instance, just focus on the gene and its immediately flanking sequence. Decide what the *essential* features are and just draw those.  Your model is wrong, but it is your starting point for beginning to reason about this essential biological process.
 
 ------
 

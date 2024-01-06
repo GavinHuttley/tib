@@ -40,7 +40,9 @@ Making a Table from standard Python objects
         dinucs = seq.get_in_motif_size(2, log_warnings=False)
         base1, base2 = list(zip(*dinucs))
 
-.. [1] By prefacing the argument to ``zip`` with ``*``, we do an :index:`unzip` operation.
+.. margin::
+
+    .. [1] By prefacing the argument to ``zip`` with ``*``, we do an :index:`unzip` operation.
 
 From a column-oriented dict
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
