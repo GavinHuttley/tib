@@ -1,4 +1,4 @@
-.. sidebar:: Executing Python using a REPL
+.. margin:: Executing Python using a REPL
     :name: REPL
 
     .. index::
@@ -12,7 +12,7 @@
         </video>
 
 
-.. sidebar:: Executing Python from a text file
+.. margin:: Executing Python from a text file
 
     .. index::
         pair: Executing Python from a text file; screencasts

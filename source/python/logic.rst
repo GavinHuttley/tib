@@ -19,7 +19,7 @@ Indentation can be done using ``\t`` or spaces. In general, it's best to uses sp
 Indentation levels in a file
 ----------------------------
 
-.. sidebar:: Indentation defines logical structure
+.. margin:: Indentation defines logical structure
     :name: Indentation defines logical structure
     
     .. code:: text
@@ -59,7 +59,7 @@ Conditionals
     pair: Truthy; bool
     pair: Falsy; bool
 
-.. sidebar:: Truthy and Falsy
+.. margin:: Truthy and Falsy
     :name: Truthy and Falsy
     
     .. jupyter-execute::
@@ -204,7 +204,9 @@ So the key parts of a valid for statement line are:
 3. the series of objects to be iterated over, ``my_series`` in the above
 4. terminated by a ``:``
 
-.. [1] So far, variable :index:`assignment` has been done using :ref:`explicit assignment statements <assignment>`. But in the for loop, ``variable_name`` is defined as part of the ``for`` statement. Python will set update the value of ``variable_name`` at each iteration to be the next object in ``my_series``.
+.. margin::
+
+    .. [1] So far, variable :index:`assignment` has been done using :ref:`explicit assignment statements <assignment>`. But in the for loop, ``variable_name`` is defined as part of the ``for`` statement. Python will set update the value of ``variable_name`` at each iteration to be the next object in ``my_series``.
 
 The for loop definition is completed by adding the code you wanted to execute on each iteration through the loop. Here's an example.
 

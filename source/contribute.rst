@@ -4,7 +4,7 @@
 How to Contribute
 *****************
 
-.. sidebar:: How to ask for help related to these notes
+.. margin:: How to ask for help related to these notes
     
     .. index::
         pair: How to ask for help related to these notes; screencasts
@@ -16,7 +16,7 @@ How to Contribute
           Your browser does not support the video tag.
         </video>
 
-.. sidebar:: How to edit these documents and "make a pull request"
+.. margin:: How to edit these documents and "make a pull request"
 
     .. index::
         pair: Editing the documents and "make a pull request"; screencasts

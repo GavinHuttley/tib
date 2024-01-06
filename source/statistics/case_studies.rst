@@ -27,7 +27,7 @@ Much of my own research concerns understanding organisation [#]_ of DNA sequence
 Step 1 - the biological problem
 -------------------------------
 
-.. sidebar:: Data for case study 1
+.. margin:: Data for case study 1
     :name: case_study_1_data
     
     .. jupyter-execute::
@@ -89,7 +89,7 @@ Further applying the |chisq| test to this data produces the following *result*, 
 Case study 2 – evaluate whether a query sequence belongs to a pathogen
 ======================================================================
 
-.. sidebar:: Data for case study 2
+.. margin:: Data for case study 2
     :name: Data for case study 2
     
     .. jupyter-execute::

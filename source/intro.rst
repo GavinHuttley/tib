@@ -6,7 +6,7 @@ Prologue
 
 How is life encoded in nucleic acids? What is the minimum number of nucleotides required to encode a virus? Do all genetic differences between individuals contribute to phenotypic differences between them? What genetic change(s) causes humans to have unique cognitive abilities compared to our nearest great ape relatives? How many different types of microorganisms live in our gut and what role do they play in our biology? If you had :math:`\sim 10^{10}` 250bp long DNA sequences that were randomly sampled from a single Human, could you assemble that individuals genome from scratch? If you sequence DNA extracted from soil, can you identify what species the DNA comes from? If you have an assembled genome of a novel species, can you identify where the genes in the genome are?
 
-.. sidebar:: What's the difference between using Python_ versus using R_?
+.. margin:: What's the difference between using Python_ versus using R_?
 
     Both languages provide very sophisticated capabilities for scientists, hence they are the dominant languages employed in Data Science. Both of these languages are also `Open Source <https://en.wikipedia.org/wiki/Open_source>`_ languages, developed by a community of volunteers [3]_.
     

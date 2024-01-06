@@ -4,7 +4,7 @@
     import set_working_directory
 
 
-.. sidebar:: Substitution models
+.. margin:: Substitution models
     
     .. index::
         pair: Substitution models; screencasts

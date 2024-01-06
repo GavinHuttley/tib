@@ -1,4 +1,4 @@
-.. sidebar:: Debugging a simple Python script using an IDE
+.. margin:: Debugging a simple Python script using an IDE
 
     .. index::
         pair: Debugging a simple Python script using an IDE; screencasts

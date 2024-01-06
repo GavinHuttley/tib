@@ -24,7 +24,7 @@ The :ref:`structural elements of eukaryotic genes <gene regulation>` figure illu
     pair: transcription factor; TF
     pair: cis-regulatory module; CRM
 
-.. sidebar:: Cartoon of regulatory element organisation
+.. margin:: Cartoon of regulatory element organisation
     :name: regulatory element organisation
 
     .. figure:: /_static/images/seqcomp/transcription.png
@@ -34,7 +34,7 @@ The :ref:`structural elements of eukaryotic genes <gene regulation>` figure illu
     
         From `Wasserman, & Sandelin <http://doi.org/10.1038/nrg1315>`_
 
-.. sidebar:: Binding to DNA
+.. margin:: Binding to DNA
     :name: Binding to DNA
 
     .. figure:: /_static/images/seqcomp/tata_bp.png

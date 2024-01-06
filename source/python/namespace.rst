@@ -1,4 +1,4 @@
-.. sidebar:: Variable scope
+.. margin:: Variable scope
     :name: Variable scope
 
     .. image::  /_static/images/namespace.png
@@ -29,7 +29,7 @@ In brief, variables defined within the local scope (or local namespace) are only
     
     foo()
 
-.. sidebar:: Namespace relationships
+.. margin:: Namespace relationships
 
     .. digraph:: namespace
 
@@ -64,7 +64,7 @@ But they cannot be modified within the local scope (unless you use the ``global`
     
     foo2()
 
-.. sidebar:: Exploring namespaces using the debugger
+.. margin:: Exploring namespaces using the debugger
 
     .. index::
         pair: Exploring namespaces using the debugger; screencasts

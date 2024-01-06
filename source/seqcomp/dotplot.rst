@@ -3,7 +3,7 @@ Dotplot -- Alignment of sequences related by descent from a common ancestor
 
 This very neat approach to establishing the relatedness between biological sequences was invented here at ANU, by Gibbs and McIntyre :cite:`Gibbs:1970aa`.
 
-.. sidebar:: The original dotplot
+.. margin:: The original dotplot
 
     .. image:: /_static/images/seqcomp/dotplot_pub.png
         :scale: 50%
@@ -16,7 +16,7 @@ Long stretches of identity form a diagonal. A break -- existence of multiple dia
 
 .. note:: When analysing two sequences, it is typically not possible to establish whether it was a deletion or an insertion.
 
-.. sidebar:: Comparison of cytochrome C
+.. margin:: Comparison of cytochrome C
 
     .. image:: /_static/images/seqcomp/dotplot_fig1ab.png
         :scale: 75%

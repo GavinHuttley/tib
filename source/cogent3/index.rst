@@ -1,7 +1,7 @@
 .. index::
     download data
 
-.. sidebar:: Downloading data files to your computer
+.. margin:: Downloading data files to your computer
     :name: download_data
     
     .. code-block:: python

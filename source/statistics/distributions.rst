@@ -3,7 +3,7 @@
 
     import set_working_directory
 
-.. sidebar:: Distribution of plant heights
+.. margin:: Distribution of plant heights
     :name: plant_heights
 
     .. jupyter-execute::
@@ -61,7 +61,7 @@ Where do we get distributions from?
 
 In the hypothetical example described above, the distribution of :ref:`plant heights <plant_heights>` was obtained from the data itself. This is referred to as an :index:`empirical distribution`.
 
-.. sidebar:: The |chisq| distribution
+.. margin:: The |chisq| distribution
     :name: independence_test
 
     .. jupyter-execute::
@@ -330,7 +330,7 @@ As you can see, this |pvalue| is close to that estimated above [#]_. The interpr
 
 .. [#] For resampling approaches, the estimated |pvalue| will converge on the theoretical value with increasing ``num_reps``. That said, this statement is not universally true -- for a 4bp long sequence there are only 256 possible synthetic sequences.
 
-.. sidebar:: Corollaries from the definition of |pvalues|
+.. margin:: Corollaries from the definition of |pvalues|
     :name: pvalue_corollaries
     
     The definition of |pvalues| has some very import corollaries.

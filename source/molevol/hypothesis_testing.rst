@@ -39,7 +39,7 @@ What being "|chisq| distributed" means is that we obtain the |pvalue| for a LR f
 Nesting hypotheses
 ------------------
 
-.. sidebar:: The relationship between a hypothesis and a model
+.. margin:: The relationship between a hypothesis and a model
     :name: hypothesis_model
 
     A model *is* a hypothesis. Hypothesis testing is a procedure for selecting the hypothesis (model) that best explains the data. Typically, hypothesis testing involves comparing two only hypotheses. For cases where there are more than 2 to chose from, we refer to the procedure as "model selection".

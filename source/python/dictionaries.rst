@@ -106,7 +106,7 @@ You can provide your own "default" value for when a key is missing. If we were u
     
     counts
 
-.. sidebar:: Counting without using a dict
+.. margin:: Counting without using a dict
     :name: no_dict
     
     It's worth showing building counts if you don't use a dict. Let's say we want to use a list instead. Here's one approach.

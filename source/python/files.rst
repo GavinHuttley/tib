@@ -3,7 +3,7 @@
 
     import set_working_directory
 
-.. sidebar:: Paths to files and folders
+.. margin:: Paths to files and folders
 
     .. index::
         pair: Paths to files and folders; screencasts
@@ -16,7 +16,7 @@
         </video>
 
 
-.. sidebar:: Reading a text file using an IDE
+.. margin:: Reading a text file using an IDE
 
     .. index::
         pair: Reading a text file using an IDE; screencasts
@@ -45,7 +45,7 @@ Working with files
 
 The location of a file (its file path) is specified as a string (see the screencast on Unix Paths). We use the ``open()`` function to open files. Whether a file is opened for reading or writing is defined by the *mode* argument. For example ``mode="w"`` means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.
 
-.. sidebar:: File properties
+.. margin:: File properties
 
     File objects behave like a standard Python series, you can *iterate* over their lines. See the "Reading a text file..." screencast.
 

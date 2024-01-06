@@ -61,7 +61,7 @@ Create a demo project on GitHub
 
 Once your account is setup, create a new repository. For the purpose of demonstration, I'm going to assume you name it ``demo``.
 
-.. sidebar:: Creating a new repository
+.. margin:: Creating a new repository
 
     .. figure:: /_static/images/version_control/github-create-repo.png
         :scale: 50%

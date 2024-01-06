@@ -1,7 +1,7 @@
 .. index::
     pair: install; numpy
 
-.. sidebar:: Installing ``numpy`` on your computer
+.. margin:: Installing ``numpy`` on your computer
     :name: numpy_install
 
     If you want to use ``numpy`` on your own computer you will need to install it. How to do so will depend very much on how you have setup Python. If you are not using ``conda``, then the following is the safest approach.
@@ -432,7 +432,7 @@ This corresponds to the following array coordinates: (1, 1), (2, 0), (0, 1). Thu
 The ``numpy`` array axis
 ------------------------
 
-.. sidebar:: Numpy arrays and their axis.
+.. margin:: Numpy arrays and their axis.
     :name: numpy_axes
     
     .. figure:: /_static/images/numpy-axes.png

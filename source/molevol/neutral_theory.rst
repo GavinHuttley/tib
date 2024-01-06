@@ -1,4 +1,4 @@
-.. sidebar:: Variation in proteins seems to accumulate linearly with time
+.. margin:: Variation in proteins seems to accumulate linearly with time
     :name: molecular_clock
 
     .. image:: /_static/images/molevol/molecular_clock.png
@@ -28,7 +28,7 @@ The Neutral Theory of Molecular Evolution
 
 This theory proposes that most genetic variation, both within and between species, has not been affected by natural selection, but instead reflects the influence of chance events on new mutations. The theory was dominantly developed by Motoo Kimura :cite:`Kimura:1968aa` but independently proposed by King and Jukes :cite:`King:1969aa`.
 
-.. sidebar:: Neutral variation
+.. margin:: Neutral variation
     :name: neutral_variation
 
     .. digraph:: neutrality

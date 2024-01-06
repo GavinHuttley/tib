@@ -3,7 +3,7 @@ Mutation -- the origin of genetic variation
 
 Mutation manifests as a change in the primary DNA [1]_ sequence of an organism. Only mutations that occur within the cell lineage that produce sex cells, the germline, can have an influence on future generations. We refer to these as germline mutations.
 
-.. sidebar:: What happens to a mutation?
+.. margin:: What happens to a mutation?
     :name: mutant_fate
 
     .. image:: /_static/images/molevol/mutation_process.png
@@ -51,7 +51,7 @@ Point mutations
 
 There are 12 distinct point mutation events since each nucleotide can mutate to 3 possible alternates (e.g. |AtoC|, |AtoG|, |AtoT|). These are often categorised by the chemical classes of the bases involved. Specifically, transitions and transversions. Point mutations that start and end in bases belonging to the same chemical class are referred to as transitions, i.e. changes involving |AtoG|, |GtoA|, |CtoT|, |TtoC| (blue lines in the :ref:`figure <directions>`). The remaining changes are assigned to the transversion category. As it turns out, there are differences in the rate at which mutations of these categories are observed and it has been argued that the excess of transitions reflects the chemical properties of DNA :cite:`Topal:1976aa`.
 
-.. sidebar:: Mutation directions
+.. margin:: Mutation directions
     :name: directions
 
     .. digraph:: point_mutants
@@ -77,7 +77,7 @@ But the dominance of transition mutations reflects more than just the intrinsic 
 
 Where |5mC| mutagenesis gets even more interesting is that this is an enzymatically induced modification and the recognition sequence for the DNA methylase is a C followed by a G, denote CpG (the p stands for the phosphodiester bond between adjacent nucleotides). This sequence "context dependence" of the introduction of the base modification therefore results in a context dependence of |CtoT| point mutations (see :ref:`Sidebar Figure<CtoT_motif>`).
 
-.. sidebar:: Context dependence of |CtoT| point mutations
+.. margin:: Context dependence of |CtoT| point mutations
     :name: CtoT_motif
 
     .. figure:: /_static/images/molevol/CtoT-human-intergenic.svg
@@ -111,7 +111,7 @@ We present two figures from published work that prove strikingly informative. Th
 .. [4] Because of the Watson-Crick base-pairing rules, the other strand can be deduced and thus presenting it is redundant.
 .. [5] The order of the base counts in the statistics can differ between publications.
 
-.. sidebar:: The influence of DNA replication
+.. margin:: The influence of DNA replication
     :name: dna_rep
 
     .. figure:: /_static/images/molevol/bsubtilits_symmetry.png
@@ -126,7 +126,7 @@ We present two figures from published work that prove strikingly informative. Th
 
 The second example concerns the distribution of strand symmetry around genes in humans :cite:`Touchon:2003aa`. In this case, the proposed biochemical mechanism is transcription couple DNA repair. In simplistic terms, this is a DNA damage repair system that is induced by a stalled RNA polymerase. The repair has been shown to be limited to the transcribed strand. This observation implies that the non-transcribed strand receives less scrutiny by lesion repair processes. This asymmetry also manifests in the SNPs that are present in humans today, indicating the influence is active :cite:`Simon:2020aa`.
 
-.. sidebar:: Transcription associated mutation asymmetries
+.. margin:: Transcription associated mutation asymmetries
 
     .. figure:: /_static/images/molevol/strand_skew.png
 

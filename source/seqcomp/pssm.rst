@@ -119,7 +119,7 @@ Computing the PSSM
 
 The PSSM is a log-odds matrix, i.e. it's the log of the odds ratio matrix. Because we assume a background distribution of 0.25, we can compute this very simply as ``log2(ppm)-log2(0.25)``.
 
-.. sidebar:: Maths with logarithms, recall that
+.. margin:: Maths with logarithms, recall that
 
     :math:`\log(a/b)=\log(a) - \log(b)`
     
