@@ -135,6 +135,8 @@ Exercises
 
 #. Split the sequence ``ATGAAATAA`` into codons (non-overlapping letter triples). (The most succinct solution uses a list comprehension.)
 
-.. [1] This is actually not indexing, because elements in a dict are not ordered. But the notation for "getting" an item from a ``dict`` is the same as for other data types (i.e. you use ``[]``). The difference is the "index" does not need to be an integer.
-.. [2] In the standard genetic code, this corresponds to 3 repeats of the methionine codon
-.. [3] DNA encodes amino acid sequences using 3 consecutive bases. This unit is referred to as a :index:`codon`.
+.. margin::
+  
+    .. [1] This is actually not indexing, because elements in a dict are not ordered. But the notation for "getting" an item from a ``dict`` is the same as for other data types (i.e. you use ``[]``). The difference is the "index" does not need to be an integer.
+    .. [2] In the standard genetic code, this corresponds to 3 repeats of the methionine codon
+    .. [3] DNA encodes amino acid sequences using 3 consecutive bases. This unit is referred to as a :index:`codon`.

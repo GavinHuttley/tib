@@ -9,7 +9,7 @@ What is molecular evolution?
 
 .. index:: pretty print
 
-.. sidebar:: Variation between species
+.. margin:: Variation between species
     :name: Variation between species
 
     .. jupyter-execute::
@@ -53,7 +53,7 @@ Phylogenetics is concerned with the problem of inferring the relationships betwe
     fig_dim = 500
     fig.show(width=fig_dim, height=fig_dim)
 
-.. sidebar:: The phylogenetic workflow
+.. margin:: The phylogenetic workflow
     :name: phylo_workflow
 
     .. digraph:: phylo_workflow

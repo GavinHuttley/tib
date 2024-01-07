@@ -2,7 +2,7 @@
 Evidence based decision making
 ******************************
 
-.. sidebar:: The 4 essential steps for correct data analysis!
+.. margin:: The 4 essential steps for correct data analysis!
     :name: essential_steps
 
     What a click-bait title! Whatever, here's the steps:

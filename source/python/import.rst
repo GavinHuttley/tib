@@ -24,7 +24,9 @@ Modules have their own type.
 
 Just like standard Python objects, you can see what capabilities a module has using ``dir()`` [1]_ and ``help()`` works too.
 
-.. [1] The ``dir()`` command returns a list. I'm truncating that to just display a small listing of what's in ``math``.
+.. margin::
+  
+    .. [1] The ``dir()`` command returns a list. I'm truncating that to just display a small listing of what's in ``math``.
 
 .. jupyter-execute::
 
@@ -83,7 +85,9 @@ You can renamed imported modules using the :index:`as` keyword.
     
     msqrt(16)
 
-.. [2] Since Python version 3.3, having a python file ``bar.py`` inside a directory ``foo`` means you can use the `from foo import bar` statement. Prior to version 3.3, it was necessary to have a special file ``__init__.py`` inside ``foo``.
+.. margin::
+  
+    .. [2] Since Python version 3.3, having a python file ``bar.py`` inside a directory ``foo`` means you can use the `from foo import bar` statement. Prior to version 3.3, it was necessary to have a special file ``__init__.py`` inside ``foo``.
 
 "third party" libraries
 -----------------------

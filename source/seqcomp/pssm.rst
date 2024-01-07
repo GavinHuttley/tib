@@ -51,7 +51,9 @@ Calculating the Expected Under the Alternate
 
 In this case, I'm just doing this "manually". First, note the base order is T, C, A, G [1]_. Here's a pseudo-code algorithm describing this calculation:
 
-.. [1] This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software.
+.. margin::
+  
+    .. [1] This ordering of nucleotides is chemical (pyrimidines, then purines) and is the ordering used in some software.
 
 .. code-block:: rest
 
@@ -119,7 +121,7 @@ Computing the PSSM
 
 The PSSM is a log-odds matrix, i.e. it's the log of the odds ratio matrix. Because we assume a background distribution of 0.25, we can compute this very simply as ``log2(ppm)-log2(0.25)``.
 
-.. sidebar:: Maths with logarithms, recall that
+.. margin:: Maths with logarithms, recall that
 
     :math:`\log(a/b)=\log(a) - \log(b)`
     

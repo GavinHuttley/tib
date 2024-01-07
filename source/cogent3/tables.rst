@@ -16,7 +16,7 @@ The ``cogent3`` ``Table`` data type provides methods for manipulating tabular da
 Making a Table from standard Python objects
 -------------------------------------------
 
-.. sidebar:: Generating some data
+.. margin:: Generating some data
     :name: making_dinucs
     
     I will produce a table that has two columns corresponding to base ``1`` and base ``2`` of all non-overlapping dinucleotides in DNA sequence. We will construct this using the Wombat sequence from *BRCA1*.
@@ -40,7 +40,9 @@ Making a Table from standard Python objects
         dinucs = seq.get_in_motif_size(2, log_warnings=False)
         base1, base2 = list(zip(*dinucs))
 
-.. [1] By prefacing the argument to ``zip`` with ``*``, we do an :index:`unzip` operation.
+.. margin::
+
+    .. [1] By prefacing the argument to ``zip`` with ``*``, we do an :index:`unzip` operation.
 
 From a column-oriented dict
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -67,7 +67,7 @@ All programming languages specify "keywords". These are the logical units from w
 
 Dealing with errors is a standard, inevitable, part of programming. The process of fixing errors is termed debugging. You can reduce the number of errors you make in writing a program by breaking the algorithm into small pieces, writing one piece, checking it works and then move onto the next piece.
 
-.. sidebar:: Minimise time fixing errors
+.. margin:: Minimise time fixing errors
 
     Even if you could write an entire complex algorithm in one go, doing so is a bad idea.
 

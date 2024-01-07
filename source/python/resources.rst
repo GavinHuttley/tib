@@ -16,9 +16,13 @@ Setting up your own computer
 
 I encourage you to download `VS Code`_ [*]_, a free programmers text editor [1]_ that has a sophisticated debugger. Debuggers are extremely useful for understanding program flow and fixing errors. Before you can use it you need to install Python3.10 on your computer (see below).
 
-.. [*] In past years I have recommended installation of `WingIDE <https://wingware.com>`_. While I personally still use this application a lot, its usage is not as widespread as that of VS Code and there are less resources available for it. Plus Microsoft is putting massive resources into making VS Code a top notch integrated development environment for Python and its feature set improves with every release.
+.. margin::
+    
+    .. [*] In past years I have recommended installation of `WingIDE <https://wingware.com>`_. While I personally still use this application a lot, its usage is not as widespread as that of VS Code and there are less resources available for it. Plus Microsoft is putting massive resources into making VS Code a top notch integrated development environment for Python and its feature set improves with every release.
 
-.. [1] This is provided by Microsoft and is available for all operating systems.
+.. margin::
+    
+    .. [1] This is provided by Microsoft and is available for all operating systems.
 
 Once you have installed Python 3.10, open VS Code. Open the Extensions section and type in ``Python``. Select the Python package distributed by Microsoft and click on the install button. That extension provides a bunch of super useful tools including the aforementioned debugger.
 
@@ -35,8 +39,10 @@ You can use Spotlight (typically invoked using command+<space bar>) to find it, 
 
 and follow the prompts [3]_.
 
-.. [2] Typically this is a single ``$`` or ``>`` character.
-.. [3] It will ask for your password and install some essential command line tools.
+.. margin::
+    
+    .. [2] Typically this is a single ``$`` or ``>`` character.
+    .. [3] It will ask for your password and install some essential command line tools.
 
 **Step 2** -- Install `Homebrew <https://brew.sh>`_
 

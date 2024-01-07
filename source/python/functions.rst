@@ -36,7 +36,9 @@ The built in functions ``range()`` and ``sum()`` are widely used. The former for
 
 Another useful builtin function is ``sorted()``. As the name implies, this takes a series and returns a copy with the elements ordered [1]_.
 
-.. [1] The elements don't have to be numbers.
+.. margin::
+  
+    .. [1] The elements don't have to be numbers.
 
 .. jupyter-execute::
 
@@ -113,7 +115,7 @@ So how do I use methods and functions?
 
 There are some general principles in how to use functions and methods. First, using ``help()`` will show you what arguments a function or method can take
 
-.. sidebar:: Interpreting help() for a function
+.. margin:: Interpreting help() for a function
     :name: Interpreting help() for a function
 
     .. image::  /_static/images/func_help.png
@@ -130,9 +132,11 @@ Functions
 
 Focussing on functions first. If a function is what we call a void function then it operates only on the arguments you give it and returns nothing [2]_. The obvious example of this is ``print()``. Fruitful functions actually return a value. You can establish what type that value will be by either reading help (see `Interpreting help() for a function`_) or running an experiment (calling the function with some data).
 
-.. [2] Actually, in Python every function and method returns something. Void functions and methods return ``None`` (try it on ``print()``).
+.. margin::
+  
+    .. [2] Actually, in Python every function and method returns something. Void functions and methods return ``None`` (try it on ``print()``).
 
-.. sidebar:: Functions versus Methods
+.. margin:: Functions versus Methods
     :name: Functions versus Methods
 
     While functions and methods are very similar they have a very important difference. Functions nearly always require the data they will operate on be provided as an argument. (In the following, the ``reversed()`` function returns a generator. Wrapping it in a call to ``list()`` is necessary to complete the statement.)
@@ -175,7 +179,7 @@ In an interactive interpreter (like Jupyter which we've used here), the returned
 
 These descriptive methods are pretty simple to comprehend. The challenge comes when you start using methods that transform the data. Again, using ``help()`` on the object is the most reliable approach.
 
-.. sidebar:: Interpreting help() for a method
+.. margin:: Interpreting help() for a method
     :name: Interpreting help() for a method
 
     .. image::  /_static/images/method_help.png

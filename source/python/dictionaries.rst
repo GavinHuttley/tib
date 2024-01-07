@@ -8,7 +8,9 @@ Dealing with dictionaries
 
 The ``dict`` type is a mutable collection data structure that is extraordinarily useful. They provide super fast lookups of items and allow a more natural specification of how things are stored and retrieved. In general, a dictionary consists of key/value pairs [1]_. The value is the object of interest and the key is how you retrieve it from a dictionary instance. This means that dictionaries are not "ordered", i.e. you can't rely on the first element in always appearing "first" if you start to loop over
 
-.. [1] When discussing dictionaries, a key/value pair is referred to as an "item".
+.. margin::
+  
+    .. [1] When discussing dictionaries, a key/value pair is referred to as an "item".
 
 .. note you cannot have duplicate keys
 
@@ -17,7 +19,9 @@ Creating an empty ``dict``
 
 There are two approaches to defining a ``dict``, the first uses "empty" curly braces [2]_.
 
-.. [2] A dict is empty if you don't specify any key/value pairs. So having blank spaces, or tab characters within the braces has no impact.
+.. margin::
+  
+    .. [2] A dict is empty if you don't specify any key/value pairs. So having blank spaces, or tab characters within the braces has no impact.
 
 .. jupyter-execute::
 
@@ -106,7 +110,7 @@ You can provide your own "default" value for when a key is missing. If we were u
     
     counts
 
-.. sidebar:: Counting without using a dict
+.. margin:: Counting without using a dict
     :name: no_dict
     
     It's worth showing building counts if you don't use a dict. Let's say we want to use a list instead. Here's one approach.
@@ -198,7 +202,9 @@ A common usage pattern for the ``items()`` method is for looping with :index:`as
     for key, value in counts.items():
         print(f"key={key} and value={value}")
 
-.. [3] These custom types can all be iterated over and/or used to create one of the other standard data types by using their builtin functions, e.g. ``list()``, ``tuple()``.
+.. margin::
+  
+    .. [3] These custom types can all be iterated over and/or used to create one of the other standard data types by using their builtin functions, e.g. ``list()``, ``tuple()``.
 
 Adding new items to a ``dict``
 ------------------------------
@@ -222,7 +228,9 @@ But where dicts become really valuable is when you need to dynamically update a 
 
 Say we want to convert the second column to floats. We can do this by iterating over the rows and only convert the index ``1``. Another approach is to construct separate lists for each column and convert the entire column [4]_. We start by defining our dictionary with the keys assigned values of empty lists. (I'm using assignment unpacking again.)
 
-.. [4] I know this is a little contrived, but it's the best example I can come up with right now. The point is how we can update the value of a mutable object!
+.. margin::
+  
+    .. [4] I know this is a little contrived, but it's the best example I can come up with right now. The point is how we can update the value of a mutable object!
 
 .. jupyter-execute::
 

@@ -44,7 +44,7 @@ The statistic, degrees of freedom and associated |pvalue| are all accessible as 
 Tests of independence
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. sidebar:: Constructing ``CategoryCounts`` from a ``Table``
+.. margin:: Constructing ``CategoryCounts`` from a ``Table``
 
     We can also get to this result via specifying the rows as a list of lists. In doing this, we must add the row label to each row.
     
@@ -98,7 +98,7 @@ Analyses of correlations
 
 In cases where we have bivariate data we may be interested in whether the two values are correlated. Of course, it would be remiss of me not to remind you of the limits to drawing inferences from correlations.
 
-.. sidebar:: Correlation does not imply causation
+.. margin:: Correlation does not imply causation
 
     .. figure:: https://imgs.xkcd.com/comics/correlation.png
 

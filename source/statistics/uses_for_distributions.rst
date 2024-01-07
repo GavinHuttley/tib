@@ -11,7 +11,7 @@ We now turn our attention to a description of the uniform distribution which we 
 
 Consider a random variable that can obtain any value in [0, 1] (including the boundaries, see :ref:`uniform distribution histogram <uniform_dist>`). We call such a random variable uniformly distributed if all possible values of that random variable have an equal probability of occurring. The probability of observing a value of 0.2 is equal that of observing of 0.8, 0.9, or 0.0.
 
-.. sidebar:: Histogram of a uniformly distributed random variable
+.. margin:: Histogram of a uniformly distributed random variable
     :name: uniform_dist
 
     Generating some random values from the uniform distribution.

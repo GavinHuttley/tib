@@ -17,7 +17,9 @@ This leads directly to the notion of *data types*. Python comes with a number of
 **string**
     specified either using ``''`` or ``""`` around the content of interest. This is just a series of characters. It can be empty (has length 0) or much greater than that.  For more detailed discussion of using strings, see :ref:`strings`. (An immutable data type [1]_.)
 
-.. [1] :index:`Immutable` means once the variable has been defined, it's value cannot be modified.
+.. margin::
+  
+    .. [1] :index:`Immutable` means once the variable has been defined, it's value cannot be modified.
 
 .. jupyter-execute::
 
@@ -83,7 +85,9 @@ Now we get to "collection" data types [2]_. Collections contain a number of elem
 
 In defining instances of collection types, different elements are delimited using a ``,`` separator.
 
-.. [2] Sometime, strings, lists and tuples are referred to as "sequence" types. In this grouping, strings are distinguished from tuples and lists since every element of a string is of the same type by definition. This constraint does not apply to lists, tuples, etc...
+.. margin::
+  
+    .. [2] Sometime, strings, lists and tuples are referred to as "sequence" types. In this grouping, strings are distinguished from tuples and lists since every element of a string is of the same type by definition. This constraint does not apply to lists, tuples, etc...
 
 .. index::
     triple: list; types; collection objects
@@ -91,7 +95,9 @@ In defining instances of collection types, different elements are delimited usin
 **list**
     As the name implies, it is a series with (≥ 0) elements. These elements do not have to be the same type (as I illustrate) [3]_.
 
-.. [3] Mutable data types can be modified after creation.
+.. margin::
+  
+    .. [3] Mutable data types can be modified after creation.
 
 .. jupyter-execute::
 

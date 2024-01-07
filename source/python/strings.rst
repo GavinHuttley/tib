@@ -36,7 +36,9 @@ Even complex objects, which I demonstrate using a list.
 
 Being able to convert complex objects into strings is useful for display to screen since it gives you exact insight into the state of an object during program execution. It's less useful as precursor for storage because there is no universally simple (and secure) operation for reconstructing the original objects. This latter issue is a case of "data serialisation" and is beyond the scope of these notes [1]_.
 
-.. [1] The native serialisation approach for Python is called `pickling <https://docs.python.org/3/library/pickle.html>`_. This approach has many problems. A popular alternative is `json <https://docs.python.org/3/library/json.html>`_.
+.. margin::
+  
+    .. [1] The native serialisation approach for Python is called `pickling <https://docs.python.org/3/library/pickle.html>`_. This approach has many problems. A popular alternative is `json <https://docs.python.org/3/library/json.html>`_.
 
 Defining strings
 ----------------
@@ -104,7 +106,9 @@ This is a special case in which the strings can include line breaks and other fo
 
 The actual formatting is revealed by using the representation of the object [2]_.
 
-.. [2] In an interactive interpreter, you do not need to do anything special to see this, other than simply having a statement that consists of only the variable name itself. In a python script, however, you would need to print the result of calling ``repr()``, i.e. ``print(repr(multi_line))``
+.. margin::
+  
+    .. [2] In an interactive interpreter, you do not need to do anything special to see this, other than simply having a statement that consists of only the variable name itself. In a python script, however, you would need to print the result of calling ``repr()``, i.e. ``print(repr(multi_line))``
 
 .. jupyter-execute::
 
@@ -143,7 +147,9 @@ Finding out things about a string
 
 We often want to know whether a string contains a particular character or substring [3]_. There are specific string methods and more general Python approaches to discovering this.
 
-.. [3] a substring is just a smaller string than what you currently have. For example, `"b"` is a substring of ``"ab"``.
+.. margin::
+  
+    .. [3] a substring is just a smaller string than what you currently have. For example, `"b"` is a substring of ``"ab"``.
 
 Using standard Python operators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -178,7 +184,9 @@ Returning to the task of finding substrings, we can establish whether a string c
 
 In this case, the value tells you whether the substring exists (``index >= 0``) and where, in the string, the first instance occurs. There are other search related methods too [4]_.
 
-.. [4] Another, extremely powerful, approach to querying strings in a more general way is achieved by using regular expressions (also referred to as regexes). Again, unfortunately, these are beyond the scope of this course. That said, you should definitely `read about them <https://docs.python.org/3/howto/regex.html>`_.
+.. margin::
+  
+    .. [4] Another, extremely powerful, approach to querying strings in a more general way is achieved by using regular expressions (also referred to as regexes). Again, unfortunately, these are beyond the scope of this course. That said, you should definitely `read about them <https://docs.python.org/3/howto/regex.html>`_.
 
 .. note:: The general pattern in using a method is you first specify the object and then the method of interest like so ``<instance>.<method name>()``.
 

@@ -12,7 +12,9 @@ Oh dear, this is a mess. Not this document, but the "multitude" of data format s
 
 The above aside, I will briefly describe and link [1]_ to the canonical description of a data format for the main types of data. I've grouped these into formats related to the major biological data types of sequences, genomic features, and phylogenetic trees.
 
-.. [1] If I can find one.
+.. margin::
+  
+  .. [1] If I can find one.
 
 Sequences and alignments
 ------------------------
@@ -86,7 +88,9 @@ GenBank_ is a web portal to a multitude of valuable databases and bioinformatic 
 
 Sounds like the cartoon at the top doesn't it! Anyway, it is widespread and an important format for storing information about sequence annotations [2]_, so here's the canonical gff3_ definition. This is a tab delimited format with 9 distinct fields. It's the last field, ``attributes``, that proves to be the most difficult to parse. Below is a small sample of a file posted on the definition page.
 
-.. [2] Annotations associate a reported feature of the sequence and the specific sequence coordinates to which it maps, e.g. the promoter for the gene CCT in the sample GenBank record.
+.. margin::
+  
+  .. [2] Annotations associate a reported feature of the sequence and the specific sequence coordinates to which it maps, e.g. the promoter for the gene CCT in the sample GenBank record.
 
 .. code-block:: text
 

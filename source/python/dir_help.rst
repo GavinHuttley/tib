@@ -3,7 +3,9 @@ Getting help
 
 Two builtin functions that are incredibly useful for figuring out what attributes an object [1]_ has and what those attributes can do.
 
-.. [1] All variables in Python are referred to as objects.
+.. margin::
+  
+    .. [1] All variables in Python are referred to as objects.
 
 - ``dir(some_variable)`` lists the attributes of ``some_variable``, including methods.
 - ``help(some_function)`` displays helpful information about what ``some_function`` does and how you use it

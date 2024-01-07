@@ -1,4 +1,4 @@
-.. sidebar:: Debugging a simple Python script using an IDE
+.. margin:: Debugging a simple Python script using an IDE
 
     .. index::
         pair: Debugging a simple Python script using an IDE; screencasts
@@ -20,7 +20,9 @@ Fixing errors
 
 Every programmer makes errors, it's normal. The most important step towards fixing errors is interpreting the error messages produced by Python. In Python, error messages come in the form of "exceptions" which produce a "traceback" [1]_ that declares the type of exception and which piece of code triggered it.
 
-.. [1] See this article_ for a more complete description.
+.. margin::
+  
+    .. [1] See this article_ for a more complete description.
 
 Here's some broken code:
 
