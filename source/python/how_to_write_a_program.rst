@@ -120,7 +120,9 @@ That last point is the inner most, so we focus our attention on the challenge of
 
 So I suggest the place to start is 3.1.1. I'm going to write separate functions for each of these steps. The reason being that it allows us to reuse code [2]_, makes checking the code correctness easier and simplifies building more complex algorithms into being just the inclusion of already written functions.
 
- Important here since 2.1 and 3.1 are the same. Using a function means we only have to write it once and we can use it as many times as seems appropriate.
+.. margin::
+
+    .. [2] Important here since 2.1 and 3.1 are the same. Using a function means we only have to write it once and we can use it as many times as seems appropriate.
 
 We start this program with a function that takes a list of strings where every value needs to be converted into a ``float``. I'm going to write it and test it, using an ``assert``, with some sample data.
 
