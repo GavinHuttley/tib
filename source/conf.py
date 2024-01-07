@@ -38,7 +38,7 @@ show_authors = True
 graphviz_output_format = "svg"
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ["_templates"]
+# templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -53,10 +53,9 @@ html_static_path = ["_static"]
 html_title = project
 
 html_theme_options = {
-    "prev_next_buttons_location": "bottom",
-     "collapse_navbar": True,
-     "use_edit_page_button": True,
-     "use_issues_button": True,
+    "collapse_navbar": True,
+    "use_edit_page_button": True,
+    "use_issues_button": True,
     "show_navbar_depth": 1,
     "repository_url": "https://github.com/GavinHuttley/tib",
     "use_repository_button": True,
