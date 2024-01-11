@@ -55,7 +55,9 @@ So how do you address such a possibility when analysing real data? You must empl
 
 The most critical step you can take is in acknowledging the uncertainty present in any analysis. Your conclusions are based on the assumptions required by the model and if those are incorrect, your conclusion may be also.
 
-.. [#] Presumably if a method has been used by other scientists, they have established its suitability. Unfortunately, that is not always correct.
+.. margin::
+
+    .. [#] Presumably if a method has been used by other scientists, they have established its suitability. Unfortunately, that is not always correct.
 
 ------
 

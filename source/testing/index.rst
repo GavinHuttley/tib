@@ -19,19 +19,25 @@ When a scientist conducts an experiment in a lab, they generate results under so
 3. DNA Primers [#]_
 4. The **template** [#]_
 
-.. [#] This provides a suitable environment for the DNA polymerase enzyme, includes essential ions and the chemical building blocks (dNTPs) to make DNA
-.. [#] Short DNA fragments that complement the boundaries of the fragment to be amplified.
-.. [#] In one sense, this corresponds to the "unknown query".
+.. margin::
+
+    .. [#] This provides a suitable environment for the DNA polymerase enzyme, includes essential ions and the chemical building blocks (dNTPs) to make DNA
+    .. [#] Short DNA fragments that complement the boundaries of the fragment to be amplified.
+    .. [#] In one sense, this corresponds to the "unknown query".
 
 Let us consider a PCR experiment that has been applied to a query sample only and which did not result in any detectable amplified DNA. How does the experimentalist know how to interpret the result? The only conclusion that can be drawn is the result is ambiguous because there are multiple possible explanations [#]_ due to too many potential sources of error in the experiment.
 
-.. [#] The query truly does not contain the target sequence. Alternately, the enzyme may have been defective, or the dNTPs were missing, etc...
+.. margin::
+
+    .. [#] The query truly does not contain the target sequence. Alternately, the enzyme may have been defective, or the dNTPs were missing, etc...
 
 Now consider if we added a **positive control** to this experiment. This corresponds to including a replicate such that components 1-3 were identical but the template (component 4) is now DNA that is *known* to contain the target. For this replicate, we have eliminated one source of uncertainty (the template contains the target) on the basis of previous work. Accordingly, we reasonably expect a positive outcome (amplified DNA is certain). If, in this replicate, DNA *was* amplified we could eliminate defects in components 1-3 as a basis for the absence of amplified DNA from our query template.
 
 Now imagine we run another experiment with two replicates, one of which is a positive control, the other is a different query template. In this experiment, amplified DNA was found for both the positive control and the query. We have another ambiguous conclusion [#]_.
 
-.. [#] The query truly does contain the target sequence. Alternately, the enzyme mix (or reagent mix, or primers) was contaminated with a sequence containing a match etc...
+.. margin::
+
+    .. [#] The query truly does contain the target sequence. Alternately, the enzyme mix (or reagent mix, or primers) was contaminated with a sequence containing a match etc...
 
 If we add a **negative** control to this experiment, we have much clearer capacity to interpret the outcome. A negative control would be another replicate with the same components 1-3, but no template. Again, there is a known outcome for this replicate (no amplified DNA). If, in our rerunning of the experiment, there was no amplified DNA in the negative control, then the interpretation is much clearer.
 
@@ -59,7 +65,9 @@ To test software function we must write additional code. This additional code us
 
 Let us begin by defining a problem that we wish to solve. Say I need a function to process gene coordinates. The function will receive the start and end positions of a gene and return the DNA strand on which it is encoded [#]_.
 
-.. [#] For the non-biologist, DNA is a double helix whose individual strands are antiparallel. A gene is a directionally encoded block of information that is absolute and all genes are chemically oriented in the same way. With respect to a genes encoding, its start position is always less than its end position. The frame of reference by which we refer to DNA is arbitrary. The chosen reference DNA strand is referred to as the plus ("+") strand and its complimentary partner as the minus strand. Accordingly, from a "+" strand frame of reference the coordinate for the end of a "-" strand gene occurs before its start.
+.. margin::
+
+    .. [#] For the non-biologist, DNA is a double helix whose individual strands are antiparallel. A gene is a directionally encoded block of information that is absolute and all genes are chemically oriented in the same way. With respect to a genes encoding, its start position is always less than its end position. The frame of reference by which we refer to DNA is arbitrary. The chosen reference DNA strand is referred to as the plus ("+") strand and its complimentary partner as the minus strand. Accordingly, from a "+" strand frame of reference the coordinate for the end of a "-" strand gene occurs before its start.
 
 .. jupyter-execute::
 
@@ -149,7 +157,9 @@ As an example, I have a project called cogent3_ and in the main directory of the
     $ cd path/to/cogent3/tests
     $ pytest
 
-.. [#] When ``pytest`` is run within a directory, it searches all files for class / function names that match this (or a related) pattern. These tests are thus *discovered* by pytest.
+.. margin::
+
+    .. [#] When ``pytest`` is run within a directory, it searches all files for class / function names that match this (or a related) pattern. These tests are thus *discovered* by pytest.
 
 In a jupyter notebook
 =====================

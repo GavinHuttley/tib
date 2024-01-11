@@ -49,7 +49,9 @@ What is a distribution?
 
 In statistics, we use the term distribution to describe the occurrence of a random variable. Say we were measuring plant height for a particular species. Plant height will be a "continuously distributed" random variable -- meaning heights can assume an infinite number of values [#]_. If we were to plot those heights along an |xaxis|, then as we continue to obtain new data points we would wind up with having to place points on top of each other. If we continued to do this sampling and plotting we would see a shape emerge (e.g. :ref:`plant heights <plant_heights>`). This shape can be thought of as the distribution of the *plant height random variable*.
 
-.. [#] The values will obviously be bounded, i.e. cannot be negative.
+.. margin::
+
+    .. [#] The values will obviously be bounded, i.e. cannot be negative.
 
 .. index::
     pair: empirical; statistical distributions
@@ -81,8 +83,10 @@ In the hypothetical example described above, the distribution of :ref:`plant hei
 
 For those of you who have done introductory courses in statistics you have likely encountered a so-called known :index:`theoretical distributions` [#]_. Examples include the Normal (or Gaussian) distribution, Gamma distribution and the uniform distribution [#]_.
 
-.. [#] These may also be referred to as theoretical or analytical distributions because there are equations that describe them.
-.. [#] The uniform distribution is of particular use to the task of understanding |pvalues|
+.. margin::
+
+    .. [#] These may also be referred to as theoretical or analytical distributions because there are equations that describe them.
+    .. [#] The uniform distribution is of particular use to the task of understanding |pvalues|
 
 If you choose a measurement that belongs to a known statistical distribution then you get a whole bunch of stuff for free. One thing being the ability to look up the |pvalue| for a test statistic very efficiently.
 
@@ -103,7 +107,9 @@ In both of our case studies we defined a *reference* condition which we sought t
 
 To really demonstrate what the null, or reference, distribution corresponds to we will now generate one for the :ref:`case study 1 <case_study_1>` problem.
 
-.. [#] In statistics, the words hypothesis and model can be synonyms.
+.. margin::
+
+    .. [#] In statistics, the words hypothesis and model can be synonyms.
 
 Estimating a |pvalue| computationally
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -226,7 +232,9 @@ Before proceeding to generate the distribution, let us break the calculations do
 
 Let's provide a simplified interface to all these function calls such that if we provide our sequence, all the above steps are invoked and we get back a |chisq| statistic [#]_.
 
-.. [#] Shuffling generates a permutation of the sequences, which is equivalent to sampling without replacement.
+.. margin::
+
+    .. [#] Shuffling generates a permutation of the sequences, which is equivalent to sampling without replacement.
 
 .. jupyter-execute::
 
@@ -328,7 +336,9 @@ For case study 1, we can also take the more conventional approach of assuming th
 
 As you can see, this |pvalue| is close to that estimated above [#]_. The interpretation is the same, we would expect a :math:`\chi^2_9\ge`\ 22.577 will occur by chance 0.0072 of the time when the null hypothesis is true.
 
-.. [#] For resampling approaches, the estimated |pvalue| will converge on the theoretical value with increasing ``num_reps``. That said, this statement is not universally true -- for a 4bp long sequence there are only 256 possible synthetic sequences.
+.. margin::
+
+    .. [#] For resampling approaches, the estimated |pvalue| will converge on the theoretical value with increasing ``num_reps``. That said, this statement is not universally true -- for a 4bp long sequence there are only 256 possible synthetic sequences.
 
 .. margin:: Corollaries from the definition of |pvalues|
     :name: pvalue_corollaries

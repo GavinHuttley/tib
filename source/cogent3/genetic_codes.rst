@@ -54,7 +54,9 @@ or DNA triplet.
 
 The mapping from codon to amino acid is provided by a ``sense_codons`` attribute of the genetic code instance. So calling ``list()`` on that dict returns just the sense codons [#]_.
 
-.. [#] I'm truncating that list to just 4 elements to simplify the display.
+.. margin::
+
+    .. [#] I'm truncating that list to just 4 elements to simplify the display.
 
 .. jupyter-execute::
 
@@ -109,7 +111,9 @@ Exercises
 
 Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position [#]_. The following questions refer to these groupings.
 
-.. [#] 1st, 2nd and 3rd codon position.
+.. margin::
+
+    .. [#] 1st, 2nd and 3rd codon position.
 
 #. Pick a genetic code and, for each such codon position group, count the number of changes that are synonymous. Is there a difference between the codon position and the proportion of synonymous changes?
 

@@ -53,8 +53,12 @@ To illustrate this, I define a function below that has two arguments (``a``, ``b
     def add_ints(a: int, b: int) -> int:
         return a + b
 
-.. [#] This phrase stems from the adage that "if it walks like a duck and talks like a duck, it is a duck." In essence, Python programs work so long as the variable has the necessary attributes. This differs from typed languages, such as ``C``, where you must define in advance exactly what type every variable will be.
+.. margin::
+
+    .. [#] This phrase stems from the adage that "if it walks like a duck and talks like a duck, it is a duck." In essence, Python programs work so long as the variable has the necessary attributes. This differs from typed languages, such as ``C``, where you must define in advance exactly what type every variable will be.
 
 Those types are only considered hints because there is not actual type checking [#]_! That function would work just fine if either of the input arguments was a ``float`` too, so what good are type hints? Many modern programming editors also help guide your coding by alerting you when your program starts calling functions with types that don't match function (or method) signatures. So, if you only call a function with the indicated types, your program is less likely to have bugs.
 
-.. [#] Tools such as `mypy <http://mypy-lang.org>`_ can do static type checking.
+.. margin::
+
+    .. [#] Tools such as `mypy <http://mypy-lang.org>`_ can do static type checking.

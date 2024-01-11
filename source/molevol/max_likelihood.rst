@@ -327,7 +327,9 @@ The results of this calculation are shown below with the log-likelihood on the |
 
 The peak of these data points (when :math:`t \approx 0.015`) is the maximum likelihood. That is, the value of |t| that maximises the likelihood. This value of |t| gets a special label – we call it the maximum likelihood estimator (or MLE) [#]_.
 
-.. [#] Maximum likelihood estimators are typically denoted the caret character as :math:`\hat t`.
+.. margin::
+
+    .. [#] Maximum likelihood estimators are typically denoted the caret character as :math:`\hat t`.
 
 When you have a really complex function, a probability model with lots of parameters, you don't have one line search, you have a line search for every parameter. Numerical optimisation algorithms handle that. It's a bit of magic, and it's definitely beyond the scope of this course.
 

@@ -28,17 +28,23 @@
 
 The numpy_ library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use ``numpy`` will deliver a 10x speedup. In fact, it can be much faster than that. But that's not the focus of this extremely brief summary of ``numpy``. Instead, we introduce you to the major capabilities and usage patterns that ``numpy`` enables. In short, using ``numpy`` objects can often eliminated the need for loops entirely. As a consequence, this greatly simplify the algorithms you have to write. So it's truly worthwhile becoming familiar with this library [#]_.
 
-.. [#] For a visual representation of how operations on arrays work, `see the excellent visual guide by Jay Alammar <http://jalammar.github.io/visual-numpy/>`_.
+.. margin::
+
+    .. [#] For a visual representation of how operations on arrays work, `see the excellent visual guide by Jay Alammar <http://jalammar.github.io/visual-numpy/>`_.
 
 ``numpy`` is designed for numerical calculation and the primary object the library provides is an array. The ``array`` [#]_ object has several key attributes, including:
 
-.. [#] Strictly speaking, ``numpy`` arrays have type ``ndarray`` but they are predominantly created using a top-level ``array`` function.
+.. margin::
+
+    .. [#] Strictly speaking, ``numpy`` arrays have type ``ndarray`` but they are predominantly created using a top-level ``array`` function.
 
 - ``array.ndim`` attribute, which indicates how many dimensions the array has
 - ``array.shape`` attribute, which indicates the number of elements on each dimension.
 - ``array.dtype`` attribute, which indicates the numpy data type [#]_. This can also be determined by the input data, or by using the ``dtype`` argument.
 
-.. [#] ``numpy`` extends the range of possible data types, e.g. 8-bit integers, 64-bit floats. `See the numpy docs <https://numpy.org/doc/stable/user/basics.types.html>`_ for more details.
+.. margin::
+
+    .. [#] ``numpy`` extends the range of possible data types, e.g. 8-bit integers, 64-bit floats. `See the numpy docs <https://numpy.org/doc/stable/user/basics.types.html>`_ for more details.
 
 Creating an array from existing data
 ------------------------------------

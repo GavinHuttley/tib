@@ -80,7 +80,9 @@ The last two are concerned with model identifiability (if either is ``False``, t
 
 To see the parameter MLEs, we access the ``lf`` attribute [#]_
 
-.. [#] This attribute is a special cogent3 type which has capabilities for deeper interrogation of model parameters.
+.. margin::
+
+    .. [#] This attribute is a special cogent3 type which has capabilities for deeper interrogation of model parameters.
 
 .. jupyter-execute::
 
@@ -91,7 +93,9 @@ To see the parameter MLEs, we access the ``lf`` attribute [#]_
 
 There are 2 tables always present in this display – "edge params" and "motif params". The former will always show the branch lengths. The following displays the tree, with the branch length defined by the values in the "edge params" table. The columns "edge" and "parent" denote which branch the "length" column value corresponds to [#]_. That value is the MLE for the expected number of substitutions per site (our measure of evolutionary time).
 
-.. [#] If you hover your mouse over the internal nodes on the tree, the name of the node will appear.
+.. margin::
+
+    .. [#] If you hover your mouse over the internal nodes on the tree, the name of the node will appear.
 
 .. jupyter-execute::
 

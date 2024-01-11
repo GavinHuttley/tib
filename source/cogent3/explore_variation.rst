@@ -154,4 +154,6 @@ Download the :download:`large alignment of BRCA1 sequences </data/brca1.fasta>`,
 
 #. How does interpretation of a sequence logo from an alignment of sequences descended from a common ancestor differ from that described in :ref:`encoding_info`?
 
-.. [#] Use a ``cogent3`` sequence object to do reverse complement.
+.. margin::
+
+    .. [#] Use a ``cogent3`` sequence object to do reverse complement.

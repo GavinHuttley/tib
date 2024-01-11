@@ -31,7 +31,9 @@ The ``ArrayAlignment`` is one of the two different ``cogent3`` types for handlin
 
 For all the methods, see ArrayAlignment_.
 
-.. [#] Unless you want to be manipulating sequences via their sequence annotations, this is what you want. See the cogent3_ documentation for the other class.
+.. margin::
+
+    .. [#] Unless you want to be manipulating sequences via their sequence annotations, this is what you want. See the cogent3_ documentation for the other class.
 
 When we talk about an alignment with ``cogent3``, this is what we mean.
 
@@ -129,7 +131,9 @@ Converting sequences into a standard Python ``dict``
 
 This is useful if you want to directly manipulate the strings, for instance [#]_
 
-.. [#] I'm slicing the alignment only because I want the dict to be sensibly displayed in this documentation.
+.. margin::
+
+    .. [#] I'm slicing the alignment only because I want the dict to be sensibly displayed in this documentation.
 
 .. jupyter-execute::
 
@@ -302,4 +306,6 @@ Download the :download:`alignment of bat BRCA1 sequences </data/brca1-bats.fasta
 
 #. Load the downloaded alignment without specifying the ``moltype``. Use a method on the object to convert it to the DNA moltype.
 
-.. [#] Sequences in alignments must be exactly the same length.
+.. margin::
+
+    .. [#] Sequences in alignments must be exactly the same length.
