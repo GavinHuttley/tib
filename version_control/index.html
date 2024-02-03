@@ -1,63 +1,163 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>10. Introduction to version control &mdash; Topics in Bioinformatics 2023.05.01 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>10. Introduction to version control &#8212; Topics in Bioinformatics</title>
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/thebelab-helper.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script src="../_static/design-tabs.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script src="../_static/require.min.js"></script>
-        <script src="../_static/custom.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=3ce756a4" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=3b12d53c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'version_control/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="11. Introduction to Testing in Python" href="../testing/index.html" />
-    <link rel="prev" title="9.7. Beyond hypothesis testing – exploratory data analysis for genomics" href="../statistics/uses_for_distributions.html" /> 
-</head>
+    <link rel="prev" title="9.7. Beyond hypothesis testing – exploratory data analysis for genomics" href="../statistics/uses_for_distributions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Topics in Bioinformatics
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Topics in Bioinformatics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
@@ -67,65 +167,263 @@
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">10. Introduction to version control</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#getting-set-up">10.1. Getting set up</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#a-demo-project">10.2. A demo project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#create-a-demo-project-on-github">10.2.1. Create a demo project on GitHub</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cloning-the-repository-to-your-development-computer">10.2.2. Cloning the repository to your development computer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-a-python-file-to-your-repository">10.2.3. Add a python file to your repository</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#create-a-file-to-add">10.2.3.1. Create a file to add</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#add-a-file">10.2.3.2. Add a file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#commit-the-file">10.2.3.3. Commit the file!</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#look-at-the-history-of-your-repository">10.2.4. Look at the history of your repository</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#push-your-change-to-github">10.2.5. Push your change to GitHub</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tips-for-effective-use-of-version-control">10.2.6. Tips for effective use of version control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#do">10.2.6.1. Do</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#do-not">10.2.6.2. Do NOT</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#glossary-of-key-version-control-terms">10.3. Glossary of key version control terms</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
-        </div>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
       </div>
-    </nav>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Topics in Bioinformatics</a>
-      </nav>
+<div class="sbt-scroll-pixel-helper"></div>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">10. </span>Introduction to version control</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/version_control/index.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/edit/main/version_control/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/issues/new?title=Issue%20on%20page%20%2Fversion_control/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/version_control/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to version control</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-set-up">10.1. Getting set up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-demo-project">10.2. A demo project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-demo-project-on-github">10.2.1. Create a demo project on GitHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-the-repository-to-your-development-computer">10.2.2. Cloning the repository to your development computer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-python-file-to-your-repository">10.2.3. Add a python file to your repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-file-to-add">10.2.3.1. Create a file to add</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-file">10.2.3.2. Add a file</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-the-file">10.2.3.3. Commit the file!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-history-of-your-repository">10.2.4. Look at the history of your repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-your-change-to-github">10.2.5. Push your change to GitHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-effective-use-of-version-control">10.2.6. Tips for effective use of version control</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#do">10.2.6.1. Do</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#do-not">10.2.6.2. Do NOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary-of-key-version-control-terms">10.3. Glossary of key version control terms</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="introduction-to-version-control">
-<span id="intro-to-version-control"></span><h1><span class="section-number">10. </span>Introduction to version control<a class="headerlink" href="#introduction-to-version-control" title="Permalink to this heading"></a></h1>
+<span id="intro-to-version-control"></span><h1><span class="section-number">10. </span>Introduction to version control<a class="headerlink" href="#introduction-to-version-control" title="Link to this heading">#</a></h1>
 <p><em>Section author: Gavin Huttley</em></p>
 <p>“Version control” refers to software tools that are designed to efficiently keep track of changes to your plain text files. As the phrase implies, the support relates to recording different versions of files. Here, the word version is not limited to a release version <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="note">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>For example, the <em>version</em> of your operating system is a release version.</p>
+</aside>
 </aside>
 </aside>
 <p>While used predominantly for programming <a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, they can be applied to any application that uses plain text files <a class="footnote-reference brackets" href="#id6" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. Familiarity with version control is thus crucial for bioinformaticians. Here’s just a short list of some advantages from using it:</p>
@@ -135,36 +433,45 @@
 <li><p>makes moving your code between computers easier</p></li>
 <li><p>makes it easier to ensure the reproducibility of your work</p></li>
 </ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id5" role="note">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
 <p>Plain text files are the medium for recording programs in nearly all programming languages.</p>
 </aside>
-<aside class="footnote brackets" id="id6" role="note">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
 <p>For example, many data files from genomics are plain text files.</p>
 </aside>
 </aside>
+</aside>
 <p>As a budding professional computational scientist, writing code is your core business so anything that makes that job easier is a good thing!</p>
 <p>In this topic I provide a functional introduction <a class="footnote-reference brackets" href="#id9" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> to the version control tool <span class="target" id="index-0"></span>git. <code class="docutils literal notranslate"><span class="pre">git</span></code> is a sophisticated (and very complex) command line tool with extensive capabilities. It is not the only such tool available <a class="footnote-reference brackets" href="#id10" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. You will become familiar with using it in a terminal. Note that some IDE’s expose a sophisticated graphical user interface to using <code class="docutils literal notranslate"><span class="pre">git</span></code> that make using it much easier.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id9" role="note">
+<aside class="footnote brackets" id="id9" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">4</a><span class="fn-bracket">]</span></span>
 <p>Only the bare minimum necessary to use basic capabilities of git.</p>
 </aside>
-<aside class="footnote brackets" id="id10" role="note">
+<aside class="footnote brackets" id="id10" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">5</a><span class="fn-bracket">]</span></span>
 <p>I personally use mercurial, but <code class="docutils literal notranslate"><span class="pre">git</span></code> is way more popular.</p>
 </aside>
 </aside>
+</aside>
 <section id="getting-set-up">
-<h2><span class="section-number">10.1. </span>Getting set up<a class="headerlink" href="#getting-set-up" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.1. </span>Getting set up<a class="headerlink" href="#getting-set-up" title="Link to this heading">#</a></h2>
 <p>These instructions are focussed on having a repository (see <a class="reference internal" href="#version-glossary"><span class="std std-ref">Glossary of key version control terms</span></a> for definitions) that is hosted at GitHub and for which there will be a clone on a computer that you will use for writing your code. If you don’t already have one, sign up for a <a class="reference external" href="https://github.com">GitHub</a> account.</p>
 <p>You also need <code class="docutils literal notranslate"><span class="pre">git</span></code> installed on the machine where you will be writing / running the code <a class="footnote-reference brackets" href="#id12" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id12" role="note">
+<aside class="footnote brackets" id="id12" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">6</a><span class="fn-bracket">]</span></span>
 <p>If you are doing my course, <code class="docutils literal notranslate"><span class="pre">git</span></code> has already been installed on the class server.</p>
+</aside>
 </aside>
 </aside>
 <p>On your developer machine you need to inform <code class="docutils literal notranslate"><span class="pre">git</span></code> what your user name and email address are. These details are used to “sign” every commit you make. This is your attribution and informs others who made what changes. On your developer machine, in the terminal</p>
@@ -173,10 +480,13 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 </pre></div>
 </div>
 <p>I also strongly recommend to change the log message editor from the default (<code class="docutils literal notranslate"><span class="pre">vim</span></code>) to <code class="docutils literal notranslate"><span class="pre">nano</span></code> <a class="footnote-reference brackets" href="#id14" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id14" role="note">
+<aside class="footnote brackets" id="id14" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">7</a><span class="fn-bracket">]</span></span>
 <p>Which reminds me of a joke – “How do you generate a random string? Put a first year Computer Science student in <code class="docutils literal notranslate"><span class="pre">vim</span></code> and ask them to save and exit.”</p>
+</aside>
 </aside>
 </aside>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span>nano
@@ -184,11 +494,11 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 </div>
 </section>
 <section id="a-demo-project">
-<h2><span class="section-number">10.2. </span>A demo project<a class="headerlink" href="#a-demo-project" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.2. </span>A demo project<a class="headerlink" href="#a-demo-project" title="Link to this heading">#</a></h2>
 <section id="create-a-demo-project-on-github">
-<h3><span class="section-number">10.2.1. </span>Create a demo project on GitHub<a class="headerlink" href="#create-a-demo-project-on-github" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">10.2.1. </span>Create a demo project on GitHub<a class="headerlink" href="#create-a-demo-project-on-github" title="Link to this heading">#</a></h3>
 <p>Once your account is setup, create a new repository. For the purpose of demonstration, I’m going to assume you name it <code class="docutils literal notranslate"><span class="pre">demo</span></code>.</p>
-<aside class="sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title">Creating a new repository</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../_images/github-create-repo.png"><img alt="../_images/github-create-repo.png" src="../_images/github-create-repo.png" style="width: 427.0px; height: 223.0px;" /></a>
@@ -197,12 +507,15 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 <p>Check the “Add a README file” option. Check the “Add .gitignore” option and select python from the popup. Check the “Choose a license” option and pick whichever one you like.</p>
 </section>
 <section id="cloning-the-repository-to-your-development-computer">
-<h3><span class="section-number">10.2.2. </span>Cloning the repository to your development computer<a class="headerlink" href="#cloning-the-repository-to-your-development-computer" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">10.2.2. </span>Cloning the repository to your development computer<a class="headerlink" href="#cloning-the-repository-to-your-development-computer" title="Link to this heading">#</a></h3>
 <p>In this case, you will clone onto the machine where you will be developing your code. I assume you have gone through the process of creating an ssh key and followed GitHub’s instructions for adding that to your account <a class="footnote-reference brackets" href="#id16" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id16" role="note">
+<aside class="footnote brackets" id="id16" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">8</a><span class="fn-bracket">]</span></span>
 <p>You will make life easier for yourself if you upload a SSH key to your GitHub account. This requires you create a SSH key. See <a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">instructions here</a> for doing both of these things.</p>
+</aside>
 </aside>
 </aside>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:YourUserName/YourRepo.git
@@ -211,20 +524,23 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 <p>This creates a directory named <code class="docutils literal notranslate"><span class="pre">YourRepo</span></code> on the system.</p>
 </section>
 <section id="add-a-python-file-to-your-repository">
-<h3><span class="section-number">10.2.3. </span>Add a python file to your repository<a class="headerlink" href="#add-a-python-file-to-your-repository" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">10.2.3. </span>Add a python file to your repository<a class="headerlink" href="#add-a-python-file-to-your-repository" title="Link to this heading">#</a></h3>
 <p>You first need to change into the directory that contains your repository. In the terminal, this is</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>YourRepo
 </pre></div>
 </div>
 <p>When you list all <a class="footnote-reference brackets" href="#id18" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a> the contents of this directory you will see the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id18" role="note">
+<aside class="footnote brackets" id="id18" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">9</a><span class="fn-bracket">]</span></span>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>, which shows hidden files and folders too.</p>
 </aside>
 </aside>
+</aside>
 <section id="create-a-file-to-add">
-<h4><span class="section-number">10.2.3.1. </span>Create a file to add<a class="headerlink" href="#create-a-file-to-add" title="Permalink to this heading"></a></h4>
+<h4><span class="section-number">10.2.3.1. </span>Create a file to add<a class="headerlink" href="#create-a-file-to-add" title="Link to this heading">#</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Skip this step if you already have a file you want to add!</p>
@@ -235,7 +551,7 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 </div>
 </section>
 <section id="add-a-file">
-<h4><span class="section-number">10.2.3.2. </span>Add a file<a class="headerlink" href="#add-a-file" title="Permalink to this heading"></a></h4>
+<h4><span class="section-number">10.2.3.2. </span>Add a file<a class="headerlink" href="#add-a-file" title="Link to this heading">#</a></h4>
 <p>We tell <code class="docutils literal notranslate"><span class="pre">git</span></code> we want to add a file to your repository using,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>demo.py
 </pre></div>
@@ -243,7 +559,7 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 <p>This command just “stages” the file, meaning you have told <code class="docutils literal notranslate"><span class="pre">git</span></code> to include this change when you make the next commit.</p>
 </section>
 <section id="commit-the-file">
-<h4><span class="section-number">10.2.3.3. </span>Commit the file!<a class="headerlink" href="#commit-the-file" title="Permalink to this heading"></a></h4>
+<h4><span class="section-number">10.2.3.3. </span>Commit the file!<a class="headerlink" href="#commit-the-file" title="Link to this heading">#</a></h4>
 <p>You have not finished this until you commit the staged change!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Added a demo python script&quot;</span>
 </pre></div>
@@ -251,21 +567,21 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 </section>
 </section>
 <section id="look-at-the-history-of-your-repository">
-<h3><span class="section-number">10.2.4. </span>Look at the history of your repository<a class="headerlink" href="#look-at-the-history-of-your-repository" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">10.2.4. </span>Look at the history of your repository<a class="headerlink" href="#look-at-the-history-of-your-repository" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log
 </pre></div>
 </div>
 </section>
 <section id="push-your-change-to-github">
-<h3><span class="section-number">10.2.5. </span>Push your change to GitHub<a class="headerlink" href="#push-your-change-to-github" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">10.2.5. </span>Push your change to GitHub<a class="headerlink" href="#push-your-change-to-github" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push
 </pre></div>
 </div>
 </section>
 <section id="tips-for-effective-use-of-version-control">
-<h3><span class="section-number">10.2.6. </span>Tips for effective use of version control<a class="headerlink" href="#tips-for-effective-use-of-version-control" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">10.2.6. </span>Tips for effective use of version control<a class="headerlink" href="#tips-for-effective-use-of-version-control" title="Link to this heading">#</a></h3>
 <section id="do">
-<h4><span class="section-number">10.2.6.1. </span>Do<a class="headerlink" href="#do" title="Permalink to this heading"></a></h4>
+<h4><span class="section-number">10.2.6.1. </span>Do<a class="headerlink" href="#do" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>track text files</p></li>
 <li><p>commit changes that are logically related</p></li>
@@ -274,32 +590,38 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 <li><p>commit often</p></li>
 <li><p>push to GitHub often <a class="footnote-reference brackets" href="#id20" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p></li>
 </ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id20" role="note">
+<aside class="footnote brackets" id="id20" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">10</a><span class="fn-bracket">]</span></span>
 <p>It’s your backup!</p>
 </aside>
 </aside>
+</aside>
 </section>
 <section id="do-not">
-<h4><span class="section-number">10.2.6.2. </span>Do NOT<a class="headerlink" href="#do-not" title="Permalink to this heading"></a></h4>
+<h4><span class="section-number">10.2.6.2. </span>Do NOT<a class="headerlink" href="#do-not" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>add really big files to a repository</p></li>
 <li><p>add binary files to a repository</p></li>
 <li><p>add secrets <a class="footnote-reference brackets" href="#id22" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> to a repository!</p></li>
 <li><p>include a massive number of changes in one commit</p></li>
 </ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id22" role="note">
+<aside class="footnote brackets" id="id22" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">11</a><span class="fn-bracket">]</span></span>
 <p>Any type of information that would allow someone to cause you trouble! For example, passwords, application tokens, account names.</p>
+</aside>
 </aside>
 </aside>
 </section>
 </section>
 </section>
 <section id="glossary-of-key-version-control-terms">
-<span id="version-glossary"></span><h2><span class="section-number">10.3. </span>Glossary of key version control terms<a class="headerlink" href="#glossary-of-key-version-control-terms" title="Permalink to this heading"></a></h2>
+<span id="version-glossary"></span><h2><span class="section-number">10.3. </span>Glossary of key version control terms<a class="headerlink" href="#glossary-of-key-version-control-terms" title="Link to this heading">#</a></h2>
 <dl class="simple">
 <dt><span class="target" id="index-1"></span>add</dt><dd><p>Adding a file to a your repository.</p>
 </dd>
@@ -346,34 +668,122 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../statistics/uses_for_distributions.html" class="btn btn-neutral float-left" title="9.7. Beyond hypothesis testing – exploratory data analysis for genomics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../testing/index.html" class="btn btn-neutral float-right" title="11. Introduction to Testing in Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../statistics/uses_for_distributions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9.7. </span>Beyond hypothesis testing – exploratory data analysis for genomics</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="../testing/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Introduction to Testing in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-set-up">10.1. Getting set up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-demo-project">10.2. A demo project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-demo-project-on-github">10.2.1. Create a demo project on GitHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-the-repository-to-your-development-computer">10.2.2. Cloning the repository to your development computer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-python-file-to-your-repository">10.2.3. Add a python file to your repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-file-to-add">10.2.3.1. Create a file to add</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-file">10.2.3.2. Add a file</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-the-file">10.2.3.3. Commit the file!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-history-of-your-repository">10.2.4. Look at the history of your repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-your-change-to-github">10.2.5. Push your change to GitHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-effective-use-of-version-control">10.2.6. Tips for effective use of version control</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#do">10.2.6.1. Do</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#do-not">10.2.6.2. Do NOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary-of-key-version-control-terms">10.3. Glossary of key version control terms</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gavin Huttley
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020-2024, Gavin Huttley.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>

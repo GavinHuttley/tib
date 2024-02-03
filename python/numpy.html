@@ -1,143 +1,214 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.43. numpy – numerical routines for python &mdash; Topics in Bioinformatics 2023.05.01 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5.43. numpy – numerical routines for python &#8212; Topics in Bioinformatics</title>
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/thebelab-helper.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script src="../_static/design-tabs.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script src="../_static/require.min.js"></script>
-        <script src="../_static/custom.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=3ce756a4" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=3b12d53c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/numpy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5.45. Data Visualisation using Plotly" href="visualisation.html" />
-    <link rel="prev" title="5.42. Miscellaneous Python features" href="misc.html" /> 
-</head>
+    <link rel="prev" title="5.42. Miscellaneous Python features" href="misc.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Topics in Bioinformatics
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Topics in Bioinformatics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">5. Introduction to Python</a><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">5. Introduction to Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="resources.html">5.1. Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">5.2. Introduction to programming using Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="start.html">5.3. Computing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#code-and-output-in-these-notes-is-from-jupyter">5.4. Code and output in these notes is from Jupyter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#everyones-first-program-in-python">5.5. Everyones first program in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">5.6. Basic arithmetic operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#exercises">5.7. Exercises</a></li>
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="variables.html">5.8. Variables and assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.9. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="operators.html">5.10. Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.11. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="types.html">5.12. The basic data types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.13. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="logic.html">5.14. Logical syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logic.html#exercises">5.15. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.16. Fixing errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.17. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="functions.html">5.18. Functions and methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.19. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="strings.html">5.20. Dealing with strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html#exercises">5.21. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.22. Getting help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">5.23. Using lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.24. Dealing with dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sets.html">5.25. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html#exercises">5.26. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="indexing.html">5.27. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.28. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="files.html">5.29. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.30. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="iterators.html">5.31. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.32. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.33. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.34. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="namespace.html">5.35. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.36. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.37. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.38. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="import.html">5.39. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.40. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.41. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="misc.html">5.42. Miscellaneous Python features</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.43. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#creating-an-array-from-existing-data">5.43.1. Creating an array from existing data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conversion-to-standard-python-data-types">5.43.2. Conversion to standard python data types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conversion-to-a-different-dtype">5.43.3. Conversion to a different <code class="docutils literal notranslate"><span class="pre">dtype</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#implicit-type-casting">5.43.4. Implicit type casting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#constructing-matrices">5.43.5. Constructing matrices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scalar-operations-on-arrays">5.43.6. Scalar operations on arrays</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-laborious-and-slow-way">5.43.6.1. The laborious (and slow) way</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-simple-and-fast-numpy-way">5.43.6.2. The simple and fast <code class="docutils literal notranslate"><span class="pre">numpy</span></code> way</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#standard-mathematical-operations-on-arrays">5.43.7. Standard mathematical operations on arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#array-iteration">5.43.8. Array iteration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#indexing-and-slicing">5.43.9. Indexing and slicing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ensuring-array-shapes-are-compatible-for-mathematical-operations">5.43.10. Ensuring array shapes are compatible for mathematical operations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#array-assignment">5.43.11. Array assignment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#evaluation-operations">5.43.12. Evaluation operations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced-indexing">5.43.13. Advanced indexing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#boolean-indexing">5.43.13.1. Boolean indexing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#integer-indexing">5.43.13.2. Integer indexing</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#the-numpy-array-axis">5.43.14. The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array axis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-useful-statistical-quantities">5.43.15. Getting useful statistical quantities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#linear-algebra-matrix-multiplication">5.43.16. Linear algebra – matrix multiplication</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conditionals-on-arrays">5.43.17. Conditionals on arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comparisons-of-multiple-arrays">5.43.18. Comparisons of multiple arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-the-result-of-array-comparisons-to-count">5.43.19. Using the result of array comparisons to count</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.44. Exercises</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.43. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.45. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.46. Exercises</a></li>
+
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
@@ -149,32 +220,260 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
-        </div>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
       </div>
-    </nav>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Topics in Bioinformatics</a>
-      </nav>
+<div class="sbt-scroll-pixel-helper"></div>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">5.43. </span><code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/numpy.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/edit/main/python/numpy.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/issues/new?title=Issue%20on%20page%20%2Fpython/numpy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <aside class="sidebar" id="numpy-install">
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/python/numpy.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>numpy – numerical routines for python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.43. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-array-from-existing-data">5.43.1. Creating an array from existing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-to-standard-python-data-types">5.43.2. Conversion to standard python data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-to-a-different-dtype">5.43.3. Conversion to a different <code class="docutils literal notranslate"><span class="pre">dtype</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-type-casting">5.43.4. Implicit type casting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-matrices">5.43.5. Constructing matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-operations-on-arrays">5.43.6. Scalar operations on arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laborious-and-slow-way">5.43.6.1. The laborious (and slow) way</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simple-and-fast-numpy-way">5.43.6.2. The simple and fast <code class="docutils literal notranslate"><span class="pre">numpy</span></code> way</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-mathematical-operations-on-arrays">5.43.7. Standard mathematical operations on arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-iteration">5.43.8. Array iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">5.43.9. Indexing and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensuring-array-shapes-are-compatible-for-mathematical-operations">5.43.10. Ensuring array shapes are compatible for mathematical operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-assignment">5.43.11. Array assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-operations">5.43.12. Evaluation operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-indexing">5.43.13. Advanced indexing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">5.43.13.1. Boolean indexing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-indexing">5.43.13.2. Integer indexing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-numpy-array-axis">5.43.14. The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-useful-statistical-quantities">5.43.15. Getting useful statistical quantities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-matrix-multiplication">5.43.16. Linear algebra – matrix multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals-on-arrays">5.43.17. Conditionals on arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparisons-of-multiple-arrays">5.43.18. Comparisons of multiple arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-result-of-array-comparisons-to-count">5.43.19. Using the result of array comparisons to count</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.44. Exercises</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <aside class="margin sidebar" id="numpy-install">
 <span id="index-0"></span><p class="sidebar-title">Installing <code class="docutils literal notranslate"><span class="pre">numpy</span></code> on your computer</p>
 <p>If you want to use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> on your own computer you will need to install it. How to do so will depend very much on how you have setup Python. If you are not using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, then the following is the safest approach.</p>
 <p>In the terminal (either macOS terminal, or the one included with <a class="reference external" href="https://code.visualstudio.com">VS Code</a>)</p>
@@ -183,19 +482,25 @@
 </div>
 </aside>
 <section id="numpy-numerical-routines-for-python">
-<span id="using-numpy"></span><span id="index-1"></span><h1><span class="section-number">5.43. </span><code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python<a class="headerlink" href="#numpy-numerical-routines-for-python" title="Permalink to this heading"></a></h1>
+<span id="using-numpy"></span><span id="index-1"></span><h1><span class="section-number">5.43. </span><code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python<a class="headerlink" href="#numpy-numerical-routines-for-python" title="Link to this heading">#</a></h1>
 <p>The <a class="reference external" href="https://numpy.org">numpy</a> library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> will deliver a 10x speedup. In fact, it can be much faster than that. But that’s not the focus of this extremely brief summary of <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Instead, we introduce you to the major capabilities and usage patterns that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> enables. In short, using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> objects can often eliminated the need for loops entirely. As a consequence, this greatly simplify the algorithms you have to write. So it’s truly worthwhile becoming familiar with this library <a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id5" role="note">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
 <p>For a visual representation of how operations on arrays work, <a class="reference external" href="http://jalammar.github.io/visual-numpy/">see the excellent visual guide by Jay Alammar</a>.</p>
 </aside>
 </aside>
+</aside>
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> is designed for numerical calculation and the primary object the library provides is an array. The <code class="docutils literal notranslate"><span class="pre">array</span></code> <a class="footnote-reference brackets" href="#id7" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> object has several key attributes, including:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id7" role="note">
+<aside class="footnote brackets" id="id7" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
 <p>Strictly speaking, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays have type <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> but they are predominantly created using a top-level <code class="docutils literal notranslate"><span class="pre">array</span></code> function.</p>
+</aside>
 </aside>
 </aside>
 <ul class="simple">
@@ -203,14 +508,17 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">array.shape</span></code> attribute, which indicates the number of elements on each dimension.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">array.dtype</span></code> attribute, which indicates the numpy data type <a class="footnote-reference brackets" href="#id9" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. This can also be determined by the input data, or by using the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> argument.</p></li>
 </ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id9" role="note">
+<aside class="footnote brackets" id="id9" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">5</a><span class="fn-bracket">]</span></span>
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> extends the range of possible data types, e.g. 8-bit integers, 64-bit floats. <a class="reference external" href="https://numpy.org/doc/stable/user/basics.types.html">See the numpy docs</a> for more details.</p>
 </aside>
 </aside>
+</aside>
 <section id="creating-an-array-from-existing-data">
-<h2><span class="section-number">5.43.1. </span>Creating an array from existing data<a class="headerlink" href="#creating-an-array-from-existing-data" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.43.1. </span>Creating an array from existing data<a class="headerlink" href="#creating-an-array-from-existing-data" title="Link to this heading">#</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
@@ -293,7 +601,7 @@
 </div>
 </section>
 <section id="conversion-to-standard-python-data-types">
-<h2><span class="section-number">5.43.2. </span>Conversion to standard python data types<a class="headerlink" href="#conversion-to-standard-python-data-types" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.43.2. </span>Conversion to standard python data types<a class="headerlink" href="#conversion-to-standard-python-data-types" title="Link to this heading">#</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -309,7 +617,7 @@
 </div>
 </section>
 <section id="conversion-to-a-different-dtype">
-<span id="index-2"></span><h2><span class="section-number">5.43.3. </span>Conversion to a different <code class="docutils literal notranslate"><span class="pre">dtype</span></code><a class="headerlink" href="#conversion-to-a-different-dtype" title="Permalink to this heading"></a></h2>
+<span id="index-2"></span><h2><span class="section-number">5.43.3. </span>Conversion to a different <code class="docutils literal notranslate"><span class="pre">dtype</span></code><a class="headerlink" href="#conversion-to-a-different-dtype" title="Link to this heading">#</a></h2>
 <p>There is a method on arrays for converting an array of one type into an array of a different type. For instance</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -340,7 +648,7 @@
 <p>So <code class="docutils literal notranslate"><span class="pre">numpy</span></code> has converted an array of strings into an array of 64-bit precision floats, in one line. Sweet!</p>
 </section>
 <section id="implicit-type-casting">
-<h2><span class="section-number">5.43.4. </span>Implicit type casting<a class="headerlink" href="#implicit-type-casting" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.43.4. </span>Implicit type casting<a class="headerlink" href="#implicit-type-casting" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of an array instance dictates what assignment operations mean. For example, say we have an integer array</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -377,7 +685,7 @@
 </div>
 </section>
 <section id="constructing-matrices">
-<h2><span class="section-number">5.43.5. </span>Constructing matrices<a class="headerlink" href="#constructing-matrices" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.43.5. </span>Constructing matrices<a class="headerlink" href="#constructing-matrices" title="Link to this heading">#</a></h2>
 <p>Matrices can be specified on construction by providing, for example, lists of lists. In this example we use a list consisting of two lists, each with 4 elements. This results in a <span class="math notranslate nohighlight">\(2\times4\)</span> array.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -406,10 +714,13 @@
 </div>
 </div>
 <p>Or, by combining other arrays <a class="footnote-reference brackets" href="#id11" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id11" role="note">
+<aside class="footnote brackets" id="id11" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">1</a><span class="fn-bracket">]</span></span>
 <p>I’ve used the <code class="docutils literal notranslate"><span class="pre">numpy.arange()</span></code> function, which returns an <code class="docutils literal notranslate"><span class="pre">array</span></code> object.</p>
+</aside>
 </aside>
 </aside>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -455,11 +766,11 @@
 </div>
 </section>
 <section id="scalar-operations-on-arrays">
-<span id="index-3"></span><h2><span class="section-number">5.43.6. </span>Scalar operations on arrays<a class="headerlink" href="#scalar-operations-on-arrays" title="Permalink to this heading"></a></h2>
+<span id="index-3"></span><h2><span class="section-number">5.43.6. </span>Scalar operations on arrays<a class="headerlink" href="#scalar-operations-on-arrays" title="Link to this heading">#</a></h2>
 <p>A major convenience for arrays is the ability to express element-wise operations as a single statement, instead of having to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <p>Here’s an element-wise addition using a standard for loop on the <code class="docutils literal notranslate"><span class="pre">raw</span></code> nested list data structure.</p>
 <section id="the-laborious-and-slow-way">
-<h3><span class="section-number">5.43.6.1. </span>The laborious (and slow) way<a class="headerlink" href="#the-laborious-and-slow-way" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.43.6.1. </span>The laborious (and slow) way<a class="headerlink" href="#the-laborious-and-slow-way" title="Link to this heading">#</a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">)):</span>
@@ -477,7 +788,7 @@
 </div>
 </section>
 <section id="the-simple-and-fast-numpy-way">
-<h3><span class="section-number">5.43.6.2. </span>The simple and fast <code class="docutils literal notranslate"><span class="pre">numpy</span></code> way<a class="headerlink" href="#the-simple-and-fast-numpy-way" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.43.6.2. </span>The simple and fast <code class="docutils literal notranslate"><span class="pre">numpy</span></code> way<a class="headerlink" href="#the-simple-and-fast-numpy-way" title="Link to this heading">#</a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">+=</span> <span class="mi">20</span>
@@ -496,7 +807,7 @@
 </section>
 </section>
 <section id="standard-mathematical-operations-on-arrays">
-<h2><span class="section-number">5.43.7. </span>Standard mathematical operations on arrays<a class="headerlink" href="#standard-mathematical-operations-on-arrays" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.43.7. </span>Standard mathematical operations on arrays<a class="headerlink" href="#standard-mathematical-operations-on-arrays" title="Link to this heading">#</a></h2>
 <p>If two or more arrays have the same shape, then element-wise operations between corresponding elements is also very simply expressed.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -538,7 +849,7 @@ After:
 </div>
 </section>
 <section id="array-iteration">
-<h2><span class="section-number">5.43.8. </span>Array iteration<a class="headerlink" href="#array-iteration" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.43.8. </span>Array iteration<a class="headerlink" href="#array-iteration" title="Link to this heading">#</a></h2>
 <p>Behaves the same as iterating over a standard Python list (or tuple) with the same dimensions. This corresponds to <a class="reference internal" href="#numpy-axes"><span class="std std-ref">iterating over axis=0</span></a>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -556,7 +867,7 @@ After:
 </div>
 </section>
 <section id="indexing-and-slicing">
-<span id="index-5"></span><h2><span class="section-number">5.43.9. </span>Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this heading"></a></h2>
+<span id="index-5"></span><h2><span class="section-number">5.43.9. </span>Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Link to this heading">#</a></h2>
 <p>In the following, we are working on this array.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -620,7 +931,7 @@ After:
 </div>
 </section>
 <section id="ensuring-array-shapes-are-compatible-for-mathematical-operations">
-<span id="index-6"></span><h2><span class="section-number">5.43.10. </span>Ensuring array shapes are compatible for mathematical operations<a class="headerlink" href="#ensuring-array-shapes-are-compatible-for-mathematical-operations" title="Permalink to this heading"></a></h2>
+<span id="index-6"></span><h2><span class="section-number">5.43.10. </span>Ensuring array shapes are compatible for mathematical operations<a class="headerlink" href="#ensuring-array-shapes-are-compatible-for-mathematical-operations" title="Link to this heading">#</a></h2>
 <p>There are rules that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> uses to determine how arrays are broadcast together. The best resource to understanding this is <a class="reference external" href="https://numpy.org/doc/stable/user/basics.broadcasting.html">the official documentation on broadcasting</a>. That said, here’s a very condensed explanation.</p>
 <p>When the array shapes are not the same, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> compares the shapes element wise <strong>from right to left</strong>. The dimensions of two arrays are considered compatible when they are same or one of them is 1. Consider the arrays <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code></p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -744,7 +1055,7 @@ After:
 <p>but this has the effect of meaning the result is also transposed with respect to the original orientation, which is typically inconvenient.</p>
 </section>
 <section id="array-assignment">
-<span id="index-9"></span><h2><span class="section-number">5.43.11. </span>Array assignment<a class="headerlink" href="#array-assignment" title="Permalink to this heading"></a></h2>
+<span id="index-9"></span><h2><span class="section-number">5.43.11. </span>Array assignment<a class="headerlink" href="#array-assignment" title="Link to this heading">#</a></h2>
 <p>Consider the following data.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -807,7 +1118,7 @@ After:
 </div>
 </section>
 <section id="evaluation-operations">
-<span id="index-10"></span><h2><span class="section-number">5.43.12. </span>Evaluation operations<a class="headerlink" href="#evaluation-operations" title="Permalink to this heading"></a></h2>
+<span id="index-10"></span><h2><span class="section-number">5.43.12. </span>Evaluation operations<a class="headerlink" href="#evaluation-operations" title="Link to this heading">#</a></h2>
 <p>Using standard python evaluation operations on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays returns element wise <code class="docutils literal notranslate"><span class="pre">bool</span></code> arrays. We show uses for these below.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -825,10 +1136,10 @@ After:
 </div>
 </section>
 <section id="advanced-indexing">
-<span id="index-11"></span><h2><span class="section-number">5.43.13. </span>Advanced indexing<a class="headerlink" href="#advanced-indexing" title="Permalink to this heading"></a></h2>
+<span id="index-11"></span><h2><span class="section-number">5.43.13. </span>Advanced indexing<a class="headerlink" href="#advanced-indexing" title="Link to this heading">#</a></h2>
 <p>There are two types of advanced indexing, boolean and integer.</p>
 <section id="boolean-indexing">
-<h3><span class="section-number">5.43.13.1. </span>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.43.13.1. </span>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Link to this heading">#</a></h3>
 <p>This applies when the object being used to slice the array is of type <code class="docutils literal notranslate"><span class="pre">bool</span></code>. These typically result from some array comparison operation.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -892,7 +1203,7 @@ After:
 </div>
 </section>
 <section id="integer-indexing">
-<h3><span class="section-number">5.43.13.2. </span>Integer indexing<a class="headerlink" href="#integer-indexing" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.43.13.2. </span>Integer indexing<a class="headerlink" href="#integer-indexing" title="Link to this heading">#</a></h3>
 <p>This involves as many series of integers as there are dimensions to the array (e.g. 2 in the case of <code class="docutils literal notranslate"><span class="pre">m</span></code>).</p>
 <p>Before we start using actual integer series, I’ll start by using conventional indexing to get the value of a single item. Specifically, I select row <code class="docutils literal notranslate"><span class="pre">1</span></code>, column <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -928,8 +1239,8 @@ After:
 </section>
 </section>
 <section id="the-numpy-array-axis">
-<span id="index-12"></span><h2><span class="section-number">5.43.14. </span>The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array axis<a class="headerlink" href="#the-numpy-array-axis" title="Permalink to this heading"></a></h2>
-<aside class="sidebar" id="numpy-axes">
+<span id="index-12"></span><h2><span class="section-number">5.43.14. </span>The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array axis<a class="headerlink" href="#the-numpy-array-axis" title="Link to this heading">#</a></h2>
+<aside class="margin sidebar" id="numpy-axes">
 <p class="sidebar-title">Numpy arrays and their axis.</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../_images/numpy-axes.png"><img alt="../_images/numpy-axes.png" src="../_images/numpy-axes.png" style="width: 248.4px; height: 266.0px;" /></a>
@@ -937,10 +1248,13 @@ After:
 <p>An array with <code class="docutils literal notranslate"><span class="pre">shape=(3,2)</span></code>, <code class="docutils literal notranslate"><span class="pre">ndim=2</span></code>. Elements and their array indices are shown as e<span class="math notranslate nohighlight">\(_{i,j}\)</span>. Many array methods have an <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument that applies to arrays with <code class="docutils literal notranslate"><span class="pre">ndim&gt;1</span></code>. In the illustrated example, setting <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> would apply that method along the corresponding axis and generate a result with 2 elements. Setting <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> would generate a result with 3 elements.</p>
 </aside>
 <p><a class="reference internal" href="#numpy-axes"><span class="std std-ref">As illustrated</span></a>, the <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument specifies whether a method / function operates on rows or columns <a class="footnote-reference brackets" href="#id13" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id13" role="note">
+<aside class="footnote brackets" id="id13" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">2</a><span class="fn-bracket">]</span></span>
 <p>You can many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of <code class="docutils literal notranslate"><span class="pre">axis</span></code> may be required.</p>
+</aside>
 </aside>
 </aside>
 <p>Working on this array.</p>
@@ -966,7 +1280,7 @@ After:
 </div>
 </section>
 <section id="getting-useful-statistical-quantities">
-<span id="index-13"></span><h2><span class="section-number">5.43.15. </span>Getting useful statistical quantities<a class="headerlink" href="#getting-useful-statistical-quantities" title="Permalink to this heading"></a></h2>
+<span id="index-13"></span><h2><span class="section-number">5.43.15. </span>Getting useful statistical quantities<a class="headerlink" href="#getting-useful-statistical-quantities" title="Link to this heading">#</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Overall mean, all elements</span>
@@ -1019,9 +1333,9 @@ After:
 </div>
 </div>
 </div>
-<span class="target" id="index-14"></span></section>
+</section>
 <section id="linear-algebra-matrix-multiplication">
-<span id="index-15"></span><h2><span class="section-number">5.43.16. </span>Linear algebra – matrix multiplication<a class="headerlink" href="#linear-algebra-matrix-multiplication" title="Permalink to this heading"></a></h2>
+<span id="index-15"></span><span id="index-14"></span><h2><span class="section-number">5.43.16. </span>Linear algebra – matrix multiplication<a class="headerlink" href="#linear-algebra-matrix-multiplication" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Matrix_multiplication">Matrix multiplication</a> is a fundamental operation in linear algebra and is central to many statistical procedures (e.g. fitting linear models, taking the exponential of a matrix, likelihood of a phylogeny).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1054,7 +1368,7 @@ After:
 </div>
 </section>
 <section id="conditionals-on-arrays">
-<span id="index-17"></span><h2><span class="section-number">5.43.17. </span>Conditionals on arrays<a class="headerlink" href="#conditionals-on-arrays" title="Permalink to this heading"></a></h2>
+<span id="index-17"></span><h2><span class="section-number">5.43.17. </span>Conditionals on arrays<a class="headerlink" href="#conditionals-on-arrays" title="Link to this heading">#</a></h2>
 <p>Conditional operations on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays are important. We illustrate the utility of these operations with some simple examples.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1122,7 +1436,7 @@ After:
 </div>
 </section>
 <section id="comparisons-of-multiple-arrays">
-<span id="index-19"></span><h2><span class="section-number">5.43.18. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Permalink to this heading"></a></h2>
+<span id="index-19"></span><h2><span class="section-number">5.43.18. </span>Comparisons of multiple arrays<a class="headerlink" href="#comparisons-of-multiple-arrays" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> provides tools for element-wise comparisons. This is more complicated than just using the standard python syntax.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1179,7 +1493,7 @@ After:
 </div>
 </section>
 <section id="using-the-result-of-array-comparisons-to-count">
-<span id="index-20"></span><h2><span class="section-number">5.43.19. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Permalink to this heading"></a></h2>
+<span id="index-20"></span><h2><span class="section-number">5.43.19. </span>Using the result of array comparisons to count<a class="headerlink" href="#using-the-result-of-array-comparisons-to-count" title="Link to this heading">#</a></h2>
 <p>Scenario, you want to count (from multiple arrays that consist of a continuously distributed random variable) the number of times a specific threshold is reached for each “position” on a reference coordinate system.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1237,7 +1551,7 @@ After:
 </section>
 </section>
 <section id="exercises">
-<h1><span class="section-number">5.44. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">5.44. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <ol class="arabic">
 <li><p>Create a list of 10 positive integers and convert it into a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array. Use <code class="docutils literal notranslate"><span class="pre">array</span></code> methods to compute the total. Divide the original array by the total to produce a normalised array, which you assign to a variable <code class="docutils literal notranslate"><span class="pre">freqs</span></code>. Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> logical operations to show that all elements are between 0 and 1. Use array methods to show the array sum is 1.</p></li>
 <li><p>Many methods on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays have an <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument, one of which is <code class="docutils literal notranslate"><span class="pre">sum()</span></code>. Construct a 2-dimensional (2D) array that has the same number of rows and columns, e.g.</p>
@@ -1392,11 +1706,11 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 0, 0, 1, 1],
-       [1, 0, 1, 0, 0],
-       [1, 0, 0, 0, 0],
-       [1, 0, 0, 0, 1],
-       [1, 1, 0, 0, 1]])
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 0, 0, 1, 0],
+       [0, 1, 0, 0, 1],
+       [1, 1, 0, 0, 1],
+       [1, 1, 0, 1, 0],
+       [0, 1, 1, 1, 0]])
 </pre></div>
 </div>
 </div>
@@ -1404,7 +1718,7 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 <p>Compare <code class="docutils literal notranslate"><span class="pre">np_where()</span></code> to the performance of a function implemented using only pure python called <code class="docutils literal notranslate"><span class="pre">py_where()</span></code> that takes the matrix as an argument and returns the <code class="docutils literal notranslate"><span class="pre">&lt;row</span> <span class="pre">coordinates&gt;,</span> <span class="pre">&lt;column</span> <span class="pre">coordinates&gt;</span></code> as lists. For <code class="docutils literal notranslate"><span class="pre">mat</span></code>, it should return the following.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 0, 1, 1, 2, 3, 3, 4, 4, 4], [0, 3, 4, 0, 2, 0, 0, 4, 0, 1, 4])
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>([0, 0, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4], [0, 3, 1, 4, 0, 1, 4, 0, 1, 3, 1, 2, 3])
 </pre></div>
 </div>
 </div>
@@ -1417,7 +1731,7 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>10.3 µs ± 106 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>7.71 µs ± 47.5 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1428,7 +1742,7 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 <li><p>Do some googling for testing <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays using <code class="docutils literal notranslate"><span class="pre">assert_allclose</span></code>. Then use this to check your array <code class="docutils literal notranslate"><span class="pre">freqs</span></code> created above sums to 1.</p></li>
 </ol>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id15" role="note">
+<aside class="footnote brackets" id="id15" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">6</a><span class="fn-bracket">]</span></span>
 <p>You want the sum of rows to be different to the sum of columns, that way you know when you have used <code class="docutils literal notranslate"><span class="pre">axis</span></code> correctly.</p>
 </aside>
@@ -1436,34 +1750,134 @@ Expected result from conversion</label><div class="sd-tab-content docutils">
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="misc.html" class="btn btn-neutral float-left" title="5.42. Miscellaneous Python features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="visualisation.html" class="btn btn-neutral float-right" title="5.45. Data Visualisation using Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="misc.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5.42. </span>Miscellaneous Python features</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="visualisation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.45. </span>Data Visualisation using Plotly</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.43. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-array-from-existing-data">5.43.1. Creating an array from existing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-to-standard-python-data-types">5.43.2. Conversion to standard python data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-to-a-different-dtype">5.43.3. Conversion to a different <code class="docutils literal notranslate"><span class="pre">dtype</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-type-casting">5.43.4. Implicit type casting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-matrices">5.43.5. Constructing matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-operations-on-arrays">5.43.6. Scalar operations on arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laborious-and-slow-way">5.43.6.1. The laborious (and slow) way</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simple-and-fast-numpy-way">5.43.6.2. The simple and fast <code class="docutils literal notranslate"><span class="pre">numpy</span></code> way</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-mathematical-operations-on-arrays">5.43.7. Standard mathematical operations on arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-iteration">5.43.8. Array iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">5.43.9. Indexing and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensuring-array-shapes-are-compatible-for-mathematical-operations">5.43.10. Ensuring array shapes are compatible for mathematical operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-assignment">5.43.11. Array assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-operations">5.43.12. Evaluation operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-indexing">5.43.13. Advanced indexing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">5.43.13.1. Boolean indexing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-indexing">5.43.13.2. Integer indexing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-numpy-array-axis">5.43.14. The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-useful-statistical-quantities">5.43.15. Getting useful statistical quantities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-matrix-multiplication">5.43.16. Linear algebra – matrix multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals-on-arrays">5.43.17. Conditionals on arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparisons-of-multiple-arrays">5.43.18. Comparisons of multiple arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-result-of-array-comparisons-to-count">5.43.19. Using the result of array comparisons to count</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.44. Exercises</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gavin Huttley
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020-2024, Gavin Huttley.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>

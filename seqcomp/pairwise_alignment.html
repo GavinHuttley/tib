@@ -1,105 +1,187 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.17. Global Pairwise Alignment Using Dynamic Programming &mdash; Topics in Bioinformatics 2023.05.01 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6.17. Global Pairwise Alignment Using Dynamic Programming &#8212; Topics in Bioinformatics</title>
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/thebelab-helper.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script src="../_static/design-tabs.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script src="../_static/require.min.js"></script>
-        <script src="../_static/custom.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=3ce756a4" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=3b12d53c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seqcomp/pairwise_alignment';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Molecular Evolution" href="../molevol/index.html" />
-    <link rel="prev" title="6.15. Dotplot – Alignment of sequences related by descent from a common ancestor" href="dotplot.html" /> 
-</head>
+    <link rel="prev" title="6.15. Dotplot – Alignment of sequences related by descent from a common ancestor" href="dotplot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Topics in Bioinformatics
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Topics in Bioinformatics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Sequence Comparison</a><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">6. Sequence Comparison</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="outline.html">6.1. Outline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">6.2. Introduction to Comparison of Biological Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encoding_information.html">6.3. The role of sequence in encoding life</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gene_expression.html">6.4. Gene expression in a nutshell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gene_expression.html#exercises">6.5. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="motifs.html">6.6. <span class="math notranslate nohighlight">\(k\)</span>-mers and Motifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motifs.html#exercises">6.7. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="related_by_function.html">6.8. Experimental procedures for detecting functionally related sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motif_finding.html">6.9. Finding motifs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="information.html">6.10. Measuring information using Shannon’s entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information.html#exercises">6.11. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="pssm.html">6.12. Position Specific Scoring Matrices (PSSMs)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pssm.html#exercises">6.13. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="odds_ratios.html">6.14. Odds-ratio’s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dotplot.html">6.15. Dotplot – Alignment of sequences related by descent from a common ancestor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dotplot.html#exercises">6.16. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.17. Global Pairwise Alignment Using Dynamic Programming</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#needleman-and-wunsch-nw">6.17.1. Needleman and Wunsch (NW)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-scoring-system">6.17.1.1. The scoring system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#a-matrix-of-path-scores">6.17.1.2. A matrix of path scores</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-path-choices-matrix">6.17.1.3. The path choices matrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#handling-the-recursion">6.17.1.4. Handling the recursion</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#demonstrating-nw-on-an-example">6.17.2. Demonstrating NW on an example</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#create-the-data-structures-we-need">6.17.2.1. Create the data structures we need</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-scoring-function">6.17.2.2. The scoring function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#computing-the-best-score-and-path-for-a-particular-comparison">6.17.2.3. Computing the best score and path for a particular comparison</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#populating-the-path-scores-and-path-choices-matrices">6.17.2.4. Populating the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> and <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> matrices</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-exciting-bit-the-viterbi-algorithm">6.17.2.5. The exciting bit – the Viterbi algorithm!</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#aligning-the-sequences-from-the-dotplot-example">6.17.3. Aligning the sequences from the dotplot example</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">6.18. Exercises</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.17. Global Pairwise Alignment Using Dynamic Programming</a></li>
+
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
@@ -110,33 +192,250 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
-        </div>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
       </div>
-    </nav>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Topics in Bioinformatics</a>
-      </nav>
+<div class="sbt-scroll-pixel-helper"></div>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Sequence Comparison</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">6.17. </span>Global Pairwise Alignment Using Dynamic Programming</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/seqcomp/pairwise_alignment.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/edit/main/seqcomp/pairwise_alignment.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/issues/new?title=Issue%20on%20page%20%2Fseqcomp/pairwise_alignment.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/seqcomp/pairwise_alignment.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Global Pairwise Alignment Using Dynamic Programming</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.17. Global Pairwise Alignment Using Dynamic Programming</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#needleman-and-wunsch-nw">6.17.1. Needleman and Wunsch (NW)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scoring-system">6.17.1.1. The scoring system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-matrix-of-path-scores">6.17.1.2. A matrix of path scores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-path-choices-matrix">6.17.1.3. The path choices matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-the-recursion">6.17.1.4. Handling the recursion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstrating-nw-on-an-example">6.17.2. Demonstrating NW on an example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-data-structures-we-need">6.17.2.1. Create the data structures we need</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scoring-function">6.17.2.2. The scoring function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-best-score-and-path-for-a-particular-comparison">6.17.2.3. Computing the best score and path for a particular comparison</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-the-path-scores-and-path-choices-matrices">6.17.2.4. Populating the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> and <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> matrices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-exciting-bit-the-viterbi-algorithm">6.17.2.5. The exciting bit – the Viterbi algorithm!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-the-sequences-from-the-dotplot-example">6.17.3. Aligning the sequences from the dotplot example</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.18. Exercises</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="global-pairwise-alignment-using-dynamic-programming">
-<h1><span class="section-number">6.17. </span>Global Pairwise Alignment Using Dynamic Programming<a class="headerlink" href="#global-pairwise-alignment-using-dynamic-programming" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">6.17. </span>Global Pairwise Alignment Using Dynamic Programming<a class="headerlink" href="#global-pairwise-alignment-using-dynamic-programming" title="Link to this heading">#</a></h1>
 <p>The transmission of genetic information from one generation to the next is imperfect. DNA sequences can differs from their parent in a number of ways due to mutations. There are different categories of mutations. Large scale rearrangements, such as translocations, inversions, duplications are important features of genome evolution and are (in humans) contributors to disease. Smaller scale changes such as those affecting individual mutations – referred to as point mutations – as are small deletions or insertions.</p>
 <p>Comparisons of related DNA sequences that have been subjected to such processes are performed using alignment algorithms where the goal is to identify those positions in two (or more) sequences that have descended from a common ancestor. Consider the following case where we have an ancestral sequence with two descendants, one of whom experienced a deletion event.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="o">|</span>
@@ -165,14 +464,17 @@
 </pre></div>
 </div>
 <p>Making inferences regarding historical relatedness underpins much of how we utilise biological sequence data. So how can we decide which positions in two (or more) sequences are related? There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of <em>global alignment</em> <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <span id="id2">[<a class="reference internal" href="#id38" title="Saul B. Needleman and Christian D. Wunsch. A general method applicable to the search for similarities in the amino acid sequence of two proteins. Journal of Molecular Biology, 48:443–453, 1970. URL: http://linkinghub.elsevier.com/retrieve/pii/0022283670900574, doi:10.1016/0022-2836(70)90057-4.">NW70</a>]</span>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="note">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Global here means aligning the entire sequences. This contrasts with a “local” alignment, which computes the best aligned segment for a pair of sequences. That is solved using another dynamic programming algorithm referred to as Smith-Waterman, which we don’t address.</p>
 </aside>
 </aside>
+</aside>
 <section id="needleman-and-wunsch-nw">
-<h2><span class="section-number">6.17.1. </span>Needleman and Wunsch (NW)<a class="headerlink" href="#needleman-and-wunsch-nw" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">6.17.1. </span>Needleman and Wunsch (NW)<a class="headerlink" href="#needleman-and-wunsch-nw" title="Link to this heading">#</a></h2>
 <p>A more elaborate case is presented in the dotplot below. There are obvious diagonal lines here which I will refer to as a “path”.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -183,7 +485,7 @@ if (typeof require !== 'undefined') {
 require.undef("plotly");
 requirejs.config({
     paths: {
-        'plotly': ['https://cdn.plot.ly/plotly-2.20.0.min']
+        'plotly': ['https://cdn.plot.ly/plotly-2.27.0.min']
     }
 });
 require(['plotly'], function(Plotly) {
@@ -191,9 +493,9 @@ require(['plotly'], function(Plotly) {
 });
 }
 </script>
-</div><div class="output text_html"><div>                            <div id="bb223994-21ff-42c9-b032-1a29334c6635" class="plotly-graph-div" style="height:527.7777777777778px; width:500px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("bb223994-21ff-42c9-b032-1a29334c6635")) {                    Plotly.newPlot(                        "bb223994-21ff-42c9-b032-1a29334c6635",                        [{"line":{"color":"blue"},"mode":"lines","name":"+ strand","showlegend":true,"x":[0,12,null,12,33,null,34,54],"xaxis":"x","y":[0,12,null,18,39,null,37,57],"yaxis":"y","type":"scatter"},{"line":{"color":"black","dash":"dot"},"mode":"lines","name":"Alignment","showlegend":true,"x":[],"xaxis":"x","y":[],"yaxis":"y","type":"scatter"}],                        {"autosize":false,"font":{"family":"Balto","size":14},"height":527.7777777777778,"hovermode":"closest","margin":{"b":50,"l":50,"pad":4,"r":50,"t":50},"showlegend":false,"title":{"text":""},"width":500,"xaxis":{"mirror":true,"range":[0,54],"showgrid":false,"showline":true,"title":{"text":"A"},"visible":true},"yaxis":{"mirror":true,"range":[0,57],"showgrid":false,"showline":true,"title":{"text":"B"},"visible":true},"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}}},                        {"responsive": true}                    ).then(function(){
+</div><div class="output text_html"><div>                            <div id="9f9f7450-8af4-4bf7-b091-7d784da280ec" class="plotly-graph-div" style="height:527.7777777777778px; width:500px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("9f9f7450-8af4-4bf7-b091-7d784da280ec")) {                    Plotly.newPlot(                        "9f9f7450-8af4-4bf7-b091-7d784da280ec",                        [{"line":{"color":"blue"},"mode":"lines","name":"+ strand","showlegend":true,"x":[0,12,null,12,33,null,34,54],"xaxis":"x","y":[0,12,null,18,39,null,37,57],"yaxis":"y","type":"scatter"},{"line":{"color":"black","dash":"dot"},"mode":"lines","name":"Alignment","showlegend":true,"x":[],"xaxis":"x","y":[],"yaxis":"y","type":"scatter"}],                        {"autosize":false,"font":{"family":"Balto","size":14},"height":527.7777777777778,"hovermode":"closest","margin":{"b":50,"l":50,"pad":4,"r":50,"t":50},"showlegend":false,"title":{"text":""},"width":500,"xaxis":{"mirror":true,"range":[0,54],"showgrid":false,"showline":true,"title":{"text":"A"},"visible":true},"yaxis":{"mirror":true,"range":[0,57],"showgrid":false,"showline":true,"title":{"text":"B"},"visible":true},"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('bb223994-21ff-42c9-b032-1a29334c6635');
+var gd = document.getElementById('9f9f7450-8af4-4bf7-b091-7d784da280ec');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -230,19 +532,25 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </div>
 <p>In this result, each column of this alignment corresponds to characters that have descended from a common ancestor.</p>
 <p>Compared to the dotplot approach, it allows for more sophisticated “match”, i.e. the sequence state may be different but still considered a match. It is also efficient in terms of computation and identifies the optimal path <a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> through the matrix.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id5" role="note">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
 <p>The use of the word optimal in this case means given a specific model, which we will define. There can, however, be multiple solutions (paths) that are equal in terms of the alignment score. In this instance, there are multiple optimal solutions.</p>
+</aside>
 </aside>
 </aside>
 <p>The NW algorithm works via building an alignment from solutions of smaller alignments. Instead of a graph, we now think in terms of a matrix. This matrix shares the row and column labelling as that for <a class="reference internal" href="dotplot.html#dotplot-matrix"><span class="std std-ref">the dotplot</span></a> but has some differences.</p>
 <p>In the dotplot matrix, elements in the matrix simply reflect presence absence of a match between the two sequences. For NW, the values correspond to <em>the score of the optimal alignment up to that point</em>.</p>
 <p>We need 4 things for the NW algorithm  <a class="footnote-reference brackets" href="#id7" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id7" role="note">
+<aside class="footnote brackets" id="id7" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">3</a><span class="fn-bracket">]</span></span>
 <p>I’m presenting the algorithm of <span id="id8">[<a class="reference internal" href="#id36" title="Osamu Gotoh. An improved algorithm for matching biological sequences. Journal of Molecular Biology, 162:705 - 708, 1982. URL: http://www.sciencedirect.com/science/article/pii/0022283682903989, doi:https://doi.org/10.1016/0022-2836(82)90398-9.">Got82</a>]</span>.</p>
+</aside>
 </aside>
 </aside>
 <ul class="simple">
@@ -252,28 +560,31 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 <li><p>a way of recovering the alignment from the path choices</p></li>
 </ul>
 <section id="the-scoring-system">
-<span id="index-0"></span><h3><span class="section-number">6.17.1.1. </span>The scoring system<a class="headerlink" href="#the-scoring-system" title="Permalink to this heading"></a></h3>
+<span id="index-0"></span><h3><span class="section-number">6.17.1.1. </span>The scoring system<a class="headerlink" href="#the-scoring-system" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To simplify the following discussion, I will only refer to DNA states for my examples but emphasise that the same reasoning applies to protein sequences.</p>
 </div>
 <p>For any pair of sequence states <a class="footnote-reference brackets" href="#id12" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> (nucleotides) we define a score function <span class="math notranslate nohighlight">\(s(i, j)\)</span>, where <span class="math notranslate nohighlight">\(i, j\)</span> are the nucleotides being compared from sequences <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>. This function <span class="math notranslate nohighlight">\(s()\)</span> returns a score that the two nucleotides are a “match”. Typically there are distinct values for when the two states are the same (<span class="math notranslate nohighlight">\(i=j\)</span>), compared to when the states are different (<span class="math notranslate nohighlight">\(i\neq j\)</span>). For our purpose, we start by using the exact same scoring function as NW <span id="id10">[<a class="reference internal" href="#id38" title="Saul B. Needleman and Christian D. Wunsch. A general method applicable to the search for similarities in the amino acid sequence of two proteins. Journal of Molecular Biology, 48:443–453, 1970. URL: http://linkinghub.elsevier.com/retrieve/pii/0022283670900574, doi:10.1016/0022-2836(70)90057-4.">NW70</a>]</span>. I their case <span class="math notranslate nohighlight">\(s(i, j)\)</span> returns 1 when <span class="math notranslate nohighlight">\(i=j\)</span> and -1 otherwise. We also define a gap introduction score, <span class="math notranslate nohighlight">\(\delta=-1\)</span> <a class="footnote-reference brackets" href="#id13" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id12" role="note">
+<aside class="footnote brackets" id="id12" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">4</a><span class="fn-bracket">]</span></span>
 <p>The word “state” refers to a single character in the corresponding biological alphabet. For instance, for DNA, the valid states are A, C, G and T.</p>
 </aside>
-<aside class="footnote brackets" id="id13" role="note">
+<aside class="footnote brackets" id="id13" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">5</a><span class="fn-bracket">]</span></span>
 <p>This is a linear gap score, meaning that each additional gap character has the same score.</p>
 </aside>
 </aside>
+</aside>
 </section>
 <section id="a-matrix-of-path-scores">
-<h3><span class="section-number">6.17.1.2. </span>A matrix of path scores<a class="headerlink" href="#a-matrix-of-path-scores" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.17.1.2. </span>A matrix of path scores<a class="headerlink" href="#a-matrix-of-path-scores" title="Link to this heading">#</a></h3>
 <p>We illustrate the notion of the path matrix (which we denote <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>), by considering the calculation of the score in the cell <span class="math notranslate nohighlight">\(\mathcal{P}[i, j]\)</span>.</p>
-<table class="docutils align-default" id="path-table">
-<caption><span class="caption-text">The path scores matrix <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>. The 3 possible paths leading to cell <span class="math notranslate nohighlight">\(\mathcal{P}[i, j]\)</span>. <span class="math notranslate nohighlight">\(i, j\)</span> refer to positions within sequence <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> respectively.</span><a class="headerlink" href="#path-table" title="Permalink to this table"></a></caption>
+<table class="table" id="path-table">
+<caption><span class="caption-text">The path scores matrix <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>. The 3 possible paths leading to cell <span class="math notranslate nohighlight">\(\mathcal{P}[i, j]\)</span>. <span class="math notranslate nohighlight">\(i, j\)</span> refer to positions within sequence <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> respectively.</span><a class="headerlink" href="#path-table" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">A</span></code> \ <code class="docutils literal notranslate"><span class="pre">B</span></code></p></th>
 <th class="head"><p>…</p></th>
@@ -301,7 +612,7 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </table>
 <p>As indicated in the table, there are 3 different ways of arriving at the alignment score ending at this cell. In the case of either a <span class="math notranslate nohighlight">\(\leftarrow, \uparrow\)</span>, the best alignment leading to <span class="math notranslate nohighlight">\(\mathcal{P}[i, j]\)</span> was from a gap. In the case of <span class="math notranslate nohighlight">\(\leftarrow\)</span>, the gap is in <code class="docutils literal notranslate"><span class="pre">A</span></code> and in the case of <span class="math notranslate nohighlight">\(\uparrow\)</span> the gap is in <code class="docutils literal notranslate"><span class="pre">B</span></code>. The <span class="math notranslate nohighlight">\(\nwarrow\)</span> indicates a diagonal move and corresponds to an alignment path coming from a match. The selection of which direction gives the optimal alignment path to <span class="math notranslate nohighlight">\(i, j\)</span> stems from the following function</p>
 <div class="math notranslate nohighlight" id="path-score">
-<span id="equation-path-score"></span><span class="eqno">(1)<a class="headerlink" href="#path-score" title="Permalink to this equation"></a></span>\[\begin{split}\mathcal{P}[i, j] = \max
+<span id="equation-path-score"></span><span class="eqno">(1)<a class="headerlink" href="#path-score" title="Link to this equation">#</a></span>\[\begin{split}\mathcal{P}[i, j] = \max
 \begin{cases}
 \mathcal{P}[i-1, j-1] + score(A[i], B[j])\\
 \mathcal{P}[i-1, j] + \delta\\
@@ -310,16 +621,16 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 <p>where <span class="math notranslate nohighlight">\(score(A[i], B[j])\)</span> is the <em>score</em> for the match of position <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> from sequences <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> respectively. Being able to choose amongst these possible paths requires that the scores for all 3 possible input cells (<span class="math notranslate nohighlight">\(\mathcal{P}[i-1,j]\)</span>, <span class="math notranslate nohighlight">\(\mathcal{P}[i-1,j-1]\)</span>, <span class="math notranslate nohighlight">\(\mathcal{P}[i,j-1]\)</span>) already exist. And if we tried to compute the score for any of those cells we would discover that we needed the scores of their 3 input cells, and so on. This is a recursive function, which we address below.</p>
 </section>
 <section id="the-path-choices-matrix">
-<h3><span class="section-number">6.17.1.3. </span>The path choices matrix<a class="headerlink" href="#the-path-choices-matrix" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.17.1.3. </span>The path choices matrix<a class="headerlink" href="#the-path-choices-matrix" title="Link to this heading">#</a></h3>
 <p>If we want to recover the optimal alignment path through the matrix, we need to be recording at every cell, which of the possible input directions was chosen. We will refer to this <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> and it’s a companion matrix to <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>, with exactly the same dimensions.</p>
 </section>
 <section id="handling-the-recursion">
-<h3><span class="section-number">6.17.1.4. </span>Handling the recursion<a class="headerlink" href="#handling-the-recursion" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.17.1.4. </span>Handling the recursion<a class="headerlink" href="#handling-the-recursion" title="Link to this heading">#</a></h3>
 <p>We have to start somewhere, and the first issue we encounter is a need to handle the boundaries. If we are on the top row, <span class="math notranslate nohighlight">\(i=0\)</span>. We are restricted to a single possible input path (<span class="math notranslate nohighlight">\(\leftarrow\)</span>, the others are undefined). As a consequence, these boundary elements consist of an alignment of one sequence to a prefix of only gaps. With this notion in place, we then introduce the beginning state row/column into the <span class="math notranslate nohighlight">\(\mathcal{P, T}\)</span> matrices. Thus these matrices both have dimensions <span class="math notranslate nohighlight">\(n+1, m+1\)</span> where <span class="math notranslate nohighlight">\(n, m\)</span> are the lengths of sequences <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> respectively.</p>
 </section>
 </section>
 <section id="demonstrating-nw-on-an-example">
-<h2><span class="section-number">6.17.2. </span>Demonstrating NW on an example<a class="headerlink" href="#demonstrating-nw-on-an-example" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">6.17.2. </span>Demonstrating NW on an example<a class="headerlink" href="#demonstrating-nw-on-an-example" title="Link to this heading">#</a></h2>
 <p>We apply NW to the following two sequences, gradually building up the algorithmic components in Python. We will use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays to implement this algorithm.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -332,7 +643,7 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </div>
 </div>
 <section id="create-the-data-structures-we-need">
-<h3><span class="section-number">6.17.2.1. </span>Create the data structures we need<a class="headerlink" href="#create-the-data-structures-we-need" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.17.2.1. </span>Create the data structures we need<a class="headerlink" href="#create-the-data-structures-we-need" title="Link to this heading">#</a></h3>
 <p>Because of the boundary condition, the dimensions of our matrices are +1 that of the sequence lengths.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -421,7 +732,7 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 <p>All the cells with the value <code class="docutils literal notranslate"><span class="pre">None</span></code> will be completed during the calculation of the scores.</p>
 </section>
 <section id="the-scoring-function">
-<h3><span class="section-number">6.17.2.2. </span>The scoring function<a class="headerlink" href="#the-scoring-function" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.17.2.2. </span>The scoring function<a class="headerlink" href="#the-scoring-function" title="Link to this heading">#</a></h3>
 <p>We write this as a function since it will be called for every comparison of sequence states.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -456,7 +767,7 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </div>
 </section>
 <section id="computing-the-best-score-and-path-for-a-particular-comparison">
-<h3><span class="section-number">6.17.2.3. </span>Computing the best score and path for a particular comparison<a class="headerlink" href="#computing-the-best-score-and-path-for-a-particular-comparison" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.17.2.3. </span>Computing the best score and path for a particular comparison<a class="headerlink" href="#computing-the-best-score-and-path-for-a-particular-comparison" title="Link to this heading">#</a></h3>
 <p>I write a function that corresponds to the algorithmic implementation of <a class="reference external" href="path_score">equation</a>. In this case, I’m anticipating what information I need – the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> matrix, the coordinates of the current cell, the score for the states represented by that cell and the gap penalty (<code class="docutils literal notranslate"><span class="pre">delta</span></code>).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -487,7 +798,7 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </div>
 </section>
 <section id="populating-the-path-scores-and-path-choices-matrices">
-<h3><span class="section-number">6.17.2.4. </span>Populating the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> and <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> matrices<a class="headerlink" href="#populating-the-path-scores-and-path-choices-matrices" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.17.2.4. </span>Populating the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> and <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> matrices<a class="headerlink" href="#populating-the-path-scores-and-path-choices-matrices" title="Link to this heading">#</a></h3>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">base1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">seq1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
@@ -513,8 +824,8 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </div>
 </div>
 <p>The following table uses bold font to emphasise the path choices that are made to produce the alignment and provides the indices to make it clearer how the path is interpreted.</p>
-<table class="docutils align-default" id="id50">
-<caption><span class="caption-text">The completed score matrix</span><a class="headerlink" href="#id50" title="Permalink to this table"></a></caption>
+<table class="table" id="id50">
+<caption><span class="caption-text">The completed score matrix</span><a class="headerlink" href="#id50" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">seq1[r]</span></code> \ <code class="docutils literal notranslate"><span class="pre">seq2[c]</span></code></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(\mathbf \delta_0\)</span></p></th>
@@ -603,7 +914,7 @@ B    CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </div>
 </section>
 <section id="the-exciting-bit-the-viterbi-algorithm">
-<h3><span class="section-number">6.17.2.5. </span>The exciting bit – the Viterbi algorithm!<a class="headerlink" href="#the-exciting-bit-the-viterbi-algorithm" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.17.2.5. </span>The exciting bit – the Viterbi algorithm!<a class="headerlink" href="#the-exciting-bit-the-viterbi-algorithm" title="Link to this heading">#</a></h3>
 <p>The NW algorithm is a solution to the complex challenge of finding the optimal global alignment. Up to now it’s been quite mundane and very conventional. The elegance and efficiency of NW stems from this step – the traceback. This part is referred to as the Viterbi algorithm, which is a <span class="target" id="index-1"></span>dynamic programming solution for efficiently tracing back the optimal path through the matrix. It’s referred to as a traceback since the final path score is at the very end of the matrix.</p>
 <p>We will solve this using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop since we don’t know precisely how many steps this will take. Our <code class="docutils literal notranslate"><span class="pre">while</span></code> loop exit condition will be based on having reached a <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> cell whose value is <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>. Since we are tracing back the alignment, our initial coordinate for <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> is the very last cell.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -667,7 +978,7 @@ seq2: GAGTAC
 </section>
 </section>
 <section id="aligning-the-sequences-from-the-dotplot-example">
-<h2><span class="section-number">6.17.3. </span>Aligning the sequences from the dotplot example<a class="headerlink" href="#aligning-the-sequences-from-the-dotplot-example" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">6.17.3. </span>Aligning the sequences from the dotplot example<a class="headerlink" href="#aligning-the-sequences-from-the-dotplot-example" title="Link to this heading">#</a></h2>
 <p>So how well does our algorithm go in aligning the sequences we used for the doplot example at the top? If you try it, you will likely see the following.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>A: CCTCTGAATAGG--A-GA---CAAGACCATGCAGGCATACTAGGTGGCGCACATAGATTT
 B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
@@ -677,7 +988,7 @@ B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </section>
 </section>
 <section id="exercises">
-<h1><span class="section-number">6.18. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">6.18. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>Convert the above code into functions so that you can align any pair of sequences you like.</p></li>
 <li><p>Write some tests of your functions to make sure they are working correctly. For instance, if you give two sequences that are completely different (e.g. “AAAA” and “TTTT”), what should you see? Does the algorithm generate that?</p></li>
@@ -686,6 +997,7 @@ B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 <hr class="docutils" />
 <p class="rubric">Citations</p>
 <div class="docutils container" id="id14">
+<div role="list" class="citation-list">
 <div class="citation" id="id36" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">Got82</a><span class="fn-bracket">]</span></span>
 <p>Osamu Gotoh. An improved algorithm for matching biological sequences. <em>Journal of Molecular Biology</em>, 162:705 – 708, 1982. URL: <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/0022283682903989">http://www.sciencedirect.com/science/article/pii/0022283682903989</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/0022-2836(82)90398-9">doi:https://doi.org/10.1016/0022-2836(82)90398-9</a>.</p>
@@ -700,34 +1012,123 @@ B: CCTCTGAATAGGCGACGAAGACAAGACCATGCAGGCATA---GGTGGCGCACATAGATTT
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="dotplot.html" class="btn btn-neutral float-left" title="6.15. Dotplot – Alignment of sequences related by descent from a common ancestor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../molevol/index.html" class="btn btn-neutral float-right" title="7. Molecular Evolution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dotplot.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6.15. </span>Dotplot – Alignment of sequences related by descent from a common ancestor</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="../molevol/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Molecular Evolution</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.17. Global Pairwise Alignment Using Dynamic Programming</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#needleman-and-wunsch-nw">6.17.1. Needleman and Wunsch (NW)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scoring-system">6.17.1.1. The scoring system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-matrix-of-path-scores">6.17.1.2. A matrix of path scores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-path-choices-matrix">6.17.1.3. The path choices matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-the-recursion">6.17.1.4. Handling the recursion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstrating-nw-on-an-example">6.17.2. Demonstrating NW on an example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-data-structures-we-need">6.17.2.1. Create the data structures we need</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scoring-function">6.17.2.2. The scoring function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-best-score-and-path-for-a-particular-comparison">6.17.2.3. Computing the best score and path for a particular comparison</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-the-path-scores-and-path-choices-matrices">6.17.2.4. Populating the <code class="docutils literal notranslate"><span class="pre">path_scores</span></code> and <code class="docutils literal notranslate"><span class="pre">path_choices</span></code> matrices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-exciting-bit-the-viterbi-algorithm">6.17.2.5. The exciting bit – the Viterbi algorithm!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aligning-the-sequences-from-the-dotplot-example">6.17.3. Aligning the sequences from the dotplot example</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.18. Exercises</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gavin Huttley
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020-2024, Gavin Huttley.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>

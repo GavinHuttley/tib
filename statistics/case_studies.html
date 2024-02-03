@@ -1,63 +1,163 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9.2. Case studies &mdash; Topics in Bioinformatics 2023.05.01 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9.2. Case studies &#8212; Topics in Bioinformatics</title>
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/thebelab-helper.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script src="../_static/design-tabs.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script src="../_static/require.min.js"></script>
-        <script src="../_static/custom.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=3ce756a4" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=3b12d53c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'statistics/case_studies';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="9.3. Distributions and the \(p\)-value" href="distributions.html" />
-    <link rel="prev" title="9.1. Evidence based decision making" href="intro.html" /> 
-</head>
+    <link rel="prev" title="9.1. Evidence based decision making" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Topics in Bioinformatics
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Topics in Bioinformatics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
@@ -66,23 +166,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cogent3/index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">9. Statistical analysis</a><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">9. Statistical analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">9.1. Evidence based decision making</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">9.2. Case studies</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#case-study-1-do-nucleotides-occur-randomly-in-a-dna-sequence">9.2.1. Case study 1 – do nucleotides occur randomly in a DNA sequence?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#step-1-the-biological-problem">9.2.1.1. Step 1 - the biological problem</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#step-2-selecting-the-measurement">9.2.1.2. Step 2 - selecting the measurement</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#step-3-writing-the-algorithm">9.2.1.3. Step 3 - writing the algorithm</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#case-study-2-evaluate-whether-a-query-sequence-belongs-to-a-pathogen">9.2.2. Case study 2 – evaluate whether a query sequence belongs to a pathogen</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id9">9.2.2.1. Step 1 - the biological problem</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">9.2.2.2. Step 2 - selecting the measurement</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id15">9.2.2.3. Step 3 - writing the algorithm</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.2. Case studies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="distributions.html">9.3. Distributions and the <span class="math notranslate nohighlight">\(p\)</span>-value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interpretation.html">9.4. Step 4 – Interpretation and looking past the <span class="math notranslate nohighlight">\(p\)</span>-value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wrong_models.html">9.5. Acknowledging the limits of an analysis</a></li>
@@ -95,55 +181,267 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
-        </div>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
       </div>
-    </nav>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Topics in Bioinformatics</a>
-      </nav>
+<div class="sbt-scroll-pixel-helper"></div>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">9. </span>Statistical analysis</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">9.2. </span>Case studies</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/statistics/case_studies.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/edit/main/statistics/case_studies.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/issues/new?title=Issue%20on%20page%20%2Fstatistics/case_studies.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/statistics/case_studies.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Case studies</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-1-do-nucleotides-occur-randomly-in-a-dna-sequence">9.2.1. Case study 1 – do nucleotides occur randomly in a DNA sequence?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-the-biological-problem">9.2.1.1. Step 1 - the biological problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-selecting-the-measurement">9.2.1.2. Step 2 - selecting the measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-writing-the-algorithm">9.2.1.3. Step 3 - writing the algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-2-evaluate-whether-a-query-sequence-belongs-to-a-pathogen">9.2.2. Case study 2 – evaluate whether a query sequence belongs to a pathogen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9.2.2.1. Step 1 - the biological problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9.2.2.2. Step 2 - selecting the measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.2.2.3. Step 3 - writing the algorithm</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 </div>
 </div>
 <section id="case-studies">
-<span id="id1"></span><h1><span class="section-number">9.2. </span>Case studies<a class="headerlink" href="#case-studies" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1><span class="section-number">9.2. </span>Case studies<a class="headerlink" href="#case-studies" title="Link to this heading">#</a></h1>
 <p>We will develop a perspective on statistical analysis through addressing two different problems. In these case studies, I’m describing the problem in a very procedural way, focussing on the <a class="reference internal" href="intro.html#essential-steps"><span class="std std-ref">essential steps</span></a> to deliver a <span class="math notranslate nohighlight">\(p\)</span>-value. I am taking this approach because many of the students (and in fact many of the scientists) I have interacted with believe that this is all statistical analysis entails.</p>
 <p>The point of this topic is explain <strong>why</strong> this a manifestly superficial approach to statistical analysis. In subsequent sections I develop our interpretation of the analysis results I obtain here.</p>
 <section id="case-study-1-do-nucleotides-occur-randomly-in-a-dna-sequence">
-<span id="case-study-1"></span><h2><span class="section-number">9.2.1. </span>Case study 1 – do nucleotides occur randomly in a DNA sequence?<a class="headerlink" href="#case-study-1-do-nucleotides-occur-randomly-in-a-dna-sequence" title="Permalink to this heading"></a></h2>
+<span id="case-study-1"></span><h2><span class="section-number">9.2.1. </span>Case study 1 – do nucleotides occur randomly in a DNA sequence?<a class="headerlink" href="#case-study-1-do-nucleotides-occur-randomly-in-a-dna-sequence" title="Link to this heading">#</a></h2>
 <p>Much of my own research concerns understanding organisation <a class="footnote-reference brackets" href="#id4" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> of DNA sequences and the mechanisms by which those properties arise. Inevitably, this leads me to asking questions about the role that mutation plays in creating patterns in DNA. This particular case study is focussed on a fundamental property of DNA that has important implications for a large number of fields, including molecular evolutionary analyses such as phylogenetics, and cancer genetics. We now follow the 4-step procedure.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id4" role="note">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
 <p>By organisation I mean the ordering of nucleotides in a DNA sequence, e.g. does eukaryotic <a class="reference internal" href="../seqcomp/encoding_information.html#organisation-dna"><span class="std std-ref">DNA organisation</span></a> manifest in periodic base patterns? I consider understanding such properties as essential to understanding how DNA encodes life.</p>
 </aside>
 </aside>
+</aside>
 <section id="step-1-the-biological-problem">
-<h3><span class="section-number">9.2.1.1. </span>Step 1 - the biological problem<a class="headerlink" href="#step-1-the-biological-problem" title="Permalink to this heading"></a></h3>
-<aside class="sidebar" id="case-study-1-data">
+<h3><span class="section-number">9.2.1.1. </span>Step 1 - the biological problem<a class="headerlink" href="#step-1-the-biological-problem" title="Link to this heading">#</a></h3>
+<aside class="margin sidebar" id="case-study-1-data">
 <p class="sidebar-title">Data for case study 1</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><style>
+.c3seq table {margin: 10px 0;}
 .c3seq td { border: none !important; text-align: left !important; }
 .c3seq tr:not(.num_row) td span {margin: 0 2px;}
 .c3seq tr:nth-child(even) {background: #f7f7f7;}
@@ -161,33 +459,39 @@
 <tr class="num_row"><td></td><td><b>0</b></td></tr>
 <tr><td class="label">demo</td><td><span class="A_dna">A</span><span class="T_dna">T</span><span class="G_dna">G</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="A_dna">A</span><span class="T_dna">T</span><span class="C_dna">C</span><span class="C_dna">C</span><span class="A_dna">A</span></td></tr>
 </table>
-<p><i>10 DnaSequence</i></p>
+<p><i>DnaSequence, length=10</i></p>
 </div></div></div>
 </div>
 <p>A 10bp snippet of the sample sequence. Click to download the <a class="reference download internal" download="" href="../_downloads/3c037ff4c35022eebe9fd7120b97e728/case_study1.fasta"><code class="xref download docutils literal notranslate"><span class="pre">sequence</span> <span class="pre">data</span></code></a>.</p>
 </aside>
 <p>For the <a class="reference internal" href="#case-study-1-data"><span class="std std-ref">single DNA sequence</span></a>, we want to evaluate whether nucleotides occur randomly along the sequence <a class="footnote-reference brackets" href="#id6" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. In other words, given a nucleotide <code class="docutils literal notranslate"><span class="pre">C</span></code>, is its 3’- neighbour a random draw from all 4 nucleotides?</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="note">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">2</a><span class="fn-bracket">]</span></span>
 <p>We are referring to nucleotides on a single strand of the double-helix.</p>
 </aside>
 </aside>
+</aside>
 </section>
 <section id="step-2-selecting-the-measurement">
-<h3><span class="section-number">9.2.1.2. </span>Step 2 - selecting the measurement<a class="headerlink" href="#step-2-selecting-the-measurement" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">9.2.1.2. </span>Step 2 - selecting the measurement<a class="headerlink" href="#step-2-selecting-the-measurement" title="Link to this heading">#</a></h3>
 <p>DNA sequences are represented by the <em>discrete series</em> of symbols <a class="footnote-reference brackets" href="#id8" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> which we can view as categories. As I’m interested in asking whether these symbols occur randomly, my measurement needs to allow me to distinguish between randomness and non-randomness.</p>
 <p>In the statistical parlance of categorical analysis, the synonyms for randomness and non-randomness are independence and dependence respectively. These synonyms help me identify the <span class="math notranslate nohighlight">\(\chi^2\)</span> test of independence as the test I will use. (Selecting this statistical test means we have selected a model for the null distribution, but more on that when we get to the Interpretation step.)</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id8" role="note">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">3</a><span class="fn-bracket">]</span></span>
 <p>These symbols are the letters of the DNA alphabet <span class="incremental">A, C, G, T</span>.</p>
+</aside>
 </aside>
 </aside>
 <p>That all sounds great, but how can I transform my data in such a way that it can be used for this analysis?</p>
 </section>
 <section id="step-3-writing-the-algorithm">
-<h3><span class="section-number">9.2.1.3. </span>Step 3 - writing the algorithm<a class="headerlink" href="#step-3-writing-the-algorithm" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">9.2.1.3. </span>Step 3 - writing the algorithm<a class="headerlink" href="#step-3-writing-the-algorithm" title="Link to this heading">#</a></h3>
 <p>In short, we need to produce what’s referred to as a contingency-table. This is just a table of counts of the number of occurrences of each possibility. Consider the nucleotide <code class="docutils literal notranslate"><span class="pre">A</span></code>. For <code class="docutils literal notranslate"><span class="pre">seq</span></code>, how many times does that occur as: <code class="docutils literal notranslate"><span class="pre">AA</span></code>, <code class="docutils literal notranslate"><span class="pre">AC</span></code>, <code class="docutils literal notranslate"><span class="pre">AG</span></code>, <code class="docutils literal notranslate"><span class="pre">AT</span></code>? For the nucleotide <code class="docutils literal notranslate"><span class="pre">C</span></code>, we need to count the number of occurrences of <code class="docutils literal notranslate"><span class="pre">CA</span></code>, <code class="docutils literal notranslate"><span class="pre">CC</span></code>, <code class="docutils literal notranslate"><span class="pre">CG</span></code>, <code class="docutils literal notranslate"><span class="pre">CT</span></code>. Then for <code class="docutils literal notranslate"><span class="pre">G</span></code> and <code class="docutils literal notranslate"><span class="pre">T</span></code>. The pattern here is we need to count dinucleotides!</p>
 <p>Awesome, I need to write an algorithm to convert a sequence into dinucleotides. For example, <code class="docutils literal notranslate"><span class="pre">'ATGAAT'</span></code> should be converted to <code class="docutils literal notranslate"><span class="pre">['AT',</span> <span class="pre">'GA',</span> <span class="pre">'AT']</span></code>. The next part is to convert that series of dinucleotides into a <span class="math notranslate nohighlight">\(4\times 4\)</span> table with the row labels corresponding to the first (the 5’-) nucleotide of the dinucleotide and the column labels corresponding to the second (3’-) nucleotide of the dinucleotide.</p>
 <p>Applying my algorithm to <code class="docutils literal notranslate"><span class="pre">seq</span></code> I get</p>
@@ -268,8 +572,8 @@
 </section>
 </section>
 <section id="case-study-2-evaluate-whether-a-query-sequence-belongs-to-a-pathogen">
-<span id="case-study-2"></span><h2><span class="section-number">9.2.2. </span>Case study 2 – evaluate whether a query sequence belongs to a pathogen<a class="headerlink" href="#case-study-2-evaluate-whether-a-query-sequence-belongs-to-a-pathogen" title="Permalink to this heading"></a></h2>
-<aside class="sidebar" id="data-for-case-study-2">
+<span id="case-study-2"></span><h2><span class="section-number">9.2.2. </span>Case study 2 – evaluate whether a query sequence belongs to a pathogen<a class="headerlink" href="#case-study-2-evaluate-whether-a-query-sequence-belongs-to-a-pathogen" title="Link to this heading">#</a></h2>
+<aside class="margin sidebar" id="data-for-case-study-2">
 <p class="sidebar-title">Data for case study 2</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -358,29 +662,35 @@
 </aside>
 <p>The properties of DNA are often used for identification purposes. In this case study we are interested in the detection of the cholera pathogen in amplicon sequence data. A standard approach in analyses of microbial communities is to use the DNA sequence from the <span class="target" id="index-1"></span>16S rRNA gene (hereafter abbreviated 16S) as a species marker. These can be sampled from an environment by PCR amplification and subsequent high-throughput DNA sequencing.</p>
 <section id="id9">
-<h3><span class="section-number">9.2.2.1. </span>Step 1 - the biological problem<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">9.2.2.1. </span>Step 1 - the biological problem<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>Our question is whether a “query” 16S DNA sequence could be a member of <em>Vibrio cholerae</em> (some strains of which cause cholera).</p>
 <p>If the query sequence belongs to <em>V. cholerae</em>, then its DNA sequence should be very similar to the reference <a class="footnote-reference brackets" href="#id11" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> <em>V. cholerae</em> pathogen 16S sequence.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id11" role="note">
+<aside class="footnote brackets" id="id11" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">4</a><span class="fn-bracket">]</span></span>
 <p>We use the NCBI defined reference for <em>V. cholerae</em>.</p>
 </aside>
 </aside>
+</aside>
 </section>
 <section id="id12">
-<h3><span class="section-number">9.2.2.2. </span>Step 2 - selecting the measurement<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">9.2.2.2. </span>Step 2 - selecting the measurement<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>As for <a class="reference internal" href="#case-study-1"><span class="std std-ref">Case study 1</span></a>, because DNA sequences are our basic data type we are dealing with categorical data. We can measure the similarity between DNA sequences in a very large number of ways. One computationally efficient way is to just compare nucleotide counts. If the query belongs to a different species than the reference sequence, we expect the abundance of nucleotides will be less similar than if it is from the same species. In other words, I’m expressing this measurement problem as one of establishing whether a query <em>is not</em> <em>V. cholerae</em>.</p>
 <p>Conveniently, this problem can also be evaluated using a <span class="math notranslate nohighlight">\(\chi^2\)</span> test. In this case, it is a homogeneity test <a class="footnote-reference brackets" href="#id14" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id14" role="note">
+<aside class="footnote brackets" id="id14" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">5</a><span class="fn-bracket">]</span></span>
 <p>Which tests whether the query comes from the same population as the reference.</p>
 </aside>
 </aside>
+</aside>
 </section>
 <section id="id15">
-<h3><span class="section-number">9.2.2.3. </span>Step 3 - writing the algorithm<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">9.2.2.3. </span>Step 3 - writing the algorithm<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>The first part of the algorithm here is quite simple. For each sequence, we count the number of <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">G</span></code> and <code class="docutils literal notranslate"><span class="pre">T</span></code>. The result of this is displayed in the case study <a class="reference internal" href="#data-for-case-study-2"><span class="std std-ref">data overview</span></a>. The second part of the algorithm selects the counts for a single query and combines those with the counts from the reference, to produce a <span class="math notranslate nohighlight">\(2 \times 4\)</span> contingency table. For example, with <code class="docutils literal notranslate"><span class="pre">AP023375.1</span></code> as the query we generate</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -456,34 +766,114 @@
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="intro.html" class="btn btn-neutral float-left" title="9.1. Evidence based decision making" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="distributions.html" class="btn btn-neutral float-right" title="9.3. Distributions and the \(p\)-value" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9.1. </span>Evidence based decision making</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="distributions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9.3. </span>Distributions and the <span class="math notranslate nohighlight">\(p\)</span>-value</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-1-do-nucleotides-occur-randomly-in-a-dna-sequence">9.2.1. Case study 1 – do nucleotides occur randomly in a DNA sequence?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-the-biological-problem">9.2.1.1. Step 1 - the biological problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-selecting-the-measurement">9.2.1.2. Step 2 - selecting the measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-writing-the-algorithm">9.2.1.3. Step 3 - writing the algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-2-evaluate-whether-a-query-sequence-belongs-to-a-pathogen">9.2.2. Case study 2 – evaluate whether a query sequence belongs to a pathogen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9.2.2.1. Step 1 - the biological problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9.2.2.2. Step 2 - selecting the measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.2.2.3. Step 3 - writing the algorithm</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gavin Huttley
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020-2024, Gavin Huttley.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>

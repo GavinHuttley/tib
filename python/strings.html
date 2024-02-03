@@ -1,137 +1,214 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.20. Dealing with strings &mdash; Topics in Bioinformatics 2023.05.01 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5.20. Dealing with strings &#8212; Topics in Bioinformatics</title>
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/thebelab-helper.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script src="../_static/design-tabs.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../_static/require.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script src="../_static/require.min.js"></script>
-        <script src="../_static/custom.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=3ce756a4" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=3b12d53c"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/strings';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5.22. Getting help" href="dir_help.html" />
-    <link rel="prev" title="5.18. Functions and methods" href="functions.html" /> 
-</head>
+    <link rel="prev" title="5.18. Functions and methods" href="functions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Topics in Bioinformatics
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Topics in Bioinformatics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">1. Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">2. Prologue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">3. How to Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notation.html">4. Notation used throughout</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">5. Introduction to Python</a><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">5. Introduction to Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="resources.html">5.1. Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">5.2. Introduction to programming using Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="start.html">5.3. Computing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#code-and-output-in-these-notes-is-from-jupyter">5.4. Code and output in these notes is from Jupyter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#everyones-first-program-in-python">5.5. Everyones first program in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#basic-arithmetic-operations">5.6. Basic arithmetic operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="start.html#exercises">5.7. Exercises</a></li>
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="variables.html">5.8. Variables and assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variables.html#exercises">5.9. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="operators.html">5.10. Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html#exercises">5.11. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="types.html">5.12. The basic data types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html#exercises">5.13. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="logic.html">5.14. Logical syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logic.html#exercises">5.15. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html">5.16. Fixing errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interpreting_errors.html#exercises">5.17. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="functions.html">5.18. Functions and methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#exercises">5.19. Exercises</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.20. Dealing with strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#creating-a-string-type-from-a-non-string-type">5.20.1. Creating a string type from a non-string type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#defining-strings">5.20.2. Defining strings</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#how-to-include-a-quote-character-in-a-string">5.20.2.1. How to include a quote character in a string</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#literal-strings">5.20.3. Literal strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#special-characters-in-strings-tabs-new-lines-spaces">5.20.4. Special characters in strings – tabs, new lines, spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#finding-out-things-about-a-string">5.20.5. Finding out things about a string</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#using-standard-python-operators">5.20.5.1. Using standard Python operators</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-string-methods">5.20.5.2. Using string methods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#useful-string-descriptor-methods">5.20.5.3. Useful string descriptor methods</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#transforming-strings">5.20.6. Transforming strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#preparing-data-for-writing-to-file">5.20.7. Preparing data for writing to file</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#not-done-yet">5.20.7.1. Not done yet…</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#just-because-you-can-doesn-t-mean-you-should">5.20.7.2. Just because you can doesn’t mean you should!</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#but-wait-it-s-still-not-ready-to-write-to-a-file">5.20.8. But wait, it’s still not ready to write to a file!</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#other-really-useful-methods-on-string-objects">5.20.9. Other really useful methods on string objects</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">5.21. Exercises</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.20. Dealing with strings</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="dir_help.html">5.22. Getting help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">5.23. Using lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries.html">5.24. Dealing with dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sets.html">5.25. The <code class="docutils literal notranslate"><span class="pre">set</span></code> data type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html#exercises">5.26. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="indexing.html">5.27. Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indexing.html#exercises">5.28. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="files.html">5.29. Working with files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#exercises">5.30. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="iterators.html">5.31. Iterators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iterators.html#exercises">5.32. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="writing_functions.html">5.33. Writing functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing_functions.html#exercises">5.34. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="namespace.html">5.35. Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="namespace.html#exercises">5.36. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="more_looping.html">5.37. More on looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="more_looping.html#exercises">5.38. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="import.html">5.39. Extending capabilities using <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html">5.40. Pulling it together – writing your own programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write_a_program.html#exercises">5.41. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="misc.html">5.42. Miscellaneous Python features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numpy.html">5.43. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> – numerical routines for python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html#exercises">5.44. Exercises</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="visualisation.html">5.45. Data Visualisation using Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualisation.html#exercises">5.46. Exercises</a></li>
+
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
@@ -143,33 +220,255 @@
 <li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
-        </div>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
       </div>
-    </nav>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Topics in Bioinformatics</a>
-      </nav>
+<div class="sbt-scroll-pixel-helper"></div>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">5. </span>Introduction to Python</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">5.20. </span>Dealing with strings</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/GavinHuttley/tib/blob/develop/source/python/strings.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/edit/main/python/strings.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/GavinHuttley/tib/issues/new?title=Issue%20on%20page%20%2Fpython/strings.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/python/strings.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dealing with strings</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.20. Dealing with strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-string-type-from-a-non-string-type">5.20.1. Creating a string type from a non-string type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-strings">5.20.2. Defining strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-include-a-quote-character-in-a-string">5.20.2.1. How to include a quote character in a string</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literal-strings">5.20.3. Literal strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-in-strings-tabs-new-lines-spaces">5.20.4. Special characters in strings – tabs, new lines, spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-out-things-about-a-string">5.20.5. Finding out things about a string</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-standard-python-operators">5.20.5.1. Using standard Python operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-string-methods">5.20.5.2. Using string methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-string-descriptor-methods">5.20.5.3. Useful string descriptor methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-strings">5.20.6. Transforming strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-data-for-writing-to-file">5.20.7. Preparing data for writing to file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-done-yet">5.20.7.1. Not done yet…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#just-because-you-can-doesn-t-mean-you-should">5.20.7.2. Just because you can doesn’t mean you should!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-wait-it-s-still-not-ready-to-write-to-a-file">5.20.8. But wait, it’s still not ready to write to a file!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-really-useful-methods-on-string-objects">5.20.9. Other really useful methods on string objects</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.21. Exercises</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="dealing-with-strings">
-<span id="strings"></span><span id="index-0"></span><h1><span class="section-number">5.20. </span>Dealing with strings<a class="headerlink" href="#dealing-with-strings" title="Permalink to this heading"></a></h1>
+<span id="strings"></span><span id="index-0"></span><h1><span class="section-number">5.20. </span>Dealing with strings<a class="headerlink" href="#dealing-with-strings" title="Link to this heading">#</a></h1>
 <p>Text is the dominant way in which bioinformatics data is stored and shared. So any bioinformatician needs to become expert in manipulating text data.</p>
 <p>The most common tasks concern:</p>
 <ul class="simple">
@@ -178,7 +477,7 @@
 </ul>
 <p>All such text manipulation involves the string data type, so becoming deeply familiar with what strings are and how to interrogate and manipulate them is crucial.</p>
 <section id="creating-a-string-type-from-a-non-string-type">
-<h2><span class="section-number">5.20.1. </span>Creating a string type from a non-string type<a class="headerlink" href="#creating-a-string-type-from-a-non-string-type" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.20.1. </span>Creating a string type from a non-string type<a class="headerlink" href="#creating-a-string-type-from-a-non-string-type" title="Link to this heading">#</a></h2>
 <p>All objects in python can be turned into a string using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -210,15 +509,18 @@
 </div>
 </div>
 <p>Being able to convert complex objects into strings is useful for display to screen since it gives you exact insight into the state of an object during program execution. It’s less useful as precursor for storage because there is no universally simple (and secure) operation for reconstructing the original objects. This latter issue is a case of “data serialisation” and is beyond the scope of these notes <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="note">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>The native serialisation approach for Python is called <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickling</a>. This approach has many problems. A popular alternative is <a class="reference external" href="https://docs.python.org/3/library/json.html">json</a>.</p>
 </aside>
 </aside>
+</aside>
 </section>
 <section id="defining-strings">
-<h2><span class="section-number">5.20.2. </span>Defining strings<a class="headerlink" href="#defining-strings" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.20.2. </span>Defining strings<a class="headerlink" href="#defining-strings" title="Link to this heading">#</a></h2>
 <p>Defining a string can be done using balanced quote marks. You can use either single (<code class="docutils literal notranslate"><span class="pre">'</span></code>), or double (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) quotes. For instance</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -272,7 +574,7 @@
 </div>
 </div>
 <section id="how-to-include-a-quote-character-in-a-string">
-<h3><span class="section-number">5.20.2.1. </span>How to include a quote character in a string<a class="headerlink" href="#how-to-include-a-quote-character-in-a-string" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.20.2.1. </span>How to include a quote character in a string<a class="headerlink" href="#how-to-include-a-quote-character-in-a-string" title="Link to this heading">#</a></h3>
 <p>Since we define a string using quotes, including a quote character can be solved in two ways. By “escaping” (see <a class="reference internal" href="misc.html#escaping-chars"><span class="std std-ref">Raw strings and escaping characters</span></a>) the quotes with a preceding backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>).</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -304,7 +606,7 @@
 </section>
 </section>
 <section id="literal-strings">
-<span id="index-1"></span><h2><span class="section-number">5.20.3. </span>Literal strings<a class="headerlink" href="#literal-strings" title="Permalink to this heading"></a></h2>
+<span id="index-1"></span><h2><span class="section-number">5.20.3. </span>Literal strings<a class="headerlink" href="#literal-strings" title="Link to this heading">#</a></h2>
 <p>This is a special case in which the strings can include line breaks and other formatting. These are created by triple-quoting. For instance</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -326,10 +628,13 @@ And blank lines etc..
 </div>
 </div>
 <p>The actual formatting is revealed by using the representation of the object <a class="footnote-reference brackets" href="#id4" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id4" role="note">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
 <p>In an interactive interpreter, you do not need to do anything special to see this, other than simply having a statement that consists of only the variable name itself. In a python script, however, you would need to print the result of calling <code class="docutils literal notranslate"><span class="pre">repr()</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">print(repr(multi_line))</span></code></p>
+</aside>
 </aside>
 </aside>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -347,7 +652,7 @@ And blank lines etc..
 <p>Literal strings are most often used for writing documentation strings (or docstrings) on functions and methods.</p>
 </section>
 <section id="special-characters-in-strings-tabs-new-lines-spaces">
-<span id="index-2"></span><h2><span class="section-number">5.20.4. </span>Special characters in strings – tabs, new lines, spaces<a class="headerlink" href="#special-characters-in-strings-tabs-new-lines-spaces" title="Permalink to this heading"></a></h2>
+<span id="index-2"></span><h2><span class="section-number">5.20.4. </span>Special characters in strings – tabs, new lines, spaces<a class="headerlink" href="#special-characters-in-strings-tabs-new-lines-spaces" title="Link to this heading">#</a></h2>
 <p>White space exists in files in part to make it easier for humans to understand the contents. (Reading this text if there were no spaces between the words would be a massive cognitive strain.) It also exists in files to make it easier to separate different types of data. So it is crucial to know what white space is (beyond it’s central role in the Python language itself). I’m showing the most common below.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -391,16 +696,19 @@ lines
 </div>
 </section>
 <section id="finding-out-things-about-a-string">
-<h2><span class="section-number">5.20.5. </span>Finding out things about a string<a class="headerlink" href="#finding-out-things-about-a-string" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.20.5. </span>Finding out things about a string<a class="headerlink" href="#finding-out-things-about-a-string" title="Link to this heading">#</a></h2>
 <p>We often want to know whether a string contains a particular character or substring <a class="footnote-reference brackets" href="#id6" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. There are specific string methods and more general Python approaches to discovering this.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="note">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
 <p>a substring is just a smaller string than what you currently have. For example, <span class="incremental">“b”</span> is a substring of <code class="docutils literal notranslate"><span class="pre">&quot;ab&quot;</span></code>.</p>
 </aside>
 </aside>
+</aside>
 <section id="using-standard-python-operators">
-<h3><span class="section-number">5.20.5.1. </span>Using standard Python operators<a class="headerlink" href="#using-standard-python-operators" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.20.5.1. </span>Using standard Python operators<a class="headerlink" href="#using-standard-python-operators" title="Link to this heading">#</a></h3>
 <p>Let’s look at the general Python approach first. We can compare strings in a number of ways. We can ask whether they have the same value.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -432,7 +740,7 @@ lines
 <p>In this second case, there is no information about where the substring is located only that there is a “match”.</p>
 </section>
 <section id="using-string-methods">
-<h3><span class="section-number">5.20.5.2. </span>Using string methods<a class="headerlink" href="#using-string-methods" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.20.5.2. </span>Using string methods<a class="headerlink" href="#using-string-methods" title="Link to this heading">#</a></h3>
 <p>If you’re not sure what a method is, read <a class="reference internal" href="functions.html#methods"><span class="std std-ref">Methods</span></a>. Briefly, if we want to establish whether some text data has a particular property we first need to be able to reference the data by the name of the variable storing it. This variable is called an “instance” of type <code class="docutils literal notranslate"><span class="pre">str</span></code>. In object-oriented languages like python, we then use <em>a method on that instance</em> to evaluate the property of interest.</p>
 <p>Returning to the task of finding substrings, we can establish whether a string contains a substring using the <code class="docutils literal notranslate"><span class="pre">find()</span></code> method. In this case, an integer is returned.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -449,10 +757,13 @@ lines
 </div>
 </div>
 <p>In this case, the value tells you whether the substring exists (<code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>) and where, in the string, the first instance occurs. There are other search related methods too <a class="footnote-reference brackets" href="#id8" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id8" role="note">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">4</a><span class="fn-bracket">]</span></span>
 <p>Another, extremely powerful, approach to querying strings in a more general way is achieved by using regular expressions (also referred to as regexes). Again, unfortunately, these are beyond the scope of this course. That said, you should definitely <a class="reference external" href="https://docs.python.org/3/howto/regex.html">read about them</a>.</p>
+</aside>
 </aside>
 </aside>
 <div class="admonition note">
@@ -461,7 +772,7 @@ lines
 </div>
 </section>
 <section id="useful-string-descriptor-methods">
-<h3><span class="section-number">5.20.5.3. </span>Useful string descriptor methods<a class="headerlink" href="#useful-string-descriptor-methods" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.20.5.3. </span>Useful string descriptor methods<a class="headerlink" href="#useful-string-descriptor-methods" title="Link to this heading">#</a></h3>
 <p>Other common string processing tasks concern checking the beginning of a string, or the end of a string. The former is commonly encountered for processing file formats where lines start with specific characters. The latter commonly encountered when processing filenames.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -480,7 +791,7 @@ lines
 </section>
 </section>
 <section id="transforming-strings">
-<h2><span class="section-number">5.20.6. </span>Transforming strings<a class="headerlink" href="#transforming-strings" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.20.6. </span>Transforming strings<a class="headerlink" href="#transforming-strings" title="Link to this heading">#</a></h2>
 <p>One common string transformation operation involves removing specific characters. Here it’s useful to utilise positional information. For instance, if you’re reading lines from a text file you know that the line will end with a trailing new line character (depending on your operating system). In this instance, the <code class="docutils literal notranslate"><span class="pre">strip()</span></code> method is what you want. The steps to doing this are:</p>
 <ol class="arabic simple">
 <li><p>Have the variable of interest</p></li>
@@ -574,7 +885,7 @@ lines
 <p>In doing that we can see there’s still two spaces in one item. We will address that at the end.</p>
 </section>
 <section id="preparing-data-for-writing-to-file">
-<h2><span class="section-number">5.20.7. </span>Preparing data for writing to file<a class="headerlink" href="#preparing-data-for-writing-to-file" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.20.7. </span>Preparing data for writing to file<a class="headerlink" href="#preparing-data-for-writing-to-file" title="Link to this heading">#</a></h2>
 <p>In order to do this, we often need to concatenate items into being a single string. The most common so called “delimited” file format is csv (which stands for comma separated). So we will now convert <code class="docutils literal notranslate"><span class="pre">data</span></code> into a single string with the items separated by a comma.</p>
 <p>In this case, our data instance is a list and its items are all strings. Transforming these into a single string requires defining the string you want to join them with and using the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method on <strong>that</strong> instance.</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -691,7 +1002,7 @@ himalayan palm civet
 </div>
 </div>
 <section id="not-done-yet">
-<h3><span class="section-number">5.20.7.1. </span>Not done yet…<a class="headerlink" href="#not-done-yet" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.20.7.1. </span>Not done yet…<a class="headerlink" href="#not-done-yet" title="Link to this heading">#</a></h3>
 <p>We can clean this code up quite a bit. First, we can combine the first two lines of the loop into a single statement. Because the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method returns an instance that’s compatible with the required input of the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method, we can combine these into a single statement without needing to define an intermediate variable.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -761,13 +1072,13 @@ himalayan palm civet
 </div>
 </section>
 <section id="just-because-you-can-doesn-t-mean-you-should">
-<h3><span class="section-number">5.20.7.2. </span>Just because you can doesn’t mean you should!<a class="headerlink" href="#just-because-you-can-doesn-t-mean-you-should" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">5.20.7.2. </span>Just because you can doesn’t mean you should!<a class="headerlink" href="#just-because-you-can-doesn-t-mean-you-should" title="Link to this heading">#</a></h3>
 <p>Hopefully, that’s not an unfamiliar realisation. The difference between the long-winded way and the much more compact expression is, at least, a loss of some clarity. The more compact expression is somewhat harder to understand and definitely harder to debug should anything go wrong.</p>
 <p>My advice is to be more verbose as you learn to program and gradually increase the compactness of your code as these patterns become more familiar.</p>
 </section>
 </section>
 <section id="but-wait-it-s-still-not-ready-to-write-to-a-file">
-<h2><span class="section-number">5.20.8. </span>But wait, it’s still not ready to write to a file!<a class="headerlink" href="#but-wait-it-s-still-not-ready-to-write-to-a-file" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">5.20.8. </span>But wait, it’s still not ready to write to a file!<a class="headerlink" href="#but-wait-it-s-still-not-ready-to-write-to-a-file" title="Link to this heading">#</a></h2>
 <p>Good catch! Unless you really want to have all your data on a single line, you should end the line with a line feed character. This can be done with the following addition</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -781,9 +1092,9 @@ himalayan palm civet
 <p>and then this can be safely written into a file onto its own line and thus readily recovered at a later date.</p>
 </section>
 <section id="other-really-useful-methods-on-string-objects">
-<h2><span class="section-number">5.20.9. </span>Other really useful methods on string objects<a class="headerlink" href="#other-really-useful-methods-on-string-objects" title="Permalink to this heading"></a></h2>
-<table class="docutils align-default" id="id9">
-<caption><span class="caption-text">Useful string methods</span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
+<h2><span class="section-number">5.20.9. </span>Other really useful methods on string objects<a class="headerlink" href="#other-really-useful-methods-on-string-objects" title="Link to this heading">#</a></h2>
+<table class="table" id="id9">
+<caption><span class="caption-text">Useful string methods</span><a class="headerlink" href="#id9" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method name</p></th>
 <th class="head"><p>Method does</p></th>
@@ -826,7 +1137,7 @@ himalayan palm civet
 </section>
 </section>
 <section id="exercises">
-<h1><span class="section-number">5.21. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">5.21. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;        Use this sample text</span><span class="se">\n\t</span><span class="s2">for the following</span><span class="se">\n</span><span class="s2">        exercises.</span><span class="se">\n</span><span class="s2">  &quot;</span>
@@ -865,34 +1176,128 @@ himalayan palm civet
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="functions.html" class="btn btn-neutral float-left" title="5.18. Functions and methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="dir_help.html" class="btn btn-neutral float-right" title="5.22. Getting help" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2020-2023, Gavin Huttley.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5.18. </span>Functions and methods</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="dir_help.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.22. </span>Getting help</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.20. Dealing with strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-string-type-from-a-non-string-type">5.20.1. Creating a string type from a non-string type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-strings">5.20.2. Defining strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-include-a-quote-character-in-a-string">5.20.2.1. How to include a quote character in a string</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literal-strings">5.20.3. Literal strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-characters-in-strings-tabs-new-lines-spaces">5.20.4. Special characters in strings – tabs, new lines, spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-out-things-about-a-string">5.20.5. Finding out things about a string</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-standard-python-operators">5.20.5.1. Using standard Python operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-string-methods">5.20.5.2. Using string methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-string-descriptor-methods">5.20.5.3. Useful string descriptor methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-strings">5.20.6. Transforming strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-data-for-writing-to-file">5.20.7. Preparing data for writing to file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-done-yet">5.20.7.1. Not done yet…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#just-because-you-can-doesn-t-mean-you-should">5.20.7.2. Just because you can doesn’t mean you should!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-wait-it-s-still-not-ready-to-write-to-a-file">5.20.8. But wait, it’s still not ready to write to a file!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-really-useful-methods-on-string-objects">5.20.9. Other really useful methods on string objects</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.21. Exercises</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gavin Huttley
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020-2024, Gavin Huttley.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>
