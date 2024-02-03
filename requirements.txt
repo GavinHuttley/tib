@@ -13,14 +13,14 @@ ipython_genutils
 pytest
 sphinx
 docutils
-jinja2<3.1
+jinja2
 scipy
-sphinx==5.3.0
+sphinx
 sphinx_comments
 sphinx_design
 sphinxcontrib-bibtex
 sphinx_design
-sphinx_rtd_theme
+sphinx_book_theme
 tqdm>=4.47.0
 nbformat
 nbconvert

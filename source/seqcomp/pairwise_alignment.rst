@@ -39,7 +39,9 @@ OR
 
 Making inferences regarding historical relatedness underpins much of how we utilise biological sequence data. So how can we decide which positions in two (or more) sequences are related? There are optimally efficient algorithms available for pairwise alignment. We first tackle the problem of *global alignment* [1]_ :cite:`Needleman:1970aa`.
 
-.. [1] Global here means aligning the entire sequences. This contrasts with a "local" alignment, which computes the best aligned segment for a pair of sequences. That is solved using another dynamic programming algorithm referred to as Smith-Waterman, which we don't address.
+.. margin::
+  
+    .. [1] Global here means aligning the entire sequences. This contrasts with a "local" alignment, which computes the best aligned segment for a pair of sequences. That is solved using another dynamic programming algorithm referred to as Smith-Waterman, which we don't address.
 
 Needleman and Wunsch (NW)
 -------------------------
@@ -78,7 +80,9 @@ In this result, each column of this alignment corresponds to characters that hav
 
 Compared to the dotplot approach, it allows for more sophisticated "match", i.e. the sequence state may be different but still considered a match. It is also efficient in terms of computation and identifies the optimal path [2]_ through the matrix.
 
-.. [2] The use of the word optimal in this case means given a specific model, which we will define. There can, however, be multiple solutions (paths) that are equal in terms of the alignment score. In this instance, there are multiple optimal solutions.
+.. margin::
+  
+    .. [2] The use of the word optimal in this case means given a specific model, which we will define. There can, however, be multiple solutions (paths) that are equal in terms of the alignment score. In this instance, there are multiple optimal solutions.
 
 The NW algorithm works via building an alignment from solutions of smaller alignments. Instead of a graph, we now think in terms of a matrix. This matrix shares the row and column labelling as that for :ref:`the dotplot  <dotplot_matrix>` but has some differences.
 
@@ -86,7 +90,9 @@ In the dotplot matrix, elements in the matrix simply reflect presence absence of
 
 We need 4 things for the NW algorithm  [3]_:
 
-.. [3] I'm presenting the algorithm of :cite:`Gotoh:1982aa`.
+.. margin::
+  
+    .. [3] I'm presenting the algorithm of :cite:`Gotoh:1982aa`.
 
 - a scoring system
 - a matrix of "path scores"
@@ -103,8 +109,10 @@ The scoring system
 
 For any pair of sequence states [4]_ (nucleotides) we define a score function :math:`s(i, j)`, where :math:`i, j` are the nucleotides being compared from sequences ``A`` and ``B``. This function :math:`s()` returns a score that the two nucleotides are a "match". Typically there are distinct values for when the two states are the same (:math:`i=j`), compared to when the states are different (:math:`i\neq j`). For our purpose, we start by using the exact same scoring function as NW :cite:`Needleman:1970aa`. I their case :math:`s(i, j)` returns 1 when :math:`i=j` and -1 otherwise. We also define a gap introduction score, :math:`\delta=-1` [5]_.
 
-.. [4] The word "state" refers to a single character in the corresponding biological alphabet. For instance, for DNA, the valid states are A, C, G and T.
-.. [5] This is a linear gap score, meaning that each additional gap character has the same score.
+.. margin::
+  
+    .. [4] The word "state" refers to a single character in the corresponding biological alphabet. For instance, for DNA, the valid states are A, C, G and T.
+    .. [5] This is a linear gap score, meaning that each additional gap character has the same score.
 
 A matrix of path scores
 ^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,7 +1,7 @@
 .. index::
     pair: install; numpy
 
-.. sidebar:: Installing ``numpy`` on your computer
+.. margin:: Installing ``numpy`` on your computer
     :name: numpy_install
 
     If you want to use ``numpy`` on your own computer you will need to install it. How to do so will depend very much on how you have setup Python. If you are not using ``conda``, then the following is the safest approach.
@@ -28,17 +28,23 @@
 
 The numpy_ library is the foundation of the vast majority of scientific computing packages that use Python. It is popular because it provides a greatly simplified interface to complicated algorithms that have fast implementations. Conventional wisdom holds that converting a standard Python program to use ``numpy`` will deliver a 10x speedup. In fact, it can be much faster than that. But that's not the focus of this extremely brief summary of ``numpy``. Instead, we introduce you to the major capabilities and usage patterns that ``numpy`` enables. In short, using ``numpy`` objects can often eliminated the need for loops entirely. As a consequence, this greatly simplify the algorithms you have to write. So it's truly worthwhile becoming familiar with this library [#]_.
 
-.. [#] For a visual representation of how operations on arrays work, `see the excellent visual guide by Jay Alammar <http://jalammar.github.io/visual-numpy/>`_.
+.. margin::
+
+    .. [#] For a visual representation of how operations on arrays work, `see the excellent visual guide by Jay Alammar <http://jalammar.github.io/visual-numpy/>`_.
 
 ``numpy`` is designed for numerical calculation and the primary object the library provides is an array. The ``array`` [#]_ object has several key attributes, including:
 
-.. [#] Strictly speaking, ``numpy`` arrays have type ``ndarray`` but they are predominantly created using a top-level ``array`` function.
+.. margin::
+
+    .. [#] Strictly speaking, ``numpy`` arrays have type ``ndarray`` but they are predominantly created using a top-level ``array`` function.
 
 - ``array.ndim`` attribute, which indicates how many dimensions the array has
 - ``array.shape`` attribute, which indicates the number of elements on each dimension.
 - ``array.dtype`` attribute, which indicates the numpy data type [#]_. This can also be determined by the input data, or by using the ``dtype`` argument.
 
-.. [#] ``numpy`` extends the range of possible data types, e.g. 8-bit integers, 64-bit floats. `See the numpy docs <https://numpy.org/doc/stable/user/basics.types.html>`_ for more details.
+.. margin::
+
+    .. [#] ``numpy`` extends the range of possible data types, e.g. 8-bit integers, 64-bit floats. `See the numpy docs <https://numpy.org/doc/stable/user/basics.types.html>`_ for more details.
 
 Creating an array from existing data
 ------------------------------------
@@ -136,7 +142,9 @@ Matrices can be specified on construction by providing, for example, lists of li
 
 Or, by combining other arrays [1]_.
 
-.. [1] I've used the ``numpy.arange()`` function, which returns an ``array`` object.
+.. margin::
+  
+    .. [1] I've used the ``numpy.arange()`` function, which returns an ``array`` object.
 
 .. jupyter-execute::
 
@@ -432,7 +440,7 @@ This corresponds to the following array coordinates: (1, 1), (2, 0), (0, 1). Thu
 The ``numpy`` array axis
 ------------------------
 
-.. sidebar:: Numpy arrays and their axis.
+.. margin:: Numpy arrays and their axis.
     :name: numpy_axes
     
     .. figure:: /_static/images/numpy-axes.png
@@ -442,7 +450,9 @@ The ``numpy`` array axis
 
 :ref:`As illustrated <numpy_axes>`, the ``axis`` argument specifies whether a method / function operates on rows or columns [2]_.
 
-.. [2] You can many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of ``axis`` may be required.
+.. margin::
+  
+    .. [2] You can many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of ``axis`` may be required.
 
 Working on this array.
 

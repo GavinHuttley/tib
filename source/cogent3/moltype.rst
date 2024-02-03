@@ -5,7 +5,9 @@
 
 True biological sequences are polymers of monomeric units with distinct chemical properties. These are represented by specific alphabets of allowed characters, a collection of ambiguous characters [#]_, and various operations that can be performed on them. In ``cogent3``, we represent some of these using concepts with the an object type called a ``MolType``. The available moltypes are displayed by calling a convenience function, ``available_moltypes()``.
 
-.. [#] The nomenclature (character alphabets) for representing biological sequences are defined by the International Union of Pure and Applied Chemistry (IUPAC).
+.. margin::
+
+    .. [#] The nomenclature (character alphabets) for representing biological sequences are defined by the International Union of Pure and Applied Chemistry (IUPAC).
 
 .. index::
     pair: moltype; cogent3

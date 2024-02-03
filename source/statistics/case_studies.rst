@@ -22,12 +22,14 @@ Case study 1 – do nucleotides occur randomly in a DNA sequence?
 
 Much of my own research concerns understanding organisation [#]_ of DNA sequences and the mechanisms by which those properties arise. Inevitably, this leads me to asking questions about the role that mutation plays in creating patterns in DNA. This particular case study is focussed on a fundamental property of DNA that has important implications for a large number of fields, including molecular evolutionary analyses such as phylogenetics, and cancer genetics. We now follow the 4-step procedure.
 
-.. [#] By organisation I mean the ordering of nucleotides in a DNA sequence, e.g. does eukaryotic :ref:`DNA organisation <organisation_dna>` manifest in periodic base patterns? I consider understanding such properties as essential to understanding how DNA encodes life.
+.. margin::
+
+    .. [#] By organisation I mean the ordering of nucleotides in a DNA sequence, e.g. does eukaryotic :ref:`DNA organisation <organisation_dna>` manifest in periodic base patterns? I consider understanding such properties as essential to understanding how DNA encodes life.
 
 Step 1 - the biological problem
 -------------------------------
 
-.. sidebar:: Data for case study 1
+.. margin:: Data for case study 1
     :name: case_study_1_data
     
     .. jupyter-execute::
@@ -42,7 +44,9 @@ Step 1 - the biological problem
 
 For the :ref:`single DNA sequence <case_study_1_data>`, we want to evaluate whether nucleotides occur randomly along the sequence [#]_. In other words, given a nucleotide ``C``, is its 3'- neighbour a random draw from all 4 nucleotides?
 
-.. [#] We are referring to nucleotides on a single strand of the double-helix.
+.. margin::
+
+    .. [#] We are referring to nucleotides on a single strand of the double-helix.
 
 Step 2 - selecting the measurement
 ----------------------------------
@@ -51,7 +55,9 @@ DNA sequences are represented by the *discrete series* of symbols [#]_ which we 
 
 In the statistical parlance of categorical analysis, the synonyms for randomness and non-randomness are independence and dependence respectively. These synonyms help me identify the |chisq| test of independence as the test I will use. (Selecting this statistical test means we have selected a model for the null distribution, but more on that when we get to the Interpretation step.)
 
-.. [#] These symbols are the letters of the DNA alphabet `A, C, G, T`.
+.. margin::
+
+    .. [#] These symbols are the letters of the DNA alphabet `A, C, G, T`.
 
 That all sounds great, but how can I transform my data in such a way that it can be used for this analysis? 
 
@@ -89,7 +95,7 @@ Further applying the |chisq| test to this data produces the following *result*, 
 Case study 2 – evaluate whether a query sequence belongs to a pathogen
 ======================================================================
 
-.. sidebar:: Data for case study 2
+.. margin:: Data for case study 2
     :name: Data for case study 2
     
     .. jupyter-execute::
@@ -121,7 +127,9 @@ Our question is whether a "query" 16S DNA sequence could be a member of *Vibrio 
 
 If the query sequence belongs to *V. cholerae*, then its DNA sequence should be very similar to the reference [#]_ *V. cholerae* pathogen 16S sequence. 
 
-.. [#] We use the NCBI defined reference for *V. cholerae*.
+.. margin::
+
+    .. [#] We use the NCBI defined reference for *V. cholerae*.
 
 Step 2 - selecting the measurement
 ----------------------------------
@@ -130,7 +138,9 @@ As for :ref:`Case study 1 <case_study_1>`, because DNA sequences are our basic d
 
 Conveniently, this problem can also be evaluated using a |chisq| test. In this case, it is a homogeneity test [#]_.
 
-.. [#] Which tests whether the query comes from the same population as the reference.
+.. margin::
+
+    .. [#] Which tests whether the query comes from the same population as the reference.
 
 Step 3 - writing the algorithm
 ------------------------------

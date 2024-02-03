@@ -27,7 +27,7 @@ The second row, first column.
 
 .. note:: We can index (or slice) a multi-dimensional data by extending the square bracket notation with each pair of square brackets referencing additional dimensions.
 
-.. sidebar:: Differences between cartesian and array coordinates
+.. margin:: Differences between cartesian and array coordinates
     :name: array_coordinates
 
     It's worth pointing out a significant distinction between :index:`"cartesian coordinates"` and what I'll refer to as :index:`"array coordinates"`. The former is what you know and love from graphing data where coordinates are expressed as :math:`x, y` in that order, where the :math:`x`-value occurs first and represents a position on a horizontal axis -- increasing from left to right. The :math:`y`-value comes second and represents a position on the vertical axis -- increasing from bottom to top.

@@ -28,7 +28,9 @@ As explained earlier, the |pvalue| measures the probability that ``seq`` origina
 
 Simply drawing a conclusion about our data based on the |pvalue| can be misleading. The amount of data has a direct effect on the power of a statistical test. This translates to |pvalues| being very sensitive to sample size. For instance, what if we had an enormously long sequence? The :index:`statistical power` in such a case is so high that we would almost certainly wind up with a tiny |pvalue| [#]_. We might be able to convince ourselves that this is not the case here since the sequence is only 600bp long (as distinct from billions of nucleotides long in the case).
 
-.. [#] A difference in nucleotide frequency at the 3rd decimal place proved highly significant when the whole vertebrate genome sequences of Mouse and Rat were compared :cite:`2004.Cooper`! How meaningful is such a result? That's a good question for which there is no simple answer.
+.. margin::
+
+    .. [#] A difference in nucleotide frequency at the 3rd decimal place proved highly significant when the whole vertebrate genome sequences of Mouse and Rat were compared :cite:`2004.Cooper`! How meaningful is such a result? That's a good question for which there is no simple answer.
 
 A more valuable measure is to consider how the data depart from the expectation of the null hypothesis. For categorical data analysis, as we have done here, one very informative quantity are the model :index:`residuals`. A residual is a scaled measure of the difference between the observed and expected quantities.
 

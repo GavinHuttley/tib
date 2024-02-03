@@ -3,7 +3,7 @@ Mutation -- the origin of genetic variation
 
 Mutation manifests as a change in the primary DNA [1]_ sequence of an organism. Only mutations that occur within the cell lineage that produce sex cells, the germline, can have an influence on future generations. We refer to these as germline mutations.
 
-.. sidebar:: What happens to a mutation?
+.. margin:: What happens to a mutation?
     :name: mutant_fate
 
     .. image:: /_static/images/molevol/mutation_process.png
@@ -13,8 +13,10 @@ Mutation manifests as a change in the primary DNA [1]_ sequence of an organism. 
 
 In :ref:`the side bar <mutant_fate>`, we present a cartoon representation of the possible events that can affect a new genetic variant. The process begins at a single DNA molecule within a single cell as a lesion, a chemical change that disrupts the double-helix. If that lesion reverts to its original form or is correctly repaired by a DNA repair process, then we do not observed any change in the sequence. If this new variant is not transmitted to the next generation, then we never see it. If it does get transmitted, then it can be "lost" from the population purely by chance due to the process known as random genetic drift [2]_. If the variant is deleterious, it may be lost as a consequence of natural selection eliminating the individuals that carry it, thus preventing them from contributing to the next generation. Finally, a variant that survives all of that can attain a frequency of 1.0 in a species. We apply the term substitution here since the original variant present in all members of a species has been substituted with this derived variant.
 
-.. [1] Of course, some viruses use RNA for the genome, but we limit ourselves to DNA here.
-.. [2] If the variant survives to a sufficient population frequency, we refer to it as a polymorphism. Polymorphic means "many forms". In terms of genetic variation, this is most often presented as SNPs (single nucleotide polymorphisms) or the largely synonymous term SNV (single nucleotide variant). The latter terms is probably better, since the original definition for polymorphism applied only to loci for which the minor allele frequency was :math:`\ge 0.01` (and before that :math:`\ge 0.05`). Since increase capacity to survey genetic variation, those arbitrary cutoffs have less value.
+.. margin::
+  
+    .. [1] Of course, some viruses use RNA for the genome, but we limit ourselves to DNA here.
+    .. [2] If the variant survives to a sufficient population frequency, we refer to it as a polymorphism. Polymorphic means "many forms". In terms of genetic variation, this is most often presented as SNPs (single nucleotide polymorphisms) or the largely synonymous term SNV (single nucleotide variant). The latter terms is probably better, since the original definition for polymorphism applied only to loci for which the minor allele frequency was :math:`\ge 0.01` (and before that :math:`\ge 0.05`). Since increase capacity to survey genetic variation, those arbitrary cutoffs have less value.
 
 Any process that influences the different stages in a characteristic manner will contribute to the characteristics of the distribution of genetic variation.
 
@@ -51,7 +53,7 @@ Point mutations
 
 There are 12 distinct point mutation events since each nucleotide can mutate to 3 possible alternates (e.g. |AtoC|, |AtoG|, |AtoT|). These are often categorised by the chemical classes of the bases involved. Specifically, transitions and transversions. Point mutations that start and end in bases belonging to the same chemical class are referred to as transitions, i.e. changes involving |AtoG|, |GtoA|, |CtoT|, |TtoC| (blue lines in the :ref:`figure <directions>`). The remaining changes are assigned to the transversion category. As it turns out, there are differences in the rate at which mutations of these categories are observed and it has been argued that the excess of transitions reflects the chemical properties of DNA :cite:`Topal:1976aa`.
 
-.. sidebar:: Mutation directions
+.. margin:: Mutation directions
     :name: directions
 
     .. digraph:: point_mutants
@@ -77,7 +79,7 @@ But the dominance of transition mutations reflects more than just the intrinsic 
 
 Where |5mC| mutagenesis gets even more interesting is that this is an enzymatically induced modification and the recognition sequence for the DNA methylase is a C followed by a G, denote CpG (the p stands for the phosphodiester bond between adjacent nucleotides). This sequence "context dependence" of the introduction of the base modification therefore results in a context dependence of |CtoT| point mutations (see :ref:`Sidebar Figure<CtoT_motif>`).
 
-.. sidebar:: Context dependence of |CtoT| point mutations
+.. margin:: Context dependence of |CtoT| point mutations
     :name: CtoT_motif
 
     .. figure:: /_static/images/molevol/CtoT-human-intergenic.svg
@@ -107,11 +109,13 @@ These divide the difference in the counts of the Watson-Crick pairs by their tot
 
 We present two figures from published work that prove strikingly informative. The :ref:`first <dna_rep>` concerns the putative influence of initiating DNA replication from a fixed location. It is conjectured that the distinct nature of DNA synthesis on leading versus lagging strands drives the appearance of striking asymmetries in some bacterial genomes :cite:`Mrazek:1998aa`.
 
-.. [3] Except in specific experimental contexts.
-.. [4] Because of the Watson-Crick base-pairing rules, the other strand can be deduced and thus presenting it is redundant.
-.. [5] The order of the base counts in the statistics can differ between publications.
+.. margin::
 
-.. sidebar:: The influence of DNA replication
+    .. [3] Except in specific experimental contexts.
+    .. [4] Because of the Watson-Crick base-pairing rules, the other strand can be deduced and thus presenting it is redundant.
+    .. [5] The order of the base counts in the statistics can differ between publications.
+
+.. margin:: The influence of DNA replication
     :name: dna_rep
 
     .. figure:: /_static/images/molevol/bsubtilits_symmetry.png
@@ -126,7 +130,7 @@ We present two figures from published work that prove strikingly informative. Th
 
 The second example concerns the distribution of strand symmetry around genes in humans :cite:`Touchon:2003aa`. In this case, the proposed biochemical mechanism is transcription couple DNA repair. In simplistic terms, this is a DNA damage repair system that is induced by a stalled RNA polymerase. The repair has been shown to be limited to the transcribed strand. This observation implies that the non-transcribed strand receives less scrutiny by lesion repair processes. This asymmetry also manifests in the SNPs that are present in humans today, indicating the influence is active :cite:`Simon:2020aa`.
 
-.. sidebar:: Transcription associated mutation asymmetries
+.. margin:: Transcription associated mutation asymmetries
 
     .. figure:: /_static/images/molevol/strand_skew.png
 

@@ -62,7 +62,9 @@ A type of string. The available methods are substantially the same as for ``str`
 
 We can convert a ``bytes`` instance to a standard string using the ``decode()`` method [1]_.
 
-.. [1] utf_ stands for the unicode translation format, of which there are multiple.
+.. margin::
+  
+    .. [1] utf_ stands for the unicode translation format, of which there are multiple.
 
 .. _utf: https://en.wikipedia.org/wiki/Unicode#UTF
 

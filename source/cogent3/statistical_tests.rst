@@ -24,11 +24,15 @@ This type of test compares counts against expected values specified via a prior 
 
 You can see that the object displays the observed (what we provided), expected values (all categories equally frequent), and the :index:`standardised residuals` [#]_. Residuals help you interpret where the observed data depart most strongly from the expected values. In this case, the largest absolute value is for the base ``A``. That the residual is positive indicates the observed data has an excess of this base compared to expected (a negative residual indicates a deficit).
 
-.. [#] These are calculated as :math:`\frac{(o-e)}{\sqrt e}` where :math:`o, e` are the corresponding observed and expected values.
+.. margin::
+
+    .. [#] These are calculated as :math:`\frac{(o-e)}{\sqrt e}` where :math:`o, e` are the corresponding observed and expected values.
 
 ``CategoryCounts`` provides several different methods for analysis of categorical data. In this case, we could use either the ``G_fit()`` [#]_ or ``chisq_test()``.
 
-.. [#] G-tests are a likelihood ratio tests and the G statistic is sometimes referred to as G\ :math:`^2`.
+.. margin::
+
+    .. [#] G-tests are a likelihood ratio tests and the G statistic is sometimes referred to as G\ :math:`^2`.
 
 .. jupyter-execute::
 
@@ -44,7 +48,7 @@ The statistic, degrees of freedom and associated |pvalue| are all accessible as 
 Tests of independence
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. sidebar:: Constructing ``CategoryCounts`` from a ``Table``
+.. margin:: Constructing ``CategoryCounts`` from a ``Table``
 
     We can also get to this result via specifying the rows as a list of lists. In doing this, we must add the row label to each row.
     
@@ -98,7 +102,7 @@ Analyses of correlations
 
 In cases where we have bivariate data we may be interested in whether the two values are correlated. Of course, it would be remiss of me not to remind you of the limits to drawing inferences from correlations.
 
-.. sidebar:: Correlation does not imply causation
+.. margin:: Correlation does not imply causation
 
     .. figure:: https://imgs.xkcd.com/comics/correlation.png
 
@@ -266,7 +270,9 @@ A graphical way for comparing whether two data sets come from the same statistic
 
 In order to do the plot, the sample data must be sorted. I also add a diagonal line between the minimum and maximum points. If the data are truly on a diagonal, the data points will be scattered very close to this line.
 
-.. [#] You do not need the quantiles from a theoretical distribution. You can just compare the quantiles from two empirical data sets.
+.. margin::
+
+    .. [#] You do not need the quantiles from a theoretical distribution. You can just compare the quantiles from two empirical data sets.
 
 .. jupyter-execute::
 

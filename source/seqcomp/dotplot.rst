@@ -3,7 +3,7 @@ Dotplot -- Alignment of sequences related by descent from a common ancestor
 
 This very neat approach to establishing the relatedness between biological sequences was invented here at ANU, by Gibbs and McIntyre :cite:`Gibbs:1970aa`.
 
-.. sidebar:: The original dotplot
+.. margin:: The original dotplot
 
     .. image:: /_static/images/seqcomp/dotplot_pub.png
         :scale: 50%
@@ -16,7 +16,7 @@ Long stretches of identity form a diagonal. A break -- existence of multiple dia
 
 .. note:: When analysing two sequences, it is typically not possible to establish whether it was a deletion or an insertion.
 
-.. sidebar:: Comparison of cytochrome C
+.. margin:: Comparison of cytochrome C
 
     .. image:: /_static/images/seqcomp/dotplot_fig1ab.png
         :scale: 75%
@@ -39,7 +39,9 @@ Consider two sequences, ``X`` and ``Y`` with lengths ``n`` and ``m`` respectivel
 
 .. note:: I am *not* using Python indexing here! This is, in effect, a :math:`k`-mer matching algorithm where :math:`k=1`.
 
-.. [1] Because of the Plotly colour scale, we use values of 0 to indicate a match which will display as black, 1 means a mismatch which will be white. For the two sample sequences ``"AGCGT"`` and ``"AT"`` we construct by hand the resulting.
+.. margin::
+  
+    .. [1] Because of the Plotly colour scale, we use values of 0 to indicate a match which will display as black, 1 means a mismatch which will be white. For the two sample sequences ``"AGCGT"`` and ``"AT"`` we construct by hand the resulting.
 
 .. code-block:: python
     :name: dotplot_matrix

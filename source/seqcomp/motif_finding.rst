@@ -9,11 +9,15 @@ So how do we find occurrences of a motif that is "noisy"? If we use the consensu
 
     re.findall("T[CT][ACT][GCT][AC]", "AGCGTTTCTCAGATGCA")
 
-.. [1] I've used the regular expression module (``re``) that's distributed with python. Parts of the expression such as ``[CT]`` means call it a match if we have either a C or a T at this position.
+.. margin::
+  
+    .. [1] I've used the regular expression module (``re``) that's distributed with python. Parts of the expression such as ``[CT]`` means call it a match if we have either a C or a T at this position.
 
 Alternatively, we could use a "probabilistic model" [2]_. That's what we're going to do now.
 
-.. [2] A probabilistic model is one where a specific outcome is quantified via explicit probability calculation.
+.. margin::
+  
+    .. [2] A probabilistic model is one where a specific outcome is quantified via explicit probability calculation.
 
 Simple probability model for generating sequences
 -------------------------------------------------
@@ -40,7 +44,9 @@ Among the simplest probabilistic approaches are PSSMs. A PSSM is a matrix of log
 
 Great, where can I get one? Well ... recall JASPAR (the open access database of TFBS profiles) [3]_.
 
-.. [3] *Sandelin et al (2004). JASPAR: an open-access database for eukaryotic transcription factor binding profiles. Nucleic Acids Research, 32(90001), 91D–94*
+.. margin::
+  
+    .. [3] *Sandelin et al (2004). JASPAR: an open-access database for eukaryotic transcription factor binding profiles. Nucleic Acids Research, 32(90001), 91D–94*
 
 Below is the TATA box position weight matrix from JASPAR. ::
 
@@ -93,7 +99,9 @@ Pseudo-counts -- handling missing data
 
 Handling small sample sizes is a substantial problem [4]_. The easiest way to tackle it, which we will use here, is to employ a pseudo-count. A pseudo-count is a "synthetic observation" that is added to all the elements in the counts matrix. It eliminates 0 counts and thus precludes cases such as (2) above, where a sequence is otherwise considered impossible. I'll illustrate that using the above example.
 
-.. [4] When sample sizes are large, the effect of adding a pseudo-count is small.
+.. margin::
+  
+    .. [4] When sample sizes are large, the effect of adding a pseudo-count is small.
 
 .. jupyter-execute::
 

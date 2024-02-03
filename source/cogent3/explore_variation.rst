@@ -71,7 +71,7 @@ This is a line plot that smoothes the information scores and also displays them 
 
 You can remove one of the traces by clicking on it's member in the figures legend. You can also zoom in on parts of the plot by click and drag to include the portion you want. Double click the plot to revert back.
 
-.. sidebar:: Saving a png of your plot
+.. margin:: Saving a png of your plot
 
     .. image:: /_static/images/cogent3/plotly-save-png.png
     
@@ -154,4 +154,6 @@ Download the :download:`large alignment of BRCA1 sequences </data/brca1.fasta>`,
 
 #. How does interpretation of a sequence logo from an alignment of sequences descended from a common ancestor differ from that described in :ref:`encoding_info`?
 
-.. [#] Use a ``cogent3`` sequence object to do reverse complement.
+.. margin::
+
+    .. [#] Use a ``cogent3`` sequence object to do reverse complement.

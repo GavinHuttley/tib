@@ -4,7 +4,7 @@
     import set_working_directory
 
 
-.. sidebar:: Substitution models
+.. margin:: Substitution models
     
     .. index::
         pair: Substitution models; screencasts
@@ -154,7 +154,9 @@ HKY85
 
 Named after its authors :cite:`Hasegawa:1985aa`, the Hasegawa-Kishino-Yano (HKY or HKY85) model includes an additional exchangeability parameter [#]_ |kappa|. This parameter is within matrix cells that correspond to :index:`transition substitutions`. Because the parameter is applied multiplicatively in the matrix (discussed below), it is the ratio of transition / transversion substitution rates.
 
-.. [#] I use the term "exchangeability parameter" to refer to a parameter in a rate matrix that is not an element of |pi|.
+.. margin::
+
+    .. [#] I use the term "exchangeability parameter" to refer to a parameter in a rate matrix that is not an element of |pi|.
 
 .. math::
 
@@ -209,7 +211,9 @@ Let us set |pi|\ :math:`(0)` as the base frequencies at the beginning of our tim
 
 where ":math:`\cdot`" is |matmul|_ [#]_. If |pi|\ :math:`(0)` equals |pi|\ :math:`(t)` then the base frequencies have not changed and we can state that |pi|\ :math:`(0)` is the stationary frequency vector of |P|. This is the condition of stationarity. For simplicity, we just denote this stationary vector as |pi|.
 
-.. [#] Matrix multiplication is also often referred to as a "dot product". This is available in ``numpy`` as ``numpy.dot()`` or using the  ``@`` symbol, e.g. ``pi @ Q``.
+.. margin::
+
+    .. [#] Matrix multiplication is also often referred to as a "dot product". This is available in ``numpy`` as ``numpy.dot()`` or using the  ``@`` symbol, e.g. ``pi @ Q``.
 
 In the case of a continuous-time Markov process, we can operate directly on the rate matrix |Q| without needing to specify a time period. Recall that the rate matrix specifies the instantaneous rates of exchanges between states. If |pi| is the stationarity frequency vector, then there will be *no* exchanges and we expect a vector of zeros. Thus,
 
@@ -228,7 +232,9 @@ The behaviour of parameters in |Q|
 
 For the models I'm presenting, exchangeability parameters are applied "multiplicatively" in the rate matrix. By this I mean the parameters in a "rate matrix cell" are multiplied together [#]_. From the definition of a rate matrix, the only constraint operating on exchangeability parameters is that they are ≥0. This construction means that setting an exchangeability parameter value to 1 means it has no effect on the instantaneous rate of change. Setting :math:`\kappa=1` in HKY85 simplifies the expression to produce the F81 rate matrix definition.
 
-.. [#] This is not a strict requirement of continuous-time Markov processes.
+.. margin::
+
+    .. [#] This is not a strict requirement of continuous-time Markov processes.
 
 The multiplicative construction of the rate matrices also provides guidance for interpreting parameter estimates from a model. Parameters whose estimate is <1 are reducing the instantaneous rate of change for the substitutions they influence compared to the remainder. The converse applies when they are > 1.
 
@@ -244,7 +250,9 @@ What we call "time" in molecular evolution is not chronological time as we know 
 
 In molecular evolutionary analyses, we measure time (|t|) as the *expected number of substitutions* per position. This is a product of the amount of elapsed chronological time and the mutation rate. For a stationary Markov process, we obtain the expected number of substitutions by multiplying the base frequencies by the *flow* away from the base (the diagonal element of |Q|) [#]_.
 
-.. [#] For a non-stationary Markov process, the calculation is trickier :cite:`Kaehler:2015aa`.
+.. margin::
+
+    .. [#] For a non-stationary Markov process, the calculation is trickier :cite:`Kaehler:2015aa`.
 
 .. math::
 
@@ -268,7 +276,9 @@ There is a major computational advantage of this approach. Specifically, the eig
 
 By specifying time as a parameter in our models, we must eliminate another parameter to avoid over specifying the model [#]_. This is achieved by selecting a reference exchangeability parameter and setting it to 1.
 
-.. [#] This basically means adding more parameters than the model can possibly accomodate.
+.. margin::
+
+    .. [#] This basically means adding more parameters than the model can possibly accomodate.
 
 .. _eigendecomposition: https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix
 

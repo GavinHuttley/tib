@@ -1,4 +1,4 @@
-.. sidebar:: Executing Python using a REPL
+.. margin:: Executing Python using a REPL
     :name: REPL
 
     .. index::
@@ -12,7 +12,7 @@
         </video>
 
 
-.. sidebar:: Executing Python from a text file
+.. margin:: Executing Python from a text file
 
     .. index::
         pair: Executing Python from a text file; screencasts
@@ -31,8 +31,10 @@ There are 2 main ways in which you can write, and execute, Python code. The firs
 
 The second approach is based on writing Python scripts. A script is just a plain text file. These can be written using any program capable of saving as plain text. However, you're strongly advised to use a "programmers editor". There's a multitude of these, and it's a topic about which programmers are sufficiently opinionated as to create cartoons...
 
-.. [1] Stands for Read Evaluate Print Loop. Python interactive terminals belong to this class, including when using Jupyter.
-.. [2] Stands for Integrated Development Environment.
+.. margin::
+  
+    .. [1] Stands for Read Evaluate Print Loop. Python interactive terminals belong to this class, including when using Jupyter.
+    .. [2] Stands for Integrated Development Environment.
 
 .. raw:: html
     

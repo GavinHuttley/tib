@@ -1,11 +1,15 @@
 Data Visualisation using Plotly
 ===============================
 
-.. [1] The foundation data structure of all ``Plotly`` plotting is a dict which has two components, a "trace" and a "layout". We will use the ``express``  module, which simplifies the interface to plotting.
+.. margin::
+  
+    .. [1] The foundation data structure of all ``Plotly`` plotting is a dict which has two components, a "trace" and a "layout". We will use the ``express``  module, which simplifies the interface to plotting.
 
 Plotly_ is a javascript based plotting library that has interfaces for Python and multiple other programming languages [1]_. This javascript foundation enables its ability to display interactive plots within web browsers. Below I introduce the `Plotly Express`_ [2]_.
 
-.. [2] I will use the ``as`` keyword in the import statement, allowing me to specify a new name (``px``) by which to refer to express. This is a common practice.
+.. margin::
+  
+    .. [2] I will use the ``as`` keyword in the import statement, allowing me to specify a new name (``px``) by which to refer to express. This is a common practice.
 
 .. _Plotly: https://plotly.com/python
 .. _`Plotly Express`: https://plotly.com/python/plotly-express/
@@ -102,7 +106,9 @@ We can change these values and the change will affect the figure [3]_.
     fig.data[0]["marker"]["symbol"] = "square"
     fig.show()
 
-.. [3] A demonstration of the fine-grained control of marker sizes, etc.. `can be found here <https://plotly.com/python/marker-style/>`_.
+.. margin::
+  
+    .. [3] A demonstration of the fine-grained control of marker sizes, etc.. `can be found here <https://plotly.com/python/marker-style/>`_.
 
 Histograms
 ----------
@@ -123,7 +129,9 @@ Bar charts
 
 When dealing with genomic data, we frequently deal with genomic coordinates. One type of question that is raised in these circumstances is whether observations are random across the genome [4]_. We can use a bar plot to visually examine the density of observations.
 
-.. [4] `Here's an example <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822288/figure/fig1/>`_ that identified oscillating signals in genetic divergence.
+.. margin::
+  
+    .. [4] `Here's an example <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2822288/figure/fig1/>`_ that identified oscillating signals in genetic divergence.
 
 This specific example is contrived as I'm using simulated data points, but the approach here will be useful.
 
@@ -137,7 +145,9 @@ Generate 100 random integers between 0 and 21.
 
 Use a builtin Python counter class to count the number of occurrences of the different integers [5]_.
 
-.. [5] You use this class just like a ``dict``.
+.. margin::
+  
+    .. [5] You use this class just like a ``dict``.
 
 .. jupyter-execute::
 

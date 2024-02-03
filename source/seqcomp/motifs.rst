@@ -53,7 +53,7 @@ where each value corresponds to the number of occurrences of that dinucleotide. 
 
 We derive a |kmer| distribution by considering **all possible words** of length :math:`k`, Let's simplify the problem by working on just the first 3 nucleotides, ``ACG``. This has two possible dinucleotides -- ``AC`` and ``CG``. Thus, we slide the start position along the sequence by 1 and take the :math:`k` nucleotides from that position (:ref:`see Sliding window <kmers>`).
 
-.. sidebar:: Sliding window
+.. margin:: Sliding window
     :name: kmers
     
     ::

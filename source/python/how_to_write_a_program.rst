@@ -36,7 +36,9 @@ I'm going to rewrite the bullet list, defining the names of python variables I w
 
 The first thing we have to do is define the variables we will use before we actually use them. We will just give them some starting numerical values (we know they have to be numbers because maths!) [1]_.
 
-.. [1] Let's also make our life easy by defining only positive numerical values so we don't have to worry about handling the :math:`\sqrt{~}` of a negative number.
+.. margin::
+  
+    .. [1] Let's also make our life easy by defining only positive numerical values so we don't have to worry about handling the :math:`\sqrt{~}` of a negative number.
 
 .. jupyter-execute::
 
@@ -118,7 +120,9 @@ That last point is the inner most, so we focus our attention on the challenge of
 
 So I suggest the place to start is 3.1.1. I'm going to write separate functions for each of these steps. The reason being that it allows us to reuse code [2]_, makes checking the code correctness easier and simplifies building more complex algorithms into being just the inclusion of already written functions.
 
-.. [2] Important here since 2.1 and 3.1 are the same. Using a function means we only have to write it once and we can use it as many times as seems appropriate.
+.. margin::
+
+    .. [2] Important here since 2.1 and 3.1 are the same. Using a function means we only have to write it once and we can use it as many times as seems appropriate.
 
 We start this program with a function that takes a list of strings where every value needs to be converted into a ``float``. I'm going to write it and test it, using an ``assert``, with some sample data.
 
@@ -159,7 +163,9 @@ Yay! So that's 3.1.1 out of the way. The next step out is solve 3.1. We also do 
 
 Double Yay! That's 3.1 (and thus 2.1) out of the way [3]_.
 
-.. [3] Also note this code will work if a line has 1 field, or 1 million fields.
+.. margin::
+  
+    .. [3] Also note this code will work if a line has 1 field, or 1 million fields.
 
 Returning to the task list, we remove the steps we've already done, making it simpler to see what remains.
 

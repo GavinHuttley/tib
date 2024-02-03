@@ -1,4 +1,4 @@
-.. sidebar:: Variation in proteins seems to accumulate linearly with time
+.. margin:: Variation in proteins seems to accumulate linearly with time
     :name: molecular_clock
 
     .. image:: /_static/images/molevol/molecular_clock.png
@@ -6,7 +6,9 @@
     
     Number of amino acid differences versus species divergence time. The former were estimated allowing for multiple changes, the latter derived from paleontological studies. Mean error in estimate of amino acid differences are indicated by the vertical bars [1]_. Figure from :cite:`Dickerson:1971aa`.
 
-.. [1] Amusingly, there is no such uncertainty portrayed for the paleontological estimates.
+.. margin::
+  
+    .. [1] Amusingly, there is no such uncertainty portrayed for the paleontological estimates.
 
 *****************************************
 The neutral theory of molecular evolution
@@ -28,7 +30,7 @@ The Neutral Theory of Molecular Evolution
 
 This theory proposes that most genetic variation, both within and between species, has not been affected by natural selection, but instead reflects the influence of chance events on new mutations. The theory was dominantly developed by Motoo Kimura :cite:`Kimura:1968aa` but independently proposed by King and Jukes :cite:`King:1969aa`.
 
-.. sidebar:: Neutral variation
+.. margin:: Neutral variation
     :name: neutral_variation
 
     .. digraph:: neutrality
@@ -65,7 +67,9 @@ A simplified example of neutral evolution
 
 Let us begin by making the simplistic assumption that the actual probability of a mutation (in a single generation) to any of the amino acids is equal. We denote this :math:`p(a, b)=\epsilon` where :math:`a, b` are two different amino acids. For a sequence position where any amino acid is allowed, the total probability an existing amino acid changes is :math:`19\epsilon` [2]_.
 
-.. [2] There are 19 amino acids that can be changed into.
+.. margin::
+  
+    .. [2] There are 19 amino acids that can be changed into.
 
 Now let us consider an extreme scenario of a specific position in a hypothetical human protein sequence that only tolerates hydrophilic amino acids and any other type is recessive lethal before birth. I have illustrated this hypothetical sequence as having an arginine (``R``, see :ref:`Neutral variation <neutral_variation>`). If we watch that sequence through time, we can never see any changes other than those which generate another hydrophilic amino acid because of natural selection. For this position, the actual total probability of mutation is the same as above. But if viewed from a longer time depth, after natural selection has operated, there can only be 5 hydrophilic amino acids. Thus, the probability of a mutation that is not lethal is :math:`4\epsilon`.
 
@@ -86,7 +90,9 @@ Some important results from Kimura
 
 One important result from Kimura, often referred to as his "rule of thumb", is that natural selection is only effective against random genetic drift when :math:`4N_e s >> 1` where :math:`N_e` is the effective population size and :math:`s` is the selection coefficient. What this means is that, as population size shrinks, the magnitude of natural selection must increase in order overcome the stochastic fluctuations of random genetic drift. Very bad news for endangered species, since deleterious genetic variants can become fixed [3]_.
 
-.. [3] Fixation is the condition in which a genetic variant achieves a frequency of 1.0 (all population members have it). It becomes a substitution when that frequency applies to all members of the species.
+.. margin::
+  
+    .. [3] Fixation is the condition in which a genetic variant achieves a frequency of 1.0 (all population members have it). It becomes a substitution when that frequency applies to all members of the species.
 
 Another striking result is that the neutral substitution rate :math:`k` **is** the number of mutations per site per generation :math:`\mu` for strictly neutral variation. In other words, the neutral substitution rate is independent of population size. This elegant result provides the foundation for why a molecular clock can exist.
 

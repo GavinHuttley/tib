@@ -21,7 +21,9 @@ SELEX -- Systematic evolution of ligands by exponential enrichment
 
 This procedure is entirely *in vitro*. The inputs are a substantial amount of enriched protein [1]_ which is bound to a bead. Also required is a library of synthetically produced double stranded DNA of a precise fragment size. These two substrate are then incubated together under conditions favourable to binding of the DNA and protein. By eluting the unbound DNA fragments, you wind up with beads that have bound DNA. Those DNA fragments are then dissociated from the beads and amplified using PCR. This new DNA pool is then reintroduced to bead-bound protein and the process is repeated. (Only a few a rounds are done.) At the end of these iterations, the bound DNA is isolated again and the collection of DNA fragments is sequenced.
 
-.. [1] The requirement for a lot of protein limits the utility of this technique.
+.. margin::
+  
+    .. [1] The requirement for a lot of protein limits the utility of this technique.
 
 .. figure:: /_static/images/seqcomp/selex.png
     :scale: 50 %
@@ -35,14 +37,18 @@ ChIP -- chromatin immunoprecipitation
 
 ChIP-seq is an *in vivo* process. A precursor for this technique is the availability of an antibody with high specificity for the protein of interest. With this in place, the cellular material of interest is exposed to formaldehyde which causes formation of cross linking (via covalent bonds) between DNA and whatever else is bound to it. The cells are then lysed and the DNA protein mix extracted and sheared [2]_ to a size suitable for the sequencing technology that will be used. You then expose the sheared DNA+protein mixture to the antibody and precipitate bound complexes. This step is followed by chemistry that reverses the cross linking, the protein is removed and the collection of DNA fragments are sequenced.
 
-.. [2] Sonication being one approach.
+.. margin::
+  
+    .. [2] Sonication being one approach.
 
 .. figure:: /_static/images/seqcomp/chipseq.png
     :scale: 50 %
     
     An empirical survey of naturally occurring DNA [3]_.
 
-.. [3] `Wikipedia entry <https://en.wikipedia.org/wiki/ChIP-sequencing>`_
+.. margin::
+  
+    .. [3] `Wikipedia entry <https://en.wikipedia.org/wiki/ChIP-sequencing>`_
 
 With the sequence data from those experimental procedures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,7 +88,9 @@ Transformation of the data for analysis
 
 From an experimental procedure, we ultimately seek to obtain a curated set of "aligned" sequences. I illustrate a hypothetical such case below [4]_.
 
-.. [4] Positions displaying a ``.`` have the same nucleotide as ``"seq-0"`` for that column.
+.. margin::
+  
+    .. [4] Positions displaying a ``.`` have the same nucleotide as ``"seq-0"`` for that column.
 
 .. todo:: fix width of tables in display
 

@@ -1,4 +1,4 @@
-.. sidebar:: Tips for writing functions and staying sane
+.. margin:: Tips for writing functions and staying sane
 
     This is such an important message, I'm saying it multiple times on this page.
     

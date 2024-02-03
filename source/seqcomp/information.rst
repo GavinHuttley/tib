@@ -94,7 +94,7 @@ These results originated from the honours research project of Ms Yicheng Zhu :ci
 .. index::
     triple: log2; maths; numpy
 
-.. sidebar:: Math functions in python
+.. margin:: Math functions in python
     :name: math_log2
     
     .. jupyter-execute::
