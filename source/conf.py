@@ -66,3 +66,4 @@ html_css_files = [
 ]
 
 bibtex_bibfiles = ["references.bib"]
+suppress_warnings = ["bibtex.duplicate_label"]
