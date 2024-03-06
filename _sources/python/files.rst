@@ -43,7 +43,9 @@ Working with files
    pair: open(); files
    pair: open mode; files
 
-The location of a file (its file path) is specified as a string (see the screencast on Unix Paths). We use the ``open()`` function to open files. Whether a file is opened for reading or writing is defined by the *mode* argument. For example ``mode="w"`` means write. Any pre-existing contents in the file would be lost. Opening a file to read does not return the files contents.
+The location of a file (its file path) is specified as a string (see the screencast on Unix Paths). We use the ``open()`` function to open files. Whether a file is opened for reading or writing is defined by the *mode* argument. For example ``mode="w"`` means write. Any pre-existing contents in the file would be lost.
+
+As shown in the code blocks below and the next section, the `open()` statement returns a ``TextIOWrapper`` object that you can use to access the file contents. It **does not** return the files contents.
 
 .. margin:: File properties
 
@@ -75,7 +77,7 @@ Then closing it using the ``close()`` method.
 
     print(seqfile)
 
-There is another approach to ensuring the file is always closed. This involves using the ``with`` statement. This statement invokes what's referred to as a "context manager". The advantage to using this approach is it ensures the file is closed.
+There is another approach to ensuring the file is always closed. This involves using the ``with`` statement. This statement invokes what's referred to as a "context manager". The code indented under the `with` statement is executed and on leaving that indented block, Python closes the file for you.
 
 .. jupyter-execute::
 
@@ -84,12 +86,13 @@ There is another approach to ensuring the file is always closed. This involves u
 
 .. jupyter-execute::
 
-    seqfile.closed  # closed for us
+    # after the context block, seqfile is now closed
+    seqfile.closed
 
 Reading contents of a file
 --------------------------
 
-File objects are iterable and the "unit" of iteration is a line, i.e. the file object returns all data up until the next line-feed character.
+There are several possible approaches to read contents of a file that you have opened. One approach uses the fact that file objects are iterable and the "unit" of iteration is a line, i.e. the file object returns all data up until the next line-feed character. So you can treat a file object as if it was a list of characters. (This approach is slow on large files.)
 
 .. index::
    pair: iterate contents; files
@@ -101,7 +104,18 @@ File objects are iterable and the "unit" of iteration is a line, i.e. the file o
         for line in seqfile:
             print(repr(line))
 
-.. note:: I've used a built-in function ``repr()``. This shows the *representation* of the object. I've done that here because it shows the new-line characters at the end of each line.
+.. note:: I've used a built-in function ``repr()`` (which shows the *representation* of the object) here because it shows the new-line characters at the end of each line.
+
+The ``.read()``, ``.readline()``, ``.readlines()`` methods provide alternate approaches to getting contents. I demonstrate using ``.read()`` only. This method returns the entire contents of the file as a string. We can then use string methods to convert this into a line-based list that can be iterated over as per the previous code snippet.
+
+.. jupyter-execute::
+
+    # the default mode argument value is "r"
+    with open("data/sample.fasta") as seqfile:
+        seqdata = seqfile.read()
+
+    seqdata = seqdata.splitlines()
+    print(seqdata)
 
 Writing data to a file
 ----------------------
