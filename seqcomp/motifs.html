@@ -41,7 +41,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=abcf21f0"></script>
+    <script src="../_static/documentation_options.js?v=f1ef3101"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/thebelab-helper.js"></script>
@@ -425,8 +425,8 @@ document.write(`
 <section id="kmers">
 <span id="index-0"></span><h2><span class="section-number">6.6.1. </span><span class="math notranslate nohighlight">\(k\)</span>-mers<a class="headerlink" href="#kmers" title="Link to this heading">#</a></h2>
 <p>One way of describing DNA sequences is simply counting the occurrences of DNA words of a fixed size. Such words are often referred to as <span class="math notranslate nohighlight">\(k\)</span>-mers where <span class="math notranslate nohighlight">\(k\)</span> refers to the word length. If we set <span class="math notranslate nohighlight">\(k=1\)</span>, then the complete set of possible 1-mers is the listing of the nucleotides, i.e. <code class="docutils literal notranslate"><span class="pre">{A,</span> <span class="pre">C,</span> <span class="pre">G,</span> <span class="pre">T}</span></code>.</p>
-<p>But why do it? Why is knowing <span class="math notranslate nohighlight">\(k\)</span>-mers informative? There are a multitude of ways in which <span class="math notranslate nohighlight">\(k\)</span>-mer counting is used in bioinformatics. One concerns evolutionary relatedness, another concerns functional encoding. Before we tackle those, lets go ahead and define <span class="math notranslate nohighlight">\(k\)</span>-mers in more detail.</p>
-<p>We define the set of possible <span class="math notranslate nohighlight">\(k\)</span>-mers as the full enumeration of a characters in a state space. In English, since DNA has four letters there are <span class="math notranslate nohighlight">\(4^k\)</span> distinct <span class="math notranslate nohighlight">\(k\)</span>-mers. So for <span class="math notranslate nohighlight">\(k=2\)</span>, that’s <span class="math notranslate nohighlight">\(4^2=16\)</span>. These are all the possible dinucleotides.</p>
+<p>But why do it? Why is knowing <span class="math notranslate nohighlight">\(k\)</span>-mers informative? There are a multitude of ways in which <span class="math notranslate nohighlight">\(k\)</span>-mer counting is used in bioinformatics. One concerns evolutionary relatedness, and another concerns functional encoding. Before we tackle those, let’s go ahead and define <span class="math notranslate nohighlight">\(k\)</span>-mers in more detail.</p>
+<p>We define the set of possible <span class="math notranslate nohighlight">\(k\)</span>-mers as the full enumeration of characters in a state space. In English, since DNA has four letters there are <span class="math notranslate nohighlight">\(4^k\)</span> distinct <span class="math notranslate nohighlight">\(k\)</span>-mers. So for <span class="math notranslate nohighlight">\(k=2\)</span>, that’s <span class="math notranslate nohighlight">\(4^2=16\)</span>. These are all the possible dinucleotides.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>AA, AC, AG, AT, CA, CC, CG, CT, GA, GC, GG, GT, TA, TC, TG, TT
@@ -435,7 +435,7 @@ document.write(`
 </div>
 </div>
 <p>Setting <span class="math notranslate nohighlight">\(k=3\)</span>, we have 64 possible trinucleotides, for <span class="math notranslate nohighlight">\(k=4\)</span>, we have 256 tetranucleotides and so on.</p>
-<p>We typically define the <span class="math notranslate nohighlight">\(k\)</span>-mer distribution of a biological sequence as the counts all possible occurrences of each <span class="math notranslate nohighlight">\(k\)</span>-mer. Consider the following 11bp long DNA sequence.</p>
+<p>We typically define the <span class="math notranslate nohighlight">\(k\)</span>-mer distribution of a biological sequence as the counts of all possible occurrences of each <span class="math notranslate nohighlight">\(k\)</span>-mer. Consider the following 11bp long DNA sequence.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ACGGTGCCAGG&#39;
