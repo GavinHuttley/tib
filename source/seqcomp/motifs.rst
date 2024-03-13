@@ -8,9 +8,9 @@
 
 One way of describing DNA sequences is simply counting the occurrences of DNA words of a fixed size. Such words are often referred to as |kmers| where :math:`k` refers to the word length. If we set :math:`k=1`, then the complete set of possible 1-mers is the listing of the nucleotides, i.e. ``{A, C, G, T}``.
 
-But why do it? Why is knowing |kmers| informative? There are a multitude of ways in which |kmer| counting is used in bioinformatics. One concerns evolutionary relatedness, another concerns functional encoding. Before we tackle those, lets go ahead and define |kmers| in more detail.
+But why do it? Why is knowing |kmers| informative? There are a multitude of ways in which |kmer| counting is used in bioinformatics. One concerns evolutionary relatedness, and another concerns functional encoding. Before we tackle those, let's go ahead and define |kmers| in more detail.
 
-We define the set of possible |kmers| as the full enumeration of a characters in a state space. In English, since DNA has four letters there are :math:`4^k` distinct |kmers|. So for :math:`k=2`, that's :math:`4^2=16`. These are all the possible dinucleotides.
+We define the set of possible |kmers| as the full enumeration of characters in a state space. In English, since DNA has four letters there are :math:`4^k` distinct |kmers|. So for :math:`k=2`, that's :math:`4^2=16`. These are all the possible dinucleotides.
 
 .. jupyter-execute::
     :hide-code:
@@ -21,7 +21,7 @@ We define the set of possible |kmers| as the full enumeration of a characters in
 
 Setting :math:`k=3`, we have 64 possible trinucleotides, for :math:`k=4`, we have 256 tetranucleotides and so on.
 
-We typically define the |kmer| distribution of a biological sequence as the counts all possible occurrences of each |kmer|. Consider the following 11bp long DNA sequence.
+We typically define the |kmer| distribution of a biological sequence as the counts of all possible occurrences of each |kmer|. Consider the following 11bp long DNA sequence.
 
 .. jupyter-execute::
     :hide-code:
