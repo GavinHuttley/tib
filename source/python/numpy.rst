@@ -452,7 +452,7 @@ The ``numpy`` array axis
 
 .. margin::
   
-    .. [2] You can many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of ``axis`` may be required.
+    .. [2] You can have many more than 2-dimensions with arrays. More dimension means you have more axes and thus larger values of ``axis`` may be required.
 
 Working on this array.
 
