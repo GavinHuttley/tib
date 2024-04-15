@@ -41,7 +41,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=738e33b6"></script>
+    <script src="../_static/documentation_options.js?v=3725707d"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/thebelab-helper.js"></script>
@@ -1098,7 +1098,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7576f5047430&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7f751a4969a0&gt;
 </pre></div>
 </div>
 </div>
@@ -1145,7 +1145,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x75773caa5cd0&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;cogent3.core.alignment.SequenceCollection at 0x7f75600c2a30&gt;
 </pre></div>
 </div>
 </div>
@@ -1228,7 +1228,7 @@ document.write(`
 <h1><span class="section-number">8.3. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <p>Download the <a class="reference download internal" download="" href="../_downloads/b772b1a069dd1c0925b4e5a7f3ceb4f9/brca1-bats.fasta"><code class="xref download docutils literal notranslate"><span class="pre">alignment</span> <span class="pre">of</span> <span class="pre">bat</span> <span class="pre">BRCA1</span> <span class="pre">sequences</span></code></a>, or <a class="reference internal" href="index.html#download-data"><span class="std std-ref">using Python</span></a>.</p>
 <ol class="arabic simple">
-<li><p>Set the <code class="docutils literal notranslate"><span class="pre">incomplete_ok</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">get_translation()</span></code> method to <code class="docutils literal notranslate"><span class="pre">False</span></code>. What happens and why?</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">incomplete_ok</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">get_translation()</span></code> method to <code class="docutils literal notranslate"><span class="pre">False</span></code>. What happens and why? (Use <span class="incremental">data = dict(seq1=”ACGAC-”, seq2=”TCGACA”)</span> as your data.)</p></li>
 <li><p>Create an alignment from a dict with sequences that you make up <a class="footnote-reference brackets" href="#id6" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. Slice the alignment to remove the last 3 aligned columns.</p></li>
 <li><p>Create an alignment from a dict with sequences that you make up. Slice the alignment to get every second codon position.</p></li>
 <li><p>Using the downloaded alignment, count the number of second codon positions that have variation.</p></li>
