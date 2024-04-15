@@ -296,7 +296,7 @@ Exercises
 
 Download the :download:`alignment of bat BRCA1 sequences </data/brca1-bats.fasta>`, or :ref:`using Python <download_data>`.
 
-#. Set the ``incomplete_ok`` argument in the ``get_translation()`` method to ``False``. What happens and why?
+#. Set the ``incomplete_ok`` argument in the ``get_translation()`` method to ``False``. What happens and why? (Use `data = dict(seq1="ACGAC-", seq2="TCGACA")` as your data.)
 
 #. Create an alignment from a dict with sequences that you make up [#]_. Slice the alignment to remove the last 3 aligned columns.
 
