@@ -53,7 +53,7 @@ Information at a position
 -------------------------
 
 .. math::
-    R_j=\log_2(n) - H_i
+    R_j=\log_2(n) - H_j
 
 where :math:`R_j` is the information at position :math:`j`, :math:`n` is the number of possible states (4 for DNA), :math:`\log_2(n)` is the maximum possible entropy, and :math:`H_j` is the Shannon entropy for position :math:`j`.
 
