@@ -106,7 +106,7 @@ Phylogenetics is concerned with the problem of inferring the relationships betwe
 
 In the :ref:`Phylogenetic Workflow <phylo_workflow>` figure I display the basic workflow for phylogenetic reconstruction. There is substantial overlap with molecular evolutionary analysis in general, but the emphasis here is on the problem of estimating a tree. The steps are:
 
-* sample homologous sequences from tax of interest
+* sample homologous sequences from taxa of interest
 
 * align the sequences
 
