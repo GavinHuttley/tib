@@ -107,7 +107,7 @@ The scoring system
 
 .. note:: To simplify the following discussion, I will only refer to DNA states for my examples but emphasise that the same reasoning applies to protein sequences.
 
-For any pair of sequence states [4]_ (nucleotides) we define a score function :math:`s(i, j)`, where :math:`i, j` are the nucleotides being compared from sequences ``A`` and ``B``. This function :math:`s()` returns a score that the two nucleotides are a "match". Typically there are distinct values for when the two states are the same (:math:`i=j`), compared to when the states are different (:math:`i\neq j`). For our purpose, we start by using the exact same scoring function as NW :cite:`Needleman:1970aa`. I their case :math:`s(i, j)` returns 1 when :math:`i=j` and -1 otherwise. We also define a gap introduction score, :math:`\delta=-1` [5]_.
+For any pair of sequence states [4]_ (nucleotides) we define a score function :math:`s(i, j)`, where :math:`i, j` are the nucleotides being compared from sequences ``A`` and ``B``. This function :math:`s()` returns a score that the two nucleotides are a "match". Typically there are distinct values for when the two states are the same (:math:`i=j`), compared to when the states are different (:math:`i\neq j`). For our purpose, we start by using the exact same scoring function as NW :cite:`Needleman:1970aa`. In their case :math:`s(i, j)` returns 1 when :math:`i=j` and -1 otherwise. We also define a gap introduction score, :math:`\delta=-1` [5]_.
 
 .. margin::
   
