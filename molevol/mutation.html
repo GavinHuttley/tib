@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -41,8 +41,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=3725707d"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=9bad7206"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/thebelab-helper.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -414,7 +414,8 @@ document.write(`
 <p>Mutation manifests as a change in the primary DNA <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> sequence of an organism. Only mutations that occur within the cell lineage that produce sex cells, the germline, can have an influence on future generations. We refer to these as germline mutations.</p>
 <aside class="margin sidebar" id="mutant-fate">
 <p class="sidebar-title">What happens to a mutation?</p>
-<a class="reference internal image-reference" href="../_images/mutation_process.png"><img alt="../_images/mutation_process.png" src="../_images/mutation_process.png" style="width: 477.5px; height: 368.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/mutation_process.png"><img alt="../_images/mutation_process.png" src="../_images/mutation_process.png" style="width: 477.5px; height: 368.0px;" />
+</a>
 <p>This process only applies to the germ cells.</p>
 </aside>
 <p>In <a class="reference internal" href="#mutant-fate"><span class="std std-ref">the side bar</span></a>, we present a cartoon representation of the possible events that can affect a new genetic variant. The process begins at a single DNA molecule within a single cell as a lesion, a chemical change that disrupts the double-helix. If that lesion reverts to its original form or is correctly repaired by a DNA repair process, then we do not observed any change in the sequence. If this new variant is not transmitted to the next generation, then we never see it. If it does get transmitted, then it can be “lost” from the population purely by chance due to the process known as random genetic drift <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. If the variant is deleterious, it may be lost as a consequence of natural selection eliminating the individuals that carry it, thus preventing them from contributing to the next generation. Finally, a variant that survives all of that can attain a frequency of 1.0 in a species. We apply the term substitution here since the original variant present in all members of a species has been substituted with this derived variant.</p>
@@ -447,7 +448,7 @@ document.write(`
 </section>
 <section id="point-mutations">
 <span id="id5"></span><h2><span class="section-number">7.5.2. </span>Point mutations<a class="headerlink" href="#point-mutations" title="Link to this heading">#</a></h2>
-<p id="index-1">There are 12 distinct point mutation events since each nucleotide can mutate to 3 possible alternates (e.g. A<span class="math notranslate nohighlight">\(\rightarrow\)</span>C, A<span class="math notranslate nohighlight">\(\rightarrow\)</span>G, A<span class="math notranslate nohighlight">\(\rightarrow\)</span>T). These are often categorised by the chemical classes of the bases involved. Specifically, transitions and transversions. Point mutations that start and end in bases belonging to the same chemical class are referred to as transitions, i.e. changes involving A<span class="math notranslate nohighlight">\(\rightarrow\)</span>G, G<span class="math notranslate nohighlight">\(\rightarrow\)</span>A, C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T, T<span class="math notranslate nohighlight">\(\rightarrow\)</span>C (blue lines in the <a class="reference internal" href="#directions"><span class="std std-ref">figure</span></a>). The remaining changes are assigned to the transversion category. As it turns out, there are differences in the rate at which mutations of these categories are observed and it has been argued that the excess of transitions reflects the chemical properties of DNA <span id="id6">[<a class="reference internal" href="#id38" title="M D Topal and J R Fresco. Complementary base pairing and the origin of substitution mutations. Nature, 263:285–289, 1976.">TF76</a>]</span>.</p>
+<p id="index-1">There are 12 distinct point mutation events since each nucleotide can mutate to 3 possible alternates (e.g. A<span class="math notranslate nohighlight">\(\rightarrow\)</span>C, A<span class="math notranslate nohighlight">\(\rightarrow\)</span>G, A<span class="math notranslate nohighlight">\(\rightarrow\)</span>T). These are often categorised by the chemical classes of the bases involved. Specifically, transitions and transversions. Point mutations that start and end in bases belonging to the same chemical class are referred to as transitions, i.e. changes involving A<span class="math notranslate nohighlight">\(\rightarrow\)</span>G, G<span class="math notranslate nohighlight">\(\rightarrow\)</span>A, C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T, T<span class="math notranslate nohighlight">\(\rightarrow\)</span>C (blue lines in the <a class="reference internal" href="#directions"><span class="std std-ref">figure</span></a>). The remaining changes are assigned to the transversion category. As it turns out, there are differences in the rate at which mutations of these categories are observed, and it has been argued that the excess of transitions reflects the chemical properties of DNA <span id="id6">[<a class="reference internal" href="#id38" title="M D Topal and J R Fresco. Complementary base pairing and the origin of substitution mutations. Nature, 263:285–289, 1976.">TF76</a>]</span>.</p>
 <aside class="margin sidebar" id="directions">
 <p class="sidebar-title">Mutation directions</p>
 <div class="graphviz"><object data="../_images/graphviz-b4cb238982177981577ef5d3c05d9d10e3724938.svg" type="image/svg+xml" class="graphviz">
@@ -463,20 +464,16 @@ C -&gt; T [dir=both color=blue];
 G -&gt; T [dir=both];
 }</p></object></div>
 <p>The different point mutations.</p>
-<p>The blue lines indicate transition mutations, point mutations between bases that belong to the same chemical class.</p>
+<p>The blue lines indicate transition mutations, point mutations between bases that belong to the same chemical class – between the purines (A/G) or pyrimidines (C/T).</p>
 </aside>
-<p>But the dominance of transition mutations reflects more than just the intrinsic properties of the canonical bases. In vertebrates and many other organisms, the modified base 5-methyl-cytosine (hereafter <sup>5</sup>mC or methylated cytosine) is present. In vertebrates, at least, this modification can be used to encode information – switching between methylated and unmethylated states is associated with changes to gene expression of flanking genes. As such, <sup>5</sup>mC is a part of the epigenetic control layer. The modified base <sup>5</sup>mC is also hypermutable <span id="id7">[<a class="reference internal" href="#id37" title="C Coulondre, J H Miller, P J Farabaugh, and W Gilbert. Molecular basis of base substitution hotspots in \emp Escherichia coli. Nature, 274:775–780, 1978.">CMFG78</a>]</span>. The deamination of <sup>5</sup>mC (a hydrolysis reaction) occurs at a rate ~10x the same reaction of unmethylated C. The lesion arising from these reactions also differ, with <sup>5</sup>mC producing T while hydrolysis of unmethylated C produces uracil (U). These lesions cause a pairing mismatch in the helix, triggering DNA repair mechanisms. As you might expect, a repair system will do a better job of reverting U:G to the correct C:G compared with resolving a T:G mismatch.</p>
-<p id="index-2">Where <sup>5</sup>mC mutagenesis gets even more interesting is that this is an enzymatically induced modification and the recognition sequence for the DNA methylase is a C followed by a G, denote CpG (the p stands for the phosphodiester bond between adjacent nucleotides). This sequence “context dependence” of the introduction of the base modification therefore results in a context dependence of C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutations (see <a class="reference internal" href="#ctot-motif"><span class="std std-ref">Sidebar Figure</span></a>).</p>
+<p>The dominance of transition mutations reflects more than just the intrinsic properties of the canonical bases. The modified base 5-methyl-cytosine (hereafter <sup>5</sup>mC or methylated cytosine) is present in vertebrates and many other organisms. In vertebrates, at least, this modification can be used to encode information – switching between methylated and unmethylated states is associated with changes to gene expression of flanking genes. As such, <sup>5</sup>mC is a part of the epigenetic control layer. The modified base <sup>5</sup>mC is also hypermutable <span id="id7">[<a class="reference internal" href="#id37" title="C Coulondre, J H Miller, P J Farabaugh, and W Gilbert. Molecular basis of base substitution hotspots in \emp Escherichia coli. Nature, 274:775–780, 1978.">CMFG78</a>]</span>. The deamination of <sup>5</sup>mC (a hydrolysis reaction) occurs at a rate ~10x the same reaction of unmethylated C. The lesion arising from these reactions also differ, with <sup>5</sup>mC producing T while hydrolysis of unmethylated C produces uracil (U). These lesions cause a pairing mismatch in the helix, triggering DNA repair mechanisms. As U is typically seen in RNA we might reasonably expect a repair system will do a better job of reverting U:G to the correct C:G compared with resolving a T:G mismatch.</p>
+<p id="index-2">Where <sup>5</sup>mC mutagenesis gets even more interesting is that this is an enzymatically induced modification and the recognition sequence for the DNA methylase is a C followed by a G, denote CpG (the p stands for the phosphodiester bond between adjacent nucleotides). This sequence “context dependent” introduction of the base modification therefore results in a context dependence of C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutations (see <a class="reference internal" href="#ctot-motif"><span class="std std-ref">Sidebar Figure</span></a>).</p>
 <aside class="margin sidebar" id="ctot-motif">
 <p class="sidebar-title">Context dependence of C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutations</p>
-<figure class="align-default" id="id56">
-<img alt="../_images/CtoT-human-intergenic.svg" src="../_images/CtoT-human-intergenic.svg" /><figcaption>
-<p><span class="caption-text">Information analysis of human intergenic SNPs resulting from a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutation <span id="id8">[<a class="reference internal" href="../seqcomp/information.html#id31" title="Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. Genetics, 205:843-856, 2017. doi:10.1534/genetics.116.195677.">ZNYH17</a>]</span>.</span><a class="headerlink" href="#id56" title="Link to this image">#</a></p>
-<div class="legend">
+<figure class="align-default">
+<img alt="../_images/CtoT-human-intergenic.svg" src="../_images/CtoT-human-intergenic.svg" /></figure>
+<p>Information analysis of human intergenic SNPs resulting from a C<span class="math notranslate nohighlight">\(\rightarrow\)</span>T point mutation <span id="id8">[<a class="reference internal" href="../seqcomp/information.html#id31" title="Yicheng Zhu, Teresa Neeman, Von Bing Yap, and Gavin A Huttley. Statistical methods for identifying sequence motifs affecting point mutations. Genetics, 205:843-856, 2017. doi:10.1534/genetics.116.195677.">ZNYH17</a>]</span>.</p>
 <p>RE is relative entropy. Position is relative to the point mutation (at 0). The normal letter orientation in the plot indicates that base was over-represented in mutant sequences compared to the reference distribution. The rotated orientation indicates that base was under-represented in mutant sequences.</p>
-</div>
-</figcaption>
-</figure>
 </aside>
 </section>
 <section id="statistical-measures-of-sequence-composition-that-relate-to-mutation">
@@ -487,7 +484,7 @@ G -&gt; T [dir=both];
 <p>Let’s consider a though experiment in where we run a mutagenesis experiment for a very long time on DNA that does not encode any information. In the absence of any biochemical biases, we expect mutation processes to occur with equal probability on the two strands. As a consequence, we expect at chemical equilibrium, the bases that form the canonical Watson-Crick base pairs to have equals counts on the strand, i.e. they are strand-symmetric. For instance, the DNA sequence ATGC is strand symmetric, as is AATTGC. The following “Skewness” statistics are used to quantify strand symmetry (or strand parity).</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}S_{AT} = \frac{A-T}{A+T}\\S_{GC} = \frac{G-C}{G+C}\end{aligned}\end{align} \]</div>
-<p>These divide the difference in the counts of the Watson-Crick pairs by their total. If sequences are mutation has predominantly operated in a strand-symmetric manner throughout time, the expected value of both <span class="math notranslate nohighlight">\(S_{AT}\)</span> and <span class="math notranslate nohighlight">\(S_{GA}\)</span> is 0 <a class="footnote-reference brackets" href="#id15" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
+<p>These divide the difference in the counts of the Watson-Crick pairs by their total. If sequence mutation has predominantly operated in a strand-symmetric manner throughout time, the expected value of both <span class="math notranslate nohighlight">\(S_{AT}\)</span> and <span class="math notranslate nohighlight">\(S_{GA}\)</span> is 0 <a class="footnote-reference brackets" href="#id15" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
 <p>We present two figures from published work that prove strikingly informative. The <a class="reference internal" href="#dna-rep"><span class="std std-ref">first</span></a> concerns the putative influence of initiating DNA replication from a fixed location. It is conjectured that the distinct nature of DNA synthesis on leading versus lagging strands drives the appearance of striking asymmetries in some bacterial genomes <span id="id12">[<a class="reference internal" href="#id36" title="Jan Mràzek and Samuel Karlin. Strand compositional asymmetry in bacterial and large viral genomes. Proceedings of the National Academy of Sciences of the United States of America, 95:3720–3725, 1998. URL: www.pnas.org., doi:10.1073/pnas.95.7.3720.">MrazekK98</a>]</span>.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -508,21 +505,21 @@ G -&gt; T [dir=both];
 </aside>
 <aside class="margin sidebar" id="dna-rep">
 <p class="sidebar-title">The influence of DNA replication</p>
-<figure class="align-default" id="id57">
+<figure class="align-default" id="id56">
 <img alt="../_images/bsubtilits_symmetry.png" src="../_images/bsubtilits_symmetry.png" />
 <figcaption>
-<p><span class="caption-text"><em>Bacillus subtilis</em> genome.</span><a class="headerlink" href="#id57" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Bacillus subtilis</em> genome.</span><a class="headerlink" href="#id56" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id58">
+<figure class="align-default" id="id57">
 <img alt="../_images/synechocystis_symmetry.png" src="../_images/synechocystis_symmetry.png" />
 <figcaption>
-<p><span class="caption-text"><em>Synechocystis</em> PCC6803 genome.</span><a class="headerlink" href="#id58" title="Link to this image">#</a></p>
+<p><span class="caption-text"><em>Synechocystis</em> PCC6803 genome.</span><a class="headerlink" href="#id57" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Panels copied from Figure 1 of <span id="id16">[<a class="reference internal" href="#id36" title="Jan Mràzek and Samuel Karlin. Strand compositional asymmetry in bacterial and large viral genomes. Proceedings of the National Academy of Sciences of the United States of America, 95:3720–3725, 1998. URL: www.pnas.org., doi:10.1073/pnas.95.7.3720.">MrazekK98</a>]</span>. The <span class="math notranslate nohighlight">\(y\)</span>-axis is <span class="math notranslate nohighlight">\(-S_{GC}\)</span> computed from a 50kb sliding window across the corresponding genome. The statistic is assigned to the middle base of thew window. The arrow indicates the origin of replication.</p>
 </aside>
-<p>The second example concerns the distribution of strand symmetry around genes in humans <span id="id17">[<a class="reference internal" href="#id35" title="M Touchon, S Nicolay, A Arneodo, Y D'Aubenton-Carafa, and C Thermes. Transcription-coupled TA and GC strand asymmetries in the human genome. FEBS Lett, 555:579–582, 2003.">TNA+03</a>]</span>. In this case, the proposed biochemical mechanism is transcription couple DNA repair. In simplistic terms, this is a DNA damage repair system that is induced by a stalled RNA polymerase. The repair has been shown to be limited to the transcribed strand. This observation implies that the non-transcribed strand receives less scrutiny by lesion repair processes. This asymmetry also manifests in the SNPs that are present in humans today, indicating the influence is active <span id="id18">[<a class="reference internal" href="#id34" title="Helmut Simon and Gavin Huttley. Quantifying Influences on Intragenomic Mutation Rate. G3: Genes|Genomes|Genetics, 10:g3.401335.2020, 2020. URL: https://doi.org/10.1534/g3.120.401335, doi:10.1534/g3.120.401335.">SH20</a>]</span>.</p>
+<p>The second example concerns the distribution of strand symmetry around genes in humans <span id="id17">[<a class="reference internal" href="#id35" title="M Touchon, S Nicolay, A Arneodo, Y D'Aubenton-Carafa, and C Thermes. Transcription-coupled TA and GC strand asymmetries in the human genome. FEBS Lett, 555:579–582, 2003.">TNA+03</a>]</span>. In this case, the proposed biochemical mechanism is transcription coupled DNA repair. In simplistic terms, this is a DNA damage repair system that is induced by a stalled RNA polymerase. The repair has been shown to be limited to the transcribed strand. This observation implies that the non-transcribed strand receives less scrutiny by lesion repair processes. This asymmetry also manifests in the SNPs that are present in humans today, indicating the influence is active <span id="id18">[<a class="reference internal" href="#id34" title="Helmut Simon and Gavin Huttley. Quantifying Influences on Intragenomic Mutation Rate. G3: Genes|Genomes|Genetics, 10:g3.401335.2020, 2020. URL: https://doi.org/10.1534/g3.120.401335, doi:10.1534/g3.120.401335.">SH20</a>]</span>.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title">Transcription associated mutation asymmetries</p>
 <figure class="align-default">
