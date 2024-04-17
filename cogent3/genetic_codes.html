@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.6. Genetic Codes &#8212; Topics in Bioinformatics</title>
+    <title>8.7. Genetic Codes &#8212; Topics in Bioinformatics</title>
   
   
   
@@ -55,8 +55,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cogent3/genetic_codes';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.7. MolType – specifying biological sequence type" href="moltype.html" />
-    <link rel="prev" title="8.4. Exploring genetic variation using Alignments" href="explore_variation.html" />
+    <link rel="next" title="8.8. Overview of cogent3 apps" href="apps.html" />
+    <link rel="prev" title="8.5. Exploring genetic variation using Alignments" href="explore_variation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,12 +167,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="data_formats.html">8.1. Biological Data Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sequences.html">8.2. Alignments, Sequence Collections and Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moltype.html">8.2. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html">8.3. Alignments, Sequence Collections and Sequences</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.4. Exploring genetic variation using Alignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.5. Exploring genetic variation using Alignments</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.6. Genetic Codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moltype.html">8.7. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.7. Genetic Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="apps.html">8.8. Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="using_models.html">8.10. Modelling sequence evolution</a></li>
@@ -397,9 +397,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-geneticcode-attributes">8.6.1. Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-geneticcode-instances">8.6.2. Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.6.3. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-geneticcode-attributes">8.7.1. Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-geneticcode-instances">8.7.2. Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.7.3. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -412,7 +412,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="genetic-codes">
-<span id="id1"></span><h1><span class="section-number">8.6. </span>Genetic Codes<a class="headerlink" href="#genetic-codes" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">8.7. </span>Genetic Codes<a class="headerlink" href="#genetic-codes" title="Link to this heading">#</a></h1>
 <p>Fundmental information encoding system and a fascinating subject of study. <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> provides a dedicated object for handling genetic code information. The genetic codes included with <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> are indicated in the following table indicates.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
@@ -543,7 +543,7 @@ document.write(`
 </div></div></div>
 </div>
 <section id="useful-geneticcode-attributes">
-<h2><span class="section-number">8.6.1. </span>Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes<a class="headerlink" href="#useful-geneticcode-attributes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7.1. </span>Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes<a class="headerlink" href="#useful-geneticcode-attributes" title="Link to this heading">#</a></h2>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">sense_codons</span></code></dt><dd><p>The codons that encode an amino acid. The trinucleotide string is the key, the single character IUPAC code for the amino acid is the value.</p>
 </dd>
@@ -554,7 +554,7 @@ document.write(`
 </dl>
 </section>
 <section id="using-geneticcode-instances">
-<h2><span class="section-number">8.6.2. </span>Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances<a class="headerlink" href="#using-geneticcode-instances" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7.2. </span>Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances<a class="headerlink" href="#using-geneticcode-instances" title="Link to this heading">#</a></h2>
 <p>Genetic code objects act like dictionaries for trinucleotide strings or single letter strings. The former are interpreted as RNA or DNA, the latter as the single code amino acid.</p>
 <p>You can get the encoded amino acid from a RNA triplet</p>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -751,7 +751,7 @@ document.write(`
 <p>See the <a class="reference external" href="https://cogent3.org">cogent3</a> cookbook documentation for more on using genetic codes.</p>
 </section>
 <section id="exercises">
-<h2><span class="section-number">8.6.3. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7.3. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p>Identify all sense codons that differ from each other at only one of the codon positions. Group these pairs by codon position <a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. The following questions refer to these groupings.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -792,15 +792,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8.4. </span>Exploring genetic variation using Alignments</p>
+        <p class="prev-next-title"><span class="section-number">8.5. </span>Exploring genetic variation using Alignments</p>
       </div>
     </a>
     <a class="right-next"
-       href="moltype.html"
+       href="apps.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.7. </span><code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</p>
+        <p class="prev-next-title"><span class="section-number">8.8. </span>Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -820,9 +820,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-geneticcode-attributes">8.6.1. Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-geneticcode-instances">8.6.2. Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.6.3. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-geneticcode-attributes">8.7.1. Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-geneticcode-instances">8.7.2. Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.7.3. Exercises</a></li>
 </ul>
   </nav></div>
 
