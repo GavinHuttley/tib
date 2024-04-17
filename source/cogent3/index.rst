@@ -34,10 +34,10 @@ We have focussed, thus far, on developing an understanding of programming logic 
     :hidden:
 
     data_formats
+    moltype
     sequences
     explore_variation
     genetic_codes
-    moltype
     apps
     using_models
     tables
