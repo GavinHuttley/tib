@@ -51,7 +51,7 @@ Point mutations
     pair: transition; point mutation
     pair: transversion; point mutation
 
-There are 12 distinct point mutation events since each nucleotide can mutate to 3 possible alternates (e.g. |AtoC|, |AtoG|, |AtoT|). These are often categorised by the chemical classes of the bases involved. Specifically, transitions and transversions. Point mutations that start and end in bases belonging to the same chemical class are referred to as transitions, i.e. changes involving |AtoG|, |GtoA|, |CtoT|, |TtoC| (blue lines in the :ref:`figure <directions>`). The remaining changes are assigned to the transversion category. As it turns out, there are differences in the rate at which mutations of these categories are observed and it has been argued that the excess of transitions reflects the chemical properties of DNA :cite:`Topal:1976aa`.
+There are 12 distinct point mutation events since each nucleotide can mutate to 3 possible alternates (e.g. |AtoC|, |AtoG|, |AtoT|). These are often categorised by the chemical classes of the bases involved. Specifically, transitions and transversions. Point mutations that start and end in bases belonging to the same chemical class are referred to as transitions, i.e. changes involving |AtoG|, |GtoA|, |CtoT|, |TtoC| (blue lines in the :ref:`figure <directions>`). The remaining changes are assigned to the transversion category. As it turns out, there are differences in the rate at which mutations of these categories are observed, and it has been argued that the excess of transitions reflects the chemical properties of DNA :cite:`Topal:1976aa`.
 
 .. margin:: Mutation directions
     :name: directions
@@ -70,23 +70,23 @@ There are 12 distinct point mutation events since each nucleotide can mutate to 
 
     The different point mutations.
 
-    The blue lines indicate transition mutations, point mutations between bases that belong to the same chemical class.
+    The blue lines indicate transition mutations, point mutations between bases that belong to the same chemical class – between the purines (A/G) or pyrimidines (C/T). 
 
-But the dominance of transition mutations reflects more than just the intrinsic properties of the canonical bases. In vertebrates and many other organisms, the modified base 5-methyl-cytosine (hereafter |5mC| or methylated cytosine) is present. In vertebrates, at least, this modification can be used to encode information -- switching between methylated and unmethylated states is associated with changes to gene expression of flanking genes. As such, |5mC| is a part of the epigenetic control layer. The modified base |5mC| is also hypermutable :cite:`Coulondre:1978aa`. The deamination of |5mC| (a hydrolysis reaction) occurs at a rate ~10x the same reaction of unmethylated C. The lesion arising from these reactions also differ, with |5mC| producing T while hydrolysis of unmethylated C produces uracil (U). These lesions cause a pairing mismatch in the helix, triggering DNA repair mechanisms. As you might expect, a repair system will do a better job of reverting U:G to the correct C:G compared with resolving a T:G mismatch.
+The dominance of transition mutations reflects more than just the intrinsic properties of the canonical bases. The modified base 5-methyl-cytosine (hereafter |5mC| or methylated cytosine) is present in vertebrates and many other organisms. In vertebrates, at least, this modification can be used to encode information -- switching between methylated and unmethylated states is associated with changes to gene expression of flanking genes. As such, |5mC| is a part of the epigenetic control layer. The modified base |5mC| is also hypermutable :cite:`Coulondre:1978aa`. The deamination of |5mC| (a hydrolysis reaction) occurs at a rate ~10x the same reaction of unmethylated C. The lesion arising from these reactions also differ, with |5mC| producing T while hydrolysis of unmethylated C produces uracil (U). These lesions cause a pairing mismatch in the helix, triggering DNA repair mechanisms. As U is typically seen in RNA we might reasonably expect a repair system will do a better job of reverting U:G to the correct C:G compared with resolving a T:G mismatch.
 
 .. index::
     pair: context dependent; mutation
 
-Where |5mC| mutagenesis gets even more interesting is that this is an enzymatically induced modification and the recognition sequence for the DNA methylase is a C followed by a G, denote CpG (the p stands for the phosphodiester bond between adjacent nucleotides). This sequence "context dependence" of the introduction of the base modification therefore results in a context dependence of |CtoT| point mutations (see :ref:`Sidebar Figure<CtoT_motif>`).
+Where |5mC| mutagenesis gets even more interesting is that this is an enzymatically induced modification and the recognition sequence for the DNA methylase is a C followed by a G, denote CpG (the p stands for the phosphodiester bond between adjacent nucleotides). This sequence "context dependent" introduction of the base modification therefore results in a context dependence of |CtoT| point mutations (see :ref:`Sidebar Figure<CtoT_motif>`).
 
 .. margin:: Context dependence of |CtoT| point mutations
     :name: CtoT_motif
 
     .. figure:: /_static/images/molevol/CtoT-human-intergenic.svg
 
-        Information analysis of human intergenic SNPs resulting from a |CtoT| point mutation :cite:`Zhu:2017aa`.
+    Information analysis of human intergenic SNPs resulting from a |CtoT| point mutation :cite:`Zhu:2017aa`.
 
-        RE is relative entropy. Position is relative to the point mutation (at 0). The normal letter orientation in the plot indicates that base was over-represented in mutant sequences compared to the reference distribution. The rotated orientation indicates that base was under-represented in mutant sequences.
+    RE is relative entropy. Position is relative to the point mutation (at 0). The normal letter orientation in the plot indicates that base was over-represented in mutant sequences compared to the reference distribution. The rotated orientation indicates that base was under-represented in mutant sequences.
 
 Statistical measures of sequence composition that relate to mutation
 --------------------------------------------------------------------
@@ -105,7 +105,7 @@ Let's consider a though experiment in where we run a mutagenesis experiment for 
 
     S_{GC} = \frac{G-C}{G+C}
 
-These divide the difference in the counts of the Watson-Crick pairs by their total. If sequences are mutation has predominantly operated in a strand-symmetric manner throughout time, the expected value of both :math:`S_{AT}` and :math:`S_{GA}` is 0 [5]_.
+These divide the difference in the counts of the Watson-Crick pairs by their total. If sequence mutation has predominantly operated in a strand-symmetric manner throughout time, the expected value of both :math:`S_{AT}` and :math:`S_{GA}` is 0 [5]_.
 
 We present two figures from published work that prove strikingly informative. The :ref:`first <dna_rep>` concerns the putative influence of initiating DNA replication from a fixed location. It is conjectured that the distinct nature of DNA synthesis on leading versus lagging strands drives the appearance of striking asymmetries in some bacterial genomes :cite:`Mrazek:1998aa`.
 
@@ -128,7 +128,7 @@ We present two figures from published work that prove strikingly informative. Th
 
     Panels copied from Figure 1 of :cite:`Mrazek:1998aa`. The :math:`y`-axis is :math:`-S_{GC}` computed from a 50kb sliding window across the corresponding genome. The statistic is assigned to the middle base of thew window. The arrow indicates the origin of replication.
 
-The second example concerns the distribution of strand symmetry around genes in humans :cite:`Touchon:2003aa`. In this case, the proposed biochemical mechanism is transcription couple DNA repair. In simplistic terms, this is a DNA damage repair system that is induced by a stalled RNA polymerase. The repair has been shown to be limited to the transcribed strand. This observation implies that the non-transcribed strand receives less scrutiny by lesion repair processes. This asymmetry also manifests in the SNPs that are present in humans today, indicating the influence is active :cite:`Simon:2020aa`.
+The second example concerns the distribution of strand symmetry around genes in humans :cite:`Touchon:2003aa`. In this case, the proposed biochemical mechanism is transcription coupled DNA repair. In simplistic terms, this is a DNA damage repair system that is induced by a stalled RNA polymerase. The repair has been shown to be limited to the transcribed strand. This observation implies that the non-transcribed strand receives less scrutiny by lesion repair processes. This asymmetry also manifests in the SNPs that are present in humans today, indicating the influence is active :cite:`Simon:2020aa`.
 
 .. margin:: Transcription associated mutation asymmetries
 
