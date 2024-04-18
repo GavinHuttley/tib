@@ -23,6 +23,8 @@ Loading aligned sequences from a file
 
 The ``moltype`` argument specifies the molecular type of the sequence. See :ref:`moltypes` for more information.
 
+.. note:: Replace the path in the above code snippet with :download:`this link </data/brca1-bats.fasta>` (control+click to copy the url).
+
 .. jupyter-execute::
 
     type(aln)
