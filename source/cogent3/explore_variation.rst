@@ -146,9 +146,9 @@ Download the :download:`large alignment of BRCA1 sequences </data/brca1.fasta>`,
 
 #. Look at the ArrayAlignment_ documentation and identify methods that can be used to select the positions that are variable.
 
-#. Google the definition of a moving average. Then experiment with changeing the ``window`` argument to ``information_plot()``. How do you interpret the impact of increasing the value of ``window``?
+#. Search the internet for the definition of a moving average. Then experiment with changing the ``window`` argument to ``information_plot()``. How do you interpret the impact of increasing the value of ``window``?
     
-#. Select a smallish segment from the one of the sequences within the downloaded data set (say < 50 bases). Manually edit that so it contains an inversion [#]_. Use ``make_unaligned_seqs()`` to create a sequence collection and dotplot this synthetic sequence to itself using ``rc=True``.
+#. Select a smallish segment from one of the sequences within the downloaded data set (say < 50 bases). Manually edit that so it contains an inversion [#]_. Use ``make_unaligned_seqs()`` to create a sequence collection with just this edited sequence and dotplot this synthetic sequence to itself using ``rc=True``.
 
 #. Modify your synthetic sequence to have some repeats and see what the effect of changing ``window`` and ``threshold`` are on the detection of those.
 
