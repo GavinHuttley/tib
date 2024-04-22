@@ -74,7 +74,7 @@ But they cannot be modified within the local scope (unless you use the ``global`
     .. raw:: html
     
         <video width="50%" height="50%" controls>
-          <source src="https://cloudstor.aarnet.edu.au/plus/s/DfRA9NA9hAI5qHq/download" type="video/mp4">
+          <source src="https://github.com/GavinHuttley/tib/assets/3102996/09c38fac-92a6-4e05-93ab-7647571f28c8" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 

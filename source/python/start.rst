@@ -7,7 +7,7 @@
     .. raw:: html
     
         <video width="50%" height="50%" controls>
-          <source src="https://cloudstor.aarnet.edu.au/plus/s/SgZ6vLqa40dje1e/download" type="video/mp4">
+          <source src="https://github.com/GavinHuttley/tib/assets/3102996/921c0cb7-3233-4528-b47a-bbd5dc9839ee" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 
@@ -20,7 +20,7 @@
     .. raw:: html
     
         <video width="50%" height="50%" controls>
-          <source src="https://cloudstor.aarnet.edu.au/plus/s/drRX6w0PffFDGyI/download" type="video/mp4">
+          <source src="https://github.com/GavinHuttley/tib/assets/3102996/57cac54e-2b4e-42b4-b4b9-f3a8b01a30b4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 
