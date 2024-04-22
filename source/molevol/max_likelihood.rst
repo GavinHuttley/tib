@@ -11,7 +11,7 @@
     .. raw:: html
     
         <video width="50%" height="50%" controls>
-          <source src="https://cloudstor.aarnet.edu.au/plus/s/xdzQS46fsHj9aQl/download" type="video/mp4">
+          <source src="https://github.com/GavinHuttley/tib/assets/3102996/3fb7972f-8e46-4541-ad8a-70686cd14086" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 

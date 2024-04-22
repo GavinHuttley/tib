@@ -12,7 +12,7 @@
     .. raw:: html
     
         <video width="50%" height="50%" controls>
-          <source src="https://cloudstor.aarnet.edu.au/plus/s/HwpLTt8oZxyCP7N/download" type="video/mp4">
+          <source src="https://github.com/GavinHuttley/tib/assets/3102996/6cbafc52-b9f6-481a-880c-e69fbab6c230" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 
