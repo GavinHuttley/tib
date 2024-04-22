@@ -12,7 +12,8 @@ How to Contribute
     .. raw:: html
     
         <video width="50%" height="50%" controls>
-          <source src="https://cloudstor.aarnet.edu.au/plus/s/OmtMnVE1350vFSS/download" type="video/mp4">
+          <source src="https://github.com/GavinHuttley/tib/assets/3102996/500bef9f-d6c6-49d5-ab00-101f13123b9f
+" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 
@@ -24,7 +25,7 @@ How to Contribute
     .. raw:: html
     
         <video width="50%" height="50%" controls>
-          <source src="https://cloudstor.aarnet.edu.au/plus/s/6iuolwQlVWmAUpU/download" type="video/mp4">
+          <source src="https://github.com/GavinHuttley/tib/assets/3102996/23d76a80-7a4e-47f7-9a2b-3f1e51f5c494" type="video/mp4">
           Your browser does not support the video tag.
         </video>
 
