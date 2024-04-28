@@ -3,7 +3,7 @@
 Genetic Codes
 =============
 
-Fundmental information encoding system and a fascinating subject of study. ``cogent3`` provides a dedicated object for handling genetic code information. The genetic codes included with ``cogent3`` are indicated in the following table indicates.
+A genetic code is the fundamental information encoding system and a fascinating subject of study. ``cogent3`` provides a dedicated object for handling genetic code information. The genetic codes included with ``cogent3`` are indicated in the following table.
 
 .. jupyter-execute::
     :hide-code:
@@ -25,7 +25,7 @@ Useful ``GeneticCode`` attributes
 ---------------------------------
 
 ``sense_codons``
-    The codons that encode an amino acid. The trinucleotide string is the key, the single character IUPAC code for the amino acid is the value.
+    The codons that encode an amino acid. The trinucleotide string is the key, and the single-character IUPAC code for the amino acid is the value.
 
 ``codons``
     Maps all codon strings to corresponding amino acid IUPAC code.
@@ -36,7 +36,7 @@ Useful ``GeneticCode`` attributes
 Using ``GeneticCode`` instances
 -------------------------------
 
-Genetic code objects act like dictionaries for trinucleotide strings or single letter strings. The former are interpreted as RNA or DNA, the latter as the single code amino acid.
+Genetic code objects act like dictionaries for trinucleotide strings or single-letter strings. The former is interpreted as RNA or DNA, the latter as the single-character amino acid code.
 
 You can get the encoded amino acid from a RNA triplet
 
@@ -52,7 +52,7 @@ or DNA triplet.
     aa = gc["TAC"]
     aa
 
-The mapping from codon to amino acid is provided by a ``sense_codons`` attribute of the genetic code instance. So calling ``list()`` on that dict returns just the sense codons [#]_.
+The mapping from codon to amino acid is provided by the genetic code instance ``sense_codons`` attribute. So, calling ``list()`` on that dict returns just the sense codons [#]_.
 
 .. margin::
 
@@ -79,7 +79,7 @@ or stop codon
 
 .. jupyter-execute::
 
-    gc.is_start("TAA")
+    gc.is_stop("TAA")
 
 Stop codons are represented by ``"*"`` character.
 
@@ -119,7 +119,7 @@ Identify all sense codons that differ from each other at only one of the codon p
 
 #. Does the property measured in the previous question differ between the genetic codes?
 
-#. Categorise the codon differences by whether they are a transition or transversion change (see :ref:`point_mutations`). Assess whether the fraction of synonymous changes differs between transition and transversion changes.
+#. Categorise the codon differences by whether they are transition or transversion changes (see :ref:`point_mutations`). Assess whether the fraction of synonymous changes differs between transition and transversion changes.
 
 #. Is there variation (between the genetic codes) in the number of stop codons? Assess this programmatically.
 
