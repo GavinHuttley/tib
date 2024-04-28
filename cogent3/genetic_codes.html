@@ -41,7 +41,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=06f64241"></script>
+    <script src="../_static/documentation_options.js?v=75cd4315"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/thebelab-helper.js"></script>
@@ -413,7 +413,7 @@ document.write(`
                   
   <section id="genetic-codes">
 <span id="id1"></span><h1><span class="section-number">8.7. </span>Genetic Codes<a class="headerlink" href="#genetic-codes" title="Link to this heading">#</a></h1>
-<p>Fundmental information encoding system and a fascinating subject of study. <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> provides a dedicated object for handling genetic code information. The genetic codes included with <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> are indicated in the following table indicates.</p>
+<p>A genetic code is the fundamental information encoding system and a fascinating subject of study. <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> provides a dedicated object for handling genetic code information. The genetic codes included with <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> are indicated in the following table.</p>
 <div class="jupyter_cell docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -545,7 +545,7 @@ document.write(`
 <section id="useful-geneticcode-attributes">
 <h2><span class="section-number">8.7.1. </span>Useful <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> attributes<a class="headerlink" href="#useful-geneticcode-attributes" title="Link to this heading">#</a></h2>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">sense_codons</span></code></dt><dd><p>The codons that encode an amino acid. The trinucleotide string is the key, the single character IUPAC code for the amino acid is the value.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">sense_codons</span></code></dt><dd><p>The codons that encode an amino acid. The trinucleotide string is the key, and the single-character IUPAC code for the amino acid is the value.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">codons</span></code></dt><dd><p>Maps all codon strings to corresponding amino acid IUPAC code.</p>
 </dd>
@@ -555,7 +555,7 @@ document.write(`
 </section>
 <section id="using-geneticcode-instances">
 <h2><span class="section-number">8.7.2. </span>Using <code class="docutils literal notranslate"><span class="pre">GeneticCode</span></code> instances<a class="headerlink" href="#using-geneticcode-instances" title="Link to this heading">#</a></h2>
-<p>Genetic code objects act like dictionaries for trinucleotide strings or single letter strings. The former are interpreted as RNA or DNA, the latter as the single code amino acid.</p>
+<p>Genetic code objects act like dictionaries for trinucleotide strings or single-letter strings. The former is interpreted as RNA or DNA, the latter as the single-character amino acid code.</p>
 <p>You can get the encoded amino acid from a RNA triplet</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -584,7 +584,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>The mapping from codon to amino acid is provided by a <code class="docutils literal notranslate"><span class="pre">sense_codons</span></code> attribute of the genetic code instance. So calling <code class="docutils literal notranslate"><span class="pre">list()</span></code> on that dict returns just the sense codons <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>The mapping from codon to amino acid is provided by the genetic code instance <code class="docutils literal notranslate"><span class="pre">sense_codons</span></code> attribute. So, calling <code class="docutils literal notranslate"><span class="pre">list()</span></code> on that dict returns just the sense codons <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <aside class="footnote-list brackets">
@@ -636,12 +636,12 @@ document.write(`
 <p>or stop codon</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="o">.</span><span class="n">is_start</span><span class="p">(</span><span class="s2">&quot;TAA&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="o">.</span><span class="n">is_stop</span><span class="p">(</span><span class="s2">&quot;TAA&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -765,7 +765,7 @@ document.write(`
 <ol class="arabic">
 <li><p>Pick a genetic code and, for each such codon position group, count the number of changes that are synonymous. Is there a difference between the codon position and the proportion of synonymous changes?</p></li>
 <li><p>Does the property measured in the previous question differ between the genetic codes?</p></li>
-<li><p>Categorise the codon differences by whether they are a transition or transversion change (see <a class="reference internal" href="../molevol/mutation.html#point-mutations"><span class="std std-ref">Point mutations</span></a>). Assess whether the fraction of synonymous changes differs between transition and transversion changes.</p></li>
+<li><p>Categorise the codon differences by whether they are transition or transversion changes (see <a class="reference internal" href="../molevol/mutation.html#point-mutations"><span class="std std-ref">Point mutations</span></a>). Assess whether the fraction of synonymous changes differs between transition and transversion changes.</p></li>
 <li><p>Is there variation (between the genetic codes) in the number of stop codons? Assess this programmatically.</p>
 <blockquote>
 <div><p><em>Hint: look at the attributes on the genetic code instance.</em></p>
