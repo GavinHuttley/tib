@@ -106,14 +106,12 @@ Phylogenetics is concerned with the problem of inferring the relationships betwe
 
 In the :ref:`Phylogenetic Workflow <phylo_workflow>` figure I display the basic workflow for phylogenetic reconstruction. There is substantial overlap with molecular evolutionary analysis in general, but the emphasis here is on the problem of estimating a tree. The steps are:
 
-* sample homologous sequences from taxa of interest
+- sample homologous sequences from taxa of interest
+- align the sequences
+- choose method to build the phylogenetic tree [1]_
+- estimate the phylogenetic tree [2]_
 
-* align the sequences
+.. margin::
 
-* choose method to build the phylogenetic tree.
-
-    - pick a substitution model
-
-* Estimate the phylogenetic tree
-
-    - we may include a technique for estimating the level of uncertainty in that tree
+    .. [1] pick a substitution model
+    .. [2] we may include a technique for estimating the level of uncertainty in that tree, e.g. a "bootstrap" analysis
