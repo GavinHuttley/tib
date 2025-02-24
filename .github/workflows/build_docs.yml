@@ -23,6 +23,12 @@ jobs:
         with:
             python-version: 3.12
 
+      - name: List files in working directory
+        run: |
+          pwd
+          ls -la
+        working-directory: tib
+
       - name: Install uv
         uses: astral-sh/setup-uv@v5
         with:
