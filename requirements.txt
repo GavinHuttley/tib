@@ -15,7 +15,7 @@ sphinx
 docutils
 jinja2
 scipy
-sphinx
+sphinx<8.2
 sphinx_comments
 sphinx_design
 sphinxcontrib-bibtex
