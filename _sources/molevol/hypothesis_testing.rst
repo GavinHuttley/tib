@@ -123,11 +123,11 @@ This class of model are termed phylogenetic Hidden Markov Models (or phylo-HMM).
 Jointly modelling loci — concatenating alignments
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-A common analysis strategy involves concatenating the alignments of different genes from the same group of species [#]_. For instance, say I have alignments of one-to-one orthologs for gene A and B from 2 species. I concatenate these by simply concatenating the sequence strings in the same order for each species. For instance
+A common analysis strategy involves concatenating the alignments of different genes from the same group of species [#]_. For instance, say I have alignments of one-to-one orthologs for gene A and B from 2 species. I concatenate these by using the `concat` app. For instance
 
 .. jupyter-execute::
 
-    from cogent3 import make_aligned_seqs
+    from cogent3 import make_aligned_seqs, get_app
 
     a = make_aligned_seqs(dict(B="AGA", A="AAA"), moltype="dna")
     a
@@ -139,7 +139,8 @@ A common analysis strategy involves concatenating the alignments of different ge
 
 .. jupyter-execute::
 
-    concat = a + b
+    add_aligns = get_app("concat", moltype="dna")
+    concat = add_aligns([a, b])
     concat
 
 The modelling is then done on the concatenated alignment (``concat`` in our example).
