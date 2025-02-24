@@ -1,5 +1,5 @@
 psutil
-plotly<6
+plotly<7
 pillow
 ipython
 ipykernel
