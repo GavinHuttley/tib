@@ -1,6 +1,5 @@
 psutil
-plotly
-kaleido
+plotly<6
 pillow
 ipython
 ipykernel
