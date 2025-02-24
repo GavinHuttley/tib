@@ -25,6 +25,7 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
+        working-directory: tib
         with:
           enable-cache: true
           cache-dependency-glob: "requirements.txt"
