@@ -37,7 +37,7 @@ Making a Table from standard Python objects
 
     .. jupyter-execute::
 
-        dinucs = seq.get_in_motif_size(2, log_warnings=False)
+        dinucs = seq.get_in_motif_size(2)
         base1, base2 = list(zip(*dinucs))
 
 .. margin::

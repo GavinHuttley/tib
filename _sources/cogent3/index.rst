@@ -33,6 +33,7 @@ We have focussed, thus far, on developing an understanding of programming logic 
 .. toctree::
     :hidden:
 
+    outline
     data_formats
     moltype
     sequences

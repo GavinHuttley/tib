@@ -8,55 +8,55 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.12. Tabular data &#8212; Topics in Bioinformatics</title>
+    <title>8.13. Tabular data &#8212; Topics in Bioinformatics</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=3ce756a4" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=75cd4315"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/documentation_options.js?v=18a93d02"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/thebelab-helper.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'cogent3/tables';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.13. General purpose statistical tests using cogent3" href="statistical_tests.html" />
-    <link rel="prev" title="8.10. Modelling sequence evolution" href="using_models.html" />
+    <link rel="next" title="8.14. General purpose statistical tests using cogent3" href="statistical_tests.html" />
+    <link rel="prev" title="8.11. Modelling sequence evolution" href="using_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -66,27 +66,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -108,8 +104,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -133,6 +134,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -148,7 +151,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -165,22 +168,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">5. Introduction to Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../seqcomp/index.html">6. Sequence Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../molevol/index.html">7. Molecular Evolution</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="data_formats.html">8.1. Biological Data Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moltype.html">8.2. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sequences.html">8.3. Alignments, Sequence Collections and Sequences</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">8. Molecular Evolutionary Analyses Using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="outline.html">8.1. Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_formats.html">8.2. Biological Data Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moltype.html">8.3. <code class="docutils literal notranslate"><span class="pre">MolType</span></code> – specifying biological sequence type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequences.html">8.4. Alignments, Sequence Collections and Sequences</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.5. Exploring genetic variation using Alignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore_variation.html">8.6. Exploring genetic variation using Alignments</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="genetic_codes.html">8.7. Genetic Codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html">8.8. Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="genetic_codes.html">8.8. Genetic Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps.html">8.9. Overview of <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> apps</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="using_models.html">8.10. Modelling sequence evolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_models.html">8.11. Modelling sequence evolution</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.12. Tabular data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical_tests.html">8.13. General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.13. Tabular data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_tests.html">8.14. General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">9. Statistical analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version_control/index.html">10. Introduction to version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">11. Introduction to Testing in Python</a></li>
@@ -200,7 +204,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -209,14 +213,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -358,10 +362,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -369,14 +373,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -397,22 +401,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-table-from-standard-python-objects">8.12.1. Making a Table from standard Python objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-column-oriented-dict">8.12.1.1. From a column-oriented dict</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-header-and-a-list-of-lists">8.12.1.2. From a header and a list of lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-table-from-standard-python-objects">8.13.1. Making a Table from standard Python objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-column-oriented-dict">8.13.1.1. From a column-oriented dict</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-header-and-a-list-of-lists">8.13.1.2. From a header and a list of lists</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-table-from-a-file">8.12.2. Loading a table from a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-summary-using-table-head-or-table-tail">8.12.3. Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-a-table">8.12.4. Slicing a Table</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-a-column">8.12.5. Getting a column</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-column">8.12.6. Creating a new column</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-a-table-to-include-rows-by-value">8.12.7. Filtering a table to include rows by value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-unique-values">8.12.8. Counting unique values</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-categorical-count">8.12.8.1. To categorical count</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-table-from-a-file">8.13.2. Loading a table from a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-summary-using-table-head-or-table-tail">8.13.3. Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-a-table">8.13.4. Slicing a Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-a-column">8.13.5. Getting a column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-column">8.13.6. Creating a new column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-a-table-to-include-rows-by-value">8.13.7. Filtering a table to include rows by value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-unique-values">8.13.8. Counting unique values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-categorical-count">8.13.8.1. To categorical count</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-categorical-counts-from-a-table">8.12.9. Generating categorical counts from a Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-categorical-counts-from-a-table">8.13.9. Generating categorical counts from a Table</a></li>
 </ul>
             </nav>
         </div>
@@ -429,10 +433,10 @@ document.write(`
 </div>
 </div>
 <section id="tabular-data">
-<span id="tables"></span><h1><span class="section-number">8.12. </span>Tabular data<a class="headerlink" href="#tabular-data" title="Link to this heading">#</a></h1>
+<span id="tables"></span><h1><span class="section-number">8.13. </span>Tabular data<a class="headerlink" href="#tabular-data" title="Link to this heading">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> <code class="docutils literal notranslate"><span class="pre">Table</span></code> data type provides methods for manipulating tabular data. Here we summarise the basic capabilities. One important point to make is that tables are immutable, in that once a column has been created you cannot modify individual elements. But you can modify what columns a table has, their name and order. Table columns themselves are just numpy arrays. (See the <a class="reference external" href="https://cogent3.org/doc/cookbook/tables.html">cogent3 cookbook</a> for a more thorough description.)</p>
 <section id="making-a-table-from-standard-python-objects">
-<span id="index-0"></span><h2><span class="section-number">8.12.1. </span>Making a Table from standard Python objects<a class="headerlink" href="#making-a-table-from-standard-python-objects" title="Link to this heading">#</a></h2>
+<span id="index-0"></span><h2><span class="section-number">8.13.1. </span>Making a Table from standard Python objects<a class="headerlink" href="#making-a-table-from-standard-python-objects" title="Link to this heading">#</a></h2>
 <aside class="margin sidebar" id="making-dinucs">
 <p class="sidebar-title">Generating some data</p>
 <p>I will produce a table that has two columns corresponding to base <code class="docutils literal notranslate"><span class="pre">1</span></code> and base <code class="docutils literal notranslate"><span class="pre">2</span></code> of all non-overlapping dinucleotides in DNA sequence. We will construct this using the Wombat sequence from <em>BRCA1</em>.</p>
@@ -463,7 +467,7 @@ document.write(`
 <p id="index-1">We split into the separate positions using the builtin <code class="docutils literal notranslate"><span class="pre">zip()</span></code> <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dinucs</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">get_in_motif_size</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">log_warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dinucs</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">get_in_motif_size</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">base1</span><span class="p">,</span> <span class="n">base2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">dinucs</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -482,7 +486,7 @@ document.write(`
 </aside>
 </aside>
 <section id="from-a-column-oriented-dict">
-<h3><span class="section-number">8.12.1.1. </span>From a column-oriented dict<a class="headerlink" href="#from-a-column-oriented-dict" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.13.1.1. </span>From a column-oriented dict<a class="headerlink" href="#from-a-column-oriented-dict" title="Link to this heading">#</a></h3>
 <p>We convert dinucleotide data into a column based <code class="docutils literal notranslate"><span class="pre">dict</span></code> – the keys will become the column names and the values will be the column.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -496,7 +500,7 @@ document.write(`
 <p>We make a <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> table using a utility function.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">make_table</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cogent3</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_table</span>
 
 <span class="n">table</span> <span class="o">=</span> <span class="n">make_table</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 <span class="n">table</span>
@@ -548,7 +552,7 @@ document.write(`
 </div>
 </section>
 <section id="from-a-header-and-a-list-of-lists">
-<h3><span class="section-number">8.12.1.2. </span>From a header and a list of lists<a class="headerlink" href="#from-a-header-and-a-list-of-lists" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.13.1.2. </span>From a header and a list of lists<a class="headerlink" href="#from-a-header-and-a-list-of-lists" title="Link to this heading">#</a></h3>
 <p>I’m going to make a list of lists from <code class="docutils literal notranslate"><span class="pre">dinucs</span></code> by just convert each dinucleotide into a list.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -617,11 +621,11 @@ document.write(`
 </section>
 </section>
 <section id="loading-a-table-from-a-file">
-<span id="index-3"></span><h2><span class="section-number">8.12.2. </span>Loading a table from a file<a class="headerlink" href="#loading-a-table-from-a-file" title="Link to this heading">#</a></h2>
+<span id="index-3"></span><h2><span class="section-number">8.13.2. </span>Loading a table from a file<a class="headerlink" href="#loading-a-table-from-a-file" title="Link to this heading">#</a></h2>
 <p>We load a tab separated data file using the <code class="docutils literal notranslate"><span class="pre">load_table()</span></code> function. The format is inferred from the filename suffix.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cogent3</span> <span class="kn">import</span> <span class="n">load_table</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cogent3</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_table</span>
 
 <span class="n">stats</span> <span class="o">=</span> <span class="n">load_table</span><span class="p">(</span><span class="s2">&quot;data/edge_stats.tsv&quot;</span><span class="p">)</span>
 <span class="n">stats</span>
@@ -672,7 +676,7 @@ document.write(`
 </div>
 </section>
 <section id="getting-summary-using-table-head-or-table-tail">
-<h2><span class="section-number">8.12.3. </span>Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code><a class="headerlink" href="#getting-summary-using-table-head-or-table-tail" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.13.3. </span>Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code><a class="headerlink" href="#getting-summary-using-table-head-or-table-tail" title="Link to this heading">#</a></h2>
 <p>These display the top or bottom of a table.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -762,7 +766,7 @@ document.write(`
 </div>
 </section>
 <section id="slicing-a-table">
-<h2><span class="section-number">8.12.4. </span>Slicing a Table<a class="headerlink" href="#slicing-a-table" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.13.4. </span>Slicing a Table<a class="headerlink" href="#slicing-a-table" title="Link to this heading">#</a></h2>
 <p>Tables are “row oriented”, so the first index concerns rows, the column.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -808,7 +812,7 @@ document.write(`
 </div>
 </section>
 <section id="getting-a-column">
-<h2><span class="section-number">8.12.5. </span>Getting a column<a class="headerlink" href="#getting-a-column" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.13.5. </span>Getting a column<a class="headerlink" href="#getting-a-column" title="Link to this heading">#</a></h2>
 <p>Tables have a <code class="docutils literal notranslate"><span class="pre">column</span></code> attribute.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -864,11 +868,11 @@ document.write(`
 </div>
 </section>
 <section id="creating-a-new-column">
-<span id="index-4"></span><h2><span class="section-number">8.12.6. </span>Creating a new column<a class="headerlink" href="#creating-a-new-column" title="Link to this heading">#</a></h2>
+<span id="index-4"></span><h2><span class="section-number">8.13.6. </span>Creating a new column<a class="headerlink" href="#creating-a-new-column" title="Link to this heading">#</a></h2>
 <p>You write a function that takes the rows from the columns ytou want and returns the result of some operation. I’ll just take the square root of kappa.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
 
 <span class="n">k_rt</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">with_new_column</span><span class="p">(</span><span class="s2">&quot;sqrt(kappa)&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;kappa&quot;</span><span class="p">])</span>
 <span class="n">k_rt</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -914,7 +918,7 @@ document.write(`
 </div>
 </section>
 <section id="filtering-a-table-to-include-rows-by-value">
-<h2><span class="section-number">8.12.7. </span>Filtering a table to include rows by value<a class="headerlink" href="#filtering-a-table-to-include-rows-by-value" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.13.7. </span>Filtering a table to include rows by value<a class="headerlink" href="#filtering-a-table-to-include-rows-by-value" title="Link to this heading">#</a></h2>
 <p>In our dinucleotide table, we only want rows where both bases are in the canonical set <code class="docutils literal notranslate"><span class="pre">{A,</span> <span class="pre">C,</span> <span class="pre">G,</span> <span class="pre">T}</span></code>. We do this via a filter step using a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function and a <code class="docutils literal notranslate"><span class="pre">set</span></code> object consisting of these bases. The <code class="docutils literal notranslate"><span class="pre">filtered()</span></code> method calls the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> with each row. Only if the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> will the row be included in the new <code class="docutils literal notranslate"><span class="pre">Table</span></code>. In our case, our <code class="docutils literal notranslate"><span class="pre">lambda</span></code> will return true if the set of elements in the row is a subset of all the basses.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -972,7 +976,7 @@ document.write(`
 </div>
 </section>
 <section id="counting-unique-values">
-<h2><span class="section-number">8.12.8. </span>Counting unique values<a class="headerlink" href="#counting-unique-values" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.13.8. </span>Counting unique values<a class="headerlink" href="#counting-unique-values" title="Link to this heading">#</a></h2>
 <p>This method returns counts of the unique combinations of values from the specified columns. The result is a <code class="docutils literal notranslate"><span class="pre">cogent3</span></code> type, a <code class="docutils literal notranslate"><span class="pre">CategoryCounter</span></code> instance, which has some useful properties. Principal being that it behaves like a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -988,7 +992,7 @@ document.write(`
 </div>
 </div>
 <section id="to-categorical-count">
-<h3><span class="section-number">8.12.8.1. </span>To categorical count<a class="headerlink" href="#to-categorical-count" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.13.8.1. </span>To categorical count<a class="headerlink" href="#to-categorical-count" title="Link to this heading">#</a></h3>
 <p>Another being that it can produce <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1256,7 +1260,7 @@ document.write(`
 </section>
 </section>
 <section id="generating-categorical-counts-from-a-table">
-<span id="index-5"></span><h2><span class="section-number">8.12.9. </span>Generating categorical counts from a Table<a class="headerlink" href="#generating-categorical-counts-from-a-table" title="Link to this heading">#</a></h2>
+<span id="index-5"></span><h2><span class="section-number">8.13.9. </span>Generating categorical counts from a Table<a class="headerlink" href="#generating-categorical-counts-from-a-table" title="Link to this heading">#</a></h2>
 <p>We can also get a <code class="docutils literal notranslate"><span class="pre">CategoryCount</span></code> object via <code class="docutils literal notranslate"><span class="pre">Table.to_categorical()</span></code>. In this case, the counts must be fully specified prior to constructing the table. (Meaning you’ve already done the counting part.) In addition, we also need to specify a column whose values are the row categories. The latter is achieved setting <code class="docutils literal notranslate"><span class="pre">make_table(index_name=&lt;column</span> <span class="pre">name&gt;)</span></code>. In this case, I specify the column name of the index is an empty string.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -1435,7 +1439,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1444,7 +1448,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8.10. </span>Modelling sequence evolution</p>
+        <p class="prev-next-title"><span class="section-number">8.11. </span>Modelling sequence evolution</p>
       </div>
     </a>
     <a class="right-next"
@@ -1452,7 +1456,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.13. </span>General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></p>
+        <p class="prev-next-title"><span class="section-number">8.14. </span>General purpose statistical tests using <code class="docutils literal notranslate"><span class="pre">cogent3</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1472,22 +1476,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-table-from-standard-python-objects">8.12.1. Making a Table from standard Python objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-column-oriented-dict">8.12.1.1. From a column-oriented dict</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-header-and-a-list-of-lists">8.12.1.2. From a header and a list of lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-table-from-standard-python-objects">8.13.1. Making a Table from standard Python objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-column-oriented-dict">8.13.1.1. From a column-oriented dict</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-header-and-a-list-of-lists">8.13.1.2. From a header and a list of lists</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-table-from-a-file">8.12.2. Loading a table from a file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-summary-using-table-head-or-table-tail">8.12.3. Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-a-table">8.12.4. Slicing a Table</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-a-column">8.12.5. Getting a column</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-column">8.12.6. Creating a new column</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-a-table-to-include-rows-by-value">8.12.7. Filtering a table to include rows by value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-unique-values">8.12.8. Counting unique values</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-categorical-count">8.12.8.1. To categorical count</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-table-from-a-file">8.13.2. Loading a table from a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-summary-using-table-head-or-table-tail">8.13.3. Getting summary using <code class="docutils literal notranslate"><span class="pre">Table.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.tail()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-a-table">8.13.4. Slicing a Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-a-column">8.13.5. Getting a column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-column">8.13.6. Creating a new column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-a-table-to-include-rows-by-value">8.13.7. Filtering a table to include rows by value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-unique-values">8.13.8. Counting unique values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-categorical-count">8.13.8.1. To categorical count</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-categorical-counts-from-a-table">8.12.9. Generating categorical counts from a Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-categorical-counts-from-a-table">8.13.9. Generating categorical counts from a Table</a></li>
 </ul>
   </nav></div>
 
@@ -1512,7 +1516,7 @@ By Gavin Huttley
 
   <p class="copyright">
     
-      © Copyright 2020-2024, Gavin Huttley.
+      © Copyright 2020-2025, Gavin Huttley.
       <br/>
     
   </p>
@@ -1536,8 +1540,8 @@ By Gavin Huttley
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
