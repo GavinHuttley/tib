@@ -9,6 +9,7 @@ The notes for this topic are focussed principally on the biological and statisti
 .. toctree::
     :hidden:
 
+    outline
     intro
     data
     neutral_theory
