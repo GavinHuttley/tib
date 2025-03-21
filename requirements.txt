@@ -1,5 +1,4 @@
-cogent3[extra]==2024.12.19a2
-docutils
+git+https://github.com/cogent3/cogent3.git@develop#egg=cogent3[extra]docutils
 ipykernel
 ipytest
 ipython<9.0
